@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
+<!--
+  Kanji Mnemonic Cards - Pokemon Style
+  Built: 2026-01-04 21:30:28 UTC
+  Version: Fixed image centering on mobile
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -369,6 +374,21 @@ body {
     }
 }
 
+
+/* Version badge */
+.version-badge {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.7em;
+    font-family: monospace;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
     </style>
 </head>
 <body>
@@ -376,6 +396,8 @@ body {
         <h1>🎴 Kanji Mnemonic Cards</h1>
         <p>150 cards • Pokemon-style visual mnemonics for Japanese learning</p>
     </div>
+
+    <div class="version-badge" title="Last updated">2026-01-04 21:30:28 UTC</div>
 
     <div class="controls">
         <button onclick="flipAll()">🔄 Flip All</button>
