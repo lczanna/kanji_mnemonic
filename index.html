@@ -2,7 +2,7 @@
 <html lang="ja">
 <!--
   Kanji Mnemonic Cards - Pokemon Style
-  Built: 2026-01-04 21:30:28 UTC
+  Built: 2026-01-04 21:33:10 UTC
   Version: Fixed image centering on mobile
 -->
 <head>
@@ -377,17 +377,12 @@ body {
 
 /* Version badge */
 .version-badge {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.7em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8em;
     font-family: monospace;
-    z-index: 1000;
-    backdrop-filter: blur(5px);
+    margin-bottom: 15px;
+    font-weight: 400;
 }
     </style>
 </head>
@@ -397,12 +392,11 @@ body {
         <p>150 cards • Pokemon-style visual mnemonics for Japanese learning</p>
     </div>
 
-    <div class="version-badge" title="Last updated">2026-01-04 21:30:28 UTC</div>
+    <div class="version-badge">Last updated: 2026-01-04 21:33:10 UTC</div>
 
     <div class="controls">
         <button onclick="flipAll()">🔄 Flip All</button>
         <button onclick="resetAll()">↩️ Reset All</button>
-        <button onclick="window.print()">🖨️ Print Cards</button>
     </div>
 
     <div class="card-gallery" id="gallery">
@@ -10177,12 +10171,23 @@ body {
             }
         }
 
-        function flipAll() {
+        async function flipAll() {
             const cards = document.querySelectorAll('.pokemon-card');
-            cards.forEach(card => {
-                loadImageForCard(card);
-                card.classList.add('flipped');
-            });
+            const batchSize = 10; // Load 10 images at a time to prevent crashes
+
+            // Flip all cards immediately (visual feedback)
+            cards.forEach(card => card.classList.add('flipped'));
+
+            // Load images in batches with delays
+            for (let i = 0; i < cards.length; i += batchSize) {
+                const batch = Array.from(cards).slice(i, i + batchSize);
+                batch.forEach(card => loadImageForCard(card));
+
+                // Small delay between batches to prevent overwhelming the browser
+                if (i + batchSize < cards.length) {
+                    await new Promise(resolve => setTimeout(resolve, 50));
+                }
+            }
         }
 
         function resetAll() {
@@ -10231,11 +10236,6 @@ body {
 
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'p' && (e.ctrlKey || e.metaKey)) {
-                e.preventDefault();
-                window.print();
-            }
-
             if (e.key === ' ' && e.target === document.body) {
                 e.preventDefault();
                 flipAll();
@@ -10248,7 +10248,7 @@ body {
 
         console.log('🎴 Loaded 150 kanji cards');
         console.log('💡 Tap/click any card to flip and load its image');
-        console.log('💡 Keyboard: Space=Flip All, R=Reset All, Ctrl+P=Print');
+        console.log('💡 Keyboard: Space=Flip All, R=Reset All');
     </script>
 </body>
 </html>
