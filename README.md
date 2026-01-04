@@ -1,6 +1,6 @@
 # 🎴 Kanji Mnemonic Cards
 
-Pokemon-style visual flashcards for learning Japanese kanji using AI-powered cognitive mnemonics.
+Visual flashcards for learning Japanese kanji using AI-powered cognitive mnemonics.
 
 ## 🌐 Live Demo
 
@@ -8,7 +8,7 @@ Visit: **https://lczanna.github.io/kanji_mnemonic/**
 
 ## ✨ Features
 
-- 🎨 **150 Pokemon-Style Cards** - AI-generated illustrations using GPT Image 1.5
+- 🎨 **150 Trading Card-Style Cards** - AI-generated illustrations using GPT Image 1.5
 - 🧠 **Cognitive Science-Based Mnemonics** - Bizarre imagery for maximum retention
 - 🔄 **Interactive Flip Cards** - Tap to reveal meanings and mnemonics
 - 📱 **Mobile-Friendly** - Works great on phones and tablets
