@@ -254,6 +254,9 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .opt.dim { opacity: .5; }
 .opt[disabled] { cursor: default; }
 .chunks .opt { font-size: 17px; justify-content: center; }
+.chunks .opt.with-gl { display: grid; justify-items: center; gap: 2px; }
+.cgl { font-family: var(--font-body); font-weight: 400; font-size: 11px; line-height: 1.3; color: var(--muted); text-align: center; }
+.cgl b { color: var(--ai); font-weight: 500; }
 .opts.g .opt, .chunks .opt { font-family: var(--font-body); font-weight: 700; font-size: 17px; }
 .opts.g.long { grid-template-columns: 1fr; }
 .g-q { font-size: 19px; line-height: 1.9; width: 100%; }
@@ -266,6 +269,10 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .slot .star { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--hard); }
 .why { font-size: 14px; color: var(--muted); width: 100%; display: flex; gap: 8px; align-items: center; }
 .tr { width: 100%; font-size: 14px; color: var(--ink); }
+.wrongs { width: 100%; display: grid; gap: 6px; font-size: 13px; color: var(--muted); line-height: 1.45; }
+.wrongs div { border-left: 3px solid var(--line); padding-left: 8px; }
+.wrongs div.picked { border-left-color: var(--again); color: var(--ink); }
+.wrongs b { font-family: var(--font-body); color: var(--ink); margin-right: 4px; }
 .tr .small-btn { font-size: 12px; padding: 5px 10px; }
 .list { display: grid; gap: 6px; }
 .lrow { display: grid; grid-template-columns: auto 1fr; gap: 0 12px; align-items: baseline; text-align: left; border: 1px solid var(--line); border-left-width: 4px; background: var(--surface); border-radius: 10px; padding: 8px 12px; }
@@ -1463,6 +1470,18 @@ function vocabScreen(it, tags) {
     bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
 }
 
+// Ordering task: readings and meanings of the words in a chunk, shown only when asked for.
+function chunkGl(o, i) {
+  const words = (o.cgl || [])[i] || [];
+  return words.length ? `<span class="cgl">${words.map(([w, r, m]) => `${esc(w)}${r && r !== w ? ` <b>${esc(r)}</b>` : ''} · ${esc(m.split(';')[0])}`).join('<br>')}</span>` : '';
+}
+// After answering: why each wrong option doesn't fit, the one you picked first.
+function wrongsHtml(f, chosen) {
+  const w = f.wrong || {};
+  const idx = f.choices.map((_, i) => i).filter(i => i !== f.answer && w[f.choices[i]])
+    .sort((a, b) => (b === chosen) - (a === chosen));
+  return idx.length ? `<div class="wrongs">${idx.map(i => `<div class="${i === chosen ? 'picked' : ''}"><b lang="ja">${esc(f.choices[i])}</b>${esc(w[f.choices[i]])}</div>`).join('')}</div>` : '';
+}
 // The question's English: behind a button until you answer, then shown.
 function trHtml(it, en, answered) {
   if (!en) return '';
@@ -1484,7 +1503,8 @@ function grammarScreen(it, tags) {
         return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
       }).join('')}</div>
       ${trHtml(it, f.en, answered)}
-      ${answered ? `<div class="why">${esc(f.why)} ${sayBtn(f.q.replace('（　）', f.choices[f.answer]))}</div>` : ''}`;
+      ${answered ? `<div class="why">${esc(f.why)} ${sayBtn(f.q.replace('（　）', f.choices[f.answer]))}</div>` : ''}
+      ${answered ? wrongsHtml(f, it.chosen) : ''}`;
     return { inner: { front, back: answered ? grammarBackHtml(g, true) : '' },
       bar: answered ? cont : `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Choose what fits （　）</span></div>` };
   }
@@ -1500,8 +1520,9 @@ function grammarScreen(it, tags) {
   const front = `<div class="g-q order" lang="ja"><span>${glossHtml(o.before)}</span>${slots}<span>${glossHtml(o.after)}</span></div>
     ${answered ? '' : trHtml(it, o.en, false)}
     ${answered ? `<div class="why">${esc(o.en)} ${sayBtn(o.before + o.chunks.join('') + o.after)}</div>` :
-      `<div class="opts chunks">${st.pool.map((p, j) => `<button class="opt" data-chunk="${j}" lang="ja">${esc(p.c)}</button>`).join('')}</div>
-       <div class="prompt">Tap the parts in order. Tap a filled slot to take it back.</div>`}`;
+      `<div class="opts chunks">${st.pool.map((p, j) => `<button class="opt${it.showGl ? ' with-gl' : ''}" data-chunk="${j}" lang="ja">${esc(p.c)}${it.showGl ? chunkGl(o, p.i) : ''}</button>`).join('')}</div>
+       <div class="prompt">Tap the parts in order. Tap a filled slot to take it back.</div>
+       ${(o.cgl || []).some(x => x.length) && !it.showGl ? '<div class="tr"><button class="small-btn" id="g-cgl">Show readings &amp; meanings</button></div>' : ''}`}`;
   return { inner: { front, back: answered ? grammarBackHtml(g, true) : '' }, bar: answered ? cont : '<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Fill all four slots</span></div>' };
 }
 
@@ -1667,6 +1688,7 @@ document.addEventListener('click', e => {
     case 'a-reveal': session.revealed = true; return renderSession();
     case 'r-more': session.paused = false; return renderSession();
     case 'g-tr': session.queue[session.i].showTr = true; return renderSession();
+    case 'g-cgl': session.queue[session.i].showGl = true; return renderSession();
     case 'a-continue': { const it = session.queue[session.i]; return grade(it.correct ? 3 : 1); }
     case 'a-learned': {
       const it = session.queue[session.i];

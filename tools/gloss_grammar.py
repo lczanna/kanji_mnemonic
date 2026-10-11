@@ -218,6 +218,13 @@ def main():
                 gl[t] = words
                 n += len(words)
         g['gl'] = gl
+        # Ordering task: readings and meanings per chunk, glossed in the finished sentence so they fit the context.
+        o = g['order']
+        full, spans, at = o['before'] + ''.join(o['chunks']) + o['after'], [], len(o['before'])
+        for c in o['chunks']:
+            spans.append((at, at + len(c))); at += len(c)
+        words = gloss_sentence(full, jm)
+        o['cgl'] = [[[w[3], w[4], w[5]] for w in words if a <= w[0] and w[0] + w[1] <= b] for a, b in spans]   # dictionary form, its reading, meaning
     path.write_text(json.dumps(deck, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
     print(f'{n} glossed words across {len(deck)} grammar points')
 
