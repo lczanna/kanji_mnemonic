@@ -11,8 +11,12 @@ Needs OPENAI_API_KEY (or OPENAI_KEY), either in the environment or in the repo's
   python3 tools/gen_images.py --all --quality medium # every card without a new image
   python3 tools/gen_images.py --kanji 況只閉          # specific cards
   python3 tools/gen_images.py --leeches progress.json # cards you've missed 3+ times (from More → Download progress)
+  python3 tools/gen_images.py --words                # every word with a memory hook (vocab.json "mn") but no picture
+  python3 tools/gen_images.py --word 賃貸,桜          # specific words
+
+Word pictures go to images/words/<word id>.jpg and vocab.json gets "img".
 """
-import argparse, base64, io, json, os, sys, time, urllib.request, urllib.error
+import argparse, base64, io, json, os, re, sys, time, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from PIL import Image
@@ -20,6 +24,8 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 DECK = ROOT / 'kanji.json'
 OUT = ROOT / 'images' / 'n3'
+VOCAB = ROOT / 'vocab.json'
+WOUT = ROOT / 'images' / 'words'
 API = 'https://api.openai.com/v1'
 # Newest first; the first one this key can use is picked.
 MODELS = ['gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2', 'gpt-image-1.5', 'gpt-image-1']
@@ -120,25 +126,36 @@ def prompt(card):
             f"The idea to convey is '{card['keyword']}'." + (f" Make sure {cast} is clearly visible doing what the scene says." if cast else ''))
 
 
+def word_prompt(v):
+    """Picture for a word's memory hook: the sound-alike scene, with the meaning as the idea."""
+    hook = re.sub(r'\s*\([^)]*[\u3040-\u30ff\u4e00-\u9fff][^)]*\)', '', v['mn'])   # drop (かな) reading notes
+    return (f"{STYLE}\n\nScene: {depict(plain(hook))}\n"
+            f"The idea to convey is '{v['m'].split(';')[0].split(',')[0]}'. Show the scene literally, as one memorable moment; "
+            "if someone speaks, show it through expression and gesture, never a speech bubble.")
+
+
 def generate(card, model, quality, suffix=''):
-    name = f"u{ord(card['kanji']):04x}{suffix}.jpg"
-    path = OUT / name
+    if 'w' in card:   # a vocab entry
+        name, out, text, key = f"{card['id']}.jpg", WOUT, word_prompt(card), card['w']
+    else:
+        name, out, text, key = f"u{ord(card['kanji']):04x}{suffix}.jpg", OUT, prompt(card), card['kanji']
+    path = out / name
     for attempt in range(3):
         try:
-            res = call('/images/generations', {'model': model, 'prompt': prompt(card), 'size': '1536x1024', 'quality': quality, 'n': 1})
+            res = call('/images/generations', {'model': model, 'prompt': text, 'size': '1536x1024', 'quality': quality, 'n': 1})
             img = Image.open(io.BytesIO(base64.b64decode(res['data'][0]['b64_json']))).convert('RGB')
             img = img.resize((480, 320), Image.LANCZOS)
             img.save(path, 'JPEG', quality=80, optimize=True)
-            return card['kanji'], f'images/n3/{name}', None
+            return key, f'images/{out.name}/{name}', None
         except urllib.error.HTTPError as e:
             err = e.read().decode()[:300]
             if e.code in (429, 500, 502, 503) and attempt < 2:
                 time.sleep(10 * (attempt + 1)); continue
-            return card['kanji'], None, f'HTTP {e.code}: {err}'
+            return key, None, f'HTTP {e.code}: {err}'
         except Exception as e:  # network hiccup
             if attempt < 2:
                 time.sleep(5); continue
-            return card['kanji'], None, str(e)
+            return key, None, str(e)
 
 
 def main():
@@ -147,6 +164,8 @@ def main():
     g.add_argument('--test', action='store_true', help='10 cards at medium and high quality, saved side by side')
     g.add_argument('--all', action='store_true', help='every card that has no images/n3 picture yet')
     g.add_argument('--kanji', help='specific kanji, e.g. 況只閉')
+    g.add_argument('--words', action='store_true', help='every word with a memory hook but no picture yet')
+    g.add_argument('--word', help='specific words, comma-separated, e.g. 賃貸,桜')
     g.add_argument('--leeches', metavar='PROGRESS_JSON', help='cards missed 3+ times, from a progress download')
     ap.add_argument('--quality', default='medium', choices=['low', 'medium', 'high'])
     ap.add_argument('--workers', type=int, default=4)
@@ -159,7 +178,16 @@ def main():
     model = pick_model()
     print('model:', model)
 
-    if a.test:
+    vocab = json.loads(VOCAB.read_text(encoding='utf8'))
+    by_word = {v['w']: v for v in vocab}
+    WOUT.mkdir(parents=True, exist_ok=True)
+
+    if a.words or a.word:
+        hooked = [v for v in vocab if v.get('mn')]
+        chosen = [v for v in hooked if not v.get('img')] if a.words else [by_word[w] for w in a.word.split(',') if w in by_word and by_word[w].get('mn')]
+        chosen.sort(key=lambda v: v.get('p', 9999))   # most useful words first
+        jobs = [(v, a.quality, '') for v in chosen]
+    elif a.test:
         chosen = [by[k] for k in TEST_SET if k in by]
         jobs = [(c, q, '-' + q) for c in chosen for q in ('medium', 'high')]
     else:
@@ -180,11 +208,15 @@ def main():
                 failed.append((k, err)); print('FAIL', k, err)
             else:
                 done += 1
-                if not a.test:
+                if a.words or a.word:
+                    by_word[k]['img'] = rel
+                elif not a.test:
                     by[k]['image'] = rel
                 print(f'{done}/{len(jobs)}', k, rel)
 
-    if not a.test:
+    if a.words or a.word:
+        VOCAB.write_text(json.dumps(vocab, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
+    elif not a.test:
         DECK.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
     print(f'done: {done}, failed: {len(failed)}')
     if a.test:
