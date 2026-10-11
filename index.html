@@ -668,7 +668,7 @@ function renderSession() {
   } else {
     const c = appData.cards[k.kanji];
     const preview = g => {
-      if (!c) return g === 1 ? 'today' : FSRS.interval(FSRS.initS(g), appData.settings.retention) + 'd';
+      if (!c) return g === 1 ? 'today' : g < 4 ? 'tomorrow' : Math.min(maxInterval(), FSRS.interval(FSRS.initS(g), appData.settings.retention)) + 'd';
       return '';
     };
     bar = `<div class="row">

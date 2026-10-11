@@ -1,47 +1,39 @@
-# 🎴 Kanji Mnemonic Cards
+# N3 Kanji Sprint
 
-Visual flashcards for learning Japanese kanji using AI-powered cognitive mnemonics.
+A spaced-repetition app for learning the ~612 kanji needed for JLPT N3, using Heisig-style stories plus reading hooks.
 
-## 🌐 Live Demo
+**Live:** https://lczanna.github.io/kanji_mnemonic/
 
-Visit: **https://lczanna.github.io/kanji_mnemonic/**
+## How it works
 
-## ✨ Features
+- **Deck order:** N5 → N4 → N3. Within each level, the most frequent kanji come first, in groups of about 60. Inside a group the order follows Heisig (RTK), so parts are learned before the kanji built from them.
+- **Each card has:**
+  - the Heisig keyword
+  - a bizarre story built from named parts
+  - a *sound cast* hook for the reading the exam uses
+  - 2–3 real JLPT words, with readings checked against JMdict
+- **Sound cast:** every on'yomi is played by one recurring character (ショウ = Showman, カン = Kangaroo). Voiced readings are that character's "muddy cousin": mud stands for ゛. The full list is in the app under More → Sound cast.
+- **Studying:**
+  - New cards are learned, quizzed again a few cards later, then checked the next day.
+  - Reviews come in order of the lowest recall chance first (FSRS-4.5).
+  - Mature cards alternate between the bare kanji and exam-style word reading (e.g. read 学習).
+  - No interval runs past exam week.
+- **Triage:** one quick pass marks kanji you already know, so the daily plan only counts what's left.
+- **Backup:** progress is stored in the browser. Use More → Back up progress to move it between devices.
 
-- 🎨 **150 Trading Card-Style Cards** - AI-generated illustrations using GPT Image 1.5
-- 🧠 **Cognitive Science-Based Mnemonics** - Bizarre imagery for maximum retention
-- 🔄 **Interactive Flip Cards** - Tap to reveal meanings and mnemonics
-- 📱 **Mobile-Friendly** - Works great on phones and tablets
-- 🖨️ **Print-Ready** - Print your own physical flashcards
+## Files
 
-## 📚 What's Included
+| File | Contents |
+|---|---|
+| `index.html` | The app (no build step) |
+| `kanji.json` | The deck: cards, sound cast |
+| `images/` | Illustrations (93 cards have one so far) |
+| `data/sound_cast.json`, `data/primitives.json` | Shared hook and part names used to write stories |
+| `optimize_images.py` | Resizes generated images to 480×320 JPEG |
+| `index_original.html`, `kanji_srs_app.html` | Earlier versions, kept for reference |
 
-Each card contains:
-- Large kanji character
-- AI-generated mnemonic image
-- English meaning
-- On'yomi and kun'yomi readings
-- Component primitives/radicals
-- Memorable story using bizarreness effect
+Run locally: `python3 -m http.server`, then open http://localhost:8000. Opening `index.html` straight from disk won't load the deck.
 
-## 🎯 How to Use
+## Sources
 
-1. **Browse**: Scroll through the cards
-2. **Flip**: Tap/click any card to reveal the mnemonic
-3. **Learn**: Use the bizarre stories to remember each kanji
-4. **Practice**: Flip all cards to test yourself
-
-## 🔧 Built With
-
-- [Claude API](https://www.anthropic.com/api) - Mnemonic generation
-- [OpenAI GPT Image 1.5](https://platform.openai.com/) - Image generation
-- [Jisho.org](https://jisho.org/) - Kanji readings
-- [Remembering the Kanji](https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi) - Dataset
-
-## 📄 License
-
-For educational use.
-
----
-
-Generated with [Claude Code](https://claude.com/claude-code) ✨
+Kanji levels, frequency and WaniKani parts come from [kanji-data](https://github.com/davidluzgouveia/kanji-data). Heisig keywords come from [kanjiapi.dev](https://kanjiapi.dev). RTK frame numbers come from [KANJIDIC2](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project). JLPT vocabulary comes from [open-anki-jlpt-decks](https://github.com/jamsinclair/open-anki-jlpt-decks). Readings were checked against [JMdict](https://www.edrdg.org/jmdict/j_jmdict.html). Stories were written for this deck.
