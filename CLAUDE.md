@@ -28,5 +28,5 @@ and moves parts ahead of the kanji that use them. Progress is keyed by kanji, so
 
 The Claude link holds at most 512 files, so it gets the pictures as packs, not one file per card:
 run `python3 tools/pack_images.py <scratch dir>` and publish `images/packs/*` (built, not committed)
-together with `index.html`, `kanji.json`, `vocab.json` and `grammar.json`. Don't publish `images/n3/`.
+together with `index.html`, `kanji.json`, `vocab.json`, `grammar.json` and `examples.json`. Don't publish `images/n3/`.
 The app tries `images/n3/` first and falls back to the packs, so GitHub Pages needs nothing extra.

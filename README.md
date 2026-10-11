@@ -34,7 +34,9 @@ A spaced-repetition app for JLPT N3 with three decks:
   - The daily pace recalculates after a missed day, and "Busy day: reviews only" keeps your memory intact on short days.
   - Target recall rises to 95% in the last 14 days, and "Weak spots" drills the 40 cards you're most likely to forget.
 - **Exam formats:** 漢字読み multiple choice uses trap answers (long vowels, small っ, ゛), alongside 表記, fill-in-the-blank and ★ ordering. The listening drill plays words and sentences you've studied.
-- **Reading help:** every word with kanji in a grammar sentence can be tapped for its reading, dictionary form and meaning. Readings come from Sudachi, meanings from JMdict.
+- **Reading help:** every word with kanji in a grammar or example sentence can be tapped for its reading, dictionary form and meaning. Readings come from Sudachi; meanings come from JMdict, matched on spelling and reading.
+- **Translations:** every grammar question has its English behind a "Show translation" button, shown automatically once you answer.
+- **Words in context:** word cards show 2–3 short example sentences that only use kanji from the deck.
 - **Look back:** during a session, ‹ or swipe right shows the cards you just did.
 - **Saving:**
   - On the Claude link, progress syncs to your private storage on claude.ai and works across devices.
@@ -54,6 +56,8 @@ A spaced-repetition app for JLPT N3 with three decks:
 | `tools/build_parts.py` | Records what each story part is made of and reorders the deck so parts come first (needs CHISE `ids.txt`) |
 | `tools/pack_images.py` | Bundles the pictures into ~20 packs for the Claude link, which caps its file count |
 | `tools/gen_images.py` | Generates card illustrations from the current stories (needs `OPENAI_API_KEY`) |
+| `examples.json` | 2–3 example sentences per word (Tanaka corpus, CC-BY), with tap-to-read glosses |
+| `tools/build_examples.py` | Builds `examples.json` from `examples.utf` and JMdict |
 | `tools/gloss_grammar.py` | Builds the tap-to-read glosses in `grammar.json` |
 | `optimize_images.py` | Resizes generated images to 480×320 JPEG |
 | `index_original.html`, `kanji_srs_app.html` | Earlier versions, kept for reference |

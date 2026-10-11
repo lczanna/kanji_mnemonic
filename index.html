@@ -260,6 +260,8 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .slot.wrong { border: 1px solid var(--again); background: color-mix(in srgb, var(--again) 14%, var(--surface)); }
 .slot .star { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--hard); }
 .why { font-size: 14px; color: var(--muted); width: 100%; display: flex; gap: 8px; align-items: center; }
+.tr { width: 100%; font-size: 14px; color: var(--ink); }
+.tr .small-btn { font-size: 12px; padding: 5px 10px; }
 .list { display: grid; gap: 6px; }
 .lrow { display: grid; grid-template-columns: auto 1fr; gap: 0 12px; align-items: baseline; text-align: left; border: 1px solid var(--line); border-left-width: 4px; background: var(--surface); border-radius: 10px; padding: 8px 12px; }
 .lrow .w { font-family: var(--font-kanji); font-weight: 800; font-size: 20px; }
@@ -315,6 +317,7 @@ let VOCAB = [], BY_WORD = {};      // words (vocab.json)
 let GRAMMAR = [], BY_GID = {};     // grammar (grammar.json)
 let GL = {};                       // sentence → tappable words [start, length, reading, lemma, lemmaReading, meaning]
 let CAST = {}, CAST_NOTE = '';
+let EXAMPLES = {};                 // word → [[japanese, english, glosses], ...] (examples.json, loaded after start)
 let PARTS = {};                    // story part name → {g: glyph, of: [part names]} (tools/build_parts.py)
 const TYPES = ['kanji', 'vocab', 'grammar'];
 const TYPE_LABEL = { kanji: 'Kanji', vocab: 'Words', grammar: 'Grammar' };
@@ -799,6 +802,8 @@ function vocabBackHtml(v) {
     <div class="word-head">${head}</div>
     <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
     ${f === 'mixed' ? `<p class="g-note">Written <span lang="ja" class="kform">${esc(v.w)}</span>. Its kanji are above N3, so the exam normally prints this word in kana: know the sound and the meaning.</p>` : ''}
+    ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en]) => `
+      <div class="ex"><div class="ja" lang="ja">${glossHtml(ja)} ${sayBtn(ja)}</div><div class="en">${esc(en)}</div></div>`).join('')}</div></div>` : ''}
     ${v.k.length ? `<div><div class="section-label">${f === 'kanji' ? 'Built from' : 'Contains'}</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
       return `<button class="part" data-k="${esc(ch)}" data-kt="${esc(ch)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${k && k.sound && k.sound[0] ? ` · <span lang="ja">${esc(k.sound[0].r)}</span> ${esc(k.sound[0].hook)}` : ''}</span></button>`; }).join('')}</div></div>` : ''}
   </div>`;
@@ -1311,6 +1316,11 @@ function vocabScreen(it, tags) {
     bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
 }
 
+// The question's English: behind a button until you answer, then shown.
+function trHtml(it, en, answered) {
+  if (!en) return '';
+  return `<div class="tr">${answered || it.showTr ? `<span class="muted">EN</span> ${esc(en)}` : '<button class="small-btn" id="g-tr">Show translation</button>'}</div>`;
+}
 function grammarScreen(it, tags) {
   const g = it.x;
   tags.push('<span class="tag">GRAMMAR</span>');
@@ -1326,6 +1336,7 @@ function grammarScreen(it, tags) {
         const cls = !answered ? '' : i === f.answer ? ' right' : i === it.chosen ? ' wrong' : ' dim';
         return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
       }).join('')}</div>
+      ${trHtml(it, f.en, answered)}
       ${answered ? `<div class="why">${esc(f.why)} ${sayBtn(f.q.replace('（　）', f.choices[f.answer]))}</div>` : ''}`;
     return { inner: { front, back: answered ? grammarBackHtml(g, true) : '' },
       bar: answered ? cont : `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Choose what fits （　）</span></div>` };
@@ -1340,6 +1351,7 @@ function grammarScreen(it, tags) {
     return `<button class="slot${p ? ' filled' : ''}${answered ? (st.picked[i] && st.picked[i].i === i ? ' right' : ' wrong') : ''}" data-slot="${i}" ${answered ? 'disabled' : ''} lang="ja">${star}${answered ? esc(correctChunk) : p ? esc(p.c) : '＿＿'}</button>`;
   }).join('');
   const front = `<div class="g-q order" lang="ja"><span>${glossHtml(o.before)}</span>${slots}<span>${glossHtml(o.after)}</span></div>
+    ${answered ? '' : trHtml(it, o.en, false)}
     ${answered ? `<div class="why">${esc(o.en)} ${sayBtn(o.before + o.chunks.join('') + o.after)}</div>` :
       `<div class="opts chunks">${st.pool.map((p, j) => `<button class="opt" data-chunk="${j}" lang="ja">${esc(p.c)}</button>`).join('')}</div>
        <div class="prompt">Tap the parts in order. Tap a filled slot to take it back.</div>`}`;
@@ -1487,6 +1499,7 @@ document.addEventListener('click', e => {
     case 'hide-home-tip': appData.hideHomeTip = true; saveData(); return render();
     case 's-close': case 's-finish': return closeSheet();
     case 'a-reveal': session.revealed = true; return renderSession();
+    case 'g-tr': session.queue[session.i].showTr = true; return renderSession();
     case 'a-continue': { const it = session.queue[session.i]; return grade(it.correct ? 3 : 1); }
     case 'a-learned': {
       const it = session.queue[session.i];
@@ -1646,6 +1659,12 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   for (const g of GRAMMAR) Object.assign(GL, g.gl || {});
   render();
   initSync();
+  // Example sentences for words are large, so they load after the app is already usable.
+  getJson('examples.json', true).then(ex => {
+    if (!ex || Array.isArray(ex)) return;
+    EXAMPLES = ex;
+    for (const list of Object.values(ex)) for (const [ja, , gl] of list) if (gl && gl.length) GL[ja] = gl;
+  });
 }).catch(() => {
   $('app').innerHTML = '<div class="loading">The deck file (kanji.json) did not load. If you opened this file directly from disk, serve the folder instead: python3 -m http.server</div>';
 });

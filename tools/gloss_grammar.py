@@ -13,9 +13,12 @@ from pathlib import Path
 from sudachipy import dictionary, tokenizer
 
 ROOT = Path(__file__).resolve().parent.parent
-TOK = dictionary.Dictionary().create()
+TOK = dictionary.Dictionary().tokenizer()
 MODE = tokenizer.Tokenizer.SplitMode.C
-OVERRIDE = {'日本': 'にほん'}   # Sudachi prefers にっぽん
+OVERRIDE = {'日本': 'にほん', '込む': 'こむ'}   # Sudachi prefers にっぽん, and reads 込む alone as ごむ
+# Single kanji used as suffixes, where the dictionary's first sense misleads in a sentence.
+MEANING = {('日', 'にち'): 'day (counter)', ('中', 'ちゅう'): 'during; in the middle of', ('背', 'せ'): 'height; stature; back',
+           ('寺', 'じ'): '... Temple (in names)', ('大丈夫', 'だいじょうぶ'): "all right; OK; safe"}
 HAS_KANJI = re.compile(r'[一-鿿々]')
 
 
@@ -24,17 +27,31 @@ def hira(s):
 
 
 def load_jmdict(path):
+    """Meanings keyed by (spelling, reading) and by spelling alone. Many spellings have several
+    entries (字 is じ "character" and あざ "village section"), so the reading picks the right one;
+    by spelling alone, the common entry wins."""
     x = gzip.open(path).read().decode()
-    gloss = {}
+    by_pair, by_keb = {}, {}
     for ent in re.finditer(r'<entry>(.*?)</entry>', x, re.S):
         e = ent.group(1)
-        sense = re.search(r'<sense>(.*?)</sense>', e, re.S)
-        if not sense:
+        senses = [re.findall(r'<gloss>([^<]+)</gloss>', x) for x in re.findall(r'<sense>(.*?)</sense>', e, re.S)]
+        if not senses or not senses[0]:
             continue
-        g = '; '.join(re.findall(r'<gloss>([^<]+)</gloss>', sense.group(1))[:3])
+        # The first sense is often not the everyday one (運転 "operation" before "driving"), so add the
+        # start of the second sense too.
+        g = '; '.join(senses[0][:2] + (senses[1][:1] if len(senses) > 1 and senses[1] else []))
+        common = '_pri>' in e
         for k in re.findall(r'<keb>([^<]+)</keb>', e):
-            gloss.setdefault(k, g)
-    return gloss
+            for r in re.findall(r'<reb>([^<]+)</reb>', e):
+                if (k, r) not in by_pair or common and not by_pair[(k, r)][1]:
+                    by_pair[(k, r)] = (g, common)
+            if k not in by_keb or common and not by_keb[k][1]:
+                by_keb[k] = (g, common)
+    return {'pair': {k: v[0] for k, v in by_pair.items()}, 'keb': {k: v[0] for k, v in by_keb.items()}}
+
+
+def meaning_of(jm, word, reading):
+    return MEANING.get((word, reading)) or jm['pair'].get((word, reading)) or jm['keb'].get(word)
 
 
 def reading_of(word):
@@ -50,8 +67,8 @@ def potential(lemma, jm):
     # Sudachi keeps potential verbs as their own lemma (書ける); fall back to the base verb (書く).
     if len(lemma) >= 2 and lemma.endswith('る') and lemma[-2] in E_TO_U:
         base = lemma[:-2] + E_TO_U[lemma[-2]]
-        if base in jm:
-            return 'can ' + jm[base].split(';')[0].replace('to ', '', 1)
+        if base in jm['keb']:
+            return 'can ' + jm['keb'][base].split(';')[0].replace('to ', '', 1)
     return ''
 
 
@@ -65,8 +82,9 @@ def gloss_sentence(text, jm):
             continue
         lemma = m.dictionary_form()
         r = OVERRIDE.get(s) or hira(m.reading_form())
-        meaning = jm.get(lemma) or jm.get(s) or potential(lemma, jm)
-        out.append([start, len(s), r, lemma, reading_of(lemma) if lemma != s else r, meaning[:60]])
+        lr = reading_of(lemma) if lemma != s else r
+        meaning = meaning_of(jm, lemma, lr) or meaning_of(jm, s, r) or potential(lemma, jm)
+        out.append([start, len(s), r, lemma, lr, meaning[:60]])
     return out
 
 
