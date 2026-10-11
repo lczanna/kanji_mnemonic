@@ -3,7 +3,7 @@
 A spaced-repetition app for JLPT N3 with three decks:
 
 - **漢字 Kanji:** the ~612 N3 kanji, with Heisig-style stories and reading hooks.
-- **語彙 Words:** 947 N3 words. Each word unlocks once you've learned its kanji.
+- **語彙 Words:** 2,096 N3 words, almost the full list. 947 use kanji from the deck and unlock once you've learned those kanji. 911 use kanji above N3 and 238 are written only in kana; these are studied by sound and meaning, the way the exam prints them.
 - **文法 Grammar:** 114 N3 grammar points, quizzed in the exam's own formats.
 
 **Live:** https://lczanna.github.io/kanji_mnemonic/
@@ -23,7 +23,7 @@ A spaced-repetition app for JLPT N3 with three decks:
   - Mature cards alternate between the bare kanji and exam-style word reading (e.g. read 学習).
   - No interval runs past exam week.
 - **Triage:** one quick pass marks kanji you already know, so the daily plan only counts what's left.
-- **Words:** reviews alternate between 漢字読み (read the word aloud) and 表記 (pick the correct kanji spelling from same-sound look-alikes). Readings were checked against JMdict. Words whose kanji fall outside the deck, and kana-only words, are not included yet.
+- **Words:** reviews alternate between 漢字読み (read the word aloud) and 表記 (pick the correct kanji spelling from same-sound look-alikes). Kana-only and above-N3 words are quizzed as 意味 (hear or see the kana, recall the meaning), with the kanji spelling shown on the back. Readings were checked against JMdict.
 - **Grammar:** each point has a meaning, formation, nuance note and examples. Quizzes alternate between fill-in-the-blank （　） and ★ sentence ordering. The sentences were written for this deck and have not had a native-speaker review; report anything that sounds off.
 - **Audio:** ▶ buttons use the phone's built-in Japanese voice.
 - **Backup:** progress is stored in the browser. Use More → Back up progress to move it between devices.
@@ -34,7 +34,7 @@ A spaced-repetition app for JLPT N3 with three decks:
 |---|---|
 | `index.html` | The app (no build step) |
 | `kanji.json` | Kanji deck and sound cast |
-| `vocab.json` | Words deck (`k` = kanji in the word, `d` = 表記 distractors) |
+| `vocab.json` | Words deck (`f` = kanji / mixed / kana, `k` = deck kanji in the word, `d` = 表記 distractors) |
 | `grammar.json` | Grammar deck |
 | `images/` | Illustrations (93 cards have one so far) |
 | `data/sound_cast.json`, `data/primitives.json` | Shared hook and part names used to write stories |

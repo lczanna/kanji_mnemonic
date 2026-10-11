@@ -225,6 +225,8 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .say { border: 1px solid var(--line); background: var(--surface); color: var(--ai); border-radius: 999px; width: 28px; height: 28px; font-size: 11px; display: inline-grid; place-items: center; vertical-align: middle; padding: 0; }
 .word-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
 .word-head .w { font-family: var(--font-kanji); font-weight: 800; font-size: 44px; line-height: 1.1; }
+.word-head .w.kana { font-family: var(--font-body); font-weight: 700; font-size: 36px; }
+.kform { font-family: var(--font-kanji); font-weight: 800; color: var(--ink); font-size: 16px; }
 .word-head .rd { font-size: 20px; color: var(--ai); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
 .parts { display: grid; gap: 6px; }
 .part { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 6px 10px; font-size: 13px; color: var(--muted); }
@@ -234,7 +236,7 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .examples { display: grid; gap: 10px; }
 .ex .ja { font-size: 17px; line-height: 1.6; }
 .ex .en { font-size: 13px; color: var(--muted); }
-.word-front.kana { font-family: var(--font-body); font-weight: 700; }
+.word-front.kana { font-family: var(--font-body); font-weight: 700; white-space: nowrap; max-width: 100%; }
 .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
 .opt { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 12px; font-size: 20px; font-family: var(--font-kanji); font-weight: 800; text-align: left; min-width: 0; }
 .opt .num { font-family: var(--font-body); font-size: 12px; font-weight: 700; color: var(--muted); border: 1px solid var(--line); border-radius: 50%; width: 22px; height: 22px; display: inline-grid; place-items: center; flex: none; }
@@ -324,7 +326,7 @@ const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
   return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
-           settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: '20', grammarPerDay: '3', retention: 0.9 } };
+           settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: '25', grammarPerDay: '3', retention: 0.9 } };
 }
 function loadData() {
   let d = null;
@@ -403,7 +405,9 @@ function recall(c) {
 }
 // A word unlocks once every kanji in it has passed its next-day check (or was marked as already known).
 function kanjiReady(ch) { const c = appData.cards[ch]; return !!c && (c.triaged || (c.reps || 0) >= 2); }
-function unlocked(type, x) { return type !== 'vocab' || x.k.every(kanjiReady); }
+// Kana-only words and words with kanji above N3 are studied by sound and meaning, so they never wait on kanji.
+function vform(v) { return v.f || 'kanji'; }
+function unlocked(type, x) { return type !== 'vocab' || vform(x) !== 'kanji' || x.k.every(kanjiReady); }
 function unseenOf(type) { return deckOf(type).filter(x => !appData.cards[keyOf(type, x)]); }
 function unseen() { return unseenOf('kanji'); }
 function dueOf(type) {
@@ -443,6 +447,8 @@ function storyHtml(s) {
 function kata2hira(s) { return s.replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60)); }
 function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 const $ = id => document.getElementById(id);
+// Kana prompts are sized to the word so they stay on one line on a phone.
+function kanaSize(t) { return `font-size:${Math.max(26, Math.min(56, Math.floor(270 / t.length)))}px`; }
 
 // Audio uses the phone's own Japanese voice. Nothing is sent anywhere.
 let jaVoice = null;
@@ -489,12 +495,16 @@ function backHtml(k, mode) {
   </div>`;
 }
 function vocabBackHtml(v) {
+  const f = vform(v);
+  const head = f === 'kanji'
+    ? `<span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(v.r, 'Play ' + v.w)}</span>`
+    : `<span class="w kana" lang="ja">${esc(v.r)}</span><span class="rd" lang="ja">${sayBtn(v.r, 'Play ' + v.r)}</span>`;
   return `<div class="back">
-    <div class="word-head"><span class="w" lang="ja">${esc(v.w)}</span>
-      <span class="rd" lang="ja">${esc(v.r)} ${sayBtn(v.r, 'Play ' + v.w)}</span></div>
+    <div class="word-head">${head}</div>
     <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
-    <div><div class="section-label">Built from</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
-      return `<button class="part" data-k="${esc(ch)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${k && k.sound && k.sound[0] ? ` · <span lang="ja">${esc(k.sound[0].r)}</span> ${esc(k.sound[0].hook)}` : ''}</span></button>`; }).join('')}</div></div>
+    ${f === 'mixed' ? `<p class="g-note">Written <span lang="ja" class="kform">${esc(v.w)}</span>. Its kanji are above N3, so the exam normally prints this word in kana: know the sound and the meaning.</p>` : ''}
+    ${v.k.length ? `<div><div class="section-label">${f === 'kanji' ? 'Built from' : 'Contains'}</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
+      return `<button class="part" data-k="${esc(ch)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${k && k.sound && k.sound[0] ? ` · <span lang="ja">${esc(k.sound[0].r)}</span> ${esc(k.sound[0].hook)}` : ''}</span></button>`; }).join('')}</div></div>` : ''}
   </div>`;
 }
 function grammarBackHtml(g, compact) {
@@ -732,7 +742,7 @@ function quizItem(type, x) {
   }
   if (type === 'vocab') {
     // Alternate exam tasks: 漢字読み (read the kanji word) and 表記 (pick the right kanji spelling).
-    const task = reps >= 1 && x.d && x.d.length === 3 && reps % 2 === 1 ? 'spell' : 'read';
+    const task = vform(x) !== 'kanji' ? 'meaning' : reps >= 1 && x.d && x.d.length === 3 && reps % 2 === 1 ? 'spell' : 'read';
     return { type, x, mode: 'quiz', task, opts: task === 'spell' ? shuffle([x.w, ...x.d]) : null };
   }
   // Grammar: mostly fill-in-the-blank, every third review a ★ sentence-ordering task.
@@ -847,13 +857,20 @@ function vocabScreen(it, tags) {
   if (it.task === 'spell') {
     tags.push('<span class="tag">表記 · PICK THE KANJI</span>');
     const answered = session.revealed;
-    const front = `<div class="word-front kana" lang="ja">${esc(v.r)}</div><div class="prompt">${esc(v.m)}</div>
+    const front = `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">${esc(v.m)}</div>
       <div class="opts">${it.opts.map((o, i) => {
         const cls = !answered ? '' : o === v.w ? ' right' : i === it.chosen ? ' wrong' : ' dim';
         return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
       }).join('')}</div>`;
     return { inner: { front, back: answered ? vocabBackHtml(v) : '' },
       bar: answered ? `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : 'Missed · it will come back'}</button></div>` : `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Choose the correct spelling</span></div>` };
+  }
+  if (it.task === 'meaning') {
+    tags.push('<span class="tag">意味 · WHAT DOES IT MEAN?</span>');
+    if (session.revealed) setTimeout(() => speak(v.r), 50);
+    const front = session.revealed ? '' : `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">Say what it means, then tap to check. ${sayBtn(v.r, 'Play ' + v.r)}</div>`;
+    return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
+      bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
   }
   tags.push('<span class="tag">漢字読み · READ IT</span>');
   const front = session.revealed ? '' : `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">Say the reading and meaning, then tap to check.</div>`;
