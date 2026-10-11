@@ -102,6 +102,8 @@ DEPICT = {
     'Kawasaki': 'green sport',
     'Yamaha': 'grand',
     'Tater Tots': 'crispy potato nuggets',
+    'Heigh-Ho dwarf': 'a cheerful bearded little miner with a pickaxe on his shoulder',
+    'Mad Hatter': 'an eccentric man in an enormous top hat',
 }
 # Hooks that are a brand or place, not a character: the story already shows them.
 NOT_CAST = {'Kawasaki', 'Yamaha', 'Tater Tots', 'more doors'}
