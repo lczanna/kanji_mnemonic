@@ -1,0 +1,995 @@
+{
+ "_convention": "Every on'yomi is played by one recurring character whose English name starts with or clearly contains that sound (ショウ = Showman, カン = Kangaroo): long readings ending in ウ/イ get a stretched vowel (コ Collie vs コウ Coach, ケ Kettle vs ケイ Cake), and endings in ク/ツ/ッ/キ/チ keep that consonant (コク Cockatoo, ジツ Jiu-jitsu fighter). Voiced readings (゛) use a sound-alike 'muddy cousin' of the unvoiced character, always shown splattered with two drops of mud like the two ゛ dots and, where possible, sharing its scene (シ Sheep / ジ Jeep, ショウ Showman / ジョウ Joker, コウ Coach / ゴウ Goalie, セン Sensei / ゼン Zen monk, ヒ Hippo / ビ Beaver), so mud always means ゛.",
+ "カ": {
+  "hook": "Car",
+  "emoji": "🚗"
+ },
+ "ガ": {
+  "hook": "Garage",
+  "emoji": "🏚️"
+ },
+ "カイ": {
+  "hook": "Kaiser (spike-helmet emperor)",
+  "emoji": "🪖"
+ },
+ "ガイ": {
+  "hook": "Guy Fawkes",
+  "emoji": "🎭"
+ },
+ "カク": {
+  "hook": "Cactus",
+  "emoji": "🌵"
+ },
+ "ガク": {
+  "hook": "Gawker (gawking tourist)",
+  "emoji": "📸"
+ },
+ "カツ": {
+  "hook": "Catapult",
+  "emoji": "🏹"
+ },
+ "ガツ": {
+  "hook": "Gatsby",
+  "emoji": "🥂"
+ },
+ "ガッ": {
+  "hook": "Gatling gun",
+  "emoji": "🔫"
+ },
+ "カン": {
+  "hook": "Kangaroo",
+  "emoji": "🦘"
+ },
+ "ガン": {
+  "hook": "Gandalf",
+  "emoji": "🧙"
+ },
+ "キ": {
+  "hook": "Kiwi bird",
+  "emoji": "🥝"
+ },
+ "ギ": {
+  "hook": "Geezer (grumpy old man)",
+  "emoji": "👴"
+ },
+ "キュウ": {
+  "hook": "Cucumber",
+  "emoji": "🥒"
+ },
+ "ギュウ": {
+  "hook": "Figure skater",
+  "emoji": "⛸️"
+ },
+ "キョ": {
+  "hook": "Pinocchio",
+  "emoji": "🤥"
+ },
+ "ギョ": {
+  "hook": "Gyoro (goggle-eyed goldfish)",
+  "emoji": "🐠"
+ },
+ "キョウ": {
+  "hook": "Kyoto Geisha",
+  "emoji": "👘"
+ },
+ "ギョウ": {
+  "hook": "Gyoza dumpling",
+  "emoji": "🥟"
+ },
+ "キョク": {
+  "hook": "Kyokushin karate master",
+  "emoji": "🥋"
+ },
+ "キン": {
+  "hook": "King",
+  "emoji": "👑"
+ },
+ "ギン": {
+  "hook": "Guinea pig",
+  "emoji": "🐹"
+ },
+ "キャク": {
+  "hook": "Kayak",
+  "emoji": "🛶"
+ },
+ "ク": {
+  "hook": "Cook",
+  "emoji": "🧑‍🍳"
+ },
+ "グ": {
+  "hook": "Gourmet",
+  "emoji": "🍽️"
+ },
+ "クウ": {
+  "hook": "Cougar",
+  "emoji": "🐆"
+ },
+ "グウ": {
+  "hook": "Goofy",
+  "emoji": "🐶"
+ },
+ "クン": {
+  "hook": "Kung Fu Panda",
+  "emoji": "🐼"
+ },
+ "ケ": {
+  "hook": "Kettle",
+  "emoji": "🫖"
+ },
+ "ゲ": {
+  "hook": "Gecko",
+  "emoji": "🦎"
+ },
+ "ケイ": {
+  "hook": "Cake",
+  "emoji": "🎂"
+ },
+ "ゲイ": {
+  "hook": "Gator",
+  "emoji": "🐊"
+ },
+ "ケツ": {
+  "hook": "Ketchup bottle",
+  "emoji": "🍅"
+ },
+ "ゲツ": {
+  "hook": "Getaway driver",
+  "emoji": "🚓"
+ },
+ "ケン": {
+  "hook": "Ken doll",
+  "emoji": "🧍"
+ },
+ "ゲン": {
+  "hook": "Genghis Khan",
+  "emoji": "🐎"
+ },
+ "コ": {
+  "hook": "Collie",
+  "emoji": "🐕"
+ },
+ "ゴ": {
+  "hook": "Goblin",
+  "emoji": "👺"
+ },
+ "コウ": {
+  "hook": "Coach",
+  "emoji": "📣"
+ },
+ "ゴウ": {
+  "hook": "Goalie",
+  "emoji": "🥅"
+ },
+ "コク": {
+  "hook": "Cockatoo",
+  "emoji": "🦜"
+ },
+ "コン": {
+  "hook": "Conductor",
+  "emoji": "🎼"
+ },
+ "ゴン": {
+  "hook": "Gondolier",
+  "emoji": "🚣"
+ },
+ "サ": {
+  "hook": "Samurai",
+  "emoji": "⚔️"
+ },
+ "ザ": {
+  "hook": "Zamboni",
+  "emoji": "🧊"
+ },
+ "サイ": {
+  "hook": "Cyclops",
+  "emoji": "👁️"
+ },
+ "ザイ": {
+  "hook": "Xylophone",
+  "emoji": "🎶"
+ },
+ "サク": {
+  "hook": "Saxophonist",
+  "emoji": "🎷"
+ },
+ "サツ": {
+  "hook": "Satellite",
+  "emoji": "🛰️"
+ },
+ "サッ": {
+  "hook": "Saturn",
+  "emoji": "🪐"
+ },
+ "ザツ": {
+  "hook": "Zatoichi (blind swordsman)",
+  "emoji": "🦯"
+ },
+ "サン": {
+  "hook": "Santa",
+  "emoji": "🎅"
+ },
+ "ザン": {
+  "hook": "Zanzibar pirate",
+  "emoji": "🏴‍☠️"
+ },
+ "シ": {
+  "hook": "Sheep",
+  "emoji": "🐑"
+ },
+ "ジ": {
+  "hook": "Jeep",
+  "emoji": "🚙"
+ },
+ "シキ": {
+  "hook": "Shikari (big-game hunter)",
+  "emoji": "🎯"
+ },
+ "ジキ": {
+  "hook": "Dr. Jekyll",
+  "emoji": "🧪"
+ },
+ "シチ": {
+  "hook": "She-cheetah",
+  "emoji": "🐾"
+ },
+ "シツ": {
+  "hook": "Bedsheet ghost",
+  "emoji": "👻"
+ },
+ "ジツ": {
+  "hook": "Jiu-jitsu fighter",
+  "emoji": "🤼"
+ },
+ "ジッ": {
+  "hook": "Jitterbug dancer",
+  "emoji": "🕺"
+ },
+ "シャ": {
+  "hook": "Shark",
+  "emoji": "🦈"
+ },
+ "ジャ": {
+  "hook": "Jaguar",
+  "emoji": "🐯"
+ },
+ "シャク": {
+  "hook": "Shackled prisoner",
+  "emoji": "⛓️"
+ },
+ "ジャク": {
+  "hook": "Jackal",
+  "emoji": "🐺"
+ },
+ "シュ": {
+  "hook": "Sugar Plum Fairy",
+  "emoji": "🧚"
+ },
+ "ジュ": {
+  "hook": "Jukebox",
+  "emoji": "📻"
+ },
+ "シュウ": {
+  "hook": "Shoe (giant walking shoe)",
+  "emoji": "👟"
+ },
+ "ジュウ": {
+  "hook": "Jewel thief",
+  "emoji": "💎"
+ },
+ "ヂュウ": {
+  "hook": "Judo master",
+  "emoji": "🥇"
+ },
+ "シュク": {
+  "hook": "Oyster shucker",
+  "emoji": "🦪"
+ },
+ "シュツ": {
+  "hook": "Shootout sheriff",
+  "emoji": "🤠"
+ },
+ "ジュツ": {
+  "hook": "Jutsu scroll (ninja magic scroll)",
+  "emoji": "📜"
+ },
+ "シュン": {
+  "hook": "Shunting locomotive",
+  "emoji": "🚂"
+ },
+ "ショ": {
+  "hook": "Shopkeeper",
+  "emoji": "🏪"
+ },
+ "ジョ": {
+  "hook": "Jockey",
+  "emoji": "🏇"
+ },
+ "ショウ": {
+  "hook": "Showman",
+  "emoji": "🎪"
+ },
+ "ジョウ": {
+  "hook": "Joker",
+  "emoji": "🃏"
+ },
+ "ショク": {
+  "hook": "Shock victim (frizzled hair)",
+  "emoji": "⚡"
+ },
+ "シン": {
+  "hook": "Shinto priest",
+  "emoji": "⛩️"
+ },
+ "ジン": {
+  "hook": "Djinn (genie)",
+  "emoji": "🧞"
+ },
+ "ス": {
+  "hook": "Sumo wrestler",
+  "emoji": "🍙"
+ },
+ "ズ": {
+  "hook": "Zookeeper",
+  "emoji": "🦒"
+ },
+ "スイ": {
+  "hook": "Swimmer",
+  "emoji": "🏊"
+ },
+ "スウ": {
+  "hook": "Superhero",
+  "emoji": "🦸"
+ },
+ "セ": {
+  "hook": "Selkie (seal-woman)",
+  "emoji": "🦭"
+ },
+ "セイ": {
+  "hook": "Sailor",
+  "emoji": "⚓"
+ },
+ "ゼイ": {
+  "hook": "Zany clown",
+  "emoji": "🤡"
+ },
+ "セキ": {
+  "hook": "Secretary",
+  "emoji": "📋"
+ },
+ "セツ": {
+  "hook": "Setter dog",
+  "emoji": "🦮"
+ },
+ "ゼツ": {
+  "hook": "Zeppelin",
+  "emoji": "🎈"
+ },
+ "セン": {
+  "hook": "Sensei",
+  "emoji": "👨‍🏫"
+ },
+ "ゼン": {
+  "hook": "Zen monk",
+  "emoji": "🧘"
+ },
+ "ソ": {
+  "hook": "Sorceress",
+  "emoji": "🔮"
+ },
+ "ソウ": {
+  "hook": "Soldier",
+  "emoji": "🪖"
+ },
+ "ゾウ": {
+  "hook": "Zorro",
+  "emoji": "🗡️"
+ },
+ "ソク": {
+  "hook": "Sock puppet",
+  "emoji": "🧦"
+ },
+ "ゾク": {
+  "hook": "Zombie",
+  "emoji": "🧟"
+ },
+ "ソン": {
+  "hook": "Sonic the Hedgehog",
+  "emoji": "🦔"
+ },
+ "ゾン": {
+  "hook": "Amazon warrior",
+  "emoji": "🛡️"
+ },
+ "タ": {
+  "hook": "Tarzan",
+  "emoji": "🌴"
+ },
+ "ダ": {
+  "hook": "Dalmatian",
+  "emoji": "🐩"
+ },
+ "ダース": {
+  "hook": "Darth Vader",
+  "emoji": "🌑"
+ },
+ "タイ": {
+  "hook": "Tiger",
+  "emoji": "🐅"
+ },
+ "ダイ": {
+  "hook": "Dinosaur",
+  "emoji": "🦖"
+ },
+ "タク": {
+  "hook": "Taxi driver",
+  "emoji": "🚕"
+ },
+ "タツ": {
+  "hook": "Tattoo artist",
+  "emoji": "💉"
+ },
+ "タン": {
+  "hook": "Tango dancer",
+  "emoji": "💃"
+ },
+ "ダン": {
+  "hook": "Dandy (top-hatted gentleman)",
+  "emoji": "🎩"
+ },
+ "チ": {
+  "hook": "Chimpanzee",
+  "emoji": "🐒"
+ },
+ "チャ": {
+  "hook": "Charlie Chaplin",
+  "emoji": "🎬"
+ },
+ "チャク": {
+  "hook": "Chakra yogi",
+  "emoji": "🕉️"
+ },
+ "チュウ": {
+  "hook": "Chewbacca",
+  "emoji": "🐻"
+ },
+ "チョ": {
+  "hook": "Chopsticks",
+  "emoji": "🥢"
+ },
+ "チョウ": {
+  "hook": "Chow Chow dog",
+  "emoji": "🐕‍🦺"
+ },
+ "チョク": {
+  "hook": "Chocolate bar",
+  "emoji": "🍫"
+ },
+ "ツ": {
+  "hook": "Tsunami",
+  "emoji": "🌊"
+ },
+ "ツイ": {
+  "hook": "Tweety bird",
+  "emoji": "🐤"
+ },
+ "ツウ": {
+  "hook": "Tutu ballerina",
+  "emoji": "🩰"
+ },
+ "テイ": {
+  "hook": "Tailor",
+  "emoji": "🪡"
+ },
+ "テキ": {
+  "hook": "Tech nerd",
+  "emoji": "💻"
+ },
+ "テン": {
+  "hook": "Tennis player",
+  "emoji": "🎾"
+ },
+ "デン": {
+  "hook": "Dentist",
+  "emoji": "🦷"
+ },
+ "ト": {
+  "hook": "Toddler",
+  "emoji": "👶"
+ },
+ "ド": {
+  "hook": "Dog",
+  "emoji": "🐶"
+ },
+ "トウ": {
+  "hook": "Toad",
+  "emoji": "🐸"
+ },
+ "ドウ": {
+  "hook": "Dodo",
+  "emoji": "🦤"
+ },
+ "トク": {
+  "hook": "Talk-show host",
+  "emoji": "🎙️"
+ },
+ "ドク": {
+  "hook": "Doctor",
+  "emoji": "🩺"
+ },
+ "トツ": {
+  "hook": "Tater Tots",
+  "emoji": "🥔"
+ },
+ "ナ": {
+  "hook": "Narwhal",
+  "emoji": "🐋"
+ },
+ "ナイ": {
+  "hook": "Knight",
+  "emoji": "🏰"
+ },
+ "ナン": {
+  "hook": "Nanny",
+  "emoji": "👵"
+ },
+ "ニ": {
+  "hook": "Niece",
+  "emoji": "👧"
+ },
+ "ニク": {
+  "hook": "Knickers (flying underpants)",
+  "emoji": "🩲"
+ },
+ "ニチ": {
+  "hook": "Nietzsche",
+  "emoji": "🧔"
+ },
+ "ニャク": {
+  "hook": "Cognac bottle",
+  "emoji": "🥃"
+ },
+ "ニュウ": {
+  "hook": "Newt",
+  "emoji": "💧"
+ },
+ "ニョ": {
+  "hook": "Gnocchi",
+  "emoji": "🍝"
+ },
+ "ニン": {
+  "hook": "Ninja",
+  "emoji": "🥷"
+ },
+ "ヌ": {
+  "hook": "Noodle",
+  "emoji": "🍜"
+ },
+ "ネツ": {
+  "hook": "Nettle (stinging plant)",
+  "emoji": "🌿"
+ },
+ "ネン": {
+  "hook": "Neanderthal",
+  "emoji": "🦴"
+ },
+ "ノウ": {
+  "hook": "Gnome",
+  "emoji": "🍄"
+ },
+ "-ノウ": {
+  "hook": "Noah (with his ark)",
+  "emoji": "🚢"
+ },
+ "ハ": {
+  "hook": "Hamster",
+  "emoji": "🐭"
+ },
+ "ハイ": {
+  "hook": "Hyena",
+  "emoji": "😆"
+ },
+ "ハク": {
+  "hook": "Hacker",
+  "emoji": "🧑‍💻"
+ },
+ "ハチ": {
+  "hook": "Hatchet",
+  "emoji": "🪓"
+ },
+ "ハツ": {
+  "hook": "Mad Hatter",
+  "emoji": "🫖"
+ },
+ "ハッ": {
+  "hook": "Hatchling chick",
+  "emoji": "🐣"
+ },
+ "ハン": {
+  "hook": "Han Solo",
+  "emoji": "🚀"
+ },
+ "ヒ": {
+  "hook": "Hippo",
+  "emoji": "🦛"
+ },
+ "ヒツ": {
+  "hook": "Hitman",
+  "emoji": "🕶️"
+ },
+ "ヒャク": {
+  "hook": "Hijacker",
+  "emoji": "✈️"
+ },
+ "ヒョウ": {
+  "hook": "Heigh-Ho dwarf",
+  "emoji": "⛏️"
+ },
+ "ヒン": {
+  "hook": "Hinge",
+  "emoji": "🚪"
+ },
+ "フ": {
+  "hook": "Footballer",
+  "emoji": "⚽"
+ },
+ "フウ": {
+  "hook": "Fool (court jester)",
+  "emoji": "🤪"
+ },
+ "フク": {
+  "hook": "Captain Hook",
+  "emoji": "🪝"
+ },
+ "フツ": {
+  "hook": "Futon",
+  "emoji": "🛏️"
+ },
+ "ヘイ": {
+  "hook": "Hades",
+  "emoji": "🔥"
+ },
+ "ヘン": {
+  "hook": "Hen",
+  "emoji": "🐔"
+ },
+ "ホ": {
+  "hook": "Hobbit",
+  "emoji": "🦶"
+ },
+ "ホウ": {
+  "hook": "Hobo",
+  "emoji": "🎒"
+ },
+ "ホク": {
+  "hook": "Hockey player",
+  "emoji": "🏒"
+ },
+ "ホツ": {
+  "hook": "Hot-dog vendor",
+  "emoji": "🌭"
+ },
+ "ホン": {
+  "hook": "Honking goose",
+  "emoji": "🪿"
+ },
+ "バ": {
+  "hook": "Baboon",
+  "emoji": "🐵"
+ },
+ "バイ": {
+  "hook": "Biker",
+  "emoji": "🏍️"
+ },
+ "バツ": {
+  "hook": "Bat",
+  "emoji": "🦇"
+ },
+ "バン": {
+  "hook": "Banjo player",
+  "emoji": "🪕"
+ },
+ "ビ": {
+  "hook": "Beaver",
+  "emoji": "🦫"
+ },
+ "ビャク": {
+  "hook": "Byakko (white tiger spirit)",
+  "emoji": "🐯"
+ },
+ "ビョウ": {
+  "hook": "Biohazard man",
+  "emoji": "☣️"
+ },
+ "ビン": {
+  "hook": "Bin (trash bin)",
+  "emoji": "🗑️"
+ },
+ "ブ": {
+  "hook": "Bookworm",
+  "emoji": "📚"
+ },
+ "ブツ": {
+  "hook": "Puss in Boots",
+  "emoji": "👢"
+ },
+ "ブン": {
+  "hook": "Bunny",
+  "emoji": "🐰"
+ },
+ "ベイ": {
+  "hook": "Baby",
+  "emoji": "🍼"
+ },
+ "ベツ": {
+  "hook": "Bettor (gambler)",
+  "emoji": "🎰"
+ },
+ "ベン": {
+  "hook": "Ben Franklin",
+  "emoji": "🪁"
+ },
+ "ボ": {
+  "hook": "Bobsledder",
+  "emoji": "🛷"
+ },
+ "ボウ": {
+  "hook": "Bowler",
+  "emoji": "🎳"
+ },
+ "ボク": {
+  "hook": "Boxer",
+  "emoji": "🥊"
+ },
+ "ボン": {
+  "hook": "Bonsai gardener",
+  "emoji": "🌳"
+ },
+ "マイ": {
+  "hook": "Mime",
+  "emoji": "🫥"
+ },
+ "マツ": {
+  "hook": "Matador",
+  "emoji": "🐂"
+ },
+ "マン": {
+  "hook": "Mantis",
+  "emoji": "🦗"
+ },
+ "ミ": {
+  "hook": "Mickey Mouse",
+  "emoji": "🐁"
+ },
+ "ミョウ": {
+  "hook": "Meowing kitten",
+  "emoji": "🐱"
+ },
+ "ミン": {
+  "hook": "Minion",
+  "emoji": "🍌"
+ },
+ "ム": {
+  "hook": "Moose",
+  "emoji": "🦌"
+ },
+ "メ": {
+  "hook": "Medusa",
+  "emoji": "🐍"
+ },
+ "メイ": {
+  "hook": "Mayor",
+  "emoji": "🎖️"
+ },
+ "メン": {
+  "hook": "Mentor",
+  "emoji": "🧓"
+ },
+ "モウ": {
+  "hook": "Mohawk punk",
+  "emoji": "🤘"
+ },
+ "モク": {
+  "hook": "Mockingbird",
+  "emoji": "🐦"
+ },
+ "モツ": {
+  "hook": "Moth",
+  "emoji": "🦋"
+ },
+ "モン": {
+  "hook": "Monster",
+  "emoji": "👾"
+ },
+ "ヤ": {
+  "hook": "Yacht",
+  "emoji": "⛵"
+ },
+ "ヤク": {
+  "hook": "Yak",
+  "emoji": "🐃"
+ },
+ "ユ": {
+  "hook": "Ukulele",
+  "emoji": "🎸"
+ },
+ "ユウ": {
+  "hook": "Unicorn",
+  "emoji": "🦄"
+ },
+ "ヨ": {
+  "hook": "Yogurt",
+  "emoji": "🥛"
+ },
+ "ヨウ": {
+  "hook": "Yoda",
+  "emoji": "🟢"
+ },
+ "ヨク": {
+  "hook": "Egg yolk",
+  "emoji": "🥚"
+ },
+ "ライ": {
+  "hook": "Rhino",
+  "emoji": "🦏"
+ },
+ "ラク": {
+  "hook": "Raccoon",
+  "emoji": "🦝"
+ },
+ "リ": {
+  "hook": "Riddler",
+  "emoji": "❓"
+ },
+ "リキ": {
+  "hook": "Rickshaw driver",
+  "emoji": "🛺"
+ },
+ "リク": {
+  "hook": "Licorice",
+  "emoji": "🍬"
+ },
+ "リツ": {
+  "hook": "Ritzy socialite",
+  "emoji": "💍"
+ },
+ "リュウ": {
+  "hook": "Ryu the dragon",
+  "emoji": "🐉"
+ },
+ "リョ": {
+  "hook": "Leotard gymnast",
+  "emoji": "🤸"
+ },
+ "リョウ": {
+  "hook": "Leo the Lion",
+  "emoji": "🦁"
+ },
+ "リョク": {
+  "hook": "Ryokan innkeeper",
+  "emoji": "🏨"
+ },
+ "ル": {
+  "hook": "Luke Skywalker",
+  "emoji": "🌌"
+ },
+ "ルイ": {
+  "hook": "Luigi",
+  "emoji": "🔧"
+ },
+ "レ": {
+  "hook": "Leprechaun",
+  "emoji": "🍀"
+ },
+ "レイ": {
+  "hook": "Raven",
+  "emoji": "🐦‍⬛"
+ },
+ "レツ": {
+  "hook": "Lettuce",
+  "emoji": "🥬"
+ },
+ "レン": {
+  "hook": "Wren",
+  "emoji": "🪶"
+ },
+ "ロ": {
+  "hook": "Lobster",
+  "emoji": "🦞"
+ },
+ "ロウ": {
+  "hook": "Robot",
+  "emoji": "🤖"
+ },
+ "ロク": {
+  "hook": "Locksmith",
+  "emoji": "🔐"
+ },
+ "ロン": {
+  "hook": "Longhorn bull",
+  "emoji": "🐮"
+ },
+ "ワ": {
+  "hook": "Walrus",
+  "emoji": "🐳"
+ },
+ "ウ": {
+  "hook": "Wolf",
+  "emoji": "🌕"
+ },
+ "ウン": {
+  "hook": "Undertaker",
+  "emoji": "⚰️"
+ },
+ "エ": {
+  "hook": "Elf",
+  "emoji": "🧝"
+ },
+ "エイ": {
+  "hook": "Angel",
+  "emoji": "😇"
+ },
+ "エキ": {
+  "hook": "Echo (cave echo nymph)",
+  "emoji": "🗣️"
+ },
+ "エツ": {
+  "hook": "Mount Etna",
+  "emoji": "🌋"
+ },
+ "エン": {
+  "hook": "Engineer",
+  "emoji": "👷"
+ },
+ "オ": {
+  "hook": "Octopus",
+  "emoji": "🐙"
+ },
+ "オウ": {
+  "hook": "Ogre",
+  "emoji": "👹"
+ },
+ "オク": {
+  "hook": "Ocarina player",
+  "emoji": "🎵"
+ },
+ "オツ": {
+  "hook": "Otter",
+  "emoji": "🦦"
+ },
+ "オン": {
+  "hook": "Onsen monkey",
+  "emoji": "♨️"
+ },
+ "アイ": {
+  "hook": "Eyeball",
+  "emoji": "👀"
+ },
+ "アク": {
+  "hook": "Acrobat",
+  "emoji": "🎪"
+ },
+ "アン": {
+  "hook": "Antelope",
+  "emoji": "🦌"
+ },
+ "イ": {
+  "hook": "Eagle",
+  "emoji": "🦅"
+ },
+ "イク": {
+  "hook": "Ichabod Crane",
+  "emoji": "🎃"
+ },
+ "イチ": {
+  "hook": "Itchy flea",
+  "emoji": "🐜"
+ },
+ "イツ": {
+  "hook": "Itsy-bitsy spider",
+  "emoji": "🕷️"
+ },
+ "イン": {
+  "hook": "Intern",
+  "emoji": "🧑‍💼"
+ }
+}
