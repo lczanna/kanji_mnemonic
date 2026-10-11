@@ -221,6 +221,46 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .modal { position: fixed; inset: 0; z-index: 30; background: color-mix(in srgb, var(--ink) 45%, transparent); display: grid; align-items: end; }
 .modal-body { background: var(--paper); max-height: 88%; overflow-y: auto; border-radius: 18px 18px 0 0; padding: 16px 16px calc(24px + env(safe-area-inset-bottom, 0px)); width: 100%; max-width: 560px; margin: 0 auto; }
 .loading { padding: 40px 0; text-align: center; color: var(--muted); }
+/* ---------- words & grammar ---------- */
+.say { border: 1px solid var(--line); background: var(--surface); color: var(--ai); border-radius: 999px; width: 28px; height: 28px; font-size: 11px; display: inline-grid; place-items: center; vertical-align: middle; padding: 0; }
+.word-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.word-head .w { font-family: var(--font-kanji); font-weight: 800; font-size: 44px; line-height: 1.1; }
+.word-head .rd { font-size: 20px; color: var(--ai); font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+.parts { display: grid; gap: 6px; }
+.part { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 6px 10px; font-size: 13px; color: var(--muted); }
+.part .k { font-family: var(--font-kanji); font-weight: 800; font-size: 28px; color: var(--ink); line-height: 1.1; }
+.g-head .pattern { font-family: var(--font-kanji); font-weight: 800; font-size: 30px; line-height: 1.2; }
+.g-note { margin: 0; font-size: 14px; color: var(--muted); }
+.examples { display: grid; gap: 10px; }
+.ex .ja { font-size: 17px; line-height: 1.6; }
+.ex .en { font-size: 13px; color: var(--muted); }
+.word-front.kana { font-family: var(--font-body); font-weight: 700; }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+.opt { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 12px; font-size: 20px; font-family: var(--font-kanji); font-weight: 800; text-align: left; min-width: 0; }
+.opt .num { font-family: var(--font-body); font-size: 12px; font-weight: 700; color: var(--muted); border: 1px solid var(--line); border-radius: 50%; width: 22px; height: 22px; display: inline-grid; place-items: center; flex: none; }
+.opt.right { border-color: var(--good); background: color-mix(in srgb, var(--good) 14%, var(--surface)); }
+.opt.wrong { border-color: var(--again); background: color-mix(in srgb, var(--again) 14%, var(--surface)); }
+.opt.dim { opacity: .5; }
+.opt[disabled] { cursor: default; }
+.chunks .opt { font-size: 17px; justify-content: center; }
+.g-q { font-size: 19px; line-height: 1.9; width: 100%; }
+.g-q .blank { display: inline-block; padding: 0 6px; border-bottom: 2px solid var(--ai); color: var(--ai); font-weight: 700; }
+.g-q.order { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.slot { position: relative; min-width: 64px; border: 1px dashed var(--ai); background: var(--surface); border-radius: 8px; padding: 8px 10px; font-size: 16px; }
+.slot.filled { border-style: solid; }
+.slot.right { border: 1px solid var(--good); background: color-mix(in srgb, var(--good) 14%, var(--surface)); }
+.slot.wrong { border: 1px solid var(--again); background: color-mix(in srgb, var(--again) 14%, var(--surface)); }
+.slot .star { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--hard); }
+.why { font-size: 14px; color: var(--muted); width: 100%; display: flex; gap: 8px; align-items: center; }
+.list { display: grid; gap: 6px; }
+.lrow { display: grid; grid-template-columns: auto 1fr; gap: 0 12px; align-items: baseline; text-align: left; border: 1px solid var(--line); border-left-width: 4px; background: var(--surface); border-radius: 10px; padding: 8px 12px; }
+.lrow .w { font-family: var(--font-kanji); font-weight: 800; font-size: 20px; }
+.lrow .rd { color: var(--ai); font-size: 14px; }
+.lrow .m { grid-column: 1 / -1; font-size: 13px; color: var(--muted); min-width: 0; }
+.lrow.st-learning { border-left-color: var(--hard); } .lrow.st-struggling { border-left-color: var(--again); }
+.lrow.st-good { border-left-color: var(--good); } .lrow.st-mastered { border-left-color: var(--ai); }
+.lrow.st-locked { opacity: .55; }
+.kpi small { font-size: 14px; font-family: var(--font-body); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
@@ -241,10 +281,16 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 <script>
 'use strict';
 // ============ DATA ============
-let DECK = [];            // loaded from kanji.json
-let BY_KANJI = {};
-let CAST = {};            // on'yomi → {hook, emoji}
-let CAST_NOTE = '';
+// Three decks share one scheduler. Progress keys: kanji character, "v:<word>", "g:<grammar id>".
+let DECK = [], BY_KANJI = {};      // kanji (kanji.json)
+let VOCAB = [], BY_WORD = {};      // words (vocab.json)
+let GRAMMAR = [], BY_GID = {};     // grammar (grammar.json)
+let CAST = {}, CAST_NOTE = '';
+const TYPES = ['kanji', 'vocab', 'grammar'];
+const TYPE_LABEL = { kanji: 'Kanji', vocab: 'Words', grammar: 'Grammar' };
+const TYPE_JP = { kanji: '漢字', vocab: '語彙', grammar: '文法' };
+function deckOf(type) { return type === 'kanji' ? DECK : type === 'vocab' ? VOCAB : GRAMMAR; }
+function keyOf(type, x) { return type === 'kanji' ? x.kanji : type === 'vocab' ? 'v:' + x.w : 'g:' + x.id; }
 
 // ============ DATES (local time, not UTC) ============
 function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
@@ -274,9 +320,9 @@ const FSRS = {
 // Same key as the previous app, so existing progress (keyed by kanji character) carries over.
 const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
-  return { version: 2, cards: {}, triaged: {}, newByDay: {}, history: {},
+  return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
-           settings: { examDate: '2026-12-06', newPerDay: 'auto', retention: 0.9 } };
+           settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: '20', grammarPerDay: '3', retention: 0.9 } };
 }
 function loadData() {
   let d = null;
@@ -286,7 +332,7 @@ function loadData() {
   for (const k of Object.keys(base)) if (d[k] === undefined) d[k] = base[k];
   d.settings = Object.assign(base.settings, d.settings || {});
   d.stats = Object.assign(base.stats, d.stats || {});
-  d.version = 2;
+  d.version = 3;
   return d;
 }
 let storageOk = true;
@@ -302,9 +348,9 @@ function maxInterval() {
   const left = daysBetween(today(), appData.settings.examDate) - 7;
   return Math.max(7, Math.min(45, left));
 }
-function schedule(kanji, grade) {
+function schedule(key, grade) {
   const t = today();
-  let c = appData.cards[kanji];
+  let c = appData.cards[key];
   const ret = appData.settings.retention || 0.9;
   if (!c) {
     c = { stability: FSRS.initS(grade), difficulty: FSRS.initD(grade), reps: 1, lapses: grade === 1 ? 1 : 0, lastReview: t };
@@ -321,7 +367,13 @@ function schedule(kanji, grade) {
   // New cards always come back tomorrow (unless "Easy"): the first overnight check is where most forgetting happens.
   if (c.reps === 1 && grade < 4) days = Math.min(days, 1);
   c.due = addDays(t, days);
-  appData.cards[kanji] = c;
+  appData.cards[key] = c;
+}
+function markKnown(key) {
+  // "Already know it": skip learning, but check it once in the next 4 weeks (spread out so they don't arrive together).
+  const t = today();
+  appData.cards[key] = { stability: 25, difficulty: 3, reps: 1, lapses: 0, lastReview: t,
+                         due: addDays(t, 4 + Math.floor(Math.random() * 24)), triaged: true };
 }
 function logReview(passed) {
   const t = today();
@@ -333,8 +385,8 @@ function logReview(passed) {
     appData.stats.lastReviewDate = t;
   }
 }
-function status(k) {
-  const c = appData.cards[k.kanji];
+function statusKey(key) {
+  const c = appData.cards[key];
   if (!c) return 'new';
   const s = c.stability || 0;
   if ((c.lapses || 0) >= 3 && s < 7) return 'struggling';
@@ -342,32 +394,40 @@ function status(k) {
   if (s < 21) return 'good';
   return 'mastered';
 }
-function unseen() { return DECK.filter(k => !appData.cards[k.kanji]); }
+function status(k) { return statusKey(k.kanji); }
 function recall(c) {
   // Estimated chance you still remember this card today (FSRS retrievability).
   return FSRS.R(Math.max(0.5, daysBetween(c.lastReview || today(), today())), Math.max(0.1, c.stability || 0.1));
 }
-function dueReviews() {
+// A word unlocks once every kanji in it has passed its next-day check (or was marked as already known).
+function kanjiReady(ch) { const c = appData.cards[ch]; return !!c && (c.triaged || (c.reps || 0) >= 2); }
+function unlocked(type, x) { return type !== 'vocab' || x.k.every(kanjiReady); }
+function unseenOf(type) { return deckOf(type).filter(x => !appData.cards[keyOf(type, x)]); }
+function unseen() { return unseenOf('kanji'); }
+function dueOf(type) {
   const t = today();
   // Lowest recall chance first, so if you stop early you've rescued the cards closest to being forgotten.
-  return DECK.filter(k => appData.cards[k.kanji] && appData.cards[k.kanji].due <= t)
-             .sort((a, b) => recall(appData.cards[a.kanji]) - recall(appData.cards[b.kanji]));
+  return deckOf(type).filter(x => { const c = appData.cards[keyOf(type, x)]; return c && c.due <= t; })
+    .sort((a, b) => recall(appData.cards[keyOf(type, a)]) - recall(appData.cards[keyOf(type, b)]));
 }
+function dueReviews() { return dueOf('kanji'); }
 function studyDaysLeft() { return Math.max(1, daysBetween(today(), appData.settings.examDate) - 7); }
 function suggestedNew() { return Math.min(30, Math.max(5, Math.ceil(unseen().length / studyDaysLeft()))); }
-function dailyNewLimit() {
-  const s = appData.settings.newPerDay;
-  return s === 'auto' ? suggestedNew() : Math.max(0, parseInt(s, 10) || 0);
+function dailyLimit(type) {
+  const st = appData.settings;
+  if (type === 'kanji') return st.newPerDay === 'auto' ? suggestedNew() : Math.max(0, parseInt(st.newPerDay, 10) || 0);
+  return Math.max(0, parseInt(type === 'vocab' ? st.vocabPerDay : st.grammarPerDay, 10) || 0);
 }
-function newLeftToday() {
-  let limit = dailyNewLimit();
+function dayKey(type) { return type === 'kanji' ? today() : today() + '|' + type; }
+function newLeftToday(type) {
+  let limit = dailyLimit(type);
   // A big review backlog means new cards would only make it bigger: halve them until it clears.
-  if (appData.settings.newPerDay === 'auto' && dueReviews().length > 120) limit = Math.ceil(limit / 2);
-  return Math.max(0, limit - (appData.newByDay[today()] || 0));
+  if (dueOf(type).length > (type === 'kanji' ? 120 : 150)) limit = Math.ceil(limit / 2);
+  return Math.max(0, limit - (appData.newByDay[dayKey(type)] || 0));
 }
-function newQueue() {
-  // Untriaged unseen cards first follow deck order; triaged "not yet" cards are just unseen cards too.
-  return unseen().slice(0, newLeftToday());
+function newQueueOf(type, extra) {
+  const pool = unseenOf(type).filter(x => unlocked(type, x));
+  return pool.slice(0, extra || newLeftToday(type));
 }
 
 // ============ HELPERS ============
@@ -379,9 +439,25 @@ function storyHtml(s) {
     .replace(/~([^~]+)~/g, '<span class="snd">$1</span>');
 }
 function kata2hira(s) { return s.replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60)); }
+function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 const $ = id => document.getElementById(id);
 
-// ============ CARD BACK ============
+// Audio uses the phone's own Japanese voice. Nothing is sent anywhere.
+let jaVoice = null;
+function pickVoice() { try { jaVoice = speechSynthesis.getVoices().find(v => /^ja/i.test(v.lang)) || null; } catch (e) { jaVoice = null; } }
+if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function speak(text) {
+  if (!('speechSynthesis' in window)) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text.replace(/（　）/g, ''));
+    u.lang = 'ja-JP'; u.rate = 0.9; if (jaVoice) u.voice = jaVoice;
+    speechSynthesis.speak(u);
+  } catch (e) { /* audio is optional */ }
+}
+function sayBtn(text, label) { return 'speechSynthesis' in window ? `<button class="say" data-say="${esc(text)}" aria-label="${esc(label || 'Play audio')}">▶</button>` : ''; }
+
+// ============ CARD BACKS ============
 function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
   // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
@@ -390,7 +466,7 @@ function backHtml(k, mode) {
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
-      <div class="vocab-row"><span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)}</span><span class="m">${esc(v.m)}</span></div>`).join('')}</div></div>` : '';
+      <div class="vocab-row"><span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(v.r, 'Play ' + v.w)}</span><span class="m">${esc(v.m)}</span></div>`).join('')}</div></div>` : '';
   const body = mode === 'quiz' ? vocabH + soundH + story + img : img + story + soundH + vocabH;
   return `
   <div class="back">
@@ -410,10 +486,29 @@ function backHtml(k, mode) {
     </dl>
   </div>`;
 }
+function vocabBackHtml(v) {
+  return `<div class="back">
+    <div class="word-head"><span class="w" lang="ja">${esc(v.w)}</span>
+      <span class="rd" lang="ja">${esc(v.r)} ${sayBtn(v.r, 'Play ' + v.w)}</span></div>
+    <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
+    <div><div class="section-label">Built from</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
+      return `<button class="part" data-k="${esc(ch)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${k && k.sound && k.sound[0] ? ` · <span lang="ja">${esc(k.sound[0].r)}</span> ${esc(k.sound[0].hook)}` : ''}</span></button>`; }).join('')}</div></div>
+  </div>`;
+}
+function grammarBackHtml(g, compact) {
+  return `<div class="back">
+    <div class="g-head"><span class="pattern" lang="ja">${esc(g.pattern)}</span></div>
+    <div class="keyword" style="font-size:17px">${esc(g.meaning)}</div>
+    <dl class="readings"><dt>FORM</dt><dd lang="ja">${esc(g.formation)}</dd></dl>
+    ${compact ? '' : `<p class="g-note">${esc(g.note)}</p>`}
+    <div><div class="section-label">Examples</div><div class="examples">${g.examples.map(x => `
+      <div class="ex"><div class="ja" lang="ja">${esc(x.ja)} ${sayBtn(x.ja)}</div><div class="en">${esc(x.en)}</div></div>`).join('')}</div></div>
+  </div>`;
+}
 
 // ============ VIEWS ============
 let view = 'today';
-let deckFilter = { level: 0, q: '' };
+let deckFilter = { type: 'kanji', level: 0, q: '' };
 let confirmingReset = false;
 
 function render() {
@@ -428,19 +523,38 @@ function render() {
 
 function todayHtml() {
   const days = daysBetween(today(), appData.settings.examDate);
-  const due = dueReviews().length;
-  const nNew = newQueue().length;
   const triageLeft = unseen().filter(k => !appData.triaged[k.kanji]).length;
+  const rows = TYPES.filter(t => deckOf(t).length).map(t => {
+    const due = dueOf(t).length, nNew = newQueueOf(t).length;
+    const waiting = t === 'vocab' ? unseenOf('vocab').filter(v => !unlocked('vocab', v)).length : 0;
+    const sub = `${due} reviews · ${nNew} new` + (t === 'vocab' && waiting ? ` · ${waiting} waiting on kanji` : '');
+    return { t, due, nNew, sub };
+  });
+  const firstActive = rows.find(r => r.due + r.nNew > 0);
+  const studyBtns = rows.map(r => `
+      <button class="btn ${r === firstActive ? 'primary' : ''}" data-study="${r.t}" ${r.due + r.nNew === 0 ? 'disabled' : ''}>
+        <span class="label"><b><span lang="ja">${TYPE_JP[r.t]}</span> ${TYPE_LABEL[r.t]}</b><small class="muted">${r.due + r.nNew ? r.sub : 'Done for today'}</small></span>
+        <span class="count num">${r.due + r.nNew}</span>
+      </button>`).join('');
+  const extraType = rows.find(r => r.nNew === 0 && newQueueOf(r.t, 5).length);
   const levels = [5, 4, 3].map(lv => {
     const ks = DECK.filter(k => k.level === lv);
     const known = ks.filter(k => ['good', 'mastered'].includes(status(k))).length;
     const learning = ks.filter(k => ['learning', 'struggling'].includes(status(k))).length;
     return `<div class="level-row"><span class="lv">N${lv}</span>
-      <div class="bar" role="img" aria-label="N${lv}: ${known} solid, ${learning} learning of ${ks.length}">
+      <div class="bar" role="img" aria-label="N${lv} kanji: ${known} solid, ${learning} learning of ${ks.length}">
         <span class="s-known" style="width:${known / ks.length * 100}%"></span><span class="s-learning" style="width:${learning / ks.length * 100}%"></span></div>
       <span class="num muted">${known + learning}/${ks.length}</span></div>`;
   }).join('');
-  const seen = DECK.length - unseen().length;
+  const extraBars = ['vocab', 'grammar'].filter(t => deckOf(t).length).map(t => {
+    const xs = deckOf(t), keys = xs.map(x => keyOf(t, x));
+    const known = keys.filter(k => ['good', 'mastered'].includes(statusKey(k))).length;
+    const learning = keys.filter(k => ['learning', 'struggling'].includes(statusKey(k))).length;
+    return `<div class="level-row"><span class="lv" lang="ja">${TYPE_JP[t]}</span>
+      <div class="bar" role="img" aria-label="${TYPE_LABEL[t]}: ${known} solid, ${learning} learning of ${xs.length}">
+        <span class="s-known" style="width:${known / xs.length * 100}%"></span><span class="s-learning" style="width:${learning / xs.length * 100}%"></span></div>
+      <span class="num muted">${known + learning}/${xs.length}</span></div>`;
+  }).join('');
   return `
   <div class="today-head">
     <span class="eyebrow">JLPT N3 · ${esc(appData.settings.examDate)}</span>
@@ -449,18 +563,15 @@ function todayHtml() {
   </div>
   <div class="stack">
     <div class="cta">
-      <button class="btn primary" id="go-study" ${due + nNew === 0 ? 'disabled' : ''}>
-        <span class="label"><b>${due + nNew ? 'Study now' : 'All done for today'}</b><small class="muted">${due} reviews · ${nNew} new</small></span>
-        <span class="count num">${due + nNew}</span>
-      </button>
+      ${studyBtns}
       ${triageLeft ? `<button class="btn" id="go-triage">
-        <span class="label"><b>Mark kanji you already know</b><small class="muted">One quick pass so the plan only counts what you need to learn</small></span>
+        <span class="label"><b>Mark kanji you already know</b><small class="muted">One quick pass. Known kanji also unlock their words.</small></span>
         <span class="count num">${triageLeft}</span></button>` : ''}
-      ${nNew === 0 && unseen().length ? `<button class="btn" id="go-extra"><span class="label"><b>Learn 5 extra</b><small class="muted">Daily new limit reached</small></span><span class="count num">+5</span></button>` : ''}
+      ${extraType ? `<button class="btn" data-extra="${extraType.t}"><span class="label"><b>Learn 5 extra ${TYPE_LABEL[extraType.t].toLowerCase()}</b><small class="muted">Daily new limit reached</small></span><span class="count num">+5</span></button>` : ''}
     </div>
     <div class="panel stack">
-      <div class="eyebrow">Progress · ${seen} of ${DECK.length} started</div>
-      <div class="levels">${levels}</div>
+      <div class="eyebrow">Progress</div>
+      <div class="levels">${levels}${extraBars}</div>
       <div class="legend"><span><i style="background:var(--ai)"></i>solid (3+ weeks)</span><span><i style="background:color-mix(in srgb, var(--ai) 45%, var(--ai-soft))"></i>learning</span><span><i style="background:var(--ai-soft)"></i>not started</span></div>
     </div>
     ${!storageOk ? `<div class="notice">This browser is blocking storage, so progress will not be saved. Use More → Back up progress before closing.</div>` : ''}
@@ -468,28 +579,47 @@ function todayHtml() {
 }
 
 function deckHtml() {
+  const t = deckFilter.type;
   return `
   <div class="stack">
     <h2>Deck</h2>
-    <div class="filters">
-      <div class="seg" role="group" aria-label="Level">
-        ${[0, 5, 4, 3].map(lv => `<button data-lv="${lv}" aria-pressed="${deckFilter.level === lv}">${lv ? 'N' + lv : 'All'}</button>`).join('')}
-      </div>
-      <input class="search" id="deck-search" type="search" placeholder="Kanji, keyword or reading" value="${esc(deckFilter.q)}" aria-label="Search">
+    <div class="seg" role="group" aria-label="Deck">
+      ${TYPES.filter(x => deckOf(x).length).map(x => `<button data-dtype="${x}" aria-pressed="${t === x}"><span lang="ja">${TYPE_JP[x]}</span> ${TYPE_LABEL[x]} · ${deckOf(x).length}</button>`).join('')}
     </div>
-    <div class="legend"><span><i style="background:var(--again)"></i>struggling</span><span><i style="background:var(--hard)"></i>learning</span><span><i style="background:var(--good)"></i>good</span><span><i style="background:var(--ai)"></i>mastered</span></div>
-    <div class="grid" id="deck-grid"></div>
+    <div class="filters">
+      ${t === 'kanji' ? `<div class="seg" role="group" aria-label="Level">
+        ${[0, 5, 4, 3].map(lv => `<button data-lv="${lv}" aria-pressed="${deckFilter.level === lv}">${lv ? 'N' + lv : 'All'}</button>`).join('')}
+      </div>` : ''}
+      <input class="search" id="deck-search" type="search" placeholder="${t === 'grammar' ? 'Pattern or meaning' : t === 'vocab' ? 'Word, reading or meaning' : 'Kanji, keyword or reading'}" value="${esc(deckFilter.q)}" aria-label="Search">
+    </div>
+    <div class="legend"><span><i style="background:var(--again)"></i>struggling</span><span><i style="background:var(--hard)"></i>learning</span><span><i style="background:var(--good)"></i>good</span><span><i style="background:var(--ai)"></i>mastered</span>${t === 'vocab' ? '<span><i style="background:var(--line)"></i>locked (learn its kanji first)</span>' : ''}</div>
+    <div class="${t === 'kanji' ? 'grid' : 'list'}" id="deck-grid"></div>
   </div>`;
 }
 function renderDeckGrid() {
+  const t = deckFilter.type;
   const q = deckFilter.q.trim().toLowerCase();
   const hq = kata2hira(q);
-  const list = DECK.filter(k => (!deckFilter.level || k.level === deckFilter.level) && (!q ||
-    k.kanji.includes(q) || k.keyword.toLowerCase().includes(q) ||
-    [...(k.on || []), ...(k.kun || [])].some(r => kata2hira(r).replace(/[.\-]/g, '').includes(hq))));
-  $('deck-grid').innerHTML = list.map(k => `<button class="tile st-${status(k)}" data-k="${esc(k.kanji)}" aria-label="${esc(k.kanji)} ${esc(k.keyword)}">
-    <span class="k" lang="ja">${esc(k.kanji)}</span><span class="kwd">${esc(k.keyword)}</span></button>`).join('') ||
-    '<p class="muted">No kanji match that search.</p>';
+  if (t === 'kanji') {
+    const list = DECK.filter(k => (!deckFilter.level || k.level === deckFilter.level) && (!q ||
+      k.kanji.includes(q) || k.keyword.toLowerCase().includes(q) ||
+      [...(k.on || []), ...(k.kun || [])].some(r => kata2hira(r).replace(/[.\-]/g, '').includes(hq))));
+    $('deck-grid').innerHTML = list.map(k => `<button class="tile st-${status(k)}" data-k="${esc(k.kanji)}" aria-label="${esc(k.kanji)} ${esc(k.keyword)}">
+      <span class="k" lang="ja">${esc(k.kanji)}</span><span class="kwd">${esc(k.keyword)}</span></button>`).join('') ||
+      '<p class="muted">No kanji match that search.</p>';
+    return;
+  }
+  if (t === 'vocab') {
+    const list = VOCAB.filter(v => !q || v.w.includes(q) || v.r.includes(hq) || v.m.toLowerCase().includes(q)).slice(0, 300);
+    $('deck-grid').innerHTML = list.map(v => {
+      const st = unlocked('vocab', v) ? statusKey('v:' + v.w) : 'locked';
+      return `<button class="lrow st-${st}" data-v="${esc(v.w)}"><span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)}</span><span class="m">${esc(v.m)}</span></button>`;
+    }).join('') || '<p class="muted">No words match that search.</p>';
+    return;
+  }
+  const list = GRAMMAR.filter(g => !q || g.pattern.includes(q) || g.meaning.toLowerCase().includes(q));
+  $('deck-grid').innerHTML = list.map(g => `<button class="lrow st-${statusKey('g:' + g.id)}" data-g-id="${esc(g.id)}"><span class="w" lang="ja">${esc(g.pattern)}</span><span class="m">${esc(g.meaning)}</span></button>`).join('') ||
+    '<p class="muted">No grammar matches that search.</p>';
 }
 
 function statsHtml() {
@@ -498,7 +628,7 @@ function statsHtml() {
   const t = today();
   const fc = [...Array(14)].map((_, i) => {
     const d = addDays(t, i);
-    const n = Object.entries(appData.cards).filter(([k, c]) => BY_KANJI[k] && (i === 0 ? c.due <= d : c.due === d)).length;
+    const n = Object.values(appData.cards).filter(c => c.due && (i === 0 ? c.due <= d : c.due === d)).length;
     return { d, n };
   });
   const maxN = Math.max(1, ...fc.map(x => x.n));
@@ -510,17 +640,20 @@ function statsHtml() {
   }
   const leeches = DECK.filter(k => (appData.cards[k.kanji] || {}).lapses >= 3)
     .sort((a, b) => appData.cards[b.kanji].lapses - appData.cards[a.kanji].lapses);
+  const started = type => deckOf(type).length - unseenOf(type).length;
   return `
   <div class="stack">
     <h2>Stats</h2>
     <div class="kpis">
       <div class="kpi"><div class="v num">${s.streak || 0}</div><div class="l">day streak</div></div>
-      <div class="kpi"><div class="v num">${DECK.length - unseen().length}</div><div class="l">kanji started</div></div>
-      <div class="kpi"><div class="v num">${s.totalReviews}</div><div class="l">reviews done</div></div>
       <div class="kpi"><div class="v num">${acc}%</div><div class="l">answered correctly</div></div>
+      <div class="kpi"><div class="v num">${started('kanji')}<small class="muted"> / ${DECK.length}</small></div><div class="l">kanji started</div></div>
+      <div class="kpi"><div class="v num">${started('vocab')}<small class="muted"> / ${VOCAB.length}</small></div><div class="l">words started</div></div>
+      <div class="kpi"><div class="v num">${started('grammar')}<small class="muted"> / ${GRAMMAR.length}</small></div><div class="l">grammar points started</div></div>
+      <div class="kpi"><div class="v num">${s.totalReviews}</div><div class="l">reviews done</div></div>
     </div>
     <div class="panel">
-      <div class="section-label">Reviews due, next 14 days</div>
+      <div class="section-label">Reviews due, next 14 days (all decks)</div>
       <div class="forecast">${fc.map((x, i) => `<div class="col"><span class="n">${x.n || ''}</span><span class="b" style="height:${Math.round(x.n / maxN * 70)}px"></span><span class="d">${i === 0 ? 'now' : new Date(x.d + 'T12:00:00').getDate()}</span></div>`).join('')}</div>
     </div>
     <div class="panel">
@@ -528,7 +661,7 @@ function statsHtml() {
       <div class="heat">${heat.join('')}</div>
     </div>
     <div class="panel">
-      <div class="section-label">Leeches · failed 3+ times</div>
+      <div class="section-label">Kanji leeches · failed 3+ times</div>
       ${leeches.length ? `<div class="leech-list">${leeches.map(k => `<button class="leech" data-k="${esc(k.kanji)}" lang="ja" aria-label="${esc(k.keyword)}">${esc(k.kanji)}</button>`).join('')}</div>
         <p class="muted" style="font-size:13px;margin:8px 0 0">These are the best candidates for a new story or picture.</p>`
       : '<p class="muted" style="margin:0;font-size:13px">None yet. Kanji you keep failing will collect here.</p>'}
@@ -546,6 +679,8 @@ function moreHtml() {
       <div class="field"><label for="set-new">New kanji per day</label>
         <div class="row-wrap"><input type="number" id="set-new" min="0" max="60" placeholder="auto" value="${st.newPerDay === 'auto' ? '' : esc(st.newPerDay)}" style="width:110px">
         <span class="muted" style="font-size:13px">Leave empty for automatic (now ${suggestedNew()}/day).</span></div></div>
+      <div class="field"><label for="set-vocab">New words per day</label><input type="number" id="set-vocab" min="0" max="80" value="${esc(st.vocabPerDay)}" style="width:110px"></div>
+      <div class="field"><label for="set-grammar">New grammar points per day</label><input type="number" id="set-grammar" min="0" max="15" value="${esc(st.grammarPerDay)}" style="width:110px"></div>
     </div>
     <div class="panel stack">
       <div><h3>Back up progress</h3><p class="muted" style="margin:4px 0 0;font-size:13px">Progress lives in this browser only. Copy it somewhere safe, or paste a backup here to restore it on another device.</p></div>
@@ -570,50 +705,65 @@ function moreHtml() {
   </div>`;
 }
 
-function showDetail(kanji) {
-  const k = BY_KANJI[kanji]; if (!k) return;
-  const c = appData.cards[kanji];
+function showModal(key, inner) {
+  const c = appData.cards[key];
   $('modal-body').innerHTML = `<div class="stack">
     <div class="row-wrap" style="justify-content:space-between"><span class="eyebrow">${c ? `Next review ${esc(c.due)} · failed ${c.lapses || 0}×` : 'Not started'}</span>
     <button class="icon-btn" id="modal-close" aria-label="Close">✕</button></div>
-    <div class="card">${backHtml(k, 'learn')}</div></div>`;
+    <div class="card">${inner}</div></div>`;
   $('modal').hidden = false;
 }
+function showDetail(kanji) { const k = BY_KANJI[kanji]; if (k) showModal(kanji, backHtml(k, 'learn')); }
 
 // ============ STUDY SESSION ============
-// Queue items: {k, mode: 'learn' | 'quiz' | 'triage', again: bool}
+// Queue items: {type, x, mode: 'learn' | 'quiz' | 'triage', again, word, task}
 let session = null;
 
-function startStudy(extra) {
-  // Mature cards (seen 2+ times) alternate between the bare kanji and a real exam word containing it,
-  // because N3 tests readings of words, not of lone kanji.
-  const items = dueReviews().map(k => {
-    const c = appData.cards[k.kanji];
-    const words = (k.vocab || []).filter(v => v.w.length > 1);
-    const useWord = c && c.reps >= 2 && words.length && c.reps % 2 === 0;
-    return { k, mode: 'quiz', word: useWord ? words[c.reps % words.length] : null };
-  });
-  const fresh = extra ? unseen().slice(0, extra) : newQueue();
+function quizItem(type, x) {
+  const c = appData.cards[keyOf(type, x)];
+  const reps = c ? c.reps || 0 : 0;
+  if (type === 'kanji') {
+    // Mature kanji alternate between the bare kanji and a real exam word, because N3 tests readings of words.
+    const words = (x.vocab || []).filter(v => v.w.length > 1);
+    const useWord = reps >= 2 && words.length && reps % 2 === 0;
+    return { type, x, mode: 'quiz', word: useWord ? words[reps % words.length] : null };
+  }
+  if (type === 'vocab') {
+    // Alternate exam tasks: 漢字読み (read the kanji word) and 表記 (pick the right kanji spelling).
+    const task = reps >= 1 && x.d && x.d.length === 3 && reps % 2 === 1 ? 'spell' : 'read';
+    return { type, x, mode: 'quiz', task, opts: task === 'spell' ? shuffle([x.w, ...x.d]) : null };
+  }
+  // Grammar: mostly fill-in-the-blank, every third review a ★ sentence-ordering task.
+  const task = reps % 3 === 2 && x.order ? 'order' : 'fill';
+  const f = x.fill[Math.floor(Math.random() * x.fill.length)];
+  const order = task === 'order' ? { picked: [], pool: shuffle(x.order.chunks.map((c, i) => ({ c, i }))) } : null;
+  return { type, x, mode: 'quiz', task, f, order };
+}
+
+function startStudy(type, extra) {
+  const items = dueOf(type).map(x => quizItem(type, x));
+  const fresh = extra ? newQueueOf(type, extra) : newQueueOf(type);
   // Interleave: a new card after every 3 reviews keeps sessions from front-loading all the hard work.
   const queue = [];
   let ri = 0;
-  for (const k of fresh) {
+  for (const x of fresh) {
     for (let j = 0; j < 3 && ri < items.length; j++) queue.push(items[ri++]);
-    queue.push({ k, mode: 'learn' });
+    queue.push({ type, x, mode: 'learn' });
   }
   while (ri < items.length) queue.push(items[ri++]);
   if (!queue.length) return;
-  session = { queue, i: 0, revealed: false, done: 0, kind: 'study', extra: !!extra };
+  session = { queue, i: 0, revealed: false, done: 0, kind: 'study', type };
   openSheet();
 }
 function startTriage() {
-  const queue = unseen().filter(k => !appData.triaged[k.kanji]).map(k => ({ k, mode: 'triage' }));
+  const queue = unseen().filter(k => !appData.triaged[k.kanji]).map(x => ({ type: 'kanji', x, mode: 'triage' }));
   if (!queue.length) return;
   session = { queue, i: 0, revealed: false, done: 0, kind: 'triage', undo: [] };
   openSheet();
 }
 function openSheet() { $('sheet').hidden = false; $('answer-bar').hidden = false; document.body.style.overflow = 'hidden'; renderSession(); }
 function closeSheet() {
+  try { speechSynthesis.cancel(); } catch (e) { /* no audio */ }
   session = null; $('sheet').hidden = true; $('answer-bar').hidden = true; document.body.style.overflow = '';
   render();
 }
@@ -622,62 +772,153 @@ function insertLater(item, gap) {
   session.queue.splice(pos, 0, item);
 }
 
-function renderSession() {
-  if (!session) return;
-  if (session.i >= session.queue.length) return renderSessionEnd();
-  const it = session.queue[session.i];
-  const k = it.k;
+function sheetFrame(tags, inner) {
   const pct = session.i / session.queue.length * 100;
-  const tags = [];
-  if (it.mode === 'learn') tags.push('<span class="tag new">NEW</span>');
-  if (it.again) tags.push('<span class="tag relearn">AGAIN</span>');
-  if (it.mode === 'triage') tags.push(`<span class="tag">N${k.level} · DO YOU KNOW IT?</span>`);
-  else tags.push(`<span class="tag">N${k.level}</span>`);
-  const showBack = it.mode === 'learn' || session.revealed;
-  const word = it.mode === 'quiz' ? it.word : null;
-  const prompt = it.mode === 'triage'
-    ? 'Know its meaning and at least one common reading?'
-    : it.mode === 'learn' ? 'New kanji: read the story, say the words out loud.' : 'Say a reading and the meaning, then tap to check.';
-  $('sheet').innerHTML = `<div class="sheet-inner">
+  return `<div class="sheet-inner">
     <div class="sheet-top">
       <button class="icon-btn" id="s-close" aria-label="End session">✕</button>
       <div class="progress" role="progressbar" aria-valuenow="${Math.round(pct)}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div>
       <span class="num muted" style="font-size:13px">${session.queue.length - session.i}</span>
     </div>
     <div class="card" id="s-card">
-      <div class="card-front">
-        <div class="tag-row">${tags.join('')}</div>
-        ${showBack && it.mode !== 'triage' ? (word ? `<div class="word-front revealed" lang="ja">${esc(word.w)}<span>${esc(word.r)}</span></div>` : '')
-          : word ? `<div class="word-front" lang="ja">${esc(word.w)}</div><div class="prompt">Read this word aloud (exam style), then tap to check.</div>`
-          : `<div class="cell"><span class="k" lang="ja">${esc(k.kanji)}</span></div><div class="prompt">${prompt}</div>`}
-      </div>
-      ${showBack ? backHtml(k, it.mode === 'learn' ? 'learn' : 'quiz') : ''}
+      <div class="card-front"><div class="tag-row">${tags.join('')}</div>${inner.front}</div>
+      ${inner.back || ''}
     </div>
   </div>`;
+}
+function gradeBar(it) {
+  const c = appData.cards[keyOf(it.type, it.x)];
+  const preview = g => !c ? (g === 1 ? 'today' : g < 4 ? 'tomorrow' : Math.min(maxInterval(), FSRS.interval(FSRS.initS(g), appData.settings.retention)) + 'd') : '';
+  return `<div class="row">
+    <button class="ans again" data-g="1">Again<small>${it.again ? 'still no' : 'forgot'}</small></button>
+    <button class="ans hard" data-g="2">Hard<small>${preview(2) || 'slow'}</small></button>
+    <button class="ans good" data-g="3">Good<small>${preview(3) || 'got it'}</small></button>
+    <button class="ans easy" data-g="4">Easy<small>${preview(4) || 'instant'}</small></button></div>`;
+}
+const learnBar = `<div class="row two"><button class="ans skip" id="a-known">Already know it</button><button class="ans next" id="a-learned">Got it, quiz me soon</button></div>`;
+
+function renderSession() {
+  if (!session) return;
+  if (session.i >= session.queue.length) return renderSessionEnd();
+  const it = session.queue[session.i];
+  const tags = [];
+  if (it.mode === 'learn') tags.push('<span class="tag new">NEW</span>');
+  if (it.again) tags.push('<span class="tag relearn">AGAIN</span>');
+  let inner, bar;
+  if (it.type === 'kanji') ({ inner, bar } = kanjiScreen(it, tags));
+  else if (it.type === 'vocab') ({ inner, bar } = vocabScreen(it, tags));
+  else ({ inner, bar } = grammarScreen(it, tags));
+  $('sheet').innerHTML = sheetFrame(tags, inner);
   $('sheet').scrollTop = 0;
+  $('answer-bar').innerHTML = bar;
+}
+
+function kanjiScreen(it, tags) {
+  const k = it.x;
+  if (it.mode === 'triage') tags.push(`<span class="tag">N${k.level} · DO YOU KNOW IT?</span>`);
+  else tags.push(`<span class="tag">N${k.level}</span>`);
+  const showBack = it.mode === 'learn' || session.revealed;
+  const word = it.mode === 'quiz' ? it.word : null;
+  const prompt = it.mode === 'triage' ? 'Know its meaning and at least one common reading?'
+    : it.mode === 'learn' ? 'New kanji: read the story, say the words out loud.' : 'Say a reading and the meaning, then tap to check.';
+  const front = showBack && it.mode !== 'triage' ? (word ? `<div class="word-front revealed" lang="ja">${esc(word.w)}<span>${esc(word.r)}</span></div>` : '')
+    : word ? `<div class="word-front" lang="ja">${esc(word.w)}</div><div class="prompt">Read this word aloud (exam style), then tap to check.</div>`
+    : `<div class="cell"><span class="k" lang="ja">${esc(k.kanji)}</span></div><div class="prompt">${prompt}</div>`;
+  const back = showBack ? backHtml(k, it.mode === 'learn' ? 'learn' : 'quiz') : '';
   let bar;
-  if (it.mode === 'learn') {
-    bar = `<div class="row one"><button class="ans next" id="a-learned">Got it — quiz me in a moment</button></div>`;
-  } else if (it.mode === 'triage') {
+  if (it.mode === 'learn') bar = learnBar;
+  else if (it.mode === 'triage') {
     const btns = [session.undo.length ? `<button class="ans skip" id="t-undo">Undo</button>` : '',
       session.revealed ? '' : `<button class="ans skip" id="t-peek">Peek</button>`,
       `<button class="ans again" id="t-no">Not yet</button>`, `<button class="ans good" id="t-yes">Know it</button>`].filter(Boolean);
     bar = `<div class="row" style="grid-template-columns:repeat(${btns.length}, 1fr)">${btns.join('')}</div>`;
-  } else if (!session.revealed) {
-    bar = `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>`;
-  } else {
-    const c = appData.cards[k.kanji];
-    const preview = g => {
-      if (!c) return g === 1 ? 'today' : g < 4 ? 'tomorrow' : Math.min(maxInterval(), FSRS.interval(FSRS.initS(g), appData.settings.retention)) + 'd';
-      return '';
-    };
-    bar = `<div class="row">
-      <button class="ans again" data-g="1">Again<small>${it.again ? 'still no' : 'forgot'}</small></button>
-      <button class="ans hard" data-g="2">Hard<small>${preview(2) || 'slow'}</small></button>
-      <button class="ans good" data-g="3">Good<small>${preview(3) || 'got it'}</small></button>
-      <button class="ans easy" data-g="4">Easy<small>${preview(4) || 'instant'}</small></button></div>`;
+  } else bar = session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>`;
+  return { inner: { front, back }, bar };
+}
+
+function vocabScreen(it, tags) {
+  const v = it.x;
+  tags.push('<span class="tag">WORD</span>');
+  if (it.mode === 'learn') {
+    return { inner: { front: '', back: vocabBackHtml(v) }, bar: learnBar };
   }
-  $('answer-bar').innerHTML = bar;
+  if (it.task === 'spell') {
+    tags.push('<span class="tag">表記 · PICK THE KANJI</span>');
+    const answered = session.revealed;
+    const front = `<div class="word-front kana" lang="ja">${esc(v.r)}</div><div class="prompt">${esc(v.m)}</div>
+      <div class="opts">${it.opts.map((o, i) => {
+        const cls = !answered ? '' : o === v.w ? ' right' : i === it.chosen ? ' wrong' : ' dim';
+        return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
+      }).join('')}</div>`;
+    return { inner: { front, back: answered ? vocabBackHtml(v) : '' },
+      bar: answered ? `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : 'Missed · it will come back'}</button></div>` : `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Choose the correct spelling</span></div>` };
+  }
+  tags.push('<span class="tag">漢字読み · READ IT</span>');
+  const front = session.revealed ? '' : `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">Say the reading and meaning, then tap to check.</div>`;
+  if (session.revealed) setTimeout(() => speak(v.r), 50);
+  return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
+    bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
+}
+
+function grammarScreen(it, tags) {
+  const g = it.x;
+  tags.push('<span class="tag">GRAMMAR</span>');
+  if (it.mode === 'learn') return { inner: { front: '', back: grammarBackHtml(g) }, bar: learnBar };
+  const answered = session.revealed;
+  const cont = `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : 'Missed · it will come back'}</button></div>`;
+  if (it.task === 'fill') {
+    tags.push('<span class="tag">文法 · FILL THE BLANK</span>');
+    const f = it.f;
+    const q = esc(f.q).replace('（　）', `<span class="blank">${answered ? esc(f.choices[f.answer]) : '（　　）'}</span>`);
+    const front = `<div class="g-q" lang="ja">${q}</div>
+      <div class="opts">${f.choices.map((o, i) => {
+        const cls = !answered ? '' : i === f.answer ? ' right' : i === it.chosen ? ' wrong' : ' dim';
+        return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
+      }).join('')}</div>
+      ${answered ? `<div class="why">${esc(f.why)} ${sayBtn(f.q.replace('（　）', f.choices[f.answer]))}</div>` : ''}`;
+    return { inner: { front, back: answered ? grammarBackHtml(g, true) : '' },
+      bar: answered ? cont : `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Choose what fits （　）</span></div>` };
+  }
+  // ★ ordering
+  tags.push('<span class="tag">並べ替え · ORDER THE PARTS</span>');
+  const o = g.order, st = it.order;
+  const slots = [0, 1, 2, 3].map(i => {
+    const p = st.picked[i];
+    const star = i === o.star ? '<span class="star">★</span>' : '';
+    const correctChunk = answered ? o.chunks[i] : null;
+    return `<button class="slot${p ? ' filled' : ''}${answered ? (st.picked[i] && st.picked[i].i === i ? ' right' : ' wrong') : ''}" data-slot="${i}" ${answered ? 'disabled' : ''} lang="ja">${star}${answered ? esc(correctChunk) : p ? esc(p.c) : '＿＿'}</button>`;
+  }).join('');
+  const front = `<div class="g-q order" lang="ja"><span>${esc(o.before)}</span>${slots}<span>${esc(o.after)}</span></div>
+    ${answered ? `<div class="why">${esc(o.en)} ${sayBtn(o.before + o.chunks.join('') + o.after)}</div>` :
+      `<div class="opts chunks">${st.pool.map((p, j) => `<button class="opt" data-chunk="${j}" lang="ja">${esc(p.c)}</button>`).join('')}</div>
+       <div class="prompt">Tap the parts in order. Tap a filled slot to take it back.</div>`}`;
+  return { inner: { front, back: answered ? grammarBackHtml(g, true) : '' }, bar: answered ? cont : '<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Fill all four slots</span></div>' };
+}
+
+function answerChoice(i) {
+  const it = session.queue[session.i];
+  if (session.revealed) return;
+  it.chosen = i;
+  it.correct = it.type === 'vocab' ? it.opts[i] === it.x.w : i === it.f.answer;
+  session.revealed = true;
+  renderSession();
+}
+function pickChunk(j) {
+  const it = session.queue[session.i], st = it.order;
+  const p = st.pool.splice(j, 1)[0];
+  const slot = [0, 1, 2, 3].find(i => !st.picked[i]);
+  st.picked[slot] = p;
+  if (st.picked.filter(Boolean).length === 4) {
+    it.correct = st.picked.every((x, i) => x.i === i);
+    session.revealed = true;
+  }
+  renderSession();
+}
+function unpickSlot(i) {
+  const it = session.queue[session.i], st = it.order;
+  if (!st.picked[i]) return;
+  st.pool.push(st.picked[i]); st.picked[i] = undefined;
+  renderSession();
 }
 
 function renderSessionEnd() {
@@ -685,21 +926,20 @@ function renderSessionEnd() {
   $('sheet').innerHTML = `<div class="sheet-inner"><div class="card" style="text-align:center;padding:32px 18px">
     <div class="cell" style="margin:0 auto"><span class="k" lang="ja">${triage ? '済' : '終'}</span></div>
     <h2 style="margin-top:14px">${triage ? 'Triage done' : 'Session done'}</h2>
-    <p class="muted">${triage ? `Unseen kanji left to learn: ${unseen().length}. The daily plan now uses that number.` : `${session.done} cards answered. Come back when more reviews are due.`}</p>
+    <p class="muted">${triage ? `Unseen kanji left to learn: ${unseen().length}. The daily plan now uses that number.` : `${session.done} cards answered. Check Today for the other decks.`}</p>
   </div></div>`;
   $('answer-bar').innerHTML = `<div class="row one"><button class="ans next" id="s-finish">Back to today</button></div>`;
 }
 
 function grade(g) {
   const it = session.queue[session.i];
-  const k = it.k;
   if (!it.again) {
     // First answer for this card in this session counts for scheduling.
-    schedule(k.kanji, g);
+    schedule(keyOf(it.type, it.x), g);
     logReview(g > 1);
   }
   session.done++;
-  if (g === 1) insertLater({ k, mode: 'quiz', again: true }, 4);
+  if (g === 1) insertLater(Object.assign(quizItem(it.type, it.x), { again: true }), 4);
   saveData();
   next();
 }
@@ -707,15 +947,10 @@ function next() { session.i++; session.revealed = false; renderSession(); }
 
 function triageAnswer(known) {
   const it = session.queue[session.i];
-  const k = it.k.kanji;
+  const k = it.x.kanji;
   session.undo.push({ k, prevCard: appData.cards[k], prevTri: appData.triaged[k] });
   appData.triaged[k] = known ? 'known' : 'unknown';
-  if (known) {
-    // Spread "already known" checks over the next 4 weeks so they don't arrive as one wall of reviews.
-    const t = today();
-    appData.cards[k] = { stability: 25, difficulty: 3, reps: 1, lapses: 0, lastReview: t,
-                         due: addDays(t, 4 + Math.floor(Math.random() * 24)), triaged: true };
-  }
+  if (known) markKnown(k);
   saveData();
   session.done++;
   next();
@@ -733,22 +968,38 @@ function triageUndo() {
 document.addEventListener('click', e => {
   const t = e.target.closest('button, [data-k]');
   if (!t) { if (e.target === $('modal')) $('modal').hidden = true; return; }
+  if (t.dataset.say !== undefined) { e.stopPropagation(); return speak(t.dataset.say); }
   const id = t.id;
   if (t.closest('#tabs')) { view = t.dataset.view; confirmingReset = false; render(); window.scrollTo(0, 0); return; }
   if (t.dataset.k && !t.closest('.sheet')) return showDetail(t.dataset.k);
+  if (t.dataset.k && t.closest('.sheet')) return;
+  if (t.dataset.v) { const v = BY_WORD[t.dataset.v]; if (v) showModal('v:' + v.w, vocabBackHtml(v)); return; }
+  if (t.dataset.gId) { const g = BY_GID[t.dataset.gId]; if (g) showModal('g:' + g.id, grammarBackHtml(g)); return; }
+  if (t.dataset.dtype) { deckFilter.type = t.dataset.dtype; deckFilter.q = ''; render(); return; }
   if (t.dataset.lv !== undefined) { deckFilter.level = +t.dataset.lv; render(); return; }
+  if (t.dataset.study) return startStudy(t.dataset.study);
+  if (t.dataset.extra) return startStudy(t.dataset.extra, 5);
   if (t.dataset.g) return grade(+t.dataset.g);
+  if (t.dataset.opt !== undefined) return answerChoice(+t.dataset.opt);
+  if (t.dataset.chunk !== undefined) return pickChunk(+t.dataset.chunk);
+  if (t.dataset.slot !== undefined) return unpickSlot(+t.dataset.slot);
   switch (id) {
-    case 'go-study': return startStudy();
-    case 'go-extra': return startStudy(5);
     case 'go-triage': return startTriage();
     case 's-close': case 's-finish': return closeSheet();
     case 'a-reveal': session.revealed = true; return renderSession();
+    case 'a-continue': { const it = session.queue[session.i]; return grade(it.correct ? 3 : 1); }
     case 'a-learned': {
       const it = session.queue[session.i];
-      appData.newByDay[today()] = (appData.newByDay[today()] || 0) + 1;
+      const dk = dayKey(it.type);
+      appData.newByDay[dk] = (appData.newByDay[dk] || 0) + 1;
       saveData();
-      insertLater({ k: it.k, mode: 'quiz' }, 3);
+      insertLater(quizItem(it.type, it.x), 3);
+      return next();
+    }
+    case 'a-known': {
+      const it = session.queue[session.i];
+      markKnown(keyOf(it.type, it.x));
+      saveData();
       return next();
     }
     case 't-yes': return triageAnswer(true);
@@ -767,8 +1018,12 @@ document.addEventListener('input', e => {
   if (e.target.id === 'deck-search') { deckFilter.q = e.target.value; renderDeckGrid(); }
 });
 document.addEventListener('change', e => {
-  if (e.target.id === 'set-exam' && e.target.value) { appData.settings.examDate = e.target.value; saveData(); }
-  if (e.target.id === 'set-new') { const v = e.target.value.trim(); appData.settings.newPerDay = v === '' ? 'auto' : String(Math.max(0, parseInt(v, 10) || 0)); saveData(); render(); }
+  const st = appData.settings;
+  const num = v => String(Math.max(0, parseInt(v, 10) || 0));
+  if (e.target.id === 'set-exam' && e.target.value) { st.examDate = e.target.value; saveData(); }
+  if (e.target.id === 'set-new') { const v = e.target.value.trim(); st.newPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
+  if (e.target.id === 'set-vocab') { st.vocabPerDay = num(e.target.value); saveData(); }
+  if (e.target.id === 'set-grammar') { st.grammarPerDay = num(e.target.value); saveData(); }
   if (e.target.id === 'b-file' && e.target.files[0]) { const r = new FileReader(); r.onload = () => restore(r.result); r.readAsText(e.target.files[0]); }
 });
 document.addEventListener('keydown', e => {
@@ -776,10 +1031,13 @@ document.addEventListener('keydown', e => {
   const it = session.queue[session.i];
   if (!it) { if (e.key === 'Enter' || e.key === ' ') closeSheet(); return; }
   if (e.key === 'Escape') return closeSheet();
+  const choice = it.mode === 'quiz' && (it.task === 'spell' || it.task === 'fill');
   if (it.mode === 'learn' && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); $('a-learned').click(); }
   else if (it.mode === 'triage') { if (e.key === 'ArrowRight' || e.key === 'k') triageAnswer(true); if (e.key === 'ArrowLeft' || e.key === 'n') triageAnswer(false); }
-  else if (!session.revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); session.revealed = true; renderSession(); }
-  else if (session.revealed && '1234'.includes(e.key)) grade(+e.key);
+  else if (choice && !session.revealed && '1234'.includes(e.key)) answerChoice(+e.key - 1);
+  else if ((choice || it.task === 'order') && session.revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); grade(it.correct ? 3 : 1); }
+  else if (!choice && it.task !== 'order' && !session.revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); session.revealed = true; renderSession(); }
+  else if (!choice && it.task !== 'order' && session.revealed && '1234'.includes(e.key)) grade(+e.key);
 });
 
 function copyBackup() {
@@ -805,11 +1063,14 @@ function restore(txt) {
 }
 
 // ============ BOOT ============
-fetch('kanji.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(data => {
-  DECK = data.cards;
-  CAST = data.cast || {};
-  CAST_NOTE = data.castNote || '';
+const getJson = (f, optional) => fetch(f).then(r => { if (!r.ok) throw new Error(f); return r.json(); }).catch(err => { if (optional) return []; throw err; });
+Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('grammar.json', true)]).then(([kd, vd, gd]) => {
+  DECK = kd.cards;
+  CAST = kd.cast || {};
+  CAST_NOTE = kd.castNote || '';
   BY_KANJI = Object.fromEntries(DECK.map(k => [k.kanji, k]));
+  VOCAB = vd; BY_WORD = Object.fromEntries(VOCAB.map(v => [v.w, v]));
+  GRAMMAR = gd; BY_GID = Object.fromEntries(GRAMMAR.map(g => [g.id, g]));
   render();
 }).catch(() => {
   $('app').innerHTML = '<div class="loading">The deck file (kanji.json) did not load. If you opened this file directly from disk, serve the folder instead: python3 -m http.server</div>';
