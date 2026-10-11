@@ -243,6 +243,8 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .opt.dim { opacity: .5; }
 .opt[disabled] { cursor: default; }
 .chunks .opt { font-size: 17px; justify-content: center; }
+.opts.g .opt, .chunks .opt { font-family: var(--font-body); font-weight: 700; font-size: 17px; }
+.opts.g.long { grid-template-columns: 1fr; }
 .g-q { font-size: 19px; line-height: 1.9; width: 100%; }
 .g-q .blank { display: inline-block; padding: 0 6px; border-bottom: 2px solid var(--ai); color: var(--ai); font-weight: 700; }
 .g-q.order { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
@@ -871,7 +873,7 @@ function grammarScreen(it, tags) {
     const f = it.f;
     const q = esc(f.q).replace('（　）', `<span class="blank">${answered ? esc(f.choices[f.answer]) : '（　　）'}</span>`);
     const front = `<div class="g-q" lang="ja">${q}</div>
-      <div class="opts">${f.choices.map((o, i) => {
+      <div class="opts g${f.choices.some(c => c.length > 4) ? ' long' : ''}">${f.choices.map((o, i) => {
         const cls = !answered ? '' : i === f.answer ? ' right' : i === it.chosen ? ' wrong' : ' dim';
         return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
       }).join('')}</div>
