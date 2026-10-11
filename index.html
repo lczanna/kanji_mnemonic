@@ -665,7 +665,7 @@ function showGloss(btn) {
   placePop(pop, btn);
   speak(r);
 }
-// Word prompts: tapping a kanji shows its meaning and readings (in hiragana), a hint you can take before answering.
+// Word prompts: tapping a kanji shows its meaning and readings (in hiragana). A hint taken before answering counts as a miss.
 const hira = t => t.replace(/[\u30a1-\u30f6]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60));
 function kanjiTapHtml(w) {
   return `<div>${[...w].map(ch => BY_KANJI[ch] ? `<button class="gl" data-kt="${esc(ch)}">${esc(ch)}</button>` : esc(ch)).join('')}</div>`;
@@ -678,6 +678,7 @@ function showKanjiPop(btn) {
   // On a word prompt the hint sits under the word, so it never covers the answer options.
   const front = btn.closest('.word-front');
   if (front) {
+    if (session && !session.revealed) session.queue[session.i].hinted = true;
     let hint = front.nextElementSibling;
     if (!hint || !hint.classList.contains('kt-hint')) { hint = document.createElement('div'); hint.className = 'kt-hint'; front.after(hint); }
     hint.innerHTML = html;
@@ -1136,6 +1137,7 @@ function sheetFrame(tags, inner) {
   </div>`;
 }
 function gradeBar(it) {
+  if (it.hinted) return continueBar(it);
   const c = appData.cards[keyOf(it.type, it.x)];
   const preview = g => !c ? (g === 1 ? 'today' : g < 4 ? 'tomorrow' : Math.min(maxInterval(), FSRS.interval(FSRS.initS(g), retention())) + 'd') : '';
   return `<div class="row">
@@ -1207,7 +1209,7 @@ function mcOptions(it, kana) {
   }).join('')}</div>`;
 }
 function continueBar(it) {
-  return `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : 'Missed · it will come back'}</button></div>`;
+  return `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : it.hinted ? 'Hint used · it will come back' : 'Missed · it will come back'}</button></div>`;
 }
 const pickHint = t => `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">${t}</span></div>`;
 
@@ -1283,7 +1285,7 @@ function answerChoice(i) {
   const it = session.queue[session.i];
   if (session.revealed) return;
   it.chosen = i;
-  it.correct = it.answerText != null ? it.opts[i] === it.answerText : i === it.f.answer;
+  it.correct = !it.hinted && (it.answerText != null ? it.opts[i] === it.answerText : i === it.f.answer);
   session.revealed = true;
   renderSession();
 }
