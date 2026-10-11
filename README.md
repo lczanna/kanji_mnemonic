@@ -30,6 +30,7 @@ A spaced-repetition app for JLPT N3 with three decks:
 - **Grammar:** each point has a meaning, formation, nuance note and examples. Quizzes alternate between fill-in-the-blank （　） and ★ sentence ordering. The sentences were written for this deck and have not had a native-speaker review; report anything that sounds off.
 - **Audio:** ▶ buttons use the phone's built-in Japanese voice.
 - **Daily plan in minutes:** set your study time for weekdays and weekends (More → Settings; default 30 and 60). Each day, reviews come first and the remaining time is filled with new cards: grammar, then kanji, then words (always at least 30% of the room once words are unlocked). Weekends get proportionally more. The plan recalculates daily from what's left, learns your real speed per card, and Today shows whether each deck is ahead of or behind schedule.
+- **Memory hooks for words:** the 217 most useful words that you learn by sound (kanji above N3, or kana only) have a keyword-method hook: compounds reuse the sound cast (結婚 = Ketchup bottle + Conductor), native words an English sound-alike (準備 = June bees), and words built from N5 parts show how (どこか = どこ + か).
 - **Most useful words first:** words are ranked by how often they appear in everyday Japanese; the top 1,200 are scheduled automatically, the rest only once those are all started. "Learn 5 more" adds a mix of kanji, words and grammar on top of the plan.
 - **Rounds:** long sessions pause every 50 answers so you can stop at a natural point.
 - **Exam plan:**
@@ -60,6 +61,7 @@ A spaced-repetition app for JLPT N3 with three decks:
 | `tools/pack_images.py` | Bundles the pictures into ~20 packs for the Claude link, which caps its file count |
 | `tools/gen_images.py` | Generates card illustrations from the current stories (needs `OPENAI_API_KEY`) |
 | `examples.json` | 2–3 example sentences per word (Tanaka corpus, CC-BY), with tap-to-read glosses |
+| `data/word_mnemonics.json` | Memory hooks for words learned by sound (kanji above N3 or kana only); merged into `vocab.json` by `tools/add_word_hooks.py` |
 | `tools/rank_vocab.py` | Ranks words by everyday frequency (`p` in `vocab.json`), so the most useful are studied first |
 | `tools/build_examples.py` | Builds `examples.json` from `examples.utf` and JMdict |
 | `tools/gloss_grammar.py` | Builds the tap-to-read glosses in `grammar.json` |
