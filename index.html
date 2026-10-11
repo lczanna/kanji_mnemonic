@@ -282,6 +282,7 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .gl-word span { font-family: var(--font-body); font-weight: 500; font-size: 16px; color: var(--ai); }
 .gl-lemma { font-size: 13px; color: var(--muted); }
 .gl-m { font-size: 14px; }
+.kt-hint { display: grid; gap: 2px; text-align: center; background: var(--ai-soft); border-radius: 10px; padding: 8px 12px; max-width: 100%; }
 .icon-btn[disabled] { opacity: .35; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -661,13 +662,38 @@ function showGloss(btn) {
   pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} <span>${esc(r)}</span> ${sayBtn(r, 'Play ' + w)}</div>
     ${lemma !== w ? `<div class="gl-lemma" lang="ja">dictionary form: ${esc(lemma)}（${esc(lr)}）</div>` : ''}
     <div class="gl-m">${esc(m || 'name or rare word')}</div>`;
+  placePop(pop, btn);
+  speak(r);
+}
+// Word prompts: tapping a kanji shows its meaning and readings (in hiragana), a hint you can take before answering.
+const hira = t => t.replace(/[\u30a1-\u30f6]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60));
+function kanjiTapHtml(w) {
+  return `<div>${[...w].map(ch => BY_KANJI[ch] ? `<button class="gl" data-kt="${esc(ch)}">${esc(ch)}</button>` : esc(ch)).join('')}</div>`;
+}
+function showKanjiPop(btn) {
+  const k = BY_KANJI[btn.dataset.kt]; if (!k) return;
+  const rd = [...(k.on || []).map(hira), ...(k.kun || []).map(r => r.replace(/\.(.+)$/, '（$1）'))];
+  const html = `<div class="gl-word" lang="ja">${esc(k.kanji)} <span>${esc(rd.join('・') || '–')}</span></div>
+    <div class="gl-m">${esc(k.meaning && k.meaning.toLowerCase().includes(k.keyword.toLowerCase()) ? k.meaning : k.keyword + (k.meaning ? ' · ' + k.meaning : ''))}</div>`;
+  // On a word prompt the hint sits under the word, so it never covers the answer options.
+  const front = btn.closest('.word-front');
+  if (front) {
+    let hint = front.nextElementSibling;
+    if (!hint || !hint.classList.contains('kt-hint')) { hint = document.createElement('div'); hint.className = 'kt-hint'; front.after(hint); }
+    hint.innerHTML = html;
+    return;
+  }
+  const pop = $('gl-pop');
+  pop.innerHTML = html;
+  placePop(pop, btn);
+}
+function placePop(pop, btn) {
   pop.hidden = false;
   const b = btn.getBoundingClientRect(), pw = Math.min(280, innerWidth - 24);
   pop.style.width = pw + 'px';
   pop.style.left = Math.max(12, Math.min(innerWidth - pw - 12, b.left + b.width / 2 - pw / 2)) + 'px';
   const below = b.bottom + 8, h = pop.offsetHeight;
   pop.style.top = (below + h < innerHeight - 90 ? below : Math.max(8, b.top - h - 8)) + 'px';
-  speak(r);
 }
 function sayBtn(text, label) { return 'speechSynthesis' in window ? `<button class="say" data-say="${esc(text)}" aria-label="${esc(label || 'Play audio')}">▶</button>` : ''; }
 
@@ -710,7 +736,7 @@ function vocabBackHtml(v) {
     <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
     ${f === 'mixed' ? `<p class="g-note">Written <span lang="ja" class="kform">${esc(v.w)}</span>. Its kanji are above N3, so the exam normally prints this word in kana: know the sound and the meaning.</p>` : ''}
     ${v.k.length ? `<div><div class="section-label">${f === 'kanji' ? 'Built from' : 'Contains'}</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
-      return `<button class="part" data-k="${esc(ch)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${k && k.sound && k.sound[0] ? ` · <span lang="ja">${esc(k.sound[0].r)}</span> ${esc(k.sound[0].hook)}` : ''}</span></button>`; }).join('')}</div></div>` : ''}
+      return `<button class="part" data-k="${esc(ch)}" data-kt="${esc(ch)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${k && k.sound && k.sound[0] ? ` · <span lang="ja">${esc(k.sound[0].r)}</span> ${esc(k.sound[0].hook)}` : ''}</span></button>`; }).join('')}</div></div>` : ''}
   </div>`;
 }
 function grammarBackHtml(g, compact) {
@@ -1154,12 +1180,12 @@ function kanjiScreen(it, tags) {
     : it.mode === 'learn' ? 'New kanji: read the story, say the words out loud.' : 'Say a reading and the meaning, then tap to check.';
   if (it.task === 'readmc') {
     tags.push('<span class="tag">漢字読み · PICK THE READING</span>');
-    const front = `<div class="word-front" lang="ja">${esc(word.w)}</div>${mcOptions(it, true)}`;
+    const front = `<div class="word-front" lang="ja">${kanjiTapHtml(word.w)}</div>${mcOptions(it, true)}`;
     return { inner: { front, back: session.revealed ? backHtml(k, 'quiz') : '' },
       bar: session.revealed ? continueBar(it) : pickHint('Watch for long vowels, small っ and ゛') };
   }
   const front = showBack && it.mode !== 'triage' ? (word ? `<div class="word-front revealed" lang="ja">${esc(word.w)}<span>${esc(word.r)}</span></div>` : '')
-    : word ? `<div class="word-front" lang="ja">${esc(word.w)}</div><div class="prompt">Read this word aloud (exam style), then tap to check.</div>`
+    : word ? `<div class="word-front" lang="ja">${kanjiTapHtml(word.w)}</div><div class="prompt">Read this word aloud (exam style), then tap to check. Tap a kanji for a hint.</div>`
     : `<div class="cell"><span class="k" lang="ja">${esc(k.kanji)}</span></div><div class="prompt">${prompt}</div>`;
   const back = showBack ? backHtml(k, it.mode === 'learn' ? 'learn' : 'quiz') : '';
   let bar;
@@ -1200,7 +1226,7 @@ function vocabScreen(it, tags) {
   if (it.task === 'readmc') {
     tags.push('<span class="tag">漢字読み · PICK THE READING</span>');
     if (session.revealed) speak(v.r);
-    const front = `<div class="word-front" lang="ja">${esc(v.w)}</div>${mcOptions(it, true)}`;
+    const front = `<div class="word-front" lang="ja">${kanjiTapHtml(v.w)}</div>${mcOptions(it, true)}`;
     return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
       bar: session.revealed ? continueBar(it) : pickHint('Watch for long vowels, small っ and ゛') };
   }
@@ -1212,7 +1238,7 @@ function vocabScreen(it, tags) {
       bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
   }
   tags.push('<span class="tag">漢字読み · READ IT</span>');
-  const front = session.revealed ? '' : `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">Say the reading and meaning, then tap to check.</div>`;
+  const front = session.revealed ? '' : `<div class="word-front" lang="ja">${kanjiTapHtml(v.w)}</div><div class="prompt">Say the reading and meaning, then tap to check. Tap a kanji for a hint.</div>`;
   if (session.revealed) speak(v.r);
   return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
     bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
@@ -1357,11 +1383,12 @@ function triageUndo() {
 
 // ============ EVENTS ============
 document.addEventListener('click', e => {
-  if (!e.target.closest('[data-gl], #gl-pop')) $('gl-pop').hidden = true;
+  if (!e.target.closest('[data-gl], [data-kt], #gl-pop')) $('gl-pop').hidden = true;
   const t = e.target.closest('button, [data-k]');
   if (!t) { if (e.target === $('modal')) $('modal').hidden = true; return; }
   if (t.dataset.say !== undefined) { e.stopPropagation(); return speak(t.dataset.say); }
   if (t.dataset.gl) { e.stopPropagation(); return showGloss(t); }
+  if (t.dataset.kt && t.closest('.sheet')) { e.stopPropagation(); return showKanjiPop(t); }
   if (t.dataset.hist !== undefined) return showHistory(+t.dataset.hist);
   if (t.id === 's-prev') return showHistory((session.history || []).length - 1);
   const id = t.id;
