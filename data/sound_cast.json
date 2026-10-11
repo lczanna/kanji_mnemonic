@@ -9,28 +9,28 @@
   "emoji": "🏚️"
  },
  "カイ": {
-  "hook": "Kaiser (spike-helmet emperor)",
-  "emoji": "🪖"
+  "hook": "Kite flyer",
+  "emoji": "🪁"
  },
  "ガイ": {
-  "hook": "Guy Fawkes",
-  "emoji": "🎭"
+  "hook": "Tour guide",
+  "emoji": "🚩"
  },
  "カク": {
   "hook": "Cactus",
   "emoji": "🌵"
  },
  "ガク": {
-  "hook": "Gawker (gawking tourist)",
-  "emoji": "📸"
+  "hook": "Guacamole",
+  "emoji": "🥑"
  },
  "カツ": {
   "hook": "Catapult",
   "emoji": "🏹"
  },
  "ガツ": {
-  "hook": "Gatsby",
-  "emoji": "🥂"
+  "hook": "Gutsy boxer",
+  "emoji": "🥊"
  },
  "ガッ": {
   "hook": "Gatling gun",
@@ -49,8 +49,8 @@
   "emoji": "🥝"
  },
  "ギ": {
-  "hook": "Geezer (grumpy old man)",
-  "emoji": "👴"
+  "hook": "Gibbon",
+  "emoji": "🐒"
  },
  "キュウ": {
   "hook": "Cucumber",
@@ -61,8 +61,8 @@
   "emoji": "⛸️"
  },
  "キョ": {
-  "hook": "Pinocchio",
-  "emoji": "🤥"
+  "hook": "Tokyo salaryman",
+  "emoji": "💼"
  },
  "ギョ": {
   "hook": "Gyoro (goggle-eyed goldfish)",
@@ -177,8 +177,8 @@
   "emoji": "⚔️"
  },
  "ザ": {
-  "hook": "Zamboni",
-  "emoji": "🧊"
+  "hook": "Czar (Russian emperor)",
+  "emoji": "👑"
  },
  "サイ": {
   "hook": "Cyclops",
@@ -201,16 +201,16 @@
   "emoji": "🪐"
  },
  "ザツ": {
-  "hook": "Zatoichi (blind swordsman)",
-  "emoji": "🦯"
+  "hook": "Zapper (ray-gun alien)",
+  "emoji": "👽"
  },
  "サン": {
   "hook": "Santa",
   "emoji": "🎅"
  },
  "ザン": {
-  "hook": "Zanzibar pirate",
-  "emoji": "🏴‍☠️"
+  "hook": "Zanta (Santa's muddy twin)",
+  "emoji": "🎅"
  },
  "シ": {
   "hook": "Sheep",
@@ -221,8 +221,8 @@
   "emoji": "🚙"
  },
  "シキ": {
-  "hook": "Shikari (big-game hunter)",
-  "emoji": "🎯"
+  "hook": "Sheikh (desert prince)",
+  "emoji": "🐪"
  },
  "ジキ": {
   "hook": "Dr. Jekyll",
@@ -261,8 +261,8 @@
   "emoji": "🐺"
  },
  "シュ": {
-  "hook": "Sugar Plum Fairy",
-  "emoji": "🧚"
+  "hook": "Shushing librarian",
+  "emoji": "🤫"
  },
  "ジュ": {
   "hook": "Jukebox",
@@ -321,8 +321,8 @@
   "emoji": "⛩️"
  },
  "ジン": {
-  "hook": "Djinn (genie)",
-  "emoji": "🧞"
+  "hook": "Ginger cat",
+  "emoji": "🐈"
  },
  "ス": {
   "hook": "Sumo wrestler",
@@ -341,8 +341,8 @@
   "emoji": "🦸"
  },
  "セ": {
-  "hook": "Selkie (seal-woman)",
-  "emoji": "🦭"
+  "hook": "Segway rider",
+  "emoji": "🛴"
  },
  "セイ": {
   "hook": "Sailor",
@@ -725,8 +725,8 @@
   "emoji": "🎰"
  },
  "ベン": {
-  "hook": "Ben Franklin",
-  "emoji": "🪁"
+  "hook": "Bento box",
+  "emoji": "🍱"
  },
  "ボ": {
   "hook": "Bobsledder",
@@ -837,8 +837,8 @@
   "emoji": "🦝"
  },
  "リ": {
-  "hook": "Riddler",
-  "emoji": "❓"
+  "hook": "Lizard",
+  "emoji": "🦎"
  },
  "リキ": {
   "hook": "Rickshaw driver",
@@ -977,8 +977,8 @@
   "emoji": "🦅"
  },
  "イク": {
-  "hook": "Ichabod Crane",
-  "emoji": "🎃"
+  "hook": "Icky slime blob",
+  "emoji": "🟢"
  },
  "イチ": {
   "hook": "Itchy flea",

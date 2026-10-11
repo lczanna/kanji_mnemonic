@@ -48,7 +48,7 @@ A spaced-repetition app for JLPT N3 with three decks:
 | `kanji.json` | Kanji deck and sound cast |
 | `vocab.json` | Words deck (`f` = kanji / mixed / kana, `k` = deck kanji in the word, `d` = 表記 distractors) |
 | `grammar.json` | Grammar deck |
-| `images/` | Illustrations (93 cards have one so far) |
+| `images/n3/` | One illustration per kanji card, drawn from its current story (`u<codepoint>.jpg`, 480×320) |
 | `data/sound_cast.json`, `data/primitives.json` | Shared hook and part names used to write stories |
 | `tools/gen_images.py` | Generates card illustrations from the current stories (needs `OPENAI_API_KEY`) |
 | `tools/gloss_grammar.py` | Builds the tap-to-read glosses in `grammar.json` |
