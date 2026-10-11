@@ -42,6 +42,7 @@
   --easy: #7fb5ef; --grid: #7a4842; color-scheme: dark;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html, body { height: 100%; }
 body {
   margin: 0; background: var(--paper); color: var(--ink);
@@ -134,6 +135,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .headline .k-small { font-family: var(--font-kanji); font-weight: 800; font-size: 64px; line-height: 1; }
 .keyword { font-size: 22px; font-weight: 700; line-height: 1.2; }
 .meaning { font-size: 13px; color: var(--muted); }
+.card-img.small { aspect-ratio: 16 / 7; }
 .card-img { width: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; display: block; background: var(--ai-soft); }
 .story { font-size: 16px; line-height: 1.65; }
 .story .kw { color: var(--ai); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
@@ -191,7 +193,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .kpi .v { font-family: var(--font-kanji); font-weight: 800; font-size: 28px; line-height: 1.1; }
 .kpi .l { font-size: 12px; color: var(--muted); }
 .forecast { display: grid; grid-template-columns: repeat(14, 1fr); gap: 4px; align-items: end; height: 110px; }
-.forecast .col { display: grid; align-content: end; justify-items: center; gap: 3px; height: 100%; min-width: 0; }
+.forecast .col { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 3px; height: 100%; min-width: 0; }
 .forecast .b { width: 100%; background: var(--ai); border-radius: 3px 3px 0 0; min-height: 2px; }
 .forecast .n { font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .forecast .d { font-size: 10px; color: var(--muted); }
@@ -380,8 +382,16 @@ function kata2hira(s) { return s.replace(/[ァ-ヶ]/g, c => String.fromCharCode(
 const $ = id => document.getElementById(id);
 
 // ============ CARD BACK ============
-function backHtml(k) {
+function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
+  // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
+  const img = k.image ? `<img class="card-img${mode === 'quiz' ? ' small' : ''}" src="${esc(k.image)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="this.remove()">` : '';
+  const story = `<div class="story">${storyHtml(k.story || '')}</div>`;
+  const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
+      `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}</span></div>`).join('')}</div>` : '';
+  const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
+      <div class="vocab-row"><span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)}</span><span class="m">${esc(v.m)}</span></div>`).join('')}</div></div>` : '';
+  const body = mode === 'quiz' ? vocabH + soundH + story + img : img + story + soundH + vocabH;
   return `
   <div class="back">
     <div class="headline">
@@ -392,12 +402,7 @@ function backHtml(k) {
         <div class="chips" style="margin-top:6px">${(k.components || []).map(c => `<span class="chip">${esc(c)}</span>`).join('')}</div>
       </div>
     </div>
-    ${k.image ? `<img class="card-img" src="${esc(k.image)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="this.remove()">` : ''}
-    <div class="story">${storyHtml(k.story || '')}</div>
-    ${sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
-      `<div class="sound-row"><span class="r" lang="ja">${esc(kata2hira(x.r))}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}</span></div>`).join('')}</div>` : ''}
-    ${(k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
-      <div class="vocab-row"><span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)}</span><span class="m">${esc(v.m)}</span></div>`).join('')}</div></div>` : ''}
+    ${body}
     <dl class="readings">
       <dt>ON</dt><dd lang="ja">${esc((k.on || []).join('・') || '–')}</dd>
       <dt>KUN</dt><dd lang="ja">${esc((k.kun || []).join('・') || '–')}</dd>
@@ -516,7 +521,7 @@ function statsHtml() {
     </div>
     <div class="panel">
       <div class="section-label">Reviews due, next 14 days</div>
-      <div class="forecast">${fc.map((x, i) => `<div class="col"><span class="n">${x.n || ''}</span><span class="b" style="height:${x.n / maxN * 80}%"></span><span class="d">${i === 0 ? 'now' : new Date(x.d + 'T12:00:00').getDate()}</span></div>`).join('')}</div>
+      <div class="forecast">${fc.map((x, i) => `<div class="col"><span class="n">${x.n || ''}</span><span class="b" style="height:${Math.round(x.n / maxN * 70)}px"></span><span class="d">${i === 0 ? 'now' : new Date(x.d + 'T12:00:00').getDate()}</span></div>`).join('')}</div>
     </div>
     <div class="panel">
       <div class="section-label">Daily reviews, last 18 weeks</div>
@@ -554,7 +559,7 @@ function moreHtml() {
     </div>
     <div class="panel stack">
       <div><h3>Sound cast</h3><p class="muted" style="margin:4px 0 0;font-size:13px">${esc(CAST_NOTE)}</p></div>
-      <div class="cast">${Object.entries(CAST).sort((a, b) => a[0].localeCompare(b[0], 'ja')).map(([r, c]) => `<div><b lang="ja">${esc(kata2hira(r))}</b> ${esc(c.emoji || '')} ${esc(c.hook)}</div>`).join('')}</div>
+      <div class="cast">${Object.entries(CAST).sort((a, b) => a[0].localeCompare(b[0], 'ja')).map(([r, c]) => `<div><b lang="ja">${esc(r)}</b> ${esc(c.emoji || '')} ${esc(c.hook)}</div>`).join('')}</div>
     </div>
     <div class="panel stack">
       <h3>Reset</h3>
@@ -571,7 +576,7 @@ function showDetail(kanji) {
   $('modal-body').innerHTML = `<div class="stack">
     <div class="row-wrap" style="justify-content:space-between"><span class="eyebrow">${c ? `Next review ${esc(c.due)} · failed ${c.lapses || 0}×` : 'Not started'}</span>
     <button class="icon-btn" id="modal-close" aria-label="Close">✕</button></div>
-    <div class="card">${backHtml(k)}</div></div>`;
+    <div class="card">${backHtml(k, 'learn')}</div></div>`;
   $('modal').hidden = false;
 }
 
@@ -646,7 +651,7 @@ function renderSession() {
           : word ? `<div class="word-front" lang="ja">${esc(word.w)}</div><div class="prompt">Read this word aloud (exam style), then tap to check.</div>`
           : `<div class="cell"><span class="k" lang="ja">${esc(k.kanji)}</span></div><div class="prompt">${prompt}</div>`}
       </div>
-      ${showBack ? backHtml(k) : ''}
+      ${showBack ? backHtml(k, it.mode === 'learn' ? 'learn' : 'quiz') : ''}
     </div>
   </div>`;
   $('sheet').scrollTop = 0;
@@ -654,11 +659,10 @@ function renderSession() {
   if (it.mode === 'learn') {
     bar = `<div class="row one"><button class="ans next" id="a-learned">Got it — quiz me in a moment</button></div>`;
   } else if (it.mode === 'triage') {
-    bar = `<div class="row ${session.undo.length ? 'four' : 'two'}" style="${session.undo.length ? '' : ''}">
-      ${session.undo.length ? `<button class="ans skip" id="t-undo">Undo</button>` : ''}
-      ${session.revealed ? '' : `<button class="ans skip" id="t-peek">Peek</button>`}
-      <button class="ans again" id="t-no">Not yet</button>
-      <button class="ans good" id="t-yes">Know it</button></div>`;
+    const btns = [session.undo.length ? `<button class="ans skip" id="t-undo">Undo</button>` : '',
+      session.revealed ? '' : `<button class="ans skip" id="t-peek">Peek</button>`,
+      `<button class="ans again" id="t-no">Not yet</button>`, `<button class="ans good" id="t-yes">Know it</button>`].filter(Boolean);
+    bar = `<div class="row" style="grid-template-columns:repeat(${btns.length}, 1fr)">${btns.join('')}</div>`;
   } else if (!session.revealed) {
     bar = `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>`;
   } else {
