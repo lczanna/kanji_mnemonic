@@ -5,7 +5,7 @@ Generate mnemonic illustrations for kanji cards with the OpenAI image API.
 Each picture is drawn from the card's current story, including its sound-cast character,
 then saved as a 480x320 JPEG (the size the app shows) under images/n3/, and kanji.json is updated.
 
-Needs OPENAI_API_KEY, either in the environment or in the repo's .env file (git-ignored). Uses only the standard library plus Pillow.
+Needs OPENAI_API_KEY (or OPENAI_KEY), either in the environment or in the repo's .env file (git-ignored). Uses only the standard library plus Pillow.
 
   python3 tools/gen_images.py --test                 # 10 hard-to-draw kanji, medium and high, for comparison
   python3 tools/gen_images.py --all --quality medium # every card without a new image
@@ -43,9 +43,9 @@ def load_dotenv():
 
 def key():
     load_dotenv()
-    k = os.environ.get('OPENAI_API_KEY')
+    k = os.environ.get('OPENAI_API_KEY') or os.environ.get('OPENAI_KEY')
     if not k:
-        sys.exit('OPENAI_API_KEY is not set. Add it to the environment, then run again.')
+        sys.exit('No key found. Set OPENAI_API_KEY or OPENAI_KEY in the environment or in .env, then run again.')
     return k
 
 
