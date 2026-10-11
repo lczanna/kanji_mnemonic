@@ -846,7 +846,8 @@ function placePop(pop, btn) {
 function sayBtn(text, label) { return 'speechSynthesis' in window ? `<button class="say" data-say="${esc(text)}" aria-label="${esc(label || 'Play audio')}">▶</button>` : ''; }
 
 // Pictures load from images/n3/. The Claude link can't hold one file per card, so there they come
-// from packs of about 30 instead (tools/pack_images.py); images/packs/index.json names each kanji's pack.
+// from packs of about 30 instead (tools/pack_images.py); images/packs/index.json names each picture's pack
+// (kanji by character, word pictures by word id).
 let packIndex = null;
 const packs = {};
 async function imgFallback(img) {
@@ -895,8 +896,9 @@ function backHtml(k, mode) {
     </dl>
   </div>`;
 }
-function vocabBackHtml(v) {
+function vocabBackHtml(v, mode) {
   const f = vform(v);
+  const img = v.img ? `<img class="card-img${mode === 'learn' ? '' : ' small'}" src="${esc(v.img)}" data-kanji="${esc(v.id)}" alt="Picture for the memory hook" loading="lazy" onerror="imgFallback(this)">` : '';
   const head = f === 'kanji'
     ? `<span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(v.r, 'Play ' + v.w)}</span>`
     : `<span class="w kana" lang="ja">${esc(v.r)}</span><span class="rd" lang="ja">${sayBtn(v.r, 'Play ' + v.r)}</span>`;
@@ -904,7 +906,7 @@ function vocabBackHtml(v) {
     <div class="word-head">${head}</div>
     <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
     ${f === 'mixed' ? `<p class="g-note">Written <span lang="ja" class="kform">${esc(v.w)}</span>. Its kanji are above N3, so the exam normally prints this word in kana: know the sound and the meaning.</p>` : ''}
-    ${v.mn ? `<div><div class="section-label">Memory hook</div><div class="story">${storyHtml(v.mn)}</div></div>` : ''}
+    ${v.mn ? `<div><div class="section-label">Memory hook</div>${img}<div class="story">${storyHtml(v.mn)}</div></div>` : ''}
     ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en]) => `
       <div class="ex"><div class="ja" lang="ja">${glossHtml(ja)} ${sayBtn(ja)}</div><div class="en">${esc(en)}</div></div>`).join('')}</div></div>` : ''}
     ${v.k.length ? `<div><div class="section-label">${f === 'kanji' ? 'Built from' : 'Contains'}</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
@@ -1441,7 +1443,7 @@ function vocabScreen(it, tags) {
   const v = it.x;
   tags.push('<span class="tag">WORD</span>');
   if (it.mode === 'learn') {
-    return { inner: { front: '', back: vocabBackHtml(v) }, bar: learnBar };
+    return { inner: { front: '', back: vocabBackHtml(v, 'learn') }, bar: learnBar };
   }
   if (it.task === 'spell') {
     tags.push('<span class="tag">表記 · PICK THE KANJI</span>');
