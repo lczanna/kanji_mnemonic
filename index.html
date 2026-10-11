@@ -99,6 +99,11 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .small-btn { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 8px 12px; font-size: 13px; }
 .small-btn.danger { color: var(--again); border-color: color-mix(in srgb, var(--again) 50%, var(--line)); }
 .plan-line { font-size: 13px; color: var(--muted); }
+.plan-card { gap: 8px; }
+.plan-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.plan-top b { font-size: 16px; }
+.pace { display: grid; grid-template-columns: auto 1fr auto; gap: 2px 10px; font-size: 13px; align-items: baseline; }
+.pace .ok { color: var(--good); } .pace .behind { color: var(--again); }
 
 /* ---------- study sheet ---------- */
 .sheet { position: fixed; inset: 0; z-index: 20; background: var(--paper); overflow-y: auto; }
@@ -355,7 +360,8 @@ const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
   return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
-           settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: '25', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9 } };
+           settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
+                       minWeekday: 30, minWeekend: 60 } };
 }
 function loadData() {
   let d = null;
@@ -365,6 +371,8 @@ function loadData() {
   for (const k of Object.keys(base)) if (d[k] === undefined) d[k] = base[k];
   d.settings = Object.assign(base.settings, d.settings || {});
   d.stats = Object.assign(base.stats, d.stats || {});
+  // The old default of 25 words a day becomes the time-based plan, unless it was set by hand.
+  if (!d.settingsAt && d.settings.vocabPerDay === '25') d.settings.vocabPerDay = 'auto';
   d.version = 3;
   return d;
 }
@@ -390,7 +398,8 @@ function syncBodies() {
   for (const [k, c] of Object.entries(appData.cards)) shards[shardOf(k)][k] = packCard(c);
   const d = appData;
   const bodies = { meta: { stats: d.stats, settings: d.settings, settingsAt: d.settingsAt || 0, history: d.history, newByDay: d.newByDay,
-    triaged: d.triaged, lastBackup: d.lastBackup || null, hideHomeTip: !!d.hideHomeTip } };
+    triaged: d.triaged, lastBackup: d.lastBackup || null, hideHomeTip: !!d.hideHomeTip,
+    planStart: d.planStart || null, timing: d.timing || null } };
   shards.forEach((cards, i) => { bodies['cards' + i] = { cards }; });
   return bodies;
 }
@@ -440,6 +449,8 @@ function mergeRemote(remote) {
   if ((m.settingsAt || 0) > (d.settingsAt || 0)) { d.settings = Object.assign(d.settings, m.settings || {}); d.settingsAt = m.settingsAt; }
   if ((m.lastBackup || '') > (d.lastBackup || '')) d.lastBackup = m.lastBackup;
   if (m.hideHomeTip) d.hideHomeTip = true;
+  if (m.planStart && (!d.planStart || m.planStart.date < d.planStart.date)) d.planStart = m.planStart;
+  if (m.timing && !d.timing) d.timing = m.timing;
 }
 async function pullRemote() {
   const names = ['meta', ...[...Array(SHARDS)].map((_, i) => 'cards' + i)];
@@ -452,6 +463,7 @@ async function pullRemote() {
     else for (const [k, a] of Object.entries(body.cards || {})) remote.cards[k] = unpackCard(a);
   });
   mergeRemote(remote);
+  planCache = null;
   saveLocal();
 }
 async function initSync() {
@@ -572,27 +584,106 @@ function dueOf(type) {
 }
 function dueReviews() { return dueOf('kanji'); }
 function studyDaysLeft() { return Math.max(1, daysBetween(today(), finishNewBy())); }
-function suggestedNew() { return Math.min(30, Math.max(5, Math.ceil(unseen().length / studyDaysLeft()))); }
+function suggestedNew() { return planToday().target.kanji; }
+
+// ============ DAILY PLAN ============
+// The plan is in minutes, not cards: weekdays and weekends each get their own budget (More → Settings).
+// Each day, reviews due come first; the time left is filled with new cards. What's left of each deck is
+// spread over the days until "all new cards done", weekend days weighted by their extra time, so a missed
+// or short day just raises the next days a little.
+function isWeekend(d) { const w = new Date(d + 'T12:00:00').getDay(); return w === 0 || w === 6; }
+function minutesOn(d) { const st = appData.settings; return Math.max(5, +(isWeekend(d) ? st.minWeekend : st.minWeekday) || 30); }
+function dayWeight(d) { return minutesOn(d) / Math.max(5, +appData.settings.minWeekday || 30); }
+function weightedDaysLeft() {
+  let w = 0;
+  for (let d = today(); d < finishNewBy(); d = addDays(d, 1)) w += dayWeight(d);
+  return Math.max(dayWeight(today()), w);
+}
+// Words are ranked by how often they appear in everyday Japanese (p: 1 = most useful, tools/rank_vocab.py).
+// The top FOCUS_WORDS are scheduled automatically, best first; the rest wait until those are all started,
+// or until you ask for extras.
+const FOCUS_WORDS = 1200;
+const coreWord = v => (v.p || 9999) <= FOCUS_WORDS;
+function planLeft() {
+  const coreLeft = unseenOf('vocab').filter(coreWord).length;
+  return { kanji: unseenOf('kanji').length, vocab: coreLeft || unseenOf('vocab').length, grammar: unseenOf('grammar').length, coreLeft };
+}
+// Seconds per card, learned from your own answers. A new card costs its learning screen plus the quiz
+// a few cards later and the check the next day.
+function timing() {
+  const t = Object.assign({ review: 10, learn: 30 }, appData.timing || {});
+  return { review: t.review, fresh: t.learn + 2 * t.review };
+}
+function noteTime(kind, since) {
+  if (!since) return;
+  const sec = Math.min(90, Math.max(2, (Date.now() - since) / 1000));   // ignore breaks away from the phone
+  const t = appData.timing = appData.timing || { review: 10, learn: 30 };
+  t[kind] = Math.round((t[kind] * 0.9 + sec * 0.1) * 10) / 10;
+}
+// The plan is fixed once per day (and when settings change), so finishing reviews early doesn't keep adding new cards.
+let planCache = null;
+function planToday() {
+  const key = today() + JSON.stringify(appData.settings);
+  if (planCache && planCache.key === key) return planCache;
+  const left = planLeft(), W = weightedDaysLeft(), w = dayWeight(today()), t = timing();
+  const target = {};
+  for (const ty of TYPES) target[ty] = left[ty] ? Math.ceil(left[ty] / W * w) : 0;
+  if (target.kanji) target.kanji = Math.max(3, target.kanji);
+  const due = TYPES.reduce((a, ty) => a + dueOf(ty).length, 0);
+  const budget = minutesOn(today()) * 60;
+  // Reviews first. The minutes left go to new cards in order of exam value: grammar (cheap, many points),
+  // then kanji (words can't be read without them), then words, which always keep at least 30% of the room
+  // once some are unlocked. Early on few words are unlocked, so time flows to kanji; later it shifts to words.
+  let room = Math.max(0, Math.floor((budget - due * t.review) / t.fresh));
+  const wantNew = TYPES.reduce((a, ty) => a + target[ty], 0);
+  const wordsReady = unseenOf('vocab').filter(v => (coreWord(v) || !left.coreLeft) && unlocked('vocab', v)).length;
+  const limit = {};
+  limit.grammar = Math.min(target.grammar, room); room -= limit.grammar;
+  const wordFloor = Math.min(target.vocab, wordsReady, Math.floor(room * 0.3));
+  limit.kanji = Math.min(target.kanji, Math.max(0, room - wordFloor)); room -= limit.kanji;
+  // Spare time on a long day lets words catch up, up to twice their share.
+  limit.vocab = Math.min(wordsReady, room, target.vocab * 2);
+  const minutes = Math.round((due * t.review + TYPES.reduce((a, ty) => a + limit[ty], 0) * t.fresh) / 60);
+  const trimmed = TYPES.reduce((a, ty) => a + limit[ty], 0) < wantNew;
+  planCache = { key, target, limit, due, minutes, budget: minutesOn(today()), trimmed, weekend: isWeekend(today()) };
+  return planCache;
+}
+// On track? Compare cards started with a straight line from the day the plan began to "all new cards done".
+function planStatus() {
+  const left = planLeft();
+  if (!appData.planStart) { appData.planStart = { date: today(), left }; saveData(); }
+  const ps = appData.planStart, span = Math.max(1, daysBetween(ps.date, finishNewBy()));
+  const frac = Math.min(1, Math.max(0, daysBetween(ps.date, today()) / span));
+  const out = {};
+  for (const ty of TYPES) {
+    const start = ps.left[ty] || 0, done = start - left[ty], should = Math.round(start * frac);
+    out[ty] = { done, should, diff: done - should, start };
+  }
+  return out;
+}
 function dailyLimit(type) {
   const st = appData.settings;
-  if (type === 'kanji') return st.newPerDay === 'auto' ? suggestedNew() : Math.max(0, parseInt(st.newPerDay, 10) || 0);
-  if (type === 'grammar' && (st.grammarPerDay === 'auto' || st.grammarPerDay == null)) return Math.max(2, Math.ceil(unseenOf('grammar').length / studyDaysLeft()));
-  return Math.max(0, parseInt(type === 'vocab' ? st.vocabPerDay : st.grammarPerDay, 10) || 0);
+  const manual = type === 'kanji' ? st.newPerDay : type === 'vocab' ? st.vocabPerDay : st.grammarPerDay;
+  if (manual === 'auto' || manual == null || manual === '') return planToday().limit[type];
+  return Math.max(0, parseInt(manual, 10) || 0);
 }
 function dayKey(type) { return type === 'kanji' ? today() : today() + '|' + type; }
 function newLeftToday(type) {
   if (finalWeek()) return 0;
-  let limit = dailyLimit(type);
-  // A big review backlog means new cards would only make it bigger: halve them until it clears.
-  if (dueOf(type).length > (type === 'kanji' ? 120 : 150)) limit = Math.ceil(limit / 2);
-  return Math.max(0, limit - (appData.newByDay[dayKey(type)] || 0));
+  return Math.max(0, dailyLimit(type) - (appData.newByDay[dayKey(type)] || 0));
 }
 function newQueueOf(type, extra) {
   let pool = unseenOf(type).filter(x => unlocked(type, x));
   // Words built from kanji you've learned go first: they also reinforce those kanji.
   // Basic words from a kanji's card are assumed known when you marked that kanji as already known.
   if (type === 'vocab') pool = pool.filter(v => v.src !== 'card' || !v.k.length || !v.k.every(ch => (appData.cards[ch] || {}).triaged));
-  if (type === 'vocab') pool = [...pool.filter(v => vform(v) === 'kanji'), ...pool.filter(v => vform(v) !== 'kanji')];
+  if (type === 'vocab') {
+    pool.sort((a, b) => (a.p || 9999) - (b.p || 9999));
+    const core = pool.filter(coreWord);
+    // Low-value words wait until every one of the most useful words has been started, extras included:
+    // while useful words are still locked behind kanji, learning those kanji is the better use of time.
+    pool = unseenOf('vocab').some(coreWord) ? core : pool;
+  }
   return pool.slice(0, extra || newLeftToday(type));
 }
 
@@ -837,6 +928,10 @@ function render() {
 function todayHtml() {
   const days = daysBetween(today(), appData.settings.examDate);
   const triageLeft = unseen().filter(k => !appData.triaged[k.kanji]).length;
+  // While you're just starting, the triage pass saves the most time, so it comes first.
+  const startedKanji = DECK.length - unseen().length;
+  const triageFirst = triageLeft > 0 && startedKanji < 100 && Object.keys(appData.triaged).length < 50;
+  const triageBtn = (cls, title, sub) => `<button class="${cls}" id="go-triage"><span class="label"><b>${title}</b><small class="muted">${sub}</small></span><span class="count num">${triageLeft}</span></button>`;
   const rows = TYPES.filter(t => deckOf(t).length).map(t => {
     const due = dueOf(t).length, nNew = newQueueOf(t).length;
     const waiting = t === 'vocab' ? unseenOf('vocab').filter(v => !unlocked('vocab', v)).length : 0;
@@ -849,7 +944,7 @@ function todayHtml() {
         <span class="label"><b><span lang="ja">${TYPE_JP[r.t]}</span> ${TYPE_LABEL[r.t]}</b><small class="muted">${r.due + r.nNew ? r.sub : 'Done for today'}</small></span>
         <span class="count num">${r.due + r.nNew}</span>
       </button>`).join('');
-  const extraType = finalWeek() ? null : rows.find(r => r.nNew === 0 && newQueueOf(r.t, 5).length);
+  const extra = finalWeek() ? [] : extraMix();
   const total = rows.reduce((a, r) => a + r.due + r.nNew, 0);
   const E = appData.settings.examDate;
   const marks = [[-28, 'Practice test 1 · full, timed'], [-bufferDays(), 'All new cards done · review-only from here'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test'], [0, 'JLPT N3']]
@@ -888,16 +983,18 @@ function todayHtml() {
     <span class="eyebrow">JLPT N3 · ${esc(appData.settings.examDate)}</span>
     <div class="countdown"><span class="big num">${Math.max(0, days)}</span><span>days to the exam</span></div>
     <span class="plan-line" id="sync-line">${esc(syncText())}</span>
-    <span class="plan-line">${finalWeek() ? 'Review-only week: keep what you have sharp.' : `${unseen().length} kanji not started · about <b>${suggestedNew()}</b> new a day finishes them by ${new Date(finishNewBy() + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' })}. Missed a day? The pace recalculates.`}</span>
+    ${finalWeek() ? '<span class="plan-line">Review-only stretch: keep what you have sharp.</span>' : ''}
   </div>
   <div class="stack">
+    ${triageFirst ? triageBtn('btn primary', 'Start here: mark kanji you already know', 'One quick pass through the kanji. Each one you know is skipped, and its words unlock.') : ''}
+    ${finalWeek() ? '' : planCardHtml()}
     ${needBackup ? `<div class="notice stack" style="gap:8px"><b>Back up your progress</b><span>${appData.lastBackup ? `Last backup ${esc(appData.lastBackup)}.` : 'No backup yet.'} Progress lives only in this browser.</span>
       <div class="row-wrap"><button class="small-btn" id="quick-backup">Copy backup</button></div></div>` : '<div id="backup-note" class="muted" style="font-size:13px" aria-live="polite"></div>'}
     ${homeTip ? `<div class="notice stack" style="gap:8px"><b>Add this to your Home Screen</b><span>In Safari tap Share → Add to Home Screen, and open it from there. Safari can erase a site's data after 7 days without a visit; Home Screen apps are much safer.</span>
       <div class="row-wrap"><button class="small-btn" id="hide-home-tip">Done</button></div></div>` : ''}
     ${finalWeek() && daysToExam() >= 0 ? `<div class="notice"><b>Review-only stretch.</b> No new cards until the exam. Clear your reviews, run Weak spots, and do your timed practice tests.</div>` : ''}
     <div class="cta">
-      <button class="btn primary" id="go-all" ${total === 0 ? 'disabled' : ''}>
+      <button class="btn ${triageFirst ? '' : 'primary'}" id="go-all" ${total === 0 ? 'disabled' : ''}>
         <span class="label"><b>${total ? 'Study everything' : 'All done for today'}</b><small class="muted">${rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`).join(' · ')}</small></span>
         <span class="count num">${total}</span>
       </button>
@@ -905,10 +1002,8 @@ function todayHtml() {
       ${weakOn ? `<button class="btn" id="go-weak"><span class="label"><b>Weak spots</b><small class="muted">The 40 cards you're most likely to forget, due or not</small></span><span class="count num">40</span></button>` : ''}
       ${studyBtns}
       ${listenN >= 5 ? `<button class="btn" id="go-listen"><span class="label"><b><span lang="ja">聴解</span> Listening drill</b><small class="muted">20 words and sentences you've studied, by ear only</small></span><span class="count num">▶</span></button>` : ''}
-      ${triageLeft ? `<button class="btn" id="go-triage">
-        <span class="label"><b>Mark kanji you already know</b><small class="muted">One quick pass. Known kanji also unlock their words.</small></span>
-        <span class="count num">${triageLeft}</span></button>` : ''}
-      ${extraType ? `<button class="btn" data-extra="${extraType.t}"><span class="label"><b>Learn 5 extra ${TYPE_LABEL[extraType.t].toLowerCase()}</b><small class="muted">Daily new limit reached</small></span><span class="count num">+5</span></button>` : ''}
+      ${triageLeft && !triageFirst ? triageBtn('btn', 'Mark kanji you already know', 'One quick pass. Known kanji also unlock their words.') : ''}
+      ${extra.length ? `<button class="btn" id="go-extra"><span class="label"><b>Have more time? Learn 5 more</b><small class="muted">${extraLabel(extra)}, most useful first. Tomorrow's plan counts them.</small></span><span class="count num">+${extra.length}</span></button>` : ''}
     </div>
     ${milestones}
     <div class="panel stack">
@@ -917,6 +1012,25 @@ function todayHtml() {
       <div class="legend"><span><i style="background:var(--ai)"></i>solid (3+ weeks)</span><span><i style="background:color-mix(in srgb, var(--ai) 45%, var(--ai-soft))"></i>learning</span><span><i style="background:var(--ai-soft)"></i>not started</span></div>
     </div>
     ${!storageOk ? `<div class="notice">This browser is blocking storage, so progress will not be saved. Use More → Back up progress before closing.</div>` : ''}
+  </div>`;
+}
+
+function planCardHtml() {
+  const p = planToday(), st = planStatus(), lim = p.limit;
+  const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' });
+  const doneToday = (appData.history[today()] || 0);
+  const row = (label, s) => {
+    if (!s.start) return '';
+    const cls = s.diff >= 0 ? 'ok' : 'behind';
+    const msg = s.diff >= 0 ? (s.diff ? `${s.diff} ahead` : 'on track') : `${-s.diff} behind`;
+    return `<span>${label}</span><span class="muted num">${s.done} of ${s.start}</span><span class="${cls}">${msg}</span>`;
+  };
+  return `<div class="panel stack plan-card">
+    <div class="plan-top"><b>Today's plan · ${p.weekend ? 'weekend' : 'weekday'}</b><span class="muted num">≈ ${p.minutes} of ${p.budget} min</span></div>
+    <div class="plan-line">${p.due} reviews, then new: ${lim.kanji} kanji · ${lim.vocab} words · ${lim.grammar} grammar${doneToday ? ` · <b>${doneToday} answered so far</b>` : ''}</div>
+    ${p.trimmed ? '<div class="plan-line">Reviews come first today, so there are fewer new cards. A longer day catches up.</div>' : ''}
+    <div class="pace">${row('Kanji', st.kanji)}${row('Words (top ' + FOCUS_WORDS + ')', st.vocab)}${row('Grammar', st.grammar)}</div>
+    <div class="plan-line">All new cards by ${fmt(finishNewBy())}. Minutes per day are in More → Settings; the plan adjusts every day.</div>
   </div>`;
 }
 
@@ -1020,8 +1134,14 @@ function moreHtml() {
       <div class="field"><label for="set-exam">Exam date</label><input type="date" id="set-exam" value="${esc(st.examDate)}"></div>
       <div class="field"><label for="set-new">New kanji per day</label>
         <div class="row-wrap"><input type="number" id="set-new" min="0" max="60" placeholder="auto" value="${st.newPerDay === 'auto' ? '' : esc(st.newPerDay)}" style="width:110px">
-        <span class="muted" style="font-size:13px">Leave empty for automatic (now ${suggestedNew()}/day).</span></div></div>
-      <div class="field"><label for="set-vocab">New words per day</label><input type="number" id="set-vocab" min="0" max="80" value="${esc(st.vocabPerDay)}" style="width:110px"></div>
+        <span class="muted" style="font-size:13px">Leave empty for automatic (now ${dailyLimit('kanji')}/day).</span></div></div>
+      <div class="field"><label for="set-minwd">Study time on weekdays (minutes)</label><input type="number" id="set-minwd" min="5" max="240" value="${esc(st.minWeekday)}" style="width:110px"></div>
+      <div class="field"><label for="set-minwe">Study time on weekends (minutes)</label>
+        <div class="row-wrap"><input type="number" id="set-minwe" min="5" max="300" value="${esc(st.minWeekend)}" style="width:110px">
+        <span class="muted" style="font-size:13px">The daily plan fits reviews plus new cards into this time, and puts more new cards on weekends.</span></div></div>
+      <div class="field"><label for="set-vocab">New words per day</label>
+        <div class="row-wrap"><input type="number" id="set-vocab" min="0" max="80" placeholder="auto" value="${st.vocabPerDay === 'auto' ? '' : esc(st.vocabPerDay)}" style="width:110px">
+        <span class="muted" style="font-size:13px">Leave empty for automatic (now ${dailyLimit('vocab')}/day, most useful words first).</span></div></div>
       <div class="field"><label for="set-grammar">New grammar points per day</label>
         <div class="row-wrap"><input type="number" id="set-grammar" min="0" max="15" placeholder="auto" value="${st.grammarPerDay === 'auto' ? '' : esc(st.grammarPerDay)}" style="width:110px">
         <span class="muted" style="font-size:13px">Leave empty for automatic (now ${dailyLimit('grammar')}/day).</span></div></div>
@@ -1112,6 +1232,26 @@ function interleave(lists) {
   while (ls.some(l => l.length)) for (const l of ls) if (l.length) out.push(l.shift());
   return out;
 }
+// "Learn 5 more": a mix beyond today's plan, best value first. Words come from the most useful list
+// (the low-value ones only once every useful word you can read has been started), kanji in deck order,
+// and a grammar point while any are left. Anything already planned for today is skipped.
+function extraMix(n = 5) {
+  const planned = new Set(TYPES.flatMap(t => newQueueOf(t).map(x => keyOf(t, x))));
+  const fresh = t => newQueueOf(t, 200).filter(x => !planned.has(keyOf(t, x)));
+  const g = fresh('grammar'), w = fresh('vocab'), k = fresh('kanji');
+  const take = { grammar: Math.min(1, g.length) };
+  take.vocab = Math.min(2, w.length);
+  take.kanji = Math.min(n - take.grammar - take.vocab, k.length);
+  take.vocab = Math.min(w.length, n - take.grammar - take.kanji);   // no kanji left: more words
+  const item = type => x => ({ type, x, mode: 'learn', extra: true });
+  return interleave([k.slice(0, take.kanji).map(item('kanji')), w.slice(0, take.vocab).map(item('vocab')),
+    g.slice(0, take.grammar).map(item('grammar'))]);
+}
+function extraLabel(mix) {
+  const c = t => mix.filter(m => m.type === t).length;
+  const name = { kanji: () => 'kanji', vocab: n => n > 1 ? 'words' : 'word', grammar: n => n > 1 ? 'grammar points' : 'grammar point' };
+  return TYPES.filter(c).map(t => `${c(t)} ${name[t](c(t))}`).join(' · ');
+}
 function startStudy(type, extra) {
   if (type === 'all') {
     const items = interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))));
@@ -1180,7 +1320,7 @@ function startTriage() {
   session = { queue, i: 0, revealed: false, done: 0, kind: 'triage', undo: [] };
   openSheet();
 }
-function openSheet() { $('sheet').hidden = false; $('answer-bar').hidden = false; document.body.style.overflow = 'hidden'; renderSession(); }
+function openSheet() { session.shownAt = Date.now(); $('sheet').hidden = false; $('answer-bar').hidden = false; document.body.style.overflow = 'hidden'; renderSession(); }
 function closeSheet() {
   try { speechSynthesis.cancel(); } catch (e) { /* no audio */ }
   session = null; $('sheet').hidden = true; $('answer-bar').hidden = true; document.body.style.overflow = '';
@@ -1218,9 +1358,11 @@ function gradeBar(it) {
 }
 const learnBar = `<div class="row two"><button class="ans skip" id="a-known">Already know it</button><button class="ans next" id="a-learned">Got it, quiz me soon</button></div>`;
 
+const ROUND = 50;
 function renderSession() {
   if (!session) return;
   if (session.i >= session.queue.length) return renderSessionEnd();
+  if (session.paused) return renderRoundBreak();
   const it = session.queue[session.i];
   const tags = [];
   if (session.kind === 'study' && session.type === 'all' && it.type !== 'listen') tags.push(`<span class="tag" lang="ja">${TYPE_JP[it.type]}</span>`);
@@ -1384,6 +1526,18 @@ function unpickSlot(i) {
   renderSession();
 }
 
+function renderRoundBreak() {
+  const left = session.queue.length - session.i;
+  $('sheet').innerHTML = `<div class="sheet-inner"><div class="card" style="text-align:center;padding:32px 18px">
+    <div class="cell" style="margin:0 auto"><span class="k" lang="ja">休</span></div>
+    <h2 style="margin-top:14px">Round done: ${session.done} answered</h2>
+    <p class="muted">${left} more in this session, about ${Math.max(1, Math.round(left * timing().review / 60))} min. Stopping here is fine: they'll be waiting, most urgent first.</p>
+  </div></div>`;
+  $('answer-bar').innerHTML = `<div class="row two"><button class="ans skip" id="s-finish">Stop for now</button><button class="ans next" id="r-more">Keep going</button></div>`;
+}
+function remainingToday() {
+  return TYPES.map(t => ({ t, n: dueOf(t).length + newQueueOf(t).length })).filter(x => x.n);
+}
 function renderSessionEnd() {
   const triage = session.kind === 'triage';
   if (session.kind === 'listen') {
@@ -1397,13 +1551,15 @@ function renderSessionEnd() {
   $('sheet').innerHTML = `<div class="sheet-inner"><div class="card" style="text-align:center;padding:32px 18px">
     <div class="cell" style="margin:0 auto"><span class="k" lang="ja">${triage ? '済' : '終'}</span></div>
     <h2 style="margin-top:14px">${triage ? 'Triage done' : 'Session done'}</h2>
-    <p class="muted">${triage ? `Unseen kanji left to learn: ${unseen().length}. The daily plan now uses that number.` : `${session.done} cards answered. Check Today for the other decks.`}</p>
+    <p class="muted">${triage ? `Unseen kanji left to learn: ${unseen().length}. The daily plan now uses that number.`
+      : `${session.done} cards answered. ${remainingToday().length ? 'Still to do today: ' + remainingToday().map(x => `${TYPE_LABEL[x.t]} ${x.n}`).join(' · ') + '.' : "That's everything for today."}`}</p>
   </div></div>`;
   $('answer-bar').innerHTML = `<div class="row one"><button class="ans next" id="s-finish">Back to today</button></div>`;
 }
 
 function grade(g) {
   const it = session.queue[session.i];
+  noteTime('review', session.shownAt);
   if (!it.again) {
     // First answer for this card in this session counts for scheduling.
     schedule(keyOf(it.type, it.x), g);
@@ -1417,7 +1573,12 @@ function grade(g) {
 function next() {
   const it = session.queue[session.i];
   if (it && it.mode !== 'triage') (session.history = session.history || []).push(it);
-  session.i++; session.revealed = false; renderSession();
+  session.i++; session.revealed = false; session.shownAt = Date.now();
+  // Long sessions come in rounds of 50: a natural place to stop, or a nudge to keep going.
+  if (session.kind === 'study' && session.done && session.done % ROUND === 0 && session.done !== session.lastPause && session.i < session.queue.length) {
+    session.lastPause = session.done; session.paused = true;
+  }
+  renderSession();
 }
 // Look back at cards already done this session (‹ button or swipe right). Read-only: nothing is re-graded.
 function backFor(it) {
@@ -1482,7 +1643,7 @@ document.addEventListener('click', e => {
   if (t.dataset.lv !== undefined) { deckFilter.level = +t.dataset.lv; render(); return; }
   if (t.dataset.snap !== undefined) { const x = snapshots()[+t.dataset.snap]; if (x) restore(JSON.stringify(x.data)); return; }
   if (t.dataset.study) return startStudy(t.dataset.study);
-  if (t.dataset.extra) return startStudy(t.dataset.extra, 5);
+  if (t.id === 'go-extra') { const mix = extraMix(); if (mix.length) runQueue([], mix, 'all'); return; }
   if (t.dataset.g) return grade(+t.dataset.g);
   if (t.dataset.opt !== undefined) return answerChoice(+t.dataset.opt);
   if (t.dataset.chunk !== undefined) return pickChunk(+t.dataset.chunk);
@@ -1499,11 +1660,14 @@ document.addEventListener('click', e => {
     case 'hide-home-tip': appData.hideHomeTip = true; saveData(); return render();
     case 's-close': case 's-finish': return closeSheet();
     case 'a-reveal': session.revealed = true; return renderSession();
+    case 'r-more': session.paused = false; return renderSession();
     case 'g-tr': session.queue[session.i].showTr = true; return renderSession();
     case 'a-continue': { const it = session.queue[session.i]; return grade(it.correct ? 3 : 1); }
     case 'a-learned': {
       const it = session.queue[session.i];
-      const dk = dayKey(it.type);
+      noteTime('learn', session.shownAt);
+      // Extras are on top of today's plan, so they don't use up its new cards (tomorrow's plan counts them).
+      const dk = it.extra ? today() + '|extra' : dayKey(it.type);
       appData.newByDay[dk] = (appData.newByDay[dk] || 0) + 1;
       saveData();
       insertLater(quizItem(it.type, it.x), 3);
@@ -1554,13 +1718,16 @@ document.addEventListener('change', e => {
   const num = v => String(Math.max(0, parseInt(v, 10) || 0));
   if (e.target.id === 'set-exam' && e.target.value) { st.examDate = e.target.value; saveData(); }
   if (e.target.id === 'set-new') { const v = e.target.value.trim(); st.newPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
-  if (e.target.id === 'set-vocab') { st.vocabPerDay = num(e.target.value); saveData(); }
+  if (e.target.id === 'set-vocab') { const v = e.target.value.trim(); st.vocabPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
+  if (e.target.id === 'set-minwd') { st.minWeekday = Math.min(240, Math.max(5, parseInt(e.target.value, 10) || 30)); saveData(); render(); }
+  if (e.target.id === 'set-minwe') { st.minWeekend = Math.min(300, Math.max(5, parseInt(e.target.value, 10) || 60)); saveData(); render(); }
   if (e.target.id === 'set-grammar') { const v = e.target.value.trim(); st.grammarPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
   if (e.target.id === 'set-buffer') { st.bufferDays = Math.min(30, Math.max(0, parseInt(e.target.value, 10) || 0)); saveData(); render(); }
   if (e.target.id === 'b-file' && e.target.files[0]) { const r = new FileReader(); r.onload = () => restore(r.result); r.readAsText(e.target.files[0]); }
 });
 document.addEventListener('keydown', e => {
   if (!session || e.target.matches('input, textarea')) return;
+  if (session.paused) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); session.paused = false; renderSession(); } return; }
   const it = session.queue[session.i];
   if (!it) { if (e.key === 'Enter' || e.key === ' ') closeSheet(); return; }
   if (e.key === 'Escape') return closeSheet();
