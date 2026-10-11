@@ -455,6 +455,7 @@ async function initSync() {
     if (!uid) return;
     SYNC.db = db; SYNC.uid = uid; SYNC.state = 'syncing'; updateSyncBadge();
     await pullRemote();
+    takeSnapshot();   // a device with no local progress still gets today's copy, from the cloud
     if (!session) render();
     await flushSync();
     document.addEventListener('visibilitychange', () => {
@@ -474,6 +475,22 @@ function syncText() {
 }
 function updateSyncBadge() { const el = document.getElementById('sync-line'); if (el) { el.textContent = syncText(); el.dataset.state = SYNC.state; } }
 let appData = loadData();
+
+// ============ SAFETY SNAPSHOTS ============
+// Once a day, the first time the app opens, a copy of your progress is kept on this device (the last 3 days).
+// If an app update ever goes wrong, More → Back up progress can put any of them back.
+const SNAP_KEY = 'kanji_srs_snapshots';
+function snapshots() { try { return JSON.parse(localStorage.getItem(SNAP_KEY)) || []; } catch (e) { return []; } }
+function takeSnapshot() {
+  if (!Object.keys(appData.cards).length) return;
+  let list = snapshots();
+  if (list.some(x => x.date === today())) return;
+  list = [{ date: today(), cards: Object.keys(appData.cards).length, data: appData }, ...list].slice(0, 3);
+  while (list.length) {
+    try { localStorage.setItem(SNAP_KEY, JSON.stringify(list)); return; } catch (e) { list.pop(); }
+  }
+}
+takeSnapshot();
 
 // ============ SCHEDULING ============
 function maxInterval() {
@@ -979,6 +996,8 @@ function moreHtml() {
         <button class="small-btn" id="b-restore">Restore from text above</button>
         <label class="small-btn" for="b-file">Restore from file</label><input type="file" id="b-file" accept=".json,application/json" hidden>
       </div>
+      ${snapshots().length ? `<p class="muted" style="margin:0;font-size:12px">Automatic daily copies on this device, in case an update goes wrong:</p>
+      <div class="row-wrap">${snapshots().map((x, i) => `<button class="small-btn" data-snap="${i}">Restore ${esc(x.date)} · ${x.cards} cards</button>`).join('')}</div>` : ''}
       <div id="b-msg" class="muted" style="font-size:13px" aria-live="polite"></div>
     </div>
     <div class="panel stack">
@@ -1401,6 +1420,7 @@ document.addEventListener('click', e => {
   if (t.dataset.gId) { const g = BY_GID[t.dataset.gId]; if (g) showModal('g:' + g.id, grammarBackHtml(g)); return; }
   if (t.dataset.dtype) { deckFilter.type = t.dataset.dtype; deckFilter.q = ''; render(); return; }
   if (t.dataset.lv !== undefined) { deckFilter.level = +t.dataset.lv; render(); return; }
+  if (t.dataset.snap !== undefined) { const x = snapshots()[+t.dataset.snap]; if (x) restore(JSON.stringify(x.data)); return; }
   if (t.dataset.study) return startStudy(t.dataset.study);
   if (t.dataset.extra) return startStudy(t.dataset.extra, 5);
   if (t.dataset.g) return grade(+t.dataset.g);
