@@ -775,8 +775,9 @@ function glossHtml(text) {
 function showGloss(btn) {
   const [w, r, lemma, lr, m] = JSON.parse(btn.dataset.gl);
   const pop = $('gl-pop');
-  pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} <span>${esc(r)}</span> ${sayBtn(r, 'Play ' + w)}</div>
-    ${lemma !== w ? `<div class="gl-lemma" lang="ja">dictionary form: ${esc(lemma)}（${esc(lr)}）</div>` : ''}
+  // Words written in kana need no reading line; their dictionary form shows only when it differs.
+  pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} ${r !== w ? `<span>${esc(r)}</span>` : ''} ${sayBtn(r, 'Play ' + w)}</div>
+    ${lemma !== w ? `<div class="gl-lemma" lang="ja">dictionary form: ${esc(lemma)}${lr && lr !== lemma ? `（${esc(lr)}）` : ''}</div>` : ''}
     <div class="gl-m">${esc(m || 'name or rare word')}</div>`;
   placePop(pop, btn);
   speak(r);

@@ -37,7 +37,7 @@ A spaced-repetition app for JLPT N3 with three decks:
   - The daily pace recalculates after a missed day, and "Busy day: reviews only" keeps your memory intact on short days.
   - Target recall rises to 95% in the last 14 days, and "Weak spots" drills the 40 cards you're most likely to forget.
 - **Exam formats:** 漢字読み multiple choice uses trap answers (long vowels, small っ, ゛), alongside 表記, fill-in-the-blank and ★ ordering. The listening drill plays words and sentences you've studied.
-- **Reading help:** every word with kanji in a grammar or example sentence can be tapped for its reading, dictionary form and meaning. Readings come from Sudachi; meanings come from JMdict, matched on spelling and reading.
+- **Reading help:** words in grammar and example sentences can be tapped for their reading, dictionary form and the meaning used in that sentence, kana words included. Grammar sentences use a hand-checked list of kana words (`tools/kana_glosses.py`) with per-sentence meanings; example sentences pick the dictionary sense that matches their English translation. When the sense can't be pinned down, a kana word shows nothing rather than a wrong meaning.
 - **Translations:** every grammar question has its English behind a "Show translation" button, shown automatically once you answer.
 - **Words in context:** word cards show 2–3 short example sentences that only use kanji from the deck.
 - **Look back:** during a session, ‹ or swipe right shows the cards you just did.

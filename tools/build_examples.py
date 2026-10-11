@@ -5,7 +5,8 @@ Pick 2–3 short example sentences for every word in vocab.json, so a new word i
 Sentences come from the Tanaka corpus (examples.utf, CC-BY, http://ftp.edrdg.org/pub/Nihongo/examples.utf.gz),
 whose index lines tag each word with its dictionary form and reading. A sentence qualifies when it uses the
 word in that reading, is short, and has no kanji outside the deck (apart from the word's own kanji).
-Checked sentences (marked ~ in the index) come first. Each sentence gets tap-to-read glosses.
+Checked sentences (marked ~ in the index) come first. Each sentence gets tap-to-read glosses, with each
+word's meaning taken from the sense the corpus tags for that sentence.
 
   python3 tools/build_examples.py examples.utf.gz JMdict_e.gz     # writes examples.json
 """
@@ -13,7 +14,7 @@ import gzip, json, re, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gloss_grammar import gloss_sentence, load_jmdict, HAS_KANJI  # noqa: E402
+from gloss_grammar import gloss_indexed, load_jmdict_entries  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TOKEN = re.compile(r'^([^(\[{~]+)(?:\(([^)]+)\))?(?:\[\d+\])?(?:\{([^}]+)\})?(~)?$')
@@ -52,18 +53,19 @@ def main():
             # Stay at the learner's level: no kanji beyond the deck, except the word's own.
             if any(ch not in deck_kanji and ch not in head for ch in re.findall(r'[一-鿿々]', ja) if ch != '々'):
                 continue
-            found.setdefault(head, []).append((not checked, abs(len(ja) - 16), ja, en))
+            found.setdefault(head, []).append((not checked, abs(len(ja) - 16), ja, en, b[3:]))
 
-    jm = load_jmdict(sys.argv[2])
+    entries = load_jmdict_entries(sys.argv[2])
     out = {}
     for v in vocab:
         pool = sorted(set(found.get(v['w'], []) + (found.get(v['r'], []) if v.get('f') == 'kana' else [])))
         picks, seen = [], set()
-        for _, _, ja, en in pool:
+        for _, _, ja, en, bline in pool:
             if ja in seen:
                 continue
             seen.add(ja)
-            picks.append([ja, en, gloss_sentence(ja, jm) if HAS_KANJI.search(ja) else []])
+            # Meanings come from the corpus's own sense tags for this sentence (gloss_indexed).
+            picks.append([ja, en, gloss_indexed(ja, en, bline, entries)])
             if len(picks) == PER_WORD:
                 break
         if picks:
