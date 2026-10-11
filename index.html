@@ -265,6 +265,16 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .lrow.st-good { border-left-color: var(--good); } .lrow.st-mastered { border-left-color: var(--ai); }
 .lrow.st-locked { opacity: .55; }
 .kpi small { font-size: 14px; font-family: var(--font-body); }
+.milestones { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.milestones li { display: grid; grid-template-columns: 4.2em 1fr auto; gap: 10px; font-size: 14px; align-items: baseline; }
+.milestones .when { font-weight: 700; color: var(--ai); }
+.milestones .left { font-size: 12px; color: var(--muted); }
+.milestones li.past { color: var(--muted); text-decoration: line-through; }
+.milestones li.now { font-weight: 700; }
+.big-play { width: 120px; height: 120px; border-radius: 50%; border: 2px solid var(--ai); background: var(--ai-soft); color: var(--ai); font-size: 40px; display: grid; place-items: center; margin-block: 10px; }
+.listen-text { font-family: var(--font-kanji); font-weight: 800; font-size: 40px; line-height: 1.3; text-align: center; }
+.listen-text.sentence { font-family: var(--font-body); font-weight: 500; font-size: 19px; }
+.kana-opts .opt { font-family: var(--font-body); font-weight: 700; font-size: 18px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
@@ -355,7 +365,7 @@ function maxInterval() {
 function schedule(key, grade) {
   const t = today();
   let c = appData.cards[key];
-  const ret = appData.settings.retention || 0.9;
+  const ret = retention();
   if (!c) {
     c = { stability: FSRS.initS(grade), difficulty: FSRS.initD(grade), reps: 1, lapses: grade === 1 ? 1 : 0, lastReview: t };
   } else {
@@ -426,13 +436,16 @@ function dailyLimit(type) {
 }
 function dayKey(type) { return type === 'kanji' ? today() : today() + '|' + type; }
 function newLeftToday(type) {
+  if (finalWeek()) return 0;
   let limit = dailyLimit(type);
   // A big review backlog means new cards would only make it bigger: halve them until it clears.
   if (dueOf(type).length > (type === 'kanji' ? 120 : 150)) limit = Math.ceil(limit / 2);
   return Math.max(0, limit - (appData.newByDay[dayKey(type)] || 0));
 }
 function newQueueOf(type, extra) {
-  const pool = unseenOf(type).filter(x => unlocked(type, x));
+  let pool = unseenOf(type).filter(x => unlocked(type, x));
+  // Words built from kanji you've learned go first: they also reinforce those kanji.
+  if (type === 'vocab') pool = [...pool.filter(v => vform(v) === 'kanji'), ...pool.filter(v => vform(v) !== 'kanji')];
   return pool.slice(0, extra || newLeftToday(type));
 }
 
@@ -447,6 +460,48 @@ function storyHtml(s) {
 function kata2hira(s) { return s.replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60)); }
 function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 const $ = id => document.getElementById(id);
+// ---- Reading traps: exam-style 漢字読み distractors (long vowel, small っ, voicing) ----
+const VOICE = { か:'が',き:'ぎ',く:'ぐ',け:'げ',こ:'ご',さ:'ざ',し:'じ',す:'ず',せ:'ぜ',そ:'ぞ',た:'だ',て:'で',と:'ど',は:'ば',ひ:'び',ふ:'ぶ',へ:'べ',ほ:'ぼ' };
+const UNVOICE = Object.assign(Object.fromEntries(Object.entries(VOICE).map(([a, b]) => [b, a])), { ぱ:'は',ぴ:'ひ',ぷ:'ふ',ぺ:'へ',ぽ:'ほ' });
+const LONG_O = 'こごそぞとどのほぼぽもよろょ', LONG_U = 'くぐすずぬふぶむゆるゅ', E_ROW = 'けげせぜてでねへべめれ';
+const SOKU_NEXT = 'かきくけこさしすせそたちつてとぱぴぷぺぽ', NO_SOKU_AFTER = 'あいうえおんーゃゅょっくつちき';
+function trapEdits(r) {
+  const ch = [...r], join = a => a.join('');
+  const out = { long: [], soku: [], voice: [] };
+  for (let i = 0; i < ch.length; i++) {
+    const c = ch[i], n = ch[i + 1] || '';
+    if ((LONG_O + LONG_U).includes(c)) {
+      if (n === 'う') out.long.push(join([...ch.slice(0, i + 1), ...ch.slice(i + 2)]));
+      else if ((LONG_O.includes(c) || c === 'ゅ') && !'ゃゅょん'.includes(n)) out.long.push(join([...ch.slice(0, i + 1), 'う', ...ch.slice(i + 1)]));
+    }
+    if (E_ROW.includes(c) && n === 'い') out.long.push(join([...ch.slice(0, i + 1), ...ch.slice(i + 2)]));
+    if (c === 'っ') { out.soku.push(join([...ch.slice(0, i), ...ch.slice(i + 1)])); out.soku.push(join([...ch.slice(0, i), 'く', ...ch.slice(i + 1)])); }
+    else if (n && 'くつちき'.includes(c) && SOKU_NEXT.includes(n)) out.soku.push(join([...ch.slice(0, i), 'っ', ...ch.slice(i + 1)]));
+    else if (i > 0 && i < ch.length - 1 && SOKU_NEXT.includes(c) && !NO_SOKU_AFTER.includes(ch[i - 1])) out.soku.push(join([...ch.slice(0, i), 'っ', ...ch.slice(i)]));
+    if (VOICE[c]) out.voice.push(join([...ch.slice(0, i), VOICE[c], ...ch.slice(i + 1)]));
+    if (UNVOICE[c]) out.voice.push(join([...ch.slice(0, i), UNVOICE[c], ...ch.slice(i + 1)]));
+  }
+  return out;
+}
+function readingTraps(r) {
+  if ([...r].length < 2) return null;
+  const ok = x => x && x !== r && x[0] !== 'っ' && [...x].length >= 2;
+  const pools = Object.values(trapEdits(r)).map(p => [...new Set(p)]
+    .filter(ok).sort(() => Math.random() - .5));
+  const pick = [];
+  for (let round = 0; pick.length < 3 && round < 8; round++)
+    for (const p of pools) { const x = p[round]; if (x && !pick.includes(x) && pick.length < 3) pick.push(x); }
+  // Short readings: combine two edits (しぜん → じせん).
+  if (pick.length < 3) for (const a of [...pick]) for (const p of Object.values(trapEdits(a))) for (const x of p)
+    if (pick.length < 3 && ok(x) && !pick.includes(x)) pick.push(x);
+  return pick.length === 3 ? pick : null;
+}
+
+function daysToExam() { return daysBetween(today(), appData.settings.examDate); }
+// Review-only week: no new cards in the 7 days before the exam.
+function finalWeek() { return daysToExam() <= 7; }
+// Aim higher in the last two weeks, when every remembered card is worth points.
+function retention() { const base = appData.settings.retention || 0.9; return daysToExam() <= 14 ? Math.max(base, 0.95) : base; }
 // Kana prompts are sized to the word so they stay on one line on a phone.
 function kanaSize(t) { return `font-size:${Math.max(26, Math.min(56, Math.floor(270 / t.length)))}px`; }
 
@@ -542,13 +597,26 @@ function todayHtml() {
     const sub = `${due} reviews · ${nNew} new` + (t === 'vocab' && waiting ? ` · ${waiting} waiting on kanji` : '');
     return { t, due, nNew, sub };
   });
-  const firstActive = rows.find(r => r.due + r.nNew > 0);
+  const firstActive = null;
   const studyBtns = rows.map(r => `
       <button class="btn ${r === firstActive ? 'primary' : ''}" data-study="${r.t}" ${r.due + r.nNew === 0 ? 'disabled' : ''}>
         <span class="label"><b><span lang="ja">${TYPE_JP[r.t]}</span> ${TYPE_LABEL[r.t]}</b><small class="muted">${r.due + r.nNew ? r.sub : 'Done for today'}</small></span>
         <span class="count num">${r.due + r.nNew}</span>
       </button>`).join('');
-  const extraType = rows.find(r => r.nNew === 0 && newQueueOf(r.t, 5).length);
+  const extraType = finalWeek() ? null : rows.find(r => r.nNew === 0 && newQueueOf(r.t, 5).length);
+  const total = rows.reduce((a, r) => a + r.due + r.nNew, 0);
+  const E = appData.settings.examDate;
+  const marks = [[-28, 'Practice test 1 · full, timed'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test · review-only week starts'], [0, 'JLPT N3']]
+    .map(([o, label]) => { const d = addDays(E, o); return { d, label, left: daysBetween(today(), d) }; });
+  const milestones = `<div class="panel"><div class="section-label">Plan</div><ol class="milestones">${marks.map(m => `
+      <li class="${m.left < 0 ? 'past' : m.left === 0 ? 'now' : ''}"><span class="when num">${new Date(m.d + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' })}</span><span>${esc(m.label)}</span><span class="left num">${m.left < 0 ? 'done' : m.left === 0 ? 'today' : 'in ' + m.left + 'd'}</span></li>`).join('')}</ol></div>`;
+  const nCards = Object.keys(appData.cards).length;
+  const needBackup = nCards >= 20 && (!appData.lastBackup || daysBetween(appData.lastBackup, today()) >= 5);
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  const standalone = navigator.standalone || (window.matchMedia && matchMedia('(display-mode: standalone)').matches);
+  const homeTip = ios && !standalone && !appData.hideHomeTip;
+  const listenN = 'speechSynthesis' in window ? listenPool().length : 0;
+  const weakOn = daysToExam() <= 10 && nCards > 0;
   const levels = [5, 4, 3].map(lv => {
     const ks = DECK.filter(k => k.level === lv);
     const known = ks.filter(k => ['good', 'mastered'].includes(status(k))).length;
@@ -571,16 +639,28 @@ function todayHtml() {
   <div class="today-head">
     <span class="eyebrow">JLPT N3 · ${esc(appData.settings.examDate)}</span>
     <div class="countdown"><span class="big num">${Math.max(0, days)}</span><span>days to the exam</span></div>
-    <span class="plan-line">${unseen().length} kanji not started · about <b>${suggestedNew()}</b> new a day finishes them before exam week.</span>
+    <span class="plan-line">${finalWeek() ? 'Review-only week: keep what you have sharp.' : `${unseen().length} kanji not started · about <b>${suggestedNew()}</b> new a day finishes them before exam week.`}</span>
   </div>
   <div class="stack">
+    ${needBackup ? `<div class="notice stack" style="gap:8px"><b>Back up your progress</b><span>${appData.lastBackup ? `Last backup ${esc(appData.lastBackup)}.` : 'No backup yet.'} Progress lives only in this browser.</span>
+      <div class="row-wrap"><button class="small-btn" id="quick-backup">Copy backup</button></div></div>` : '<div id="backup-note" class="muted" style="font-size:13px" aria-live="polite"></div>'}
+    ${homeTip ? `<div class="notice stack" style="gap:8px"><b>Add this to your Home Screen</b><span>In Safari tap Share → Add to Home Screen, and open it from there. Safari can erase a site's data after 7 days without a visit; Home Screen apps are much safer.</span>
+      <div class="row-wrap"><button class="small-btn" id="hide-home-tip">Done</button></div></div>` : ''}
+    ${finalWeek() && daysToExam() >= 0 ? `<div class="notice"><b>Review-only week.</b> No new cards until the exam. Clear your reviews, run Weak spots, and do one timed practice test.</div>` : ''}
     <div class="cta">
+      <button class="btn primary" id="go-all" ${total === 0 ? 'disabled' : ''}>
+        <span class="label"><b>${total ? 'Study everything' : 'All done for today'}</b><small class="muted">${rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`).join(' · ')}</small></span>
+        <span class="count num">${total}</span>
+      </button>
+      ${weakOn ? `<button class="btn" id="go-weak"><span class="label"><b>Weak spots</b><small class="muted">The 40 cards you're most likely to forget, due or not</small></span><span class="count num">40</span></button>` : ''}
       ${studyBtns}
+      ${listenN >= 5 ? `<button class="btn" id="go-listen"><span class="label"><b><span lang="ja">聴解</span> Listening drill</b><small class="muted">20 words and sentences you've studied, by ear only</small></span><span class="count num">▶</span></button>` : ''}
       ${triageLeft ? `<button class="btn" id="go-triage">
         <span class="label"><b>Mark kanji you already know</b><small class="muted">One quick pass. Known kanji also unlock their words.</small></span>
         <span class="count num">${triageLeft}</span></button>` : ''}
       ${extraType ? `<button class="btn" data-extra="${extraType.t}"><span class="label"><b>Learn 5 extra ${TYPE_LABEL[extraType.t].toLowerCase()}</b><small class="muted">Daily new limit reached</small></span><span class="count num">+5</span></button>` : ''}
     </div>
+    ${milestones}
     <div class="panel stack">
       <div class="eyebrow">Progress</div>
       <div class="levels">${levels}${extraBars}</div>
@@ -738,12 +818,19 @@ function quizItem(type, x) {
     // Mature kanji alternate between the bare kanji and a real exam word, because N3 tests readings of words.
     const words = (x.vocab || []).filter(v => v.w.length > 1);
     const useWord = reps >= 2 && words.length && reps % 2 === 0;
-    return { type, x, mode: 'quiz', word: useWord ? words[reps % words.length] : null };
+    const word = useWord ? words[reps % words.length] : null;
+    const traps = word ? readingTraps(word.r) : null;
+    return { type, x, mode: 'quiz', word, task: traps ? 'readmc' : null, opts: traps ? shuffle([word.r, ...traps]) : null, answerText: word ? word.r : null };
   }
   if (type === 'vocab') {
     // Alternate exam tasks: 漢字読み (read the kanji word) and 表記 (pick the right kanji spelling).
-    const task = vform(x) !== 'kanji' ? 'meaning' : reps >= 1 && x.d && x.d.length === 3 && reps % 2 === 1 ? 'spell' : 'read';
-    return { type, x, mode: 'quiz', task, opts: task === 'spell' ? shuffle([x.w, ...x.d]) : null };
+    // Kanji words rotate three exam tasks: pick the reading (traps on long vowels, っ, ゛), pick the spelling, say it.
+    if (vform(x) !== 'kanji') return { type, x, mode: 'quiz', task: 'meaning' };
+    const traps = readingTraps(x.r);
+    const cycle = reps % 3;
+    if (cycle === 1 && x.d && x.d.length === 3) return { type, x, mode: 'quiz', task: 'spell', opts: shuffle([x.w, ...x.d]), answerText: x.w };
+    if (cycle !== 2 && traps) return { type, x, mode: 'quiz', task: 'readmc', opts: shuffle([x.r, ...traps]), answerText: x.r };
+    return { type, x, mode: 'quiz', task: 'read' };
   }
   // Grammar: mostly fill-in-the-blank, every third review a ★ sentence-ordering task.
   const task = reps % 3 === 2 && x.order ? 'order' : 'fill';
@@ -752,20 +839,73 @@ function quizItem(type, x) {
   return { type, x, mode: 'quiz', task, f, order };
 }
 
+// Round-robin merge, so a combined session alternates kanji, words and grammar.
+function interleave(lists) {
+  const out = [], ls = lists.map(l => l.slice());
+  while (ls.some(l => l.length)) for (const l of ls) if (l.length) out.push(l.shift());
+  return out;
+}
 function startStudy(type, extra) {
+  if (type === 'all') {
+    const items = interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))));
+    const fresh = interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))));
+    return runQueue(items, fresh, 'all');
+  }
   const items = dueOf(type).map(x => quizItem(type, x));
-  const fresh = extra ? newQueueOf(type, extra) : newQueueOf(type);
+  const fresh = (extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }));
+  return runQueue(items, fresh, type);
+}
+function runQueue(items, fresh, type) {
   // Interleave: a new card after every 3 reviews keeps sessions from front-loading all the hard work.
   const queue = [];
   let ri = 0;
-  for (const x of fresh) {
+  for (const f of fresh) {
     for (let j = 0; j < 3 && ri < items.length; j++) queue.push(items[ri++]);
-    queue.push({ type, x, mode: 'learn' });
+    queue.push(f);
   }
   while (ri < items.length) queue.push(items[ri++]);
   if (!queue.length) return;
   session = { queue, i: 0, revealed: false, done: 0, kind: 'study', type };
   openSheet();
+}
+// Final-stretch session: the cards you're most likely to forget, whatever their due date.
+function startWeak() {
+  const all = [];
+  for (const t of TYPES) for (const x of deckOf(t)) { const c = appData.cards[keyOf(t, x)]; if (c) all.push({ t, x, r: recall(c) }); }
+  all.sort((a, b) => a.r - b.r);
+  const items = all.slice(0, 40).map(a => quizItem(a.t, a.x));
+  if (items.length) { session = { queue: items, i: 0, revealed: false, done: 0, kind: 'study', type: 'all' }; openSheet(); }
+}
+// Listening drill: hear a word or sentence you've studied, recall the meaning. Practice only; it doesn't change scheduling.
+function listenPool() {
+  const pool = [];
+  for (const v of VOCAB) if (appData.cards['v:' + v.w]) pool.push({ say: v.r, show: vform(v) === 'kanji' ? v.w : v.r, sub: v.r, meaning: v.m });
+  for (const k of DECK) if (appData.cards[k.kanji]) for (const v of k.vocab || []) pool.push({ say: v.r, show: v.w, sub: v.r, meaning: v.m });
+  for (const g of GRAMMAR) if (appData.cards['g:' + g.id]) for (const e of g.examples) pool.push({ say: e.ja, show: e.ja, sub: '', meaning: e.en, sentence: true });
+  const seen = new Set();
+  return pool.filter(p => !seen.has(p.say) && seen.add(p.say));
+}
+function startListen() {
+  const pool = shuffle(listenPool());
+  // Mix in sentences: they're closest to the real listening section.
+  const sentences = pool.filter(p => p.sentence).slice(0, 8), words = pool.filter(p => !p.sentence).slice(0, 20 - sentences.length);
+  const queue = shuffle([...sentences, ...words]).map(x => ({ type: 'listen', x, mode: 'listen' }));
+  if (!queue.length) return;
+  session = { queue, i: 0, revealed: false, done: 0, kind: 'listen', heard: 0 };
+  openSheet();
+}
+function listenScreen(it, tags) {
+  const x = it.x;
+  tags.push(`<span class="tag">聴解 · ${x.sentence ? 'SENTENCE' : 'WORD'}</span>`);
+  if (!session.revealed) speak(x.say);
+  const front = session.revealed
+    ? `<div class="listen-text${x.sentence ? ' sentence' : ''}" lang="ja">${esc(x.show)}</div>${x.sub && x.sub !== x.show ? `<div class="rd" lang="ja" style="color:var(--ai)">${esc(x.sub)}</div>` : ''}
+       <div class="keyword" style="font-size:17px;text-align:center">${esc(x.meaning)}</div><div>${sayBtn(x.say, 'Play again')}</div>`
+    : `<button class="big-play" data-say="${esc(x.say)}" aria-label="Play again">▶</button><div class="prompt">Listen without looking. What does it mean? Tap ▶ to replay.</div>`;
+  const bar = session.revealed
+    ? `<div class="row two"><button class="ans again" id="l-no">Didn't catch it</button><button class="ans good" id="l-yes">Understood</button></div>`
+    : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>`;
+  return { inner: { front }, bar };
 }
 function startTriage() {
   const queue = unseen().filter(k => !appData.triaged[k.kanji]).map(x => ({ type: 'kanji', x, mode: 'triage' }));
@@ -800,7 +940,7 @@ function sheetFrame(tags, inner) {
 }
 function gradeBar(it) {
   const c = appData.cards[keyOf(it.type, it.x)];
-  const preview = g => !c ? (g === 1 ? 'today' : g < 4 ? 'tomorrow' : Math.min(maxInterval(), FSRS.interval(FSRS.initS(g), appData.settings.retention)) + 'd') : '';
+  const preview = g => !c ? (g === 1 ? 'today' : g < 4 ? 'tomorrow' : Math.min(maxInterval(), FSRS.interval(FSRS.initS(g), retention())) + 'd') : '';
   return `<div class="row">
     <button class="ans again" data-g="1">Again<small>${it.again ? 'still no' : 'forgot'}</small></button>
     <button class="ans hard" data-g="2">Hard<small>${preview(2) || 'slow'}</small></button>
@@ -814,12 +954,20 @@ function renderSession() {
   if (session.i >= session.queue.length) return renderSessionEnd();
   const it = session.queue[session.i];
   const tags = [];
+  if (session.kind === 'study' && session.type === 'all' && it.type !== 'listen') tags.push(`<span class="tag" lang="ja">${TYPE_JP[it.type]}</span>`);
   if (it.mode === 'learn') tags.push('<span class="tag new">NEW</span>');
   if (it.again) tags.push('<span class="tag relearn">AGAIN</span>');
   let inner, bar;
   if (it.type === 'kanji') ({ inner, bar } = kanjiScreen(it, tags));
   else if (it.type === 'vocab') ({ inner, bar } = vocabScreen(it, tags));
+  else if (it.type === 'listen') ({ inner, bar } = listenScreen(it, tags));
   else ({ inner, bar } = grammarScreen(it, tags));
+  // Leech: a card missed 4+ times needs a better hook, not more repetition.
+  const lc = it.type !== 'listen' && appData.cards[keyOf(it.type, it.x)];
+  if (lc && (lc.lapses || 0) >= 4) {
+    tags.push('<span class="tag relearn">LEECH</span>');
+    if (inner.back) inner.back = `<div class="notice">Missed ${lc.lapses} times. Repetition isn't working here: rewrite the story in your own words, make it stranger, or link it to something from your own life.</div>` + inner.back;
+  }
   $('sheet').innerHTML = sheetFrame(tags, inner);
   $('sheet').scrollTop = 0;
   $('answer-bar').innerHTML = bar;
@@ -833,6 +981,12 @@ function kanjiScreen(it, tags) {
   const word = it.mode === 'quiz' ? it.word : null;
   const prompt = it.mode === 'triage' ? 'Know its meaning and at least one common reading?'
     : it.mode === 'learn' ? 'New kanji: read the story, say the words out loud.' : 'Say a reading and the meaning, then tap to check.';
+  if (it.task === 'readmc') {
+    tags.push('<span class="tag">漢字読み · PICK THE READING</span>');
+    const front = `<div class="word-front" lang="ja">${esc(word.w)}</div>${mcOptions(it, true)}`;
+    return { inner: { front, back: session.revealed ? backHtml(k, 'quiz') : '' },
+      bar: session.revealed ? continueBar(it) : pickHint('Watch for long vowels, small っ and ゛') };
+  }
   const front = showBack && it.mode !== 'triage' ? (word ? `<div class="word-front revealed" lang="ja">${esc(word.w)}<span>${esc(word.r)}</span></div>` : '')
     : word ? `<div class="word-front" lang="ja">${esc(word.w)}</div><div class="prompt">Read this word aloud (exam style), then tap to check.</div>`
     : `<div class="cell"><span class="k" lang="ja">${esc(k.kanji)}</span></div><div class="prompt">${prompt}</div>`;
@@ -848,6 +1002,18 @@ function kanjiScreen(it, tags) {
   return { inner: { front, back }, bar };
 }
 
+function mcOptions(it, kana) {
+  const answered = session.revealed;
+  return `<div class="opts${kana ? ' kana-opts' : ''}">${it.opts.map((o, i) => {
+    const cls = !answered ? '' : o === it.answerText ? ' right' : i === it.chosen ? ' wrong' : ' dim';
+    return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
+  }).join('')}</div>`;
+}
+function continueBar(it) {
+  return `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : 'Missed · it will come back'}</button></div>`;
+}
+const pickHint = t => `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">${t}</span></div>`;
+
 function vocabScreen(it, tags) {
   const v = it.x;
   tags.push('<span class="tag">WORD</span>');
@@ -856,25 +1022,27 @@ function vocabScreen(it, tags) {
   }
   if (it.task === 'spell') {
     tags.push('<span class="tag">表記 · PICK THE KANJI</span>');
-    const answered = session.revealed;
-    const front = `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">${esc(v.m)}</div>
-      <div class="opts">${it.opts.map((o, i) => {
-        const cls = !answered ? '' : o === v.w ? ' right' : i === it.chosen ? ' wrong' : ' dim';
-        return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
-      }).join('')}</div>`;
-    return { inner: { front, back: answered ? vocabBackHtml(v) : '' },
-      bar: answered ? `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : 'Missed · it will come back'}</button></div>` : `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Choose the correct spelling</span></div>` };
+    const front = `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">${esc(v.m)}</div>${mcOptions(it)}`;
+    return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
+      bar: session.revealed ? continueBar(it) : pickHint('Choose the correct spelling') };
+  }
+  if (it.task === 'readmc') {
+    tags.push('<span class="tag">漢字読み · PICK THE READING</span>');
+    if (session.revealed) speak(v.r);
+    const front = `<div class="word-front" lang="ja">${esc(v.w)}</div>${mcOptions(it, true)}`;
+    return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
+      bar: session.revealed ? continueBar(it) : pickHint('Watch for long vowels, small っ and ゛') };
   }
   if (it.task === 'meaning') {
     tags.push('<span class="tag">意味 · WHAT DOES IT MEAN?</span>');
-    if (session.revealed) setTimeout(() => speak(v.r), 50);
+    if (session.revealed) speak(v.r);
     const front = session.revealed ? '' : `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">Say what it means, then tap to check. ${sayBtn(v.r, 'Play ' + v.r)}</div>`;
     return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
       bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
   }
   tags.push('<span class="tag">漢字読み · READ IT</span>');
   const front = session.revealed ? '' : `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">Say the reading and meaning, then tap to check.</div>`;
-  if (session.revealed) setTimeout(() => speak(v.r), 50);
+  if (session.revealed) speak(v.r);
   return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
     bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
 }
@@ -918,7 +1086,7 @@ function answerChoice(i) {
   const it = session.queue[session.i];
   if (session.revealed) return;
   it.chosen = i;
-  it.correct = it.type === 'vocab' ? it.opts[i] === it.x.w : i === it.f.answer;
+  it.correct = it.answerText != null ? it.opts[i] === it.answerText : i === it.f.answer;
   session.revealed = true;
   renderSession();
 }
@@ -942,6 +1110,14 @@ function unpickSlot(i) {
 
 function renderSessionEnd() {
   const triage = session.kind === 'triage';
+  if (session.kind === 'listen') {
+    $('sheet').innerHTML = `<div class="sheet-inner"><div class="card" style="text-align:center;padding:32px 18px">
+      <div class="cell" style="margin:0 auto"><span class="k" lang="ja">聴</span></div>
+      <h2 style="margin-top:14px">${session.heard} of ${session.queue.length} understood</h2>
+      <p class="muted">Anything you missed by ear but know on paper is a listening gap. Replay those words out loud a few times.</p></div></div>`;
+    $('answer-bar').innerHTML = `<div class="row one"><button class="ans next" id="s-finish">Back to today</button></div>`;
+    return;
+  }
   $('sheet').innerHTML = `<div class="sheet-inner"><div class="card" style="text-align:center;padding:32px 18px">
     <div class="cell" style="margin:0 auto"><span class="k" lang="ja">${triage ? '済' : '終'}</span></div>
     <h2 style="margin-top:14px">${triage ? 'Triage done' : 'Session done'}</h2>
@@ -1004,6 +1180,13 @@ document.addEventListener('click', e => {
   if (t.dataset.slot !== undefined) return unpickSlot(+t.dataset.slot);
   switch (id) {
     case 'go-triage': return startTriage();
+    case 'go-all': return startStudy('all');
+    case 'go-weak': return startWeak();
+    case 'go-listen': return startListen();
+    case 'l-yes': session.heard++; session.done++; return next();
+    case 'l-no': session.done++; return next();
+    case 'quick-backup': return quickBackup();
+    case 'hide-home-tip': appData.hideHomeTip = true; saveData(); return render();
     case 's-close': case 's-finish': return closeSheet();
     case 'a-reveal': session.revealed = true; return renderSession();
     case 'a-continue': { const it = session.queue[session.i]; return grade(it.correct ? 3 : 1); }
@@ -1050,7 +1233,8 @@ document.addEventListener('keydown', e => {
   const it = session.queue[session.i];
   if (!it) { if (e.key === 'Enter' || e.key === ' ') closeSheet(); return; }
   if (e.key === 'Escape') return closeSheet();
-  const choice = it.mode === 'quiz' && (it.task === 'spell' || it.task === 'fill');
+  const choice = it.mode === 'quiz' && ['spell', 'fill', 'readmc'].includes(it.task);
+  if (it.mode === 'listen') { if (!session.revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); session.revealed = true; renderSession(); } else if (session.revealed && (e.key === '1' || e.key === '2')) $(e.key === '1' ? 'l-no' : 'l-yes').click(); return; }
   if (it.mode === 'learn' && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); $('a-learned').click(); }
   else if (it.mode === 'triage') { if (e.key === 'ArrowRight' || e.key === 'k') triageAnswer(true); if (e.key === 'ArrowLeft' || e.key === 'n') triageAnswer(false); }
   else if (choice && !session.revealed && '1234'.includes(e.key)) answerChoice(+e.key - 1);
@@ -1059,7 +1243,15 @@ document.addEventListener('keydown', e => {
   else if (!choice && it.task !== 'order' && session.revealed && '1234'.includes(e.key)) grade(+e.key);
 });
 
+function quickBackup() {
+  appData.lastBackup = today(); saveData();
+  const txt = JSON.stringify(appData);
+  const done = () => { render(); const n = $('backup-note'); if (n) n.textContent = 'Backup copied. Paste it into a note or an email to yourself.'; };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, () => { view = 'more'; render(); copyBackup(); });
+  else { view = 'more'; render(); copyBackup(); }
+}
 function copyBackup() {
+  appData.lastBackup = today(); saveData();
   const txt = JSON.stringify(appData);
   const ta = $('backup'); ta.value = txt;
   const msg = $('b-msg');
@@ -1082,6 +1274,7 @@ function restore(txt) {
 }
 
 // ============ BOOT ============
+try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {}); } catch (e) { /* not supported */ }
 const getJson = (f, optional) => fetch(f).then(r => { if (!r.ok) throw new Error(f); return r.json(); }).catch(err => { if (optional) return []; throw err; });
 Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('grammar.json', true)]).then(([kd, vd, gd]) => {
   DECK = kd.cards;
