@@ -715,11 +715,32 @@ function placePop(pop, btn) {
 }
 function sayBtn(text, label) { return 'speechSynthesis' in window ? `<button class="say" data-say="${esc(text)}" aria-label="${esc(label || 'Play audio')}">▶</button>` : ''; }
 
+// Pictures load from images/n3/. The Claude link can't hold one file per card, so there they come
+// from packs of about 30 instead (tools/pack_images.py); images/packs/index.json names each kanji's pack.
+let packIndex = null;
+const packs = {};
+async function imgFallback(img) {
+  const k = img.dataset.kanji;
+  if (!k || img.dataset.tried) return img.remove();
+  img.dataset.tried = '1';
+  let n = null;
+  try {
+    packIndex = packIndex || getJson('images/packs/index.json');
+    n = (await packIndex)[k];
+    if (n == null) throw new Error('not packed');
+    packs[n] = packs[n] || getJson(`images/packs/p${String(n).padStart(2, '0')}.json`);
+    img.src = (await packs[n])[k];
+  } catch (e) {
+    packIndex = null; if (n != null) delete packs[n];   // try again next time, e.g. after a dropped connection
+    img.remove();
+  }
+}
+
 // ============ CARD BACKS ============
 function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
   // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
-  const img = k.image ? `<img class="card-img${mode === 'quiz' ? ' small' : ''}" src="${esc(k.image)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="this.remove()">` : '';
+  const img = k.image ? `<img class="card-img${mode === 'quiz' ? ' small' : ''}" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="imgFallback(this)">` : '';
   const story = `<div class="story">${storyHtml(k.story || '')}</div>`;
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}</span></div>`).join('')}</div>` : '';

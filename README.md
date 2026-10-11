@@ -50,6 +50,7 @@ A spaced-repetition app for JLPT N3 with three decks:
 | `grammar.json` | Grammar deck |
 | `images/n3/` | One illustration per kanji card, drawn from its current story (`u<codepoint>.jpg`, 480×320) |
 | `data/sound_cast.json`, `data/primitives.json` | Shared hook and part names used to write stories |
+| `tools/pack_images.py` | Bundles the pictures into ~20 packs for the Claude link, which caps its file count |
 | `tools/gen_images.py` | Generates card illustrations from the current stories (needs `OPENAI_API_KEY`) |
 | `tools/gloss_grammar.py` | Builds the tap-to-read glosses in `grammar.json` |
 | `optimize_images.py` | Resizes generated images to 480×320 JPEG |
