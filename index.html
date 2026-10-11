@@ -245,6 +245,7 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .examples { display: grid; gap: 10px; }
 .ex .ja { font-size: 17px; line-height: 1.6; }
 .ex .en { font-size: 13px; color: var(--muted); }
+.ex .sense { font-size: 12px; color: var(--hard); margin-top: 2px; }
 .word-front.kana { font-family: var(--font-body); font-weight: 700; white-space: nowrap; max-width: 100%; }
 .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
 .opt { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 12px; font-size: 20px; font-family: var(--font-kanji); font-weight: 800; text-align: left; min-width: 0; }
@@ -911,8 +912,8 @@ function vocabBackHtml(v, mode) {
     <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
     ${f === 'mixed' ? `<p class="g-note">Written <span lang="ja" class="kform">${esc(v.w)}</span>. Its kanji are above N3, so the exam normally prints this word in kana: know the sound and the meaning.</p>` : ''}
     ${v.mn ? `<div><div class="section-label">Memory hook</div>${img}<div class="story">${storyHtml(v.mn)}</div></div>` : ''}
-    ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en]) => `
-      <div class="ex"><div class="ja" lang="ja">${glossHtml(ja)} ${sayBtn(ja)}</div><div class="en">${esc(en)}</div></div>`).join('')}</div></div>` : ''}
+    ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en, , here]) => `
+      <div class="ex"><div class="ja" lang="ja">${glossHtml(ja)} ${sayBtn(ja)}</div><div class="en">${esc(en)}</div>${here ? `<div class="sense"><span lang="ja">${esc(vform(v) === 'kanji' ? v.w : v.r)}</span> here: ${esc(here)}</div>` : ''}</div>`).join('')}</div></div>` : ''}
     ${v.k.length ? `<div><div class="section-label">${f === 'kanji' ? 'Built from' : 'Contains'}</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
       return `<button class="part" data-k="${esc(ch)}" data-kt="${esc(ch)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${k && k.sound && k.sound[0] ? ` · <span lang="ja">${esc(k.sound[0].r)}</span> ${esc(k.sound[0].hook)}` : ''}</span></button>`; }).join('')}</div></div>` : ''}
   </div>`;
