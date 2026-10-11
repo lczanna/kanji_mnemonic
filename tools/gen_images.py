@@ -64,6 +64,47 @@ def pick_model():
     sys.exit('None of these image models are available to this key: ' + ', '.join(MODELS))
 
 
+# Trademarked characters, brands and real people get refused or drawn with logos, so the
+# picture prompt describes a look-alike instead. The story text the app shows is unchanged.
+DEPICT = {
+    'Mickey Mouse': 'a cheerful cartoon mouse with big round ears and red shorts',
+    'Han Solo': 'a roguish space-smuggler pilot in a black vest',
+    'Chewbacca': 'a tall shaggy brown furry space co-pilot with a bandolier',
+    'Yoda': 'a tiny wrinkled green old sage with long pointed ears and a brown robe',
+    'Minion': 'a small yellow capsule-shaped henchman in goggles and blue overalls',
+    'Ken doll': 'a plastic fashion-doll man with perfect blond hair and a fixed smile',
+    'Riddler': 'a lanky trickster villain in a bright green suit and bowler hat',
+    'hobbit': 'barefoot halfling', 'Hobbit': 'barefoot halfling',
+    'Tweety bird': 'a tiny round yellow cartoon canary with a big head',
+    'Sonic the Hedgehog': 'a blue cartoon hedgehog with spiky quills and red sneakers',
+    'Goofy': 'a tall clumsy cartoon dog',
+    'Luigi': 'a tall plumber with a green cap, a moustache and blue overalls',
+    'Luke Skywalker': 'a young space farm-boy hero with a glowing blue energy sword',
+    'Kung Fu Panda': 'a chubby kung-fu panda warrior',
+    'Goku': 'spiky-haired martial artist',
+    'Mordor': 'a dark volcanic wasteland',
+    'Madonna': 'a flamboyant pop diva with a headset microphone',
+    'Charlie Chaplin': 'a silent-film tramp with a bowler hat, small moustache and cane',
+    'Zorro': 'a masked swordsman in black with a cape',
+    'Zatoichi': 'a blind swordsman with a cane sword',
+    'Rocky': 'champion boxer',
+    'Kawasaki': 'green sport',
+    'Yamaha': 'grand',
+    'Zamboni': 'ice-resurfacing machine',
+    'Tater Tots': 'crispy potato nuggets',
+    'Kool-Aid Man': 'giant grinning pitcher of red fruit punch',
+    'Kool': 'giant grinning pitcher of red fruit punch',
+}
+# Hooks that are a brand or place, not a character: the story already shows them.
+NOT_CAST = {'Kawasaki', 'Yamaha', 'Zamboni', 'Tater Tots', 'Mordor'}
+
+
+def depict(text):
+    for name in sorted(DEPICT, key=len, reverse=True):
+        text = text.replace(name, DEPICT[name])
+    return text
+
+
 def plain(story):
     """Story without the app's markup ({keyword}, [part], ~hook~)."""
     for a in '{}[]~':
@@ -72,8 +113,8 @@ def plain(story):
 
 
 def prompt(card):
-    cast = '; '.join(f"the recurring character '{s['hook']}'" for s in card.get('sound', []) if s.get('hook'))
-    return (f"{STYLE}\n\nScene: {plain(card['story'])}\n"
+    cast = '; '.join(f"the recurring character '{depict(s['hook'])}'" for s in card.get('sound', []) if s.get('hook') and s['hook'] not in NOT_CAST)
+    return (f"{STYLE}\n\nScene: {depict(plain(card['story']))}\n"
             f"The idea to convey is '{card['keyword']}'." + (f" Make sure {cast} is clearly visible doing what the scene says." if cast else ''))
 
 
