@@ -2,11 +2,13 @@
 
 A spaced-repetition app for JLPT N3 with three decks:
 
-- **漢字 Kanji:** the ~612 N3 kanji, with Heisig-style stories and reading hooks.
-- **語彙 Words:** 2,096 N3 words, almost the full list. 947 use kanji from the deck and unlock once you've learned those kanji. 911 use kanji above N3 and 238 are written only in kana; these are studied by sound and meaning, the way the exam prints them.
+- **漢字 Kanji:** the 619 N5–N3 kanji, with Heisig-style stories and reading hooks.
+- **語彙 Words:** 2,989 words: the words shown on each kanji card (they unlock right after their kanji) plus 2,096 of the 2,140 N3 words. 947 use kanji from the deck and unlock once you've learned those kanji. 911 use kanji above N3 and 238 are written only in kana; these are studied by sound and meaning, the way the exam prints them.
 - **文法 Grammar:** 114 N3 grammar points, quizzed in the exam's own formats.
 
-**Live:** https://lczanna.github.io/kanji_mnemonic/
+**Use it here (syncs progress to your Claude account):** https://claude.ai/artifact/4zcASpfem692NjoQduRPuD
+
+**Public copy (saves in the browser only):** https://lczanna.github.io/kanji_mnemonic/
 
 ## How it works
 
@@ -26,7 +28,17 @@ A spaced-repetition app for JLPT N3 with three decks:
 - **Words:** reviews alternate between 漢字読み (read the word aloud) and 表記 (pick the correct kanji spelling from same-sound look-alikes). Kana-only and above-N3 words are quizzed as 意味 (hear or see the kana, recall the meaning), with the kanji spelling shown on the back. Readings were checked against JMdict.
 - **Grammar:** each point has a meaning, formation, nuance note and examples. Quizzes alternate between fill-in-the-blank （　） and ★ sentence ordering. The sentences were written for this deck and have not had a native-speaker review; report anything that sounds off.
 - **Audio:** ▶ buttons use the phone's built-in Japanese voice.
-- **Backup:** progress is stored in the browser. Use More → Back up progress to move it between devices.
+- **Exam plan:**
+  - New cards finish 14 days before the exam (adjustable); the rest is review, practice tests and slack.
+  - The daily pace recalculates after a missed day, and "Busy day: reviews only" keeps your memory intact on short days.
+  - Target recall rises to 95% in the last 14 days, and "Weak spots" drills the 40 cards you're most likely to forget.
+- **Exam formats:** 漢字読み multiple choice uses trap answers (long vowels, small っ, ゛), alongside 表記, fill-in-the-blank and ★ ordering. The listening drill plays words and sentences you've studied.
+- **Reading help:** every word with kanji in a grammar sentence can be tapped for its reading, dictionary form and meaning. Readings come from Sudachi, meanings from JMdict.
+- **Look back:** during a session, ‹ or swipe right shows the cards you just did.
+- **Saving:**
+  - On the Claude link, progress syncs to your private storage on claude.ai and works across devices.
+  - Elsewhere it stays in the browser.
+  - More → Your data downloads a full .json backup, per-card stats (.csv) and daily history (.csv).
 
 ## Files
 
@@ -38,6 +50,8 @@ A spaced-repetition app for JLPT N3 with three decks:
 | `grammar.json` | Grammar deck |
 | `images/` | Illustrations (93 cards have one so far) |
 | `data/sound_cast.json`, `data/primitives.json` | Shared hook and part names used to write stories |
+| `tools/gen_images.py` | Generates card illustrations from the current stories (needs `OPENAI_API_KEY`) |
+| `tools/gloss_grammar.py` | Builds the tap-to-read glosses in `grammar.json` |
 | `optimize_images.py` | Resizes generated images to 480×320 JPEG |
 | `index_original.html`, `kanji_srs_app.html` | Earlier versions, kept for reference |
 
