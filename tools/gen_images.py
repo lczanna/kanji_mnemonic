@@ -73,8 +73,7 @@ DEPICT = {
     'Yoda': 'a tiny wrinkled green old sage with long pointed ears and a brown robe',
     'Minion': 'a small yellow capsule-shaped henchman in goggles and blue overalls',
     'Ken doll': 'a plastic fashion-doll man with perfect blond hair and a fixed smile',
-    'Riddler': 'a lanky trickster villain in a bright green suit and bowler hat',
-    'hobbit': 'barefoot halfling', 'Hobbit': 'barefoot halfling',
+    'Hobbit': 'barefoot halfling',
     'Tweety bird': 'a tiny round yellow cartoon canary with a big head',
     'Sonic the Hedgehog': 'a blue cartoon hedgehog with spiky quills and red sneakers',
     'Goofy': 'a tall clumsy cartoon dog',
@@ -82,7 +81,6 @@ DEPICT = {
     'Luke Skywalker': 'a young space farm-boy hero with a glowing blue energy sword',
     'Kung Fu Panda': 'a chubby kung-fu panda warrior',
     'Goku': 'spiky-haired martial artist',
-    'Mordor': 'a dark volcanic wasteland',
     'Madonna': 'a flamboyant pop diva with a headset microphone',
     'Charlie Chaplin': 'a silent-film tramp with a bowler hat, small moustache and cane',
     'Zorro': 'a masked swordsman in black with a cape',
@@ -90,13 +88,10 @@ DEPICT = {
     'Rocky': 'champion boxer',
     'Kawasaki': 'green sport',
     'Yamaha': 'grand',
-    'Zamboni': 'ice-resurfacing machine',
     'Tater Tots': 'crispy potato nuggets',
-    'Kool-Aid Man': 'giant grinning pitcher of red fruit punch',
-    'Kool': 'giant grinning pitcher of red fruit punch',
 }
 # Hooks that are a brand or place, not a character: the story already shows them.
-NOT_CAST = {'Kawasaki', 'Yamaha', 'Zamboni', 'Tater Tots', 'Mordor'}
+NOT_CAST = {'Kawasaki', 'Yamaha', 'Tater Tots', 'more doors'}
 
 
 def depict(text):
