@@ -17,6 +17,11 @@ Progress must survive every app update. Before changing `index.html` or the deck
 
 The app keeps the last 3 daily snapshots on each device (More → Back up progress) as a fallback.
 
+## Deck order and parts
+
+After changing stories or adding cards, run `tools/build_parts.py ids.txt`: it refreshes the `parts` map
+and moves parts ahead of the kanji that use them. Progress is keyed by kanji, so reordering is safe.
+
 ## Images
 
 `tools/gen_images.py` draws pictures from the stories. Never print or commit the OpenAI key.

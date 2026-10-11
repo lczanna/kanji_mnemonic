@@ -12,7 +12,8 @@ A spaced-repetition app for JLPT N3 with three decks:
 
 ## How it works
 
-- **Deck order:** N5 → N4 → N3. Within each level, the most frequent kanji come first, in groups of about 60. Inside a group the order follows Heisig (RTK), so parts are learned before the kanji built from them.
+- **Deck order:** N5 → N4 → N3. Within each level, the most frequent kanji come first, in groups of about 60. Any deck kanji used as a part (directly, or inside another part such as 土 inside 寺 "Buddhist temple") is moved forward so it is always learned before the kanji built from it.
+- **Parts:** tap any part in a story, or a part chip on a card, to see it. A part that is a deck kanji shows its readings and links to its card; any other part shows what it is made of (寺 = soil + glue), and each piece can be tapped in turn.
 - **Each card has:**
   - the Heisig keyword
   - a bizarre story built from named parts
@@ -50,6 +51,7 @@ A spaced-repetition app for JLPT N3 with three decks:
 | `grammar.json` | Grammar deck |
 | `images/n3/` | One illustration per kanji card, drawn from its current story (`u<codepoint>.jpg`, 480×320) |
 | `data/sound_cast.json`, `data/primitives.json` | Shared hook and part names used to write stories |
+| `tools/build_parts.py` | Records what each story part is made of and reorders the deck so parts come first (needs CHISE `ids.txt`) |
 | `tools/pack_images.py` | Bundles the pictures into ~20 packs for the Claude link, which caps its file count |
 | `tools/gen_images.py` | Generates card illustrations from the current stories (needs `OPENAI_API_KEY`) |
 | `tools/gloss_grammar.py` | Builds the tap-to-read glosses in `grammar.json` |

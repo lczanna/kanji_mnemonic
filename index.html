@@ -139,7 +139,11 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .card-img { width: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; display: block; background: var(--ai-soft); }
 .story { font-size: 16px; line-height: 1.65; }
 .story .kw { color: var(--ai); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
-.story .prim { font-weight: 700; border-bottom: 2px solid color-mix(in srgb, var(--ai) 35%, transparent); }
+.story .prim { font: inherit; font-weight: 700; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; border-bottom: 2px solid color-mix(in srgb, var(--ai) 35%, transparent); }
+.story .prim:hover, .story .prim:focus-visible { background: var(--ai-soft); }
+button.chip { background: none; font: inherit; font-size: 12px; cursor: pointer; }
+.part-of { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
+.part-of .chip { color: var(--ink); }
 .story .snd { font-weight: 700; color: var(--hard); }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 12px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
@@ -311,6 +315,7 @@ let VOCAB = [], BY_WORD = {};      // words (vocab.json)
 let GRAMMAR = [], BY_GID = {};     // grammar (grammar.json)
 let GL = {};                       // sentence → tappable words [start, length, reading, lemma, lemmaReading, meaning]
 let CAST = {}, CAST_NOTE = '';
+let PARTS = {};                    // story part name → {g: glyph, of: [part names]} (tools/build_parts.py)
 const TYPES = ['kanji', 'vocab', 'grammar'];
 const TYPE_LABEL = { kanji: 'Kanji', vocab: 'Words', grammar: 'Grammar' };
 const TYPE_JP = { kanji: '漢字', vocab: '語彙', grammar: '文法' };
@@ -593,7 +598,7 @@ function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ 
 function storyHtml(s) {
   return esc(s)
     .replace(/\{([^}]+)\}/g, '<span class="kw">$1</span>')
-    .replace(/\[([^\]]+)\]/g, '<span class="prim">$1</span>')
+    .replace(/\[([^\]]+)\]/g, '<button class="prim" data-part="$1">$1</button>')
     .replace(/~([^~]+)~/g, '<span class="snd">$1</span>');
 }
 function kata2hira(s) { return s.replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60)); }
@@ -687,11 +692,31 @@ const hira = t => t.replace(/[\u30a1-\u30f6]/g, c => String.fromCharCode(c.charC
 function kanjiTapHtml(w) {
   return `<div>${[...w].map(ch => BY_KANJI[ch] ? `<button class="gl" data-kt="${esc(ch)}">${esc(ch)}</button>` : esc(ch)).join('')}</div>`;
 }
+function kanjiInfoHtml(k) {
+  const rd = [...(k.on || []).map(hira), ...(k.kun || []).map(r => r.replace(/\.(.+)$/, '（$1）'))];
+  return `<div class="gl-word" lang="ja">${esc(k.kanji)} <span>${esc(rd.join('・') || '–')}</span></div>
+    <div class="gl-m">${esc(k.meaning && k.meaning.toLowerCase().includes(k.keyword.toLowerCase()) ? k.meaning : k.keyword + (k.meaning ? ' · ' + k.meaning : ''))}</div>`;
+}
+// Story parts: tapping one shows what it is. A deck kanji shows its readings and a link to its card;
+// any other part shows what it is made of, and each of those pieces can be tapped in turn.
+function showPart(btn) {
+  const name = btn.dataset.part, p = PARTS[name] || {}, k = BY_KANJI[p.g];
+  const pop = $('gl-pop');
+  if (k) {
+    const started = !!appData.cards[k.kanji];
+    pop.innerHTML = `${kanjiInfoHtml(k)}<div class="gl-lemma">Part name: ${esc(name)}${started ? '' : ' · not studied yet'}</div>
+      <div><button class="small-btn" data-open-k="${esc(k.kanji)}">See its card</button></div>`;
+  } else {
+    pop.innerHTML = `<div class="gl-word" lang="ja">${esc(p.g || '')} <span>${esc(name)}</span></div>
+      ${p.of && p.of.length ? `<div class="part-of">Made of ${p.of.map(n => `<button class="chip" data-part="${esc(n)}">${esc((PARTS[n] || {}).g || '')} ${esc(n)}</button>`).join('+')}</div>`
+        : '<div class="gl-lemma">A basic part, not split further in this deck.</div>'}`;
+  }
+  // Tapping a piece inside the box keeps the box where it is.
+  if (!btn.closest('#gl-pop')) placePop(pop, btn);
+}
 function showKanjiPop(btn) {
   const k = BY_KANJI[btn.dataset.kt]; if (!k) return;
-  const rd = [...(k.on || []).map(hira), ...(k.kun || []).map(r => r.replace(/\.(.+)$/, '（$1）'))];
-  const html = `<div class="gl-word" lang="ja">${esc(k.kanji)} <span>${esc(rd.join('・') || '–')}</span></div>
-    <div class="gl-m">${esc(k.meaning && k.meaning.toLowerCase().includes(k.keyword.toLowerCase()) ? k.meaning : k.keyword + (k.meaning ? ' · ' + k.meaning : ''))}</div>`;
+  const html = kanjiInfoHtml(k);
   // On a word prompt the hint sits under the word, so it never covers the answer options.
   const front = btn.closest('.word-front');
   if (front) {
@@ -754,7 +779,7 @@ function backHtml(k, mode) {
       <div>
         <div class="keyword">${esc(k.keyword)}</div>
         ${k.meaning && k.meaning.toLowerCase() !== k.keyword.toLowerCase() ? `<div class="meaning">usually means: ${esc(k.meaning)}</div>` : ''}
-        <div class="chips" style="margin-top:6px">${(k.components || []).map(c => `<span class="chip">${esc(c)}</span>`).join('')}</div>
+        <div class="chips" style="margin-top:6px">${(k.components || []).map(c => `<button class="chip" data-part="${esc(c)}">${esc(c)}</button>`).join('')}</div>
       </div>
     </div>
     ${body}
@@ -1425,12 +1450,14 @@ function triageUndo() {
 
 // ============ EVENTS ============
 document.addEventListener('click', e => {
-  if (!e.target.closest('[data-gl], [data-kt], #gl-pop')) $('gl-pop').hidden = true;
+  if (!e.target.closest('[data-gl], [data-kt], [data-part], #gl-pop')) $('gl-pop').hidden = true;
   const t = e.target.closest('button, [data-k]');
   if (!t) { if (e.target === $('modal')) $('modal').hidden = true; return; }
   if (t.dataset.say !== undefined) { e.stopPropagation(); return speak(t.dataset.say); }
   if (t.dataset.gl) { e.stopPropagation(); return showGloss(t); }
   if (t.dataset.kt && t.closest('.sheet')) { e.stopPropagation(); return showKanjiPop(t); }
+  if (t.dataset.part) { e.stopPropagation(); return showPart(t); }
+  if (t.dataset.openK) { $('gl-pop').hidden = true; return showDetail(t.dataset.openK); }
   if (t.dataset.hist !== undefined) return showHistory(+t.dataset.hist);
   if (t.id === 's-prev') return showHistory((session.history || []).length - 1);
   const id = t.id;
@@ -1612,6 +1639,7 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   DECK = kd.cards;
   CAST = kd.cast || {};
   CAST_NOTE = kd.castNote || '';
+  PARTS = kd.parts || {};
   BY_KANJI = Object.fromEntries(DECK.map(k => [k.kanji, k]));
   VOCAB = vd; BY_WORD = Object.fromEntries(VOCAB.map(v => [v.w, v]));
   GRAMMAR = gd; BY_GID = Object.fromEntries(GRAMMAR.map(g => [g.id, g]));
