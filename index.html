@@ -1004,6 +1004,7 @@ function todayHtml() {
     ${finalWeek() ? '<span class="plan-line">Review-only stretch: keep what you have sharp.</span>' : ''}
   </div>
   <div class="stack">
+    ${parked ? `<button class="btn primary" id="go-resume"><span class="label"><b>Resume where you left off</b><small class="muted">Back to the same card</small></span><span class="count num">${parked.queue.length - parked.i}</span></button>` : ''}
     ${triageFirst ? triageBtn('btn primary', 'Start here: mark kanji you already know', 'One quick pass through the kanji. Each one you know is skipped, and its words unlock.') : ''}
     ${finalWeek() ? '' : planCardHtml()}
     ${needBackup ? `<div class="notice stack" style="gap:8px"><b>Back up your progress</b><span>${appData.lastBackup ? `Last backup ${esc(appData.lastBackup)}.` : 'No backup yet.'} Progress lives only in this browser.</span>
@@ -1012,7 +1013,7 @@ function todayHtml() {
       <div class="row-wrap"><button class="small-btn" id="hide-home-tip">Done</button></div></div>` : ''}
     ${finalWeek() && daysToExam() >= 0 ? `<div class="notice"><b>Review-only stretch.</b> No new cards until the exam. Clear your reviews, run Weak spots, and do your timed practice tests.</div>` : ''}
     <div class="cta">
-      <button class="btn ${triageFirst ? '' : 'primary'}" id="go-all" ${total === 0 ? 'disabled' : ''}>
+      <button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total === 0 ? 'disabled' : ''}>
         <span class="label"><b>${total ? 'Study everything' : 'All done for today'}</b><small class="muted">${rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`).join(' · ')}</small></span>
         <span class="count num">${total}</span>
       </button>
@@ -1338,10 +1339,66 @@ function startTriage() {
   session = { queue, i: 0, revealed: false, done: 0, kind: 'triage', undo: [] };
   openSheet();
 }
-function openSheet() { session.shownAt = Date.now(); $('sheet').hidden = false; $('answer-bar').hidden = false; document.body.style.overflow = 'hidden'; renderSession(); }
+// ============ SESSION RESUME ============
+// The session in progress is kept on this device, so an app update (which reloads the page) or stepping
+// back to Today never loses your place. Cards are stored by key and looked up again on resume, so a
+// resumed session shows the updated content. Sessions from an earlier day are dropped: the new day's plan replaces them.
+const SESSION_KEY = 'kanji_srs_session';
+let parked = null;   // a session you stepped out of; Today offers to resume it
+function lookup(type, key) {
+  return type === 'kanji' ? BY_KANJI[key] : type === 'vocab' ? BY_WORD[key.slice(2)] : BY_GID[key.slice(2)];
+}
+function packItem(it) {
+  if (it.type === 'listen') return it;
+  const o = Object.assign({}, it, { x: keyOf(it.type, it.x) });
+  if (it.f) o.f = it.x.fill.indexOf(it.f);
+  return o;
+}
+function unpackItem(o) {
+  if (o.type === 'listen') return o;
+  const x = lookup(o.type, o.x);
+  if (!x) return null;   // the card was removed in an update
+  const it = Object.assign({}, o, { x });
+  if (o.type === 'grammar' && o.mode === 'quiz') {
+    it.f = x.fill[o.f] || x.fill[0];
+    const chunks = x.order ? x.order.chunks : [];
+    const fresh = () => ({ picked: [], pool: shuffle(chunks.map((c, i) => ({ c, i }))) });
+    if (it.task === 'order' && !x.order) Object.assign(it, { task: 'fill', order: null });
+    else if (it.task === 'order' && [...it.order.pool, ...it.order.picked].some(p => p && chunks[p.i] !== p.c)) it.order = fresh();
+  }
+  return it;
+}
+function saveSession() {
+  try {
+    const s = session || parked;
+    if (!s || s.i >= s.queue.length) return localStorage.removeItem(SESSION_KEY);
+    const out = Object.assign({}, s, { queue: s.queue.map(packItem), history: (s.history || []).slice(-30).map(packItem) });
+    localStorage.setItem(SESSION_KEY, JSON.stringify({ day: today(), parked: !session, s: out }));
+  } catch (e) { /* storage full or blocked: resuming is a convenience */ }
+}
+function restoreSession() {
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(SESSION_KEY) || 'null'); } catch (e) { return; }
+  if (!saved || saved.day !== today() || !saved.s) return;
+  const s = saved.s;
+  // Keep the place: count dropped cards before the current one so the index still points at the same card.
+  const cur = s.queue[s.i];
+  s.queue = s.queue.map(unpackItem);
+  s.i = cur ? s.queue.slice(0, s.i).filter(Boolean).length : s.i;
+  s.queue = s.queue.filter(Boolean);
+  s.history = (s.history || []).map(unpackItem).filter(Boolean);
+  if (cur && !s.queue[s.i]) s.revealed = false;
+  if (s.i >= s.queue.length) return;
+  if (saved.parked) { parked = s; render(); }
+  else { session = s; openSheet(); }
+}
+function resumeSession() { if (parked) { session = parked; parked = null; openSheet(); } }
+function openSheet() { if (parked !== session) parked = null; session.shownAt = Date.now(); $('sheet').hidden = false; $('answer-bar').hidden = false; document.body.style.overflow = 'hidden'; renderSession(); }
 function closeSheet() {
   try { speechSynthesis.cancel(); } catch (e) { /* no audio */ }
-  session = null; $('sheet').hidden = true; $('answer-bar').hidden = true; document.body.style.overflow = '';
+  // Stepping out mid-session parks it, so Today can pick it up exactly where you left off.
+  parked = session && session.i < session.queue.length ? session : null;
+  session = null; saveSession(); $('sheet').hidden = true; $('answer-bar').hidden = true; document.body.style.overflow = '';
   render();
 }
 function insertLater(item, gap) {
@@ -1353,8 +1410,8 @@ function sheetFrame(tags, inner) {
   const pct = session.i / session.queue.length * 100;
   return `<div class="sheet-inner">
     <div class="sheet-top">
-      <div class="row-wrap" style="gap:6px;flex-wrap:nowrap"><button class="icon-btn" id="s-close" aria-label="End session">✕</button>
-      ${(session.history || []).length ? `<button class="icon-btn" id="s-prev" aria-label="See previous card">‹</button>` : ''}</div>
+      <div class="row-wrap" style="gap:6px;flex-wrap:nowrap"><button class="small-btn" id="s-close" aria-label="Back to Today; you can resume from this card">‹ Today</button>
+      ${(session.history || []).length ? `<button class="icon-btn" id="s-prev" aria-label="See previous card">↶</button>` : ''}</div>
       <div class="progress" role="progressbar" aria-valuenow="${Math.round(pct)}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div>
       <span class="num muted" style="font-size:13px">${session.queue.length - session.i}</span>
     </div>
@@ -1379,6 +1436,7 @@ const learnBar = `<div class="row two"><button class="ans skip" id="a-known">Alr
 const ROUND = 50;
 function renderSession() {
   if (!session) return;
+  saveSession();
   if (session.i >= session.queue.length) return renderSessionEnd();
   if (session.paused) return renderRoundBreak();
   const it = session.queue[session.i];
@@ -1691,6 +1749,7 @@ document.addEventListener('click', e => {
     case 'quick-backup': return quickBackup();
     case 'hide-home-tip': appData.hideHomeTip = true; saveData(); return render();
     case 's-close': case 's-finish': return closeSheet();
+    case 'go-resume': return resumeSession();
     case 'a-reveal': session.revealed = true; return renderSession();
     case 'r-more': session.paused = false; return renderSession();
     case 'g-tr': session.queue[session.i].showTr = true; return renderSession();
@@ -1861,6 +1920,7 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   GRAMMAR = gd; BY_GID = Object.fromEntries(GRAMMAR.map(g => [g.id, g]));
   for (const g of GRAMMAR) Object.assign(GL, g.gl || {});
   render();
+  restoreSession();
   initSync();
   // Example sentences for words are large, so they load after the app is already usable.
   getJson('examples.json', true).then(ex => {

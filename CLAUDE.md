@@ -8,6 +8,8 @@ Progress must survive every app update. Before changing `index.html` or the deck
   (`data/users/<uid>/meta`, `cards0`–`cards3`). Update https://claude.ai/artifact/4zcASpfem692NjoQduRPuD
   in place; publishing a new artifact starts from zero.
 - **Keep the storage keys:** `localStorage` `kanji_srs_data` and `kanji_srs_snapshots`, and the database paths above.
+  `kanji_srs_session` holds the session in progress (resumed after a reload or from Today); cards in it are
+  stored by key, so keep `unpackItem` able to read old entries.
 - **Keep the card keys:** kanji character, `v:<word>` for words, `g:<id>` for grammar. Fixing a word's spelling
   or a grammar id orphans its progress, so carry the old key's entry over to the new key in `loadData`.
 - **Only add fields.** `loadData` fills missing fields from `emptyData()`; never drop or rename existing ones.
