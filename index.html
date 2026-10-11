@@ -413,8 +413,12 @@ function syncBodies() {
 function scheduleSync() {
   if (!SYNC.db) return;
   clearTimeout(SYNC.timer);
-  SYNC.timer = setTimeout(flushSync, 1500);
+  SYNC.timer = setTimeout(flushSync, 600);
 }
+// Leaving mid-session (closing the window, switching apps): send progress now rather than after the pause.
+function flushNow() { saveLocal(); if (SYNC.db) { clearTimeout(SYNC.timer); flushSync(); } }
+addEventListener('pagehide', flushNow);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushNow(); });
 async function flushSync() {
   if (!SYNC.db) return;
   if (SYNC.busy) { SYNC.again = true; return; }
@@ -529,7 +533,7 @@ function schedule(key, grade) {
   const t = today();
   let c = appData.cards[key];
   const ret = retention();
-  if (!c) {
+  if (!c || !c.reps) {   // new, or learned but not yet quizzed
     c = { stability: FSRS.initS(grade), difficulty: FSRS.initD(grade), reps: 1, lapses: grade === 1 ? 1 : 0, lastReview: t };
   } else {
     const elapsed = Math.max(0, daysBetween(c.lastReview || t, t));
@@ -1698,6 +1702,9 @@ document.addEventListener('click', e => {
       // Extras are on top of today's plan, so they don't use up its new cards (tomorrow's plan counts them).
       const dk = it.extra ? today() + '|extra' : dayKey(it.type);
       appData.newByDay[dk] = (appData.newByDay[dk] || 0) + 1;
+      // Saved as learned straight away (due today), so closing the app before its quiz doesn't lose it.
+      const key = keyOf(it.type, it.x);
+      if (!appData.cards[key]) appData.cards[key] = { stability: 0, difficulty: 0, reps: 0, lapses: 0, lastReview: today(), due: today() };
       saveData();
       insertLater(quizItem(it.type, it.x), 3);
       return next();
