@@ -270,6 +270,7 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .slot .star { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--hard); }
 .why { font-size: 14px; color: var(--muted); width: 100%; display: flex; gap: 8px; align-items: center; }
 .tr { width: 100%; font-size: 14px; color: var(--ink); }
+.err-note { position: fixed; left: 12px; right: 12px; bottom: 96px; z-index: 50; background: var(--again); color: #fff; font-size: 13px; padding: 10px 12px; border-radius: 10px; }
 .wrongs { width: 100%; display: grid; gap: 6px; font-size: 13px; color: var(--muted); line-height: 1.45; }
 .wrongs div { border-left: 3px solid var(--line); padding-left: 8px; }
 .wrongs div.picked { border-left-color: var(--again); color: var(--ink); }
@@ -1462,7 +1463,26 @@ function gradeBar(it) {
 const learnBar = `<div class="row two"><button class="ans skip" id="a-known">Already know it</button><button class="ans next" id="a-learned">Got it, quiz me soon</button></div>`;
 
 const ROUND = 50;
+// A card that fails to draw is skipped rather than freezing the session (its progress is untouched),
+// and the error is shown so it can be reported.
 function renderSession() {
+  for (let tries = 0; session && tries < 5; tries++) {
+    try { return drawSession(); }
+    catch (e) {
+      showError(e);
+      if (session.i >= session.queue.length) return closeSheet();
+      session.queue.splice(session.i, 1); session.revealed = false;
+    }
+  }
+}
+function showError(e) {
+  let box = $('err-note');
+  if (!box) { box = document.createElement('div'); box.id = 'err-note'; box.className = 'err-note'; document.body.appendChild(box); }
+  box.textContent = 'Something went wrong (' + ((e && e.message) || e) + '). The app skipped ahead; please tell Claude this message.';
+  box.hidden = false; clearTimeout(showError.t); showError.t = setTimeout(() => { box.hidden = true; }, 12000);
+}
+window.addEventListener('error', e => showError(e.error || e.message));
+function drawSession() {
   if (!session) return;
   saveSession();
   if (session.i >= session.queue.length) return renderSessionEnd();
