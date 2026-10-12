@@ -964,6 +964,8 @@ function todayHtml() {
         <span class="count num">${r.due + r.nNew}</span>
       </button>`).join('');
   const extra = finalWeek() ? [] : extraMix();
+  const bh = finalWeek() ? {} : behindBy();
+  const behindText = TYPES.filter(t => bh[t]).map(t => `${bh[t]} ${t === 'kanji' ? 'kanji' : t === 'vocab' ? (bh[t] > 1 ? 'words' : 'word') : 'grammar'}`).join(' · ');
   const total = rows.reduce((a, r) => a + r.due + r.nNew, 0);
   const E = appData.settings.examDate;
   const marks = [[-28, 'Practice test 1 · full, timed'], [-bufferDays(), 'All new cards done · review-only from here'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test'], [0, 'JLPT N3']]
@@ -1015,7 +1017,7 @@ function todayHtml() {
     ${finalWeek() && daysToExam() >= 0 ? `<div class="notice"><b>Review-only stretch.</b> No new cards until the exam. Clear your reviews, run Weak spots, and do your timed practice tests.</div>` : ''}
     <div class="cta">
       <button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total === 0 ? 'disabled' : ''}>
-        <span class="label"><b>${total ? 'Study everything' : 'All done for today'}</b><small class="muted">${rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`).join(' · ')}</small></span>
+        <span class="label"><b>${total ? 'Study everything' : behindText ? "Today's plan is done" : 'All done for today'}</b><small class="muted">${!total && behindText ? `Your minutes are used up, but you're behind the plan by ${behindText}. Catch up below if you have time.` : rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`).join(' · ')}</small></span>
         <span class="count num">${total}</span>
       </button>
       ${dueAll && total > dueAll ? `<button class="btn" id="go-reviews"><span class="label"><b>Busy day: reviews only</b><small class="muted">Keep what you know. New cards wait and the plan spreads them out.</small></span><span class="count num">${dueAll}</span></button>` : ''}
@@ -1023,7 +1025,7 @@ function todayHtml() {
       ${studyBtns}
       ${listenN >= 5 ? `<button class="btn" id="go-listen"><span class="label"><b><span lang="ja">聴解</span> Listening drill</b><small class="muted">20 words and sentences you've studied, by ear only</small></span><span class="count num">▶</span></button>` : ''}
       ${triageLeft && !triageFirst ? triageBtn('btn', 'Mark kanji you already know', 'One quick pass. Known kanji also unlock their words.') : ''}
-      ${extra.length ? `<button class="btn" id="go-extra"><span class="label"><b>Have more time? Learn 5 more</b><small class="muted">${extraLabel(extra)}, most useful first. Tomorrow's plan counts them.</small></span><span class="count num">+${extra.length}</span></button>` : ''}
+      ${extra.length ? `<button class="btn${!total && behindText ? ' primary' : ''}" id="go-extra"><span class="label"><b>${behindText ? 'Have more time? Catch up 5' : 'Have more time? Learn 5 more'}</b><small class="muted">${extraLabel(extra)}${behindText ? ", where you're behind" : ', most useful first'}. Tomorrow's plan counts them.</small></span><span class="count num">+${extra.length}</span></button>` : ''}
     </div>
     ${milestones}
     <div class="panel stack">
@@ -1259,13 +1261,23 @@ function extraMix(n = 5) {
   const planned = new Set(TYPES.flatMap(t => newQueueOf(t).map(x => keyOf(t, x))));
   const fresh = t => newQueueOf(t, 200).filter(x => !planned.has(keyOf(t, x)));
   const g = fresh('grammar'), w = fresh('vocab'), k = fresh('kanji');
-  const take = { grammar: Math.min(1, g.length) };
-  take.vocab = Math.min(2, w.length);
-  take.kanji = Math.min(n - take.grammar - take.vocab, k.length);
-  take.vocab = Math.min(w.length, n - take.grammar - take.kanji);   // no kanji left: more words
+  const pool = { kanji: k, vocab: w, grammar: g }, take = { kanji: 0, vocab: 0, grammar: 0 };
+  const room = t => take[t] < pool[t].length;
+  let left = n;
+  // Behind on the plan: extras go there first, one at a time to whichever type is furthest behind.
+  const need = behindBy();
+  for (let t; left && (t = TYPES.filter(t => need[t] > take[t] && room(t)).sort((a, b) => (need[b] - take[b]) - (need[a] - take[a]))[0]); left--) take[t]++;
+  // Otherwise (or once caught up) the usual mix: a grammar point, two words, the rest kanji, then more words.
+  for (const [t, cap] of [['grammar', 1], ['vocab', 2], ['kanji', n], ['vocab', n]])
+    while (left && take[t] < cap && room(t)) { take[t]++; left--; }
   const item = type => x => ({ type, x, mode: 'learn', extra: true });
   return interleave([k.slice(0, take.kanji).map(item('kanji')), w.slice(0, take.vocab).map(item('vocab')),
     g.slice(0, take.grammar).map(item('grammar'))]);
+}
+// How many cards each deck is behind the plan's straight line to "all new cards done" (0 when on track).
+function behindBy() {
+  const st = planStatus();
+  return Object.fromEntries(TYPES.map(t => [t, st[t] && st[t].start ? Math.max(0, -st[t].diff) : 0]));
 }
 function extraLabel(mix) {
   const c = t => mix.filter(m => m.type === t).length;
@@ -1500,6 +1512,20 @@ function mcOptions(it, kana) {
 function continueBar(it) {
   return `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : it.hinted ? 'Hint used · it will come back' : 'Missed · it will come back'}</button></div>`;
 }
+// "Pick the spelling": after answering, what each wrong option is. The kanji it swaps in (with keywords),
+// and when it's a real word, which word it is: the homophones the exam uses as traps.
+function spellNotes(it) {
+  const v = it.x, kw = ch => BY_KANJI[ch] ? `${ch} (${BY_KANJI[ch].keyword})` : ch;
+  const rows = it.opts.map((o, i) => [o, i]).filter(([o]) => o !== v.w).sort(([, a], [, b]) => (b === it.chosen) - (a === it.chosen)).map(([o, i]) => {
+    const swaps = [];
+    if (o.length === v.w.length) for (let j = 0; j < o.length; j++) { if (o[j] !== v.w[j]) swaps.push(`${kw(o[j])} instead of ${kw(v.w[j])}`); }
+    else swaps.push(`kanji ${[...o].filter(c => !v.w.includes(c)).map(kw).join(', ')}`);
+    const other = BY_WORD[o] ? `${BY_WORD[o].r} · ${BY_WORD[o].m}` : (v.dx || {})[o];
+    const what = other ? `A different word: ${other}.` : 'Not a real word.';
+    return `<div class="${i === it.chosen ? 'picked' : ''}"><b lang="ja">${esc(o)}</b>${esc(what)} It uses <span lang="ja">${esc(swaps.join('; '))}</span>.</div>`;
+  });
+  return rows.length ? `<div class="wrongs">${rows.join('')}</div>` : '';
+}
 const pickHint = t => `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">${t}</span></div>`;
 
 function vocabScreen(it, tags) {
@@ -1510,7 +1536,7 @@ function vocabScreen(it, tags) {
   }
   if (it.task === 'spell') {
     tags.push('<span class="tag">表記 · PICK THE KANJI</span>');
-    const front = `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">${esc(v.m)}</div>${mcOptions(it)}`;
+    const front = `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">${esc(v.m)}</div>${mcOptions(it)}${session.revealed ? spellNotes(it) : ''}`;
     return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
       bar: session.revealed ? continueBar(it) : pickHint('Choose the correct spelling') };
   }
