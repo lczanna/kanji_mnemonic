@@ -414,10 +414,12 @@ function syncBodies() {
 function scheduleSync() {
   if (!SYNC.db) return;
   clearTimeout(SYNC.timer);
-  SYNC.timer = setTimeout(flushSync, 600);
+  SYNC.timer = setTimeout(() => { SYNC.timer = null; flushSync(); }, 600);
 }
 // Leaving mid-session (closing the window, switching apps): send progress now rather than after the pause.
-function flushNow() { saveLocal(); if (SYNC.db) { clearTimeout(SYNC.timer); flushSync(); } }
+// Only answers still waiting to be sent go out: a page that hasn't changed anything (say an old tab left open)
+// must never write its copy over newer progress. Each answer is already saved on the device as it happens.
+function flushNow() { if (SYNC.db && SYNC.timer) { clearTimeout(SYNC.timer); SYNC.timer = null; flushSync(); } }
 addEventListener('pagehide', flushNow);
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushNow(); });
 async function flushSync() {

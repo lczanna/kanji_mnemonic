@@ -105,6 +105,24 @@ DEPICT = {
     'Heigh-Ho dwarf': 'a cheerful bearded little miner with a pickaxe on his shoulder',
     'Mad Hatter': 'an eccentric man in an enormous top hat',
 }
+# Words whose hook the image filter refuses as written: a plainer scene for the picture only (the app shows the hook).
+PICTURE = {
+    '欧米': 'A big friendly green giant and a smiling baby wave from a huge world map showing Europe and America.',
+    '投票': 'A toad and a bearded little miner drop paper ballots into a wooden ballot box at a village voting day.',
+    '需要': 'A glowing jukebox plays while a long queue of eager shoppers lines up outside a shop: high demand.',
+    '検討': 'A plastic fashion-doll man and a toad lean over a big plan on a table with a magnifying glass, thinking hard.',
+    '独立': 'A ritzy socialite in a gown stands alone on a hilltop at sunrise, raising a glass, free and independent.',
+    '応援': 'A cheerful crowd waves flags and cheers on a team of builders in hard hats: support and help.',
+    '物価': 'A ginger cat wearing little boots looks surprised at a big price tag hanging on a shiny red car.',
+    '植物': 'A startled man with frizzy hair waters a row of potted plants on a sunny windowsill.',
+    '贈る': 'A man hands a woman a polished oak root tied with a red ribbon as a gift.',
+    '肌': 'A man at the beach under a blazing sun, his arms turning pink from sunburn, holding sunscreen.',
+    '批評': 'A hippo film critic in glasses sits in a cinema seat writing a harsh review on a notepad.',
+    '採集': 'A friendly one-eyed giant in a meadow collects butterflies with a net into a giant shoe.',
+    '茹でる': 'Eggs being lowered with a spoon into a bubbling pot of boiling water on a stove.',
+    '年鑑': 'A kangaroo sits on a sofa flipping through a thick yearbook full of photos, smiling at the memories.',
+    '澄む': 'A sumo wrestler in his mawashi sits beside a crystal-clear mountain pond where every fish is visible.',
+}
 # Hooks that are a brand or place, not a character: the story already shows them.
 NOT_CAST = {'Kawasaki', 'Yamaha', 'Tater Tots', 'more doors'}
 
@@ -130,6 +148,8 @@ def prompt(card):
 
 def word_prompt(v):
     """Picture for a word's memory hook: the sound-alike scene, with the meaning as the idea."""
+    if v['w'] in PICTURE:
+        return f"{STYLE}\n\nScene: {PICTURE[v['w']]}\nThe idea to convey is '{v['m'].split(';')[0].split(',')[0]}'."
     hook = re.sub(r'\s*\([^)]*[\u3040-\u30ff\u4e00-\u9fff][^)]*\)', '', v['mn'])   # drop (かな) reading notes
     return (f"{STYLE}\n\nScene: {depict(plain(hook))}\n"
             f"The idea to convey is '{v['m'].split(';')[0].split(',')[0]}'. Show the scene literally, as one memorable moment; "
