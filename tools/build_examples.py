@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gloss_grammar import gloss_indexed, load_jmdict_entries  # noqa: E402
+from gloss_fixes import fix_example, load  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TOKEN = re.compile(r'^([^(\[{~]+)(?:\(([^)]+)\))?(?:\[\d+\])?(?:\{([^}]+)\})?(~)?$')
@@ -56,6 +57,7 @@ def main():
             found.setdefault(head, []).append((not checked, abs(len(ja) - 16), ja, en, b[3:]))
 
     entries = load_jmdict_entries(sys.argv[2])
+    fixes, senses = load('gloss_fixes.json'), load('example_senses.json')   # hand-checked meanings
     out = {}
     for v in vocab:
         pool = sorted(set(found.get(v['w'], []) + (found.get(v['r'], []) if v.get('f') == 'kana' else [])))
@@ -65,7 +67,7 @@ def main():
                 continue
             seen.add(ja)
             # Meanings come from the corpus's own sense tags for this sentence (gloss_indexed).
-            picks.append([ja, en, gloss_indexed(ja, en, bline, entries)])
+            picks.append(fix_example(v['w'], v['r'], [ja, en, gloss_indexed(ja, en, bline, entries)], fixes, senses))
             if len(picks) == PER_WORD:
                 break
         if picks:
