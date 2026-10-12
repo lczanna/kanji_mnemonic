@@ -258,6 +258,10 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .chunks .opt.with-gl { display: grid; justify-items: center; gap: 2px; }
 .cgl { font-family: var(--font-body); font-weight: 400; font-size: 11px; line-height: 1.3; color: var(--muted); text-align: center; }
 .cgl b { color: var(--ai); font-weight: 500; }
+.parts-gl { width: 100%; display: grid; gap: 6px; }
+.parts-gl div { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; border-left: 3px solid var(--line); padding-left: 8px; }
+.parts-gl b { font-size: 16px; }
+.parts-gl .cgl { text-align: left; font-size: 13px; }
 .opts.g .opt, .chunks .opt { font-family: var(--font-body); font-weight: 700; font-size: 17px; }
 .opts.g.long { grid-template-columns: 1fr; }
 .g-q { font-size: 19px; line-height: 1.9; width: 100%; }
@@ -1608,7 +1612,7 @@ function vocabScreen(it, tags) {
 // Ordering task: readings and meanings of the words in a chunk, shown only when asked for.
 function chunkGl(o, i) {
   const words = (o.cgl || [])[i] || [];
-  return words.length ? `<span class="cgl">${words.map(([w, r, m]) => `${esc(w)}${r && r !== w ? ` <b>${esc(r)}</b>` : ''} · ${esc(m.split(';')[0])}`).join('<br>')}</span>` : '';
+  return words.length ? `<span class="cgl">${words.map(([w, r, m]) => `${esc(w)}${r && r !== w ? ` <b>${esc(r)}</b>` : ''} · ${esc(m)}`).join('<br>')}</span>` : '';
 }
 // After answering: why each wrong option doesn't fit, the one you picked first.
 function wrongsHtml(f, chosen) {
@@ -1616,6 +1620,11 @@ function wrongsHtml(f, chosen) {
   const idx = f.choices.map((_, i) => i).filter(i => i !== f.answer && w[f.choices[i]])
     .sort((a, b) => (b === chosen) - (a === chosen));
   return idx.length ? `<div class="wrongs">${idx.map(i => `<div class="${i === chosen ? 'picked' : ''}"><b lang="ja">${esc(f.choices[i])}</b>${esc(w[f.choices[i]])}</div>`).join('')}</div>` : '';
+}
+// After an ordering task: each part in the right order, with the readings and meanings of its words.
+function partsHtml(o) {
+  const rows = o.chunks.map((c, i) => [c, chunkGl(o, i)]).filter(([, gl]) => gl);
+  return rows.length ? `<div class="parts-gl">${rows.map(([c, gl]) => `<div><b lang="ja">${esc(c)}</b><span lang="ja">${gl}</span></div>`).join('')}</div>` : '';
 }
 // The question's English: behind a button until you answer, then shown.
 function trHtml(it, en, answered) {
@@ -1654,7 +1663,7 @@ function grammarScreen(it, tags) {
   }).join('');
   const front = `<div class="g-q order" lang="ja"><span>${glossHtml(o.before)}</span>${slots}<span>${glossHtml(o.after)}</span></div>
     ${answered ? '' : trHtml(it, o.en, false)}
-    ${answered ? `<div class="why">${esc(o.en)} ${sayBtn(o.before + o.chunks.join('') + o.after)}</div>` :
+    ${answered ? `<div class="why">${esc(o.en)} ${sayBtn(o.before + o.chunks.join('') + o.after)}</div>${partsHtml(o)}` :
       `<div class="opts chunks">${st.pool.map((p, j) => `<button class="opt${it.showGl ? ' with-gl' : ''}" data-chunk="${j}" lang="ja">${esc(p.c)}${it.showGl ? chunkGl(o, p.i) : ''}</button>`).join('')}</div>
        <div class="prompt">Tap the parts in order. Tap a filled slot to take it back.</div>
        ${(o.cgl || []).some(x => x.length) && !it.showGl ? '<div class="tr"><button class="small-btn" id="g-cgl">Show readings &amp; meanings</button></div>' : ''}`}`;

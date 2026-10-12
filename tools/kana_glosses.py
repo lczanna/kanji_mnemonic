@@ -225,6 +225,10 @@ KANA = {
 
 CONTEXT = {
     ('もう', 'もう少し'): 'a little more (もう少し)',
+    ('こと', 'ことになって'): 'is scheduled to; the rule is that (〜ことになっている)',
+    ('こと', 'ことになった'): 'it was decided that (〜ことになった)',
+    ('こと', 'ことにして'): 'make it a rule to (〜ことにしている)',
+    ('こと', 'ことにした'): 'decided to (〜ことにした)',
     ('よく', 'よくこの川'): 'often',
     ('よく', 'よくこの店'): 'often',
     ('よく', 'よく話す'): 'a lot; often',
