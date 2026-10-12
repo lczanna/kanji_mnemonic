@@ -473,7 +473,9 @@ async function pullRemote() {
   const remote = { cards: {}, meta: null };
   snaps.forEach((snap, i) => {
     if (!snap.exists) return;
-    const body = snap.data();
+    // The database hands back read-only objects; work on a plain copy, or later updates fail
+    // ("Attempted to assign to readonly property").
+    const body = JSON.parse(JSON.stringify(snap.data()));
     if (names[i] === 'meta') remote.meta = body;
     else for (const [k, a] of Object.entries(body.cards || {})) remote.cards[k] = unpackCard(a);
   });
@@ -632,8 +634,9 @@ function timing() {
 function noteTime(kind, since) {
   if (!since) return;
   const sec = Math.min(90, Math.max(2, (Date.now() - since) / 1000));   // ignore breaks away from the phone
-  const t = appData.timing = appData.timing || { review: 10, learn: 30 };
+  const t = Object.assign({ review: 10, learn: 30 }, appData.timing);   // a fresh object: never edit one in place
   t[kind] = Math.round((t[kind] * 0.9 + sec * 0.1) * 10) / 10;
+  appData.timing = t;
 }
 // The plan is fixed once per day (and when settings change), so finishing reviews early doesn't keep adding new cards.
 let planCache = null;
@@ -1484,7 +1487,7 @@ function renderSession() {
 function showError(e) {
   let box = $('err-note');
   if (!box) { box = document.createElement('div'); box.id = 'err-note'; box.className = 'err-note'; document.body.appendChild(box); }
-  box.textContent = 'Something went wrong (' + ((e && e.message) || e) + '). The app skipped ahead; please tell Claude this message.';
+  box.textContent = 'Something went wrong (' + ((e && e.message) || e) + '). Your progress is saved; please tell Claude this message.';
   box.hidden = false; clearTimeout(showError.t); showError.t = setTimeout(() => { box.hidden = true; }, 12000);
 }
 window.addEventListener('error', e => showError(e.error || e.message));
