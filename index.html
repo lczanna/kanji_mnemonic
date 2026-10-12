@@ -764,6 +764,12 @@ function kanaSize(t) { return `font-size:${Math.max(26, Math.min(56, Math.floor(
 let jaVoice = null;
 function pickVoice() { try { jaVoice = speechSynthesis.getVoices().find(v => /^ja/i.test(v.lang)) || null; } catch (e) { jaVoice = null; } }
 if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+// On iPhones a tap can be held back while the voice is still speaking (tap ▶, then "Got it" did nothing).
+// Touching any other button stops the voice first, so the tap goes straight through.
+document.addEventListener('pointerdown', e => {
+  if (!('speechSynthesis' in window) || e.target.closest('[data-say], .gl, [data-kt]')) return;
+  try { if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel(); } catch (err) { /* audio is optional */ }
+}, true);
 function speak(text) {
   if (!('speechSynthesis' in window)) return;
   try {
