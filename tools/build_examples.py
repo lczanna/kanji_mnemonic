@@ -8,13 +8,16 @@ word in that reading, is short, and has no kanji outside the deck (apart from th
 Checked sentences (marked ~ in the index) come first. Each sentence gets tap-to-read glosses, with each
 word's meaning taken from the sense the corpus tags for that sentence.
 
+Words the corpus can't cover (often kana words like いけない) take checked, written sentences from
+data/written_examples.json ({word: [[ja, en, meaning here], ...]}) until they have 2–3.
+
   python3 tools/build_examples.py examples.utf.gz JMdict_e.gz     # writes examples.json
 """
 import gzip, json, re, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gloss_grammar import gloss_indexed, load_jmdict_entries  # noqa: E402
+from gloss_grammar import gloss_indexed, gloss_sentence, load_jmdict, load_jmdict_entries  # noqa: E402
 from gloss_fixes import fix_example, load  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -66,6 +69,7 @@ def main():
 
     entries = load_jmdict_entries(sys.argv[2])
     fixes, senses = load('gloss_fixes.json'), load('example_senses.json')   # hand-checked meanings
+    written, jm = load('written_examples.json'), load_jmdict(sys.argv[2])
     out = {}
     for v in vocab:
         pool = sorted(set(found.get(v['w'], []) + (found.get(v['r'], []) if v.get('f') == 'kana' else [])))
@@ -80,6 +84,15 @@ def main():
             picks.append(fix_example(v['w'], v['r'], [ja, en, gloss_indexed(ja, en, bline, entries)], fixes, senses))
             if len(picks) == PER_WORD:
                 break
+        for ja, en, sense in written.get(v['w'], []):
+            if len(picks) >= PER_WORD or ja in seen:
+                continue
+            gl = gloss_sentence(ja, jm)
+            for g in gl:   # the word itself: the meaning this sentence uses
+                if g[3] in (v['w'], v['r']) or g[4] == v['r']:
+                    g[5] = sense
+                    break
+            picks.append(fix_example(v['w'], v['r'], [ja, en, gl], fixes, senses)); seen.add(ja)
         if picks:
             out[v['w']] = picks
     (ROOT / 'examples.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
