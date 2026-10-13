@@ -17,8 +17,34 @@ def load(name):
     return json.loads(p.read_text(encoding='utf8')) if p.exists() else {}
 
 
+# Readings the tokenizer picks that aren't the everyday ones (or are plain wrong): dictionary form ->
+# (reading it gives, reading to show). The conjugated reading is fixed too (破られて: われ… → やぶれ…).
+READINGS = {
+    '明日': ('あす', 'あした'), '私': ('わたくし', 'わたし'), '言う': ('ゆう', 'いう'), '公平': ('きんぴら', 'こうへい'),
+    '破る': ('わる', 'やぶる'), '破れる': ('われる', 'やぶれる'), '故郷': ('くに', 'こきょう'), '悪口': ('わるぐち', 'わるくち'),
+}
+
+
+def fix_reading(g, text):
+    """g is one gloss entry, text the word as written in the sentence (kana-written words keep their reading)."""
+    if g[3] not in READINGS or not any('\u4e00' <= c <= '\u9fff' for c in text):
+        return
+    bad, good = READINGS[g[3]]
+    okuri = len(g[3]) - len(g[3].rstrip(KANA))   # trailing kana: 破る -> 1
+    stem_bad, stem_good = bad[:len(bad) - okuri], good[:len(good) - okuri]
+    if g[2].startswith(stem_bad) and not g[2].startswith(stem_good):
+        g[2] = stem_good + g[2][len(stem_bad):]
+    if g[4] == bad:
+        g[4] = good
+
+
+KANA = ''.join(chr(c) for c in range(0x3041, 0x3097))
+
+
 def fix_gloss(ja, gl, fixes):
-    """Overwrite meanings in a sentence's gloss list where a checked correction exists."""
+    """Overwrite meanings in a sentence's gloss list where a checked correction exists, and fix readings."""
+    for g in gl:
+        fix_reading(g, ja[g[0]:g[0] + g[1]])
     for key, meaning in fixes.get(ja, {}).items():
         i, lemma = key.split('|', 1)
         i = int(i)
