@@ -679,7 +679,11 @@ function planStatus() {
   const out = {};
   for (const ty of TYPES) {
     const start = ps.left[ty] || 0, done = start - left[ty], should = Math.round(start * frac);
-    out[ty] = { done, should, diff: done - should, start };
+    // For display, count the same way as the Progress bars: every card started, including ones marked as known.
+    const total = ty === 'vocab' ? VOCAB.filter(coreWord).length : deckOf(ty).length;
+    const have = total - (ty === 'vocab' ? left.coreLeft : left[ty]);
+    const known = ty === 'kanji' ? DECK.filter(k => (appData.cards[k.kanji] || {}).triaged).length : 0;
+    out[ty] = { done, should, diff: done - should, start, total, have, known };
   }
   return out;
 }
@@ -1097,7 +1101,7 @@ function planCardHtml() {
     if (!s.start) return '';
     const cls = s.diff >= 0 ? 'ok' : 'behind';
     const msg = s.diff >= 0 ? (s.diff ? `${s.diff} ahead` : 'on track') : `${-s.diff} behind`;
-    return `<span>${label}</span><span class="muted num">${s.done} of ${s.start}</span><span class="${cls}">${msg}</span>`;
+    return `<span>${label}</span><span class="muted num">${s.have} of ${s.total}${s.known > 0 ? ` <small>(${s.known} known)</small>` : ''}</span><span class="${cls}">${msg}</span>`;
   };
   return `<div class="panel stack plan-card">
     <div class="plan-top"><b>Today's plan · ${p.weekend ? 'weekend' : 'weekday'}</b><span class="muted num">≈ ${p.minutes} of ${p.budget} min</span></div>
