@@ -24,6 +24,11 @@ The app keeps the last 3 daily snapshots on each device (More → Back up progre
 After changing stories or adding cards, run `tools/build_parts.py ids.txt`: it refreshes the `parts` map
 and moves parts ahead of the kanji that use them. Progress is keyed by kanji, so reordering is safe.
 
+## Word data
+
+After adding words or changing a reading in `vocab.json`, run `python3 tools/kanji_readings.py` (how each kanji is
+read inside each word) and `python3 tools/gloss_fixes.py` (checked meanings and readings in the sentences).
+
 ## Images
 
 `tools/gen_images.py` draws pictures from the stories. Never print or commit the OpenAI key.

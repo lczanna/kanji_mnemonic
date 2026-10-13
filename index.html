@@ -827,11 +827,29 @@ function showGloss(btn) {
 // Word prompts: tapping a kanji shows its meaning and readings (in hiragana). A hint taken before answering counts as a miss.
 const hira = t => t.replace(/[\u30a1-\u30f6]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60));
 function kanjiTapHtml(w) {
-  return `<div>${[...w].map(ch => BY_KANJI[ch] ? `<button class="gl" data-kt="${esc(ch)}">${esc(ch)}</button>` : esc(ch)).join('')}</div>`;
+  return `<div>${[...w].map(ch => BY_KANJI[ch] ? `<button class="gl" data-kt="${esc(ch)}" data-w="${esc(w)}">${esc(ch)}</button>` : esc(ch)).join('')}</div>`;
 }
-function kanjiInfoHtml(k) {
-  const rd = [...(k.on || []).map(hira), ...(k.kun || []).map(r => r.replace(/\.(.+)$/, '（$1）'))];
-  return `<div class="gl-word" lang="ja">${esc(k.kanji)} <span>${esc(rd.join('・') || '–')}</span></div>
+// How a kanji is read inside a word (vocab.json "kr", tools/kanji_readings.py): 寒さ uses さむ, not the カン of
+// its sound story. Returns { r, on } (on: the Chinese-derived reading, as in the sound cast), { whole } for words
+// read as a whole (今日 きょう), or null when unknown.
+const soften = r => r.replace(/^[がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ]/, c => String.fromCharCode(c.charCodeAt(0) - (('ぱぴぷぺぽ'.includes(c)) ? 2 : 1))).replace(/っ$/, '');
+function readingIn(word, ch) {
+  const v = BY_WORD[word], k = BY_KANJI[ch];
+  if (!v || !k) return null;
+  if (v.jk) return { whole: v.r };
+  const r = (v.kr || {})[ch];
+  if (!r) return null;
+  const on = (k.on || []).map(hira).find(o => o === r || soften(o).startsWith(soften(r)) && (r.endsWith('っ') || soften(o) === soften(r)));
+  return { r, on: on || null };
+}
+function readingNote(used) {
+  if (!used) return '';
+  if (used.whole) return `<div class="gl-lemma">This word is read as a whole: <b lang="ja">${esc(used.whole)}</b></div>`;
+  return `<div class="gl-lemma">In this word: <b lang="ja">${esc(used.r)}</b> · ${used.on ? 'Chinese-derived (on) reading' : 'native Japanese (kun) reading'}</div>`;
+}
+function kanjiInfoHtml(k, used) {
+  const rd = [...new Set([...(k.on || []).map(hira), ...(k.kun || []).map(r => r.replace(/-/g, '').replace(/\.(.+)$/, '（$1）'))])];
+  return `<div class="gl-word" lang="ja">${esc(k.kanji)} <span>${esc(rd.join('・') || '–')}</span></div>${readingNote(used)}
     <div class="gl-m">${esc(k.meaning && k.meaning.toLowerCase().includes(k.keyword.toLowerCase()) ? k.meaning : k.keyword + (k.meaning ? ' · ' + k.meaning : ''))}</div>`;
 }
 // Story parts: tapping one shows what it is. A deck kanji shows its readings and a link to its card;
@@ -853,7 +871,7 @@ function showPart(btn) {
 }
 function showKanjiPop(btn) {
   const k = BY_KANJI[btn.dataset.kt]; if (!k) return;
-  const html = kanjiInfoHtml(k);
+  const html = kanjiInfoHtml(k, btn.dataset.w ? readingIn(btn.dataset.w, k.kanji) : null);
   // On a word prompt the hint sits under the word, so it never covers the answer options.
   const front = btn.closest('.word-front');
   if (front) {
@@ -945,7 +963,11 @@ function vocabBackHtml(v, mode) {
     ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en, , here]) => `
       <div class="ex"><div class="ja" lang="ja">${glossHtml(ja)} ${sayBtn(ja)}</div><div class="en">${esc(en)}</div>${here ? `<div class="sense"><span lang="ja">${esc(vform(v) === 'kanji' ? v.w : v.r)}</span> here: ${esc(here)}</div>` : ''}</div>`).join('')}</div></div>` : ''}
     ${v.k.length ? `<div><div class="section-label">${f === 'kanji' ? 'Built from' : 'Contains'}</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
-      return `<button class="part" data-k="${esc(ch)}" data-kt="${esc(ch)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${k && k.sound && k.sound[0] ? ` · <span lang="ja">${esc(k.sound[0].r)}</span> ${esc(k.sound[0].hook)}` : ''}</span></button>`; }).join('')}</div></div>` : ''}
+      // The reading this word uses; the sound-story character only when the word uses that sound.
+      const used = readingIn(v.w, ch), cast = k && k.sound && k.sound[0];
+      const castHere = cast && used && used.on && hira(cast.r) === used.on;
+      const rd = used && used.r ? ` · <span lang="ja">${esc(used.r)}</span>${castHere ? ` ${esc(cast.hook)}` : used.on ? '' : ' (kun)'}` : '';
+      return `<button class="part" data-k="${esc(ch)}" data-kt="${esc(ch)}" data-w="${esc(v.w)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${rd}</span></button>`; }).join('')}</div></div>` : ''}
   </div>`;
 }
 function grammarBackHtml(g, compact) {
