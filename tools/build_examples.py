@@ -20,6 +20,7 @@ from gloss_fixes import fix_example, load  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 TOKEN = re.compile(r'^([^(\[{~]+)(?:\(([^)]+)\))?(?:\[\d+\])?(?:\{([^}]+)\})?(~)?$')
 PER_WORD, MAX_JA, MAX_EN = 3, 28, 90
+MAX_JA_LOOSE, MAX_EN_LOOSE = 40, 120   # only for words with fewer than 2 sentences at the learner's level
 
 
 def main():
@@ -31,36 +32,45 @@ def main():
         if v.get('f') == 'kana':
             wanted.setdefault(v['r'], set()).add(v['r'])
 
-    found = {}   # word -> list of (checked, length, ja, en)
+    # Kana words are often filed under a kanji spelling (まるで as 丸で), so they also match by reading.
+    kana_word = {v['r']: v['r'] for v in vocab if v.get('f') == 'kana'}
+    found, loose = {}, {}   # word -> list of (unchecked, length, ja, en, index line)
     lines = gzip.open(sys.argv[1]).read().decode('utf8').splitlines()
     for a, b in zip(lines, lines[1:]):
         if not (a.startswith('A: ') and b.startswith('B: ')):
             continue
         ja, en = a[3:].split('\t', 1)
         en = en.split('#ID=')[0].strip()
-        if len(ja) > MAX_JA or len(en) > MAX_EN or len(ja) < 6:
+        if len(ja) > MAX_JA_LOOSE or len(en) > MAX_EN_LOOSE or len(ja) < 6:
             continue
         for tok in b[3:].split():
             m = TOKEN.match(tok)
-            if not m or m.group(1) not in wanted:
+            if not m:
                 continue
             head, reading, checked = m.group(1), m.group(2), bool(m.group(4))
+            if head not in wanted and reading in kana_word and reading in ja:
+                head = kana_word[reading]
+            if head not in wanted:
+                continue
             readings = wanted[head]
-            if reading and reading not in readings:
+            if reading and reading not in readings and head not in kana_word:
                 continue
             # The index files 留める under 止める; keep only sentences that write the word as taught.
             if re.sub(r'[ぁ-ゖ]+$', '', head) not in ja:
                 continue
-            # Stay at the learner's level: no kanji beyond the deck, except the word's own.
-            if any(ch not in deck_kanji and ch not in head for ch in re.findall(r'[一-鿿々]', ja) if ch != '々'):
-                continue
-            found.setdefault(head, []).append((not checked, abs(len(ja) - 16), ja, en, b[3:]))
+            row = (not checked, abs(len(ja) - 16), ja, en, b[3:])
+            # Stay at the learner's level: short, and no kanji beyond the deck except the word's own.
+            strict = len(ja) <= MAX_JA and len(en) <= MAX_EN and not any(
+                ch not in deck_kanji and ch not in head for ch in re.findall(r'[一-鿿々]', ja) if ch != '々')
+            (found if strict else loose).setdefault(head, []).append(row)
 
     entries = load_jmdict_entries(sys.argv[2])
     fixes, senses = load('gloss_fixes.json'), load('example_senses.json')   # hand-checked meanings
     out = {}
     for v in vocab:
         pool = sorted(set(found.get(v['w'], []) + (found.get(v['r'], []) if v.get('f') == 'kana' else [])))
+        if len({p[2] for p in pool}) < 2:   # too few at the learner's level: allow longer ones and unstudied kanji
+            pool += sorted(set(loose.get(v['w'], []) + (loose.get(v['r'], []) if v.get('f') == 'kana' else [])))
         picks, seen = [], set()
         for _, _, ja, en, bline in pool:
             if ja in seen:

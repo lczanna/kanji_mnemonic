@@ -2030,6 +2030,9 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
     if (!ex || Array.isArray(ex)) return;
     EXAMPLES = ex;
     for (const list of Object.values(ex)) for (const [ja, , gl] of list) if (gl && gl.length) GL[ja] = gl;
+    // A word card already on screen (say, a review resumed after an update) gets its sentences now.
+    const it = session && session.queue[session.i];
+    if (it && it.type === 'vocab' && EXAMPLES[it.x.w]) { const y = $('sheet').scrollTop; renderSession(); $('sheet').scrollTop = y; }
   });
 }).catch(() => {
   $('app').innerHTML = '<div class="loading">The deck file (kanji.json) did not load. If you opened this file directly from disk, serve the folder instead: python3 -m http.server</div>';
