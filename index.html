@@ -386,6 +386,7 @@ function loadData() {
   d.stats = Object.assign(base.stats, d.stats || {});
   // The old default of 25 words a day becomes the time-based plan, unless it was set by hand.
   if (!d.settingsAt && d.settings.vocabPerDay === '25') d.settings.vocabPerDay = 'auto';
+  earlyKnownChecks(d);
   d.version = 3;
   return d;
 }
@@ -484,6 +485,7 @@ async function pullRemote() {
     else for (const [k, a] of Object.entries(body.cards || {})) remote.cards[k] = unpackCard(a);
   });
   mergeRemote(remote);
+  earlyKnownChecks(appData);
   planCache = null;
   saveLocal();
 }
@@ -561,10 +563,20 @@ function schedule(key, grade) {
   appData.cards[key] = c;
 }
 function markKnown(key) {
-  // "Already know it": skip learning, but check it once in the next 4 weeks (spread out so they don't arrive together).
+  // "Already know it": skip the lesson, but check it within the week (2–7 days, spread so they don't arrive
+  // together). Passing it grows the gaps as usual; missing it puts the card into normal learning.
   const t = today();
-  appData.cards[key] = { stability: 25, difficulty: 3, reps: 1, lapses: 0, lastReview: t,
-                         due: addDays(t, 4 + Math.floor(Math.random() * 24)), triaged: true };
+  appData.cards[key] = { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: t, due: addDays(t, knownGap(key)), triaged: true };
+}
+// The same spread on every device, so a synced card gets the same date everywhere.
+function knownGap(key) { let h = 7; for (const ch of key) h = (h * 31 + ch.codePointAt(0)) | 0; return 2 + Math.abs(h) % 6; }
+// Cards marked known before this rule had their first check up to 4 weeks out: bring it into the first week.
+function earlyKnownChecks(d) {
+  for (const [key, c] of Object.entries(d.cards)) {
+    if (!c.triaged || (c.reps || 0) !== 1 || !c.lastReview || !c.due) continue;
+    const first = addDays(c.lastReview, knownGap(key));
+    if (c.due > first) c.due = first;
+  }
 }
 function logReview(passed) {
   const t = today();
