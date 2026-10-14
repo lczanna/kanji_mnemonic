@@ -1,0 +1,1850 @@
+[
+ {
+  "id": "rd001",
+  "kind": "short",
+  "title": "A note from Mom",
+  "text": "たけしへ\nお母さんは今日、おばあちゃんの家に行くので、帰りが夜9時ごろになります。晩ご飯はれいぞうこにカレーがあるので、あたためて食べてください。\nそれから、明日はもえるゴミの日なので、寝る前にゴミをげんかんに出しておいてね。お父さんも今日はおそくなるそうだから、先に食べていいよ。\n母より",
+  "questions": [
+   {
+    "q": "たけしさんは寝る前に何をしなければなりませんか。",
+    "options": [
+     "カレーを作る",
+     "おばあちゃんの家に行く",
+     "お父さんが帰るのを待つ",
+     "ゴミをげんかんに出す"
+    ],
+    "answer": 3,
+    "why": "Mom asks him to put the garbage by the front door before bed (寝る前にゴミをげんかんに出しておいてね). The curry is already made and he may eat first."
+   }
+  ],
+  "en": "To Takeshi: I'm going to Grandma's house today, so I'll be back around 9 p.m. There's curry in the fridge for dinner, so heat it up and eat. Also, tomorrow is burnable-garbage day, so put the garbage out by the front door before you go to bed. Dad says he'll be late today too, so go ahead and eat first. From Mom"
+ },
+ {
+  "id": "rd002",
+  "kind": "short",
+  "title": "Meeting time change",
+  "text": "山田さん\nおつかれさまです。明日の会議ですが、部長の都合で、午前10時から午後2時に変わりました。場所は同じ3かいの会議室です。\n会議で使う資料は、私が今日中に作って、メールで送ります。山田さんは明日の朝までに一度見て、まちがいがないか確認してもらえますか。\nよろしくお願いします。\n田中",
+  "questions": [
+   {
+    "q": "山田さんは何をしなければなりませんか。",
+    "options": [
+     "今日中に資料を作る",
+     "会議の時間を部長に伝える",
+     "明日の朝までに資料を確認する",
+     "会議室を予約する"
+    ],
+    "answer": 2,
+    "why": "Tanaka will make the materials; Yamada is asked to check them by tomorrow morning (明日の朝までに一度見て…確認してもらえますか)."
+   }
+  ],
+  "en": "Mr. Yamada, Thanks for your work. About tomorrow's meeting: because of the department head's schedule, it has moved from 10 a.m. to 2 p.m. The place is the same, the meeting room on the 3rd floor. I'll make the materials for the meeting today and send them by email. Could you look through them once by tomorrow morning and check that there are no mistakes? Thank you. Tanaka"
+ },
+ {
+  "id": "rd003",
+  "kind": "short",
+  "title": "Shop closed for renovation",
+  "text": "お客様へ\nいつも当店をご利用いただき、ありがとうございます。店内の工事のため、11月5日(水)から11月10日(月)までお休みします。11日(火)からは、いつもどおり朝10時から夜8時まで開いています。\nなお、お休みの間も、インターネットでの注文は受け付けています。ご注文の品物は、11日以降に送ります。\nごめいわくをおかけしますが、よろしくお願いいたします。",
+  "questions": [
+   {
+    "q": "このお知らせからわかることは何ですか。",
+    "options": [
+     "11月10日から店が開く。",
+     "休みの間は、インターネットでも注文できない。",
+     "11日からは、店が開いている時間が変わる。",
+     "休みの間にインターネットで注文した物は、11日以降に送られる。"
+    ],
+    "answer": 3,
+    "why": "Online orders are accepted during the closure and sent from the 11th (ご注文の品物は、11日以降に送ります). The shop reopens on the 11th with the usual hours."
+   }
+  ],
+  "en": "To our customers: Thank you for always using our shop. Because of work inside the shop, we will be closed from Wednesday, November 5 to Monday, November 10. From Tuesday the 11th we will be open as usual from 10 a.m. to 8 p.m. Online orders are still accepted while we are closed. Items ordered will be sent on or after the 11th. We apologize for the inconvenience."
+ },
+ {
+  "id": "rd004",
+  "kind": "short",
+  "title": "Walking to the station",
+  "text": "私は毎朝、駅まで歩いて行くことにしている。前はバスを使っていたが、去年、医者に「もっと体を動かしたほうがいい」と言われたからだ。\n歩き始めたころは、20分歩くだけで疲れてしまった。しかし、続けているうちに、だんだん楽になってきた。それに、歩いていると、きせつによって変わる花や木に気がつくようになった。今では、朝の散歩がいちばん楽しい時間になっている。",
+  "questions": [
+   {
+    "q": "この人が毎朝歩くようになったのはどうしてですか。",
+    "options": [
+     "医者に体を動かすように言われたから",
+     "バスがなくなったから",
+     "花や木を見るのが好きだったから",
+     "朝の時間が楽しいから"
+    ],
+    "answer": 0,
+    "why": "The writer started walking because a doctor said to move more (医者に「もっと体を動かしたほうがいい」と言われたからだ). Enjoying the flowers came later."
+   }
+  ],
+  "en": "I make a point of walking to the station every morning. I used to take the bus, but last year a doctor told me I should move my body more. When I started, I got tired after walking just 20 minutes. But as I kept at it, it gradually got easier. And while walking, I began to notice the flowers and trees that change with the seasons. Now the morning walk has become my favorite time of day."
+ },
+ {
+  "id": "rd005",
+  "kind": "short",
+  "title": "Library borrowing rules",
+  "text": "図書館からのお知らせ\n本を借りるときは、図書館のカードが必要です。一回に借りられるのは一人5さつまでで、期間は2週間です。\n返すのがおくれた場合は、返した日から1週間、新しい本を借りることができません。\nまた、ざっしの新しい号は借りられません。館内で読んでください。",
+  "questions": [
+   {
+    "q": "図書館のきまりについて、正しいものはどれですか。",
+    "options": [
+     "カードがなくても、本を借りることができる。",
+     "ざっしは新しい号でも2週間借りられる。",
+     "本を返すのがおくれると、しばらく本を借りられない。",
+     "一回に何さつでも借りられる。"
+    ],
+    "answer": 2,
+    "why": "Late returns mean no borrowing for a week (返した日から1週間、新しい本を借りることができません)."
+   }
+  ],
+  "en": "Notice from the library: You need a library card to borrow books. Each person can borrow up to 5 books at a time, for two weeks. If you return books late, you cannot borrow new books for one week from the day you return them. The newest issues of magazines cannot be borrowed; please read them in the library."
+ },
+ {
+  "id": "rd006",
+  "kind": "short",
+  "title": "Can't make the movie",
+  "text": "ゆみ、ごめん！明日の映画、行けなくなっちゃった。急にアルバイトが入っちゃって…。\nチケットはもう買ってあるから、だれかほかの人をさそって、二人で行ってくれない？お金はいらないよ。その代わり、今度ご飯をおごってね。\n来週の土曜日なら、私は一日ひまだよ。ほんとうにごめんね。\nさき",
+  "questions": [
+   {
+    "q": "さきさんはチケットをどうしてほしいと言っていますか。",
+    "options": [
+     "店に返してほしい",
+     "来週の土曜日の分に変えてほしい",
+     "ゆみさんにお金をはらってほしい",
+     "ゆみさんがほかの人といっしょに使ってほしい"
+    ],
+    "answer": 3,
+    "why": "Saki asks Yumi to invite someone else and go with them (だれかほかの人をさそって、二人で行ってくれない？), and says no money is needed."
+   }
+  ],
+  "en": "Yumi, sorry! I can't go to the movie tomorrow. I suddenly got called in for my part-time job... I've already bought the tickets, so could you invite someone else and go together? You don't need to pay me. Instead, treat me to a meal next time. I'm free all day next Saturday. Really sorry. Saki"
+ },
+ {
+  "id": "rd007",
+  "kind": "short",
+  "title": "How to take the medicine",
+  "text": "薬の飲み方\nこの薬は一日3回、朝・昼・晩のご飯を食べたあとに飲んでください。ご飯を食べなかったときも、何か少し食べてから飲むようにしてください。おなかが空いているときに飲むと、おなかが痛くなることがあります。\n薬は5日分です。熱が下がっても、全部飲んでください。",
+  "questions": [
+   {
+    "q": "この薬について正しいものはどれですか。",
+    "options": [
+     "熱が下がっても、最後まで飲まなければならない。",
+     "ご飯を食べなかったときは、飲まなくてもいい。",
+     "一日2回飲む。",
+     "おなかが空いているときに飲むほうがいい。"
+    ],
+    "answer": 0,
+    "why": "The note says to take all of it even after the fever goes down (熱が下がっても、全部飲んでください)."
+   }
+  ],
+  "en": "How to take this medicine: Take it three times a day, after breakfast, lunch and dinner. Even when you don't eat a meal, eat a little something before taking it. Taking it on an empty stomach can give you a stomachache. This is five days' worth. Please take all of it even if your fever goes down."
+ },
+ {
+  "id": "rd008",
+  "kind": "short",
+  "title": "Hotel information",
+  "text": "ホテルにおとまりのお客様へ\n朝食は1かいのレストランで、朝6時半から9時半までです。お部屋のカードキーを係の者にお見せください。\nチェックアウトは午前11時です。11時をすぎる場合は、1時間ごとに1,000円かかりますので、ご注意ください。\nにもつは、チェックアウトのあとも、夕方6時までフロントであずかります。",
+  "questions": [
+   {
+    "q": "このホテルについて、正しいものはどれですか。",
+    "options": [
+     "チェックアウトのあとも、にもつをあずけることができる。",
+     "朝食は10時まで食べられる。",
+     "チェックアウトは何時でもいい。",
+     "朝食のとき、部屋の番号を言えばいい。"
+    ],
+    "answer": 0,
+    "why": "Luggage can be left at the front desk until 6 p.m. after check-out (にもつは、チェックアウトのあとも…あずかります)."
+   }
+  ],
+  "en": "To guests staying at the hotel: Breakfast is in the restaurant on the 1st floor from 6:30 to 9:30 a.m. Please show your room card key to the staff. Check-out is at 11 a.m. If you stay past 11, there is a charge of 1,000 yen per hour. We can keep your luggage at the front desk until 6 p.m. even after check-out."
+ },
+ {
+  "id": "rd009",
+  "kind": "short",
+  "title": "Elevator inspection",
+  "text": "社員のみなさんへ\n来週の月曜日から水曜日まで、エレベーターのてんけんをします。てんけんの間は、エレベーターが使えませんので、かいだんを使ってください。\nにもつが重くて運ぶのが大変な人は、1かいの受付に言ってください。係の人が手伝います。\nてんけんは朝9時から夕方5時までで、それ以外の時間は使えます。\nそうむ部",
+  "questions": [
+   {
+    "q": "来週の火曜日の夜7時にエレベーターを使いたい人は、どうすればいいですか。",
+    "options": [
+     "かいだんを使わなければならない。",
+     "そのままエレベーターを使えばいい。",
+     "受付に言わなければならない。",
+     "係の人といっしょに使わなければならない。"
+    ],
+    "answer": 1,
+    "why": "The inspection runs only from 9 a.m. to 5 p.m., and the elevator can be used at other times (それ以外の時間は使えます)."
+   }
+  ],
+  "en": "To all staff: From Monday to Wednesday next week, the elevator will be inspected. It cannot be used during the inspection, so please use the stairs. If you have heavy things that are hard to carry, tell the reception on the 1st floor and someone will help. The inspection is from 9 a.m. to 5 p.m.; the elevator can be used at other times. General Affairs"
+ },
+ {
+  "id": "rd010",
+  "kind": "short",
+  "title": "Where the cat sleeps",
+  "text": "うちの猫は、毎晩、私が寝る時間になると部屋に来て、私の足のそばでまるくなって寝る。ところが、先週から、夜になっても部屋に来なくなった。\n病気ではないかと心配になって、家族に聞いてみた。すると、弟が新しく買ったふとんが気に入って、弟の部屋で寝ているらしい。少しさびしいが、元気なので安心した。",
+  "questions": [
+   {
+    "q": "この人が安心したのはどうしてですか。",
+    "options": [
+     "猫が自分の部屋にもどってきたから",
+     "弟が新しいふとんを買ってくれたから",
+     "猫が病気ではないとわかったから",
+     "猫が足のそばで寝てくれたから"
+    ],
+    "answer": 2,
+    "why": "The writer was worried the cat was sick, then learned it was just sleeping in the brother's room and was fine (元気なので安心した)."
+   }
+  ],
+  "en": "Every night when it's time for me to sleep, our cat comes to my room and curls up by my feet. But since last week, it hasn't come to my room even at night. Worried it might be sick, I asked my family. It seems it likes the new futon my younger brother bought and is sleeping in his room. I'm a little lonely, but I was relieved that it's healthy."
+ },
+ {
+  "id": "rd011",
+  "kind": "short",
+  "title": "School trip and rain",
+  "text": "ご家族のみなさまへ\n10月20日(金)に遠足があります。朝8時に学校に集まってください。おべんとう、水とう、雨具を持ってきてください。おかしは300円までです。\n雨の場合、遠足は中止で、ふつうのじゅぎょうになります。その日は給食がありますので、おべんとうは必要ありません。",
+  "questions": [
+   {
+    "q": "当日、雨がふった場合、正しいものはどれですか。",
+    "options": [
+     "おべんとうを持って学校に行く。",
+     "朝8時に学校に集まって遠足に行く。",
+     "学校は休みになる。",
+     "学校で給食を食べる。"
+    ],
+    "answer": 3,
+    "why": "If it rains there are normal classes and school lunch is served (その日は給食がありますので、おべんとうは必要ありません)."
+   }
+  ],
+  "en": "To families: There is a school outing on Friday, October 20. Please gather at school at 8 a.m. Bring a packed lunch, a water bottle and rain gear. Snacks up to 300 yen. If it rains, the outing is cancelled and there will be normal classes. School lunch will be served that day, so no packed lunch is needed."
+ },
+ {
+  "id": "rd012",
+  "kind": "short",
+  "title": "Declining a party",
+  "text": "西田さん\n先日は、パーティーにさそってくださって、ありがとうございました。ぜひ参加したかったのですが、その日はちょうど仕事で北海道に行くことになってしまいました。とても残念です。\nまた何かあったら、声をかけてください。北海道のおみやげを買ってきますね。\n木下",
+  "questions": [
+   {
+    "q": "木下さんがこのメールで一番伝えたいことは何ですか。",
+    "options": [
+     "パーティーに行けないこと",
+     "北海道に行くこと",
+     "おみやげを買ってくること",
+     "もう一度パーティーをしてほしいこと"
+    ],
+    "answer": 0,
+    "why": "The main point is that Kinoshita cannot attend (ぜひ参加したかったのですが…). The trip is the reason, not the message."
+   }
+  ],
+  "en": "Ms. Nishida, Thank you for inviting me to the party the other day. I really wanted to go, but it turns out I have to go to Hokkaido for work that very day. I'm very sorry to miss it. Please ask me again if there's another chance. I'll bring you a souvenir from Hokkaido. Kinoshita"
+ },
+ {
+  "id": "rd013",
+  "kind": "short",
+  "title": "Station gate hours",
+  "text": "駅をご利用のみなさまへ\n12月1日から、東口のかいさつは朝6時から夜11時までになります。夜11時から次の日の朝6時までは、西口のかいさつをご利用ください。\nまた、東口のきっぷ売り場は、11月30日でなくなります。きっぷは、西口か、ホームにあるきっぷ売り場でお買い求めください。",
+  "questions": [
+   {
+    "q": "12月5日の夜11時半に電車に乗りたい人は、どうすればいいですか。",
+    "options": [
+     "東口のかいさつから入る。",
+     "西口のかいさつから入る。",
+     "東口できっぷを買う。",
+     "朝6時まで待つ。"
+    ],
+    "answer": 1,
+    "why": "After 11 p.m. the east gate is closed and people should use the west gate (夜11時から…西口のかいさつをご利用ください)."
+   }
+  ],
+  "en": "To station users: From December 1, the east ticket gate will be open from 6 a.m. to 11 p.m. From 11 p.m. until 6 a.m. the next morning, please use the west gate. Also, the east ticket counter will close on November 30. Please buy tickets at the west exit or at the ticket machines on the platform."
+ },
+ {
+  "id": "rd014",
+  "kind": "short",
+  "title": "Learning to cook",
+  "text": "私は料理が苦手で、一人で住み始めてからも、毎日コンビニのおべんとうを食べていた。\nしかし、ある日、友達の家で手作りのカレーを食べて、その味におどろいた。店で食べるものより、ずっとおいしかったのだ。作り方を聞くと、思っていたよりかんたんだった。\nそれから、私も週に2回は料理をするようになった。まだ上手ではないが、自分で作ったご飯はやはりおいしい。",
+  "questions": [
+   {
+    "q": "この人が料理をするようになったきっかけは何ですか。",
+    "options": [
+     "コンビニのおべんとうが高くなったこと",
+     "一人で住み始めたこと",
+     "友達が作ったカレーがとてもおいしかったこと",
+     "料理教室に通い始めたこと"
+    ],
+    "answer": 2,
+    "why": "After tasting a friend's homemade curry and learning it was easy, the writer started cooking (それから、私も週に2回は料理をするようになった)."
+   }
+  ],
+  "en": "I'm bad at cooking, and even after I started living alone I ate convenience-store boxed lunches every day. But one day I had homemade curry at a friend's house and was surprised at how it tasted. It was much better than what you get in a restaurant. When I asked how to make it, it was easier than I had thought. Since then I cook at least twice a week. I'm not good yet, but food you make yourself really does taste good."
+ },
+ {
+  "id": "rd015",
+  "kind": "short",
+  "title": "Phone message for Nakano",
+  "text": "中野さんへ\n2時ごろ、みどり商事の西川さんから電話がありました。来週の打ち合わせの日を、木曜日から金曜日に変えてほしいそうです。\n中野さんの都合がよければ、西川さんに電話をしてください。もし金曜日がだめな場合は、ほかにいい日をメールで知らせてほしいとのことです。\n3:15 山下",
+  "questions": [
+   {
+    "q": "中野さんは金曜日の都合が悪い場合、どうしますか。",
+    "options": [
+     "西川さんに電話をする",
+     "木曜日に打ち合わせをする",
+     "山下さんに知らせる",
+     "西川さんにメールでほかの日を知らせる"
+    ],
+    "answer": 3,
+    "why": "If Friday is not possible, Nishikawa wants another date by email (ほかにいい日をメールで知らせてほしい). Calling is for when Friday is fine."
+   }
+  ],
+  "en": "To Mr. Nakano: Around 2 o'clock, Mr. Nishikawa from Midori Trading called. He would like to move next week's meeting from Thursday to Friday. If that works for you, please call him. If Friday doesn't work, he asks you to let him know another good day by email. 3:15, Yamashita"
+ },
+ {
+  "id": "rd016",
+  "kind": "short",
+  "title": "New garbage rules",
+  "text": "ゴミの出し方が変わります\n4月から、プラスチックのゴミは、毎週火曜日に出すことになりました。今までは、もえないゴミといっしょに金曜日に出していましたが、これからは分けて出してください。\nゴミは、朝8時までに決められた場所に出してください。前の日の夜に出すのはやめてください。",
+  "questions": [
+   {
+    "q": "4月から、プラスチックのゴミはいつ出しますか。",
+    "options": [
+     "火曜日の朝8時までに",
+     "金曜日の朝8時までに",
+     "月曜日の夜に",
+     "もえないゴミといっしょに、いつでも"
+    ],
+    "answer": 0,
+    "why": "Plastic goes out on Tuesdays (毎週火曜日), by 8 a.m., and not the night before."
+   }
+  ],
+  "en": "Changes to garbage collection: From April, plastic garbage will be collected every Tuesday. Until now it went out on Fridays with non-burnable garbage, but from now on please put it out separately. Put garbage out at the designated place by 8 a.m. Please do not put it out the night before."
+ },
+ {
+  "id": "rd017",
+  "kind": "short",
+  "title": "A week without a smartphone",
+  "text": "最近、電車の中でスマートフォンを見ている人が多い。私もその一人だった。\nしかし、先月、スマートフォンをこわしてしまい、一週間、使えない生活をした。初めは不便だと思ったが、電車の中で窓の外を見たり、本を読んだりする時間が楽しくなった。\n今は新しいスマートフォンがあるが、電車の中ではなるべく使わないようにしている。",
+  "questions": [
+   {
+    "q": "この人は今、電車の中でどうしていますか。",
+    "options": [
+     "スマートフォンがないので、本を読んでいる。",
+     "できるだけスマートフォンを使わないようにしている。",
+     "前と同じようにスマートフォンを見ている。",
+     "いつも寝ている。"
+    ],
+    "answer": 1,
+    "why": "The last sentence says the writer tries not to use the phone on the train (なるべく使わないようにしている). They do have a new phone."
+   }
+  ],
+  "en": "These days many people look at their smartphones on the train. I was one of them. But last month I broke my smartphone and lived for a week without one. At first I thought it was inconvenient, but I came to enjoy looking out the window and reading on the train. I have a new smartphone now, but I try not to use it on the train as much as possible."
+ },
+ {
+  "id": "rd018",
+  "kind": "short",
+  "title": "Absent from class",
+  "text": "小川先生\n2年の石田です。かぜで熱が出たので、今日のじゅぎょうを休ませていただきます。\n今日しめきりのレポートは、もうできているので、友達の上田さんに先生にわたしてもらうようにたのみました。\n来週のじゅぎょうには出られると思います。よろしくお願いします。",
+  "questions": [
+   {
+    "q": "石田さんはレポートをどうしますか。",
+    "options": [
+     "来週のじゅぎょうで出す",
+     "メールで送る",
+     "友達に先生にわたしてもらう",
+     "熱が下がってから書く"
+    ],
+    "answer": 2,
+    "why": "Ishida asked a friend, Ueda, to hand in the finished report (友達の上田さんに先生にわたしてもらうようにたのみました)."
+   }
+  ],
+  "en": "Professor Ogawa, This is Ishida, second year. I have a cold and a fever, so I'll be absent from today's class. The report due today is already finished, so I've asked my friend Ueda to hand it to you. I think I'll be able to attend next week. Thank you."
+ },
+ {
+  "id": "rd019",
+  "kind": "short",
+  "title": "Lunchtime request",
+  "text": "お客様へのお願い\n当店では、ランチの時間(11時〜14時)は、お一人様一品以上の注文をお願いしております。\nまた、ランチの時間はたいへんこみ合いますので、お食事が終わった方は、なるべく早くお席をお立ちください。\nゆっくりお話をされたい方は、14時以降のご利用をおすすめします。14時から17時までは、飲み物が100円引きになります。",
+  "questions": [
+   {
+    "q": "この店について正しいものはどれですか。",
+    "options": [
+     "ランチの時間は、飲み物だけ注文してもいい。",
+     "ランチの時間は、ゆっくり話すことができる。",
+     "14時からは、ランチが安くなる。",
+     "14時以降は、飲み物が安くなる。"
+    ],
+    "answer": 3,
+    "why": "From 14:00 to 17:00 drinks are 100 yen off (飲み物が100円引きになります). At lunch each person must order a dish."
+   }
+  ],
+  "en": "A request to our customers: During lunch (11:00–14:00), we ask each customer to order at least one dish. Lunchtime is very crowded, so please leave your seat as soon as possible after finishing your meal. If you'd like to sit and talk, we recommend coming after 14:00. From 14:00 to 17:00, drinks are 100 yen off."
+ },
+ {
+  "id": "rd020",
+  "kind": "short",
+  "title": "Forgotten umbrella",
+  "text": "大川様\nお問い合わせ、ありがとうございます。お客様のお部屋から、黒いかさが見つかりました。フロントであずかっております。\n取りにいらっしゃるのがむずかしい場合は、ご自宅に送ることもできます。その場合、送料はお客様におはらいいただきます。\nどうなさるか、お知らせください。\n花田ホテル フロント 原",
+  "questions": [
+   {
+    "q": "このメールの内容と合っているものはどれですか。",
+    "options": [
+     "かさを家に送ってもらう場合、お金がかかる。",
+     "かさはもう大川さんの家に送られた。",
+     "かさを取りに行くことはできない。",
+     "ホテルが送料をはらってくれる。"
+    ],
+    "answer": 0,
+    "why": "If it is sent, the guest pays the shipping (送料はお客様におはらいいただきます)."
+   }
+  ],
+  "en": "Dear Mr. Okawa, Thank you for your inquiry. A black umbrella was found in your room. We are keeping it at the front desk. If it is difficult for you to come and pick it up, we can also send it to your home. In that case, the shipping cost will be paid by you. Please let us know what you would like to do. Hara, Front Desk, Hanada Hotel"
+ },
+ {
+  "id": "rd021",
+  "kind": "short",
+  "title": "Letters from Grandma",
+  "text": "祖母は今年85歳だが、今でも毎月私に手紙をくれる。電話のほうが早いのに、と思ったこともあった。\nしかし、一人で住み始めてから、祖母の手紙を読むのが楽しみになった。字を見ると、祖母の顔が思いうかぶからだ。\n最近は、私も月に一度、返事を書くようにしている。字はあまり上手ではないが、祖母は喜んでくれているようだ。",
+  "questions": [
+   {
+    "q": "この人が祖母の手紙を読むのが楽しみになったのはどうしてですか。",
+    "options": [
+     "電話より早くとどくから",
+     "字を見ると祖母を思い出すから",
+     "祖母の字がとても上手だから",
+     "返事を書くのが好きだから"
+    ],
+    "answer": 1,
+    "why": "Seeing her handwriting brings her face to mind (字を見ると、祖母の顔が思いうかぶからだ)."
+   }
+  ],
+  "en": "My grandmother is 85 this year, but she still sends me a letter every month. I used to think a phone call would be quicker. But since I started living alone, reading her letters has become something I look forward to, because when I see her handwriting I can picture her face. Lately I try to write back once a month too. My handwriting isn't very good, but she seems happy."
+ },
+ {
+  "id": "rd022",
+  "kind": "short",
+  "title": "Classroom change",
+  "text": "「日本の文化」のじゅぎょうを取っている学生へ\n来週の木曜日のじゅぎょうは、教室がB館の205教室から、A館の310教室に変わります。\nまた、その日は小テストがあります。教科書は持ってこなくてもいいですが、じしょを持ってきてください。電子じしょでもかまいません。ただし、スマートフォンは使えません。",
+  "questions": [
+   {
+    "q": "来週の木曜日、学生は何を持って行けばいいですか。",
+    "options": [
+     "教科書",
+     "スマートフォン",
+     "じしょ",
+     "何も持って行かなくていい"
+    ],
+    "answer": 2,
+    "why": "Students should bring a dictionary (じしょを持ってきてください); the textbook is not needed and phones are not allowed."
+   }
+  ],
+  "en": "To students taking 'Japanese Culture': Next Thursday's class will move from Room 205 in Building B to Room 310 in Building A. There will also be a short quiz that day. You don't need to bring the textbook, but please bring a dictionary. An electronic dictionary is fine. However, smartphones may not be used."
+ },
+ {
+  "id": "rd023",
+  "kind": "short",
+  "title": "Pool rules",
+  "text": "スポーツセンターをご利用のみなさまへ\nプールは毎週月曜日がお休みです。また、毎日12時から13時までは、そうじのため使えません。\nプールに入るときは、必ずぼうしをかぶってください。ぼうしを持っていない方は、受付で100円でかりることができます。",
+  "questions": [
+   {
+    "q": "このお知らせについて正しいものはどれですか。",
+    "options": [
+     "毎日12時半に泳ぐことができる。",
+     "ぼうしはかぶらなくてもいい。",
+     "プールは毎日使える。",
+     "ぼうしを持っていなくても、プールを使うことができる。"
+    ],
+    "answer": 3,
+    "why": "A cap can be rented at reception for 100 yen (受付で100円でかりることができます), so you can still swim without your own."
+   }
+  ],
+  "en": "To users of the sports center: The pool is closed every Monday. It also cannot be used from 12:00 to 13:00 every day because of cleaning. Always wear a swim cap in the pool. If you don't have one, you can rent one at reception for 100 yen."
+ },
+ {
+  "id": "rd024",
+  "kind": "short",
+  "title": "Note from the neighbor",
+  "text": "となりの部屋のみなさまへ\nとなりの部屋に住んでいる上田です。来週の月曜日から一週間、部屋の工事をすることになりました。工事は朝9時から夕方5時までで、大きな音が出ることがあります。\nごめいわくをおかけして、申しわけありません。何かありましたら、下の番号に電話をください。\n上田 090-XXXX-XXXX",
+  "questions": [
+   {
+    "q": "このお知らせを書いた一番の目的は何ですか。",
+    "options": [
+     "工事で音が出ることをあやまるため",
+     "引っ越してきたあいさつをするため",
+     "工事を手伝ってほしいとたのむため",
+     "電話番号が変わったことを知らせるため"
+    ],
+    "answer": 0,
+    "why": "Ueda is warning about noise from the work and apologizing for it (ごめいわくをおかけして、申しわけありません)."
+   }
+  ],
+  "en": "To my neighbors: I'm Ueda, living in the room next door. From next Monday, work will be done in my room for one week. The work will be from 9 a.m. to 5 p.m., and there may be loud noises. I'm sorry for the trouble. If there is any problem, please call the number below. Ueda"
+ },
+ {
+  "id": "rd025",
+  "kind": "short",
+  "title": "How I remember words",
+  "text": "日本語の勉強を始めたころ、私は新しいことばを覚えるために、ノートに何回も書いていた。でも、すぐに忘れてしまった。\nそこで、日本人の友達にどうすればいいか聞いてみた。友達は「覚えたことばを、その日のうちに使ってみるといいよ」と言った。\nそれから、新しいことばを使って、毎日日記を書くことにした。すると、前よりずっと覚えられるようになった。",
+  "questions": [
+   {
+    "q": "この人は、ことばを覚えるために今どうしていますか。",
+    "options": [
+     "ノートに何回も書いている。",
+     "新しいことばを使って日記を書いている。",
+     "日本人の友達と毎日話している。",
+     "毎日友達にことばの意味を聞いている。"
+    ],
+    "answer": 1,
+    "why": "Following the friend's advice, the writer now writes a daily diary using new words (毎日日記を書くことにした)."
+   }
+  ],
+  "en": "When I started studying Japanese, I wrote new words many times in a notebook to memorize them. But I forgot them quickly. So I asked a Japanese friend what to do. My friend said, 'Try using the words you learned on the same day.' After that I decided to write a diary every day using new words. Then I could remember far more than before."
+ },
+ {
+  "id": "rd026",
+  "kind": "short",
+  "title": "Missed delivery",
+  "text": "おにもつのお知らせ\n本日午後3時に、おにもつを持ってまいりましたが、お留守でしたので、持ち帰りました。\n下の番号に電話をして、もう一度来てほしい日と時間をお知らせください。時間は、午前、午後2〜4時、4〜6時、6〜8時の中から選べます。\nおにもつは1週間あずかります。1週間をすぎると、送った方にお返しします。",
+  "questions": [
+   {
+    "q": "このお知らせを受け取った人は、何をしなければなりませんか。",
+    "options": [
+     "1週間以内ににもつを取りに行く",
+     "送った人に電話をする",
+     "電話をして、来てほしい日と時間を言う",
+     "次の日の午後3時に家にいる"
+    ],
+    "answer": 2,
+    "why": "The notice asks the recipient to call and choose a day and time for redelivery (電話をして…お知らせください)."
+   }
+  ],
+  "en": "Delivery notice: We came with your package at 3 p.m. today, but no one was home, so we took it back. Please call the number below and tell us the day and time you'd like us to come again. You can choose morning, 2–4 p.m., 4–6 p.m., or 6–8 p.m. We will keep the package for one week. After one week it will be returned to the sender."
+ },
+ {
+  "id": "rd027",
+  "kind": "short",
+  "title": "Rainy days",
+  "text": "雨の日は、外に出るのがめんどうだと思う人が多いだろう。私も子供のころは雨が大きらいだった。\nでも、今は少しちがう。雨の日は町が静かで、カフェもすいている。窓のそばの席にすわって、雨の音を聞きながらコーヒーを飲むのが、私の楽しみだ。\n雨の日にしかない楽しみもあるのだと思う。",
+  "questions": [
+   {
+    "q": "この人は雨の日についてどう思っていますか。",
+    "options": [
+     "外に出るのがめんどうだ。",
+     "子供のころから好きだった。",
+     "カフェがこんでいていやだ。",
+     "雨の日にも楽しいことがある。"
+    ],
+    "answer": 3,
+    "why": "The writer now enjoys coffee by the window on rainy days and says rainy days have their own pleasures (雨の日にしかない楽しみもある)."
+   }
+  ],
+  "en": "Many people probably find it a bother to go out on rainy days. I also hated rain as a child. But now it's a little different. On rainy days the town is quiet and the cafes are empty. Sitting by the window, drinking coffee while listening to the rain, is something I enjoy. I think there are pleasures that only rainy days have."
+ },
+ {
+  "id": "rd028",
+  "kind": "short",
+  "title": "Restaurant reservation",
+  "text": "高木様\nこのたびは、ご予約ありがとうございます。10月12日(土)夜7時、4名様でご予約をお受けしました。\nご予約の時間から15分すぎてもいらっしゃらない場合は、キャンセルとさせていただきます。おくれる場合は、必ずお電話ください。\nまた、人数が変わる場合は、前の日までにお知らせください。",
+  "questions": [
+   {
+    "q": "高木さんたちが7時半ごろに着きそうな場合、どうしなければなりませんか。",
+    "options": [
+     "店に電話をする",
+     "前の日までに知らせる",
+     "予約をキャンセルする",
+     "何もしなくていい"
+    ],
+    "answer": 0,
+    "why": "Arriving 30 minutes late is past the 15-minute limit, and late guests must call (おくれる場合は、必ずお電話ください)."
+   }
+  ],
+  "en": "Dear Mr. Takagi, Thank you for your reservation. We have booked a table for four at 7 p.m. on Saturday, October 12. If you have not arrived 15 minutes after the reservation time, it will be cancelled. If you will be late, please be sure to call. If the number of people changes, please let us know by the day before."
+ },
+ {
+  "id": "rd029",
+  "kind": "short",
+  "title": "Bicycle parking",
+  "text": "自転車をとめる方へ\n駅前の自転車おき場は、1日100円です。1か月使う場合は、1,500円の定期けんを買うと安くなります。定期けんは、駅前の市の事務所で売っています。\nこの場所以外に自転車をとめると、市が自転車を持っていきます。その場合、取りに来るときに2,000円はらわなければなりません。",
+  "questions": [
+   {
+    "q": "このお知らせについて正しいものはどれですか。",
+    "options": [
+     "定期けんは自転車おき場で買える。",
+     "自転車おき場以外にとめると、お金がかかることがある。",
+     "1か月使う場合、毎日100円はらうほうが安い。",
+     "定期けんは1日100円だ。"
+    ],
+    "answer": 1,
+    "why": "Bikes parked elsewhere are taken away and cost 2,000 yen to get back (取りに来るときに2,000円はらわなければなりません)."
+   }
+  ],
+  "en": "To people parking bicycles: The bicycle parking in front of the station costs 100 yen a day. If you use it for a month, buying a 1,500-yen monthly pass is cheaper. Passes are sold at the city office in front of the station. If you park anywhere other than here, the city will take your bicycle away, and you must pay 2,000 yen when you come to get it."
+ },
+ {
+  "id": "rd030",
+  "kind": "short",
+  "title": "Lunch with other teams",
+  "text": "私の会社では、毎月一回、昼休みにちがう部の人と同じテーブルでご飯を食べる日がある。\n初めは、知らない人と何を話せばいいかわからず、きんちょうした。しかし、話してみると、仕事のなやみが同じだったり、しゅみが同じだったりして、楽しかった。\n今では、ほかの部の人にも気がるに相談できるようになった。",
+  "questions": [
+   {
+    "q": "この人が、ほかの部の人にも気がるに相談できるようになったのは、どうしてですか。",
+    "options": [
+     "同じ部に変わったから",
+     "仕事のなやみがなくなったから",
+     "いっしょにご飯を食べて、話をしたから",
+     "毎日いっしょに仕事をしているから"
+    ],
+    "answer": 2,
+    "why": "Eating together and talking showed they had things in common, which made asking for advice easy."
+   }
+  ],
+  "en": "At my company, once a month there is a day when we eat lunch at the same table as people from other departments. At first I was nervous because I didn't know what to talk about with strangers. But when we talked, we turned out to have the same work worries or the same hobbies, and it was fun. Now I can easily ask people in other departments for advice."
+ },
+ {
+  "id": "rd031",
+  "kind": "short",
+  "title": "Text from my husband",
+  "text": "ごめん、今日は会議が長くなりそうで、帰りは10時ごろになると思う。晩ご飯は会社の近くで食べるから、いらないよ。\nそれから、明日の朝、駅まで車で送ってもらえるかな。朝早く大事なお客さんに会わなきゃいけないんだ。7時に家を出たいと思ってる。悪いけど、よろしくね。",
+  "questions": [
+   {
+    "q": "この人は何をたのんでいますか。",
+    "options": [
+     "晩ご飯を作っておくこと",
+     "10時に駅にむかえに来ること",
+     "明日の朝7時に起こすこと",
+     "明日の朝、駅まで車で送ること"
+    ],
+    "answer": 3,
+    "why": "He asks to be driven to the station tomorrow morning (駅まで車で送ってもらえるかな). He says he doesn't need dinner."
+   }
+  ],
+  "en": "Sorry, the meeting looks like it will run long today, so I think I'll be home around 10. I'll eat near the office, so I don't need dinner. Also, could you drive me to the station tomorrow morning? I have to meet an important client early. I'd like to leave home at 7. Sorry to ask, thanks."
+ },
+ {
+  "id": "rd032",
+  "kind": "short",
+  "title": "Clinic notice",
+  "text": "山田クリニックからのお知らせ\n受付時間は、午前9時から12時まで、午後3時から6時半までです。木曜日の午後と日曜日はお休みです。\n初めて来られる方は、ほけんしょうを必ず持ってきてください。\nまた、熱がある方は、病院に入る前に、受付に電話をしてください。",
+  "questions": [
+   {
+    "q": "熱がある人は、どうしなければなりませんか。",
+    "options": [
+     "病院に入る前に電話をする",
+     "午前中に来る",
+     "ほけんしょうを見せる",
+     "木曜日の午後に来る"
+    ],
+    "answer": 0,
+    "why": "People with a fever must call reception before entering (病院に入る前に、受付に電話をしてください)."
+   }
+  ],
+  "en": "Notice from Yamada Clinic: Reception hours are 9 a.m. to 12 noon and 3 p.m. to 6:30 p.m. We are closed Thursday afternoons and Sundays. First-time patients must bring their health insurance card. Patients with a fever, please call reception before entering the clinic."
+ },
+ {
+  "id": "rd033",
+  "kind": "short",
+  "title": "Two umbrellas",
+  "text": "先週、急に雨がふってきて、駅でこまっていた。すると、知らないおばあさんが「どうぞ」とかさを貸してくれた。「返さなくていいですよ。家はすぐそこだから」と言って、雨の中を走って行ってしまった。名前も聞けなかった。\nそれから私は、かばんにいつもかさを二本入れている。いつか、こまっている人に貸してあげたいと思うからだ。",
+  "questions": [
+   {
+    "q": "この人がかさを二本持っているのはどうしてですか。",
+    "options": [
+     "おばあさんにかさを返したいから",
+     "こまっている人に貸したいから",
+     "自分のかさをよくなくすから",
+     "急に雨がふるとこまるから"
+    ],
+    "answer": 1,
+    "why": "The writer wants to lend one to someone in need, as the old woman did (こまっている人に貸してあげたいと思うからだ)."
+   }
+  ],
+  "en": "Last week it suddenly started raining and I was stuck at the station. Then an old woman I didn't know lent me her umbrella, saying 'Here you go. You don't need to return it; my house is right there,' and ran off in the rain. I couldn't even ask her name. Since then I always carry two umbrellas in my bag, because someday I want to lend one to someone in trouble."
+ },
+ {
+  "id": "rd034",
+  "kind": "short",
+  "title": "Japanese chat group",
+  "text": "日本語でおしゃべりしませんか\n毎週土曜日の午後2時から4時まで、市民センターで日本語のおしゃべり会をしています。日本語のレベルは関係ありません。初めての方も、ぜひ来てください。\n予約はいりません。お茶とおかしを用意していますので、参加する方は200円を持ってきてください。",
+  "questions": [
+   {
+    "q": "この会に参加したい人はどうすればいいですか。",
+    "options": [
+     "前の日までに予約する",
+     "お茶とおかしを持って行く",
+     "200円を持って、土曜日の午後に行く",
+     "日本語のテストを受ける"
+    ],
+    "answer": 2,
+    "why": "No reservation is needed; just come on Saturday afternoon with 200 yen (参加する方は200円を持ってきてください)."
+   }
+  ],
+  "en": "Why not chat in Japanese? Every Saturday from 2 to 4 p.m., we hold a Japanese conversation group at the community center. Your Japanese level doesn't matter. First-timers are welcome. No reservation needed. We provide tea and snacks, so please bring 200 yen if you join."
+ },
+ {
+  "id": "rd035",
+  "kind": "short",
+  "title": "A favor while I'm away",
+  "text": "川口さん\n来週の水曜日から3日間、休みをいただくことになりました。その間、私の仕事を少しお願いできないでしょうか。\n毎朝、お客様からのメールを確認して、急ぎのものがあれば、部長に知らせてほしいのです。ほかの仕事は、休みのあとで私がやります。\nよろしくお願いします。\n青木",
+  "questions": [
+   {
+    "q": "青木さんが川口さんにたのんでいることは何ですか。",
+    "options": [
+     "お客様にメールの返事を書くこと",
+     "青木さんの仕事を全部すること",
+     "部長に休みのことを伝えること",
+     "メールを確認して、急ぎのものを部長に知らせること"
+    ],
+    "answer": 3,
+    "why": "Aoki asks her to check emails each morning and report urgent ones to the department head (急ぎのものがあれば、部長に知らせてほしい)."
+   }
+  ],
+  "en": "Ms. Kawaguchi, I'll be taking three days off from next Wednesday. Could I ask you to cover a little of my work during that time? I'd like you to check customers' emails every morning and, if anything is urgent, tell the department head. I'll do the rest of my work after I'm back. Thank you. Aoki"
+ },
+ {
+  "id": "rd036",
+  "kind": "short",
+  "title": "Life in a small town",
+  "text": "東京から小さな町に引っ越して、半年がたった。初めは、店が少なくて不便だと思った。夜8時には、ほとんどの店がしまってしまう。\nしかし、そのおかげで、家ですごす時間が長くなった。家族といっしょにゆっくり晩ご飯を食べたり、話をしたりするようになった。前の生活より、今のほうが私は気に入っている。",
+  "questions": [
+   {
+    "q": "この人は今の生活についてどう思っていますか。",
+    "options": [
+     "前の生活よりいいと思っている。",
+     "店が少なくて、早く東京にもどりたい。",
+     "夜も店が開いているので便利だ。",
+     "家族と話す時間がなくなった。"
+    ],
+    "answer": 0,
+    "why": "The last sentence says the writer prefers life now (前の生活より、今のほうが私は気に入っている)."
+   }
+  ],
+  "en": "It's been half a year since I moved from Tokyo to a small town. At first I thought it was inconvenient because there were few shops. Almost all of them close by 8 p.m. But thanks to that, I spend more time at home. I've started eating dinner slowly with my family and talking together. I like my life now better than before."
+ },
+ {
+  "id": "rd037",
+  "kind": "short",
+  "title": "Flower event cancelled",
+  "text": "「秋の花の会」中止のお知らせ\n10月15日(日)に、みどり公園でする予定だった「秋の花の会」は、台風が近づいているため、中止することになりました。楽しみにしていたみなさま、申しわけありません。\nこの会は、来年の春にもう一度する予定です。くわしいことが決まったら、またお知らせします。",
+  "questions": [
+   {
+    "q": "このお知らせの内容と合っているものはどれですか。",
+    "options": [
+     "会は10月22日に変わった。",
+     "「秋の花の会」は台風のため、なくなった。",
+     "会は来年の秋にする予定だ。",
+     "会の場所が変わった。"
+    ],
+    "answer": 1,
+    "why": "The event was cancelled because of the typhoon (台風が近づいているため、中止することになりました); it may be held next spring."
+   }
+  ],
+  "en": "Notice: 'Autumn Flower Event' cancelled. The Autumn Flower Event planned for Sunday, October 15 at Midori Park has been cancelled because a typhoon is approaching. We apologize to everyone who was looking forward to it. We plan to hold the event again next spring. We will let you know when the details are decided."
+ },
+ {
+  "id": "rd038",
+  "kind": "short",
+  "title": "Souvenirs for coworkers",
+  "text": "日本では、旅行に行ったとき、会社の人におみやげを買って帰る習慣がある。私の国にはこの習慣がないので、初めはびっくりした。\n日本人の友達に聞くと、休んでいる間、仕事をしてくれた人に「ありがとう」という気持ちを伝えるためだそうだ。\n今では私も、旅行に行くと、会社の人のためにおかしを買うようにしている。",
+  "questions": [
+   {
+    "q": "日本で会社の人におみやげを買うのはどうしてだと言っていますか。",
+    "options": [
+     "旅行に行ったことを知らせるため",
+     "自分の国の習慣を教えるため",
+     "休んでいる間、仕事をしてくれた人にお礼の気持ちを伝えるため",
+     "会社の人とおかしを食べるため"
+    ],
+    "answer": 2,
+    "why": "The friend explains it is to say thanks to those who covered your work (「ありがとう」という気持ちを伝えるためだそうだ)."
+   }
+  ],
+  "en": "In Japan there is a custom of buying souvenirs for coworkers when you travel. There's no such custom in my country, so I was surprised at first. When I asked a Japanese friend, they said it's to show thanks to the people who did your work while you were away. Now I also buy sweets for my coworkers when I travel."
+ },
+ {
+  "id": "rd039",
+  "kind": "short",
+  "title": "Note from a roommate",
+  "text": "けんじへ\n明日の朝、水道のてんけんの人が来るそうだ。10時ごろ来て、台所とおふろを見るらしい。\nぼくは朝から出かけるから、家にいられない。けんじは明日、学校は午後からだよね？悪いけど、てんけんが終わるまで家にいてくれないかな。終わったら出かけていいから。たのむよ。\nゆうた",
+  "questions": [
+   {
+    "q": "けんじさんは明日の朝、何をしなければなりませんか。",
+    "options": [
+     "台所とおふろをそうじする",
+     "朝から学校に行く",
+     "ゆうたさんといっしょに出かける",
+     "てんけんが終わるまで家にいる"
+    ],
+    "answer": 3,
+    "why": "Yuta asks Kenji to stay home until the inspection is over (てんけんが終わるまで家にいてくれないかな)."
+   }
+  ],
+  "en": "Kenji, Someone's coming to inspect the water pipes tomorrow morning. Apparently they'll come around 10 and check the kitchen and bathroom. I'm going out in the morning, so I can't be home. You have school from the afternoon tomorrow, right? Sorry, but could you stay home until the inspection is done? You can go out once it's over. Thanks. Yuta"
+ },
+ {
+  "id": "rd040",
+  "kind": "short",
+  "title": "Shopping bags",
+  "text": "お客様へ\n当店では、11月1日から、レジぶくろを1まい5円で売ることになりました。ふくろが必要な方は、レジで係の者に言ってください。\nご自分のふくろを持ってきた方には、ポイントを2点さしあげます。また、ふくろの代わりに、レジの近くにあるだんボール箱を自由にお使いください。\nご理解をお願いいたします。",
+  "questions": [
+   {
+    "q": "11月1日から、どう変わりますか。",
+    "options": [
+     "レジぶくろにお金がかかるようになる。",
+     "レジぶくろがもらえなくなる。",
+     "ポイントがなくなる。",
+     "自分のふくろを持ってこないと、買い物ができない。"
+    ],
+    "answer": 0,
+    "why": "From November 1 bags cost 5 yen each (1まい5円で売ることになりました). Bags are still available."
+   }
+  ],
+  "en": "To our customers: From November 1, we will sell plastic shopping bags at 5 yen each. If you need a bag, please tell the staff at the register. Customers who bring their own bag will receive 2 points. Instead of bags, you are also free to use the cardboard boxes near the registers. Thank you for your understanding."
+ },
+ {
+  "id": "rd041",
+  "kind": "short",
+  "title": "What my manager taught me",
+  "text": "大学生のとき、私はレストランでアルバイトをしていた。最初は、お客さんに大きな声であいさつするのがはずかしかった。\nでも、店長に「あいさつは、お客さんに安心してもらうためにするんだよ」と言われ、考えが変わった。それからは、笑顔であいさつできるようになった。\n今の仕事でも、あのとき学んだことが役に立っている。",
+  "questions": [
+   {
+    "q": "この人の考えが変わったのはどうしてですか。",
+    "options": [
+     "お客さんにほめられたから",
+     "店長からあいさつの意味を教えてもらったから",
+     "大きな声を出すれんしゅうをしたから",
+     "アルバイトに慣れたから"
+    ],
+    "answer": 1,
+    "why": "The manager explained why we greet customers, and that changed the writer's thinking (と言われ、考えが変わった)."
+   }
+  ],
+  "en": "When I was a university student, I worked part-time at a restaurant. At first I was embarrassed to greet customers in a loud voice. But the manager told me, 'We greet customers so that they feel at ease,' and my thinking changed. After that I could greet people with a smile. What I learned then is still useful in my current job."
+ },
+ {
+  "id": "rd042",
+  "kind": "short",
+  "title": "Water shut-off",
+  "text": "水道工事のお知らせ\n11月8日(水)午前10時から午後3時まで、工事のため水が出なくなります。その間は、トイレも使えません。\n前の日に、おふろなどに水をためておくと便利です。\n工事が終わったあと、しばらく水がにごることがありますが、少し出しておくと、きれいになります。",
+  "questions": [
+   {
+    "q": "このお知らせからわかることは何ですか。",
+    "options": [
+     "工事は一日中かかる。",
+     "水がにごったら、すぐに電話をしなければならない。",
+     "工事の間はトイレも使えない。",
+     "工事の前の日も水が出ない。"
+    ],
+    "answer": 2,
+    "why": "The notice says the toilet cannot be used during the work (その間は、トイレも使えません). The work runs only 10 to 3."
+   }
+  ],
+  "en": "Notice of water works: On Wednesday, November 8, from 10 a.m. to 3 p.m., there will be no water because of construction. The toilet cannot be used during that time either. It is useful to fill the bathtub with water the day before. After the work, the water may be cloudy for a while, but it will become clear if you let it run a little."
+ },
+ {
+  "id": "rd043",
+  "kind": "short",
+  "title": "Mottainai",
+  "text": "子供のころ、ご飯を残すと、母に「もったいない」と言われた。まだ使える物や食べられる物を、むだにしてはいけない、という意味だ。\n最近、このことばが外国でも知られるようになったそうだ。\n私は、物を大切にするこの気持ちを、自分の子供にも伝えていきたいと思っている。",
+  "questions": [
+   {
+    "q": "この人が子供に伝えたいことは何ですか。",
+    "options": [
+     "外国の考え方",
+     "ご飯をたくさん食べること",
+     "母の言ったことばの正しい使い方",
+     "物を大切にする気持ち"
+    ],
+    "answer": 3,
+    "why": "The writer wants to pass on the feeling of valuing things (物を大切にするこの気持ちを…伝えていきたい)."
+   }
+  ],
+  "en": "As a child, when I left food uneaten, my mother would say 'mottainai.' It means you shouldn't waste things that can still be used or eaten. I hear this word has recently become known abroad too. I want to pass on this feeling of valuing things to my own children."
+ },
+ {
+  "id": "rd044",
+  "kind": "short",
+  "title": "Evening class reply",
+  "text": "マリアさん\nお問い合わせありがとうございます。夜のクラスは、月曜日と木曜日の午後7時から8時半までです。\n初めての方は、クラスに入る前に、かんたんなテストを受けていただきます。テストは毎週土曜日の午前中にしています。\n受けたい日を、このメールにお返事ください。\nさくら日本語学校",
+  "questions": [
+   {
+    "q": "マリアさんが次にしなければならないことは何ですか。",
+    "options": [
+     "テストを受けたい日をメールで知らせる",
+     "月曜日のクラスに行く",
+     "土曜日の午前中に学校に電話する",
+     "テストの勉強をする"
+    ],
+    "answer": 0,
+    "why": "The school asks her to reply with the day she wants to take the test (受けたい日を、このメールにお返事ください)."
+   }
+  ],
+  "en": "Maria, Thank you for your inquiry. The evening class is on Mondays and Thursdays from 7 to 8:30 p.m. New students take a simple test before joining a class. The test is held every Saturday morning. Please reply to this email with the day you'd like to take it. Sakura Japanese School"
+ },
+ {
+  "id": "rd045",
+  "kind": "short",
+  "title": "Forgetting my list",
+  "text": "私はよく物を忘れる。買い物に行っても、必要な物を買わずに帰ってくることがある。そこで、出かける前に、買う物を紙に書くことにした。\nところが、今度はその紙を家に忘れてしまった。\nそれで、最近はスマートフォンにメモをするようにしている。スマートフォンはいつも持っているので、忘れることはないからだ。",
+  "questions": [
+   {
+    "q": "この人が最近スマートフォンにメモをするのはどうしてですか。",
+    "options": [
+     "紙に書くのがめんどうだから",
+     "スマートフォンはいつも持っているから",
+     "字を書くのが苦手だから",
+     "買い物に行かなくなったから"
+    ],
+    "answer": 1,
+    "why": "The writer always carries the phone, so the list can't be left behind (スマートフォンはいつも持っているので)."
+   }
+  ],
+  "en": "I often forget things. Even when I go shopping, I sometimes come home without buying what I needed. So I decided to write my shopping list on paper before going out. But then I forgot the paper at home. So lately I make notes on my smartphone. I always have my phone with me, so I never forget it."
+ },
+ {
+  "id": "rd046",
+  "kind": "medium",
+  "title": "Sumimasen or arigatou",
+  "text": "日本に来たばかりのころ、ふしぎに思ったことがある。店で店員さんにドアを開けてもらったとき、日本人の友達が「すみません」と言ったのだ。何も悪いことをしていないのに、どうしてあやまるのだろうと思った。\nあとで友達に聞くと、「すみません」は、あやまるときだけでなく、お礼を言うときにも使うそうだ。相手に何かしてもらって、「めんどうなことをさせてしまった」という気持ちがあるときに使うのだと教えてくれた。\nこれを聞いて、日本語はおもしろいと思った。一つのことばに、いくつもの気持ちが入っているのだ。今では私も、自然に「すみません」と言えるようになった。でも、本当にうれしいときは、やはり「ありがとう」と言いたいと思う。",
+  "questions": [
+   {
+    "q": "「これ」は何をさしていますか。",
+    "options": [
+     "店員さんがドアを開けてくれたこと",
+     "友達が何も悪いことをしていないこと",
+     "「すみません」がお礼を言うときにも使われること",
+     "日本語にはことばがたくさんあること"
+    ],
+    "answer": 2,
+    "why": "これ refers to what the friend explained just before: that 'sumimasen' is also used to thank someone."
+   },
+   {
+    "q": "この人は「すみません」についてどう思っていますか。",
+    "options": [
+     "あやまるときだけに使うべきだ。",
+     "意味がわからないので、使いたくない。",
+     "「ありがとう」より「すみません」のほうがいい。",
+     "使えるようになったが、うれしいときは「ありがとう」を使いたい。"
+    ],
+    "answer": 3,
+    "why": "The last paragraph: the writer can now say 'sumimasen' naturally, but still wants to say 'arigatou' when really happy."
+   }
+  ],
+  "en": "When I had just come to Japan, something seemed strange to me. When a shop clerk held the door open for us, my Japanese friend said 'sumimasen.' I wondered why she apologized when she hadn't done anything wrong. Later I asked her, and she said 'sumimasen' is used not only to apologize but also to thank someone. She explained that it's used when someone does something for you and you feel you have troubled them. Hearing this, I thought Japanese was interesting: one word holds several feelings. Now I can say 'sumimasen' naturally too. But when I'm really happy, I still want to say 'arigatou.'"
+ },
+ {
+  "id": "rd047",
+  "kind": "medium",
+  "title": "Working from home",
+  "text": "去年から、私の会社では、週に二日、家で仕事をしてもいいことになった。最初はとてもうれしかった。毎朝、こんだ電車に1時間も乗らなくていいからだ。\nしかし、しばらくすると、困ったことが出てきた。家にいると、仕事の時間とそれ以外の時間のくぎりがなくなるのだ。夜おそくまでパソコンの前にすわっていることも多くなった。それに、同じ部の人と話す時間がなくなって、少しさびしかった。体の調子も悪くなって、よく頭が痛くなった。\nそこで、私は自分でルールを作ることにした。家でも朝9時に仕事を始めて、夕方6時にはパソコンを閉じる。昼休みは必ず外に出て、散歩をする。このルールを守るようになってから、家での仕事がずっと楽になった。",
+  "questions": [
+   {
+    "q": "「困ったこと」とありますが、どんなことですか。",
+    "options": [
+     "電車がこんでいること",
+     "パソコンがこわれたこと",
+     "昼休みに外に出られないこと",
+     "仕事をする時間が長くなってしまったこと"
+    ],
+    "answer": 3,
+    "why": "Right after 困ったこと, the writer says work and free time blurred and they often worked late into the night."
+   },
+   {
+    "q": "この人は、どうして家での仕事が楽になりましたか。",
+    "options": [
+     "仕事を始める時間と終わる時間を決めたから",
+     "週に二日だけ会社に行くようになったから",
+     "同じ部の人と毎日話すようになったから",
+     "夜おそくまで仕事をしたから"
+    ],
+    "answer": 0,
+    "why": "The writer made rules (start at 9, close the computer at 6), and after that it became easier."
+   }
+  ],
+  "en": "Since last year, my company has let us work from home two days a week. At first I was very happy, because I didn't have to ride a crowded train for an hour every morning. But after a while, problems came up. At home, there was no clear line between work time and other time. I often sat at my computer until late at night. Also, I had no time to talk with people from my department, and I felt a little lonely. My health got worse too, and I often had headaches. So I decided to make my own rules. Even at home I start work at 9 and close my computer at 6. At lunch I always go outside and take a walk. Since I started keeping these rules, working from home has become much easier."
+ },
+ {
+  "id": "rd048",
+  "kind": "medium",
+  "title": "Cleaning the beach",
+  "text": "私の住んでいる町には、きれいな海がある。夏になると、たくさんの人が泳ぎに来る。しかし、人が帰ったあとの海には、ペットボトルやおかしのふくろなど、ゴミがたくさん残っている。\n二年前から、私は月に一度、海のゴミをひろう活動に参加している。初めて参加したときは、十人ぐらいしかいなかった。それが、今では五十人以上集まるようになった。中には、海に遊びに来た観光客が参加してくれることもある。活動は朝の1時間だけだが、終わったあとは、いつも気持ちがいい。\n活動のあと、ある小学生が「ぼくはもう、海にゴミをすてない」と言った。それを聞いて、とてもうれしかった。ゴミをひろうことも大切だが、ゴミをすてない人がふえることのほうが、もっと大切だと思う。",
+  "questions": [
+   {
+    "q": "この活動について正しいものはどれですか。",
+    "options": [
+     "毎週一回している。",
+     "参加する人が前より多くなった。",
+     "町に住んでいる人しか参加できない。",
+     "夏の間だけしている。"
+    ],
+    "answer": 1,
+    "why": "About ten people came at first, and now more than fifty gather (今では五十人以上集まるようになった)."
+   },
+   {
+    "q": "この人が一番大切だと思っていることは何ですか。",
+    "options": [
+     "海のゴミをひろうこと",
+     "観光客がたくさん来ること",
+     "ゴミをすてる人が少なくなること",
+     "小学生が活動に参加すること"
+    ],
+    "answer": 2,
+    "why": "The last sentence: more people not throwing garbage away is even more important than picking it up."
+   }
+  ],
+  "en": "There is a beautiful sea in the town where I live. In summer, lots of people come to swim. But after they leave, a lot of garbage such as plastic bottles and snack bags is left behind. For two years I have joined an activity to pick up garbage on the beach once a month. When I first joined, there were only about ten people. Now more than fifty gather. Sometimes tourists who came to the beach join in. The activity is only an hour in the morning, but I always feel good afterward. After one activity, an elementary school boy said, 'I won't throw garbage in the sea anymore.' I was very happy to hear that. Picking up garbage is important, but I think it's even more important that more people don't throw it away."
+ },
+ {
+  "id": "rd049",
+  "kind": "medium",
+  "title": "Letter to a host family",
+  "text": "山本さんご家族のみなさま\nお元気ですか。国に帰って、もう一か月になります。日本にいた三か月の間、本当にお世話になりました。\n一番の思い出は、みんなで行った夏まつりです。初めてゆかたを着て、花火を見ました。お母さんが着方をていねいに教えてくださったことを、今でもよく覚えています。お父さんが作ってくれたやきそばも、とてもおいしかったです。\n国に帰ってからも、日本語の勉強を続けています。来年、日本の大学で勉強したいと思っているからです。試験はむずかしいですが、毎日がんばっています。\nもし合格したら、また会いに行きます。そのときは、今度は私が国の料理を作りますね。みなさん、どうぞお体に気をつけてください。\nアンナ",
+  "questions": [
+   {
+    "q": "アンナさんが日本語の勉強を続けているのはどうしてですか。",
+    "options": [
+     "山本さんに手紙を書きたいから",
+     "日本の大学で勉強したいから",
+     "日本語の先生になりたいから",
+     "また山本さんの家に住みたいから"
+    ],
+    "answer": 1,
+    "why": "She says she keeps studying because she wants to study at a Japanese university next year (日本の大学で勉強したいと思っているからです)."
+   },
+   {
+    "q": "アンナさんは、次に日本に行ったら何をしたいと言っていますか。",
+    "options": [
+     "ゆかたを着て花火を見る",
+     "山本さんのお母さんに料理を習う",
+     "山本さんの家族に自分の国の料理を作る",
+     "日本の大学の試験を受ける"
+    ],
+    "answer": 2,
+    "why": "She writes that next time she will cook her country's food for them (今度は私が国の料理を作りますね)."
+   }
+  ],
+  "en": "Dear Yamamoto family, How are you? It's already been a month since I went back to my country. Thank you so much for taking care of me during my three months in Japan. My best memory is the summer festival we all went to. I wore a yukata for the first time and watched fireworks. I still remember how carefully Mother taught me how to put it on. The yakisoba Father made was delicious too. Since coming home I have kept studying Japanese, because I want to study at a Japanese university next year. The exam is difficult, but I'm working hard every day. If I pass, I'll come to see you again. That time, I'll cook food from my country for you. Please take care of yourselves. Anna"
+ },
+ {
+  "id": "rd050",
+  "kind": "medium",
+  "title": "Too convenient",
+  "text": "コンビニは本当に便利だ。夜中でも開いていて、食べ物や飲み物だけでなく、薬や本も買える。お金をおろしたり、にもつを送ったりすることもできる。\nしかし、最近、私はコンビニに行く回数をへらすことにした。便利すぎて、必要ではない物まで買ってしまうからだ。おにぎりを一つ買いに行ったのに、気がつくと、おかしやジュースも手に持っている。一か月にコンビニで使ったお金をけいさんしてみたら、思っていたよりずっと多くて、おどろいた。小さな買い物でも、毎日続けると大きなお金になるのだ。\n今は、週末にスーパーでまとめて買い物をするようにしている。買う物を決めてから行くので、むだが少ない。コンビニは、本当に必要なときだけ使うつもりだ。",
+  "questions": [
+   {
+    "q": "この人がコンビニに行く回数をへらしたのはどうしてですか。",
+    "options": [
+     "夜中に開いていないから",
+     "薬や本が売っていないから",
+     "スーパーのほうが近いから",
+     "買うつもりのない物まで買ってしまうから"
+    ],
+    "answer": 3,
+    "why": "The writer says the stores are so convenient that they buy unnecessary things (必要ではない物まで買ってしまうからだ)."
+   },
+   {
+    "q": "この人が「おどろいた」のはどうしてですか。",
+    "options": [
+     "コンビニで使ったお金が思ったより多かったから",
+     "おにぎりがとても高かったから",
+     "おかしやジュースが安かったから",
+     "スーパーのほうが高かったから"
+    ],
+    "answer": 0,
+    "why": "The month's convenience-store spending was much more than expected (思っていたよりずっと多くて、おどろいた)."
+   }
+  ],
+  "en": "Convenience stores are really convenient. They're open even in the middle of the night, and you can buy not only food and drinks but also medicine and books. You can also withdraw money or send packages. But recently I decided to go to convenience stores less often, because they're so convenient that I end up buying things I don't need. I go in to buy one rice ball, and before I know it I'm holding snacks and juice too. When I calculated how much I spent at convenience stores in a month, it was much more than I had thought, and I was surprised. Even small purchases add up to a lot of money when you make them every day. Now I do my shopping all at once at the supermarket on weekends. I decide what to buy before I go, so there is little waste. I plan to use convenience stores only when I really need to."
+ },
+ {
+  "id": "rd051",
+  "kind": "medium",
+  "title": "Piano at forty",
+  "text": "私は四十歳になってから、ピアノを習い始めた。子供のころからずっとひいてみたかったが、家が広くなかったので、ピアノを置くことができなかったのだ。\n最初の教室の日、まわりは小学生ばかりで、とてもはずかしかった。指も思うように動かない。何度もやめようと思った。家でもれんしゅうしたが、なかなか上手にならなかった。\nそんなとき、先生が「大人は子供よりおそく覚えるかもしれません。でも、大人は音楽の気持ちを考えることができます」と言ってくれた。そのことばで、もう少し続けてみようと思った。\nあれから三年。上手とは言えないが、好きな曲を最後までひけるようになった。何かを始めるのに、おそすぎることはないのだと思う。",
+  "questions": [
+   {
+    "q": "この人が子供のころピアノを習わなかったのはどうしてですか。",
+    "options": [
+     "ピアノが好きではなかったから",
+     "教室に小学生が多かったから",
+     "指が思うように動かなかったから",
+     "家にピアノを置く場所がなかったから"
+    ],
+    "answer": 3,
+    "why": "The house wasn't big, so there was no place for a piano (ピアノを置くことができなかったのだ)."
+   },
+   {
+    "q": "この人が一番言いたいことは何ですか。",
+    "options": [
+     "何歳になっても新しいことを始められる。",
+     "ピアノは子供のころに習ったほうがいい。",
+     "大人は子供より早く覚えられる。",
+     "好きな曲をひくのはむずかしい。"
+    ],
+    "answer": 0,
+    "why": "The conclusion: it's never too late to start something (何かを始めるのに、おそすぎることはない)."
+   }
+  ],
+  "en": "I started learning the piano after I turned forty. I had wanted to play ever since I was a child, but our house wasn't big, so there was no room for a piano. On the first day of lessons, everyone around me was an elementary school student, and I was very embarrassed. My fingers didn't move the way I wanted. Many times I thought about quitting. I practiced at home too, but I didn't improve easily. Then my teacher said, 'Adults may learn more slowly than children. But adults can think about the feelings in the music.' Because of those words, I decided to continue a little longer. Three years have passed. I can't say I'm good, but I can now play my favorite piece to the end. I think it's never too late to start something."
+ },
+ {
+  "id": "rd052",
+  "kind": "medium",
+  "title": "Meeting room rules",
+  "text": "みなさん\nおつかれさまです。最近、会議室の使い方について、いくつか問題がありましたので、もう一度ルールを確認します。\nまず、会議室を使うときは、必ず前の日までにシステムで予約してください。予約をしないで使うと、ほかの人が使えなくなって困ります。\n次に、使ったあとは、つくえといすをもとの場所にもどしてください。ホワイトボードの字も、消してから出てください。\nまた、会議室で食事をすることはできません。お昼ご飯は、7かいの休けい室で食べてください。それから、会議室を出るときは、エアコンと電気を消すのを忘れないでください。先週は、だれもいない部屋で、一晩中エアコンがついていました。\nみなさんが気持ちよく使えるよう、よろしくお願いします。\nそうむ部 前田",
+  "questions": [
+   {
+    "q": "前田さんがこのメールを書いたのはどうしてですか。",
+    "options": [
+     "新しい会議室ができたから",
+     "会議室のルールを守っていない人がいたから",
+     "会議室の予約のしかたが変わったから",
+     "休けい室が7かいになったから"
+    ],
+    "answer": 1,
+    "why": "The email opens by saying there have been problems with how the rooms are used, so the rules are being confirmed again."
+   },
+   {
+    "q": "会議室について正しいものはどれですか。",
+    "options": [
+     "会議室で昼ご飯を食べてもいい。",
+     "ホワイトボードの字は消さなくてもいい。",
+     "使う日の前の日までに予約しなければならない。",
+     "空いていれば、予約しなくても使っていい。"
+    ],
+    "answer": 2,
+    "why": "Rooms must be reserved in the system by the day before (必ず前の日までにシステムで予約してください)."
+   }
+  ],
+  "en": "Everyone, Thanks for your work. Recently there have been some problems with how the meeting rooms are used, so I'd like to go over the rules again. First, when you use a meeting room, always reserve it in the system by the day before. If you use it without a reservation, others can't use it, which causes trouble. Next, after use, put the desks and chairs back where they were. Also erase the whiteboard before you leave. Eating is not allowed in the meeting rooms. Please eat lunch in the break room on the 7th floor. Also, when you leave a meeting room, don't forget to turn off the air conditioner and the lights. Last week the air conditioner was on all night in an empty room. So that everyone can use the rooms comfortably, thank you for your cooperation. Maeda, General Affairs"
+ },
+ {
+  "id": "rd053",
+  "kind": "medium",
+  "title": "The wallet that came back",
+  "text": "先月、駅でさいふをなくしてしまった。中には、現金のほかに、カードや運転めんきょしょうも入っていた。すぐに駅の人に聞いたが、見つからなかった。カードを止めたり、めんきょしょうを新しく作ったり、これからすることを考えると、頭が痛くなった。\nあきらめて家に帰ると、夜になって警察から電話があった。だれかがさいふを交番にとどけてくれたのだ。次の日、交番に行くと、お金もカードも全部そのまま入っていた。とどけてくれたのは高校生で、名前は言わずに帰ったそうだ。\n私の国では、なくした物がもどってくることはあまりない。だから、この経験は本当におどろきだった。いつか私も、その高校生のように、だれかの役に立ちたいと思う。",
+  "questions": [
+   {
+    "q": "夜になって、何がありましたか。",
+    "options": [
+     "駅の人がさいふを持ってきた。",
+     "さいふが見つかったという電話が来た。",
+     "高校生から電話があった。",
+     "自分でさいふを見つけた。"
+    ],
+    "answer": 1,
+    "why": "That night the police called because someone had brought the wallet to the police box (警察から電話があった)."
+   },
+   {
+    "q": "この人がこの経験を「おどろき」だと思ったのはどうしてですか。",
+    "options": [
+     "高校生が名前を言ったから",
+     "さいふのお金がなくなっていたから",
+     "自分の国では、なくした物がもどることが少ないから",
+     "警察がさいふを見つけたから"
+    ],
+    "answer": 2,
+    "why": "Right before, the writer says lost things rarely come back in their country (なくした物がもどってくることはあまりない)."
+   }
+  ],
+  "en": "Last month I lost my wallet at the station. Besides cash, it had my cards and my driver's license in it. I asked the station staff right away, but it wasn't found. Thinking about stopping my cards and getting a new license gave me a headache. I gave up and went home, and that night the police called. Someone had taken my wallet to the police box. The next day when I went there, all the money and cards were still inside. The person who brought it was a high school student, who left without giving their name. In my country, lost things rarely come back. So this experience was truly surprising. Someday I want to be helpful to someone, like that high school student."
+ },
+ {
+  "id": "rd054",
+  "kind": "medium",
+  "title": "Phones and sleep",
+  "text": "「よく眠れない」という人がふえているそうだ。その原因の一つは、寝る前にスマートフォンを見ることだと言われている。画面の光を見ると、頭が「まだ昼だ」と思ってしまい、なかなか眠くならないのだ。\n私も、前はベッドに入ってから一時間ぐらいスマートフォンを見ていた。そのため、朝起きるのがつらく、昼間もよく眠くなった。仕事中に何回もあくびをして、同じ部の人に笑われたこともある。\nそこで、寝る一時間前には、スマートフォンを別の部屋に置くことにした。その代わりに、本を読んだり、静かな音楽を聞いたりしている。これを始めてから、すぐに眠れるようになり、朝も気持ちよく起きられるようになった。",
+  "questions": [
+   {
+    "q": "寝る前にスマートフォンを見ると、どうして眠れなくなると言っていますか。",
+    "options": [
+     "おもしろくて、やめられなくなるから",
+     "目が疲れて痛くなるから",
+     "朝起きるのがつらくなるから",
+     "画面の光で、頭が昼だと思ってしまうから"
+    ],
+    "answer": 3,
+    "why": "The first paragraph explains that the screen light makes the brain think it's still daytime."
+   },
+   {
+    "q": "「これ」は何をさしていますか。",
+    "options": [
+     "寝る前にスマートフォンを別の部屋に置くこと",
+     "ベッドで一時間スマートフォンを見ること",
+     "朝早く起きること",
+     "昼間に寝ること"
+    ],
+    "answer": 0,
+    "why": "これ refers to the new habit just described: putting the phone in another room before bed (and reading instead)."
+   }
+  ],
+  "en": "It is said that more and more people can't sleep well. One cause is said to be looking at a smartphone before bed. When you look at the light of the screen, your brain thinks it's still daytime, and you don't easily get sleepy. I also used to look at my phone for about an hour after getting into bed. Because of that, getting up in the morning was hard, and I often felt sleepy during the day. I yawned many times at work, and once my coworkers laughed at me. So I decided to put my phone in another room an hour before bed. Instead, I read books or listen to quiet music. Since I started this, I fall asleep quickly and wake up feeling good in the morning."
+ },
+ {
+  "id": "rd055",
+  "kind": "medium",
+  "title": "A greeting in the elevator",
+  "text": "私のマンションでは、となりに住んでいる人の顔を知らないことも多い。私も、引っ越してきてから一年間、ほかの住人とほとんど話したことがなかった。\nある日、エレベーターでいっしょになったおじいさんに、思い切って「おはようございます」と言ってみた。おじいさんは少しおどろいたようだったが、笑顔であいさつを返してくれた。\nそれから、会うたびにあいさつをするようになり、少しずつ話もするようになった。先月、私がかぜで寝ていたとき、そのおじいさんがスープを持ってきてくれた。一人で住んでいる私にとって、それは本当にうれしいことだった。\nあいさつは小さなことだが、人と人をつなぐ大切なものだと思う。",
+  "questions": [
+   {
+    "q": "この人がおじいさんに初めてあいさつをしたのは、どんなときですか。",
+    "options": [
+     "引っ越してきた日",
+     "かぜで寝ていたとき",
+     "マンションの会議のとき",
+     "エレベーターでいっしょになったとき"
+    ],
+    "answer": 3,
+    "why": "The writer greeted him when they were in the elevator together (エレベーターでいっしょになったおじいさんに…)."
+   },
+   {
+    "q": "この人が一番言いたいことは何ですか。",
+    "options": [
+     "あいさつが人と人の関係を作るきっかけになる。",
+     "マンションでは、となりの人と話さないほうがいい。",
+     "かぜのときはスープを飲むといい。",
+     "お年よりにはていねいに話さなければならない。"
+    ],
+    "answer": 0,
+    "why": "The last sentence: a greeting is small but connects people (人と人をつなぐ大切なもの)."
+   }
+  ],
+  "en": "In my apartment building, people often don't even know the faces of their next-door neighbors. For a year after moving in, I hardly talked to any other residents either. One day I gathered my courage and said 'Good morning' to an old man who was in the elevator with me. He seemed a little surprised, but greeted me back with a smile. After that we greeted each other every time we met, and little by little began to talk. Last month, when I was in bed with a cold, he brought me some soup. Living alone, I was truly happy about that. A greeting is a small thing, but I think it's something important that connects people."
+ },
+ {
+  "id": "rd056",
+  "kind": "medium",
+  "title": "First day at work",
+  "text": "リーさん\n来週から、よろしくお願いします。最初の日のことについて、お知らせします。\n月曜日は、朝9時に1かいの受付に来てください。私がむかえに行きます。午前中は、会社の説明と、パソコンの使い方のけんしゅうがあります。お昼は、同じ部の人たちとみんなで食べに行く予定です。\n午後からは、私の仕事を見ながら、少しずつ覚えてもらいます。夕方5時には終わる予定です。\n服は、スーツでなくてもかまいませんが、ジーンズはやめてください。また、最初の日は、ほけんなどの書類を書いていただきますので、はんこを持ってきてください。\n何かわからないことがあれば、いつでもこのメールに返事をください。\nえいぎょう部 上野",
+  "questions": [
+   {
+    "q": "リーさんは月曜日の朝9時に、何をしますか。",
+    "options": [
+     "上野さんの仕事を見る",
+     "1かいの受付で上野さんを待つ",
+     "同じ部の人と食事をする",
+     "パソコンを買いに行く"
+    ],
+    "answer": 1,
+    "why": "He should come to the 1st-floor reception at 9, where Ueno will come to meet him (私がむかえに行きます)."
+   },
+   {
+    "q": "服について正しいものはどれですか。",
+    "options": [
+     "必ずスーツを着なければならない。",
+     "ジーンズをはいて行ってもいい。",
+     "スーツではない服を着て行ってもいい。",
+     "会社の服を着なければならない。"
+    ],
+    "answer": 2,
+    "why": "A suit isn't required (スーツでなくてもかまいません), but jeans are not allowed."
+   }
+  ],
+  "en": "Mr. Lee, Welcome; we look forward to working with you from next week. Here is some information about your first day. On Monday, please come to the reception on the 1st floor at 9 a.m. I will come to meet you. In the morning there will be an explanation of the company and training on how to use the computer. For lunch, we plan to go out together with everyone in the department. From the afternoon, you'll learn little by little while watching my work. We plan to finish at 5 p.m. You don't have to wear a suit, but please don't wear jeans. Also, on the first day you'll fill out documents such as insurance forms, so please bring your personal seal. If there's anything you don't understand, reply to this email at any time. Ueno, Sales Department"
+ },
+ {
+  "id": "rd057",
+  "kind": "medium",
+  "title": "Buying clothes online",
+  "text": "最近、私は服をほとんどインターネットで買っている。店に行かなくてもいいし、夜中でも買い物ができるからだ。ねだんも店より安いことが多い。店員さんに話しかけられないので、ゆっくり選べるのもいい。\nしかし、失敗したことも何回かある。写真ではきれいに見えたシャツが、とどいてみると色がちがっていた。サイズが合わなかったこともある。返品はできるが、送り返すのがめんどうで、そのままになっている服もある。\nそこで最近は、初めて買う店の服は、一度実際に店で着てみてから、インターネットで買うようにしている。少し時間はかかるが、失敗はほとんどなくなった。インターネットと店、両方のいいところを使うのが、一番いい買い方だと思う。",
+  "questions": [
+   {
+    "q": "この人がインターネットで買い物をして失敗したのは、どんなことですか。",
+    "options": [
+     "夜中に買い物ができなかった。",
+     "とどいた服の色が写真とちがっていた。",
+     "服が店より高かった。",
+     "服がとどかなかった。"
+    ],
+    "answer": 1,
+    "why": "A shirt that looked nice in the photo arrived in a different color (とどいてみると色がちがっていた)."
+   },
+   {
+    "q": "この人は最近、どうやって服を買っていますか。",
+    "options": [
+     "全部店で買う。",
+     "インターネットで買って、合わなければ返す。",
+     "店で着てみてから、インターネットで買う。",
+     "安い店でしか買わない。"
+    ],
+    "answer": 2,
+    "why": "For new shops, the writer tries clothes on in a store first and then buys online (一度実際に店で着てみてから、インターネットで買う)."
+   }
+  ],
+  "en": "Recently I buy almost all my clothes online. I don't have to go to a store, and I can shop even in the middle of the night. Prices are often cheaper than in stores, too. I also like that I can choose slowly without clerks talking to me. But I have failed a few times. A shirt that looked nice in the photo turned out to be a different color when it arrived. Sometimes the size didn't fit. I can return things, but sending them back is a bother, so some clothes are just left as they are. So these days, for a shop I haven't bought from before, I first try the clothes on in a real store and then buy them online. It takes a little time, but I've hardly had any failures since. I think the best way to shop is to use the good points of both online shopping and stores."
+ },
+ {
+  "id": "rd058",
+  "kind": "medium",
+  "title": "Trains on time",
+  "text": "日本に来て一番おどろいたのは、電車が時間どおりに来ることだ。私の国では、電車が10分や20分おくれるのはふつうのことだ。だから、みんな少し早めに家を出る。\nある日、電車が5分おくれた。すると、駅で「おくれて申しわけありません」というアナウンスが何回もあった。さらに、駅の人が、電車がおくれたことを書いた紙をくばっていた。会社や学校におくれたとき、これを見せるのだそうだ。\nたった5分で、と思ったが、日本ではそれだけ時間が大切にされているのだろう。それは日本のいいところだと思う。でも、私はときどき思う。みんながいつも時間を気にしていて、疲れないのだろうか、と。",
+  "questions": [
+   {
+    "q": "「これ」は何をさしていますか。",
+    "options": [
+     "駅のアナウンス",
+     "電車の時間を書いた紙",
+     "会社や学校のカード",
+     "電車がおくれたことを書いた紙"
+    ],
+    "answer": 3,
+    "why": "これ refers to the paper the staff handed out stating that the train was late."
+   },
+   {
+    "q": "この人は日本の電車についてどう思っていますか。",
+    "options": [
+     "時間を大切にしているが、みんな疲れないか少し気になる。",
+     "おくれることが多くて困る。",
+     "自分の国の電車のほうがいい。",
+     "5分おくれるのはふつうだ。"
+    ],
+    "answer": 0,
+    "why": "The writer thinks time is valued in Japan but wonders whether everyone gets tired of always minding time."
+   }
+  ],
+  "en": "What surprised me most when I came to Japan was that trains arrive on time. In my country, it's normal for trains to be 10 or 20 minutes late. So everyone leaves home a little early. One day a train was 5 minutes late. Then at the station there were many announcements saying, 'We apologize for the delay.' On top of that, station staff were handing out slips of paper stating that the train had been late. Apparently you show this when you're late for work or school. I thought, 'Just for 5 minutes?', but I suppose time is valued that much in Japan. I think that's a good thing about Japan. Still, I sometimes wonder: doesn't everyone get tired of always worrying about time?"
+ },
+ {
+  "id": "rd059",
+  "kind": "medium",
+  "title": "Dad learns to cook",
+  "text": "父は、今年の春に会社をやめた。それまでは、毎日夜おそくまで働いていて、家で料理をしたことは一度もなかった。たまごをわることもできなかったと思う。\n仕事をやめてしばらくすると、父は「何もすることがない」と言うようになった。心配した母が、市民センターの男の人のための料理教室をすすめた。父は最初、「料理なんて」と言っていたが、しかたなく行き始めた。\nところが、今では週に一回、家族に晩ご飯を作ってくれる。この前作ってくれた魚の料理は、とてもおいしかった。父は「料理は仕事と同じで、じゅんばんを考えるのが大事なんだ」と楽しそうに話す。母も、一日休めるので喜んでいる。父が楽しそうにしているのを見て、私もうれしくなった。",
+  "questions": [
+   {
+    "q": "父が料理教室に行き始めたのはどうしてですか。",
+    "options": [
+     "料理が好きだったから",
+     "会社で料理が必要だったから",
+     "家族に晩ご飯を作りたかったから",
+     "母がすすめたから"
+    ],
+    "answer": 3,
+    "why": "His worried mother suggested the class, and he reluctantly started going (心配した母が…料理教室をすすめた)."
+   },
+   {
+    "q": "今の父について正しいものはどれですか。",
+    "options": [
+     "楽しみながら料理をしている。",
+     "毎日家族に晩ご飯を作っている。",
+     "まだ料理はしたくないと思っている。",
+     "料理教室の先生をしている。"
+    ],
+    "answer": 0,
+    "why": "He now cooks once a week and talks about cooking happily (楽しそうに話す). It's weekly, not daily."
+   }
+  ],
+  "en": "My father quit his company this spring. Until then he worked late every night and had never once cooked at home. I don't think he could even crack an egg. A while after he quit, he started saying, 'There's nothing to do.' My worried mother suggested a cooking class for men at the community center. At first he said, 'Cooking? Really?', but he reluctantly started going. Now, though, he makes dinner for the family once a week. The fish dish he made the other day was delicious. He happily says, 'Cooking is like work: thinking about the order of things is what matters.' My mother is happy too, since she gets a day off. Seeing my father enjoying himself makes me happy too."
+ },
+ {
+  "id": "rd060",
+  "kind": "medium",
+  "title": "The new library",
+  "text": "私の町の図書館が、去年新しくなった。前の図書館は、静かに本を読む場所で、話をすることはできなかった。新しい図書館には、話をしてもいい部屋がある。学生がいっしょに宿題をしたり、お年よりがお茶を飲みながら話をしたりしている。\nまた、図書館の中にカフェもできた。コーヒーを飲みながら本を読めるので、前より若い人が多く来るようになった。週末には、子供のための本を読む会や、町の人が先生になる教室もあって、いつもにぎやかだ。\nもちろん、静かに勉強したい人のための部屋もある。そこでは、前と同じように話をすることはできない。図書館は本を借りる場所というだけでなく、町の人が集まる場所になったのだと思う。",
+  "questions": [
+   {
+    "q": "新しい図書館について正しいものはどれですか。",
+    "options": [
+     "図書館の中では、話をしてはいけない。",
+     "話をしてもいい部屋と、静かに勉強する部屋がある。",
+     "カフェでは本を読んではいけない。",
+     "静かに勉強できる部屋はない。"
+    ],
+    "answer": 1,
+    "why": "There are rooms where you may talk and also rooms for quiet study (静かに勉強したい人のための部屋もある)."
+   },
+   {
+    "q": "この人は新しい図書館をどう思っていますか。",
+    "options": [
+     "本を借りる人が少なくなって残念だ。",
+     "若い人がうるさくて困る。",
+     "町の人が集まる場所になった。",
+     "前の図書館のほうがよかった。"
+    ],
+    "answer": 2,
+    "why": "The conclusion: it has become a place where townspeople gather (町の人が集まる場所になった)."
+   }
+  ],
+  "en": "The library in my town was rebuilt last year. The old library was a place to read quietly, and you couldn't talk. The new library has rooms where you're allowed to talk. Students do homework together, and elderly people chat over tea. A cafe has also opened inside the library. Because you can read while drinking coffee, more young people come than before. On weekends there are story times for children and classes taught by townspeople, so it's always lively. Of course, there are also rooms for people who want to study quietly. There, just like before, talking is not allowed. I think the library has become not just a place to borrow books but a place where the people of the town gather."
+ },
+ {
+  "id": "rd061",
+  "kind": "medium",
+  "title": "A mistake at work",
+  "text": "会社に入って二年目のとき、大きな失敗をした。お客様に送る書類の数字をまちがえてしまったのだ。お客様から電話があって、初めて気がついた。頭が真っ白になって、どうすればいいかわからなかった。\n私はすぐに部長のところに行って、本当のことを話した。部長は少しきびしい顔をしたが、「すぐに言ってくれてよかった」と言って、いっしょにお客様の会社まであやまりに行ってくれた。\n帰りの電車の中で、部長は「失敗はだれでもする。大事なのは、それをかくさないことだ」と言った。そのことばは今でも忘れられない。\nそれから私は、書類を送る前に、必ずもう一度数字を確認するようになった。そして、失敗したときは、すぐに部長に話すようにしている。",
+  "questions": [
+   {
+    "q": "部長が「よかった」と言ったのはどうしてですか。",
+    "options": [
+     "お客様がおこっていなかったから",
+     "この人が失敗をすぐに話したから",
+     "書類の数字が正しかったから",
+     "失敗が大きくなかったから"
+    ],
+    "answer": 1,
+    "why": "He said 'I'm glad you told me right away' (すぐに言ってくれてよかった): the writer reported the mistake immediately."
+   },
+   {
+    "q": "この人が失敗のあとでするようになったことは何ですか。",
+    "options": [
+     "部長といっしょにお客様の会社に行くこと",
+     "失敗をかくすこと",
+     "書類を送る前に、数字をもう一度確認すること",
+     "書類を部長に作ってもらうこと"
+    ],
+    "answer": 2,
+    "why": "Since then the writer always rechecks the numbers before sending documents (必ずもう一度数字を確認するようになった)."
+   }
+  ],
+  "en": "In my second year at the company, I made a big mistake. I got a number wrong in a document sent to a customer. I only noticed when the customer called. My mind went blank and I didn't know what to do. I immediately went to the department head and told him the truth. He looked a little stern, but said, 'I'm glad you told me right away,' and came with me to the customer's company to apologize. On the train back, he said, 'Everyone makes mistakes. What matters is not hiding them.' I still can't forget those words. Since then, I always check the numbers once more before sending documents. And when I make a mistake, I tell the department head right away."
+ },
+ {
+  "id": "rd062",
+  "kind": "medium",
+  "title": "New Year cards",
+  "text": "日本では、お正月に「年がじょう」というはがきを送る習慣がある。でも、最近はメールやSNSで新年のあいさつをする人がふえて、年がじょうを出す人は少なくなっているそうだ。はがきを買ったり、一まいずつ住所を書いたりするのが、めんどうだからだろう。\n私も、ここ数年は年がじょうを書いていなかった。しかし、今年のお正月、小学校のときの先生から年がじょうが来た。そこには「元気にしていますか。あなたの書いた作文を、今でも覚えています」と、手書きで書いてあった。先生が私のことを覚えていてくれたことが、とてもうれしかった。\nメールのあいさつはすぐに読んで終わりだが、手書きのはがきは何回も読みたくなる。来年は、私も何人かに年がじょうを書いてみようと思う。",
+  "questions": [
+   {
+    "q": "年がじょうについて正しいものはどれですか。",
+    "options": [
+     "最近、出す人がふえている。",
+     "メールで送るものだ。",
+     "小学生だけが送るものだ。",
+     "出す人が少なくなっている。"
+    ],
+    "answer": 3,
+    "why": "Fewer people send nengajo now (年がじょうを出す人は少なくなっているそうだ)."
+   },
+   {
+    "q": "この人が来年、年がじょうを書こうと思ったのはどうしてですか。",
+    "options": [
+     "先生からの手書きの年がじょうがうれしかったから",
+     "メールであいさつができなくなったから",
+     "先生に作文を送りたいから",
+     "年がじょうを出す人がふえているから"
+    ],
+    "answer": 0,
+    "why": "The handwritten card from the teacher made the writer want to read it again and again, so they decided to write some too."
+   }
+  ],
+  "en": "In Japan there's a custom of sending postcards called nengajo at New Year. But these days more people send New Year greetings by email or social media, and fewer people send nengajo. Probably because buying postcards and writing each address is a bother. I hadn't written any for the past few years either. But this New Year, I got a nengajo from my elementary school teacher. Handwritten on it was: 'How are you? I still remember the essay you wrote.' I was very happy that my teacher remembered me. An email greeting is read once and that's it, but a handwritten postcard makes you want to read it again and again. Next year I think I'll try writing nengajo to a few people too."
+ },
+ {
+  "id": "rd063",
+  "kind": "medium",
+  "title": "A dog changed her life",
+  "text": "となりに住む中山さんは、七十五歳だ。一人で住んでいて、前はあまり外に出なかった。しかし、一年前に犬をかい始めてから、生活が大きく変わったそうだ。\n犬は毎日散歩をしなければならない。だから、中山さんも雨の日でも、朝と夕方の二回、外に出るようになった。散歩の間に、ほかの犬を連れた人たちと話をするようになり、友達もできた。最近は、散歩の友達といっしょに、お茶を飲みに行くこともあるそうだ。\n「前は一日だれとも話さない日もあったけど、今は毎日いそがしいよ」と中山さんは笑う。医者にも、前より元気になったと言われたそうだ。足も前より強くなったらしい。犬は、中山さんにとって大切な家族になっている。",
+  "questions": [
+   {
+    "q": "中山さんの生活はどう変わりましたか。",
+    "options": [
+     "一人で住まなくなった。",
+     "雨の日は外に出なくなった。",
+     "毎日医者に行くようになった。",
+     "毎日外に出て、人と話すようになった。"
+    ],
+    "answer": 3,
+    "why": "She now goes out twice a day to walk the dog and talks with other dog owners."
+   },
+   {
+    "q": "中山さんが「今は毎日いそがしい」と言うのはどうしてですか。",
+    "options": [
+     "犬の散歩をしたり、友達と話したりするから",
+     "仕事を始めたから",
+     "病院に通っているから",
+     "家族の世話をしているから"
+    ],
+    "answer": 0,
+    "why": "Her days are filled with dog walks and chatting with the friends she met on them."
+   }
+  ],
+  "en": "Mrs. Nakayama, who lives next door, is seventy-five. She lives alone and used to rarely go out. But since she got a dog a year ago, her life has changed a lot. A dog needs a walk every day, so now she goes out twice a day, morning and evening, even when it rains. During walks she began talking with other people walking dogs, and she has made friends. Recently she sometimes goes out for tea with her walking friends. 'I used to have days when I didn't talk to anyone, but now I'm busy every day,' she says with a laugh. Her doctor also told her she's healthier than before. Apparently her legs have become stronger too. The dog has become an important part of her family."
+ },
+ {
+  "id": "rd064",
+  "kind": "medium",
+  "title": "Chotto...",
+  "text": "日本人の友達を食事にさそったとき、「その日はちょっと…」と言われた。私は意味がわからず、「ちょっと何？」と聞いてしまった。友達は困った顔をしていた。けっきょく、食事の話はそこで終わってしまった。\nあとで日本語の先生に聞くと、「ちょっと…」は、はっきり「行けません」と言う代わりに使うことばだと教えてくれた。日本では、相手の気持ちを考えて、はっきりことわらないことが多いそうだ。\n最初は、はっきり言ってくれたほうがわかりやすいのに、と思った。私の国では、行けないときは理由もはっきり言うのがふつうだからだ。しかし、日本で生活するうちに、このことばのやさしさがわかってきた。今では、私もことわるときに「ちょっと…」と言うことがある。",
+  "questions": [
+   {
+    "q": "友達が困った顔をしていたのはどうしてですか。",
+    "options": [
+     "食事の場所が遠かったから",
+     "この人が「ちょっと…」の意味をわからなかったから",
+     "この人が日本語の先生に聞いたから",
+     "この人がはっきりことわったから"
+    ],
+    "answer": 1,
+    "why": "The writer didn't understand 'chotto...' and asked 'A little what?', which put the friend in an awkward spot."
+   },
+   {
+    "q": "この人は今、「ちょっと…」についてどう思っていますか。",
+    "options": [
+     "はっきりしないので、使わないほうがいい。",
+     "意味がわかりにくいので、きらいだ。",
+     "相手の気持ちを考えた、やさしいことばだ。",
+     "日本語の先生だけが使うことばだ。"
+    ],
+    "answer": 2,
+    "why": "Living in Japan, the writer came to understand the kindness of the phrase and now uses it too."
+   }
+  ],
+  "en": "When I invited a Japanese friend to dinner, she said, 'That day is a little...' I didn't understand, and asked, 'A little what?' My friend looked troubled. In the end, the conversation about dinner ended there. Later I asked my Japanese teacher, who told me that 'chotto...' is used instead of clearly saying 'I can't go.' In Japan, people often don't refuse clearly, out of consideration for the other person's feelings. At first I thought it would be easier to understand if people just said it clearly. In my country it's normal to clearly say why you can't go. But as I lived in Japan, I came to understand the kindness in this expression. Now I sometimes say 'chotto...' myself when I refuse."
+ },
+ {
+  "id": "rd065",
+  "kind": "medium",
+  "title": "The little bakery",
+  "text": "駅の近くに、小さなパン屋がある。店はせまくて、パンの種類も多くない。それなのに、毎朝、店の前には人がならんでいる。私も週に二回は、仕事に行く前にこの店でパンを買う。\n店長の話によると、この店では、朝4時からパンを作り始めるそうだ。作ったパンは、その日のうちに売る。残ったパンは、次の日には売らないで、店の人たちで食べたり、近所の人にあげたりしている。\n「たくさん作るより、おいしいパンを作りたいんです」と店長は言う。だから、人気があっても、店を大きくするつもりはないそうだ。店で働いている人も、店長を入れて三人だけだ。その考え方が、パンの味にも出ているのだと思う。",
+  "questions": [
+   {
+    "q": "この店について正しいものはどれですか。",
+    "options": [
+     "パンの種類がとても多い。",
+     "その日に作ったパンを、その日に売っている。",
+     "残ったパンは次の日に安く売る。",
+     "もうすぐ店を大きくする。"
+    ],
+    "answer": 1,
+    "why": "Bread made each day is sold that same day (作ったパンは、その日のうちに売る)."
+   },
+   {
+    "q": "店長が店を大きくしないのはどうしてですか。",
+    "options": [
+     "人気があまりないから",
+     "朝4時に起きるのが大変だから",
+     "たくさんではなく、おいしいパンを作りたいから",
+     "駅から遠いから"
+    ],
+    "answer": 2,
+    "why": "The owner wants to make good bread rather than a lot of it (たくさん作るより、おいしいパンを作りたいんです)."
+   }
+  ],
+  "en": "There's a small bakery near the station. The shop is cramped and doesn't have many kinds of bread. Even so, every morning people line up in front of it. I also buy bread here twice a week before work. According to the owner, they start baking at 4 a.m. The bread they make is sold the same day. Leftover bread isn't sold the next day; the staff eat it or give it to neighbors. 'Rather than making a lot, I want to make good bread,' the owner says. So even though the shop is popular, he has no plans to make it bigger. Including the owner, only three people work in the shop. I think that way of thinking shows in the taste of the bread."
+ },
+ {
+  "id": "rd066",
+  "kind": "info",
+  "title": "Swimming classes",
+  "text": "市民プール 水泳教室のごあんない\n【A】子供クラス(6〜12歳)\n土曜日 10:00〜11:00 1か月 4,000円\n【B】大人ビギナークラス(13歳以上)\n水曜日 19:00〜20:00 1か月 5,000円\n【C】大人レベルアップクラス(13歳以上・25メートル泳げる方)\n金曜日 19:00〜20:30 1か月 6,000円\n【D】大人朝クラス(13歳以上)\n火曜日・木曜日 7:00〜8:00 1か月 8,000円\n※市内に住んでいる方は、1か月500円安くなります。\n※申し込みは、プールの受付でお願いします。",
+  "questions": [
+   {
+    "q": "山口さん(30歳)は、市の外に住んでいる会社員だ。まだ25メートル泳げない。仕事は夕方6時に終わるが、朝は早く家を出るので、朝のクラスには行けない。山口さんが入れるクラスと、1か月の料金はどれですか。",
+    "options": [
+     "Bクラス・4,500円",
+     "Cクラス・6,000円",
+     "Dクラス・8,000円",
+     "Bクラス・5,000円"
+    ],
+    "answer": 3,
+    "why": "He can't swim 25 m (rules out C) and can't do mornings (rules out D), so B. He lives outside the city, so no discount: 5,000 yen."
+   },
+   {
+    "q": "市内に住んでいる8歳の子供を入れたい場合、1か月の料金はいくらですか。",
+    "options": [
+     "3,500円",
+     "4,000円",
+     "4,500円",
+     "5,000円"
+    ],
+    "answer": 0,
+    "why": "An 8-year-old goes in class A (4,000 yen), and city residents get 500 yen off: 3,500 yen."
+   }
+  ],
+  "en": "City Pool swimming classes. [A] Children's class (ages 6–12): Saturdays 10:00–11:00, 4,000 yen/month. [B] Adult beginner (13+): Wednesdays 19:00–20:00, 5,000 yen/month. [C] Adult intermediate (13+, must swim 25 m): Fridays 19:00–20:30, 6,000 yen/month. [D] Adult morning class (13+): Tuesdays and Thursdays 7:00–8:00, 8,000 yen/month. City residents get 500 yen off per month. Apply at the pool reception."
+ },
+ {
+  "id": "rd067",
+  "kind": "info",
+  "title": "Airport bus timetable",
+  "text": "空港行きバス 時こく表(平日)\n駅前 発 → 空港 着\n6:10 → 7:00\n7:00 → 7:50\n7:45 → 8:45\n8:30 → 9:15\n料金:大人 1,000円 子供(6〜11歳) 500円\n6歳未満のお子様は無料です。\n※朝はこむことがありますので、出発の10分前までにバスのりばに来てください。",
+  "questions": [
+   {
+    "q": "西田さんは、9時までに空港に着きたい。駅前には7時10分に着く。どのバスに乗ればいいですか。",
+    "options": [
+     "6:10のバス",
+     "7:00のバス",
+     "7:45のバス",
+     "8:30のバス"
+    ],
+    "answer": 2,
+    "why": "Arriving at 7:10, the 7:00 bus is gone; the 7:45 bus reaches the airport at 8:45, before 9. The 8:30 bus arrives at 9:15, too late."
+   },
+   {
+    "q": "大人2人と、10歳と4歳の子供が乗る場合、料金は全部でいくらですか。",
+    "options": [
+     "2,000円",
+     "2,500円",
+     "3,000円",
+     "3,500円"
+    ],
+    "answer": 1,
+    "why": "Two adults are 2,000 yen, the 10-year-old is 500 yen, and the 4-year-old (under 6) is free: 2,500 yen."
+   }
+  ],
+  "en": "Airport bus timetable (weekdays). Station → Airport: 6:10 → 7:00; 7:00 → 7:50; 7:45 → 8:45; 8:30 → 9:15. Fares: adults 1,000 yen, children (6–11) 500 yen. Children under 6 ride free. It can be crowded in the morning, so please come to the bus stop at least 10 minutes before departure."
+ },
+ {
+  "id": "rd068",
+  "kind": "info",
+  "title": "Choosing an apartment",
+  "text": "アパート 部屋さがし情報\n① さくらハイツ\n駅から歩いて5分/やちん 75,000円/2かい/ペット不可\n② 青空マンション\n駅から歩いて15分/やちん 58,000円/1かい/ペット可\n③ みどりコーポ\n駅から歩いて8分/やちん 62,000円/3かい/ペット可\n④ 花田ハウス\n駅からバスで10分/やちん 50,000円/2かい/ペット可",
+  "questions": [
+   {
+    "q": "ジョンさんは、猫といっしょに住める部屋をさがしている。やちんは65,000円までで、駅から歩いて10分以内のところがいい。どの部屋がいいですか。",
+    "options": [
+     "③",
+     "①",
+     "②",
+     "④"
+    ],
+    "answer": 0,
+    "why": "Pets OK and under 65,000 yen leaves (2), (3), (4); only (3) is within a 10-minute walk (8 minutes)."
+   }
+  ],
+  "en": "Apartment listings. (1) Sakura Heights: 5 min walk from the station, rent 75,000 yen, 2nd floor, no pets. (2) Aozora Mansion: 15 min walk, 58,000 yen, 1st floor, pets OK. (3) Midori Co-op: 8 min walk, 62,000 yen, 3rd floor, pets OK. (4) Hanada House: 10 min by bus from the station, 50,000 yen, 2nd floor, pets OK."
+ },
+ {
+  "id": "rd069",
+  "kind": "info",
+  "title": "Cooking school courses",
+  "text": "料理教室 秋のコース\n・和食コース\n毎週火曜日 午前10時〜12時 全4回 8,000円\n・パンコース\n毎週木曜日 午後1時〜3時 全4回 6,000円\n・親子おかしコース\n毎月だい2土曜日 午前10時〜12時 全3回 親子で5,000円(子供は小学生以上)\n・夜のかんたん料理コース\n毎週金曜日 午後7時〜9時 全4回 7,000円\n※ざいりょうのお金は、料金に入っています。\n※申し込みは10月10日まで。電話かホームページでどうぞ。\n※一回だけの体験もできます(どのコースも1回2,000円)。",
+  "questions": [
+   {
+    "q": "木下さんは、平日の昼は仕事をしている。週末は5歳の子供の世話がある。一人で参加したい。木下さんに合うコースはどれですか。",
+    "options": [
+     "和食コース",
+     "夜のかんたん料理コース",
+     "パンコース",
+     "親子おかしコース"
+    ],
+    "answer": 1,
+    "why": "Weekday daytime is out (Japanese, bread), and Saturday is out because of childcare (the parent-child course also needs a schoolchild). Only the Friday evening course fits."
+   },
+   {
+    "q": "パンコースを一回だけためしてみたい。いくらはらいますか。",
+    "options": [
+     "1,500円",
+     "2,000円",
+     "6,000円",
+     "8,000円"
+    ],
+    "answer": 1,
+    "why": "A single trial lesson for any course costs 2,000 yen (どのコースも1回2,000円)."
+   }
+  ],
+  "en": "Cooking school autumn courses. Japanese cuisine: Tuesdays 10–12, 4 sessions, 8,000 yen. Bread: Thursdays 1–3 p.m., 4 sessions, 6,000 yen. Parent-and-child sweets: 2nd Saturday of each month 10–12, 3 sessions, 5,000 yen per pair (children must be in elementary school or older). Easy evening cooking: Fridays 7–9 p.m., 4 sessions, 7,000 yen. Ingredients are included. Apply by October 10 by phone or on the website. A single trial lesson is available for any course (2,000 yen per lesson)."
+ },
+ {
+  "id": "rd070",
+  "kind": "info",
+  "title": "Sports club plans",
+  "text": "スポーツクラブ 会員プラン(1か月)\n・フルタイム会員:毎日 朝7時〜夜11時 9,000円\n・平日昼会員:月〜金 朝10時〜夕方5時 5,500円\n・夜会員:毎日 夕方5時〜夜11時 7,000円\n・週末会員:土・日 朝7時〜夜9時 5,000円\n※入会金 3,000円(今月中に入会すると0円)\n※学生は、どのプランも1,000円安くなります。",
+  "questions": [
+   {
+    "q": "大学生の上田さんは、月曜日と水曜日の夜8時ごろと、土曜日の午前中に行きたい。上田さんに合うプランと、1か月の料金はどれですか。",
+    "options": [
+     "フルタイム会員・9,000円",
+     "夜会員・6,000円",
+     "フルタイム会員・8,000円",
+     "週末会員・4,000円"
+    ],
+    "answer": 2,
+    "why": "Weekday evenings plus Saturday morning need the full-time plan (the evening plan starts at 5 p.m.). As a student he pays 9,000 − 1,000 = 8,000 yen."
+   }
+  ],
+  "en": "Sports club membership plans (per month). Full-time: every day 7 a.m.–11 p.m., 9,000 yen. Weekday daytime: Mon–Fri 10 a.m.–5 p.m., 5,500 yen. Evening: every day 5–11 p.m., 7,000 yen. Weekend: Sat–Sun 7 a.m.–9 p.m., 5,000 yen. Joining fee 3,000 yen (free if you join this month). Students get 1,000 yen off any plan."
+ },
+ {
+  "id": "rd071",
+  "kind": "info",
+  "title": "Summer events at the library",
+  "text": "夏休み 子供イベント(市立図書館)\n7/25(土) 10:00〜11:00\n絵本を読む会(3〜6歳) 申し込み不要\n7/29(水) 14:00〜16:00\n紙で作るおもちゃ(小学1〜3年生) 申し込み必要・20名\n8/2(日) 10:00〜12:00\n自由研究の相談会(小学4〜6年生) 申し込み必要・15名\n8/6(木) 13:00〜15:00\n英語で遊ぼう(小学1〜6年生) 申し込み不要\n※申し込みは、7月20日から図書館のカウンターで受け付けます。電話での申し込みはできません。",
+  "questions": [
+   {
+    "q": "小学5年生のさとしくんは、夏休みの自由研究について相談したい。どうすればいいですか。",
+    "options": [
+     "8月2日に、申し込まないで図書館に行く",
+     "図書館に電話で申し込む",
+     "8月6日に図書館に行く",
+     "7月20日以降に、図書館のカウンターで申し込む"
+    ],
+    "answer": 3,
+    "why": "The research consultation (8/2) requires an application, made at the library counter from July 20; phone applications are not accepted."
+   },
+   {
+    "q": "小学2年生の妹が、申し込みをしないで参加できるものはどれですか。",
+    "options": [
+     "英語で遊ぼう",
+     "絵本を読む会",
+     "紙で作るおもちゃ",
+     "自由研究の相談会"
+    ],
+    "answer": 0,
+    "why": "The picture-book event is for ages 3–6, the paper toys need an application, and the research help is for grades 4–6. 'Let's play in English' is grades 1–6 with no application."
+   }
+  ],
+  "en": "Summer holiday children's events (city library). 7/25 (Sat) 10–11: picture-book reading (ages 3–6), no application needed. 7/29 (Wed) 14–16: paper toy making (grades 1–3), application required, 20 places. 8/2 (Sun) 10–12: help with summer research projects (grades 4–6), application required, 15 places. 8/6 (Thu) 13–15: Let's play in English (grades 1–6), no application needed. Applications are accepted at the library counter from July 20. Phone applications are not accepted."
+ },
+ {
+  "id": "rd072",
+  "kind": "info",
+  "title": "Lunch menu",
+  "text": "ランチメニュー(11:00〜14:00)\nAセット ハンバーグ・ライス・スープ 950円\nBセット 魚フライ・ライス・スープ 900円\nCセット 野さいのパスタ・サラダ 1,000円\nDセット 野さいのサンドイッチ・サラダ 800円\n※セットにコーヒーかこう茶をつけると、150円プラスになります。\n※ライスは大もりにできます(無料)。\n※学生しょうを見せると、50円引きになります。",
+  "questions": [
+   {
+    "q": "大学生のアリさんは、肉が食べられない。ライスが食べたい。飲み物もほしい。学生しょうを見せると、いくらはらいますか。",
+    "options": [
+     "900円",
+     "950円",
+     "1,000円",
+     "1,050円"
+    ],
+    "answer": 2,
+    "why": "Rice without meat means set B (900 yen). Adding a drink is +150 and the student discount is −50: 1,000 yen."
+   }
+  ],
+  "en": "Lunch menu (11:00–14:00). A set: hamburger steak, rice, soup, 950 yen. B set: fried fish, rice, soup, 900 yen. C set: vegetable pasta and salad, 1,000 yen. D set: vegetable sandwich and salad, 800 yen. Add coffee or tea to a set for 150 yen more. Large rice portions are free. Show a student ID for 50 yen off."
+ },
+ {
+  "id": "rd073",
+  "kind": "info",
+  "title": "Large garbage disposal",
+  "text": "大きなゴミの出し方\n1. 電話で申し込む(受付:月〜金 9:00〜17:00)\n2. コンビニで「ゴミ処理けん」を買う\n・いす、小さいつくえ …… 400円\n・自転車、ふとん …… 600円\n・ベッド、大きいたな …… 1,200円\n3. 決められた日の朝8時までに、けんをはって家の前に出す\n※テレビ・れいぞうこ・せんたくきは出せません。買った店に相談してください。",
+  "questions": [
+   {
+    "q": "チェンさんは、自転車1台といす2つをすてたい。ゴミ処理けんは、全部でいくら必要ですか。",
+    "options": [
+     "1,000円",
+     "1,400円",
+     "1,800円",
+     "2,000円"
+    ],
+    "answer": 1,
+    "why": "One bicycle is 600 yen and two chairs are 400 × 2 = 800 yen: 1,400 yen."
+   },
+   {
+    "q": "このお知らせについて正しいものはどれですか。",
+    "options": [
+     "土曜日にも電話で申し込める。",
+     "古いテレビは、このやり方では出せない。",
+     "ゴミは前の日の夜に出す。",
+     "ゴミ処理けんは市役所で買う。"
+    ],
+    "answer": 1,
+    "why": "TVs, refrigerators and washing machines cannot be put out this way (テレビ・れいぞうこ・せんたくきは出せません)."
+   }
+  ],
+  "en": "How to put out large garbage. 1. Apply by phone (Mon–Fri 9:00–17:00). 2. Buy a 'garbage disposal ticket' at a convenience store: chairs and small desks 400 yen; bicycles and futons 600 yen; beds and large shelves 1,200 yen. 3. On the assigned day, attach the ticket and put the item in front of your home by 8 a.m. TVs, refrigerators and washing machines cannot be put out this way; consult the shop where you bought them."
+ },
+ {
+  "id": "rd074",
+  "kind": "info",
+  "title": "Hotel room rates",
+  "text": "ホテルさくら 料金表(1部屋・1ぱく)\n平日/金・土曜日\nシングル(1名):6,000円/8,000円\nツイン(2名):10,000円/13,000円\n和室(4名まで):16,000円/20,000円\n※朝食は1人800円です。\n※小学生以下のお子様は、大人といっしょの部屋なら無料です(ベッドは使えません)。",
+  "questions": [
+   {
+    "q": "大人2人と小学生の子供2人で、土曜日に1ぱくしたい。子供も自分のベッドかふとんで寝たい。朝食はいらない。一番安いのはどれですか。",
+    "options": [
+     "ツイン・13,000円",
+     "和室・16,000円",
+     "和室・20,000円",
+     "ツイン2部屋・26,000円"
+    ],
+    "answer": 2,
+    "why": "In a twin room the children can't use beds, so the 4-person Japanese room is needed; on Saturday it costs 20,000 yen (16,000 is the weekday price)."
+   },
+   {
+    "q": "一人で金曜日に1ぱくして、朝食も食べる場合、全部でいくらですか。",
+    "options": [
+     "6,000円",
+     "6,800円",
+     "8,000円",
+     "8,800円"
+    ],
+    "answer": 3,
+    "why": "A single on Friday is 8,000 yen, plus breakfast 800 yen: 8,800 yen."
+   }
+  ],
+  "en": "Hotel Sakura rates (per room, per night; weekday / Friday–Saturday). Single (1 person): 6,000 / 8,000 yen. Twin (2 people): 10,000 / 13,000 yen. Japanese-style room (up to 4): 16,000 / 20,000 yen. Breakfast is 800 yen per person. Children of elementary school age or younger stay free in the same room as adults (they cannot use a bed)."
+ },
+ {
+  "id": "rd075",
+  "kind": "info",
+  "title": "Part-time job listings",
+  "text": "アルバイトをさがしている方へ\n① コンビニ(駅前店)\n時給1,100円/週3日以上/夜10時〜朝6時/18歳以上\n② カフェ\n時給1,050円/週2日〜/土日のみ 9時〜17時/高校生もOK\n③ 本屋\n時給1,000円/週2日〜/月〜金 17時〜21時/日本語で会話ができる方\n④ レストラン\n時給1,200円/週4日以上/11時〜15時/経験のある方",
+  "questions": [
+   {
+    "q": "留学生のマイさんは、平日は大学のじゅぎょうが4時まである。週に2日、平日の夕方から働きたい。夜はおそくならないほうがいい。日本語で会話はできるが、店で働いたことはない。マイさんに合うアルバイトはどれですか。",
+    "options": [
+     "①",
+     "②",
+     "④",
+     "③"
+    ],
+    "answer": 3,
+    "why": "(1) is late night, (2) is weekends only, (4) needs experience and 4 days in the daytime. (3) is weekday evenings until 21:00, from 2 days a week."
+   }
+  ],
+  "en": "For people looking for part-time work. (1) Convenience store (station branch): 1,100 yen/hour, 3+ days a week, 10 p.m.–6 a.m., 18 or older. (2) Cafe: 1,050 yen/hour, from 2 days a week, weekends only 9–17, high school students OK. (3) Bookstore: 1,000 yen/hour, from 2 days a week, Mon–Fri 17–21, must be able to converse in Japanese. (4) Restaurant: 1,200 yen/hour, 4+ days a week, 11–15, experience required."
+ },
+ {
+  "id": "rd076",
+  "kind": "info",
+  "title": "Phone plans",
+  "text": "スマートフォン 料金プラン(1か月)\nSプラン:3GB 1,500円(電話は30びょう20円)\nMプラン:10GB 2,800円(電話は30びょう20円)\nLプラン:30GB 4,000円(5分以内の電話は無料)\nXプラン:使いほうだい 6,000円(電話は無料)\n※家族で2台以上使うと、1台500円引きになります。",
+  "questions": [
+   {
+    "q": "一人で使う。1か月に8GBぐらい使うが、電話はほとんどしない。一番安いのはどのプランですか。",
+    "options": [
+     "Mプラン",
+     "Sプラン",
+     "Lプラン",
+     "Xプラン"
+    ],
+    "answer": 0,
+    "why": "8 GB is too much for S (3 GB); M (10 GB) is the cheapest plan that covers it, and calls hardly matter."
+   },
+   {
+    "q": "父と母の2人が、それぞれLプランを使う場合、2台で1か月いくらですか。",
+    "options": [
+     "3,500円",
+     "7,000円",
+     "7,500円",
+     "8,000円"
+    ],
+    "answer": 1,
+    "why": "Two family phones get 500 yen off each: (4,000 − 500) × 2 = 7,000 yen."
+   }
+  ],
+  "en": "Smartphone plans (per month). S: 3 GB, 1,500 yen (calls 20 yen per 30 seconds). M: 10 GB, 2,800 yen (calls 20 yen per 30 seconds). L: 30 GB, 4,000 yen (calls under 5 minutes free). X: unlimited, 6,000 yen (calls free). If a family uses two or more phones, each phone is 500 yen off."
+ },
+ {
+  "id": "rd077",
+  "kind": "info",
+  "title": "Art museum admission",
+  "text": "市立美術館 入館料\n大人:800円\n大学生・高校生:500円\n中学生以下:無料\n65歳以上:400円\n※20人以上のグループは、1人100円引き\n※毎月だい3日曜日は「家族の日」:家族で来た方は、全員半分の料金\n開館時間 9:30〜17:00(入館は16:30まで)\n休館日 毎週月曜日(月曜日が休日の場合は、次の日)",
+  "questions": [
+   {
+    "q": "10月のだい3日曜日に、父(45歳)、母(43歳)、高校生の姉、中学生の弟の4人で行く。料金は全部でいくらですか。",
+    "options": [
+     "1,050円",
+     "1,300円",
+     "1,600円",
+     "2,100円"
+    ],
+    "answer": 0,
+    "why": "Normally 800 + 800 + 500 + 0 = 2,100 yen; on Family Day everyone pays half: 400 + 400 + 250 = 1,050 yen."
+   },
+   {
+    "q": "このお知らせについて正しいものはどれですか。",
+    "options": [
+     "月曜日はいつも開いている。",
+     "午後4時半をすぎると、中に入れない。",
+     "65歳以上の人は無料だ。",
+     "20人以上のグループは全員無料だ。"
+    ],
+    "answer": 1,
+    "why": "Last entry is 16:30 (入館は16:30まで). The museum closes Mondays, and seniors pay 400 yen."
+   }
+  ],
+  "en": "City Art Museum admission. Adults 800 yen; university and high school students 500 yen; junior high and younger free; 65 and over 400 yen. Groups of 20 or more get 100 yen off per person. The third Sunday of each month is 'Family Day': everyone who comes as a family pays half price. Open 9:30–17:00 (last entry 16:30). Closed every Monday (if Monday is a holiday, closed the next day)."
+ }
+]
