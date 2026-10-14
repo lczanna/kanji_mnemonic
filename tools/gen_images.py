@@ -15,6 +15,10 @@ Needs OPENAI_API_KEY (or OPENAI_KEY), either in the environment or in the repo's
   python3 tools/gen_images.py --word 賃貸,桜          # specific words
 
 Word pictures go to images/words/<word id>.jpg and vocab.json gets "img".
+
+  python3 tools/gen_images.py --groups               # look-alike groups without a picture (data/lookalike_groups.json "scene")
+
+Group pictures go to images/lookalikes/<group id>.jpg; rerun tools/build_lookalikes.py afterwards.
 """
 import argparse, base64, io, json, os, re, sys, time, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
@@ -25,6 +29,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DECK = ROOT / 'kanji.json'
 OUT = ROOT / 'images' / 'n3'
 VOCAB = ROOT / 'vocab.json'
+GROUPS = ROOT / 'data' / 'lookalike_groups.json'
+GOUT = ROOT / 'images' / 'lookalikes'
 WOUT = ROOT / 'images' / 'words'
 API = 'https://api.openai.com/v1'
 # Newest first; the first one this key can use is picked.
@@ -156,8 +162,15 @@ def word_prompt(v):
             "if someone speaks, show it through expression and gesture, never a speech bubble.")
 
 
+def group_prompt(g):
+    return (f"{STYLE}\n\nScene: {depict(g['scene'])}\n"
+            "Show each named thing clearly and separately, so the differences between them are easy to see.")
+
+
 def generate(card, model, quality, suffix=''):
-    if 'w' in card:   # a vocab entry
+    if 'scene' in card:   # a look-alike group
+        name, out, text, key = f"{card['id']}.jpg", GOUT, group_prompt(card), card['id']
+    elif 'w' in card:   # a vocab entry
         name, out, text, key = f"{card['id']}.jpg", WOUT, word_prompt(card), card['w']
     else:
         name, out, text, key = f"u{ord(card['kanji']):04x}{suffix}.jpg", OUT, prompt(card), card['kanji']
@@ -186,6 +199,7 @@ def main():
     g.add_argument('--test', action='store_true', help='10 cards at medium and high quality, saved side by side')
     g.add_argument('--all', action='store_true', help='every card that has no images/n3 picture yet')
     g.add_argument('--kanji', help='specific kanji, e.g. 況只閉')
+    g.add_argument('--groups', action='store_true', help='look-alike groups without a picture')
     g.add_argument('--words', action='store_true', help='every word with a memory hook but no picture yet')
     g.add_argument('--word', help='specific words, comma-separated, e.g. 賃貸,桜')
     g.add_argument('--leeches', metavar='PROGRESS_JSON', help='cards missed 3+ times, from a progress download')
@@ -204,7 +218,13 @@ def main():
     by_word = {v['w']: v for v in vocab}
     WOUT.mkdir(parents=True, exist_ok=True)
 
-    if a.words or a.word:
+    groups = json.loads(GROUPS.read_text(encoding='utf8')) if GROUPS.exists() else []
+    by_group = {g['id']: g for g in groups}
+    GOUT.mkdir(parents=True, exist_ok=True)
+
+    if a.groups:
+        jobs = [(g, a.quality, '') for g in groups if g.get('scene') and not g.get('img')]
+    elif a.words or a.word:
         hooked = [v for v in vocab if v.get('mn')]
         chosen = [v for v in hooked if not v.get('img')] if a.words else [by_word[w] for w in a.word.split(',') if w in by_word and by_word[w].get('mn')]
         chosen.sort(key=lambda v: v.get('p', 9999))   # most useful words first
@@ -230,13 +250,17 @@ def main():
                 failed.append((k, err)); print('FAIL', k, err)
             else:
                 done += 1
-                if a.words or a.word:
+                if a.groups:
+                    by_group[k]['img'] = rel
+                elif a.words or a.word:
                     by_word[k]['img'] = rel
                 elif not a.test:
                     by[k]['image'] = rel
                 print(f'{done}/{len(jobs)}', k, rel)
 
-    if a.words or a.word:
+    if a.groups:
+        GROUPS.write_text(json.dumps(groups, ensure_ascii=False, indent=1), encoding='utf8')
+    elif a.words or a.word:
         VOCAB.write_text(json.dumps(vocab, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
     elif not a.test:
         DECK.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')), encoding='utf8')

@@ -274,6 +274,20 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .slot .star { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--hard); }
 .why { font-size: 14px; color: var(--muted); width: 100%; display: flex; gap: 8px; align-items: center; }
 .tr { width: 100%; font-size: 14px; color: var(--ink); }
+.look { display: grid; gap: 8px; }
+.lk-group { display: grid; gap: 8px; border: 1px solid var(--line); border-radius: 12px; padding: 10px; background: var(--surface); }
+.lk-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.lk-k { display: grid; justify-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 10px; padding: 6px 8px; background: transparent; color: var(--ink); min-width: 72px; }
+.lk-k.me { border-color: var(--ai); box-shadow: 0 0 0 1px var(--ai) inset; }
+.lk-k .kw { font-size: 12px; } .lk-k small { font-size: 10px; color: var(--muted); }
+.lk-svg { width: 56px; height: 56px; } .lk-group.big .lk-svg { width: 84px; height: 84px; }
+.lk-svg path { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.lk-svg path.df { stroke: var(--again); stroke-width: 5; }
+.lk-tips { display: grid; gap: 4px; font-size: 13px; color: var(--muted); line-height: 1.45; }
+.lk-tips div { border-left: 3px solid var(--line); padding-left: 8px; } .lk-tips div.me { border-left-color: var(--ai); color: var(--ink); }
+.lk-tips b { font-family: var(--font-kanji); color: var(--ink); margin-right: 6px; font-size: 15px; }
+.kanji-opts .opt { font-family: var(--font-kanji); font-size: 30px; justify-content: center; }
+.sprint-bar { width: 100%; display: flex; justify-content: space-between; font-weight: 700; color: var(--ai); }
 .err-note { position: fixed; left: 12px; right: 12px; bottom: 96px; z-index: 50; background: var(--again); color: #fff; font-size: 13px; padding: 10px 12px; border-radius: 10px; }
 .wrongs { width: 100%; display: grid; gap: 6px; font-size: 13px; color: var(--muted); line-height: 1.45; }
 .wrongs div { border-left: 3px solid var(--line); padding-left: 8px; }
@@ -373,6 +387,7 @@ const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
   return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
+           lookSeen: {}, confusions: {}, sprintBest: 0,
            settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
                        minWeekday: 30, minWeekend: 60 } };
 }
@@ -413,7 +428,8 @@ function syncBodies() {
   const d = appData;
   const bodies = { meta: { stats: d.stats, settings: d.settings, settingsAt: d.settingsAt || 0, history: d.history, newByDay: d.newByDay,
     triaged: d.triaged, lastBackup: d.lastBackup || null, hideHomeTip: !!d.hideHomeTip,
-    planStart: d.planStart || null, timing: d.timing || null } };
+    planStart: d.planStart || null, timing: d.timing || null,
+    lookSeen: d.lookSeen || {}, confusions: d.confusions || {}, sprintBest: d.sprintBest || 0 } };
   shards.forEach((cards, i) => { bodies['cards' + i] = { cards }; });
   return bodies;
 }
@@ -471,6 +487,9 @@ function mergeRemote(remote) {
   if (m.hideHomeTip) d.hideHomeTip = true;
   if (m.planStart && (!d.planStart || m.planStart.date < d.planStart.date)) d.planStart = m.planStart;
   if (m.timing && !d.timing) d.timing = m.timing;
+  for (const [g, day] of Object.entries(m.lookSeen || {})) if (!d.lookSeen[g]) d.lookSeen[g] = day;
+  for (const [pair, c] of Object.entries(m.confusions || {})) if (!d.confusions[pair]) d.confusions[pair] = Object.assign({}, c);
+  d.sprintBest = Math.max(d.sprintBest || 0, m.sprintBest || 0);
 }
 async function pullRemote() {
   const names = ['meta', ...[...Array(SHARDS)].map((_, i) => 'cards' + i)];
@@ -958,6 +977,7 @@ function backHtml(k, mode) {
       </div>
     </div>
     ${body}
+    ${lookPanelHtml(k)}
     <dl class="readings">
       <dt>ON</dt><dd lang="ja">${esc((k.on || []).join('・') || '–')}</dd>
       <dt>KUN</dt><dd lang="ja">${esc((k.kun || []).join('・') || '–')}</dd>
@@ -1034,7 +1054,8 @@ function todayHtml() {
   const extra = finalWeek() ? [] : extraMix();
   const bh = finalWeek() ? {} : behindBy();
   const behindText = TYPES.filter(t => bh[t]).map(t => `${bh[t]} ${t === 'kanji' ? 'kanji' : t === 'vocab' ? (bh[t] > 1 ? 'words' : 'word') : 'grammar'}`).join(' · ');
-  const total = rows.reduce((a, r) => a + r.due + r.nNew, 0);
+  const drillN = drillItems().length, lessonN = pendingLookLessons().length;
+  const total = rows.reduce((a, r) => a + r.due + r.nNew, 0) + drillN + lessonN;
   const E = appData.settings.examDate;
   const marks = [[-28, 'Practice test 1 · full, timed'], [-bufferDays(), 'All new cards done · review-only from here'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test'], [0, 'JLPT N3']]
     .filter((m, i, a) => a.findIndex(x => x[0] === m[0]) === i).sort((a, b) => a[0] - b[0])
@@ -1085,12 +1106,13 @@ function todayHtml() {
     ${finalWeek() && daysToExam() >= 0 ? `<div class="notice"><b>Review-only stretch.</b> No new cards until the exam. Clear your reviews, run Weak spots, and do your timed practice tests.</div>` : ''}
     <div class="cta">
       <button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total === 0 ? 'disabled' : ''}>
-        <span class="label"><b>${total ? 'Study everything' : behindText ? "Today's plan is done" : 'All done for today'}</b><small class="muted">${!total && behindText ? `Your minutes are used up, but you're behind the plan by ${behindText}. Catch up below if you have time.` : rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`).join(' · ')}</small></span>
+        <span class="label"><b>${total ? 'Study everything' : behindText ? "Today's plan is done" : 'All done for today'}</b><small class="muted">${!total && behindText ? `Your minutes are used up, but you're behind the plan by ${behindText}. Catch up below if you have time.` : [...rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`), ...(lessonN ? [`Look-alikes ${lessonN}`] : []), ...(drillN ? [`Mix-up drills ${drillN}`] : [])].join(' · ')}</small></span>
         <span class="count num">${total}</span>
       </button>
       ${dueAll && total > dueAll ? `<button class="btn" id="go-reviews"><span class="label"><b>Busy day: reviews only</b><small class="muted">Keep what you know. New cards wait and the plan spreads them out.</small></span><span class="count num">${dueAll}</span></button>` : ''}
       ${weakOn ? `<button class="btn" id="go-weak"><span class="label"><b>Weak spots</b><small class="muted">The 40 cards you're most likely to forget, due or not</small></span><span class="count num">40</span></button>` : ''}
       ${studyBtns}
+      ${sprintGroups().length >= 5 ? `<button class="btn" id="go-sprint"><span class="label"><b><span lang="ja">似た漢字</span> Look-alike sprint</b><small class="muted">60 seconds: pick the right kanji among look-alikes${appData.sprintBest ? ` · best ${appData.sprintBest}` : ''}</small></span><span class="count num">▶</span></button>` : ''}
       ${listenN >= 5 ? `<button class="btn" id="go-listen"><span class="label"><b><span lang="ja">聴解</span> Listening drill</b><small class="muted">20 words and sentences you've studied, by ear only</small></span><span class="count num">▶</span></button>` : ''}
       ${triageLeft && !triageFirst ? triageBtn('btn', 'Mark kanji you already know', 'One quick pass. Known kanji also unlock their words.') : ''}
       ${extra.length ? `<button class="btn${!total && behindText ? ' primary' : ''}" id="go-extra"><span class="label"><b>${behindText ? 'Have more time? Catch up 5' : 'Have more time? Learn 5 more'}</b><small class="muted">${extraLabel(extra)}${behindText ? ", where you're behind" : ', most useful first'}. Tomorrow's plan counts them.</small></span><span class="count num">+${extra.length}</span></button>` : ''}
@@ -1284,6 +1306,103 @@ function showModal(key, inner) {
 }
 function showDetail(kanji) { const k = BY_KANJI[kanji]; if (k) showModal(kanji, backHtml(k, 'learn')); }
 
+// ============ LOOK-ALIKES ============
+// Groups of kanji that are easy to mix up by sight (lookalikes.json, tools/build_lookalikes.py): stroke drawings
+// from KanjiVG with the strokes that tell them apart coloured, a one-line rule per kanji, and a picture.
+// When they show up, in order:
+//   1. on every kanji card, a "Don't confuse with" panel;
+//   2. once you've started two kanji of a group, a one-time side-by-side lesson in your next session;
+//   3. in reviews, every third check of such a kanji becomes "Which one?" (pick it among its look-alikes),
+//      which counts for that kanji like any review;
+//   4. picking a look-alike by mistake (in a quiz or the sprint) brings that pair back the next day as a short
+//      drill, until you get it right twice; drills are practice and don't change any card's schedule;
+//   5. with 5 groups started, a 60-second "look-alike sprint" on Today, also practice only.
+let LOOK = [], LOOK_BY = {};
+const started = ch => !!appData.cards[ch];
+const groupsOf = ch => LOOK_BY[ch] || [];
+const groupById = id => LOOK.find(g => g.id === id);
+// The look-alikes of a kanji, across its groups (the kanji itself excluded).
+const peersOf = ch => [...new Set(groupsOf(ch).flatMap(g => g.kanji))].filter(c => c !== ch);
+function strokeSvg(g, ch) {
+  const diff = new Set(g.diff[ch] || []);
+  return `<svg class="lk-svg" viewBox="0 0 109 109" aria-hidden="true">${(g.strokes[ch] || []).map((d, i) => `<path d="${esc(d)}"${diff.has(i) ? ' class="df"' : ''}/>`).join('')}</svg>`;
+}
+function lookGroupHtml(g, me, big) {
+  const img = g.img ? `<img class="card-img small" src="${esc(g.img)}" data-kanji="${esc('l:' + g.id)}" alt="Picture of the look-alikes" loading="lazy" onerror="imgFallback(this)">` : '';
+  return `<div class="lk-group${big ? ' big' : ''}">
+    <div class="lk-row">${g.kanji.map(c => { const k = BY_KANJI[c];
+      return `<button class="lk-k${c === me ? ' me' : ''}" data-open-k="${esc(c)}">${strokeSvg(g, c)}<span class="kw">${esc(k ? k.keyword : '')}</span>${started(c) ? '' : '<small>not learned yet</small>'}</button>`; }).join('')}</div>
+    <div class="lk-tips">${g.kanji.map(c => `<div class="${c === me ? 'me' : ''}"><b lang="ja">${esc(c)}</b>${esc((g.tips || {})[c] || '')}</div>`).join('')}</div>
+    ${img}</div>`;
+}
+function lookPanelHtml(k) {
+  const gs = groupsOf(k.kanji);
+  return gs.length ? `<div class="look"><div class="section-label">Don't confuse with · coloured strokes are the difference</div>${gs.map(g => lookGroupHtml(g, k.kanji)).join('')}</div>` : '';
+}
+// Groups where you've started two kanji and haven't had the side-by-side lesson yet.
+function pendingLookLessons(limit = 3) {
+  return LOOK.filter(g => !appData.lookSeen[g.id] && g.kanji.filter(started).length >= 2).slice(0, limit)
+    .map(g => ({ type: 'kanji', x: BY_KANJI[g.kanji.find(started)], mode: 'look', group: g.id }));
+}
+// "Which one?": the meaning (and a word with the kanji blanked out), pick the kanji among its look-alikes.
+function whichItem(x, extra) {
+  const opts = shuffle([x.kanji, ...shuffle(peersOf(x.kanji)).slice(0, 3)]);
+  const words = (x.vocab || []).filter(v => v.w.length > 1 && v.w.includes(x.kanji));
+  const w = words.length ? words[Math.floor(Math.random() * words.length)] : null;
+  return Object.assign({ type: 'kanji', x, mode: 'quiz', task: 'which', opts, answerText: x.kanji, hintWord: w ? [w.w.split(x.kanji).join('〇'), w.r] : null }, extra || {});
+}
+// Mix-ups: pair "a|b" -> { due, ok }; due the next day until answered right twice.
+const pairKey = (a, b) => [a, b].sort().join('|');
+function noteConfusion(a, b) {
+  if (!a || !b || a === b) return;
+  appData.confusions[pairKey(a, b)] = { due: addDays(today(), 1), ok: 0 };
+}
+function drillItems() {
+  const t = today();
+  return Object.entries(appData.confusions).filter(([, c]) => c.due <= t).map(([pair]) => {
+    const [a, b] = pair.split('|'), target = BY_KANJI[Math.random() < 0.5 ? a : b] || BY_KANJI[a];
+    if (!target || !BY_KANJI[a] || !BY_KANJI[b]) return null;
+    const it = whichItem(target, { drill: pair });
+    it.opts = shuffle([a, b, ...shuffle(peersOf(target.kanji).filter(c => c !== a && c !== b)).slice(0, 1)]);
+    return it;
+  }).filter(Boolean);
+}
+function drillResult(it) {
+  const c = appData.confusions[it.drill];
+  if (!c) return;
+  if (it.correct) { c.ok = (c.ok || 0) + 1; if (c.ok >= 2) delete appData.confusions[it.drill]; else c.due = addDays(today(), 1); }
+  else { c.ok = 0; c.due = addDays(today(), 1); }
+}
+// After answering: each option's keyword and the rule that tells it apart.
+function whichNotes(it) {
+  const tip = c => { for (const g of groupsOf(it.x.kanji)) if (g.tips && g.tips[c]) return g.tips[c]; for (const g of groupsOf(c)) if (g.tips && g.tips[c]) return g.tips[c]; return ''; };
+  const order = it.opts.map((o, i) => [o, i]).sort(([a, i], [b, j]) => (b === it.answerText) - (a === it.answerText) || (j === it.chosen) - (i === it.chosen));
+  return `<div class="wrongs">${order.map(([c, i]) => { const k = BY_KANJI[c];
+    return `<div class="${i === it.chosen && c !== it.answerText ? 'picked' : ''}"><b lang="ja">${esc(c)}</b>${esc(k ? k.keyword : '')}${tip(c) ? ' · ' + esc(tip(c)) : ''}</div>`; }).join('')}</div>`;
+}
+// Sprint: 60 seconds of "which one?" across your started groups.
+const sprintGroups = () => LOOK.filter(g => g.kanji.filter(started).length >= 2);
+function startSprint() {
+  const gs = sprintGroups();
+  if (gs.length < 5) return;
+  const queue = [];
+  for (let n = 0; n < 300; n++) {
+    const g = gs[Math.floor(Math.random() * gs.length)], ks = g.kanji.filter(started);
+    const it = whichItem(BY_KANJI[ks[Math.floor(Math.random() * ks.length)]], { sprint: true });
+    it.opts = shuffle([...g.kanji]).slice(0, 4); if (!it.opts.includes(it.answerText)) it.opts[0] = it.answerText; it.opts = shuffle(it.opts);
+    queue.push(it);
+  }
+  session = { queue, i: 0, revealed: false, done: 0, kind: 'sprint', score: 0, ends: Date.now() + 60000 };
+  openSheet();
+  clearInterval(startSprint.timer);
+  startSprint.timer = setInterval(() => {
+    if (!session || session.kind !== 'sprint') return clearInterval(startSprint.timer);
+    const left = Math.max(0, Math.ceil((session.ends - Date.now()) / 1000));
+    const el = $('sprint-time'); if (el) el.textContent = left + 's';
+    if (left <= 0) { clearInterval(startSprint.timer); session.i = session.queue.length; renderSession(); }
+  }, 250);
+}
+
 // ============ STUDY SESSION ============
 // Queue items: {type, x, mode: 'learn' | 'quiz' | 'triage', again, word, task}
 let session = null;
@@ -1292,6 +1411,8 @@ function quizItem(type, x) {
   const c = appData.cards[keyOf(type, x)];
   const reps = c ? c.reps || 0 : 0;
   if (type === 'kanji') {
+    // Every third check (from the second) of a kanji with a started look-alike: pick it among its look-alikes.
+    if (reps >= 2 && reps % 3 === 2 && peersOf(x.kanji).some(c => (appData.cards[c] || {}).reps >= 1)) return whichItem(x);
     // Mature kanji alternate between the bare kanji and a real exam word, because N3 tests readings of words.
     const words = (x.vocab || []).filter(v => v.w.length > 1);
     const useWord = reps >= 2 && words.length && reps % 2 === 0;
@@ -1354,12 +1475,12 @@ function extraLabel(mix) {
 }
 function startStudy(type, extra) {
   if (type === 'all') {
-    const items = interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))));
-    const fresh = interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))));
+    const items = [...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), ...drillItems()];
+    const fresh = [...pendingLookLessons(), ...interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))))];
     return runQueue(items, fresh, 'all');
   }
-  const items = dueOf(type).map(x => quizItem(type, x));
-  const fresh = (extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }));
+  const items = [...dueOf(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? drillItems() : [])];
+  const fresh = [...(type === 'kanji' ? pendingLookLessons() : []), ...(extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }))];
   return runQueue(items, fresh, type);
 }
 function runQueue(items, fresh, type) {
@@ -1452,7 +1573,7 @@ function unpackItem(o) {
 function saveSession() {
   try {
     const s = session || parked;
-    if (!s || s.i >= s.queue.length) return localStorage.removeItem(SESSION_KEY);
+    if (!s || s.i >= s.queue.length || s.kind === 'sprint') return localStorage.removeItem(SESSION_KEY);
     const out = Object.assign({}, s, { queue: s.queue.map(packItem), history: (s.history || []).slice(-30).map(packItem) });
     localStorage.setItem(SESSION_KEY, JSON.stringify({ day: today(), parked: !session, s: out }));
   } catch (e) { /* storage full or blocked: resuming is a convenience */ }
@@ -1478,7 +1599,7 @@ function openSheet() { if (parked !== session) parked = null; session.shownAt = 
 function closeSheet() {
   try { speechSynthesis.cancel(); } catch (e) { /* no audio */ }
   // Stepping out mid-session parks it, so Today can pick it up exactly where you left off.
-  parked = session && session.i < session.queue.length ? session : null;
+  parked = session && session.i < session.queue.length && session.kind !== 'sprint' ? session : null;
   session = null; saveSession(); $('sheet').hidden = true; $('answer-bar').hidden = true; document.body.style.overflow = '';
   render();
 }
@@ -1550,7 +1671,7 @@ function drawSession() {
   else if (it.type === 'listen') ({ inner, bar } = listenScreen(it, tags));
   else ({ inner, bar } = grammarScreen(it, tags));
   // Leech: a card missed 4+ times needs a better hook, not more repetition.
-  const lc = it.type !== 'listen' && appData.cards[keyOf(it.type, it.x)];
+  const lc = it.type !== 'listen' && it.mode !== 'look' && !it.sprint && appData.cards[keyOf(it.type, it.x)];
   if (lc && (lc.lapses || 0) >= 4) {
     tags.push('<span class="tag relearn">LEECH</span>');
     if (inner.back) inner.back = `<div class="notice">Missed ${lc.lapses} times. Repetition isn't working here: rewrite the story in your own words, make it stranger, or link it to something from your own life.</div>` + inner.back;
@@ -1562,6 +1683,21 @@ function drawSession() {
 
 function kanjiScreen(it, tags) {
   const k = it.x;
+  if (it.mode === 'look') {
+    const g = groupById(it.group);
+    tags.push('<span class="tag" lang="ja">似ている · LOOK-ALIKES</span>');
+    return { inner: { front: '<div class="prompt">You now know kanji that look alike. The coloured strokes are what tells them apart.</div>', back: g ? `<div class="back">${lookGroupHtml(g, null, true)}</div>` : '' },
+      bar: '<div class="row one"><button class="ans next" id="a-look">Got it</button></div>' };
+  }
+  if (it.task === 'which') {
+    tags.push(`<span class="tag" lang="ja">似た漢字 · ${it.drill ? 'MIX-UP DRILL' : it.sprint ? 'SPRINT' : 'WHICH ONE?'}</span>`);
+    const top = it.sprint ? `<div class="sprint-bar"><span id="sprint-time" class="num">${Math.max(0, Math.ceil((session.ends - Date.now()) / 1000))}s</span><span class="num">Score ${session.score}</span></div>` : '';
+    const front = `${top}<div class="keyword" style="text-align:center">${esc(k.keyword)}</div>
+      ${it.hintWord ? `<div class="prompt" lang="ja">${esc(it.hintWord[0])}（${esc(it.hintWord[1])}）</div>` : ''}
+      ${mcOptions(it, false, true)}${session.revealed ? whichNotes(it) : ''}`;
+    return { inner: { front, back: session.revealed && !it.sprint && !it.drill ? backHtml(k, 'quiz') : '' },
+      bar: session.revealed ? (it.sprint ? '' : continueBar(it)) : pickHint(it.drill ? 'You mixed these up recently: which one is it?' : 'Pick the kanji with this meaning') };
+  }
   if (it.mode === 'triage') tags.push(`<span class="tag">N${k.level} · DO YOU KNOW IT?</span>`);
   else tags.push(`<span class="tag">N${k.level}</span>`);
   const showBack = it.mode === 'learn' || session.revealed;
@@ -1589,9 +1725,9 @@ function kanjiScreen(it, tags) {
   return { inner: { front, back }, bar };
 }
 
-function mcOptions(it, kana) {
+function mcOptions(it, kana, kanji) {
   const answered = session.revealed;
-  return `<div class="opts${kana ? ' kana-opts' : ''}">${it.opts.map((o, i) => {
+  return `<div class="opts${kana ? ' kana-opts' : ''}${kanji ? ' kanji-opts' : ''}">${it.opts.map((o, i) => {
     const cls = !answered ? '' : o === it.answerText ? ' right' : i === it.chosen ? ' wrong' : ' dim';
     return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
   }).join('')}</div>`;
@@ -1714,7 +1850,15 @@ function answerChoice(i) {
   if (session.revealed) return;
   it.chosen = i;
   it.correct = !it.hinted && (it.answerText != null ? it.opts[i] === it.answerText : i === it.f.answer);
+  if (it.task === 'which' && !it.correct) { noteConfusion(it.answerText, it.opts[i]); saveData(); }
   session.revealed = true;
+  if (it.sprint) {
+    if (it.correct) session.score++;
+    renderSession();
+    // A right answer moves on at once; a wrong one stays a moment so you can see the difference.
+    setTimeout(() => { if (session && session.queue[session.i] === it) { session.i++; session.revealed = false; renderSession(); } }, it.correct ? 300 : 1600);
+    return;
+  }
   renderSession();
 }
 function pickChunk(j) {
@@ -1749,6 +1893,16 @@ function remainingToday() {
 }
 function renderSessionEnd() {
   const triage = session.kind === 'triage';
+  if (session.kind === 'sprint') {
+    const best = appData.sprintBest || 0, isBest = session.score > best;
+    if (isBest) { appData.sprintBest = session.score; saveData(); }
+    $('sheet').innerHTML = `<div class="sheet-inner"><div class="card" style="text-align:center;padding:32px 18px">
+      <div class="cell" style="margin:0 auto"><span class="k" lang="ja">似</span></div>
+      <h2 style="margin-top:14px">${session.score} right in 60 seconds</h2>
+      <p class="muted">${isBest ? 'A new best!' : `Your best: ${best}.`} Pairs you mixed up come back tomorrow as a short drill.</p></div></div>`;
+    $('answer-bar').innerHTML = `<div class="row two"><button class="ans skip" id="s-finish">Back to today</button><button class="ans next" id="go-sprint">Again</button></div>`;
+    return;
+  }
   if (session.kind === 'listen') {
     $('sheet').innerHTML = `<div class="sheet-inner"><div class="card" style="text-align:center;padding:32px 18px">
       <div class="cell" style="margin:0 auto"><span class="k" lang="ja">聴</span></div>
@@ -1768,6 +1922,7 @@ function renderSessionEnd() {
 
 function grade(g) {
   const it = session.queue[session.i];
+  if (it.drill) { drillResult(it); saveData(); session.done++; return next(); }   // practice: no card is rescheduled
   noteTime('review', session.shownAt);
   if (!it.again) {
     // First answer for this card in this session counts for scheduling.
@@ -1860,7 +2015,7 @@ document.addEventListener('click', e => {
   switch (id) {
     case 'go-triage': return startTriage();
     case 'go-all': return startStudy('all');
-    case 'go-reviews': return runQueue(interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), [], 'all');
+    case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), ...drillItems()], pendingLookLessons(), 'all');
     case 'go-weak': return startWeak();
     case 'go-listen': return startListen();
     case 'l-yes': session.heard++; session.done++; return next();
@@ -1874,8 +2029,14 @@ document.addEventListener('click', e => {
     case 'g-tr': session.queue[session.i].showTr = true; return renderSession();
     case 'g-cgl': session.queue[session.i].showGl = true; return renderSession();
     case 'a-continue': { const it = session.queue[session.i]; return grade(it.correct ? 3 : 1); }
+    case 'a-look': { const it = session.queue[session.i]; appData.lookSeen[it.group] = today(); saveData(); return next(); }
+    case 'go-sprint': return startSprint();
     case 'a-learned': {
       const it = session.queue[session.i];
+      // Learning the second kanji of a look-alike group: the side-by-side lesson comes right after.
+      if (it.type === 'kanji') for (const g of groupsOf(it.x.kanji))
+        if (!appData.lookSeen[g.id] && g.kanji.filter(c => c === it.x.kanji || started(c)).length >= 2 && !session.queue.some(q => q.group === g.id))
+          session.queue.splice(session.i + 1, 0, { type: 'kanji', x: it.x, mode: 'look', group: g.id });
       noteTime('learn', session.shownAt);
       // Extras are on top of today's plan, so they don't use up its new cards (tomorrow's plan counts them).
       const dk = it.extra ? today() + '|extra' : dayKey(it.type);
@@ -1945,7 +2106,7 @@ document.addEventListener('keydown', e => {
   const it = session.queue[session.i];
   if (!it) { if (e.key === 'Enter' || e.key === ' ') closeSheet(); return; }
   if (e.key === 'Escape') return closeSheet();
-  const choice = it.mode === 'quiz' && ['spell', 'fill', 'readmc'].includes(it.task);
+  const choice = it.mode === 'quiz' && ['spell', 'fill', 'readmc', 'which'].includes(it.task);
   if (it.mode === 'listen') { if (!session.revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); session.revealed = true; renderSession(); } else if (session.revealed && (e.key === '1' || e.key === '2')) $(e.key === '1' ? 'l-no' : 'l-yes').click(); return; }
   if (it.mode === 'learn' && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); $('a-learned').click(); }
   else if (it.mode === 'triage') { if (e.key === 'ArrowRight' || e.key === 'k') triageAnswer(true); if (e.key === 'ArrowLeft' || e.key === 'n') triageAnswer(false); }
@@ -2041,6 +2202,14 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   render();
   restoreSession();
   initSync();
+  // Look-alike groups and their stroke drawings load in the background too.
+  getJson('lookalikes.json', true).then(gs => {
+    if (!Array.isArray(gs) || !gs.length) return;
+    // Only kanji in the deck; a group needs at least two of them.
+    LOOK = gs.map(g => Object.assign(g, { kanji: g.kanji.filter(c => BY_KANJI[c]) })).filter(g => g.kanji.length >= 2); LOOK_BY = {};
+    for (const g of gs) for (const c of g.kanji) (LOOK_BY[c] = LOOK_BY[c] || []).push(g);
+    if (!session) render();
+  });
   // Example sentences for words are large, so they load after the app is already usable.
   getJson('examples.json', true).then(ex => {
     if (!ex || Array.isArray(ex)) return;

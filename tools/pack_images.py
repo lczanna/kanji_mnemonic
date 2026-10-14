@@ -23,6 +23,9 @@ def main():
     cards = [(c['kanji'], c['image']) for c in json.loads((ROOT / 'kanji.json').read_text(encoding='utf8'))['cards'] if c.get('image')]
     words = sorted((v for v in json.loads((ROOT / 'vocab.json').read_text(encoding='utf8')) if v.get('img')), key=lambda v: v.get('p', 9999))
     cards += [(v['id'], v['img']) for v in words]
+    looks = ROOT / 'lookalikes.json'
+    if looks.exists():   # look-alike group pictures, keyed l:<group id>
+        cards += [('l:' + g['id'], g['img']) for g in json.loads(looks.read_text(encoding='utf8')) if g.get('img')]
     index = {}
     for n in range(0, len(cards), PER_PACK):
         pack = {}
