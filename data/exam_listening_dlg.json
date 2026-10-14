@@ -1,0 +1,3018 @@
+[
+ {
+  "id": "dl001",
+  "intro": "会社で男の人と女の人が話しています。女の人はこれから何をしますか。",
+  "question": "女の人はこれから何をしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "山田さん、あしたの会議の資料、もうコピーしましたか。"
+   },
+   {
+    "s": "F",
+    "t": "いえ、これからするところです。十部でいいですよね。"
+   },
+   {
+    "s": "M",
+    "t": "あ、実は会議の時間が午後に変わったんです。それで、出席する人も少し増えるかもしれません。"
+   },
+   {
+    "s": "F",
+    "t": "そうですか。じゃあ、何部コピーすればいいか、まだ分からないですね。"
+   },
+   {
+    "s": "M",
+    "t": "ええ。コピーは人数が決まってからでいいので、先にみんなに時間が変わったことをメールで知らせてもらえますか。"
+   },
+   {
+    "s": "F",
+    "t": "分かりました。すぐ送ります。"
+   }
+  ],
+  "options": [
+   "資料を十部コピーする",
+   "会議の時間が変わったことをメールで知らせる",
+   "会議室を予約しなおす",
+   "会議に出る人の数を数える"
+  ],
+  "answer": 1,
+  "en": "M: Ms. Yamada, have you already copied the materials for tomorrow's meeting?\nF: No, I'm just about to. Ten copies is fine, right?\nM: Ah, actually the meeting has moved to the afternoon. So a few more people may attend.\nF: I see. Then we don't know yet how many copies to make.\nM: Right. The copies can wait until the number is decided, so could you first email everyone that the time has changed?\nF: Understood. I'll send it right away.",
+  "why": "The man says the copies can wait and asks her to email everyone about the new time first. Copying ten copies was the original plan, but it was put off."
+ },
+ {
+  "id": "dl002",
+  "intro": "男の人と女の人が話しています。男の人はどうして遅れましたか。",
+  "question": "男の人はどうして遅れましたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "遅かったね。電車、遅れたの？"
+   },
+   {
+    "s": "M",
+    "t": "ううん、電車はいつも通りだったんだけど、駅を出てから道に迷っちゃって。"
+   },
+   {
+    "s": "F",
+    "t": "え、地図、送ったでしょう？"
+   },
+   {
+    "s": "M",
+    "t": "うん、でもスマホのでんちがなくなって、見られなかったんだよ。"
+   },
+   {
+    "s": "F",
+    "t": "そうだったの。"
+   }
+  ],
+  "options": [
+   "スマホが使えなくて、道が分からなかったから",
+   "地図をもらわなかったから",
+   "駅を出るのが遅かったから",
+   "電車が遅れたから"
+  ],
+  "answer": 0,
+  "en": "F: You're late. Was the train delayed?\nM: No, the train was on time, but after I left the station I got lost.\nF: What? I sent you a map, didn't I?\nM: Yes, but my phone battery died, so I couldn't look at it.\nF: Oh, so that's what happened.",
+  "why": "His phone battery died, so he couldn't see the map and got lost. The train was on time, and he did receive the map."
+ },
+ {
+  "id": "dl003",
+  "intro": "デパートで女の人と店の人が話しています。女の人は何を買いますか。",
+  "question": "女の人は何を買いますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、父へのプレゼントを探しているんですが。"
+   },
+   {
+    "s": "M",
+    "t": "こちらのセーターはいかがですか。今年人気の色なんですよ。"
+   },
+   {
+    "s": "F",
+    "t": "いいですね。でも、父はセーターをたくさん持っているので……。"
+   },
+   {
+    "s": "M",
+    "t": "では、こちらのかさはいかがでしょう。かるくて、じょうぶですよ。"
+   },
+   {
+    "s": "F",
+    "t": "かさか……。父はよくどこかに忘れてくるから、すぐなくしそう。あ、この手ぶくろ、あたたかそうですね。これにします。"
+   }
+  ],
+  "options": [
+   "かさ",
+   "ぼうし",
+   "セーター",
+   "手ぶくろ"
+  ],
+  "answer": 3,
+  "en": "F: Excuse me, I'm looking for a present for my father.\nM: How about this sweater? It's a popular color this year.\nF: It's nice. But my father already has lots of sweaters...\nM: Then how about this umbrella? It's light and strong.\nF: An umbrella... He often leaves things somewhere, so he'd lose it soon. Oh, these gloves look warm. I'll take these.",
+  "why": "At the end she chooses the gloves. She rejects the sweater because he has many, and the umbrella because he would lose it."
+ },
+ {
+  "id": "dl004",
+  "intro": "ホテルで男の人とホテルの人が話しています。男の人が一番困っていることは何ですか。",
+  "question": "男の人が一番困っていることは何ですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、305号室の者ですが、部屋のエアコンが動かないんです。"
+   },
+   {
+    "s": "F",
+    "t": "申しわけございません。すぐに係の者を行かせます。"
+   },
+   {
+    "s": "M",
+    "t": "いや、それはいいんです。窓を開ければすずしいので。それより、となりの部屋の音がうるさくて、眠れないんですよ。"
+   },
+   {
+    "s": "F",
+    "t": "そうでしたか。では、別のお部屋をご用意いたします。"
+   }
+  ],
+  "options": [
+   "窓が開かないこと",
+   "部屋があついこと",
+   "エアコンが動かないこと",
+   "となりの部屋がうるさいこと"
+  ],
+  "answer": 3,
+  "en": "M: Excuse me, I'm in room 305. The air conditioner in my room isn't working.\nF: I'm very sorry. I'll send someone right away.\nM: No, that's fine. It's cool if I open the window. More importantly, the noise from the next room is so loud I can't sleep.\nF: I see. Then we'll prepare another room for you.",
+  "why": "He says 'それより' the noise from next door keeps him awake. The broken air conditioner is not a problem because he can open the window."
+ },
+ {
+  "id": "dl005",
+  "intro": "家で女の人と男の人が話しています。男の人はスーパーで何を買いますか。",
+  "question": "男の人はスーパーで何を買いますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "ねえ、帰りにスーパーで、たまごとぎゅうにゅう、買ってきてくれる？"
+   },
+   {
+    "s": "M",
+    "t": "いいよ。ほかには？"
+   },
+   {
+    "s": "F",
+    "t": "あ、待って。たまごはまだあったかも。……うん、まだ六つある。じゃ、ぎゅうにゅうだけでいい。あと、パンもお願い。"
+   },
+   {
+    "s": "M",
+    "t": "パンって、朝ご飯の？"
+   },
+   {
+    "s": "F",
+    "t": "そう。でも、駅の前のパン屋さんのほうがおいしいから、パンはそっちで。"
+   },
+   {
+    "s": "M",
+    "t": "分かった。"
+   }
+  ],
+  "options": [
+   "たまごとパン",
+   "ぎゅうにゅうとパン",
+   "たまごとぎゅうにゅう",
+   "ぎゅうにゅうだけ"
+  ],
+  "answer": 3,
+  "en": "F: Hey, could you buy eggs and milk at the supermarket on your way home?\nM: Sure. Anything else?\nF: Oh, wait. We might still have eggs... Yes, there are still six. So just milk. And bread too, please.\nM: Bread, for breakfast?\nF: Yes. But the bakery in front of the station is better, so get the bread there.\nM: Got it.",
+  "why": "There are still eggs, and the bread should be bought at the bakery by the station, so only milk is bought at the supermarket."
+ },
+ {
+  "id": "dl006",
+  "intro": "大学で女の学生と先生が話しています。女の学生はいつまでにレポートを出しますか。",
+  "question": "女の学生はいつまでにレポートを出しますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "先生、レポートのことなんですが、金曜日までに出せそうにないんです。"
+   },
+   {
+    "s": "M",
+    "t": "そうですか。どうしてですか。"
+   },
+   {
+    "s": "F",
+    "t": "図書館で借りたい本が、ほかの人に借りられていて……。"
+   },
+   {
+    "s": "M",
+    "t": "それなら、来週の月曜日まで待ちましょう。でも、それ以上は無理ですよ。"
+   },
+   {
+    "s": "F",
+    "t": "ありがとうございます。あ、でも月曜日はじゅぎょうがないので、火曜日の朝でもいいですか。"
+   },
+   {
+    "s": "M",
+    "t": "メールで送ってくれれば、月曜日でもいいですよ。"
+   },
+   {
+    "s": "F",
+    "t": "あ、そうですね。じゃあ、そうします。"
+   }
+  ],
+  "options": [
+   "今週の金曜日",
+   "来週の火曜日",
+   "来週の月曜日",
+   "来週の水曜日"
+  ],
+  "answer": 2,
+  "en": "F: Professor, about the report, I don't think I can hand it in by Friday.\nM: I see. Why is that?\nF: The book I want to borrow from the library has been borrowed by someone else...\nM: In that case, I'll wait until next Monday. But no later than that.\nF: Thank you. Oh, but I don't have class on Monday, so could it be Tuesday morning?\nM: If you send it by email, Monday is fine.\nF: Oh, right. Then I'll do that.",
+  "why": "She asks for Tuesday, but the teacher says she can email it on Monday, and she agrees. Tuesday was rejected."
+ },
+ {
+  "id": "dl007",
+  "intro": "男の人と女の人が話しています。女の人はどうしてパーティーに行きませんでしたか。",
+  "question": "女の人はどうしてパーティーに行きませんでしたか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "田中さん、きのうのパーティー、来なかったね。体の具合でも悪かったの？"
+   },
+   {
+    "s": "F",
+    "t": "ううん、元気だったよ。行くつもりだったんだけど、母が急に来ることになって。"
+   },
+   {
+    "s": "M",
+    "t": "そうなんだ。お母さん、遠くに住んでるんだよね。"
+   },
+   {
+    "s": "F",
+    "t": "うん。ほんとうは来週来る予定だったんだけど、早くなったの。"
+   }
+  ],
+  "options": [
+   "母親が急に来たから",
+   "仕事が忙しかったから",
+   "具合が悪かったから",
+   "予定を忘れたから"
+  ],
+  "answer": 0,
+  "en": "M: Tanaka, you didn't come to the party yesterday. Were you feeling sick?\nF: No, I was fine. I meant to go, but my mother suddenly decided to visit.\nM: Oh really. Your mother lives far away, right?\nF: Yes. She was actually supposed to come next week, but it got moved up.",
+  "why": "Her mother's visit was suddenly moved up. She says she was not sick."
+ },
+ {
+  "id": "dl008",
+  "intro": "病院で医者と男の人が話しています。男の人は今週、何をしてはいけませんか。",
+  "question": "男の人は今週、何をしてはいけませんか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "熱は下がりましたが、まだせきが出ていますね。薬は続けて飲んでください。"
+   },
+   {
+    "s": "M",
+    "t": "はい。あの、あしたから会社に行ってもいいですか。"
+   },
+   {
+    "s": "F",
+    "t": "ええ、仕事はかまいませんよ。ただ、お酒はせきが止まるまでやめてください。"
+   },
+   {
+    "s": "M",
+    "t": "運動はどうですか。毎朝走っているんですが。"
+   },
+   {
+    "s": "F",
+    "t": "かるい散歩ならいいですよ。走るのは来週からにしてください。"
+   }
+  ],
+  "options": [
+   "走ることと会社に行くこと",
+   "会社に行くことと薬を飲むこと",
+   "お酒を飲むことと走ること",
+   "散歩することとお酒を飲むこと"
+  ],
+  "answer": 2,
+  "en": "F: Your fever has gone down, but you still have a cough. Please keep taking the medicine.\nM: Yes. Um, can I go to work from tomorrow?\nF: Yes, work is fine. But please don't drink alcohol until the cough stops.\nM: What about exercise? I run every morning.\nF: A light walk is fine. Please wait until next week to run.",
+  "why": "The doctor says no alcohol until the cough stops and no running until next week. Going to work and walking are allowed."
+ },
+ {
+  "id": "dl009",
+  "intro": "男の人と女の人が引っ越しについて話しています。二人はまず何をしますか。",
+  "question": "二人はまず何をしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "引っ越しのじゅんび、どこから始めようか。"
+   },
+   {
+    "s": "F",
+    "t": "まず、いらない物をすてたほうがいいんじゃない？"
+   },
+   {
+    "s": "M",
+    "t": "そうだね。でも、その前に引っ越しの会社に電話しないと。週末は予約がすぐいっぱいになるらしいよ。"
+   },
+   {
+    "s": "F",
+    "t": "あ、そうか。じゃあ、それが先だね。"
+   }
+  ],
+  "options": [
+   "引っ越しの会社に電話する",
+   "新しい家を見に行く",
+   "にもつを箱に入れる",
+   "いらない物をすてる"
+  ],
+  "answer": 0,
+  "en": "M: Where should we start getting ready for the move?\nF: Shouldn't we throw away things we don't need first?\nM: True. But before that we have to call the moving company. I hear weekends get booked up fast.\nF: Oh, right. Then that comes first.",
+  "why": "He says they must call the moving company before throwing things away, and she agrees that comes first."
+ },
+ {
+  "id": "dl010",
+  "intro": "男の人がレストランに電話しています。男の人は何を変えたいですか。",
+  "question": "男の人は何を変えたいですか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "はい、レストラン「さくら」でございます。"
+   },
+   {
+    "s": "M",
+    "t": "すみません、土曜日の夜七時に四人で予約している木下ですが。"
+   },
+   {
+    "s": "F",
+    "t": "木下様ですね。いつもありがとうございます。"
+   },
+   {
+    "s": "M",
+    "t": "実は、人数が一人増えて五人になったんですが、だいじょうぶですか。"
+   },
+   {
+    "s": "F",
+    "t": "はい、だいじょうぶです。お時間はそのままでよろしいですか。"
+   },
+   {
+    "s": "M",
+    "t": "ええ、時間は変わりません。"
+   }
+  ],
+  "options": [
+   "予約の人数",
+   "予約の日",
+   "予約の名前",
+   "予約の時間"
+  ],
+  "answer": 0,
+  "en": "F: Hello, this is Restaurant Sakura.\nM: Hello, this is Kinoshita. I have a reservation for four at seven on Saturday evening.\nF: Mr. Kinoshita. Thank you as always.\nM: Actually, one more person is coming, so we're five now. Is that OK?\nF: Yes, that's fine. Shall we keep the same time?\nM: Yes, the time stays the same.",
+  "why": "He wants to change from four people to five. He says the time stays the same."
+ },
+ {
+  "id": "dl011",
+  "intro": "図書館で女の人と図書館の人が話しています。女の人はどうしてこの本を借りられませんか。",
+  "question": "女の人はどうしてこの本を借りられませんか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、この本を借りたいんですが。"
+   },
+   {
+    "s": "M",
+    "t": "はい、カードをお願いします。……あ、すみません、この本は貸し出しができないんです。"
+   },
+   {
+    "s": "F",
+    "t": "え、そうなんですか。"
+   },
+   {
+    "s": "M",
+    "t": "ええ、辞書や地図など、赤いシールがはってある本は、館内で読むだけなんです。コピーはできますよ。"
+   },
+   {
+    "s": "F",
+    "t": "じゃ、必要なところだけコピーします。"
+   }
+  ],
+  "options": [
+   "図書館の中で読む本だから",
+   "ほかの人が借りているから",
+   "カードを持っていないから",
+   "古くて、こわれそうだから"
+  ],
+  "answer": 0,
+  "en": "F: Excuse me, I'd like to borrow this book.\nM: Sure, your card please... Oh, sorry, this book can't be checked out.\nF: Oh, really?\nM: Yes. Books with a red sticker, like dictionaries and maps, are for reading in the library only. You can make copies, though.\nF: Then I'll copy just the parts I need.",
+  "why": "Books with a red sticker can only be read inside the library. She does have her card; nobody else has borrowed it."
+ },
+ {
+  "id": "dl012",
+  "intro": "男の人と女の人がピクニックについて話しています。男の人は何を持っていきますか。",
+  "question": "男の人は何を持っていきますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "あしたのピクニック、何を持っていけばいい？"
+   },
+   {
+    "s": "F",
+    "t": "おべんとうはみんなで作るから、いらないよ。飲み物をお願いしようと思ってたんだけど……。"
+   },
+   {
+    "s": "M",
+    "t": "いいよ。"
+   },
+   {
+    "s": "F",
+    "t": "あ、でも、飲み物は山下さんが持ってくるって言ってたんだ。じゃあ、シートを持ってきてくれる？"
+   },
+   {
+    "s": "M",
+    "t": "シートなら、うちに大きいのがあるよ。"
+   },
+   {
+    "s": "F",
+    "t": "よかった。じゃ、それお願い。"
+   }
+  ],
+  "options": [
+   "シート",
+   "飲み物",
+   "おさら",
+   "おべんとう"
+  ],
+  "answer": 0,
+  "en": "M: What should I bring to tomorrow's picnic?\nF: We're all making lunch together, so you don't need to bring that. I was going to ask you for drinks, but...\nM: Sure.\nF: Oh, but Yamashita said she'd bring drinks. So could you bring a picnic mat?\nM: I have a big one at home.\nF: Great. Then please bring that.",
+  "why": "She first thinks of drinks, but Yamashita is bringing them, so she asks him for a mat."
+ },
+ {
+  "id": "dl013",
+  "intro": "男の学生と女の学生が話しています。男の学生はどうしてテニス部をやめますか。",
+  "question": "男の学生はどうしてテニス部をやめますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "中山くん、テニス部、やめるって本当？"
+   },
+   {
+    "s": "M",
+    "t": "うん。"
+   },
+   {
+    "s": "F",
+    "t": "どうして？れんしゅうがきびしいから？"
+   },
+   {
+    "s": "M",
+    "t": "れんしゅうは好きなんだよ。でも、来年からじゅくに通うことになって、時間がなくなるんだ。"
+   },
+   {
+    "s": "F",
+    "t": "そっか。勉強、できるのに。"
+   },
+   {
+    "s": "M",
+    "t": "親が行けって言うから。"
+   }
+  ],
+  "options": [
+   "じゅくに通うので、時間がなくなるから",
+   "れんしゅうがきびしいから",
+   "勉強ができないから",
+   "テニスがきらいになったから"
+  ],
+  "answer": 0,
+  "en": "F: Nakayama, is it true you're quitting the tennis club?\nM: Yeah.\nF: Why? Because practice is tough?\nM: I like practice. But I'm going to start cram school next year, so I won't have time.\nF: I see. Even though you're good at studying.\nM: My parents told me to go.",
+  "why": "He will start cram school and won't have time. He says he likes practice."
+ },
+ {
+  "id": "dl014",
+  "intro": "駅で女の人と駅の人が話しています。女の人はどうやって病院へ行きますか。",
+  "question": "女の人はどうやって病院へ行きますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、市民病院へ行きたいんですが、何番のバスに乗ればいいですか。"
+   },
+   {
+    "s": "M",
+    "t": "市民病院なら、3番のバスです。でも、今の時間は道が込んでいるので、30分ぐらいかかりますよ。"
+   },
+   {
+    "s": "F",
+    "t": "そうですか。ほかに行き方はありますか。"
+   },
+   {
+    "s": "M",
+    "t": "電車で二つ目の駅で降りて、歩いても行けます。駅から5分ぐらいです。そのほうが早いですよ。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、そうします。"
+   }
+  ],
+  "options": [
+   "3番のバスに乗る",
+   "電車に乗って、駅からバスに乗る",
+   "タクシーに乗る",
+   "電車に乗って、駅から歩く"
+  ],
+  "answer": 3,
+  "en": "F: Excuse me, I want to go to the City Hospital. Which bus should I take?\nM: For the City Hospital, it's bus number 3. But the roads are busy at this time, so it takes about 30 minutes.\nF: I see. Is there another way?\nM: You can take the train, get off at the second station, and walk. It's about five minutes from the station. That's faster.\nF: Then I'll do that.",
+  "why": "The bus is slow because of traffic, so she takes the train and walks from the station."
+ },
+ {
+  "id": "dl015",
+  "intro": "不動産屋で男の人と女の人が話しています。女の人はアパートの何が気に入りませんか。",
+  "question": "女の人はアパートの何が気に入りませんか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "どうでしたか、さっきのアパート。駅から近いし、やちんも安いですよ。"
+   },
+   {
+    "s": "F",
+    "t": "ええ、部屋も広くて明るいし、いいと思います。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、決めますか。"
+   },
+   {
+    "s": "F",
+    "t": "うーん、ただ、となりがコンビニで、夜おそくまで人の声がしそうなんですよね。わたし、音が気になるほうなので。"
+   }
+  ],
+  "options": [
+   "やちんが高いこと",
+   "部屋がせまいこと",
+   "うるさそうなこと",
+   "駅から遠いこと"
+  ],
+  "answer": 2,
+  "en": "M: What did you think of that apartment? It's close to the station and the rent is cheap.\nF: Yes, the rooms are big and bright. I think it's nice.\nM: So, will you take it?\nF: Hmm, but there's a convenience store next door, so I think there'll be voices until late at night. I'm sensitive to noise.",
+  "why": "She worries about voices from the convenience store late at night. Location, rent and size are all good."
+ },
+ {
+  "id": "dl016",
+  "intro": "銀行で女の人と男の人が話しています。男の人はこのあと何をしますか。",
+  "question": "男の人はこのあと何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "こちらの用紙に、お名前とご住所を書いてください。"
+   },
+   {
+    "s": "M",
+    "t": "はい。……書きました。"
+   },
+   {
+    "s": "F",
+    "t": "ありがとうございます。それから、運転めんきょしょうか、パスポートはお持ちですか。"
+   },
+   {
+    "s": "M",
+    "t": "あ、両方とも家に置いてきてしまいました。"
+   },
+   {
+    "s": "F",
+    "t": "では、この用紙はおあずかりしておきますね。"
+   },
+   {
+    "s": "M",
+    "t": "すみません。すぐ取りに帰ります。"
+   }
+  ],
+  "options": [
+   "パスポートを見せる",
+   "用紙を出す",
+   "用紙に住所を書く",
+   "家にパスポートなどを取りに帰る"
+  ],
+  "answer": 3,
+  "en": "F: Please write your name and address on this form.\nM: OK... Done.\nF: Thank you. Also, do you have a driver's license or passport?\nM: Oh, I left both of them at home.\nF: Then I'll keep this form for you.\nM: Sorry. I'll go home and get them right away.",
+  "why": "He left his ID at home and says he will go back to get it. He has already written his address."
+ },
+ {
+  "id": "dl017",
+  "intro": "男の人と女の人が話しています。パソコンはどうして使えなかったのですか。",
+  "question": "パソコンはどうして使えなかったのですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "どうしたの、こわい顔して。"
+   },
+   {
+    "s": "F",
+    "t": "パソコンが急に動かなくなっちゃって。"
+   },
+   {
+    "s": "M",
+    "t": "スイッチは入ってる？"
+   },
+   {
+    "s": "F",
+    "t": "うん、それはだいじょうぶ。画面はつくんだけど、文字が打てないの。"
+   },
+   {
+    "s": "M",
+    "t": "キーボードのコード、ぬけてない？"
+   },
+   {
+    "s": "F",
+    "t": "あ、本当だ。ぬけてた。"
+   }
+  ],
+  "options": [
+   "キーボードのコードがぬけていたから",
+   "スイッチが入っていなかったから",
+   "パソコンがこわれていたから",
+   "画面がつかなかったから"
+  ],
+  "answer": 0,
+  "en": "M: What's wrong? You look upset.\nF: My computer suddenly stopped working.\nM: Is it turned on?\nF: Yes, that's fine. The screen comes on, but I can't type.\nM: Isn't the keyboard cable unplugged?\nF: Oh, you're right. It was unplugged.",
+  "why": "The keyboard cable was unplugged. The power was on and the screen worked."
+ },
+ {
+  "id": "dl018",
+  "intro": "男の人と女の人が電話で話しています。二人は何時に会いますか。",
+  "question": "二人は何時に会いますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "あしたの映画、何時に会おうか。映画は2時からだよね。"
+   },
+   {
+    "s": "F",
+    "t": "うん。1時半に映画館の前でどう？"
+   },
+   {
+    "s": "M",
+    "t": "その前にお昼ご飯、一緒に食べない？"
+   },
+   {
+    "s": "F",
+    "t": "いいね。じゃあ、12時に駅で会おう。"
+   },
+   {
+    "s": "M",
+    "t": "あ、でも、ぼく、午前中に歯医者の予約があって、終わるのが12時なんだ。駅まで20分ぐらいかかるから……。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、30分おそくしようか。"
+   },
+   {
+    "s": "M",
+    "t": "うん、そうしてくれると助かる。"
+   }
+  ],
+  "options": [
+   "12時半",
+   "12時",
+   "1時半",
+   "2時"
+  ],
+  "answer": 0,
+  "en": "M: What time shall we meet for the movie tomorrow? It starts at two, right?\nF: Yes. How about 1:30 in front of the theater?\nM: Why don't we have lunch together before that?\nF: Sounds good. Then let's meet at the station at twelve.\nM: Oh, but I have a dentist appointment in the morning that ends at twelve. It takes about twenty minutes to the station...\nF: Then shall we make it thirty minutes later?\nM: Yes, that would help.",
+  "why": "They first plan 12:00, but he has the dentist until 12, so they move it 30 minutes later to 12:30."
+ },
+ {
+  "id": "dl019",
+  "intro": "女の人と男の人が話しています。男の人がスマホを新しくした一番の理由は何ですか。",
+  "question": "男の人がスマホを新しくした一番の理由は何ですか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "あれ、スマホ、新しくしたの？"
+   },
+   {
+    "s": "M",
+    "t": "うん。"
+   },
+   {
+    "s": "F",
+    "t": "前のは落としてこわれたんだっけ？"
+   },
+   {
+    "s": "M",
+    "t": "ううん、落としたけど、こわれなかったんだ。でんちがすぐなくなるから、かえたんだよ。"
+   },
+   {
+    "s": "F",
+    "t": "古かったもんね。"
+   },
+   {
+    "s": "M",
+    "t": "一番の理由はそれ。あと、写真もきれいにとれるし。"
+   }
+  ],
+  "options": [
+   "写真がきれいにとれるから",
+   "安く売っていたから",
+   "でんちがすぐなくなるから",
+   "落としてこわれたから"
+  ],
+  "answer": 2,
+  "en": "F: Oh, did you get a new phone?\nM: Yeah.\nF: Did your old one break when you dropped it?\nM: No, I dropped it but it didn't break. I changed it because the battery ran out so fast.\nF: It was old, after all.\nM: That's the main reason. Also, it takes nicer photos.",
+  "why": "He says the main reason is that the battery ran out fast. The phone didn't break, and the photos are only an extra reason."
+ },
+ {
+  "id": "dl020",
+  "intro": "会社で男の人と女の人が話しています。女の人は、新しい人を受付に迎えに行ったあと、まず何をしますか。",
+  "question": "女の人は、新しい人を受付に迎えに行ったあと、まず何をしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "石田さん、今日から入る新しい人に、会社の中をあんないしてもらえますか。"
+   },
+   {
+    "s": "F",
+    "t": "はい、分かりました。いつがいいですか。"
+   },
+   {
+    "s": "M",
+    "t": "9時半に来るから、受付まで迎えに行ってください。あんないの前に、人事部で書類を書いてもらうので、まずそこへ連れていってください。"
+   },
+   {
+    "s": "F",
+    "t": "はい。じゃ、そのあとで会社の中をあんないすればいいですね。"
+   },
+   {
+    "s": "M",
+    "t": "ええ、お願いします。"
+   }
+  ],
+  "options": [
+   "書類の書き方を教える",
+   "人事部へ連れていく",
+   "会社の中をあんないする",
+   "自分の仕事を説明する"
+  ],
+  "answer": 1,
+  "en": "M: Ms. Ishida, could you show the new person starting today around the office?\nF: Yes, of course. When would be good?\nM: They arrive at 9:30, so please meet them at reception. Before the tour, they need to fill in papers at Human Resources, so take them there first.\nF: OK. So I'll show them around after that.\nM: Yes, please.",
+  "why": "Before the tour the new person must fill in papers at HR, so she takes them to HR first. The tour comes after that."
+ },
+ {
+  "id": "dl021",
+  "intro": "美容院で女の人と店の人が話しています。女の人は髪をどのようにしますか。",
+  "question": "女の人は髪をどのようにしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "今日はどうしますか。"
+   },
+   {
+    "s": "F",
+    "t": "あつくなってきたので、みじかくしたいんです。かたぐらいまで。"
+   },
+   {
+    "s": "M",
+    "t": "いいですね。前髪はどうしますか。"
+   },
+   {
+    "s": "F",
+    "t": "前髪は長いままでいいです。あ、やっぱり少しだけ切ってください。目に入るので。"
+   },
+   {
+    "s": "M",
+    "t": "分かりました。色はどうしますか。"
+   },
+   {
+    "s": "F",
+    "t": "色は今日はいいです。"
+   }
+  ],
+  "options": [
+   "かたまで切って、色も変える",
+   "かたまで切って、前髪も少し切る",
+   "かたまで切って、前髪は切らない",
+   "前髪だけ少し切る"
+  ],
+  "answer": 1,
+  "en": "M: What would you like today?\nF: It's getting hot, so I want it shorter. About to my shoulders.\nM: Nice. What about your bangs?\nF: Leave the bangs long. Oh, actually, please cut them a little. They get in my eyes.\nM: OK. What about color?\nF: No color today.",
+  "why": "She first says to leave the bangs, then changes her mind and asks for them to be cut a little. She doesn't want color."
+ },
+ {
+  "id": "dl022",
+  "intro": "女の人と男の人が話しています。男の人が一番うれしいことは何ですか。",
+  "question": "男の人が一番うれしいことは何ですか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "うれしそうだね、何かあったの？"
+   },
+   {
+    "s": "M",
+    "t": "うん。この前受けた試験、合格したんだ。"
+   },
+   {
+    "s": "F",
+    "t": "すごい、おめでとう。"
+   },
+   {
+    "s": "M",
+    "t": "ありがとう。でも、それよりうれしいのは、ずっと会いたかった高校の友だちから、きのうれんらくがあったことなんだ。"
+   }
+  ],
+  "options": [
+   "友だちにほめられたこと",
+   "高校の友だちかられんらくが来たこと",
+   "新しい仕事が決まったこと",
+   "試験に合格したこと"
+  ],
+  "answer": 1,
+  "en": "F: You look happy. Did something happen?\nM: Yeah. I passed the exam I took the other day.\nF: Wow, congratulations.\nM: Thanks. But what makes me even happier is that a high school friend I've wanted to see for ages contacted me yesterday.",
+  "why": "He says 'それよりうれしいのは' hearing from his high school friend. Passing the exam makes him happy, but less so."
+ },
+ {
+  "id": "dl023",
+  "intro": "会社で男の人と女の人が話しています。男の人はこれからどこでコピーしますか。",
+  "question": "男の人はこれからどこでコピーしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、この書類、50まいコピーしたいんですが、コピー機が動かないんです。"
+   },
+   {
+    "s": "F",
+    "t": "ああ、紙がないのかもしれませんね。……あ、紙は入っています。たぶんこしょうですね。"
+   },
+   {
+    "s": "M",
+    "t": "困ったな。3時の会議で使うんです。"
+   },
+   {
+    "s": "F",
+    "t": "2かいのコピー機を使ったらどうですか。"
+   },
+   {
+    "s": "M",
+    "t": "2かいは今、工事中で入れないんですよ。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、駅前のコンビニでコピーしてきたら？会社のカードで払えますよ。"
+   },
+   {
+    "s": "M",
+    "t": "そうですね。そうします。"
+   }
+  ],
+  "options": [
+   "この部屋のコピー機",
+   "ほかの会社",
+   "2かいのコピー機",
+   "駅前のコンビニ"
+  ],
+  "answer": 3,
+  "en": "M: Excuse me, I want to make 50 copies of this document, but the copier isn't working.\nF: Maybe it's out of paper... Oh, there's paper. It's probably broken.\nM: That's a problem. I need them for the three o'clock meeting.\nF: Why don't you use the copier on the second floor?\nM: The second floor is under construction, so we can't go in.\nF: Then how about copying them at the convenience store by the station? You can pay with the company card.\nM: Good idea. I'll do that.",
+  "why": "The copier here is broken and the second floor is closed for construction, so he goes to the convenience store."
+ },
+ {
+  "id": "dl024",
+  "intro": "男の人と女の人が旅行について話しています。女の人は何が心配ですか。",
+  "question": "女の人は何が心配ですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "来週の北海道旅行、楽しみだね。"
+   },
+   {
+    "s": "F",
+    "t": "うん。でも、ちょっと心配なことがあって。"
+   },
+   {
+    "s": "M",
+    "t": "天気？雪が多いって言ってたよね。"
+   },
+   {
+    "s": "F",
+    "t": "雪は平気。寒いのも好きだし。それより、飛行機が苦手なの。ゆれるとこわくて。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。じゃ、なるべく前の席を取ろうか。ゆれにくいって聞いたよ。"
+   }
+  ],
+  "options": [
+   "席が取れないこと",
+   "飛行機に乗ること",
+   "雪が多いこと",
+   "寒いこと"
+  ],
+  "answer": 1,
+  "en": "M: I'm looking forward to our trip to Hokkaido next week.\nF: Me too. But there's something I'm a little worried about.\nM: The weather? You said there'd be lots of snow.\nF: Snow is fine. I like the cold too. The thing is, I don't like planes. I get scared when they shake.\nM: I see. Then let's try to get seats near the front. I hear they shake less.",
+  "why": "She is afraid of planes shaking. She says snow and cold are fine."
+ },
+ {
+  "id": "dl025",
+  "intro": "家具の店で女の人と店の人が話しています。ソファはいつとどきますか。",
+  "question": "ソファはいつとどきますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "このソファ、配達してもらえますか。"
+   },
+   {
+    "s": "M",
+    "t": "はい。いつがよろしいですか。"
+   },
+   {
+    "s": "F",
+    "t": "今週の土曜日にお願いします。"
+   },
+   {
+    "s": "M",
+    "t": "申しわけありません。土曜日はもういっぱいでして、日曜日か、来週の火曜日ならだいじょうぶです。"
+   },
+   {
+    "s": "F",
+    "t": "日曜日は出かけるので……。火曜日は仕事ですけど、夕方なら家にいます。"
+   },
+   {
+    "s": "M",
+    "t": "では、火曜日の夕方6時ごろでいかがですか。"
+   },
+   {
+    "s": "F",
+    "t": "はい、それでお願いします。"
+   }
+  ],
+  "options": [
+   "今週の土曜日",
+   "来週の火曜日の夕方",
+   "今週の日曜日",
+   "来週の火曜日の朝"
+  ],
+  "answer": 1,
+  "en": "F: Can you deliver this sofa?\nM: Yes. When would you like it?\nF: This Saturday, please.\nM: I'm sorry, Saturday is already full. Sunday or next Tuesday is possible.\nF: I'm going out on Sunday... I work on Tuesday, but I'm home in the evening.\nM: Then how about around six on Tuesday evening?\nF: Yes, please.",
+  "why": "Saturday is full and she is out on Sunday, so it is Tuesday evening, when she is home after work."
+ },
+ {
+  "id": "dl026",
+  "intro": "女の人と男の人が話しています。男の人はどうして電車で行くことにしましたか。",
+  "question": "男の人はどうして電車で行くことにしましたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "週末、おじいちゃんの家、車で行くんでしょう？"
+   },
+   {
+    "s": "M",
+    "t": "そのつもりだったんだけど、電車で行くことにしたよ。"
+   },
+   {
+    "s": "F",
+    "t": "どうして？車のほうが楽じゃない？"
+   },
+   {
+    "s": "M",
+    "t": "楽は楽なんだけど、連休だから道がすごく込むらしいんだ。"
+   },
+   {
+    "s": "F",
+    "t": "ああ、そうか。電車のほうが安いしね。"
+   },
+   {
+    "s": "M",
+    "t": "いや、家族みんなで行くと、電車のほうが高いんだよ。でも、しかたない。"
+   }
+  ],
+  "options": [
+   "おじいちゃんに言われたから",
+   "道が込みそうだから",
+   "電車のほうが安いから",
+   "車がこわれたから"
+  ],
+  "answer": 1,
+  "en": "F: You're driving to Grandpa's house this weekend, right?\nM: I was going to, but I decided to take the train.\nF: Why? Isn't the car easier?\nM: It is easier, but it's a long weekend, so I hear the roads will be really crowded.\nF: Oh, I see. And the train is cheaper, too.\nM: No, actually, for the whole family the train costs more. But it can't be helped.",
+  "why": "He expects heavy traffic on the long weekend. The woman guesses the train is cheaper, but he says it is actually more expensive."
+ },
+ {
+  "id": "dl027",
+  "intro": "先生と女の学生が話しています。学生はあした何を持っていきますか。",
+  "question": "学生はあした何を持っていきますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "では、あしたの見学について説明します。朝8時に学校の前に集まってください。"
+   },
+   {
+    "s": "F",
+    "t": "先生、おべんとうはいりますか。"
+   },
+   {
+    "s": "M",
+    "t": "お昼は工場の食堂で食べるので、いりません。飲み物は持ってきてください。"
+   },
+   {
+    "s": "F",
+    "t": "ノートとペンはどうですか。"
+   },
+   {
+    "s": "M",
+    "t": "工場でパンフレットがもらえるので、そこに書けばいいです。ノートはいりませんが、ペンは忘れないでください。"
+   }
+  ],
+  "options": [
+   "ノートとペン",
+   "おべんとうと飲み物",
+   "飲み物とペン",
+   "おべんとうとノート"
+  ],
+  "answer": 2,
+  "en": "M: Now I'll explain tomorrow's field trip. Please gather in front of the school at 8 a.m.\nF: Do we need to bring lunch?\nM: We'll eat lunch in the factory cafeteria, so you don't need it. Please bring a drink.\nF: What about a notebook and a pen?\nM: You'll get a pamphlet at the factory, so you can write on that. You don't need a notebook, but don't forget a pen.",
+  "why": "Lunch is at the factory and notes go on the pamphlet, so they bring only a drink and a pen."
+ },
+ {
+  "id": "dl028",
+  "intro": "男の人と女の人がカフェで話しています。女の人がこのカフェによく来るのはどうしてですか。",
+  "question": "女の人がこのカフェによく来るのはどうしてですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "このカフェ、よく来るの？"
+   },
+   {
+    "s": "F",
+    "t": "うん、毎週来てる。"
+   },
+   {
+    "s": "M",
+    "t": "コーヒーがおいしいから？"
+   },
+   {
+    "s": "F",
+    "t": "コーヒーはふつうかな。ケーキもまあまあ。でも、ここ、静かで、勉強がしやすいんだ。"
+   },
+   {
+    "s": "M",
+    "t": "たしかに、静かだね。"
+   }
+  ],
+  "options": [
+   "コーヒーがおいしいから",
+   "静かで勉強しやすいから",
+   "ケーキがおいしいから",
+   "家から近いから"
+  ],
+  "answer": 1,
+  "en": "M: Do you come to this cafe often?\nF: Yes, every week.\nM: Because the coffee is good?\nF: The coffee is just OK. The cake is so-so too. But it's quiet here and easy to study.\nM: It sure is quiet.",
+  "why": "She says the coffee and cake are only average; she comes because it is quiet and good for studying."
+ },
+ {
+  "id": "dl029",
+  "intro": "家で女の人と男の人が話しています。男の人は何をしますか。",
+  "question": "男の人は何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "カレー作るの手伝ってくれる？"
+   },
+   {
+    "s": "M",
+    "t": "いいよ。何すればいい？"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、たまねぎを切ってくれる？"
+   },
+   {
+    "s": "M",
+    "t": "え、たまねぎは目が痛くなるから、ほかのことがいいな。"
+   },
+   {
+    "s": "F",
+    "t": "しかたないな。じゃ、たまねぎはわたしがやるから、にんじんとじゃがいものかわをむいてくれる？"
+   },
+   {
+    "s": "M",
+    "t": "分かった。"
+   }
+  ],
+  "options": [
+   "ご飯をたく",
+   "なべを洗う",
+   "にんじんとじゃがいものかわをむく",
+   "たまねぎを切る"
+  ],
+  "answer": 2,
+  "en": "F: Can you help me make curry?\nM: Sure. What should I do?\nF: Then could you cut the onions?\nM: Hmm, onions make my eyes hurt. I'd rather do something else.\nF: Oh well. I'll do the onions, so could you peel the carrots and potatoes?\nM: OK.",
+  "why": "He refuses the onions, so she asks him to peel the carrots and potatoes instead."
+ },
+ {
+  "id": "dl030",
+  "intro": "男の人と女の人が店の前で話しています。パン屋はどうして閉まっていますか。",
+  "question": "パン屋はどうして閉まっていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "あれ、あのパン屋、閉まってるね。今日は休みの日じゃないはずなのに。"
+   },
+   {
+    "s": "F",
+    "t": "はり紙がしてあるよ。「店主が病気のため」……じゃないね。「店の中の工事のため、今週はお休みします」だって。"
+   },
+   {
+    "s": "M",
+    "t": "そうか、新しくするのかな。じゃあ、パンは駅の前の店で買おう。"
+   },
+   {
+    "s": "F",
+    "t": "うん、そうしよう。"
+   }
+  ],
+  "options": [
+   "休みの日だから",
+   "店の中を工事しているから",
+   "店の人が病気だから",
+   "パンが売り切れたから"
+  ],
+  "answer": 1,
+  "en": "M: Huh, that bakery is closed. Today shouldn't be its day off.\nF: There's a notice. 'Because the owner is ill'... no. It says 'Closed this week for work inside the shop.'\nM: I see. Maybe they're renovating. Then let's buy bread at the shop by the station.\nF: Yes, let's.",
+  "why": "The notice says it is closed for work inside the shop. She first misreads it as illness, then corrects herself."
+ },
+ {
+  "id": "dl031",
+  "intro": "会社で女の人が電話に出ています。女の人は山本さんに何を伝えますか。",
+  "question": "女の人は山本さんに何を伝えますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "もしもし、みどり商事の前田ですが、部長の山本さんはいらっしゃいますか。"
+   },
+   {
+    "s": "F",
+    "t": "申しわけありません。山本は今、会議中です。"
+   },
+   {
+    "s": "M",
+    "t": "そうですか。じゃあ、会議が終わったら、お電話いただけるよう伝えてもらえますか。"
+   },
+   {
+    "s": "F",
+    "t": "はい。お電話番号をお願いできますか。"
+   },
+   {
+    "s": "M",
+    "t": "山本さんは知っていると思いますが、念のため、090-1234-5678です。"
+   },
+   {
+    "s": "F",
+    "t": "かしこまりました。"
+   },
+   {
+    "s": "M",
+    "t": "あ、すみません。午後は外に出るので、やっぱりメールでお願いしますと伝えてください。"
+   },
+   {
+    "s": "F",
+    "t": "はい、メールでですね。伝えておきます。"
+   }
+  ],
+  "options": [
+   "前田さんに電話をすること",
+   "前田さんが会社に来ること",
+   "会議を早く終わらせること",
+   "前田さんにメールをすること"
+  ],
+  "answer": 3,
+  "en": "M: Hello, this is Maeda from Midori Trading. Is Mr. Yamamoto, the manager, there?\nF: I'm sorry, Yamamoto is in a meeting right now.\nM: I see. Then could you tell him to call me when the meeting is over?\nF: Certainly. May I have your phone number?\nM: I think he knows it, but just in case, it's 090-1234-5678.\nF: Certainly.\nM: Oh, sorry. I'll be out in the afternoon, so please tell him to email me instead.\nF: Yes, by email. I'll pass that on.",
+  "why": "He first asks for a call, but at the end changes it to email because he'll be out."
+ },
+ {
+  "id": "dl032",
+  "intro": "男の人と女の人が話しています。男の人はこれから何をさがしに行きますか。",
+  "question": "男の人はこれから何をさがしに行きますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "どうしたの？かばんの中、全部出して。"
+   },
+   {
+    "s": "M",
+    "t": "かぎがないんだよ。家のかぎ。"
+   },
+   {
+    "s": "F",
+    "t": "ポケットは？"
+   },
+   {
+    "s": "M",
+    "t": "見たけど……あ、あった。上着のポケットに入ってた。でも今度はさいふがない。"
+   },
+   {
+    "s": "F",
+    "t": "さっき店で払ったときに、置いてきたんじゃない？"
+   },
+   {
+    "s": "M",
+    "t": "そうかも。ちょっと見てくる。"
+   }
+  ],
+  "options": [
+   "上着",
+   "かばん",
+   "家のかぎ",
+   "さいふ"
+  ],
+  "answer": 3,
+  "en": "F: What's wrong? You've emptied your whole bag.\nM: I can't find my key. My house key.\nF: What about your pockets?\nM: I looked... oh, here it is. It was in my jacket pocket. But now my wallet's missing.\nF: Didn't you leave it at the shop when you paid just now?\nM: Maybe. I'll go and check.",
+  "why": "He finds the key in his jacket, but then his wallet is missing, so he goes back to the shop to look for it."
+ },
+ {
+  "id": "dl033",
+  "intro": "会社で女の人と男の人が話しています。二人は何をプレゼントしますか。",
+  "question": "二人は何をプレゼントしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "山口さんの送別会のプレゼント、何にする？"
+   },
+   {
+    "s": "M",
+    "t": "花束はどう？"
+   },
+   {
+    "s": "F",
+    "t": "花もいいけど、山口さん、遠くに引っ越すから、持って帰るのが大変かも。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。じゃ、みんなでお金を出して、カメラは？写真が好きだって言ってたし。"
+   },
+   {
+    "s": "F",
+    "t": "いいけど、高すぎない？一人3000円だと、足りないよ。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、写真を入れるアルバムにしよう。それならかるいし。"
+   },
+   {
+    "s": "F",
+    "t": "うん、そうしよう。"
+   }
+  ],
+  "options": [
+   "カメラ",
+   "アルバム",
+   "写真",
+   "花束"
+  ],
+  "answer": 1,
+  "en": "F: What should we give Yamaguchi for the farewell party?\nM: How about a bouquet?\nF: Flowers are nice, but Yamaguchi is moving far away, so they might be hard to take home.\nM: I see. Then how about we all chip in for a camera? He said he likes photography.\nF: Nice, but isn't it too expensive? 3,000 yen each won't be enough.\nM: Then let's get a photo album. That's light, too.\nF: OK, let's do that.",
+  "why": "Flowers are hard to carry and a camera is too expensive, so they choose a photo album."
+ },
+ {
+  "id": "dl034",
+  "intro": "レストランで男の人と店の人が話しています。男の人は何が問題だと言っていますか。",
+  "question": "男の人は何が問題だと言っていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません。"
+   },
+   {
+    "s": "F",
+    "t": "はい、何でしょうか。"
+   },
+   {
+    "s": "M",
+    "t": "これ、ぼくが頼んだのと違うんですけど。"
+   },
+   {
+    "s": "F",
+    "t": "え、ハンバーグ定食ですよね。"
+   },
+   {
+    "s": "M",
+    "t": "定食は合ってるんですが、ご飯じゃなくてパンにしてくださいって言ったんです。"
+   },
+   {
+    "s": "F",
+    "t": "申しわけございません。すぐにお取りかえします。"
+   }
+  ],
+  "options": [
+   "ご飯ではなくパンがほしかった",
+   "料理が冷たい",
+   "頼んだ定食と違う",
+   "料理がまだ来ない"
+  ],
+  "answer": 0,
+  "en": "M: Excuse me.\nF: Yes, can I help you?\nM: This isn't what I ordered.\nF: Oh, it's the hamburger steak set, isn't it?\nM: The set is right, but I asked for bread instead of rice.\nF: I'm very sorry. I'll change it right away.",
+  "why": "The set itself is correct; the problem is that he asked for bread, not rice."
+ },
+ {
+  "id": "dl035",
+  "intro": "男の人と女の人が話しています。女の人は土曜日、まず何をしますか。",
+  "question": "女の人は土曜日、まず何をしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "土曜日、ひま？みんなで山に行くんだけど、一緒にどう？"
+   },
+   {
+    "s": "F",
+    "t": "行きたいけど、土曜日は妹の引っ越しを手伝うことになってて。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。日曜日も行く人がいるよ。"
+   },
+   {
+    "s": "F",
+    "t": "日曜日はアルバイト。でも、引っ越し、午前中に終わるかもしれないから、そしたら夕方のバーベキューだけ行こうかな。"
+   },
+   {
+    "s": "M",
+    "t": "うん、おいでよ。"
+   }
+  ],
+  "options": [
+   "山に行く",
+   "アルバイトをする",
+   "バーベキューに行く",
+   "妹の引っ越しを手伝う"
+  ],
+  "answer": 3,
+  "en": "M: Are you free on Saturday? We're all going to the mountains. Want to come?\nF: I'd like to, but I'm helping my sister move on Saturday.\nM: I see. Some people are going on Sunday too.\nF: Sunday I have my part-time job. But the move might finish in the morning, so then maybe I'll just come to the barbecue in the evening.\nM: Yes, come along.",
+  "why": "On Saturday she first helps her sister move; the barbecue is only later if the move ends early. The part-time job is on Sunday."
+ },
+ {
+  "id": "dl036",
+  "intro": "電車の中で女の人と車内の係の人が話しています。女の人はどうして席をかえたいのですか。",
+  "question": "女の人はどうして席をかえたいのですか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、席をかえてもらえませんか。"
+   },
+   {
+    "s": "M",
+    "t": "どうかなさいましたか。後ろの方のにもつがじゃまですか。"
+   },
+   {
+    "s": "F",
+    "t": "いいえ、そうじゃないんです。前の席の人の話し声が大きくて……。"
+   },
+   {
+    "s": "M",
+    "t": "そうでしたか。では、後ろのほうの席があいていますので、ごあんないします。"
+   }
+  ],
+  "options": [
+   "前の人の声がうるさいから",
+   "後ろの人のにもつがじゃまだから",
+   "窓側に座りたいから",
+   "席がせまいから"
+  ],
+  "answer": 0,
+  "en": "F: Excuse me, could I change seats?\nM: Is something wrong? Is the luggage of the person behind you in the way?\nF: No, that's not it. The people in front of me are talking so loudly...\nM: I see. There are free seats toward the back, so I'll show you.",
+  "why": "She denies the luggage problem; the reason is that the people in front are talking loudly."
+ },
+ {
+  "id": "dl037",
+  "intro": "家で女の人と男の人が話しています。男の人はまず何をしますか。",
+  "question": "男の人はまず何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "おかえり。ちょっと頼みたいことがあるんだけど。"
+   },
+   {
+    "s": "M",
+    "t": "何？"
+   },
+   {
+    "s": "F",
+    "t": "おふろ、洗ってくれる？そのあと、犬の散歩もお願い。"
+   },
+   {
+    "s": "M",
+    "t": "いいよ。でも、もう暗くなるから、散歩を先に行ってくるよ。"
+   },
+   {
+    "s": "F",
+    "t": "そうだね。じゃ、お願い。"
+   }
+  ],
+  "options": [
+   "買い物に行く",
+   "おふろを洗う",
+   "犬の散歩に行く",
+   "夕飯を作る"
+  ],
+  "answer": 2,
+  "en": "F: Welcome home. There's something I'd like you to do.\nM: What?\nF: Could you clean the bath? And after that, walk the dog.\nM: Sure. But it's getting dark, so I'll go for the walk first.\nF: Good idea. Please do.",
+  "why": "She asks for the bath first, but he says he'll walk the dog first because it's getting dark, and she agrees."
+ },
+ {
+  "id": "dl038",
+  "intro": "女の人と男の人が映画について話しています。男の人は映画の何が一番よかったと言っていますか。",
+  "question": "男の人は映画の何が一番よかったと言っていますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "きのうの映画、どうだった？"
+   },
+   {
+    "s": "M",
+    "t": "話はよく分からなかったけど、音楽がすごくよかったよ。"
+   },
+   {
+    "s": "F",
+    "t": "へえ。出ていた人は？"
+   },
+   {
+    "s": "M",
+    "t": "有名な人はあまり出てなかったけど、みんなうまかったね。でも、一番は音楽。もう一回聞きたいくらい。"
+   }
+  ],
+  "options": [
+   "出ていた人",
+   "音楽",
+   "話",
+   "景色"
+  ],
+  "answer": 1,
+  "en": "F: How was the movie yesterday?\nM: I didn't really understand the story, but the music was great.\nF: Oh? What about the actors?\nM: There weren't many famous people, but they were all good. But the best thing was the music. I'd like to hear it again.",
+  "why": "He says '一番は音楽'. The actors were good but not the best part, and he didn't understand the story."
+ },
+ {
+  "id": "dl039",
+  "intro": "大学の事務室で男の学生と女の人が話しています。男の学生はまず何をしますか。",
+  "question": "男の学生はまず何をしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、留学の申し込みをしたいんですが。"
+   },
+   {
+    "s": "F",
+    "t": "はい。この用紙に書いて、写真を一まいはって出してください。それから、先生のサインも必要です。"
+   },
+   {
+    "s": "M",
+    "t": "写真はまだとっていないんですが、用紙だけ先に出してもいいですか。"
+   },
+   {
+    "s": "F",
+    "t": "いいえ、全部そろってから出してください。しめきりは来週の金曜日です。"
+   },
+   {
+    "s": "M",
+    "t": "分かりました。じゃあ、まず写真をとってきます。"
+   },
+   {
+    "s": "F",
+    "t": "先生のサインは時間がかかることがあるので、そちらを先にもらったほうがいいですよ。"
+   },
+   {
+    "s": "M",
+    "t": "あ、そうですね。そうします。"
+   }
+  ],
+  "options": [
+   "先生にサインをもらいに行く",
+   "写真をとりに行く",
+   "申し込みの用紙を出す",
+   "しめきりの日を先生に伝える"
+  ],
+  "answer": 0,
+  "en": "M: Excuse me, I'd like to apply for study abroad.\nF: Sure. Fill in this form, attach one photo and hand it in. You also need a teacher's signature.\nM: I haven't taken a photo yet. Can I hand in just the form first?\nF: No, please hand it in when you have everything. The deadline is next Friday.\nM: OK. Then I'll go and get a photo taken first.\nF: Signatures sometimes take time, so you'd better get that first.\nM: Oh, right. I'll do that.",
+  "why": "He plans to get a photo first, but she advises getting the signature first because it takes time, and he agrees."
+ },
+ {
+  "id": "dl040",
+  "intro": "男の人と女の人が話しています。女の人はどうして病院へ行きますか。",
+  "question": "女の人はどうして病院へ行きますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "あれ、今日は会社休み？"
+   },
+   {
+    "s": "F",
+    "t": "うん、午後から病院に行くの。"
+   },
+   {
+    "s": "M",
+    "t": "どこか悪いの？"
+   },
+   {
+    "s": "F",
+    "t": "ううん、わたしじゃなくて、祖母が入院してて。今日は母が行けないから、代わりにお見舞いに。"
+   },
+   {
+    "s": "M",
+    "t": "そうなんだ。早くよくなるといいね。"
+   }
+  ],
+  "options": [
+   "仕事で行くため",
+   "母親が入院したため",
+   "入院している祖母に会うため",
+   "自分の具合が悪いため"
+  ],
+  "answer": 2,
+  "en": "M: Oh, are you off work today?\nF: Yes, I'm going to the hospital this afternoon.\nM: Are you sick?\nF: No, not me. My grandmother is in the hospital. My mother can't go today, so I'm visiting her instead.\nM: I see. I hope she gets better soon.",
+  "why": "She is visiting her grandmother, who is in hospital, in place of her mother. She herself is not sick."
+ },
+ {
+  "id": "dl041",
+  "intro": "カフェで女の人と店の人が話しています。女の人は何を注文しましたか。",
+  "question": "女の人は何を注文しましたか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "ご注文はお決まりですか。"
+   },
+   {
+    "s": "F",
+    "t": "ホットコーヒーと、このチーズケーキをお願いします。"
+   },
+   {
+    "s": "M",
+    "t": "申しわけございません。チーズケーキは今日はもう売り切れてしまいまして。"
+   },
+   {
+    "s": "F",
+    "t": "そうですか。じゃあ、チョコレートケーキは？"
+   },
+   {
+    "s": "M",
+    "t": "はい、ございます。今ならセットで100円安くなりますよ。ただ、セットの飲み物はこうちゃだけなんです。"
+   },
+   {
+    "s": "F",
+    "t": "それなら、セットにして、飲み物はこうちゃでいいです。"
+   }
+  ],
+  "options": [
+   "チーズケーキとこうちゃ",
+   "チョコレートケーキとコーヒー",
+   "チーズケーキとコーヒー",
+   "チョコレートケーキとこうちゃ"
+  ],
+  "answer": 3,
+  "en": "M: Are you ready to order?\nF: A hot coffee and this cheesecake, please.\nM: I'm very sorry. The cheesecake is already sold out today.\nF: I see. What about the chocolate cake?\nM: Yes, we have that. It's 100 yen cheaper as a set right now. But the only drink in the set is tea.\nF: In that case, I'll have the set, and tea is fine.",
+  "why": "The cheesecake is sold out, and she takes the set, which only comes with tea, so she gives up the coffee."
+ },
+ {
+  "id": "dl042",
+  "intro": "自転車の店で女の人と男の人が話しています。男の人はどうしてこの自転車を買いませんか。",
+  "question": "男の人はどうしてこの自転車を買いませんか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "その自転車、買うの？かっこいいね。"
+   },
+   {
+    "s": "M",
+    "t": "うん、色も形も気に入ってるんだけど……。"
+   },
+   {
+    "s": "F",
+    "t": "高いの？"
+   },
+   {
+    "s": "M",
+    "t": "値段は思ったより安いんだ。でも、ちょっと重くて。ぼくのアパート、エレベーターがないから、4かいまで運ぶのは大変だよ。"
+   },
+   {
+    "s": "F",
+    "t": "そうか。じゃ、ほかのを見よう。"
+   }
+  ],
+  "options": [
+   "値段が高いから",
+   "形がよくないから",
+   "重くて運ぶのが大変だから",
+   "色が気に入らないから"
+  ],
+  "answer": 2,
+  "en": "F: Are you buying that bike? It looks cool.\nM: Yeah, I like the color and the shape, but...\nF: Is it expensive?\nM: It's cheaper than I thought. But it's a bit heavy. My building has no elevator, so carrying it up to the fourth floor would be hard.\nF: I see. Then let's look at others.",
+  "why": "It is heavy and he would have to carry it up four floors. The price is lower than he expected, and he likes the color and shape."
+ },
+ {
+  "id": "dl043",
+  "intro": "会社で女の人と部長が話しています。打ち合わせはいつですか。",
+  "question": "打ち合わせはいつですか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "部長、来週の打ち合わせですが、いつがよろしいですか。"
+   },
+   {
+    "s": "M",
+    "t": "月曜日はどう？"
+   },
+   {
+    "s": "F",
+    "t": "月曜日は、わたしが一日中出かけているんです。火曜日の午後はいかがですか。"
+   },
+   {
+    "s": "M",
+    "t": "火曜日の午後は会議があるんだ。水曜日の午前中は？"
+   },
+   {
+    "s": "F",
+    "t": "はい、だいじょうぶです。"
+   },
+   {
+    "s": "M",
+    "t": "あ、ごめん、水曜日は朝からおおさかだった。木曜日の午前中にしよう。"
+   },
+   {
+    "s": "F",
+    "t": "分かりました。"
+   }
+  ],
+  "options": [
+   "火曜日の午後",
+   "月曜日",
+   "木曜日の午前",
+   "水曜日の午前"
+  ],
+  "answer": 2,
+  "en": "F: About next week's meeting, when would suit you?\nM: How about Monday?\nF: I'm out all day on Monday. How about Tuesday afternoon?\nM: I have a meeting Tuesday afternoon. What about Wednesday morning?\nF: Yes, that's fine.\nM: Oh, sorry, I'm in Osaka from Wednesday morning. Let's make it Thursday morning.\nF: Understood.",
+  "why": "They agree on Wednesday morning, but the manager remembers he is in Osaka, so it becomes Thursday morning."
+ },
+ {
+  "id": "dl044",
+  "intro": "女の人と男の人が新しい事務所について話しています。男の人は新しい事務所の何が不満ですか。",
+  "question": "男の人は新しい事務所の何が不満ですか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "新しい事務所、どうですか。"
+   },
+   {
+    "s": "M",
+    "t": "駅から近くなったし、部屋も明るくて、いいですよ。"
+   },
+   {
+    "s": "F",
+    "t": "それはよかったですね。"
+   },
+   {
+    "s": "M",
+    "t": "ただ、昼ご飯を食べる所が少ないのは困りますね。近くに店があまりないんです。"
+   },
+   {
+    "s": "F",
+    "t": "ああ、それは不便ですね。"
+   }
+  ],
+  "options": [
+   "部屋がせまいこと",
+   "部屋が暗いこと",
+   "近くに食べる店が少ないこと",
+   "駅から遠いこと"
+  ],
+  "answer": 2,
+  "en": "F: How's the new office?\nM: It's closer to the station now and the rooms are bright. It's good.\nF: That's great.\nM: But there aren't many places to eat lunch, which is a problem. There aren't many shops nearby.\nF: Oh, that's inconvenient.",
+  "why": "He says the problem is the lack of places to eat lunch. The station is closer and the rooms are bright."
+ },
+ {
+  "id": "dl045",
+  "intro": "ゆうびんきょくで女の人と男の人が話しています。女の人はこのあと何をしますか。",
+  "question": "女の人はこのあと何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、このにもつを送りたいんですが。"
+   },
+   {
+    "s": "M",
+    "t": "はい。……あ、これはこの箱だと送れないんです。箱がやぶれているので。"
+   },
+   {
+    "s": "F",
+    "t": "え、じゃあどうすれば……。"
+   },
+   {
+    "s": "M",
+    "t": "こちらで新しい箱を売っていますので、それに入れかえてください。テープもお貸しします。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、その箱を一つください。"
+   }
+  ],
+  "options": [
+   "テープを買う",
+   "新しい箱を買って入れかえる",
+   "にもつをそのまま送る",
+   "家で箱をさがす"
+  ],
+  "answer": 1,
+  "en": "F: Excuse me, I'd like to send this package.\nM: Sure... Oh, we can't send it in this box. The box is torn.\nF: Oh, then what should I do...\nM: We sell new boxes here, so please repack it in one of those. I'll lend you some tape too.\nF: Then I'll take one of those boxes.",
+  "why": "The box is torn, so she buys a new box at the counter and repacks it. The tape is lent, not bought."
+ },
+ {
+  "id": "dl046",
+  "intro": "店で男の人と店の人が話しています。店は今日何時に閉まりますか。",
+  "question": "店は今日何時に閉まりますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、このお店、何時までですか。"
+   },
+   {
+    "s": "F",
+    "t": "ふだんは夜9時までなんですが、今日は店の中の大そうじがあるので、7時に閉めるんです。"
+   },
+   {
+    "s": "M",
+    "t": "えっ、もう6時半ですね。"
+   },
+   {
+    "s": "F",
+    "t": "はい。申しわけありません。あと30分ほどです。"
+   }
+  ],
+  "options": [
+   "6時半",
+   "9時",
+   "7時",
+   "8時"
+  ],
+  "answer": 2,
+  "en": "M: Excuse me, what time does this shop close?\nF: We usually close at 9 p.m., but today there's a big cleaning inside the shop, so we close at seven.\nM: Oh, it's already 6:30.\nF: Yes, I'm sorry. About thirty minutes left.",
+  "why": "It usually closes at 9, but today it closes at 7 because of cleaning. 6:30 is the time now."
+ },
+ {
+  "id": "dl047",
+  "intro": "女の人と男の人が話しています。男の人は何を作りますか。",
+  "question": "男の人は何を作りますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "今日、母が来るの。夕飯、何か作ってくれる？"
+   },
+   {
+    "s": "M",
+    "t": "いいよ。てんぷらはどう？"
+   },
+   {
+    "s": "F",
+    "t": "母、最近、あぶらっぽいものはだめなの。"
+   },
+   {
+    "s": "M",
+    "t": "じゃ、さしみは？"
+   },
+   {
+    "s": "F",
+    "t": "魚は好きだけど、生はちょっと。"
+   },
+   {
+    "s": "M",
+    "t": "じゃ、魚をやこうか。"
+   },
+   {
+    "s": "F",
+    "t": "うん、それがいい。"
+   }
+  ],
+  "options": [
+   "肉料理",
+   "さしみ",
+   "やいた魚",
+   "てんぷら"
+  ],
+  "answer": 2,
+  "en": "F: My mother's coming today. Could you make something for dinner?\nM: Sure. How about tempura?\nF: My mother can't eat oily food lately.\nM: Then sashimi?\nF: She likes fish, but not raw.\nM: Then shall I grill some fish?\nF: Yes, that's good.",
+  "why": "Tempura is too oily and sashimi is raw, so he grills fish."
+ },
+ {
+  "id": "dl048",
+  "intro": "男の人と女の人が話しています。女の人はどうして料理教室に通っていますか。",
+  "question": "女の人はどうして料理教室に通っていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "料理教室に通ってるんだって？"
+   },
+   {
+    "s": "F",
+    "t": "うん、先月から。"
+   },
+   {
+    "s": "M",
+    "t": "けっこんするから？"
+   },
+   {
+    "s": "F",
+    "t": "ちがうよ。会社の近くに引っ越して、外で食べることが多くなったから、お金がかかって。自分で作れば安いでしょう？"
+   },
+   {
+    "s": "M",
+    "t": "なるほどね。"
+   }
+  ],
+  "options": [
+   "会社で必要だから",
+   "けっこんするから",
+   "料理が好きだから",
+   "外で食べるとお金がかかるから"
+  ],
+  "answer": 3,
+  "en": "M: I heard you're going to cooking classes?\nF: Yes, since last month.\nM: Because you're getting married?\nF: No. I moved near my office and started eating out more, so it costs a lot. If I cook myself, it's cheaper, right?\nM: I see.",
+  "why": "She eats out too much and it is expensive, so she wants to cook. She denies the marriage guess."
+ },
+ {
+  "id": "dl049",
+  "intro": "大学で男の学生と女の学生が話しています。ゼミはどこでありますか。",
+  "question": "ゼミはどこでありますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "今日のゼミ、教室が変わったって聞いた？"
+   },
+   {
+    "s": "F",
+    "t": "うん。いつもの302じゃなくて、図書館のとなりの部屋でしょう？"
+   },
+   {
+    "s": "M",
+    "t": "それが、図書館のとなりの部屋も使えなくなって、先生の研究室になったんだって。"
+   },
+   {
+    "s": "F",
+    "t": "研究室、せまいけど、だいじょうぶかな。"
+   },
+   {
+    "s": "M",
+    "t": "今日は人数が少ないから、いいらしいよ。"
+   }
+  ],
+  "options": [
+   "302の教室",
+   "先生の研究室",
+   "図書館のとなりの部屋",
+   "図書館の中"
+  ],
+  "answer": 1,
+  "en": "M: Did you hear the seminar room changed today?\nF: Yes. Not the usual 302, but the room next to the library, right?\nM: Actually, that room can't be used either, so it's in the professor's office now.\nF: The office is small. Will it be OK?\nM: Apparently it's fine since there are fewer people today.",
+  "why": "The room next to the library also became unavailable, so the seminar is in the professor's office."
+ },
+ {
+  "id": "dl050",
+  "intro": "アパートで男の人と女の人が話しています。男の人は女の人に何をしてほしいですか。",
+  "question": "男の人は女の人に何をしてほしいですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、となりの者ですが。"
+   },
+   {
+    "s": "F",
+    "t": "はい。"
+   },
+   {
+    "s": "M",
+    "t": "ゴミのことなんですが、月曜日はもえるゴミの日じゃないんです。"
+   },
+   {
+    "s": "F",
+    "t": "え、そうなんですか。"
+   },
+   {
+    "s": "M",
+    "t": "ええ。月曜日はびんとかんの日で、もえるゴミは火曜日と金曜日です。カレンダーを持ってきたので、どうぞ。"
+   },
+   {
+    "s": "F",
+    "t": "すみません、ありがとうございます。気をつけます。"
+   }
+  ],
+  "options": [
+   "カレンダーを買ってほしい",
+   "びんとかんを分けてほしい",
+   "もえるゴミを決まった日に出してほしい",
+   "月曜日にゴミを出してほしい"
+  ],
+  "answer": 2,
+  "en": "M: Excuse me, I'm your neighbor.\nF: Yes?\nM: It's about the garbage. Monday isn't the day for burnable garbage.\nF: Oh, really?\nM: Yes. Monday is for bottles and cans; burnable garbage is Tuesday and Friday. I brought you a calendar, here you are.\nF: I'm sorry, thank you. I'll be careful.",
+  "why": "She put out burnable garbage on Monday, which is the bottle-and-can day. He wants her to use Tuesday and Friday. He gives her the calendar."
+ },
+ {
+  "id": "dl051",
+  "intro": "男の人と女の人が電話で話しています。男の人は何を買っていきますか。",
+  "question": "男の人は何を買っていきますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "もしもし、ごめん、熱が出ちゃって。帰りに何か買ってきてくれない？"
+   },
+   {
+    "s": "M",
+    "t": "いいよ。薬は？"
+   },
+   {
+    "s": "F",
+    "t": "薬は家にあるからいい。スポーツドリンクとゼリーがほしいな。"
+   },
+   {
+    "s": "M",
+    "t": "分かった。ほかには？"
+   },
+   {
+    "s": "F",
+    "t": "あ、スポーツドリンクはれいぞうこにまだ一本あった。だから、ゼリーだけでいい。"
+   },
+   {
+    "s": "M",
+    "t": "分かった。すぐ帰るね。"
+   }
+  ],
+  "options": [
+   "スポーツドリンクとゼリー",
+   "ゼリー",
+   "薬",
+   "薬とゼリー"
+  ],
+  "answer": 1,
+  "en": "F: Hello, sorry, I've got a fever. Could you buy something on your way home?\nM: Sure. Medicine?\nF: I have medicine at home, so that's fine. I'd like a sports drink and some jelly.\nM: OK. Anything else?\nF: Oh, there's still one sports drink in the fridge. So just jelly is fine.\nM: Got it. I'll be home soon.",
+  "why": "She has medicine, and then finds a sports drink in the fridge, so only jelly is needed."
+ },
+ {
+  "id": "dl052",
+  "intro": "家で女の人と男の人が話しています。男の人はどうして早く帰ってきましたか。",
+  "question": "男の人はどうして早く帰ってきましたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "あら、早いね。今日は残業じゃなかったの？"
+   },
+   {
+    "s": "M",
+    "t": "その予定だったんだけど、会社のエレベーターが止まって、ビル全体の電気を調べることになったんだ。"
+   },
+   {
+    "s": "F",
+    "t": "それで？"
+   },
+   {
+    "s": "M",
+    "t": "だから、全員早く帰ることになったんだよ。"
+   }
+  ],
+  "options": [
+   "具合が悪くなったから",
+   "会議が中止になったから",
+   "仕事が早く終わったから",
+   "ビルの電気を調べることになったから"
+  ],
+  "answer": 3,
+  "en": "F: Oh, you're early. Weren't you working overtime today?\nM: I was supposed to, but the elevator stopped and they decided to check the electricity in the whole building.\nF: And?\nM: So everyone was sent home early.",
+  "why": "The whole building's electricity was being checked, so everyone went home. He had planned overtime, so his work did not end early."
+ },
+ {
+  "id": "dl053",
+  "intro": "旅行会社で女の人と男の人が話しています。女の人はこのあと、まず何をしますか。",
+  "question": "女の人はこのあと、まず何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "来月の旅行の申し込みをしたいんですが。"
+   },
+   {
+    "s": "M",
+    "t": "はい。どちらの旅行でしょうか。"
+   },
+   {
+    "s": "F",
+    "t": "この、おんせんに行く二日間のコースです。"
+   },
+   {
+    "s": "M",
+    "t": "ありがとうございます。こちらの用紙に書いていただくのですが、ご一緒に行かれる方のお名前と生まれた日も必要です。"
+   },
+   {
+    "s": "F",
+    "t": "あ、友だちの生まれた日は分からないです。"
+   },
+   {
+    "s": "M",
+    "t": "では、先に聞いていただけますか。用紙はお持ち帰りいただいてけっこうです。"
+   },
+   {
+    "s": "F",
+    "t": "分かりました。じゃ、すぐに電話して聞いてみます。"
+   }
+  ],
+  "options": [
+   "ほかのコースを選ぶ",
+   "友だちに電話する",
+   "用紙を出す",
+   "旅行のお金を払う"
+  ],
+  "answer": 1,
+  "en": "F: I'd like to sign up for a trip next month.\nM: Certainly. Which trip?\nF: This two-day hot spring tour.\nM: Thank you. Please fill in this form. We also need the name and date of birth of the person traveling with you.\nF: Oh, I don't know my friend's date of birth.\nM: Then could you ask first? You may take the form home.\nF: Understood. I'll call and ask right away.",
+  "why": "She needs her friend's date of birth for the form, so she calls her friend first. She cannot hand in the form yet."
+ },
+ {
+  "id": "dl054",
+  "intro": "男の学生と女の学生が話しています。女の学生は新しい先生の何が困ると言っていますか。",
+  "question": "女の学生は新しい先生の何が困ると言っていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "新しい英語の先生、どう？"
+   },
+   {
+    "s": "F",
+    "t": "説明は分かりやすいよ。宿題も多くないし。"
+   },
+   {
+    "s": "M",
+    "t": "いいじゃない。"
+   },
+   {
+    "s": "F",
+    "t": "うん。でも、声が小さくて、後ろの席だと聞こえないんだよね。それが困る。"
+   }
+  ],
+  "options": [
+   "宿題が多いこと",
+   "説明が分かりにくいこと",
+   "声が小さいこと",
+   "後ろの席に座らせること"
+  ],
+  "answer": 2,
+  "en": "M: How's the new English teacher?\nF: Her explanations are easy to understand. And there isn't much homework.\nM: Sounds good.\nF: Yeah. But her voice is quiet, so you can't hear from the back seats. That's the problem.",
+  "why": "The problem is her quiet voice. She says the explanations are clear and the homework is light."
+ },
+ {
+  "id": "dl055",
+  "intro": "駅で男の人と駅の人が話しています。男の人はこれからどうしますか。",
+  "question": "男の人はこれからどうしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、きのう電車にかさを忘れたんですが。"
+   },
+   {
+    "s": "F",
+    "t": "どの電車か分かりますか。"
+   },
+   {
+    "s": "M",
+    "t": "夜7時ごろ、この駅で降りた電車です。"
+   },
+   {
+    "s": "F",
+    "t": "少々お待ちください。……ありました。黒いかさですね。終点の駅にとどいています。"
+   },
+   {
+    "s": "M",
+    "t": "そうですか。取りに行かないといけませんか。"
+   },
+   {
+    "s": "F",
+    "t": "いいえ、こちらに送ることもできますが、3日ぐらいかかります。"
+   },
+   {
+    "s": "M",
+    "t": "あしたも使いたいので、今から取りに行きます。"
+   }
+  ],
+  "options": [
+   "終点の駅にかさを取りに行く",
+   "3日後にまた来る",
+   "新しいかさを買う",
+   "かさをこの駅に送ってもらう"
+  ],
+  "answer": 0,
+  "en": "M: Excuse me, I left my umbrella on a train yesterday.\nF: Do you know which train?\nM: The one I got off at this station around 7 p.m.\nF: Please wait a moment... Here it is. A black umbrella. It's at the last station on the line.\nM: I see. Do I have to go and get it?\nF: No, we can send it here, but it takes about three days.\nM: I want to use it tomorrow, so I'll go and get it now.",
+  "why": "Sending it takes three days and he needs it tomorrow, so he goes to the last station to pick it up."
+ },
+ {
+  "id": "dl056",
+  "intro": "男の人と女の人が話しています。女の人はどうしてつかれていますか。",
+  "question": "女の人はどうしてつかれていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "つかれた顔してるね。また夜おそくまで仕事？"
+   },
+   {
+    "s": "F",
+    "t": "ううん、仕事は早く終わったの。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、何？"
+   },
+   {
+    "s": "F",
+    "t": "上の部屋の人が夜中にせんたく機を使うから、その音で起きちゃって。"
+   }
+  ],
+  "options": [
+   "朝早く起きたから",
+   "せんたくをしたから",
+   "夜中の音で眠れなかったから",
+   "仕事がおそくまであったから"
+  ],
+  "answer": 2,
+  "en": "M: You look tired. Working late again?\nF: No, work finished early.\nM: Then what?\nF: The person upstairs uses the washing machine in the middle of the night, and the noise wakes me up.",
+  "why": "Her upstairs neighbor's washing machine woke her at night. Her work actually ended early."
+ },
+ {
+  "id": "dl057",
+  "intro": "女の人と男の人が話しています。男の人はあした、どうしますか。",
+  "question": "男の人はあした、どうしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "あしたのめんせつ、何を着ていくの？"
+   },
+   {
+    "s": "M",
+    "t": "黒いスーツにしようと思ってるんだけど。"
+   },
+   {
+    "s": "F",
+    "t": "黒はあつくない？あした、すごくあつくなるって。"
+   },
+   {
+    "s": "M",
+    "t": "でも、めんせつだし、スーツじゃないと……。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、上着は持っていって、会社に着く前に着たら？"
+   },
+   {
+    "s": "M",
+    "t": "そうだね。そうするよ。"
+   }
+  ],
+  "options": [
+   "白い上着を着ていく",
+   "スーツを着ないで行く",
+   "上着を家に置いていく",
+   "上着は会社に着く前に着る"
+  ],
+  "answer": 3,
+  "en": "F: What are you wearing to tomorrow's interview?\nM: I'm thinking of my black suit.\nF: Isn't black hot? They say it'll be really hot tomorrow.\nM: But it's an interview, so it has to be a suit...\nF: Then why not carry the jacket and put it on before you get to the company?\nM: Good idea. I'll do that.",
+  "why": "He keeps the black suit but carries the jacket and puts it on just before arriving. He does not go without a suit."
+ },
+ {
+  "id": "dl058",
+  "intro": "店で女の人と店の人が話しています。女の人は何をしてほしいですか。",
+  "question": "女の人は何をしてほしいですか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、この靴、きのう買ったんですが。"
+   },
+   {
+    "s": "M",
+    "t": "はい。サイズが合いませんでしたか。"
+   },
+   {
+    "s": "F",
+    "t": "いいえ、サイズはいいんです。ここに小さいきずがあって。"
+   },
+   {
+    "s": "M",
+    "t": "申しわけございません。お取りかえしましょうか。それとも、お金をお返ししましょうか。"
+   },
+   {
+    "s": "F",
+    "t": "この靴がとても気に入ってるので、同じものと取りかえてください。"
+   }
+  ],
+  "options": [
+   "同じ靴と取りかえてほしい",
+   "きずを直してほしい",
+   "大きいサイズにしてほしい",
+   "お金を返してほしい"
+  ],
+  "answer": 0,
+  "en": "F: Excuse me, I bought these shoes yesterday.\nM: Yes. Didn't the size fit?\nF: No, the size is fine. There's a small scratch here.\nM: I'm very sorry. Shall we exchange them, or give you a refund?\nF: I really like these shoes, so please exchange them for the same pair.",
+  "why": "She likes the shoes, so she wants the same pair, not a refund. The size is fine."
+ },
+ {
+  "id": "dl059",
+  "intro": "大学で女の学生と先生が話しています。女の学生はこのあと何をしますか。",
+  "question": "女の学生はこのあと何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "先生、来週の発表なんですが、わたしは何番目ですか。"
+   },
+   {
+    "s": "M",
+    "t": "小川さんは三番目です。"
+   },
+   {
+    "s": "F",
+    "t": "あの、実はその日、病院の予約があって、早く帰らなければならないんです。じゅんばんをかえてもらえませんか。"
+   },
+   {
+    "s": "M",
+    "t": "そうですか。じゃあ、一番目にしますか。"
+   },
+   {
+    "s": "F",
+    "t": "一番目は、ちょっと……じゅんびが間に合わないかもしれません。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、二番目の人と相談して、かわってもらってください。"
+   },
+   {
+    "s": "F",
+    "t": "はい、分かりました。"
+   }
+  ],
+  "options": [
+   "二番目の人と話す",
+   "病院の予約をかえる",
+   "一番目に発表する",
+   "三番目に発表する"
+  ],
+  "answer": 0,
+  "en": "F: Professor, about next week's presentations, what number am I?\nM: You're third, Ms. Ogawa.\nF: Um, actually I have a hospital appointment that day and need to leave early. Could I change my place?\nM: I see. Then would you like to go first?\nF: First is a bit... I might not be ready in time.\nM: Then talk to the second person and ask them to swap with you.\nF: Yes, I will.",
+  "why": "She refuses going first, so the teacher tells her to ask the second presenter to swap."
+ },
+ {
+  "id": "dl060",
+  "intro": "女の人と男の人がホテルについて話しています。男の人はどうしてこのホテルを選びましたか。",
+  "question": "男の人はどうしてこのホテルを選びましたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "このホテル、どうやって見つけたの？"
+   },
+   {
+    "s": "M",
+    "t": "ネットで調べたんだ。駅からはちょっと遠いけど、朝ご飯がおいしいって書いてあったから。"
+   },
+   {
+    "s": "F",
+    "t": "部屋からの景色もきれいだね。"
+   },
+   {
+    "s": "M",
+    "t": "うん、でもそれは知らなかった。来てびっくりしたよ。"
+   }
+  ],
+  "options": [
+   "部屋からの景色がきれいだから",
+   "料金が安いから",
+   "駅から近いから",
+   "朝ご飯がおいしいと書いてあったから"
+  ],
+  "answer": 3,
+  "en": "F: How did you find this hotel?\nM: I looked online. It's a bit far from the station, but it said the breakfast is good.\nF: The view from the room is beautiful too.\nM: Yes, but I didn't know about that. I was surprised when we got here.",
+  "why": "He chose it because of the good breakfast. He didn't know about the view beforehand, and it is far from the station."
+ },
+ {
+  "id": "dl061",
+  "intro": "スポーツクラブで女の人と男の人が話しています。女の人はまず何をしますか。",
+  "question": "女の人はまず何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、プールを使いたいんですが、初めてなんです。"
+   },
+   {
+    "s": "M",
+    "t": "では、会員カードを作りますので、こちらの用紙に書いてください。"
+   },
+   {
+    "s": "F",
+    "t": "はい。"
+   },
+   {
+    "s": "M",
+    "t": "それから、プールでは、ぼうしをかぶらなければなりません。お持ちですか。"
+   },
+   {
+    "s": "F",
+    "t": "いいえ、持っていません。今、買えますか。"
+   },
+   {
+    "s": "M",
+    "t": "はい、こちらで売っています。でも、先に用紙を書いてください。カードができるまで10分ぐらいかかりますので。"
+   },
+   {
+    "s": "F",
+    "t": "分かりました。"
+   }
+  ],
+  "options": [
+   "ぼうしを買う",
+   "用紙に名前などを書く",
+   "プールに入る",
+   "着がえる"
+  ],
+  "answer": 1,
+  "en": "F: Excuse me, I'd like to use the pool. It's my first time.\nM: Then we'll make a membership card, so please fill in this form.\nF: OK.\nM: Also, you must wear a cap in the pool. Do you have one?\nF: No, I don't. Can I buy one now?\nM: Yes, we sell them here. But please fill in the form first. The card takes about ten minutes to make.\nF: I see.",
+  "why": "She wants to buy a cap now, but he tells her to fill in the form first because the card takes time."
+ },
+ {
+  "id": "dl062",
+  "intro": "男の人と女の人が話しています。女の人はどうしてケーキを食べませんか。",
+  "question": "女の人はどうしてケーキを食べませんか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "ケーキ、食べないの？好きだったよね。"
+   },
+   {
+    "s": "F",
+    "t": "うん、好きなんだけど、今はやめてるの。"
+   },
+   {
+    "s": "M",
+    "t": "ダイエット？"
+   },
+   {
+    "s": "F",
+    "t": "ちがうの。歯医者に行ったら、むし歯があるって言われて。治るまではがまんしてるの。"
+   }
+  ],
+  "options": [
+   "おなかがいっぱいだから",
+   "ダイエットをしているから",
+   "ケーキがきらいになったから",
+   "むし歯が治るまでがまんしているから"
+  ],
+  "answer": 3,
+  "en": "M: Aren't you having cake? You used to love it.\nF: Yes, I like it, but I've stopped for now.\nM: Diet?\nF: No. The dentist said I have a cavity. I'm holding off until it's treated.",
+  "why": "She has a cavity and is avoiding sweets until it is treated. She denies the diet guess."
+ },
+ {
+  "id": "dl063",
+  "intro": "男の人と女の人が週末について話しています。二人は日曜日に何をしますか。",
+  "question": "二人は日曜日に何をしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "週末、天気がよかったら海に行かない？"
+   },
+   {
+    "s": "F",
+    "t": "いいね。でも、天気予報だと、土曜日は雨みたいだよ。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、日曜日は？"
+   },
+   {
+    "s": "F",
+    "t": "日曜日は晴れるって。でも、日曜日の夜は、わたしの友だちが遊びに来るんだ。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、日曜日の朝早く出て、夕方に帰ってこよう。"
+   },
+   {
+    "s": "F",
+    "t": "うん、そうしよう。土曜日は家で映画でも見ようか。"
+   }
+  ],
+  "options": [
+   "友だちの家に行く",
+   "海に行く",
+   "家で映画を見る",
+   "雨なので家にいる"
+  ],
+  "answer": 1,
+  "en": "M: If the weather's nice this weekend, shall we go to the beach?\nF: Sounds good. But the forecast says rain on Saturday.\nM: What about Sunday?\nF: It'll be sunny on Sunday. But a friend of mine is coming over Sunday night.\nM: Then let's leave early Sunday morning and come back in the evening.\nF: Yes, let's. On Saturday, shall we watch a movie at home?",
+  "why": "Saturday will rain, so they go to the beach on Sunday and come back before the friend visits. The movie is for Saturday."
+ },
+ {
+  "id": "dl064",
+  "intro": "電車の中で男の人と女の人が話しています。電車はどうして止まっていますか。",
+  "question": "電車はどうして止まっていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "電車、ぜんぜん動かないね。"
+   },
+   {
+    "s": "F",
+    "t": "さっき放送があったよ。前の駅で、具合が悪くなったお客さんがいて、その手当てをしているんだって。"
+   },
+   {
+    "s": "M",
+    "t": "じこじゃなくてよかった。"
+   },
+   {
+    "s": "F",
+    "t": "うん。10分ぐらいで動くって言ってたよ。"
+   }
+  ],
+  "options": [
+   "じこがあったから",
+   "前の電車が遅れているから",
+   "具合が悪くなった客がいるから",
+   "雨が強いから"
+  ],
+  "answer": 2,
+  "en": "M: The train isn't moving at all.\nF: There was an announcement a moment ago. A passenger at the previous station got sick, and they're taking care of them.\nM: Good thing it's not an accident.\nF: Yes. They said it'll move in about ten minutes.",
+  "why": "A passenger got sick at the previous station. The man says it is not an accident."
+ },
+ {
+  "id": "dl065",
+  "intro": "服の店で女の人と店の人が話しています。女の人はどうしますか。",
+  "question": "女の人はどうしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "このワンピースのMサイズ、ありますか。"
+   },
+   {
+    "s": "M",
+    "t": "すみません、Mサイズは今、店にないんです。ほかの店から取り寄せることはできますが、三日ほどかかります。"
+   },
+   {
+    "s": "F",
+    "t": "そうですか。来週のパーティーで着たいので、それなら間に合いますね。"
+   },
+   {
+    "s": "M",
+    "t": "はい。それか、Lサイズなら今ありますが、着てみますか。"
+   },
+   {
+    "s": "F",
+    "t": "Lは大きいと思うので、取り寄せてください。"
+   }
+  ],
+  "options": [
+   "Mサイズを取り寄せてもらう",
+   "ほかの店に行く",
+   "Lサイズを買う",
+   "Lサイズを着てみる"
+  ],
+  "answer": 0,
+  "en": "F: Do you have this dress in size M?\nM: Sorry, we don't have M in the store now. We can order it from another store, but it takes about three days.\nF: I see. I want to wear it to a party next week, so that'll be in time.\nM: Yes. Or we have size L now. Would you like to try it on?\nF: I think L would be too big, so please order the M.",
+  "why": "She declines trying on the L and asks the shop to order the M, which will arrive in time."
+ },
+ {
+  "id": "dl066",
+  "intro": "会社で女の人と男の人が話しています。男の人は今、週末に何をしていますか。",
+  "question": "男の人は今、週末に何をしていますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "山田さんは週末、何をしているんですか。前はよくつりに行っていましたよね。"
+   },
+   {
+    "s": "M",
+    "t": "つりは最近やめちゃって。今は、料理にはまっているんです。週末は家でパンをやいています。"
+   },
+   {
+    "s": "F",
+    "t": "へえ、すごいですね。料理教室に通っているんですか。"
+   },
+   {
+    "s": "M",
+    "t": "いえ、ネットを見て、自分で作っています。"
+   }
+  ],
+  "options": [
+   "つりに行っている",
+   "家でパンを作っている",
+   "山に登っている",
+   "料理教室に通っている"
+  ],
+  "answer": 1,
+  "en": "F: What do you do on weekends, Mr. Yamada? You used to go fishing a lot.\nM: I quit fishing recently. Now I'm into cooking. On weekends I bake bread at home.\nF: Wow, amazing. Do you go to cooking classes?\nM: No, I learn online and make it myself.",
+  "why": "He bakes bread at home on weekends. He quit fishing and does not go to cooking classes."
+ },
+ {
+  "id": "dl067",
+  "intro": "会社で男の人と女の人が話しています。女の人は書類をどうしますか。",
+  "question": "女の人は書類をどうしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "大野さん、この書類、部長に出しておいてくれる？"
+   },
+   {
+    "s": "F",
+    "t": "はい。今、部長は席にいらっしゃらないので、つくえの上に置いておきます。"
+   },
+   {
+    "s": "M",
+    "t": "いや、大事な書類だから、ちょくせつわたして。部長は3時に戻るよ。"
+   },
+   {
+    "s": "F",
+    "t": "分かりました。それまで、わたしが持っていますね。"
+   }
+  ],
+  "options": [
+   "すぐに部長に送る",
+   "男の人に返す",
+   "部長のつくえに置く",
+   "3時に部長にちょくせつわたす"
+  ],
+  "answer": 3,
+  "en": "M: Ms. Ono, could you give this document to the manager?\nF: Sure. He's not at his desk now, so I'll leave it on his desk.\nM: No, it's important, so hand it to him directly. He'll be back at three.\nF: Understood. I'll keep it until then.",
+  "why": "She plans to leave it on the desk, but he says to hand it over directly when the manager returns at three."
+ },
+ {
+  "id": "dl068",
+  "intro": "男の人と女の人が話しています。女の人はどうして引っ越しますか。",
+  "question": "女の人はどうして引っ越しますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "引っ越すの？今のマンション、広くてきれいじゃない。"
+   },
+   {
+    "s": "F",
+    "t": "うん、部屋は気に入ってるんだけど、会社が遠くなったのよ。"
+   },
+   {
+    "s": "M",
+    "t": "ああ、事務所がうつったんだっけ。"
+   },
+   {
+    "s": "F",
+    "t": "そう。今は電車で1時間半もかかるの。"
+   }
+  ],
+  "options": [
+   "部屋が古いから",
+   "やちんが高いから",
+   "部屋がせまいから",
+   "会社まで時間がかかるから"
+  ],
+  "answer": 3,
+  "en": "M: You're moving? Your apartment now is big and nice.\nF: Yes, I like the place, but my office is far now.\nM: Oh, your office moved, didn't it?\nF: Yes. Now it takes an hour and a half by train.",
+  "why": "Her office moved and the commute is now 90 minutes. She likes the apartment itself."
+ },
+ {
+  "id": "dl069",
+  "intro": "女の人と男の人が話しています。男の人はおばあさんに何をあげますか。",
+  "question": "男の人はおばあさんに何をあげますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "おばあちゃんのたんじょう日、何あげる？"
+   },
+   {
+    "s": "M",
+    "t": "去年はセーターをあげたから、今年は花にしようと思うんだけど。"
+   },
+   {
+    "s": "F",
+    "t": "花はお母さんがあげるって言ってたよ。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。じゃ、おかしは？おばあちゃん、あまいもの好きだよね。"
+   },
+   {
+    "s": "F",
+    "t": "いいけど、最近、医者にあまいものは食べすぎないように言われてるみたい。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、写真立てはどう？家族の写真を入れて。"
+   },
+   {
+    "s": "F",
+    "t": "それ、いいね。"
+   }
+  ],
+  "options": [
+   "写真立て",
+   "花",
+   "おかし",
+   "セーター"
+  ],
+  "answer": 0,
+  "en": "F: What are you giving Grandma for her birthday?\nM: I gave her a sweater last year, so I'm thinking of flowers this year.\nF: Mom said she's giving flowers.\nM: I see. Then sweets? Grandma likes sweet things, right?\nF: Sure, but it seems her doctor told her not to eat too many sweets lately.\nM: Then how about a photo frame, with a family photo in it?\nF: That's nice.",
+  "why": "Mom is giving flowers and the doctor told Grandma to limit sweets, so he chooses a photo frame."
+ },
+ {
+  "id": "dl070",
+  "intro": "会社で女の人と男の人が話しています。会議はどうして来週になりましたか。",
+  "question": "会議はどうして来週になりましたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "あしたの会議、来週になったんですって？"
+   },
+   {
+    "s": "M",
+    "t": "ええ。"
+   },
+   {
+    "s": "F",
+    "t": "部長がしゅっちょうだからですか。"
+   },
+   {
+    "s": "M",
+    "t": "いいえ、部長は出られるんですが、会議で使うデータがまだそろっていないんです。"
+   },
+   {
+    "s": "F",
+    "t": "そうなんですか。"
+   }
+  ],
+  "options": [
+   "会議室が使えないから",
+   "部長がしゅっちょうだから",
+   "出る人が少ないから",
+   "データがまだそろっていないから"
+  ],
+  "answer": 3,
+  "en": "F: I heard tomorrow's meeting was moved to next week?\nM: Yes.\nF: Because the manager is on a business trip?\nM: No, the manager can attend, but the data for the meeting isn't ready yet.\nF: I see.",
+  "why": "The data isn't ready. He says the manager can attend, so the business trip guess is wrong."
+ },
+ {
+  "id": "dl071",
+  "intro": "女の人と男の人が話しています。女の人は何を持っていきますか。",
+  "question": "女の人は何を持っていきますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "今度の土曜日、田中さんの家でみんなでご飯食べるんだけど、何持っていこうか。"
+   },
+   {
+    "s": "M",
+    "t": "飲み物は？"
+   },
+   {
+    "s": "F",
+    "t": "飲み物は田中さんが用意するって。"
+   },
+   {
+    "s": "M",
+    "t": "じゃ、デザートは？"
+   },
+   {
+    "s": "F",
+    "t": "デザートは木下さんが作ってくるって。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、サラダを作っていったら？"
+   },
+   {
+    "s": "F",
+    "t": "そうだね。サラダなら、すぐ作れるし。"
+   }
+  ],
+  "options": [
+   "サラダ",
+   "花",
+   "デザート",
+   "飲み物"
+  ],
+  "answer": 0,
+  "en": "F: This Saturday we're all eating at Tanaka's house. What should I bring?\nM: Drinks?\nF: Tanaka said he'll get drinks.\nM: Then dessert?\nF: Kinoshita is making dessert.\nM: Then why not make a salad?\nF: Good idea. A salad is quick to make.",
+  "why": "Drinks and dessert are already covered by others, so she makes a salad."
+ },
+ {
+  "id": "dl072",
+  "intro": "女の人と男の人が試験について話しています。男の人は試験の何が一番できなかったと言っていますか。",
+  "question": "男の人は試験の何が一番できなかったと言っていますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "きのうの試験、どうだった？"
+   },
+   {
+    "s": "M",
+    "t": "漢字の問題はむずかしかったけど、だいたいできたと思う。"
+   },
+   {
+    "s": "F",
+    "t": "読む問題は？"
+   },
+   {
+    "s": "M",
+    "t": "それが一番だめだった。長い文が多くて、最後まで読めなかったんだ。"
+   }
+  ],
+  "options": [
+   "書く問題",
+   "漢字の問題",
+   "聞く問題",
+   "読む問題"
+  ],
+  "answer": 3,
+  "en": "F: How was the exam yesterday?\nM: The kanji questions were hard, but I think I got most of them.\nF: What about reading?\nM: That was the worst. There were lots of long texts, and I couldn't read to the end.",
+  "why": "He says the reading section was the worst because he couldn't finish. The kanji was hard but he did most of it."
+ },
+ {
+  "id": "dl073",
+  "intro": "ホテルで男の人とホテルの人が話しています。男の人はチェックアウトのあと、にもつをどうしますか。",
+  "question": "男の人はチェックアウトのあと、にもつをどうしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、チェックアウトは何時ですか。"
+   },
+   {
+    "s": "F",
+    "t": "11時でございます。"
+   },
+   {
+    "s": "M",
+    "t": "飛行機が夕方なので、それまでにもつを置いておけますか。"
+   },
+   {
+    "s": "F",
+    "t": "はい、フロントでおあずかりします。"
+   },
+   {
+    "s": "M",
+    "t": "よかった。あと、空港まではどうやって行けばいいですか。"
+   },
+   {
+    "s": "F",
+    "t": "ホテルの前からバスが出ています。予約が必要ですので、こちらでおとりしましょうか。"
+   },
+   {
+    "s": "M",
+    "t": "お願いします。"
+   }
+  ],
+  "options": [
+   "持って出かける",
+   "部屋に置いておく",
+   "フロントにあずける",
+   "空港に送る"
+  ],
+  "answer": 2,
+  "en": "M: Excuse me, what time is checkout?\nF: It's eleven o'clock.\nM: My flight is in the evening. Can I leave my bags until then?\nF: Yes, we'll keep them at the front desk.\nM: Great. Also, how should I get to the airport?\nF: A bus leaves from in front of the hotel. A reservation is needed, so shall I make one for you?\nM: Yes, please.",
+  "why": "He leaves his bags at the front desk until his evening flight. Sending them to the airport is not mentioned."
+ },
+ {
+  "id": "dl074",
+  "intro": "女の人と男の人が話しています。男の人は日本に来て、何に一番おどろきましたか。",
+  "question": "男の人は日本に来て、何に一番おどろきましたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "日本に来て、何にびっくりしましたか。"
+   },
+   {
+    "s": "M",
+    "t": "電車が時間通りに来ることかな、と思っていたんですが、それは前から聞いていたので、あまり。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、何ですか。"
+   },
+   {
+    "s": "M",
+    "t": "コンビニで何でも払えることですね。電気代も、ガス代も。"
+   }
+  ],
+  "options": [
+   "コンビニでいろいろなお金が払えること",
+   "電気代が高いこと",
+   "電車が時間通りに来ること",
+   "コンビニが多いこと"
+  ],
+  "answer": 0,
+  "en": "F: What surprised you when you came to Japan?\nM: I thought it would be the trains coming on time, but I'd heard about that before, so not really.\nF: Then what?\nM: That you can pay for everything at convenience stores. Even the electricity and gas bills.",
+  "why": "He was most surprised that bills can be paid at convenience stores. He already knew about the punctual trains."
+ },
+ {
+  "id": "dl075",
+  "intro": "病院の受付で女の人と男の人が話しています。女の人はこのあと、まず何をしますか。",
+  "question": "女の人はこのあと、まず何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、初めてなんですが。"
+   },
+   {
+    "s": "M",
+    "t": "では、ほけんしょうをお願いします。"
+   },
+   {
+    "s": "F",
+    "t": "はい、どうぞ。"
+   },
+   {
+    "s": "M",
+    "t": "それから、この紙に今日の具合を書いてください。書いたら、熱をはかってください。"
+   },
+   {
+    "s": "F",
+    "t": "はい。"
+   },
+   {
+    "s": "M",
+    "t": "あ、すみません、熱は先にはかってください。たいおんけいはこちらです。"
+   },
+   {
+    "s": "F",
+    "t": "分かりました。"
+   }
+  ],
+  "options": [
+   "熱をはかる",
+   "ほけんしょうを出す",
+   "紙に具合を書く",
+   "医者に会う"
+  ],
+  "answer": 0,
+  "en": "F: Excuse me, it's my first time here.\nM: Then your health insurance card, please.\nF: Here you are.\nM: Then please write how you're feeling today on this sheet. After that, take your temperature.\nF: OK.\nM: Oh, sorry, please take your temperature first. Here's the thermometer.\nF: Understood.",
+  "why": "He first says to write on the sheet, then corrects himself: take her temperature first. She has already handed over her card."
+ },
+ {
+  "id": "dl076",
+  "intro": "女の人と男の人が話しています。男の人はどうしてチケットを買いませんでしたか。",
+  "question": "男の人はどうしてチケットを買いませんでしたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "コンサートのチケット、買えた？"
+   },
+   {
+    "s": "M",
+    "t": "ううん、買わなかった。"
+   },
+   {
+    "s": "F",
+    "t": "売り切れちゃったの？"
+   },
+   {
+    "s": "M",
+    "t": "いや、まだあったんだけど、ネットで買うのに、会員にならないといけなくて。それがめんどうだったから、やめたんだ。"
+   }
+  ],
+  "options": [
+   "売り切れていたから",
+   "会員になるのがめんどうだったから",
+   "コンサートの日に用事があるから",
+   "値段が高かったから"
+  ],
+  "answer": 1,
+  "en": "F: Did you get the concert tickets?\nM: No, I didn't buy them.\nF: Were they sold out?\nM: No, there were still some, but to buy online you had to become a member. That was a hassle, so I gave up.",
+  "why": "Tickets were still available; he gave up because he had to register as a member."
+ },
+ {
+  "id": "dl077",
+  "intro": "男の人と女の人が電話で話しています。男の人は今夜、どうしますか。",
+  "question": "男の人は今夜、どうしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "もしもし、今日、何時ごろ帰る？"
+   },
+   {
+    "s": "M",
+    "t": "8時ごろかな。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、夕飯、作っておくね。"
+   },
+   {
+    "s": "M",
+    "t": "あ、ごめん、今日は会社の人と食べて帰ることになったんだ。言うの忘れてた。"
+   },
+   {
+    "s": "F",
+    "t": "なんだ。じゃあ、わたしは一人で食べるね。おそくなるの？"
+   },
+   {
+    "s": "M",
+    "t": "10時までには帰るよ。"
+   }
+  ],
+  "options": [
+   "8時ごろ帰って家で夕飯を食べる",
+   "会社で残業する",
+   "会社の人と夕飯を食べてから帰る",
+   "一人で夕飯を食べる"
+  ],
+  "answer": 2,
+  "en": "F: Hello, what time are you coming home today?\nM: Around eight, I think.\nF: Then I'll make dinner.\nM: Oh, sorry, I'm eating with people from work before coming home. I forgot to tell you.\nF: Oh. Then I'll eat alone. Will you be late?\nM: I'll be home by ten.",
+  "why": "He is having dinner with coworkers and will be home by ten. The 8 o'clock plan was cancelled; the woman is the one eating alone."
+ },
+ {
+  "id": "dl078",
+  "intro": "男の人と女の人が新しい公園について話しています。男の人はどうして来月まで待ちますか。",
+  "question": "男の人はどうして来月まで待ちますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "新しくできた公園、行ってみた？"
+   },
+   {
+    "s": "F",
+    "t": "うん、先週行ったよ。広くて、花もたくさんあったよ。"
+   },
+   {
+    "s": "M",
+    "t": "子どもを連れて行こうかと思ってるんだけど。"
+   },
+   {
+    "s": "F",
+    "t": "いいと思うけど、子どもが遊ぶ所はまだ工事中だったよ。来月できるって。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。じゃ、来月まで待とう。"
+   }
+  ],
+  "options": [
+   "公園がまだ開いていないから",
+   "公園が遠いから",
+   "子どもが遊ぶ所がまだできていないから",
+   "花がまださいていないから"
+  ],
+  "answer": 2,
+  "en": "M: Have you been to the new park?\nF: Yes, I went last week. It's big and there were lots of flowers.\nM: I'm thinking of taking my kids.\nF: Good idea, but the play area was still under construction. They say it'll be ready next month.\nM: I see. Then I'll wait until next month.",
+  "why": "The play area is still under construction. The park itself is open and has many flowers."
+ },
+ {
+  "id": "dl079",
+  "intro": "会社で男の人と女の人がレポートについて話しています。女の人はレポートの何を直しますか。",
+  "question": "女の人はレポートの何を直しますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "中山さん、レポート読みましたよ。内容はよく書けています。"
+   },
+   {
+    "s": "F",
+    "t": "ありがとうございます。"
+   },
+   {
+    "s": "M",
+    "t": "ただ、グラフが少し見にくいですね。色を変えたほうがいいと思います。"
+   },
+   {
+    "s": "F",
+    "t": "はい。"
+   },
+   {
+    "s": "M",
+    "t": "それから、最後のまとめがみじかすぎますね。……いや、まとめはこれでいいかな。グラフだけ直してください。"
+   },
+   {
+    "s": "F",
+    "t": "分かりました。"
+   }
+  ],
+  "options": [
+   "内容",
+   "グラフの色とまとめ",
+   "最後のまとめ",
+   "グラフの色"
+  ],
+  "answer": 3,
+  "en": "M: Ms. Nakayama, I read your report. The content is well written.\nF: Thank you.\nM: But the graphs are a little hard to read. I think you should change the colors.\nF: Yes.\nM: Also, the summary at the end is too short... No, actually the summary is fine. Just fix the graphs.\nF: Understood.",
+  "why": "He mentions the summary but takes it back and says to fix only the graph colors."
+ },
+ {
+  "id": "dl080",
+  "intro": "男の人と女の人が会社で話しています。女の人が自転車で会社に来る一番の理由は何ですか。",
+  "question": "女の人が自転車で会社に来る一番の理由は何ですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "最近、自転車で会社に来てるんですね。"
+   },
+   {
+    "s": "F",
+    "t": "ええ。"
+   },
+   {
+    "s": "M",
+    "t": "運動のためですか。"
+   },
+   {
+    "s": "F",
+    "t": "それもありますけど、一番は、朝の電車があまりにも込んでいるからなんです。"
+   },
+   {
+    "s": "M",
+    "t": "ああ、朝の電車は大変ですよね。"
+   }
+  ],
+  "options": [
+   "会社が近くなったから",
+   "朝の電車が込んでいるから",
+   "電車代が高いから",
+   "運動のため"
+  ],
+  "answer": 1,
+  "en": "M: You've been cycling to work lately.\nF: Yes.\nM: Is it for exercise?\nF: That's part of it, but mainly because the morning trains are just too crowded.\nM: Ah, the morning trains are tough.",
+  "why": "She says the main reason ('一番は') is the crowded morning trains; exercise is only a minor reason."
+ }
+]

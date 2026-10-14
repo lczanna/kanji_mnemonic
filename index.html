@@ -821,8 +821,10 @@ function pickVoice() {
 }
 // Listening practice: a man's and a woman's voice. Phones name their voices (Kyoko, Otoya, Hattori…); when only one
 // Japanese voice exists, the pitch tells the speakers apart.
+const NARR = 'F';
 const MALE = /otoya|hattori|ichiro|keita|daichi|naoki|male|男/i, FEMALE = /kyoko|o-ren|haruka|ayumi|nanami|sayaka|female|女/i;
 function voiceFor(sex) {
+  if (sex === 'N') sex = NARR;
   const v = jaVoices.find(x => (sex === 'M' ? MALE : FEMALE).test(x.name));
   return { voice: v || jaVoice, pitch: v ? 1 : sex === 'M' ? 0.7 : 1.25 };
 }
@@ -1147,6 +1149,8 @@ function todayHtml() {
       ${dueAll && total > dueAll ? `<button class="btn" id="go-reviews"><span class="label"><b>Busy day: reviews only</b><small class="muted">Keep what you know. New cards wait and the plan spreads them out.</small></span><span class="count num">${dueAll}</span></button>` : ''}
       ${weakOn ? `<button class="btn" id="go-weak"><span class="label"><b>Weak spots</b><small class="muted">The 40 cards you're most likely to forget, due or not</small></span><span class="count num">40</span></button>` : ''}
       ${studyBtns}
+      ${(EXAM.mocks || []).length ? (() => { const done = new Set(appData.mocks.filter(m => m.src === 'app').map(m => m.set)), next = EXAM.mocks.find(m => !done.has(m.id)) || EXAM.mocks[0];
+        return `<button class="btn" id="go-mock" data-set="${esc(next.id)}"><span class="label"><b><span lang="ja">模擬試験</span> Practice exam ${esc(next.id)}</b><small class="muted">Full timed N3 mock: 30 + 70 + 40 minutes, scored like the real test${done.size ? ` · done: ${[...done].join(', ')}` : ''}. Leave and resume any time.</small></span><span class="count num">2h20</span></button>`; })() : ''}
       ${EXAM.qr.length ? `<button class="btn" id="go-practice"><span class="label"><b><span lang="ja">試験練習</span> Exam practice: listening &amp; reading</b><small class="muted">${practiceN ? `Today: ${practiceN} item${practiceN > 1 ? 's' : ''} in the exam's own formats` : "Today's share is done · tap for 4 more"}</small></span><span class="count num">${practiceN || '+4'}</span></button>` : ''}
       ${sprintGroups().length >= 5 ? `<button class="btn" id="go-sprint"><span class="label"><b><span lang="ja">似た漢字</span> Look-alike sprint</b><small class="muted">60 seconds: pick the right kanji among look-alikes${appData.sprintBest ? ` · best ${appData.sprintBest}` : ''}</small></span><span class="count num">▶</span></button>` : ''}
       ${listenN >= 5 ? `<button class="btn" id="go-listen"><span class="label"><b><span lang="ja">聴解</span> Listening drill</b><small class="muted">20 words and sentences you've studied, by ear only</small></span><span class="count num">▶</span></button>` : ''}
@@ -1471,7 +1475,7 @@ function startSprint() {
 // (appData.practice) and feed the readiness panel; mock-test scores (appData.mocks) shift the daily mix.
 let EXAM = { qr: [], dlg: [], read: [], vocab: {} };
 const EXAM_LINKS = { samples: 'https://jlpt.jp/e/samples/forlearners.html', workbook: 'https://shop.whiterabbitjapan.com/collections/printed-matter/products/jlpt-official-practice-workbook-volume-2-n3' };
-const examById = id => EXAM.qr.find(x => x.id === id) || EXAM.dlg.find(x => x.id === id) || EXAM.read.find(x => x.id === id);
+const examById = id => [EXAM.qr, EXAM.dlg, EXAM.read, EXAM.mock_items || []].reduce((f, l) => f || l.find(x => x.id === id), null);
 const latestMock = () => appData.mocks.slice().sort((a, b) => (a.date < b.date ? 1 : -1))[0] || null;
 // Today's share: listening items and reading passages, doubled at weekends; a weak section in the last mock test
 // (under 30 of 60) doubles that section again.
@@ -1565,7 +1569,7 @@ function mockDue() {
 function mockFormHtml(highlight) {
   return `<div class="${highlight ? 'notice' : 'panel'} stack" style="gap:8px">
     <b>${highlight ? 'Practice test day' : 'Practice test scores'}</b>
-    <span>Take a full timed test from the <a href="${EXAM_LINKS.workbook}" target="_blank" rel="noopener">official practice workbook</a> (or the free <a href="${EXAM_LINKS.samples}" target="_blank" rel="noopener">official samples</a>), then enter each section out of 60. The workbook's answer key explains how to convert.</span>
+    <span>Take the app's <b>Practice exam</b> (it saves its own scores), or a full timed test from the <a href="${EXAM_LINKS.workbook}" target="_blank" rel="noopener">official practice workbook</a> or the free <a href="${EXAM_LINKS.samples}" target="_blank" rel="noopener">official samples</a> and enter each section out of 60 here.</span>
     <div class="row-wrap" style="gap:8px">
       <label class="mini">Vocab &amp; grammar <input id="mock-lk" type="number" min="0" max="60" inputmode="numeric"></label>
       <label class="mini">Reading <input id="mock-rd" type="number" min="0" max="60" inputmode="numeric"></label>
@@ -1585,13 +1589,41 @@ function saveMock() {
 function examBar(it) {
   return `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="e-next">${it.correct ? 'Correct · continue' : 'Missed · it will come back another day'}</button></div>`;
 }
+// Listening items are recorded with neural voices (tools/gen_audio.py): audio/<id>.mp3, or on the Claude link
+// audio/packs/ (few big files instead of hundreds). If a recording can't load, the phone's voices read the script.
+let audioIndex = null, audioPacks = {}, audioEl = null;
+async function audioSrc(id) {
+  try { const r = await fetch(`audio/${id}.mp3`, { method: 'HEAD' }); if (r.ok) return `audio/${id}.mp3`; } catch (e) { /* try the packs */ }
+  try {
+    audioIndex = audioIndex || getJson('audio/packs/index.json');
+    const n = (await audioIndex)[id];
+    if (n == null) return null;
+    audioPacks[n] = audioPacks[n] || getJson(`audio/packs/a${String(n).padStart(2, '0')}.json`);
+    return (await audioPacks[n])[id] || null;
+  } catch (e) { audioIndex = null; return null; }
+}
+async function playRecorded(id, fallback) {
+  try { speechSynthesis.cancel(); } catch (e) { /* no speech */ }
+  if (audioEl) audioEl.pause();
+  const src = await audioSrc(id);
+  if (!src) return fallback();
+  audioEl = new Audio(src);
+  audioEl.play().catch(() => fallback());
+}
+function stopAudio() { if (audioEl) audioEl.pause(); try { speechSynthesis.cancel(); } catch (e) { /* no speech */ } }
 function playExam(id) {
-  const x = examById(id); if (!x) return;
-  if (id.startsWith('qr')) {
+  const x = examById(id) || mockListenById(id); if (!x) return;
+  playRecorded(id, () => speakScript(x));
+}
+function speakScript(x) {
+  const id = x.id;
+  if (id.startsWith('mg')) speakSeq([['N', x.intro], ...x.talk.map(t => [x.s, t]), ['N', x.question], ...x.options.map((o, i) => ['N', `${i + 1}、${o}`])]);
+  else if (id.startsWith('ms')) speakSeq([['N', x.intro], ...x.options.map((o, i) => ['M', `${i + 1}、${o}`])]);
+  else if (id.startsWith('qr')) {
     const other = x.s === 'M' ? 'F' : 'M';
     speakSeq([[x.s, x.line], ...x.options.map((o, i) => [other, `${i + 1}、${o}`])]);
   } else if (id.startsWith('dl')) {
-    speakSeq([['F', x.intro], ...x.turns.map(t => [t.s, t.t]), ['F', x.question]]);
+    speakSeq([['N', x.intro], ...x.turns.map(t => [t.s, t.t]), ['N', x.question]]);
   }
 }
 function answerExam(qi, oi) {
@@ -1606,6 +1638,109 @@ function answerExam(qi, oi) {
     saveData();
   }
   renderSession();
+}
+
+// ============ PRACTICE EXAM ============
+// A full timed mock in the real paper's order and mix (exam.json "mocks", built from questions kept out of daily
+// practice): 言語知識（文字・語彙）30 min · 言語知識（文法）・読解 70 min · 聴解 40 min, listening played once.
+// No feedback until the end; then the three scored sections out of 60 (scaled from the share right — an estimate,
+// the real test uses scaled scores), pass or fail by the real rules, and a review of every mistake.
+const MOCK_SECTIONS = { vocab: { name: '言語知識（文字・語彙）', en: 'Vocabulary', min: 30 }, gr: { name: '言語知識（文法）・読解', en: 'Grammar · Reading', min: 70 }, listen: { name: '聴解', en: 'Listening', min: 40 } };
+const mockListenById = id => (EXAM.mock_listen || []).find(x => x.id === id);
+function buildMock(m) {
+  const Q = [], add = (sec, score, part, prompt, opts, answer, why, extra) => Q.push(Object.assign({ type: 'mock', sec, score, part, prompt, opts, answer, why: why || '' }, extra || {}));
+  const shuf = (opts, answer) => { const o = opts.map((t, i) => [t, i === answer]); shuffle(o); return [o.map(x => x[0]), o.findIndex(x => x[1])]; };
+  for (const w of m.vocab.read) { const v = BY_WORD[w]; const traps = v && readingTraps(v.r); if (!traps) continue;
+    const [o, a] = shuf([v.r, ...traps], 0); add('vocab', 'lk', '漢字読み · reading', `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">How is this read?</div>`, o, a, `${v.w} = ${v.r}: ${v.m}`); }
+  for (const w of m.vocab.spell) { const v = BY_WORD[w]; if (!v || !(v.d || []).length) continue;
+    const [o, a] = shuf([v.w, ...v.d], 0); add('vocab', 'lk', '表記 · spelling', `<div class="word-front kana" lang="ja">${esc(v.r)}</div><div class="prompt">${esc(v.m)}: which spelling?</div>`, o, a, `${v.r} is written ${v.w}`); }
+  for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${esc(q.s).replace('（　）', '<span class="blank">（　　）</span>')}</div>`, q.options, q.answer, q.en);
+  for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${esc(q.s).replace(/【(.+?)】/, '<u>$1</u>')}</div>`, q.options, q.answer, q.why);
+  for (const q of m.vocab.usage) add('vocab', 'lk', '用法 · correct usage', `<div class="word-front" lang="ja">${esc(q.w)}</div>`, q.options, q.answer, q.why, { long: true });
+  for (const q of m.gram.fill) add('gr', 'lk', '文法形式 · grammar', `<div class="g-q" lang="ja">${esc(q.q).replace('（　）', '<span class="blank">（　　）</span>')}</div>`, q.options, q.answer, q.why);
+  for (const o of m.gram.order) { const [opts, a] = shuf(o.chunks, o.star);
+    const slots = [0, 1, 2, 3].map(i => `<span class="slot">${i === o.star ? '★' : '＿＿'}</span>`).join('');
+    add('gr', 'lk', '文の組み立て · ★ which part', `<div class="g-q order" lang="ja"><span>${esc(o.before)}</span>${slots}<span>${esc(o.after)}</span></div>`, opts, a, `${o.before}${o.chunks.join('')}${o.after} · ${o.why || ''}`); }
+  const tg = m.gram.textgram;
+  if (tg) tg.blanks.forEach((b, i) => add('gr', 'lk', '文章の文法 · grammar in a text', `<div class="passage" lang="ja">${tg.text.split('\n').map(l => `<p>${esc(l)}</p>`).join('')}</div><div class="prompt">Which fits blank （${i + 1}）?</div>`, b.options, b.answer, b.why));
+  for (const p of m.read) p.questions.forEach(q => add('gr', 'rd', `読解 · ${p.kind === 'info' ? 'find the information' : p.kind === 'long' ? 'long passage' : p.kind === 'medium' ? 'passage' : 'short text'}`,
+    `<div class="passage" lang="ja">${p.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div><div class="g-q" lang="ja" style="font-size:16px">${esc(q.q)}</div>`, q.options, q.answer, q.why));
+  for (const id of m.listen) { const x = examById(id) || mockListenById(id); if (!x) continue;
+    if (id.startsWith('dl')) add('listen', 'ls', '聴解 · 会話', `<div class="prompt" lang="ja">${esc(x.question)}</div>`, x.options, x.answer, x.why, { play: id });
+    else if (id.startsWith('mg')) add('listen', 'ls', '聴解 · 概要理解 (the question and options are spoken)', '', x.options.map(() => ''), x.answer, x.why, { play: id });
+    else if (id.startsWith('ms')) add('listen', 'ls', '聴解 · 発話表現 (what do you say?)', `<div class="notice">${esc(x.scene)}</div>`, x.options.map(() => ''), x.answer, x.why, { play: id });
+    else add('listen', 'ls', '聴解 · 即時応答 (replies are spoken)', '', x.options.map(() => ''), x.answer, x.why, { play: id }); }
+  return Q;
+}
+function startMock(setId) {
+  const m = (EXAM.mocks || []).find(x => x.id === setId) || (EXAM.mocks || [])[0];
+  if (!m) return;
+  const queue = buildMock(m);
+  session = { queue, i: 0, revealed: false, done: 0, kind: 'mock', set: m.id, answers: {}, secEnds: {}, started: Date.now() };
+  openSheet();
+}
+// The section clock; restarted when a mock is resumed after a reload or a trip back to Today.
+function mockClock() {
+  clearInterval(startMock.timer);
+  startMock.timer = setInterval(() => {
+    if (!session || session.kind !== 'mock') return clearInterval(startMock.timer);
+    const it = session.queue[session.i]; if (!it) return;
+    const left = Math.max(0, Math.ceil((session.secEnds[it.sec] - Date.now()) / 1000));
+    const el = $('mock-time'); if (el) el.textContent = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')}`;
+    if (left <= 0) mockNextSection();
+  }, 500);
+}
+function mockNextSection() {
+  const sec = session.queue[session.i].sec;
+  let j = session.i; while (j < session.queue.length && session.queue[j].sec === sec) j++;
+  session.i = j; stopAudio(); renderSession();
+}
+function mockScreen(it) {
+  const S = MOCK_SECTIONS[it.sec];
+  if (!session.secEnds[it.sec]) session.secEnds[it.sec] = Date.now() + S.min * 60000;
+  const inSec = session.queue.filter(q => q.sec === it.sec), n = inSec.indexOf(it) + 1;
+  const left = Math.max(0, Math.ceil((session.secEnds[it.sec] - Date.now()) / 1000));
+  const chosen = session.answers[session.i];
+  const played = (session.played || {})[session.i];
+  const front = `<div class="sprint-bar"><span>${esc(S.name)} · ${n}/${inSec.length}</span><span id="mock-time" class="num">${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')}</span></div>
+    <div class="prompt">${esc(it.part)}</div>
+    ${it.play ? `<button class="big-play" data-mplay="${esc(it.play)}" ${played ? 'disabled' : ''} aria-label="Play">${played ? '✓' : '▶'}</button><div class="prompt">${played ? 'Played (the exam plays each item once)' : 'Tap to play. It plays once, as in the exam.'}</div>` : ''}
+    ${it.prompt}
+    <div class="opts g${it.long || it.opts.some(o => o.length > 6) ? ' long' : ''}">${it.opts.map((o, i) => `<button class="opt${chosen === i ? ' picked' : ''}" data-mopt="${i}" lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`).join('')}</div>`;
+  const back = it.sec !== 'listen' && n > 1 ? '<button class="ans skip" id="m-back">‹ Back</button>' : '';
+  return { inner: { front }, bar: `<div class="row two">${back || '<span></span>'}<button class="ans next" id="m-next">${n === inSec.length ? 'Finish section' : chosen != null ? 'Next' : 'Skip'}</button></div>` };
+}
+function mockAnswer(i) { session.answers[session.i] = i; renderSession(); setTimeout(() => { if (session && session.kind === 'mock') mockStep(1); }, 250); }
+function mockStep(d) {
+  const it = session.queue[session.i], j = session.i + d;
+  if (d > 0 && (j >= session.queue.length || session.queue[j].sec !== it.sec)) { if (j >= session.queue.length || confirmSectionEnd()) { session.i = j; stopAudio(); } }
+  else if (j >= 0 && session.queue[j].sec === it.sec) session.i = j;
+  renderSession();
+}
+const confirmSectionEnd = () => true;
+function mockResults() {
+  const by = { lk: [0, 0], rd: [0, 0], ls: [0, 0] };
+  session.queue.forEach((q, i) => { by[q.score][1]++; if (session.answers[i] === q.answer) by[q.score][0]++; });
+  const sc = k => by[k][1] ? Math.round(by[k][0] / by[k][1] * 60) : 0;
+  return { lk: sc('lk'), rd: sc('rd'), ls: sc('ls'), raw: by };
+}
+function mockEndHtml() {
+  const r = mockResults(), total = r.lk + r.rd + r.ls, pass = total >= 95 && r.lk >= 19 && r.rd >= 19 && r.ls >= 19;
+  if (!session.saved) {
+    session.saved = true;
+    appData.mocks = appData.mocks.filter(x => !(x.date === today() && x.src === 'app' && x.set === session.set)).concat({ date: today(), lk: r.lk, rd: r.rd, ls: r.ls, src: 'app', set: session.set });
+    planCache = null; saveData();
+  }
+  const row = (n, k) => `<span>${n}</span><span class="num">${r.raw[k][0]}/${r.raw[k][1]} right</span><span class="num ${r[k] >= 30 ? 'ok' : r[k] >= 19 ? '' : 'behind'}"><b>${r[k]}</b>/60</span>`;
+  const wrong = session.queue.map((q, i) => [q, i]).filter(([q, i]) => session.answers[i] !== q.answer);
+  return `<div class="sheet-inner"><div class="card stack" style="padding:24px 18px">
+    <h2 style="text-align:center">${pass ? 'Pass' : 'Not yet'}: ${total}/180</h2>
+    <p class="muted" style="text-align:center">Practice exam ${esc(session.set)}. Pass = 95 total and at least 19 in every section. Scores are scaled from the share you got right, so treat them as an estimate.</p>
+    <div class="ready">${row('Vocabulary &amp; grammar', 'lk')}${row('Reading', 'rd')}${row('Listening', 'ls')}</div>
+    <p class="muted">Saved: a section under 30 now gets double daily practice.</p>
+    <details><summary>Review your ${wrong.length} mistake${wrong.length === 1 ? '' : 's'}</summary><div class="wrongs" style="margin-top:8px">${wrong.map(([q, i]) => `<div class="picked"><b>${esc(q.part)}</b>${q.play ? '' : `<span lang="ja">${q.prompt.replace(/<[^>]+>/g, ' ').slice(0, 160)}</span>`}<br>
+      Your answer: <span lang="ja">${session.answers[i] == null ? '—' : esc(q.opts[session.answers[i]] || String(session.answers[i] + 1))}</span> · right: <span lang="ja">${esc(q.opts[q.answer] || String(q.answer + 1))}</span><br><span class="muted">${esc(q.why)}</span></div>`).join('')}</div></details>
+  </div></div>`;
 }
 
 // ============ STUDY SESSION ============
@@ -1767,14 +1902,14 @@ function lookup(type, key) {
   return type === 'kanji' ? BY_KANJI[key] : type === 'vocab' ? BY_WORD[key.slice(2)] : BY_GID[key.slice(2)];
 }
 function packItem(it) {
-  if (it.type === 'listen') return it;
+  if (it.type === 'listen' || it.type === 'mock') return it;
   if (it.type === 'exam') return Object.assign({}, it, { x: it.x.id });
   const o = Object.assign({}, it, { x: keyOf(it.type, it.x) });
   if (it.f) o.f = it.x.fill.indexOf(it.f);
   return o;
 }
 function unpackItem(o) {
-  if (o.type === 'listen') return o;
+  if (o.type === 'listen' || o.type === 'mock') return o;
   if (o.type === 'exam') { const x = examById(o.x); return x ? Object.assign({}, o, { x }) : null; }
   const x = lookup(o.type, o.x);
   if (!x) return null;   // the card was removed in an update
@@ -1813,10 +1948,15 @@ function restoreSession() {
   else { session = s; openSheet(); }
 }
 function resumeSession() { if (parked) { session = parked; parked = null; openSheet(); } }
-function openSheet() { if (parked !== session) parked = null; session.shownAt = Date.now(); $('sheet').hidden = false; $('answer-bar').hidden = false; document.body.style.overflow = 'hidden'; renderSession(); }
+function openSheet() { if (parked !== session) parked = null; session.shownAt = Date.now();
+  if (session.kind === 'mock') {
+    if (session.pausedAt) { const away = Date.now() - session.pausedAt; for (const k of Object.keys(session.secEnds)) session.secEnds[k] += away; delete session.pausedAt; }
+    mockClock();
+  } $('sheet').hidden = false; $('answer-bar').hidden = false; document.body.style.overflow = 'hidden'; renderSession(); }
 function closeSheet() {
   try { speechSynthesis.cancel(); } catch (e) { /* no audio */ }
   // Stepping out mid-session parks it, so Today can pick it up exactly where you left off.
+  if (session && session.kind === 'mock') { session.pausedAt = Date.now(); stopAudio(); }   // the clock stops while you're away
   parked = session && session.i < session.queue.length && session.kind !== 'sprint' ? session : null;
   session = null; saveSession(); $('sheet').hidden = true; $('answer-bar').hidden = true; document.body.style.overflow = '';
   render();
@@ -1888,9 +2028,10 @@ function drawSession() {
   else if (it.type === 'vocab') ({ inner, bar } = vocabScreen(it, tags));
   else if (it.type === 'listen') ({ inner, bar } = listenScreen(it, tags));
   else if (it.type === 'exam') ({ inner, bar } = examScreen(it, tags));
+  else if (it.type === 'mock') ({ inner, bar } = mockScreen(it, tags));
   else ({ inner, bar } = grammarScreen(it, tags));
   // Leech: a card missed 4+ times needs a better hook, not more repetition.
-  const lc = it.type !== 'listen' && it.type !== 'exam' && it.mode !== 'look' && !it.sprint && appData.cards[keyOf(it.type, it.x)];
+  const lc = it.type !== 'listen' && it.type !== 'exam' && it.type !== 'mock' && it.mode !== 'look' && !it.sprint && appData.cards[keyOf(it.type, it.x)];
   if (lc && (lc.lapses || 0) >= 4) {
     tags.push('<span class="tag relearn">LEECH</span>');
     if (inner.back) inner.back = `<div class="notice">Missed ${lc.lapses} times. Repetition isn't working here: rewrite the story in your own words, make it stranger, or link it to something from your own life.</div>` + inner.back;
@@ -2124,6 +2265,12 @@ function remainingToday() {
 }
 function renderSessionEnd() {
   const triage = session.kind === 'triage';
+  if (session.kind === 'mock') {
+    clearInterval(startMock.timer);
+    $('sheet').innerHTML = mockEndHtml();
+    $('answer-bar').innerHTML = `<div class="row one"><button class="ans next" id="s-finish">Back to today</button></div>`;
+    return;
+  }
   if (session.kind === 'sprint') {
     const best = appData.sprintBest || 0, isBest = session.score > best;
     if (isBest) { appData.sprintBest = session.score; saveData(); }
@@ -2173,6 +2320,7 @@ function grade(g) {
   next();
 }
 function next() {
+  stopAudio();
   const it = session.queue[session.i];
   if (it && it.mode !== 'triage') (session.history = session.history || []).push(it);
   session.i++; session.revealed = false; session.shownAt = Date.now();
@@ -2251,6 +2399,8 @@ document.addEventListener('click', e => {
   if (t.dataset.opt !== undefined) return answerChoice(+t.dataset.opt);
   if (t.dataset.chunk !== undefined) return pickChunk(+t.dataset.chunk);
   if (t.dataset.play) { e.stopPropagation(); return playExam(t.dataset.play); }
+  if (t.dataset.mplay) { e.stopPropagation(); (session.played = session.played || {})[session.i] = true; playExam(t.dataset.mplay); return renderSession(); }
+  if (t.dataset.mopt !== undefined) return mockAnswer(+t.dataset.mopt);
   if (t.dataset.eopt) { const [qi, oi] = t.dataset.eopt.split(':').map(Number); return answerExam(qi, oi); }
   if (t.dataset.slot !== undefined) return unpickSlot(+t.dataset.slot);
   switch (id) {
@@ -2273,6 +2423,9 @@ document.addEventListener('click', e => {
     case 'a-look': { const it = session.queue[session.i]; appData.lookSeen[it.group] = today(); saveData(); return next(); }
     case 'go-sprint': return startSprint();
     case 'e-next': session.done++; return next();
+    case 'm-next': return mockStep(1);
+    case 'm-back': return mockStep(-1);
+    case 'go-mock': return startMock(t.dataset.set);
     case 'go-practice': { const ps = practiceItems(); return ps.length ? runQueue(ps, [], 'all') : runQueue(practiceItems(true), [], 'all'); }
     case 'mock-save': return saveMock();
     case 'a-learned': {
@@ -2451,7 +2604,7 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
     if (!ex || Array.isArray(ex)) return;
     EXAM = Object.assign({ qr: [], dlg: [], read: [], vocab: {} }, ex);
     for (const x of EXAM.read) for (const [ja, gl] of Object.entries(x.gl || {})) GL[ja] = gl;
-    for (const x of [...EXAM.qr, ...EXAM.dlg]) for (const [ja, gl] of Object.entries(x.gl || {})) GL[ja] = gl;
+    for (const x of [...EXAM.qr, ...EXAM.dlg, ...(EXAM.mock_items || []), ...(EXAM.mocks || []).flatMap(m => m.read)]) for (const [ja, gl] of Object.entries(x.gl || {})) GL[ja] = gl;
     planCache = null;
     if (!session) render();
   });
