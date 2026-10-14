@@ -113,7 +113,8 @@ def main():
             # (one that differs in at least one stroke: 持 has nothing 特 lacks, so it is compared with 待).
             diffs = sorted((unmatched(strokes[k], strokes[o]) for o in others), key=len)
             best = next((d for d in diffs if d), [])
-            diff[k] = best
+            # Colouring most of a kanji points at nothing: then the written rule does the explaining.
+            diff[k] = best if len(best) * 2 <= len(strokes[k]) else []
         out.append({**g, 'kanji': ks, 'strokes': {k: strokes[k] for k in ks}, 'diff': diff})
     (ROOT / 'lookalikes.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
     print(f'{len(out)} groups, {sum(len(g["kanji"]) for g in out)} kanji' + (f'; no strokes for {missing}' if missing else ''))

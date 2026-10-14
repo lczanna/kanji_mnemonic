@@ -1,0 +1,1510 @@
+[
+ {
+  "id": "g001",
+  "kanji": [
+   "午",
+   "牛",
+   "生",
+   "年"
+  ],
+  "tips": {
+   "午": "noon: a slanted tick on top; the stem starts at the upper line, nothing pokes through it",
+   "牛": "cow: the stem pokes up through the top line like a horn and runs past the bottom line",
+   "生": "life: three lines, the longest at the bottom as ground; a sprout stem pokes up through them",
+   "年": "year: like noon but three lines, with a short stub on the left joining the lower two"
+  },
+  "scene": "At noon the sun sits flat overhead while a cow with one horn poking up grazes beside a sprout of new life rising from a long ground line, and a stepped fence marks the turn of the year.",
+  "img": "images/lookalikes/g001.jpg"
+ },
+ {
+  "id": "g002",
+  "kanji": [
+   "十",
+   "七",
+   "千"
+  ],
+  "tips": {
+   "十": "ten: a plain cross, one straight line each way",
+   "七": "seven: the crossbar tilts up and the stem bends sharply right at the bottom",
+   "千": "thousand: a cross with a slanted drop stroke sitting on top"
+  },
+  "scene": "Ten coins rest on a plain cross-shaped signpost, seven hockey sticks curl right at the bottom, and a thousand birds perch on a cross topped by one slanted feather.",
+  "img": "images/lookalikes/g002.jpg"
+ },
+ {
+  "id": "g003",
+  "kanji": [
+   "木",
+   "本",
+   "未",
+   "末"
+  ],
+  "tips": {
+   "木": "tree: one crossbar, a trunk and two branches, nothing else",
+   "本": "book: tree with a short bar across the base of the trunk, like a book's spine",
+   "未": "not yet: an extra line above the crossbar, the top one SHORTER: the tree is not yet grown",
+   "末": "extremity: an extra line above the crossbar, the top one LONGER: reaching to the very tip"
+  },
+  "scene": "A plain tree stands beside a book wedged across its trunk's base; a not yet grown sapling has a short top branch, while an extremity tree spreads its longest branch at the very top.",
+  "img": "images/lookalikes/g003.jpg"
+ },
+ {
+  "id": "g004",
+  "kanji": [
+   "工",
+   "土",
+   "王",
+   "主"
+  ],
+  "tips": {
+   "工": "craft: two lines joined by a stem, short on top and long below, like an I-beam",
+   "土": "soil: a short line crossed by a stem that pokes up, on a long ground line",
+   "王": "king: three lines with the stem staying inside; nothing pokes out",
+   "主": "lord: a king with one drop sitting on top like a jewel"
+  },
+  "scene": "A craft worker sets an I-beam on the soil where a sprout pokes up, while a king in three-tiered robes stands beside a lord whose crown bears a single jewel on top.",
+  "img": "images/lookalikes/g004.jpg"
+ },
+ {
+  "id": "g005",
+  "kanji": [
+   "人",
+   "入",
+   "八"
+  ],
+  "tips": {
+   "人": "person: the long left stroke stands, the right leans against its middle",
+   "入": "enter: the right stroke is the tall one; the short left stroke tucks against it",
+   "八": "eight: two strokes spread apart and never touch"
+  },
+  "scene": "A person strides along on a long left leg, a second figure ducks to enter a tent through a tall right flap, and eight sticks lean apart on the ground without touching.",
+  "img": "images/lookalikes/g005.jpg"
+ },
+ {
+  "id": "g006",
+  "kanji": [
+   "日",
+   "月",
+   "目"
+  ],
+  "tips": {
+   "日": "day: a closed square box with one line inside",
+   "月": "month: two inner lines, the left side sweeps out down-left and the bottom stays open",
+   "目": "eye: a tall closed box with two lines inside"
+  },
+  "scene": "A square window lets in the day's sun, a month moon hangs open at the bottom with a sweeping left edge, and a tall upright eye peeks between them.",
+  "img": "images/lookalikes/g006.jpg"
+ },
+ {
+  "id": "g007",
+  "kanji": [
+   "白",
+   "百",
+   "自"
+  ],
+  "tips": {
+   "白": "white: a box with one inner line and a single drop on top",
+   "百": "hundred: white tucked under a long flat line on top",
+   "自": "oneself: the drop sits on a TALL box with two inner lines (an eye, not a sun)"
+  },
+  "scene": "A white dove with one tuft feather sits on a fence, a hundred doves crowd under a long flat roof, and a person points to oneself at a tall nose.",
+  "img": "images/lookalikes/g007.jpg"
+ },
+ {
+  "id": "g008",
+  "kanji": [
+   "田",
+   "由",
+   "申"
+  ],
+  "tips": {
+   "田": "rice field: a box split by a cross; nothing sticks out",
+   "由": "wherefore: the stem pokes out of the top only",
+   "申": "speaketh: the stem pokes out of both the top and the bottom"
+  },
+  "scene": "A square rice field lies flat, a wherefore sprout pokes up out of its top edge like a question, and a speaketh staff pierces straight through it top and bottom.",
+  "img": "images/lookalikes/g008.jpg"
+ },
+ {
+  "id": "g009",
+  "kanji": [
+   "持",
+   "待",
+   "時",
+   "特",
+   "等"
+  ],
+  "tips": {
+   "持": "hold: fingers (扌) on the left of the temple",
+   "待": "wait: going (彳: two slashes and a stem) on the left of the temple",
+   "時": "time: a sun (日) on the left of the temple",
+   "特": "special: a cow (牛) on the left of the temple, its bottom line slanting up",
+   "等": "etc.: bamboo on top, the temple sitting underneath"
+  },
+  "scene": "At a Buddhist temple a monk's hand holds a bell, a pilgrim on the path is told to wait, a sundial tells the time, a special cow wears a garland, and bamboo, pine, etc. grow on the roof.",
+  "img": "images/lookalikes/g009.jpg"
+ },
+ {
+  "id": "g010",
+  "kanji": [
+   "問",
+   "間",
+   "聞"
+  ],
+  "tips": {
+   "問": "question: a mouth (口) inside the gate",
+   "間": "interval: a sun (日) inside the gate",
+   "聞": "hear: an ear (耳) inside the gate"
+  },
+  "scene": "Through one gate a mouth shouts a question, through a second gate the sun shines into the interval between the doors, and in a third gate a giant ear leans in to hear.",
+  "img": "images/lookalikes/g010.jpg"
+ },
+ {
+  "id": "g011",
+  "kanji": [
+   "閉",
+   "開",
+   "関"
+  ],
+  "tips": {
+   "閉": "closed: a genius bar (才) wedged inside the gate",
+   "開": "open: an open frame (开: two lines on two legs) inside the gate",
+   "関": "connection: horned heavens (two horns over 天) inside the gate"
+  },
+  "scene": "One gate is closed with a bar wedged across it, a second swings open on a two-legged frame, and a horned figure in the third gate links them with a rope connection.",
+  "img": "images/lookalikes/g011.jpg"
+ },
+ {
+  "id": "g012",
+  "kanji": [
+   "休",
+   "体"
+  ],
+  "tips": {
+   "休": "rest: person + a plain tree, no bar on the trunk",
+   "体": "body: person + book, a short bar across the base of the trunk"
+  },
+  "scene": "A hiker leans against a plain tree to rest, while a second person stretches their body against a tree that has a book jammed across its trunk.",
+  "img": "images/lookalikes/g012.jpg"
+ },
+ {
+  "id": "g013",
+  "kanji": [
+   "大",
+   "太",
+   "犬"
+  ],
+  "tips": {
+   "大": "large: a figure with arms outstretched, no dot",
+   "太": "plump: a dot BELOW, between the legs",
+   "犬": "dog: a dot at the TOP right, like a perked ear"
+  },
+  "scene": "A large man spreads his arms wide, a plump man balances a ball between his feet, and a dog with one perked ear at its upper right sits beside them.",
+  "img": "images/lookalikes/g013.jpg"
+ },
+ {
+  "id": "g014",
+  "kanji": [
+   "天",
+   "夫",
+   "失"
+  ],
+  "tips": {
+   "天": "heavens: two lines; the body hangs from the lower one, nothing pokes above the top line",
+   "夫": "husband: the head pokes up through the top line like a hairpin",
+   "失": "lose: husband plus a slanted stroke at top left, as if something slips off"
+  },
+  "scene": "Under the open heavens a husband with a hairpin poking up through his hat stands on a hill, as a gust tilts a second hat off his head and he loses it.",
+  "img": "images/lookalikes/g014.jpg"
+ },
+ {
+  "id": "g015",
+  "kanji": [
+   "左",
+   "右",
+   "石"
+  ],
+  "tips": {
+   "左": "left: craft (工) under the crossed hand",
+   "右": "right: mouth (口) under the crossed hand; the slash pokes above the line",
+   "石": "stone: mouth under a cliff; the slash starts at the line and does not poke above"
+  },
+  "scene": "A carpenter holds an I-beam craft tool in his left hand and a cup in his right hand, standing beneath a flat cliff with a round stone under it.",
+  "img": "images/lookalikes/g015.jpg"
+ },
+ {
+  "id": "g016",
+  "kanji": [
+   "支",
+   "友",
+   "反"
+  ],
+  "tips": {
+   "支": "branch: ten (十) on top of the crotch (又)",
+   "友": "friend: a crossed hand (ナ) over the crotch; the slash pokes above the line",
+   "反": "anti-: a cliff (厂) roof over the crotch; nothing pokes above"
+  },
+  "scene": "A cross-shaped branch leans on a tree, two friends cross arms above their heads, and an anti- protester crouches under a cliff overhang.",
+  "img": "images/lookalikes/g016.jpg"
+ },
+ {
+  "id": "g017",
+  "kanji": [
+   "力",
+   "九",
+   "万",
+   "方"
+  ],
+  "tips": {
+   "力": "power: a hook bending down-left, crossed by a slash that pokes above it",
+   "九": "nine: the second stroke ends in a hook curling RIGHT along the bottom",
+   "万": "ten thousand: power with a flat line laid on top",
+   "方": "direction: ten thousand with a dot on top"
+  },
+  "scene": "A strongman flexes his power beside a cat with nine lives curling its tail to the right, while ten thousand soldiers march under a flat banner and a signpost topped with one dot points the direction.",
+  "img": "images/lookalikes/g017.jpg"
+ },
+ {
+  "id": "g018",
+  "kanji": [
+   "馬",
+   "魚",
+   "鳥"
+  ],
+  "tips": {
+   "馬": "horse: starts with a stem and three crossbars like a mane; no drop on top",
+   "魚": "fish: a slanted cap (⺈) on top and a rice field (田) body",
+   "鳥": "bird: one slash drop on top of a box with a line inside, the bird's eye"
+  },
+  "scene": "A horse with a combed mane, a fish with a checkered rice-field belly and a bird with a single tuft on its head stand in a row above four glowing campfire dots.",
+  "img": "images/lookalikes/g018.jpg"
+ },
+ {
+  "id": "g019",
+  "kanji": [
+   "情",
+   "晴",
+   "精",
+   "静"
+  ],
+  "tips": {
+   "情": "feelings: a heart (忄: a stem with two dots) at the left of blue",
+   "晴": "clear up: a sun (日) at the left of blue",
+   "精": "refined: rice (米) at the left of blue",
+   "静": "quiet: blue on the LEFT, contend (争) on the right"
+  },
+  "scene": "Under a blue sky, a girl full of feelings watches the sun clear up the clouds, a cook sifts refined rice, and a monk sits quiet beside two sleeping wrestlers.",
+  "img": "images/lookalikes/g019.jpg"
+ },
+ {
+  "id": "g020",
+  "kanji": [
+   "青",
+   "表",
+   "責"
+  ],
+  "tips": {
+   "青": "blue: growing up (three lines and a stem) over a moon (月)",
+   "表": "surface: growing up over a garment's flaring hem (衣 bottom)",
+   "責": "blame: growing up over shells (貝)"
+  },
+  "scene": "A sprout grows under a blue moon, another sprout pokes out of the surface of a flared coat, and a third sits on a pile of shells someone takes the blame for.",
+  "img": "images/lookalikes/g020.jpg"
+ },
+ {
+  "id": "g021",
+  "kanji": [
+   "責",
+   "積"
+  ],
+  "tips": {
+   "責": "blame: growing up over shells, standing alone",
+   "積": "volume: blame with wheat (禾) added on the left"
+  },
+  "scene": "A small heap of shells sits alone taking the blame, while next to it a wheat sheaf leans on a giant heap that keeps growing in volume.",
+  "img": "images/lookalikes/g021.jpg"
+ },
+ {
+  "id": "g022",
+  "kanji": [
+   "険",
+   "験"
+  ],
+  "tips": {
+   "険": "precipitous: a pinnacle (阝) on the left of the pointed awl roof",
+   "験": "verification: a horse (馬) on the left of the pointed awl roof"
+  },
+  "scene": "A climber clings to a precipitous cliff beside a pointed tent, while at the next pointed tent a horse waits for verification at a checkpoint.",
+  "img": "images/lookalikes/g022.jpg"
+ },
+ {
+  "id": "g023",
+  "kanji": [
+   "安",
+   "字",
+   "守",
+   "宅"
+  ],
+  "tips": {
+   "安": "relax: a woman (女) under the roof",
+   "字": "character: a child (子) under the roof",
+   "守": "guard: glue (寸: a hooked stem with a dot) under the roof",
+   "宅": "home: a rooftop tail (乇) curling right under the roof"
+  },
+  "scene": "Under four little roofs: a woman lies back to relax, a child dresses as a storybook character, a guard stands with a hooked staff, and a home has a cat's tail curling out the door.",
+  "img": "images/lookalikes/g023.jpg"
+ },
+ {
+  "id": "g024",
+  "kanji": [
+   "今",
+   "会",
+   "合"
+  ],
+  "tips": {
+   "今": "now: under the umbrella only a short line and a hooked stroke, no box",
+   "会": "meeting: under the umbrella two lines and an elbow (ム) like a cloud",
+   "合": "fit: under the umbrella one line and a mouth (口) box"
+  },
+  "scene": "Under one umbrella a man checks his watch for now, under a second a meeting gathers beneath a rising cloud, and under a third a lid fits snugly on a square box.",
+  "img": "images/lookalikes/g024.jpg"
+ },
+ {
+  "id": "g025",
+  "kanji": [
+   "全",
+   "余",
+   "金"
+  ],
+  "tips": {
+   "全": "whole: umbrella over a king (王), nothing else",
+   "余": "too much: umbrella over a line and a hooked stem with two little feet, no king",
+   "金": "gold: umbrella over a king with two small dots beside the stem"
+  },
+  "scene": "A whole king sits under an umbrella, a second umbrella shelters a little tree weighed down with too much fruit, and a third shelters a king with two gold nuggets at his feet.",
+  "img": "images/lookalikes/g025.jpg"
+ },
+ {
+  "id": "g026",
+  "kanji": [
+   "冷",
+   "命"
+  ],
+  "tips": {
+   "冷": "cool: ice (two dots) on the left of orders (令)",
+   "命": "fate: a mouth (口) tucked in at lower left under the umbrella"
+  },
+  "scene": "An ice cube on the left cools an officer reading orders, while under a tent a fortune teller with an open mouth announces someone's fate.",
+  "img": "images/lookalikes/g026.jpg"
+ },
+ {
+  "id": "g027",
+  "kanji": [
+   "妹",
+   "姉"
+  ],
+  "tips": {
+   "妹": "younger sister: woman + not yet (未): a tree with a short extra top line",
+   "姉": "elder sister: woman + market (市): a top hat over a hanging towel"
+  },
+  "scene": "A younger sister plants a sapling that is not yet grown, while her elder sister in a top hat carries a towel home from the market.",
+  "img": "images/lookalikes/g027.jpg"
+ },
+ {
+  "id": "g028",
+  "kanji": [
+   "束",
+   "車",
+   "東",
+   "果"
+  ],
+  "tips": {
+   "束": "bundle: a crossbar, then a plain mouth box pierced by the trunk, legs slanting out",
+   "車": "car: no slanting legs; a crossed box between a top line and a long bottom axle",
+   "東": "east: like bundle but the box has a line inside (a sun), legs slanting out",
+   "果": "fruit: a rice-field box sits on top of the tree; no line or stem above it"
+  },
+  "scene": "A bundle of sticks tied with a ring lies beside a car with flat bumpers, while the sun rises in the east tangled in a tree and another tree is crowned with a big square fruit.",
+  "img": "images/lookalikes/g028.jpg"
+ },
+ {
+  "id": "g029",
+  "kanji": [
+   "連",
+   "速",
+   "運"
+  ],
+  "tips": {
+   "連": "take along: a car (車) riding on the road",
+   "速": "quick: a bundle (束) on the road, its box on slanting legs",
+   "運": "carry: a car under a crown (冖) on the road"
+  },
+  "scene": "On a road a car tows a trailer to take along friends, a quick runner dashes past with a bundle, and a truck under a canvas cover rolls by to carry crates.",
+  "img": "images/lookalikes/g029.jpg"
+ },
+ {
+  "id": "g030",
+  "kanji": [
+   "頂",
+   "頭",
+   "題"
+  ],
+  "tips": {
+   "頂": "place on the head: a simple street hook (丁) on the left of head",
+   "頭": "head: beans (豆) on the left of head",
+   "題": "topic: just so (是) on the left, its long sweep running under head"
+  },
+  "scene": "A porter learns to place on the head a T-shaped tray, a cook balances a bowl of beans on his head, and a speaker sweeps his arm low to introduce the topic.",
+  "img": "images/lookalikes/g030.jpg"
+ },
+ {
+  "id": "g031",
+  "kanji": [
+   "顔",
+   "願"
+  ],
+  "tips": {
+   "顔": "face: lad (彦: vase, cliff and three hairs) on the left of head",
+   "願": "petition: meadow (原: cliff over white and little) on the left of head"
+  },
+  "scene": "A smiling face with three wisps of hair peeks over a cliff, while below on a meadow a person kneels to petition.",
+  "img": "images/lookalikes/g031.jpg"
+ },
+ {
+  "id": "g032",
+  "kanji": [
+   "産",
+   "顔"
+  ],
+  "tips": {
+   "産": "products: vase on a cliff over life (生); no head on the right",
+   "顔": "face: vase on a cliff with three hair strokes, and head (頁) on the right"
+  },
+  "scene": "Farm products pile up under a cliff top, and next to them a face with three hair strokes peeks around the pile.",
+  "img": "images/lookalikes/g032.jpg"
+ },
+ {
+  "id": "g033",
+  "kanji": [
+   "売",
+   "続",
+   "読"
+  ],
+  "tips": {
+   "売": "sell: soldier over crown over human legs, standing alone",
+   "続": "continue: sell with thread (糸) on the left",
+   "読": "read: sell with say (言) on the left"
+  },
+  "scene": "A merchant sells goods from a stall, a customer reads aloud from a blank scroll, and a ball of thread continues unrolling down the street.",
+  "img": "images/lookalikes/g033.jpg"
+ },
+ {
+  "id": "g034",
+  "kanji": [
+   "主",
+   "住",
+   "注"
+  ],
+  "tips": {
+   "主": "lord: a drop over a king, standing alone",
+   "住": "dwell: lord with a person (亻) on the left",
+   "注": "pour: lord with water (氵) on the left"
+  },
+  "scene": "A lord wears a crown with one jewel, a person dwells in a hut beside him, and a servant pours water from a jug.",
+  "img": "images/lookalikes/g034.jpg"
+ },
+ {
+  "id": "g035",
+  "kanji": [
+   "仕",
+   "任"
+  ],
+  "tips": {
+   "仕": "attend: person + soldier (士), no slash on top",
+   "任": "responsibility: person + porter (壬), a slanted stroke on top of the cross"
+  },
+  "scene": "A soldier stands to attend a person, while a porter with a slanted pack on top shoulders the responsibility of a heavy pole.",
+  "img": "images/lookalikes/g035.jpg"
+ },
+ {
+  "id": "g036",
+  "kanji": [
+   "小",
+   "少"
+  ],
+  "tips": {
+   "小": "little: a hooked stem with two dots, nothing else",
+   "少": "few: little plus a long slash sweeping down left at the bottom"
+  },
+  "scene": "A little bird sits on a stick with two seeds, and beside it a few seeds slide away down a long slanting chute.",
+  "img": "images/lookalikes/g036.jpg"
+ },
+ {
+  "id": "g037",
+  "kanji": [
+   "水",
+   "求"
+  ],
+  "tips": {
+   "水": "water: a hooked stem with strokes flowing out left and right",
+   "求": "request: water with a flat line on top and a dot at the upper right"
+  },
+  "scene": "Water splashes from a garden fountain, and beside it a smiling person holds out a flat tray with one drop on its corner, asking for more.",
+  "img": "images/lookalikes/g037.jpg"
+ },
+ {
+  "id": "g038",
+  "kanji": [
+   "上",
+   "止",
+   "正"
+  ],
+  "tips": {
+   "上": "above: a stem with one short tick to the right, on a long base line",
+   "止": "stop: above plus a short extra post on the left",
+   "正": "correct: stop with a lid line across the top"
+  },
+  "scene": "A flag points above a long base line, a barrier with an extra short post makes the traffic stop, and a lid placed on top marks the job correct.",
+  "img": "images/lookalikes/g038.jpg"
+ },
+ {
+  "id": "g039",
+  "kanji": [
+   "下",
+   "不"
+  ],
+  "tips": {
+   "下": "below: a top line with a stem hanging down and a dot at its right",
+   "不": "negative: below plus a slash sweeping down left from the line"
+  },
+  "scene": "A plumb line hangs below a ceiling beam with one drop beside it, and on the next beam a broken branch slants off to the left as a man shakes his head in a negative way.",
+  "img": "images/lookalikes/g039.jpg"
+ },
+ {
+  "id": "g040",
+  "kanji": [
+   "足",
+   "走"
+  ],
+  "tips": {
+   "足": "leg: a mouth (口) on top of the foot",
+   "走": "run: soil (土) on top of the foot, a cross poking up"
+  },
+  "scene": "A leg in a boot with a wide open mouth-shaped kneecap stands still, while a runner kicks up soil as he starts to run.",
+  "img": "images/lookalikes/g040.jpg"
+ },
+ {
+  "id": "g041",
+  "kanji": [
+   "同",
+   "向"
+  ],
+  "tips": {
+   "同": "same: a flat line inside the hood above the mouth; nothing on top",
+   "向": "yonder: a small drop pokes out on top of the hood; no inner line"
+  },
+  "scene": "Two identical same mailboxes stand side by side, and a third with a little chimney on top faces off yonder.",
+  "img": "images/lookalikes/g041.jpg"
+ },
+ {
+  "id": "g042",
+  "kanji": [
+   "円",
+   "内",
+   "肉"
+  ],
+  "tips": {
+   "円": "circle: inside the hood a short stem drops onto a flat line",
+   "内": "inside: one person (人) poking up through the top of the hood",
+   "肉": "meat: two persons stacked inside the hood, the top one poking out"
+  },
+  "scene": "A coin circle rolls past a doorway where one person peeks out from inside, and in the next doorway two people stack up to share a plate of meat.",
+  "img": "images/lookalikes/g042.jpg"
+ },
+ {
+  "id": "g043",
+  "kanji": [
+   "四",
+   "西"
+  ],
+  "tips": {
+   "四": "four: a closed box with two legs curling inside it",
+   "西": "west: a flat line on top, and the two legs drop from it into the box"
+  },
+  "scene": "Four kittens curl up inside a closed box, while a second box with a lid bar on top has two posts poking through toward the setting sun in the west.",
+  "img": "images/lookalikes/g043.jpg"
+ },
+ {
+  "id": "g044",
+  "kanji": [
+   "若",
+   "苦"
+  ],
+  "tips": {
+   "若": "young: flowers over right (右): the slash pokes above the crossbar",
+   "苦": "suffering: flowers over old (古): a ten cross over the mouth"
+  },
+  "scene": "A young sprout with flowers pokes up beside an old man under a flower pot, wincing with suffering from a bitter cross-shaped root.",
+  "img": "images/lookalikes/g044.jpg"
+ },
+ {
+  "id": "g045",
+  "kanji": [
+   "職",
+   "識"
+  ],
+  "tips": {
+   "職": "post: ear (耳) on the left of the sound fiesta",
+   "識": "discriminating: say (言) on the left of the sound fiesta"
+  },
+  "scene": "At a noisy fiesta a discriminating critic speaks his verdict, while a guard at his post cups a huge ear to listen.",
+  "img": "images/lookalikes/g045.jpg"
+ },
+ {
+  "id": "g046",
+  "kanji": [
+   "老",
+   "考",
+   "者"
+  ],
+  "tips": {
+   "老": "old man: a spoon (匕) under the roof, curling right",
+   "考": "consider: a fishhook (丂: a line and a zigzag hook) under the roof",
+   "者": "someone: a sun (日) under the roof"
+  },
+  "scene": "An old man stirs with a spoon, another man holding a zigzag fishhook pauses to consider, and someone sits beneath the sun on the same slanted roof.",
+  "img": "images/lookalikes/g046.jpg"
+ },
+ {
+  "id": "g047",
+  "kanji": [
+   "役",
+   "投",
+   "抜"
+  ],
+  "tips": {
+   "役": "duty: going (彳) on the left of the missile (殳)",
+   "投": "throw: fingers (扌) on the left of the missile (殳: small table over a crotch)",
+   "抜": "slip out: fingers + 犮: a crossbar, slashes and a dot, no small table on top"
+  },
+  "scene": "A guard on duty walks a path, a pitcher's fingers throw a ball from a little table, and a wet fish manages to slip out of another hand with a splash.",
+  "img": "images/lookalikes/g047.jpg"
+ },
+ {
+  "id": "g048",
+  "kanji": [
+   "目",
+   "自",
+   "耳"
+  ],
+  "tips": {
+   "目": "eye: a tall box with two lines inside, nothing on top",
+   "自": "oneself: eye with a small drop on top",
+   "耳": "ear: the top line overhangs, the right stem runs past the bottom, the base slants up"
+  },
+  "scene": "A tall eye stares ahead, a person points to oneself at the tip of the nose, and a giant ear with long dangling lobes listens.",
+  "img": "images/lookalikes/g048.jpg"
+ },
+ {
+  "id": "g049",
+  "kanji": [
+   "動",
+   "勤",
+   "働"
+  ],
+  "tips": {
+   "動": "move: heavy (重, slash on top) + power (力)",
+   "勤": "diligence: Sino- clay (堇, horns on top, no slash) + power",
+   "働": "work: move with a person (亻) on the left"
+  },
+  "scene": "A heavy crate starts to move as a strongman pushes, a gardener with diligence digs clay under some flowers, and a person joins them to work.",
+  "img": "images/lookalikes/g049.jpg"
+ },
+ {
+  "id": "g050",
+  "kanji": [
+   "米",
+   "来"
+  ],
+  "tips": {
+   "米": "rice: two dots over a cross with two legs, no top line",
+   "来": "come: rice with a flat line on top"
+  },
+  "scene": "Rice grains scatter on a straw mat, and under a flat roof beam guests come to eat.",
+  "img": "images/lookalikes/g050.jpg"
+ },
+ {
+  "id": "g051",
+  "kanji": [
+   "楽",
+   "薬"
+  ],
+  "tips": {
+   "楽": "music: white over ice and tree, nothing on top",
+   "薬": "medicine: music with flowers (艹) on top"
+  },
+  "scene": "A drum on a tree plays music, and beside it a flower-topped drum holds bottles of herbal medicine.",
+  "img": "images/lookalikes/g051.jpg"
+ },
+ {
+  "id": "g052",
+  "kanji": [
+   "度",
+   "席",
+   "渡"
+  ],
+  "tips": {
+   "度": "degrees: cave over twenty (廿) and a crotch (又)",
+   "席": "seat: cave over twenty and a hanging towel (巾)",
+   "渡": "transit: degrees with water (氵) on the left"
+  },
+  "scene": "In a cave a thermometer shows degrees, outside a ferry makes the transit across water, and inside a towel hangs over a carved seat.",
+  "img": "images/lookalikes/g052.jpg"
+ },
+ {
+  "id": "g053",
+  "kanji": [
+   "発",
+   "登"
+  ],
+  "tips": {
+   "発": "discharge: teepee over two lines and open human legs",
+   "登": "ascend: teepee over beans (豆), a closed box on a stand"
+  },
+  "scene": "From one teepee a cannon on two legs makes a discharge of confetti, and from another a climber with a bowl of beans begins to ascend.",
+  "img": "images/lookalikes/g053.jpg"
+ },
+ {
+  "id": "g054",
+  "kanji": [
+   "際",
+   "察"
+  ],
+  "tips": {
+   "際": "occasion: ritual (祭) with a pinnacle (阝) on the left",
+   "察": "guess: ritual under a house roof (宀)"
+  },
+  "scene": "A festive ritual on a pinnacle marks a special occasion, while inside a roofed house a child tries to guess which ritual gift is hidden.",
+  "img": "images/lookalikes/g054.jpg"
+ },
+ {
+  "id": "g055",
+  "kanji": [
+   "易",
+   "場",
+   "陽"
+  ],
+  "tips": {
+   "易": "easy: a sun directly over the pennant (勿), no line between",
+   "場": "location: soil on the left; a line between the sun and the pennant",
+   "陽": "sunshine: pinnacle (阝) on the left; a line between the sun and the pennant"
+  },
+  "scene": "A pennant hangs easy under the sun, a piggy bank is buried in the soil to mark the location, and another basks in the sunshine on a pinnacle.",
+  "img": "images/lookalikes/g055.jpg"
+ },
+ {
+  "id": "g056",
+  "kanji": [
+   "良",
+   "食"
+  ],
+  "tips": {
+   "良": "good: a drop over a root, standing alone",
+   "食": "eat: an umbrella roof over good"
+  },
+  "scene": "A good dog sits proudly in the open, and next to it under an umbrella a family sits down to eat.",
+  "img": "images/lookalikes/g056.jpg"
+ },
+ {
+  "id": "g057",
+  "kanji": [
+   "飲",
+   "飯"
+  ],
+  "tips": {
+   "飲": "drink: eat + yawn (欠), an open mouth gulping",
+   "飯": "meal: eat + anti- (反), a cliff over a crotch"
+  },
+  "scene": "One diner yawns wide to drink a tall glass, while another sits under a cliff overhang to finish a full meal.",
+  "img": "images/lookalikes/g057.jpg"
+ },
+ {
+  "id": "g058",
+  "kanji": [
+   "平",
+   "半"
+  ],
+  "tips": {
+   "平": "even: a flat lid on top with two dots below it; the stem starts at the lid",
+   "半": "half: two horns at the very top, no lid; the stem pokes up between them"
+  },
+  "scene": "A balance beam with a flat lid holds two pebbles perfectly even, while beside it a horned goat's head is cut in half by a pole poking up.",
+  "img": "images/lookalikes/g058.jpg"
+ },
+ {
+  "id": "g059",
+  "kanji": [
+   "争",
+   "急"
+  ],
+  "tips": {
+   "争": "contend: the hooked top over a broom, with a stem hooking down through it",
+   "急": "hurry: the same top over a broom, but a heart (心) at the bottom"
+  },
+  "scene": "Two cats contend over a broom with a hooked handle, while a second broom with a beating heart rushes off in a hurry.",
+  "img": "images/lookalikes/g059.jpg"
+ },
+ {
+  "id": "g060",
+  "kanji": [
+   "帰",
+   "婦"
+  ],
+  "tips": {
+   "帰": "homecoming: two short strokes (saber) on the left + broom",
+   "婦": "lady: woman (女) on the left + broom"
+  },
+  "scene": "A traveler with a short sword returns for a homecoming, and a lady sweeps the doorway with a broom to greet him.",
+  "img": "images/lookalikes/g060.jpg"
+ },
+ {
+  "id": "g061",
+  "kanji": [
+   "局",
+   "居",
+   "屋"
+  ],
+  "tips": {
+   "局": "bureau: the flag's tail bends into a hook holding a small mouth",
+   "居": "reside: old (古: ten over a mouth) under the flag",
+   "屋": "roof: climax (至) stacked like ceilings under the flag"
+  },
+  "scene": "Under a flag a post bureau clerk calls through a hooked window, an old man resides in a cottage beneath it, and workers stack tiles on the roof.",
+  "img": "images/lookalikes/g061.jpg"
+ },
+ {
+  "id": "g062",
+  "kanji": [
+   "室",
+   "屋"
+  ],
+  "tips": {
+   "室": "room: climax (至) under a house roof (宀)",
+   "屋": "roof: climax under a flag (尸) instead of a house roof"
+  },
+  "scene": "A cozy room sits beneath a pointed house top, and next door a flag waves over a flat tiled roof.",
+  "img": "images/lookalikes/g062.jpg"
+ },
+ {
+  "id": "g063",
+  "kanji": [
+   "究",
+   "空",
+   "突"
+  ],
+  "tips": {
+   "究": "research: nine (九) under the hole",
+   "空": "empty: craft (工) under the hole",
+   "突": "stab: a dog (大) under the hole"
+  },
+  "scene": "Through one hole you see an empty I-beam, through a second a scientist does research on a curled number nine shaped fossil, and through a third a dog's nose jabs out in a playful stab.",
+  "img": "images/lookalikes/g063.jpg"
+ },
+ {
+  "id": "g064",
+  "kanji": [
+   "追",
+   "退"
+  ],
+  "tips": {
+   "追": "chase: mound (𠂤: a drop and two stacked bumps) on the road",
+   "退": "retreat: root (艮) on the road, ending in sweeping legs"
+  },
+  "scene": "On a road a puppy chases a ball over a little stacked mound, while a tree root with legs makes a slow retreat down the same road.",
+  "img": "images/lookalikes/g064.jpg"
+ },
+ {
+  "id": "g065",
+  "kanji": [
+   "権",
+   "観"
+  ],
+  "tips": {
+   "権": "authority: tree (木) on the left of the horned turkey",
+   "観": "outlook: horned turkey on the left, see (見) on the right"
+  },
+  "scene": "A horned turkey stands with authority by a tree, while another horned turkey peers through binoculars to see the outlook.",
+  "img": "images/lookalikes/g065.jpg"
+ },
+ {
+  "id": "g066",
+  "kanji": [
+   "助",
+   "祖",
+   "組"
+  ],
+  "tips": {
+   "助": "help: shelf on the LEFT, power (力) on the right",
+   "祖": "ancestor: altar (礻) on the left of the shelf (且)",
+   "組": "association: thread (糸) on the left of the shelf"
+  },
+  "scene": "An ancestor's photo frame rests on an altar shelf, an association of knitters ties thread to another shelf, and a strongman lends help lifting a third.",
+  "img": "images/lookalikes/g066.jpg"
+ },
+ {
+  "id": "g067",
+  "kanji": [
+   "富",
+   "福"
+  ],
+  "tips": {
+   "富": "wealth: a house roof (宀) over one, mouth and rice field",
+   "福": "blessing: an altar (礻) on the left, no roof"
+  },
+  "scene": "Under a grand roof a family shows its wealth with a full rice granary, while beside an altar a priest gives a blessing.",
+  "img": "images/lookalikes/g067.jpg"
+ },
+ {
+  "id": "g068",
+  "kanji": [
+   "在",
+   "存"
+  ],
+  "tips": {
+   "在": "exist: soil (土) under the crossed hand",
+   "存": "suppose: child (子) under the crossed hand"
+  },
+  "scene": "A sprout pushes up from the soil to exist under a sheltering hand, and a child under another hand stops to suppose what comes next.",
+  "img": "images/lookalikes/g068.jpg"
+ },
+ {
+  "id": "g069",
+  "kanji": [
+   "深",
+   "探"
+  ],
+  "tips": {
+   "深": "deep: water (氵) beside the deep hole",
+   "探": "grope: fingers (扌) beside the deep hole"
+  },
+  "scene": "Water pours into a deep hole, and at a second hole a hand reaches in to grope in the dark.",
+  "img": "images/lookalikes/g069.jpg"
+ },
+ {
+  "id": "g070",
+  "kanji": [
+   "亡",
+   "忙",
+   "忘"
+  ],
+  "tips": {
+   "亡": "deceased: a top hat over a hook bent like an L",
+   "忙": "busy: deceased with a heart (忄) on the left",
+   "忘": "forget: deceased sitting on a heart (心) at the bottom"
+  },
+  "scene": "A deceased ghost's top hat floats in the air, a busy clerk with a heart badge runs by it, and another man sits on a big heart and forgets why he came.",
+  "img": "images/lookalikes/g070.jpg"
+ },
+ {
+  "id": "g071",
+  "kanji": [
+   "努",
+   "怒"
+  ],
+  "tips": {
+   "努": "toil: guy (奴) over power (力)",
+   "怒": "angry: guy over a heart (心)"
+  },
+  "scene": "A guy toils pushing a heavy cart with all his power, while another guy sits on a big red heart looking angry.",
+  "img": "images/lookalikes/g071.jpg"
+ },
+ {
+  "id": "g072",
+  "kanji": [
+   "心",
+   "必"
+  ],
+  "tips": {
+   "心": "heart: three dots and a curved hook, no slash",
+   "必": "invariably: heart with a long slash cutting through from top right"
+  },
+  "scene": "A heart rests on a pillow, and beside it a second heart is crossed by an arrow that invariably hits the center.",
+  "img": "images/lookalikes/g072.jpg"
+ },
+ {
+  "id": "g073",
+  "kanji": [
+   "服",
+   "報"
+  ],
+  "tips": {
+   "服": "clothing: flesh (月) on the left of the stamp and crotch",
+   "報": "report: happiness (幸) on the left of the stamp and crotch"
+  },
+  "scene": "A tailor stamps a label onto clothing, while a smiling reporter stamps a happy report.",
+  "img": "images/lookalikes/g073.jpg"
+ },
+ {
+  "id": "g074",
+  "kanji": [
+   "旅",
+   "族",
+   "遊"
+  ],
+  "tips": {
+   "旅": "trip: under the banner, two sweeping figures walk off with a hook",
+   "族": "tribe: under the banner, a dart (矢)",
+   "遊": "play: banner over a child (子), all riding the road (辶)"
+  },
+  "scene": "Under a banner travelers set off on a trip, a tribe gathers holding darts beneath another banner, and children play under a third banner along a road.",
+  "img": "images/lookalikes/g074.jpg"
+ },
+ {
+  "id": "g075",
+  "kanji": [
+   "科",
+   "料"
+  ],
+  "tips": {
+   "科": "department: wheat (禾) beside the Big Dipper (斗)",
+   "料": "fee: rice (米) beside the Big Dipper"
+  },
+  "scene": "A farming department measures wheat with a long dipper, while a clerk charges a fee in scoops of rice under the stars of the Big Dipper.",
+  "img": "images/lookalikes/g075.jpg"
+ },
+ {
+  "id": "g076",
+  "kanji": [
+   "新",
+   "親"
+  ],
+  "tips": {
+   "新": "new: vase over tree + axe (斤) on the right",
+   "親": "parent: vase over tree + see (見) on the right"
+  },
+  "scene": "A carpenter builds a shiny new wooden chair in a sunny workshop, while beside the tree stump a parent watches the children play.",
+  "img": "images/lookalikes/g076.jpg"
+ },
+ {
+  "id": "g077",
+  "kanji": [
+   "園",
+   "遠"
+  ],
+  "tips": {
+   "園": "park: long robe (袁) enclosed in a box (囗)",
+   "遠": "distant: long robe riding on the road (辶), no box"
+  },
+  "scene": "A figure in a long robe strolls inside a fenced park, while another in a long robe walks off along a distant road.",
+  "img": "images/lookalikes/g077.jpg"
+ },
+ {
+  "id": "g078",
+  "kanji": [
+   "偉",
+   "違"
+  ],
+  "tips": {
+   "偉": "admirable: person (亻) beside the locket (韋)",
+   "違": "difference: locket riding on the road (辶)"
+  },
+  "scene": "An admirable gentleman proudly wears a golden locket on a chain, while a second locket rolls down a winding country road.",
+  "img": "images/lookalikes/g078.jpg"
+ },
+ {
+  "id": "g079",
+  "kanji": [
+   "父",
+   "文",
+   "交"
+  ],
+  "tips": {
+   "父": "father: two dots on top over crossed sticks",
+   "文": "sentence: a top hat (dot and line) over crossed sticks",
+   "交": "mingle: a top hat over father: dot, line, two dots and crossed sticks"
+  },
+  "scene": "A father with two bushy eyebrows crosses his arms, a teacher in a top hat holds crossed sticks to point at a sentence, and both mingle at a party.",
+  "img": "images/lookalikes/g079.jpg"
+ },
+ {
+  "id": "g080",
+  "kanji": [
+   "他",
+   "地"
+  ],
+  "tips": {
+   "他": "other: person (亻) beside the scorpion",
+   "地": "ground: soil (土) beside the scorpion (也)"
+  },
+  "scene": "A scorpion crawls across the ground beside a mound of soil, and an other person watches it from the side.",
+  "img": "images/lookalikes/g080.jpg"
+ },
+ {
+  "id": "g081",
+  "kanji": [
+   "堂",
+   "常"
+  ],
+  "tips": {
+   "堂": "public chamber/hall: soil (土) under the esteem roof",
+   "常": "usual: a towel (巾) hangs under the esteem roof"
+  },
+  "scene": "A public chamber/hall stands on solid soil, and next door, as usual, a towel hangs from a similar roof.",
+  "img": "images/lookalikes/g081.jpg"
+ },
+ {
+  "id": "g082",
+  "kanji": [
+   "受",
+   "愛"
+  ],
+  "tips": {
+   "受": "accept: claws and crown over a crotch (又)",
+   "愛": "love: claws and crown over a heart and walking legs (夂)"
+  },
+  "scene": "A hand reaches down from a crown to accept a gift, and next to it the same hand lifts a walking heart full of love.",
+  "img": "images/lookalikes/g082.jpg"
+ },
+ {
+  "id": "g083",
+  "kanji": [
+   "差",
+   "着"
+  ],
+  "tips": {
+   "差": "distinction: sheep with a long slash over craft (工)",
+   "着": "don: sheep with a long slash over an eye (目)"
+  },
+  "scene": "A sheep stands on an I-beam to show its distinction, while another sheep wearing big eye goggles stops to don a coat.",
+  "img": "images/lookalikes/g083.jpg"
+ },
+ {
+  "id": "g084",
+  "kanji": [
+   "両",
+   "雨"
+  ],
+  "tips": {
+   "両": "both: a line over a hood holding a small mountain (山) shape; no dots",
+   "雨": "rain: a line over a hood with a center stem and four raindrop dots"
+  },
+  "scene": "Both small mountains sit under one roof, while under another roof four drops of rain fall.",
+  "img": "images/lookalikes/g084.jpg"
+ },
+ {
+  "id": "g085",
+  "kanji": [
+   "英",
+   "映"
+  ],
+  "tips": {
+   "英": "England: flowers (艹) on top of center (央)",
+   "映": "reflect: sun (日) on the left of center"
+  },
+  "scene": "A garden in England blooms around a center pond, and beside it the pond starts to reflect the sun.",
+  "img": "images/lookalikes/g085.jpg"
+ },
+ {
+  "id": "g086",
+  "kanji": [
+   "京",
+   "高"
+  ],
+  "tips": {
+   "京": "capital: top hat, mouth, then little (小) at the bottom",
+   "高": "tall: top hat, mouth, then a hood holding a second mouth"
+  },
+  "scene": "The capital's pagoda stands on little legs, while a tall tower stacks two windows under its roof.",
+  "img": "images/lookalikes/g086.jpg"
+ },
+ {
+  "id": "g087",
+  "kanji": [
+   "商",
+   "適"
+  ],
+  "tips": {
+   "商": "make a deal: vase top over a hood with human legs and a mouth inside",
+   "適": "suitable: antique (a cross over a mouth inside the hood) riding the road"
+  },
+  "scene": "Two merchants make a deal in a market stall, while a suitable antique rides by on a cart down the road.",
+  "img": "images/lookalikes/g087.jpg"
+ },
+ {
+  "id": "g088",
+  "kanji": [
+   "的",
+   "約"
+  ],
+  "tips": {
+   "的": "bull's eye: white (白) beside the ladle (勺)",
+   "約": "promise: thread (糸) beside the ladle"
+  },
+  "scene": "A round target with a white center and a soup ladle side by side on a table, and two friends shaking hands over a spool of thread to seal a promise.",
+  "img": "images/lookalikes/g088.jpg"
+ },
+ {
+  "id": "g089",
+  "kanji": [
+   "給",
+   "絵"
+  ],
+  "tips": {
+   "給": "salary: thread + fit (合): umbrella over a line and a mouth box",
+   "絵": "picture: thread + meeting (会): umbrella over two lines and an elbow (ム)"
+  },
+  "scene": "A worker receives a salary in a box with a fitted lid, while a painter weaves a picture of a meeting from thread.",
+  "img": "images/lookalikes/g089.jpg"
+ },
+ {
+  "id": "g090",
+  "kanji": [
+   "民",
+   "紙"
+  ],
+  "tips": {
+   "民": "people: a small closed box on top, then the family-name sweep",
+   "紙": "paper: thread + family name (氏): starts with a slash, no closed box on top"
+  },
+  "scene": "A crowd of people stands under a square banner, while a girl ties thread around a bundle of paper.",
+  "img": "images/lookalikes/g090.jpg"
+ },
+ {
+  "id": "g091",
+  "kanji": [
+   "母",
+   "毎"
+  ],
+  "tips": {
+   "母": "mama: a frame with two dots and a line through it, nothing on top",
+   "毎": "every: mama with a banner top (a slash and a short line) on top"
+  },
+  "scene": "A mama holds her baby, and every morning she wears a little cap with a feather on top.",
+  "img": "images/lookalikes/g091.jpg"
+ },
+ {
+  "id": "g092",
+  "kanji": [
+   "勉",
+   "晩"
+  ],
+  "tips": {
+   "勉": "exertion: excuse (免) with power (力) on the right",
+   "晩": "nightfall: sun (日) on the left of excuse"
+  },
+  "scene": "A student shows exertion lifting weights, while at nightfall the sun sinks behind a man making an excuse.",
+  "img": "images/lookalikes/g092.jpg"
+ },
+ {
+  "id": "g093",
+  "kanji": [
+   "作",
+   "昨"
+  ],
+  "tips": {
+   "作": "make: person (亻) on the left of the saw (乍)",
+   "昨": "yesterday: sun (日) on the left of the saw"
+  },
+  "scene": "A person uses a saw to make a chair, while beside it the sun sets over the saw left out since yesterday.",
+  "img": "images/lookalikes/g093.jpg"
+ },
+ {
+  "id": "g094",
+  "kanji": [
+   "使",
+   "便"
+  ],
+  "tips": {
+   "使": "use: person + officer (吏): line, a plain mouth box, crossed legs",
+   "便": "convenience: person + grow late (更): line, a box with a line inside, crossed legs"
+  },
+  "scene": "An officer shows a person how to use a tool, while another person enjoys the convenience of a late-night store.",
+  "img": "images/lookalikes/g094.jpg"
+ },
+ {
+  "id": "g095",
+  "kanji": [
+   "因",
+   "困"
+  ],
+  "tips": {
+   "因": "cause: a dog (大) inside the box",
+   "困": "quandary: a tree (木) inside the box"
+  },
+  "scene": "A dog trapped in a box is the cause of the barking, while a tree stuck in another box faces a quandary about how to grow.",
+  "img": "images/lookalikes/g095.jpg"
+ },
+ {
+  "id": "g096",
+  "kanji": [
+   "五",
+   "互"
+  ],
+  "tips": {
+   "五": "five: a top line, a stem bending into a box shape, a flat base",
+   "互": "mutually: two hooks interlock between top and bottom lines, no stem"
+  },
+  "scene": "Five fingers grip a box-shaped frame, while two hooks mutually interlock between two planks.",
+  "img": "images/lookalikes/g096.jpg"
+ },
+ {
+  "id": "g097",
+  "kanji": [
+   "子",
+   "予"
+  ],
+  "tips": {
+   "子": "child: a curved hooked body with one crossbar",
+   "予": "beforehand: a small loop (マ) on top replaces the child's curved head"
+  },
+  "scene": "A child stands with arms out, while beside him a puppet with a looped head is prepared beforehand.",
+  "img": "images/lookalikes/g097.jpg"
+ },
+ {
+  "id": "g098",
+  "kanji": [
+   "無",
+   "舞"
+  ],
+  "tips": {
+   "無": "nothingness: four oven-fire dots at the bottom",
+   "舞": "dance: the same top, but two dancing feet (舛) at the bottom instead of dots"
+  },
+  "scene": "Over four burning embers there is nothingness, while beside them a pair of feet begins to dance.",
+  "img": "images/lookalikes/g098.jpg"
+ },
+ {
+  "id": "g099",
+  "kanji": [
+   "月",
+   "用"
+  ],
+  "tips": {
+   "月": "month: two inner lines, no stem through the middle",
+   "用": "utilize: month with a stem running down the middle through the lines"
+  },
+  "scene": "A crescent moon marks the month, while a builder utilizes a pole driven straight through a moon-shaped frame.",
+  "img": "images/lookalikes/g099.jpg"
+ },
+ {
+  "id": "g100",
+  "kanji": [
+   "客",
+   "容"
+  ],
+  "tips": {
+   "客": "guest: each (各: walking legs over a mouth) under the roof",
+   "容": "contain: valley (谷: two pairs of slashes over a mouth) under the roof"
+  },
+  "scene": "A guest walks into a house, while a second house has a valley inside that seems to contain a river.",
+  "img": "images/lookalikes/g100.jpg"
+ },
+ {
+  "id": "g101",
+  "kanji": [
+   "分",
+   "公"
+  ],
+  "tips": {
+   "分": "part: eight over a sword (刀)",
+   "公": "public: eight over an elbow (ム), a closed triangle"
+  },
+  "scene": "A sword cuts a cake into parts, while in a public park a man rests his elbow on a triangular bench.",
+  "img": "images/lookalikes/g101.jpg"
+ },
+ {
+  "id": "g102",
+  "kanji": [
+   "元",
+   "兄",
+   "見"
+  ],
+  "tips": {
+   "元": "beginning: two lines on top of human legs",
+   "兄": "elder brother: a mouth (口) on top of human legs",
+   "見": "see: an eye (目) on top of human legs"
+  },
+  "scene": "At the beginning of a race, a runner stands with two lines on his shirt, his elder brother shouts with a wide mouth, and a giant eye on legs watches to see who wins.",
+  "img": "images/lookalikes/g102.jpg"
+ },
+ {
+  "id": "g103",
+  "kanji": [
+   "計",
+   "許"
+  ],
+  "tips": {
+   "計": "plot: say (言) + ten (十), a simple cross",
+   "許": "permit: say + noon (午), a slanted stroke over two lines"
+  },
+  "scene": "A schemer counts ten fingers to plot a plan, while a guard at noon stamps a permit.",
+  "img": "images/lookalikes/g103.jpg"
+ },
+ {
+  "id": "g104",
+  "kanji": [
+   "学",
+   "覚"
+  ],
+  "tips": {
+   "学": "study: schoolhouse over a child (子)",
+   "覚": "memorize: schoolhouse over see (見)"
+  },
+  "scene": "A child sits in a schoolhouse to study, while another student stares hard to see and memorize a lesson.",
+  "img": "images/lookalikes/g104.jpg"
+ },
+ {
+  "id": "g105",
+  "kanji": [
+   "都",
+   "部"
+  ],
+  "tips": {
+   "都": "metropolis: someone (者) beside the city walls (阝 on the right)",
+   "部": "section: muzzle (立 over 口) beside the city walls"
+  },
+  "scene": "Someone stands proudly by the walls of a busy metropolis, while a muzzled dog guards one section of the wall.",
+  "img": "images/lookalikes/g105.jpg"
+ },
+ {
+  "id": "g106",
+  "kanji": [
+   "買",
+   "置",
+   "罪"
+  ],
+  "tips": {
+   "買": "buy: net (罒) over shells (貝)",
+   "置": "placement: net over straightaway (直)",
+   "罪": "guilt: net over un- (非)"
+  },
+  "scene": "A shopper uses a net to buy shells, a worker checks the placement of a net straightaway on a shelf, and a thief caught in a net looks un-happy with guilt.",
+  "img": "images/lookalikes/g106.jpg"
+ },
+ {
+  "id": "g107",
+  "kanji": [
+   "化",
+   "北"
+  ],
+  "tips": {
+   "化": "change: a person (亻) on the left, spoon (匕) on the right",
+   "北": "north: the left side is a stem with two ticks, two people back to back"
+  },
+  "scene": "A person stirs with a spoon to change a potion, while two people sit back to back facing north.",
+  "img": "images/lookalikes/g107.jpg"
+ },
+ {
+  "id": "g108",
+  "kanji": [
+   "実",
+   "寒"
+  ],
+  "tips": {
+   "実": "reality: roof over three lines and a pair of legs",
+   "寒": "cold: roof over a frame with extra posts, legs and two ice dots at the bottom"
+  },
+  "scene": "Inside a cozy house reality sets in as a man stands warm, while next door a figure shivers in the cold beside two ice cubes.",
+  "img": "images/lookalikes/g108.jpg"
+ }
+]
