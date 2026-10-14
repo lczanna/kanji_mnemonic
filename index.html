@@ -848,7 +848,15 @@ document.addEventListener('pointerdown', e => {
   if (!('speechSynthesis' in window) || e.target.closest('[data-say], [data-play], .gl, [data-kt]')) return;
   try { if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel(); } catch (err) { /* audio is optional */ }
 }, true);
+// Words and sentences recorded with neural voices (tools/gen_speech.py): speech/index.json maps the text to a clip.
+let REC = null;
+getJson('speech/index.json', true).then(x => { if (x && !Array.isArray(x)) REC = x; });
 function speak(text) {
+  const id = REC && REC[text];
+  if (id) return playRecorded(id, () => speakTTS(text), 'speech');
+  speakTTS(text);
+}
+function speakTTS(text) {
   if (!('speechSynthesis' in window)) return;
   try {
     speechSynthesis.cancel();
@@ -1592,8 +1600,8 @@ function examBar(it) {
 // Listening items are recorded with neural voices (tools/gen_audio.py): audio/<id>.mp3, or on the Claude link
 // audio/packs/ (few big files instead of hundreds). If a recording can't load, the phone's voices read the script.
 let audioIndex = null, audioPacks = {}, audioEl = null;
-async function audioSrc(id) {
-  try { const r = await fetch(`audio/${id}.mp3`, { method: 'HEAD' }); if (r.ok) return `audio/${id}.mp3`; } catch (e) { /* try the packs */ }
+async function audioSrc(id, dir = 'audio') {
+  try { const r = await fetch(`${dir}/${id}.mp3`, { method: 'HEAD' }); if (r.ok) return `${dir}/${id}.mp3`; } catch (e) { /* try the packs */ }
   try {
     audioIndex = audioIndex || getJson('audio/packs/index.json');
     const n = (await audioIndex)[id];
@@ -1602,10 +1610,10 @@ async function audioSrc(id) {
     return (await audioPacks[n])[id] || null;
   } catch (e) { audioIndex = null; return null; }
 }
-async function playRecorded(id, fallback) {
+async function playRecorded(id, fallback, dir) {
   try { speechSynthesis.cancel(); } catch (e) { /* no speech */ }
   if (audioEl) audioEl.pause();
-  const src = await audioSrc(id);
+  const src = await audioSrc(id, dir);
   if (!src) return fallback();
   audioEl = new Audio(src);
   audioEl.play().catch(() => fallback());

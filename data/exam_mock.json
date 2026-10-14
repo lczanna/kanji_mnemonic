@@ -1,0 +1,885 @@
+{
+ "A": {
+  "fill": [
+   {
+    "q": "雨が降りそうだから、かさを持っていった（　）いいですよ。",
+    "options": [
+     "ことが",
+     "ばかり",
+     "ほうが",
+     "ように"
+    ],
+    "answer": 2,
+    "why": "〜たほうがいい gives advice: 'you'd better take an umbrella'."
+   },
+   {
+    "q": "日本語が上手になりたいので、毎日ニュースを聞く（　）しています。",
+    "options": [
+     "ように",
+     "ために",
+     "そうに",
+     "らしく"
+    ],
+    "answer": 0,
+    "why": "〜ようにしている = making an effort to do something regularly."
+   },
+   {
+    "q": "兄は料理が上手ですが、毎日作る（　）ではありません。",
+    "options": [
+     "はず",
+     "ところ",
+     "こと",
+     "わけ"
+    ],
+    "answer": 3,
+    "why": "〜わけではない = it doesn't mean that / not necessarily (partial denial)."
+   },
+   {
+    "q": "この会社では、朝９時までに受付でサインすることに（　）。",
+    "options": [
+     "いきます",
+     "なっています",
+     "みえます",
+     "おきます"
+    ],
+    "answer": 1,
+    "why": "〜ことになっている describes a rule or arrangement: 'it is the rule that…'."
+   },
+   {
+    "q": "弟はゲーム（　）していて、全然勉強しない。",
+    "options": [
+     "だけに",
+     "ばかり",
+     "ほど",
+     "しか"
+    ],
+    "answer": 1,
+    "why": "Nばかりしている = doing nothing but N. しか needs a negative verb."
+   },
+   {
+    "q": "今、家を出る（　）だから、10分ぐらいで駅に着くと思う。",
+    "options": [
+     "はず",
+     "ため",
+     "ばかり",
+     "ところ"
+    ],
+    "answer": 3,
+    "why": "Dictionary form + ところだ = about to do it right now."
+   },
+   {
+    "q": "先生がお書きになった本を（　）ことがありますか。",
+    "options": [
+     "お読みになった",
+     "はいけんした",
+     "お読みした",
+     "読ませた"
+    ],
+    "answer": 0,
+    "why": "You are asking about the listener's action, so use the respectful form お〜になる, not the humble はいけんする / お〜する."
+   },
+   {
+    "q": "わたしは子どものころ、きらいな魚を母に毎日（　）、とてもいやでした。",
+    "options": [
+     "食べさせて",
+     "食べてもらって",
+     "食べさせられて",
+     "食べたくて"
+    ],
+    "answer": 2,
+    "why": "Causative-passive 食べさせられる: I was made to eat it by my mother (against my will), which explains いやでした."
+   },
+   {
+    "q": "駅に着いた（　）、電車が出てしまった。",
+    "options": [
+     "ながら",
+     "うちに",
+     "までに",
+     "とたんに"
+    ],
+    "answer": 3,
+    "why": "Past form + とたん(に) = the moment / just as something happened."
+   },
+   {
+    "q": "この本は子ども（　）書かれているので、ことばがやさしい。",
+    "options": [
+     "として",
+     "向けに",
+     "にとって",
+     "までに"
+    ],
+    "answer": 1,
+    "why": "N向けに = aimed at / intended for N (children), so the words are easy."
+   },
+   {
+    "q": "毎日聞いていたら、少しずつニュースがわかる（　）。",
+    "options": [
+     "ことになりました",
+     "ようにしました",
+     "ようになりました",
+     "ことにしました"
+    ],
+    "answer": 2,
+    "why": "Non-volitional わかる + ようになる = came to be able to understand (change over time)."
+   },
+   {
+    "q": "すみません、部長はもう（　）か。",
+    "options": [
+     "お帰りになりました",
+     "お帰りしました",
+     "帰らせました",
+     "帰っていただきました"
+    ],
+    "answer": 0,
+    "why": "Respectful form of 帰る for a superior: お帰りになる. お帰りする is humble."
+   },
+   {
+    "q": "あんなに勉強した（　）、試験に落ちてしまった。",
+    "options": [
+     "ので",
+     "のに",
+     "から",
+     "ために"
+    ],
+    "answer": 1,
+    "why": "〜のに expresses an unexpected or disappointing result: 'even though I studied so hard'."
+   }
+  ],
+  "order": [
+   {
+    "before": "弟はテレビを",
+    "chunks": [
+     "見",
+     "ながら",
+     "ご飯を",
+     "食べて"
+    ],
+    "after": "います。",
+    "star": 2,
+    "why": "弟はテレビを見ながらご飯を食べています。 — 見 must follow テレビを, then ながら; ご飯を goes before 食べて."
+   },
+   {
+    "before": "明日は雨が",
+    "chunks": [
+     "降り",
+     "そうな",
+     "ので",
+     "試合は"
+    ],
+    "after": "中止になるかもしれません。",
+    "star": 1,
+    "why": "明日は雨が降りそうなので試合は中止になるかもしれません。 — 降り＋そうな＋ので gives the reason; 試合は is the subject of 中止になる."
+   },
+   {
+    "before": "これは母が",
+    "chunks": [
+     "若い",
+     "ころ",
+     "好きだった",
+     "歌手の"
+    ],
+    "after": "歌です。",
+    "star": 2,
+    "why": "これは母が若いころ好きだった歌手の歌です。 — 若いころ is the time; 好きだった modifies 歌手, and 歌手の modifies 歌."
+   },
+   {
+    "before": "わからないことが",
+    "chunks": [
+     "あれば",
+     "先生に",
+     "聞く",
+     "ように"
+    ],
+    "after": "してください。",
+    "star": 0,
+    "why": "わからないことがあれば先生に聞くようにしてください。 — ことが＋あれば, then 先生に聞く＋ようにしてください."
+   },
+   {
+    "before": "田中さんは",
+    "chunks": [
+     "明日の",
+     "会議には",
+     "出られない",
+     "と"
+    ],
+    "after": "言っていました。",
+    "star": 1,
+    "why": "田中さんは明日の会議には出られないと言っていました。 — 明日の modifies 会議; the quote ends with と before 言っていました."
+   }
+  ],
+  "textgram": {
+   "text": "　わたしは毎週土曜日に、近所の図書館へ行きます。この図書館は駅から歩いて５分の所にあって、とても便利です。（１）、去年までは、図書館にほとんど行ったことがありませんでした。本は買って読むものだと思っていたからです。それに、図書館は静かすぎて、少しきんちょうする場所だと感じていました。\n　ある日、友だちに「図書館では本だけでなく、古い映画も見られるよ」と教えて（２）。行ってみると、本当にたくさんの映画がありました。それから、わたしは図書館が好きに（３）。\n　図書館には、いろいろな人が来ます。宿題をする学生や、新聞を読むお年寄り、子どもに本を読んであげるお母さんもいます。みんな静かに自分の時間を楽しんで（４）。\n　最近は、本を買う前に、まず図書館で探すようにしています。お金も使わないし、読みたい本が見つかると、とてもうれしくなります。みなさんも、ぜひ一度近くの図書館に行って（５）。",
+   "blanks": [
+    {
+     "q": "（１）",
+     "options": [
+      "だから",
+      "でも",
+      "それに",
+      "たとえば"
+     ],
+     "answer": 1,
+     "why": "The writer says the library is convenient, BUT until last year rarely went there — a contrast, so でも."
+    },
+    {
+     "q": "（２）",
+     "options": [
+      "あげました",
+      "くれました",
+      "やりました",
+      "もらいました"
+     ],
+     "answer": 3,
+     "why": "友だちに教えてもらいました: the friend (marked by に) taught me. くれました would need 友だちが."
+    },
+    {
+     "q": "（３）",
+     "options": [
+      "なりました",
+      "しました",
+      "いきました",
+      "させました"
+     ],
+     "answer": 0,
+     "why": "好きになる = come to like. 好きにする means 'do as you like'."
+    },
+    {
+     "q": "（４）",
+     "options": [
+      "あります",
+      "おきます",
+      "います",
+      "しまいます"
+     ],
+     "answer": 2,
+     "why": "〜ている describes what people are doing: 楽しんでいます."
+    },
+    {
+     "q": "（５）",
+     "options": [
+      "みたいです",
+      "みてください",
+      "しまいました",
+      "あります"
+     ],
+     "answer": 1,
+     "why": "ぜひ…行ってみてください is an invitation to the readers (みなさん)."
+    }
+   ],
+   "en": "Every Saturday I go to the library in my neighborhood. It is a five-minute walk from the station and very convenient. But until last year I had hardly ever been to a library, because I thought books were something you buy and read. Also, I felt libraries were too quiet and a little nerve-racking. One day a friend told me, 'At the library you can watch old movies, not just read books.' When I went, there really were lots of movies, and since then I have come to like the library. All kinds of people come: students doing homework, elderly people reading newspapers, mothers reading to their children. Everyone quietly enjoys their own time. These days, before buying a book I first look for it at the library. It saves money, and I feel very happy when I find a book I want to read. Please try visiting your local library too."
+  },
+  "long": {
+   "text": "　わたしは去年まで、朝起きるのがとても苦手でした。毎朝、会社に行く時間ぎりぎりまで寝ていて、朝ご飯も食べずに家を出ていました。そのため、午前中はいつも頭がぼんやりして、仕事の小さな間違いも多かったのです。\n　ある日、同じ部のせんぱいに「朝の時間を使うと、一日が変わるよ」と言われました。せんぱいは毎朝５時に起きて、近所を30分ほど散歩してから、ゆっくり朝ご飯を食べているそうです。わたしは「そんなに早く起きるのは無理だ」と思いましたが、まず30分だけ早く起きることから始めてみました。\n　最初の一週間は本当に大変でした。夜、寝る時間が変わらなかったので、朝はとても眠かったのです。そこで、夜11時にはスマホを見るのをやめて、早く寝るようにしました。すると、少しずつ朝、自然に目が覚めるようになりました。\n　今では毎朝６時に起きて、朝ご飯を食べながら、その日の予定を考えています。午前中の仕事も前よりずっと速くできるようになり、間違いも少なくなりました。大切なのは、いきなり大きく変えようとしないことだと思います。小さなことから始めれば、続けるのはそれほどむずかしくありません。",
+   "questions": [
+    {
+     "q": "去年までの「わたし」について、正しいものはどれか。",
+     "options": [
+      "毎朝５時に起きていた",
+      "午前中の仕事が速かった",
+      "朝、近所を散歩していた",
+      "朝ご飯を食べないで会社に行っていた"
+     ],
+     "answer": 3,
+     "why": "Paragraph 1: 朝ご飯も食べずに家を出ていました. The 5 a.m. walk is the senpai's habit."
+    },
+    {
+     "q": "最初の一週間、朝とても眠かったのはなぜか。",
+     "options": [
+      "夜、寝る時間が前と同じだったから",
+      "朝５時に起きたから",
+      "散歩をしすぎたから",
+      "仕事がいそがしかったから"
+     ],
+     "answer": 0,
+     "why": "夜、寝る時間が変わらなかったので — bedtime stayed the same while getting up earlier."
+    },
+    {
+     "q": "「わたし」は、眠いという問題をどうやって解決したか。",
+     "options": [
+      "朝ご飯をたくさん食べるようにした",
+      "毎朝せんぱいと散歩するようにした",
+      "夜11時からスマホを見ないで、早く寝るようにした",
+      "会社の近くに引っ越した"
+     ],
+     "answer": 2,
+     "why": "夜11時にはスマホを見るのをやめて、早く寝るようにしました."
+    },
+    {
+     "q": "このぶんしょうで「わたし」が一番言いたいことは何か。",
+     "options": [
+      "朝は５時に起きたほうがいい",
+      "生活を変えるときは、小さなことから始めるといい",
+      "朝ご飯を食べないと仕事ができない",
+      "せんぱいの言うことは何でも聞いたほうがいい"
+     ],
+     "answer": 1,
+     "why": "Last paragraph: 大切なのは、いきなり大きく変えようとしないこと… 小さなことから始めれば."
+    }
+   ],
+   "en": "Until last year I was very bad at getting up in the morning. I slept until the last minute and left home without breakfast, so in the mornings my head was foggy and I made many small mistakes at work. One day a senior colleague in my department told me, 'If you use your mornings, your whole day changes.' He gets up at 5, walks around the neighborhood for about 30 minutes, then has a relaxed breakfast. I thought getting up that early was impossible, but I started by getting up just 30 minutes earlier. The first week was really hard: I still went to bed at the same time, so I was very sleepy. So I stopped looking at my phone at 11 p.m. and went to bed earlier, and gradually I began waking up naturally. Now I get up at 6 every day and plan my day over breakfast. My morning work is much faster and I make fewer mistakes. I think the key is not to try to change everything at once; if you start small, it isn't so hard to keep going."
+  },
+  "gist": [
+   {
+    "id": "mgA1",
+    "intro": "ラジオで女の人が話しています。",
+    "s": "F",
+    "talk": [
+     "みなさん、夜なかなか眠れないことはありませんか。",
+     "わたしも以前は、ベッドに入っても一時間以上眠れない日がよくありました。",
+     "いろいろ調べてみて、寝る前の習慣が大切だとわかりました。",
+     "たとえば、寝る直前までスマホを見ていると、頭が休まらないそうです。",
+     "それで、寝る一時間前にはスマホを使わないで、本を読むようにしました。",
+     "すると、前よりずっと早く眠れるようになったんです。",
+     "みなさんも、ぜひためしてみてください。"
+    ],
+    "question": "女の人は何について話していますか。",
+    "options": [
+     "よく眠るための習慣",
+     "スマホの新しい使い方",
+     "おすすめの本",
+     "ベッドの選び方"
+    ],
+    "en": "A woman on the radio: Do you ever have trouble falling asleep? I used to often lie in bed for over an hour. After looking into it, I learned that habits before bed matter. For example, looking at your phone right up to bedtime keeps your brain from resting. So I stopped using my phone an hour before bed and read a book instead, and now I fall asleep much faster. Please try it.",
+    "why": "The whole talk is about habits that help you fall asleep; the phone and the book are only examples.",
+    "answer": 0
+   },
+   {
+    "id": "mgA2",
+    "intro": "会社で部長が社員に話しています。",
+    "s": "M",
+    "talk": [
+     "みなさん、来月から会議のやり方を少し変えることになりました。",
+     "これまで、会議は毎週月曜日の朝に、一時間ぐらいやっていましたね。",
+     "でも、長すぎるという意見が多かったので、来月からは三十分にします。",
+     "そのかわり、資料は前の日までにメールで送ってください。",
+     "会議の前に、みんなが資料を読んでおけば、話し合いがみじかくてすむと思います。",
+     "よろしくお願いします。"
+    ],
+    "question": "部長が一番伝えたいことは何ですか。",
+    "options": [
+     "会議を月曜日から金曜日に変えること",
+     "資料をもっとたくさん作ること",
+     "会議の時間をみじかくして、資料を前の日に送ること",
+     "会議の回数を増やすこと"
+    ],
+    "en": "A manager to staff: From next month we will change how meetings are run. Until now the Monday morning meeting took about an hour, but many said it was too long, so it will be 30 minutes. Instead, please email your materials by the day before. If everyone reads them in advance, the discussion can be shorter.",
+    "why": "The meeting becomes 30 minutes and materials must be sent the day before. The day and the number of meetings do not change.",
+    "answer": 2
+   },
+   {
+    "id": "mgA3",
+    "intro": "留学生が日本の生活について話しています。",
+    "s": "M",
+    "talk": [
+     "日本に来て、最初におどろいたのは、ごみの出し方です。",
+     "わたしの国では、ほとんどのごみを一つのふくろに入れて出していました。",
+     "でも、日本では、もえるごみ、プラスチック、びんやかんなど、こまかく分けなければなりません。",
+     "出す曜日も決まっているので、最初はよく間違えて、近所の人に注意されました。",
+     "でも、今では分けるのが当たり前になりました。",
+     "国に帰っても、このやり方を続けたいと思っています。"
+    ],
+    "question": "留学生は、日本のごみの出し方についてどう思っていますか。",
+    "options": [
+     "分け方が多すぎて、いやだと思っている",
+     "今は慣れて、いい習慣だと思っている",
+     "自分の国のやり方のほうがいいと思っている",
+     "近所の人がきびしすぎると思っている"
+    ],
+    "en": "An international student: What surprised me first in Japan was how to put out the trash. At home we put almost everything in one bag, but in Japan you have to separate burnables, plastic, bottles and cans. The collection days are fixed too, so at first I often made mistakes and neighbors warned me. Now separating is natural for me, and I want to keep doing it when I go home.",
+    "why": "He says separating is now natural (当たり前) and he wants to continue it at home, so he sees it as a good habit.",
+    "answer": 1
+   }
+  ],
+  "say": [
+   {
+    "id": "msA1",
+    "scene": "At a restaurant, you want the server to show you the menu.",
+    "intro": "店の人にメニューを見せてほしいです。何と言いますか。",
+    "options": [
+     "すみません、メニューを見せてあげましょうか。",
+     "すみません、メニューを見せてもらえますか。",
+     "すみません、メニューを見てもいいですよ。"
+    ],
+    "why": "〜てもらえますか is a polite request. 見せてあげましょうか offers to show; 見てもいいですよ gives permission.",
+    "answer": 1
+   },
+   {
+    "id": "msA2",
+    "scene": "A coworker looks very busy, and you want to offer help.",
+    "intro": "同じ会社の人がとてもいそがしそうです。何と言いますか。",
+    "options": [
+     "何か手伝いましょうか。",
+     "何か手伝ってもらえませんか。",
+     "手伝ってくれて、ありがとう。"
+    ],
+    "why": "〜ましょうか offers to do something. 手伝ってもらえませんか asks for help; ありがとう thanks someone who already helped.",
+    "answer": 0
+   },
+   {
+    "id": "msA3",
+    "scene": "You arrive late to a meeting where everyone is already seated.",
+    "intro": "会議に遅れて着きました。何と言いますか。",
+    "options": [
+     "お先に失礼します。",
+     "どうぞ、ごゆっくり。",
+     "遅れてしまって、すみません。"
+    ],
+    "why": "You apologize for being late. お先に失礼します is said when leaving before others.",
+    "answer": 2
+   },
+   {
+    "id": "msA4",
+    "scene": "In a clothing shop, you want to try on a jacket.",
+    "intro": "店でジャケットを着てみたいです。何と言いますか。",
+    "options": [
+     "これ、着てみたらどうですか。",
+     "これ、着てみせましょうか。",
+     "これ、着てみてもいいですか。"
+    ],
+    "why": "〜てもいいですか asks permission. 着てみたらどうですか suggests that someone else try it on.",
+    "answer": 2
+   }
+  ]
+ },
+ "B": {
+  "fill": [
+   {
+    "q": "家を出（　）としたとき、電話が鳴った。",
+    "options": [
+     "たい",
+     "よう",
+     "そう",
+     "ろう"
+    ],
+    "answer": 1,
+    "why": "Volitional + とする = to be about to / try to do: 出ようとしたとき 'just as I was about to leave'."
+   },
+   {
+    "q": "メールは昨日送りましたから、もう着いている（　）です。",
+    "options": [
+     "だらけ",
+     "ため",
+     "まま",
+     "はず"
+    ],
+    "answer": 3,
+    "why": "〜はずだ = should be (expectation based on a reason: it was sent yesterday)."
+   },
+   {
+    "q": "暗くなら（　）、帰りましょう。",
+    "options": [
+     "ないうちに",
+     "ないまでに",
+     "ないあいだ",
+     "ないところで"
+    ],
+    "answer": 0,
+    "why": "〜ないうちに = before something happens (while it hasn't yet got dark)."
+   },
+   {
+    "q": "今日は私が料理を作る（　）、あなたがおさらを洗ってね。",
+    "options": [
+     "ために",
+     "までに",
+     "かわりに",
+     "うちに"
+    ],
+    "answer": 2,
+    "why": "〜かわりに = in exchange / instead: I cook, and in return you wash the dishes."
+   },
+   {
+    "q": "この本は読め（　）読むほどおもしろくなる。",
+    "options": [
+     "ば",
+     "て",
+     "たら",
+     "のに"
+    ],
+    "answer": 0,
+    "why": "〜ば〜ほど = the more…, the more…: 読めば読むほど."
+   },
+   {
+    "q": "国（　）、あいさつのしかたがちがう。",
+    "options": [
+     "について",
+     "に対して",
+     "によって",
+     "として"
+    ],
+    "answer": 2,
+    "why": "Nによって = depending on N: greetings differ depending on the country."
+   },
+   {
+    "q": "大事な書類を電車の中に忘れて（　）。",
+    "options": [
+     "おきました",
+     "みました",
+     "ありました",
+     "しまいました"
+    ],
+    "answer": 3,
+    "why": "〜てしまう shows an unintended, regrettable action: I (accidentally) left it."
+   },
+   {
+    "q": "すみません、今日は体の具合が悪いので、早く帰ら（　）でしょうか。",
+    "options": [
+     "れていただけない",
+     "せていただけない",
+     "せてもらわない",
+     "せてあげない"
+    ],
+    "answer": 1,
+    "why": "Causative + ていただけないでしょうか = very polite request for permission: 'may I go home early?'"
+   },
+   {
+    "q": "電車の中で、となりの人に足を（　）。",
+    "options": [
+     "ふみました",
+     "ふませました",
+     "ふまれさせました",
+     "ふまれました"
+    ],
+    "answer": 3,
+    "why": "Suffering passive: my foot was stepped on by the person next to me (人に＋passive)."
+   },
+   {
+    "q": "この薬はとても苦くて、飲み（　）です。",
+    "options": [
+     "にくい",
+     "やすい",
+     "たい",
+     "そう"
+    ],
+    "answer": 0,
+    "why": "Verb stem + にくい = hard to do. Because it is bitter, it is hard to take."
+   },
+   {
+    "q": "子どもには、自分で考えられる人になって（　）と思っています。",
+    "options": [
+     "もらう",
+     "ほしい",
+     "あげたい",
+     "くれる"
+    ],
+    "answer": 1,
+    "why": "〜てほしい = I want someone (the child) to do / become something."
+   },
+   {
+    "q": "（客に）こちらの書類は、明日わたしが（　）。",
+    "options": [
+     "お送りになります",
+     "送られます",
+     "お送りします",
+     "送ってくださいます"
+    ],
+    "answer": 2,
+    "why": "Speaking about your own action to a customer, use the humble form お〜する."
+   },
+   {
+    "q": "この自転車は先週買った（　）なのに、もうこわれてしまった。",
+    "options": [
+     "ところ",
+     "まま",
+     "はず",
+     "ばかり"
+    ],
+    "answer": 3,
+    "why": "Past + ばかり = only recently did (feels recent to the speaker, even a week ago). たところ is only for 'just this moment'."
+   }
+  ],
+  "order": [
+   {
+    "before": "この店は",
+    "chunks": [
+     "安い",
+     "だけで",
+     "なく",
+     "味も"
+    ],
+    "after": "いいです。",
+    "star": 3,
+    "why": "この店は安いだけでなく味もいいです。 — 〜だけでなく = not only…; 味も is the subject of いい."
+   },
+   {
+    "before": "部屋の",
+    "chunks": [
+     "窓が",
+     "開いた",
+     "まま",
+     "出かけて"
+    ],
+    "after": "しまいました。",
+    "star": 2,
+    "why": "部屋の窓が開いたまま出かけてしまいました。 — 〜たまま = leaving a state unchanged; 出かけて＋しまいました."
+   },
+   {
+    "before": "先生に",
+    "chunks": [
+     "言われた",
+     "とおりに",
+     "やって",
+     "みたら"
+    ],
+    "after": "うまくできました。",
+    "star": 1,
+    "why": "先生に言われたとおりにやってみたらうまくできました。 — 言われた＋とおりに = exactly as told; やって＋みたら."
+   },
+   {
+    "before": "こんなに",
+    "chunks": [
+     "たくさんの",
+     "人が",
+     "来る",
+     "とは"
+    ],
+    "after": "思いませんでした。",
+    "star": 0,
+    "why": "こんなにたくさんの人が来るとは思いませんでした。 — こんなに modifies たくさんの; 〜とは思わなかった = I never thought…"
+   },
+   {
+    "before": "子どもが",
+    "chunks": [
+     "寝ている",
+     "間に",
+     "部屋を",
+     "かたづけ"
+    ],
+    "after": "ました。",
+    "star": 2,
+    "why": "子どもが寝ている間に部屋をかたづけました。 — 〜ている間に = while…; 部屋を goes before the verb かたづけ."
+   }
+  ],
+  "textgram": {
+   "text": "　先生、お元気ですか。わたしが国へ帰ってから、もう半年になります。日本にいた一年間、先生には本当にお世話に（１）。\n　国に帰ってからは、旅行会社で働いています。日本から来るお客さんと話す仕事なので、毎日日本語を使っています。（２）、最初は日本語がなかなか出てこなくて、とても困りました。日本にいたときは、毎日先生やクラスの友だちと日本語で話していたのに、半年使わない（３）、ずいぶん忘れてしまったのです。\n　そこで、毎晩寝る前に、日本語の本を声に出して読むことに（４）。わからないことばは、ノートに書いて覚えるようにしています。今では、お客さんに「日本語が上手ですね」と言われるようになりました。\n　来年の春、仕事で東京へ行く予定です。そのときに先生にお会いできたら、とてもうれしいです。寒くなってきましたので、どうぞお体に気をつけて（５）。",
+   "blanks": [
+    {
+     "q": "（１）",
+     "options": [
+      "しました",
+      "くれました",
+      "なりました",
+      "いただきました"
+     ],
+     "answer": 2,
+     "why": "Fixed expression: お世話になりました 'thank you for all your help'."
+    },
+    {
+     "q": "（２）",
+     "options": [
+      "ところが",
+      "だから",
+      "そのうえ",
+      "つまり"
+     ],
+     "answer": 0,
+     "why": "She uses Japanese every day at work, but (contrary to expectation) at first the words wouldn't come — contrast: ところが."
+    },
+    {
+     "q": "（３）",
+     "options": [
+      "ために",
+      "までに",
+      "ように",
+      "うちに"
+     ],
+     "answer": 3,
+     "why": "〜ないうちに here means 'while (not using it)': in the half year without using it, she forgot a lot."
+    },
+    {
+     "q": "（４）",
+     "options": [
+      "いました",
+      "しました",
+      "されました",
+      "ありました"
+     ],
+     "answer": 1,
+     "why": "〜ことにする = decide to do: she decided to read aloud every night."
+    },
+    {
+     "q": "（５）",
+     "options": [
+      "ほしい",
+      "おきます",
+      "ください",
+      "いただけ"
+     ],
+     "answer": 2,
+     "why": "Closing of a letter: お体に気をつけてください 'please take care of yourself'."
+    }
+   ],
+   "en": "Dear teacher, how are you? It has already been half a year since I went back to my country. Thank you so much for everything during my year in Japan. Since returning, I have been working at a travel agency. My job is talking with customers from Japan, so I use Japanese every day. However, at first the words just wouldn't come and I was really stuck. In Japan I spoke Japanese every day with you and my classmates, but in six months of not using it, I forgot a lot. So I decided to read a Japanese book aloud every night before bed. I write down words I don't know in a notebook and memorize them. Now customers tell me my Japanese is good. Next spring I plan to go to Tokyo for work, and I would be very happy if I could see you then. It is getting cold, so please take care of yourself."
+  },
+  "long": {
+   "text": "　わたしが住んでいる町には、小さな公民館があります。去年の春、そこに「自由にどうぞ」と書かれた大きなたなができました。使わなくなった物を持ってきて置いておくと、ほしい人が自由に持って帰れる、というしくみです。\n　最初は、あまり物が集まりませんでした。知らない人に自分の物をあげるのは少し心配だ、という人が多かったからです。そこで、公民館の人たちは、物を置く人にみじかいメッセージを書いた紙をつけてもらうことにしました。例えば「子どもが小さいころに読んでいた本です。大切にしてくれる人にどうぞ」というような言葉です。\n　すると、たなの物がどんどん増えていきました。メッセージを読むと、その物を使っていた人の顔が見えるような気がして、安心して持って帰れるのです。持って帰った人が、お礼のメッセージを書いて置いていくこともあります。\n　わたしも先月、息子が使わなくなった自転車を置きました。次の週に行ってみると、「むすめが毎日楽しそうに乗っています。ありがとうございました」という紙がありました。物をすてないですむだけでなく、知らない人と心がつながったような、あたたかい気持ちになりました。",
+   "questions": [
+    {
+     "q": "「自由にどうぞ」のたなは、どんなしくみか。",
+     "options": [
+      "物を安い値段で売ったり買ったりする",
+      "いらない物を置いて、ほしい人が持って帰る",
+      "公民館の物を自由に借りられる",
+      "子どもの物だけを集めて配る"
+     ],
+     "answer": 1,
+     "why": "Paragraph 1: 使わなくなった物を…置いておくと、ほしい人が自由に持って帰れる. Nothing is sold or lent."
+    },
+    {
+     "q": "最初、物があまり集まらなかったのはなぜか。",
+     "options": [
+      "たなが小さすぎたから",
+      "公民館に来る人が少なかったから",
+      "メッセージを書くのがめんどうだったから",
+      "知らない人に物をあげるのが心配な人が多かったから"
+     ],
+     "answer": 3,
+     "why": "知らない人に自分の物をあげるのは少し心配だ、という人が多かったから."
+    },
+    {
+     "q": "メッセージをつけるようになってから、どうなったか。",
+     "options": [
+      "たなの物が増えた",
+      "物を持って帰る人がいなくなった",
+      "公民館の人がたなをかたづけた",
+      "たなに置ける物が決められた"
+     ],
+     "answer": 0,
+     "why": "すると、たなの物がどんどん増えていきました."
+    },
+    {
+     "q": "自転車を置いたあと、「わたし」はどんな気持ちになったか。",
+     "options": [
+      "自転車をあげたことを少しこうかいした",
+      "次はもっと高い物を置きたいと思った",
+      "知らない人とつながったようで、あたたかい気持ち",
+      "息子にしかられて、悲しかった"
+     ],
+     "answer": 2,
+     "why": "Last sentence: 知らない人と心がつながったような、あたたかい気持ちになりました."
+    }
+   ],
+   "en": "There is a small community center in my town. Last spring a big shelf labeled 'Help yourself' was set up there. You bring things you no longer use and leave them, and anyone who wants them can take them home. At first not many things were brought, because many people felt a little uneasy giving their things to strangers. So the center staff asked people to attach a short handwritten message, for example: 'Books my child read when little. For someone who will take good care of them.' After that, the things on the shelf increased steadily. Reading the message, you feel you can see the face of the person who used the item, so you can take it home without worry. Sometimes people who took something leave a thank-you note. Last month I left the bicycle my son had outgrown. The next week there was a note: 'My daughter rides it happily every day. Thank you.' Not only did I avoid throwing it away, I felt warm, as if my heart had connected with a stranger."
+  },
+  "gist": [
+   {
+    "id": "mgB1",
+    "intro": "テレビでアナウンサーが話しています。",
+    "s": "F",
+    "talk": [
+     "この町では、先月から駅前で自転車を借りられるようになりました。",
+     "スマホでとうろくすれば、一日二百円で使えます。",
+     "町の中に十か所、自転車を返す場所があって、どこで返してもかまいません。",
+     "観光に来た人だけでなく、町に住む人にもよく使われているそうです。",
+     "駅から少し遠い店や公園にも、気がるに行けるようになりました。",
+     "雨の日以外は、毎日たくさんの自転車が町を走っています。"
+    ],
+    "question": "アナウンサーは何について話していますか。",
+    "options": [
+     "自転車の正しい乗り方",
+     "駅前にできた新しい店",
+     "観光客が増えた理由",
+     "町の新しい自転車の貸し出し"
+    ],
+    "en": "A TV announcer: Since last month you can borrow bicycles in front of the station in this town. Register with your phone and it costs 200 yen a day. There are ten return spots around town and you can return the bike at any of them. It is popular not only with tourists but also with residents. Now you can easily get to shops and parks a little far from the station. Except on rainy days, lots of these bikes are on the streets every day.",
+    "why": "The talk explains the new bike-rental service: price, return spots, who uses it.",
+    "answer": 3
+   },
+   {
+    "id": "mgB2",
+    "intro": "病院で医者が男の人に話しています。",
+    "s": "F",
+    "talk": [
+     "けんさのけっかを見ましたが、大きな問題はありませんでした。",
+     "ただ、去年より少し体重が増えていますね。",
+     "お仕事で一日中座っていることが多いと言っていましたね。",
+     "薬を飲むほどではありませんが、毎日二十分ぐらい歩くようにしてください。",
+     "エレベーターではなく、かいだんを使うだけでも、ずいぶんちがいますよ。",
+     "では、また三か月後に来てください。"
+    ],
+    "question": "医者は男の人に何をすすめていますか。",
+    "options": [
+     "薬を毎日飲むこと",
+     "毎日少し歩くこと",
+     "しばらく仕事を休むこと",
+     "すぐに入院すること"
+    ],
+    "en": "A doctor to a man: I looked at your test results and there is no major problem. But you have gained a little weight since last year. You said you sit all day at work. It's not serious enough for medicine, but please try to walk about 20 minutes every day. Even using the stairs instead of the elevator makes a big difference. Please come back in three months.",
+    "why": "She says medicine isn't needed and recommends walking about 20 minutes a day.",
+    "answer": 1
+   },
+   {
+    "id": "mgB3",
+    "intro": "料理教室で先生が話しています。",
+    "s": "M",
+    "talk": [
+     "今日は、カレーを作ります。",
+     "カレーは作り方はかんたんですが、おいしく作るには、一つ大事なことがあります。",
+     "それは、たまねぎをじっくりいためることです。",
+     "急いで強い火でいためると、こげてしまって、あまくなりません。",
+     "よわい火で二十分ぐらい、茶色になるまでゆっくりいためてください。",
+     "時間はかかりますが、これだけで味がずいぶん変わりますよ。"
+    ],
+    "question": "先生は、何が一番大事だと言っていますか。",
+    "options": [
+     "強い火で早く作ること",
+     "いい肉を使うこと",
+     "たまねぎを時間をかけていためること",
+     "カレーのこなをたくさん入れること"
+    ],
+    "en": "A cooking-class teacher: Today we'll make curry. It's easy, but to make it tasty there is one important thing: fry the onions slowly. If you rush them over high heat they burn and don't become sweet. Fry them over low heat for about 20 minutes until brown. It takes time, but that alone changes the taste a lot.",
+    "why": "The one important point is frying the onions slowly; strong heat is what he warns against.",
+    "answer": 2
+   }
+  ],
+  "say": [
+   {
+    "id": "msB1",
+    "scene": "At a hotel front desk, you want them to keep your bag until check-in time.",
+    "intro": "ホテルで、チェックインの時間までかばんをあずかってほしいです。何と言いますか。",
+    "options": [
+     "チェックインまで、かばんをあずかってあげます。",
+     "チェックインまで、かばんをあずけてもいいですよ。",
+     "チェックインまで、かばんをあずかっていただけますか。"
+    ],
+    "why": "〜ていただけますか politely asks the staff to keep (あずかる) your bag. The others offer or give permission.",
+    "answer": 2
+   },
+   {
+    "id": "msB2",
+    "scene": "A friend tells you they passed an important exam.",
+    "intro": "友だちが大事な試験に合格しました。何と言いますか。",
+    "options": [
+     "おめでとう。よくがんばったね。",
+     "おだいじに。",
+     "ざんねんだったね。"
+    ],
+    "why": "おめでとう congratulates. おだいじに is for someone who is sick; ざんねん is for bad news.",
+    "answer": 0
+   },
+   {
+    "id": "msB3",
+    "scene": "Your work is finished and you are leaving the office before your coworkers.",
+    "intro": "仕事が終わって、ほかの人より先に帰ります。何と言いますか。",
+    "options": [
+     "お先にどうぞ。",
+     "お先に失礼します。",
+     "おかえりなさい。"
+    ],
+    "why": "お先に失礼します is said when leaving before others. お先にどうぞ lets someone go first; おかえりなさい welcomes someone home.",
+    "answer": 1
+   },
+   {
+    "id": "msB4",
+    "scene": "At a station, you want to ask a stranger which train goes to the airport.",
+    "intro": "駅で、空港へ行く電車を知りたいです。何と言いますか。",
+    "options": [
+     "すみません、空港へ行く電車に乗りましょう。",
+     "すみません、空港へ行く電車はどれですか。",
+     "すみません、空港へ行く電車を教えてあげます。"
+    ],
+    "why": "Asking 'which one is…' (どれですか) is the question. The others invite or offer to teach.",
+    "answer": 1
+   }
+  ]
+ }
+}

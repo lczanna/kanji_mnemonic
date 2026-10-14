@@ -22,12 +22,16 @@ from gen_images import key  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'audio'
 TTS_MODEL, STT_MODEL = 'gpt-4o-mini-tts', 'gpt-4o-mini-transcribe'
-VOICES = {'M': 'ash', 'F': 'coral', 'N': 'sage'}   # man, woman, narrator
-STYLE = {
-    'M': '自然な標準語の日本語で、落ち着いた男性の話し方で話してください。日本語能力試験の聴解問題のように、はっきり、普通の速さで。',
-    'F': '自然な標準語の日本語で、明るい女性の話し方で話してください。日本語能力試験の聴解問題のように、はっきり、普通の速さで。',
-    'N': '日本語能力試験の聴解問題のナレーターとして、標準語で、はっきり落ち着いて読んでください。',
-}
+# Different voices and speaking styles from item to item, so you get used to more than one speaker; the narrator
+# stays the same, as in the exam.
+MALE = ['ash', 'echo', 'onyx', 'verse', 'ballad']
+FEMALE = ['coral', 'nova', 'shimmer', 'alloy']
+NARRATOR = 'sage'
+MOODS = ['若い人らしく、くだけた感じで', '落ち着いた大人の感じで', '明るく元気に', '少し年配の人らしく、ていねいに', 'やさしく親しみのある感じで', 'てきぱきと仕事の話し方で']
+BASE = '自然な標準語の日本語で、ふつうの会話の速さで話してください。'
+NARR_STYLE = '日本語能力試験の聴解問題のナレーターとして、標準語で、はっきり、ふつうの速さで読んでください。'
+PACE = 6.5          # mora per second, about the speed of the N3 listening section
+PAUSE = 0.45        # seconds between lines
 
 
 def post(path, body=None, files=None):
@@ -52,8 +56,35 @@ def post(path, body=None, files=None):
             raise
 
 
-def tts(text, who):
-    return post('/audio/speech', {'model': TTS_MODEL, 'voice': VOICES[who], 'input': text, 'instructions': STYLE[who], 'response_format': 'mp3'})
+def cast(x):
+    """Voices for an item: a man and a woman picked by the item id (the same every run), each with a speaking style."""
+    import random
+    r = random.Random(x['id'])
+    return {'M': (r.choice(MALE), BASE + r.choice(MOODS)), 'F': (r.choice(FEMALE), BASE + r.choice(MOODS)), 'N': (NARRATOR, NARR_STYLE)}
+
+
+def tts(text, voice, style):
+    return post('/audio/speech', {'model': TTS_MODEL, 'voice': voice, 'input': text, 'instructions': style, 'response_format': 'mp3'})
+
+
+def run(*args):
+    return subprocess.run(['ffmpeg', '-v', 'error', *args, '-y'], check=True)
+
+
+def to_pace(clip, text):
+    """Trim the silence around a clip and speed it up (pitch kept) to about PACE mora per second."""
+    with tempfile.TemporaryDirectory() as d:
+        a, b = Path(d) / 'a.mp3', Path(d) / 'b.wav'
+        a.write_bytes(clip)
+        trim = 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse'
+        run('-i', str(a), '-af', trim, '-ac', '1', '-ar', '24000', str(b))
+        dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(b)], capture_output=True, text=True).stdout or 0)
+        mora = len(reading(re.sub(r'[^一-鿿々ぁ-ゖァ-ヺー]', '', text))) or 1
+        actual = mora / dur if dur else PACE            # mora per second as spoken
+        speed = min(1.7, max(1.0, PACE / actual))        # only ever faster, and never chipmunk-fast
+        c = Path(d) / 'c.wav'
+        run('-i', str(b), '-af', f'atempo={speed:.3f}', str(c))
+        return c.read_bytes()
 
 
 def segments(x):
@@ -67,14 +98,32 @@ def segments(x):
     return [('N', x['intro'])] + [(t['s'], t['t']) for t in x['turns']] + [('N', x['question'])]
 
 
-def join(clips, pause=0.7):
-    """Concatenate MP3 clips with short silences into one mono 48 kbps MP3."""
+def tts_wav(text, voice, style):
+    """A short clip (a single word) as WAV, silence trimmed, at the voice's own pace."""
+    with tempfile.TemporaryDirectory() as d:
+        a, b = Path(d) / 'a.mp3', Path(d) / 'b.wav'
+        a.write_bytes(tts(text, voice, style))
+        trim = 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse'
+        run('-i', str(a), '-af', trim, '-ac', '1', '-ar', '24000', str(b))
+        return b.read_bytes()
+
+
+def encode(wav, kbps=40):
+    with tempfile.TemporaryDirectory() as d:
+        a, b = Path(d) / 'a.wav', Path(d) / 'b.mp3'
+        a.write_bytes(wav)
+        run('-i', str(a), '-ac', '1', '-b:a', f'{kbps}k', str(b))
+        return b.read_bytes()
+
+
+def join(clips, pause=PAUSE):
+    """Concatenate WAV clips with short silences into one mono 48 kbps MP3."""
     with tempfile.TemporaryDirectory() as d:
         parts = []
         for i, c in enumerate(clips):
-            p = Path(d) / f'{i}.mp3'; p.write_bytes(c); parts.append(p)
-        sil = Path(d) / 'sil.mp3'
-        subprocess.run(['ffmpeg', '-v', 'error', '-f', 'lavfi', '-i', f'anullsrc=r=24000:cl=mono', '-t', str(pause), '-q:a', '9', str(sil), '-y'], check=True)
+            p = Path(d) / f'{i}.wav'; p.write_bytes(c); parts.append(p)
+        sil = Path(d) / 'sil.wav'
+        subprocess.run(['ffmpeg', '-v', 'error', '-f', 'lavfi', '-i', 'anullsrc=r=24000:cl=mono', '-t', str(pause), str(sil), '-y'], check=True)
         lst = Path(d) / 'list.txt'
         lst.write_text(''.join(f"file '{p}'\nfile '{sil}'\n" for p in parts))
         out = Path(d) / 'out.mp3'
@@ -110,7 +159,8 @@ def check(x, audio):
 
 def make(x):
     try:
-        audio = join([tts(t, who) for who, t in segments(x)])
+        voices = cast(x)
+        audio = join([to_pace(tts(t, *voices[who]), t) for who, t in segments(x)])
         score, txt = check(x, audio)
         (OUT / f"{x['id']}.mp3").write_bytes(audio)
         return x['id'], score, txt, None
