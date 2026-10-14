@@ -1054,8 +1054,8 @@ function todayHtml() {
   const extra = finalWeek() ? [] : extraMix();
   const bh = finalWeek() ? {} : behindBy();
   const behindText = TYPES.filter(t => bh[t]).map(t => `${bh[t]} ${t === 'kanji' ? 'kanji' : t === 'vocab' ? (bh[t] > 1 ? 'words' : 'word') : 'grammar'}`).join(' · ');
-  const drillN = drillItems().length, lessonN = pendingLookLessons().length;
-  const total = rows.reduce((a, r) => a + r.due + r.nNew, 0) + drillN + lessonN;
+  const drillN = drillItems().length, lessonN = pendingLookLessons().length, pairN = duePairItems().length;
+  const total = rows.reduce((a, r) => a + r.due + r.nNew, 0) + drillN + lessonN + pairN;
   const E = appData.settings.examDate;
   const marks = [[-28, 'Practice test 1 · full, timed'], [-bufferDays(), 'All new cards done · review-only from here'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test'], [0, 'JLPT N3']]
     .filter((m, i, a) => a.findIndex(x => x[0] === m[0]) === i).sort((a, b) => a[0] - b[0])
@@ -1106,7 +1106,7 @@ function todayHtml() {
     ${finalWeek() && daysToExam() >= 0 ? `<div class="notice"><b>Review-only stretch.</b> No new cards until the exam. Clear your reviews, run Weak spots, and do your timed practice tests.</div>` : ''}
     <div class="cta">
       <button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total === 0 ? 'disabled' : ''}>
-        <span class="label"><b>${total ? 'Study everything' : behindText ? "Today's plan is done" : 'All done for today'}</b><small class="muted">${!total && behindText ? `Your minutes are used up, but you're behind the plan by ${behindText}. Catch up below if you have time.` : [...rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`), ...(lessonN ? [`Look-alikes ${lessonN}`] : []), ...(drillN ? [`Mix-up drills ${drillN}`] : [])].join(' · ')}</small></span>
+        <span class="label"><b>${total ? 'Study everything' : behindText ? "Today's plan is done" : 'All done for today'}</b><small class="muted">${!total && behindText ? `Your minutes are used up, but you're behind the plan by ${behindText}. Catch up below if you have time.` : [...rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`), ...(lessonN ? [`Look-alikes ${lessonN}`] : []), ...(pairN ? [`Look-alike pairs ${pairN}`] : []), ...(drillN ? [`Mix-up drills ${drillN}`] : [])].join(' · ')}</small></span>
         <span class="count num">${total}</span>
       </button>
       ${dueAll && total > dueAll ? `<button class="btn" id="go-reviews"><span class="label"><b>Busy day: reviews only</b><small class="muted">Keep what you know. New cards wait and the plan spreads them out.</small></span><span class="count num">${dueAll}</span></button>` : ''}
@@ -1317,6 +1317,7 @@ function showDetail(kanji) { const k = BY_KANJI[kanji]; if (k) showModal(kanji, 
 //      which counts for that kanji like any review;
 //   4. picking a look-alike by mistake (in a quiz or the sprint) brings that pair back the next day as a short
 //      drill, until you get it right twice; drills are practice and don't change any card's schedule;
+//      a pair mixed up twice becomes a card of its own ("p:<a>|<b>"), reviewed on its own schedule;
 //   5. with 5 groups started, a 60-second "look-alike sprint" on Today, also practice only.
 let LOOK = [], LOOK_BY = {};
 const started = ch => !!appData.cards[ch];
@@ -1352,15 +1353,34 @@ function whichItem(x, extra) {
   const w = words.length ? words[Math.floor(Math.random() * words.length)] : null;
   return Object.assign({ type: 'kanji', x, mode: 'quiz', task: 'which', opts, answerText: x.kanji, hintWord: w ? [w.w.split(x.kanji).join('〇'), w.r] : null }, extra || {});
 }
-// Mix-ups: pair "a|b" -> { due, ok }; due the next day until answered right twice.
+// Mix-ups: pair "a|b" -> { due, ok, n }: due the next day until answered right twice; n counts the mix-ups.
+// The second mix-up of a pair makes it a card (key "p:a|b"), and the card takes over from the drill.
 const pairKey = (a, b) => [a, b].sort().join('|');
 function noteConfusion(a, b) {
   if (!a || !b || a === b) return;
-  appData.confusions[pairKey(a, b)] = { due: addDays(today(), 1), ok: 0 };
+  const key = pairKey(a, b), n = ((appData.confusions[key] || {}).n || 0) + 1;
+  appData.confusions[key] = { due: addDays(today(), 1), ok: 0, n };
+  if (n >= 2 && !appData.cards['p:' + key]) {
+    const t = today();
+    appData.cards['p:' + key] = { stability: FSRS.initS(1), difficulty: FSRS.initD(1), reps: 1, lapses: 1, lastReview: t, due: addDays(t, 1) };
+  }
+}
+function pairItem(key, extra) {
+  const [a, b] = key.split('|');
+  if (!BY_KANJI[a] || !BY_KANJI[b]) return null;
+  const target = BY_KANJI[Math.random() < 0.5 ? a : b];
+  const it = whichItem(target, Object.assign({ pairCard: 'p:' + key }, extra || {}));
+  it.opts = shuffle([a, b, ...shuffle(peersOf(target.kanji).filter(c => c !== a && c !== b)).slice(0, 1)]);
+  return it;
+}
+// Pair cards due today, as "which one?" questions.
+function duePairItems() {
+  const t = today();
+  return Object.entries(appData.cards).filter(([k, c]) => k.startsWith('p:') && c.due <= t).map(([k]) => pairItem(k.slice(2))).filter(Boolean);
 }
 function drillItems() {
   const t = today();
-  return Object.entries(appData.confusions).filter(([, c]) => c.due <= t).map(([pair]) => {
+  return Object.entries(appData.confusions).filter(([pair, c]) => c.due <= t && !appData.cards['p:' + pair]).map(([pair]) => {
     const [a, b] = pair.split('|'), target = BY_KANJI[Math.random() < 0.5 ? a : b] || BY_KANJI[a];
     if (!target || !BY_KANJI[a] || !BY_KANJI[b]) return null;
     const it = whichItem(target, { drill: pair });
@@ -1476,11 +1496,11 @@ function extraLabel(mix) {
 }
 function startStudy(type, extra) {
   if (type === 'all') {
-    const items = [...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), ...drillItems()];
+    const items = [...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), ...duePairItems(), ...drillItems()];
     const fresh = [...pendingLookLessons(), ...interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))))];
     return runQueue(items, fresh, 'all');
   }
-  const items = [...dueOf(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? drillItems() : [])];
+  const items = [...dueOf(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? [...duePairItems(), ...drillItems()] : [])];
   const fresh = [...(type === 'kanji' ? pendingLookLessons() : []), ...(extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }))];
   return runQueue(items, fresh, type);
 }
@@ -1691,7 +1711,7 @@ function kanjiScreen(it, tags) {
       bar: '<div class="row one"><button class="ans next" id="a-look">Got it</button></div>' };
   }
   if (it.task === 'which') {
-    tags.push(`<span class="tag" lang="ja">似た漢字 · ${it.drill ? 'MIX-UP DRILL' : it.sprint ? 'SPRINT' : 'WHICH ONE?'}</span>`);
+    tags.push(`<span class="tag" lang="ja">似た漢字 · ${it.drill ? 'MIX-UP DRILL' : it.pairCard ? 'LOOK-ALIKE PAIR' : it.sprint ? 'SPRINT' : 'WHICH ONE?'}</span>`);
     const top = it.sprint ? `<div class="sprint-bar"><span id="sprint-time" class="num">${Math.max(0, Math.ceil((session.ends - Date.now()) / 1000))}s</span><span class="num">Score ${session.score}</span></div>` : '';
     const front = `${top}<div class="keyword" style="text-align:center">${esc(k.keyword)}</div>
       ${it.hintWord ? `<div class="prompt" lang="ja">${esc(it.hintWord[0])}（${esc(it.hintWord[1])}）</div>` : ''}
@@ -1924,6 +1944,13 @@ function renderSessionEnd() {
 function grade(g) {
   const it = session.queue[session.i];
   if (it.drill) { drillResult(it); saveData(); session.done++; return next(); }   // practice: no card is rescheduled
+  if (it.pairCard) {   // a look-alike pair card: its own schedule, not the kanji's
+    if (!it.again) { schedule(it.pairCard, g); logReview(g > 1); }
+    session.done++;
+    if (g === 1) { const again = pairItem(it.pairCard.slice(2), { again: true }); if (again) insertLater(again, 4); }
+    saveData();
+    return next();
+  }
   noteTime('review', session.shownAt);
   if (!it.again) {
     // First answer for this card in this session counts for scheduling.
@@ -2016,7 +2043,7 @@ document.addEventListener('click', e => {
   switch (id) {
     case 'go-triage': return startTriage();
     case 'go-all': return startStudy('all');
-    case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), ...drillItems()], pendingLookLessons(), 'all');
+    case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), ...duePairItems(), ...drillItems()], pendingLookLessons(), 'all');
     case 'go-weak': return startWeak();
     case 'go-listen': return startListen();
     case 'l-yes': session.heard++; session.done++; return next();
