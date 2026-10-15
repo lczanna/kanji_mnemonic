@@ -334,6 +334,7 @@ label.mini { display: grid; gap: 2px; font-size: 12px; color: var(--muted); } la
 .kana-opts .opt { font-family: var(--font-body); font-weight: 700; font-size: 18px; }
 .gl { font: inherit; color: inherit; background: none; border: 0; padding: 0; border-bottom: 1px dotted color-mix(in srgb, var(--ai) 60%, transparent); cursor: pointer; }
 .gl:hover, .gl:focus-visible { background: var(--ai-soft); }
+.lk-story { font-size: 15px; }
 /* The underlined part of a 言い換え question stays underlined when it's tappable. */
 u .gl { border-bottom: 2px solid currentColor; }
 .gl-pop { position: fixed; z-index: 40; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 18%, transparent); display: grid; gap: 4px; }
@@ -1408,10 +1409,13 @@ function lookMnHtml(g, me, big) {
   return `<div class="lk-group${big ? ' big' : ''}">
     ${g.contrast ? `<div class="lk-contrast">${esc(g.contrast)}</div>` : ''}
     ${g.kanji.map(c => { const k = BY_KANJI[c], m = g.mn[c] || {};
-      const pic = big && m.img ? `<img class="card-img" src="${esc(m.img)}" data-kanji="${esc(`l:${g.id}:${c}`)}" alt="" loading="lazy" onerror="imgFallback(this)">` : '';
-      return `<div class="lk-item${c === me ? ' me' : ''}">${pic}
+      // The lesson reuses each kanji's own card picture and story, so you meet the same scene as on its card;
+      // the feature picture is only a fallback for a kanji without one.
+      const pic = !big ? '' : k && k.image ? `<img class="card-img" src="${esc(k.image)}" data-kanji="${esc(c)}" alt="" loading="lazy" onerror="imgFallback(this)">`
+        : m.img ? `<img class="card-img" src="${esc(m.img)}" data-kanji="${esc(`l:${g.id}:${c}`)}" alt="" loading="lazy" onerror="imgFallback(this)">` : '';
+      return `<div class="lk-item${c === me ? ' me' : ''}">${pic}${big && k && k.story ? `<div class="story lk-story">${storyHtml(k.story)}</div>` : ''}
         <div class="lk-line"><button class="lk-k${c === me ? ' me' : ''}" data-open-k="${esc(c)}">${strokeSvg(g, c)}<span class="kw">${esc(k ? k.keyword : '')}</span>${started(c) ? '' : '<small>not learned yet</small>'}</button>
-          <div class="lk-say">${m.label ? `<span class="lk-label">${esc(m.label)}</span>` : ''}<div>${esc(m.hook || (g.tips || {})[c] || '')}</div></div></div>
+          <div class="lk-say">${m.label ? `<span class="lk-label">${big ? 'Tell it apart · ' : ''}${esc(m.label)}</span>` : ''}<div>${esc(m.hook || (g.tips || {})[c] || '')}</div></div></div>
       </div>`; }).join('')}
   </div>`;
 }
