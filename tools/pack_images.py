@@ -8,10 +8,14 @@ Kanji are packed in deck order and words most useful first, so a study session n
 
   python3 tools/pack_images.py OUT_DIR    # writes OUT_DIR/images/packs/index.json and p00.json, p01.json, ...
 
+Pictures go into the packs as WebP (about 37% smaller than the JPEG files at the same look), so all of them
+fit the link's 256 MB per version next to the audio packs. The JPEG files in the repo stay as they are.
+
 Rebuild the packs whenever pictures or the deck order change, then publish them with the app.
 """
-import base64, json, sys
+import base64, io, json, sys
 from pathlib import Path
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 PER_PACK = 32
@@ -32,7 +36,9 @@ def main():
     for n in range(0, len(cards), PER_PACK):
         pack = {}
         for key, rel in cards[n:n + PER_PACK]:
-            pack[key] = 'data:image/jpeg;base64,' + base64.b64encode((ROOT / rel).read_bytes()).decode()
+            buf = io.BytesIO()
+            Image.open(ROOT / rel).convert('RGB').save(buf, 'WEBP', quality=75, method=6)
+            pack[key] = 'data:image/webp;base64,' + base64.b64encode(buf.getvalue()).decode()
             index[key] = n // PER_PACK
         (out / f'p{n // PER_PACK:02d}.json').write_text(json.dumps(pack), encoding='utf8')
     (out / 'index.json').write_text(json.dumps(index, ensure_ascii=False), encoding='utf8')
