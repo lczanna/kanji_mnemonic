@@ -1403,7 +1403,7 @@ function lookMnHtml(g, me, big) {
   return `<div class="lk-group${big ? ' big' : ''}">
     ${g.contrast ? `<div class="lk-contrast">${esc(g.contrast)}</div>` : ''}
     ${g.kanji.map(c => { const k = BY_KANJI[c], m = g.mn[c] || {};
-      const pic = big && m.img ? `<img class="card-img small" src="${esc(m.img)}" data-kanji="${esc(`l:${g.id}:${c}`)}" alt="" loading="lazy" onerror="imgFallback(this)">` : '';
+      const pic = big && m.img ? `<img class="card-img" src="${esc(m.img)}" data-kanji="${esc(`l:${g.id}:${c}`)}" alt="" loading="lazy" onerror="imgFallback(this)">` : '';
       return `<div class="lk-item${c === me ? ' me' : ''}">${pic}
         <div class="lk-line"><button class="lk-k${c === me ? ' me' : ''}" data-open-k="${esc(c)}">${strokeSvg(g, c)}<span class="kw">${esc(k ? k.keyword : '')}</span>${started(c) ? '' : '<small>not learned yet</small>'}</button>
           <div class="lk-say">${m.label ? `<span class="lk-label">${esc(m.label)}</span>` : ''}<div>${esc(m.hook || (g.tips || {})[c] || '')}</div></div></div>
