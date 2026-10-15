@@ -268,6 +268,8 @@ def main():
                     by_group[k]['img'] = rel
                 elif a.words or a.word:
                     by_word[k]['img'] = rel
+                    if done % 25 == 0:   # long runs keep what's done if stopped
+                        VOCAB.write_text(json.dumps(vocab, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
                 elif not a.test:
                     by[k]['image'] = rel
                 print(f'{done}/{len(jobs)}', k, rel)
