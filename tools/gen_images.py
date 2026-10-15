@@ -167,8 +167,15 @@ def group_prompt(g):
             "Show each named thing clearly and separately, so the differences between them are easy to see.")
 
 
+def feature_prompt(f):
+    return (f"{STYLE}\n\nScene: {depict(f['picture'])}\n"
+            f"The idea to convey is '{f['keyword']}', and above all the one exaggerated detail: {f['feature']}. Make that detail big, central and unmistakable.")
+
+
 def generate(card, model, quality, suffix=''):
-    if 'scene' in card:   # a look-alike group
+    if 'feature' in card:   # one kanji of a look-alike group
+        name, out, text, key = f"{card['gid']}_{ord(card['kanji']):04x}.jpg", GOUT, feature_prompt(card), (card['gid'], card['kanji'])
+    elif 'scene' in card:   # a look-alike group
         name, out, text, key = f"{card['id']}.jpg", GOUT, group_prompt(card), card['id']
     elif 'w' in card:   # a vocab entry
         name, out, text, key = f"{card['id']}.jpg", WOUT, word_prompt(card), card['w']
@@ -200,6 +207,7 @@ def main():
     g.add_argument('--all', action='store_true', help='every card that has no images/n3 picture yet')
     g.add_argument('--kanji', help='specific kanji, e.g. 況只閉')
     g.add_argument('--groups', action='store_true', help='look-alike groups without a picture')
+    g.add_argument('--features', action='store_true', help='one picture per kanji in each look-alike group (its distinguishing feature)')
     g.add_argument('--words', action='store_true', help='every word with a memory hook but no picture yet')
     g.add_argument('--word', help='specific words, comma-separated, e.g. 賃貸,桜')
     g.add_argument('--leeches', metavar='PROGRESS_JSON', help='cards missed 3+ times, from a progress download')
@@ -222,7 +230,11 @@ def main():
     by_group = {g['id']: g for g in groups}
     GOUT.mkdir(parents=True, exist_ok=True)
 
-    if a.groups:
+    kw = {c['kanji']: c['keyword'] for c in cards}
+    if a.features:
+        jobs = [(dict(f, gid=g['id'], kanji=k, keyword=kw.get(k, '')), a.quality, '') for g in groups for k, f in (g.get('mn') or {}).items()
+                if f.get('picture') and not f.get('img')]
+    elif a.groups:
         jobs = [(g, a.quality, '') for g in groups if g.get('scene') and not g.get('img')]
     elif a.words or a.word:
         hooked = [v for v in vocab if v.get('mn')]
@@ -250,7 +262,9 @@ def main():
                 failed.append((k, err)); print('FAIL', k, err)
             else:
                 done += 1
-                if a.groups:
+                if a.features:
+                    by_group[k[0]]['mn'][k[1]]['img'] = rel
+                elif a.groups:
                     by_group[k]['img'] = rel
                 elif a.words or a.word:
                     by_word[k]['img'] = rel
@@ -258,7 +272,7 @@ def main():
                     by[k]['image'] = rel
                 print(f'{done}/{len(jobs)}', k, rel)
 
-    if a.groups:
+    if a.groups or a.features:
         GROUPS.write_text(json.dumps(groups, ensure_ascii=False, indent=1), encoding='utf8')
     elif a.words or a.word:
         VOCAB.write_text(json.dumps(vocab, ensure_ascii=False, separators=(',', ':')), encoding='utf8')

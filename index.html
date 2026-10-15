@@ -283,6 +283,13 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .lk-svg { width: 56px; height: 56px; } .lk-group.big .lk-svg { width: 84px; height: 84px; }
 .lk-svg path { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
 .lk-svg path.df { stroke: var(--again); stroke-width: 5; }
+.lk-contrast { font-size: 14px; font-weight: 600; color: var(--ai); text-align: center; line-height: 1.5; }
+.lk-item { display: grid; gap: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+.lk-item:first-of-type { border-top: 0; }
+.lk-item.me .lk-say { color: var(--ink); }
+.lk-line { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; }
+.lk-say { font-size: 14px; line-height: 1.5; color: var(--muted); display: grid; gap: 2px; }
+.lk-label { justify-self: start; font-size: 12px; font-weight: 700; color: #fff; background: var(--again); border-radius: 999px; padding: 1px 8px; }
 .lk-tips { display: grid; gap: 4px; font-size: 13px; color: var(--muted); line-height: 1.45; }
 .lk-tips div { border-left: 3px solid var(--line); padding-left: 8px; } .lk-tips div.me { border-left-color: var(--ai); color: var(--ink); }
 .lk-tips b { font-family: var(--font-kanji); color: var(--ink); margin-right: 6px; font-size: 15px; }
@@ -1381,13 +1388,27 @@ function strokeSvg(g, ch) {
   const diff = new Set(g.diff[ch] || []);
   return `<svg class="lk-svg" viewBox="0 0 109 109" aria-hidden="true">${(g.strokes[ch] || []).map((d, i) => `<path d="${esc(d)}"${diff.has(i) ? ' class="df"' : ''}/>`).join('')}</svg>`;
 }
+// With hand-written mnemonics (g.mn): per kanji its feature picture, the drawing with that feature coloured and
+// labelled, and a hook; the group's contrast line on top. Otherwise the older layout below.
 function lookGroupHtml(g, me, big) {
+  if (g.mn) return lookMnHtml(g, me, big);
   const img = g.img ? `<img class="card-img small" src="${esc(g.img)}" data-kanji="${esc('l:' + g.id)}" alt="Picture of the look-alikes" loading="lazy" onerror="imgFallback(this)">` : '';
   return `<div class="lk-group${big ? ' big' : ''}">
     <div class="lk-row">${g.kanji.map(c => { const k = BY_KANJI[c];
       return `<button class="lk-k${c === me ? ' me' : ''}" data-open-k="${esc(c)}">${strokeSvg(g, c)}<span class="kw">${esc(k ? k.keyword : '')}</span>${started(c) ? '' : '<small>not learned yet</small>'}</button>`; }).join('')}</div>
     <div class="lk-tips">${g.kanji.map(c => `<div class="${c === me ? 'me' : ''}"><b lang="ja">${esc(c)}</b>${esc((g.tips || {})[c] || '')}</div>`).join('')}</div>
     ${img}</div>`;
+}
+function lookMnHtml(g, me, big) {
+  return `<div class="lk-group${big ? ' big' : ''}">
+    ${g.contrast ? `<div class="lk-contrast">${esc(g.contrast)}</div>` : ''}
+    ${g.kanji.map(c => { const k = BY_KANJI[c], m = g.mn[c] || {};
+      const pic = big && m.img ? `<img class="card-img small" src="${esc(m.img)}" data-kanji="${esc(`l:${g.id}:${c}`)}" alt="" loading="lazy" onerror="imgFallback(this)">` : '';
+      return `<div class="lk-item${c === me ? ' me' : ''}">${pic}
+        <div class="lk-line"><button class="lk-k${c === me ? ' me' : ''}" data-open-k="${esc(c)}">${strokeSvg(g, c)}<span class="kw">${esc(k ? k.keyword : '')}</span>${started(c) ? '' : '<small>not learned yet</small>'}</button>
+          <div class="lk-say">${m.label ? `<span class="lk-label">${esc(m.label)}</span>` : ''}<div>${esc(m.hook || (g.tips || {})[c] || '')}</div></div></div>
+      </div>`; }).join('')}
+  </div>`;
 }
 function lookPanelHtml(k) {
   const gs = groupsOf(k.kanji);
@@ -2059,12 +2080,12 @@ function kanjiScreen(it, tags) {
       bar: '<div class="row one"><button class="ans next" id="a-look">Got it</button></div>' };
   }
   if (it.task === 'which') {
-    tags.push(`<span class="tag" lang="ja">似た漢字 · ${it.drill ? 'MIX-UP DRILL' : it.pairCard ? 'LOOK-ALIKE PAIR' : it.sprint ? 'SPRINT' : 'WHICH ONE?'}</span>`);
+    tags.push(`<span class="tag" lang="ja">似た漢字 · ${it.drill ? 'MIX-UP DRILL' : it.lookCheck ? 'QUICK CHECK' : it.pairCard ? 'LOOK-ALIKE PAIR' : it.sprint ? 'SPRINT' : 'WHICH ONE?'}</span>`);
     const top = it.sprint ? `<div class="sprint-bar"><span id="sprint-time" class="num">${Math.max(0, Math.ceil((session.ends - Date.now()) / 1000))}s</span><span class="num">Score ${session.score}</span></div>` : '';
     const front = `${top}<div class="keyword" style="text-align:center">${esc(k.keyword)}</div>
       ${it.hintWord ? `<div class="prompt" lang="ja">${esc(it.hintWord[0])}（${esc(it.hintWord[1])}）</div>` : ''}
       ${mcOptions(it, false, true)}${session.revealed ? whichNotes(it) : ''}`;
-    return { inner: { front, back: session.revealed && !it.sprint && !it.drill ? backHtml(k, 'quiz') : '' },
+    return { inner: { front, back: session.revealed && !it.sprint && !it.drill && !it.lookCheck ? backHtml(k, 'quiz') : '' },
       bar: session.revealed ? (it.sprint ? '' : continueBar(it)) : pickHint(it.drill ? 'You mixed these up recently: which one is it?' : 'Pick the kanji with this meaning') };
   }
   if (it.mode === 'triage') tags.push(`<span class="tag">N${k.level} · DO YOU KNOW IT?</span>`);
@@ -2310,6 +2331,7 @@ function renderSessionEnd() {
 function grade(g) {
   const it = session.queue[session.i];
   if (it.drill) { drillResult(it); saveData(); session.done++; return next(); }   // practice: no card is rescheduled
+  if (it.lookCheck) { session.done++; return next(); }   // the quick check after a look-alike lesson: practice only
   if (it.pairCard) {   // a look-alike pair card: its own schedule, not the kanji's
     if (!it.again) { schedule(it.pairCard, g); logReview(g > 1); }
     session.done++;
@@ -2429,7 +2451,16 @@ document.addEventListener('click', e => {
     case 'g-tr': session.queue[session.i].showTr = true; return renderSession();
     case 'g-cgl': session.queue[session.i].showGl = true; return renderSession();
     case 'a-continue': { const it = session.queue[session.i]; return grade(it.correct ? 3 : 1); }
-    case 'a-look': { const it = session.queue[session.i]; appData.lookSeen[it.group] = today(); saveData(); return next(); }
+    case 'a-look': {
+      const it = session.queue[session.i], g = groupById(it.group);
+      appData.lookSeen[it.group] = today(); saveData();
+      // Straight after the lesson: up to three quick "which one?" questions on this group (practice, not scheduled).
+      if (g) shuffle(g.kanji.slice()).slice(0, 3).forEach((c, n) => {
+        const q = whichItem(BY_KANJI[c], { lookCheck: true }); q.opts = shuffle(g.kanji.slice(0, 4).includes(c) ? g.kanji.slice(0, 4) : [c, ...g.kanji.filter(x => x !== c).slice(0, 3)]);
+        session.queue.splice(session.i + 1 + n, 0, q);
+      });
+      return next();
+    }
     case 'go-sprint': return startSprint();
     case 'e-next': session.done++; return next();
     case 'm-next': return mockStep(1);

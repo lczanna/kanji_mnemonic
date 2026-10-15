@@ -115,6 +115,12 @@ def main():
             best = next((d for d in diffs if d), [])
             # Colouring most of a kanji points at nothing: then the written rule does the explaining.
             diff[k] = best if len(best) * 2 <= len(strokes[k]) else []
+        # Hand-written mnemonics (g['mn'][kanji]: feature, label, strokes, hook, picture, img) replace the computed
+        # colouring: the strokes they name are the ones that carry the hook.
+        mn = g.get('mn') or {}
+        for k in ks:
+            if k in mn and isinstance(mn[k].get('strokes'), list):
+                diff[k] = [i for i in mn[k]['strokes'] if 0 <= i < len(strokes[k])]
         out.append({**g, 'kanji': ks, 'strokes': {k: strokes[k] for k in ks}, 'diff': diff})
     (ROOT / 'lookalikes.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
     print(f'{len(out)} groups, {sum(len(g["kanji"]) for g in out)} kanji' + (f'; no strokes for {missing}' if missing else ''))
