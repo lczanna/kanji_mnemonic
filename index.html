@@ -140,7 +140,8 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .headline .k-small { font-family: var(--font-kanji); font-weight: 800; font-size: 64px; line-height: 1; }
 .keyword { font-size: 22px; font-weight: 700; line-height: 1.2; }
 .meaning { font-size: 13px; color: var(--muted); }
-.card-img.small { aspect-ratio: 16 / 7; }
+/* Reviews show the whole picture, just smaller (cropping it cut off heads and hands). */
+.card-img.small { width: 82%; max-width: 340px; margin: 0 auto; }
 .card-img { width: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; display: block; background: var(--ai-soft); }
 .story { font-size: 16px; line-height: 1.65; }
 .story .kw { color: var(--ai); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
