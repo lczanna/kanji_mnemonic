@@ -9,6 +9,8 @@ Exam practice for the app → exam.json.
 - Word questions: data/exam_vocab.json (言い換え "para" and 用法 "usage", written per word) plus 文脈規定 "ctx",
   built here from the word's example sentences: the word is blanked out where it appears in dictionary form, and
   three decoys of the same shape (same okurigana, or the same number of kanji) and similar usefulness fill the options.
+  Options are printed the way the exam prints them: words whose kanji are above N3 (f "mixed") in kana. "w" keeps
+  the words behind the options, for the notes shown after answering. Every sentence gets tap-to-read glosses.
 
   python3 tools/build_exam.py JMdict_e.gz
 """
@@ -27,6 +29,11 @@ def shape(w):
     """Words that could stand in each other's place: trailing kana (okurigana) and number of kanji."""
     tail = re.search(r'[ぁ-ゖ]*$', w).group()
     return (tail, len(KANJI.findall(w)) if not tail else 0)
+
+
+def shown(v):
+    """How the exam prints a word: kanji only when all of them are N3 or below."""
+    return v['r'] if v.get('f') == 'mixed' else v['w']
 
 
 def ctx_questions(vocab, examples, rnd):
@@ -48,10 +55,20 @@ def ctx_questions(vocab, examples, rnd):
                     and abs(u.get('p', 9999) - v.get('p', 9999)) < 600]
             if len(pool) < 3:
                 continue
-            opts = [v['w']] + [u['w'] for u in rnd.sample(pool, 3)]
-            rnd.shuffle(opts)
+            # Decoys printed in kana must not read the same as the answer or each other.
+            pool = [u for u in pool if shown(u) != shown(v)]
+            picked = []
+            for u in rnd.sample(pool, len(pool)):
+                if shown(u) not in {shown(x) for x in picked}:
+                    picked.append(u)
+                if len(picked) == 3:
+                    break
+            if len(picked) < 3:
+                continue
+            ws = [v] + picked
+            rnd.shuffle(ws)
             s = ja[:tok[0]] + '（　）' + ja[tok[0] + tok[1]:]
-            qs.append({'s': s, 'options': opts, 'answer': opts.index(v['w']), 'en': en})
+            qs.append({'s': s, 'options': [shown(u) for u in ws], 'w': [u['w'] for u in ws], 'answer': ws.index(v), 'en': en})
             if len(qs) == 2:
                 break
         if qs:
@@ -128,6 +145,12 @@ def main():
         if w in ctx:
             q['ctx'] = ctx[w]
         words[w] = {k: q[k] for k in ('ctx', 'para', 'usage') if q.get(k)}
+        for c in words[w].get('ctx', []):
+            c['gl'] = gloss_all([c['s']], jm, fixes)
+        if 'para' in words[w]:
+            words[w]['para']['gl'] = gloss_all([words[w]['para']['s'], *words[w]['para']['options']], jm, fixes)
+        if 'usage' in words[w]:
+            words[w]['usage']['gl'] = gloss_all(words[w]['usage']['options'], jm, fixes)
     mocks, mock_listen = build_mocks(data('exam_mock.json') or {}, qr, dlg, read, words, vocab, jm, fixes)
     used = {i for m in mocks for i in m['listen']} | {p['id'] for m in mocks for p in m['read'] if p.get('id')}
     qr, dlg, read = [x for x in qr if x['id'] not in used], [x for x in dlg if x['id'] not in used], [x for x in read if x['id'] not in used]

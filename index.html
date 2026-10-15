@@ -1684,8 +1684,8 @@ function buildMock(m) {
     const [o, a] = shuf([v.r, ...traps], 0); add('vocab', 'lk', '漢字読み · reading', `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">How is this read?</div>`, o, a, `${v.w} = ${v.r}: ${v.m}`); }
   for (const w of m.vocab.spell) { const v = BY_WORD[w]; if (!v || !(v.d || []).length) continue;
     const [o, a] = shuf([v.w, ...v.d], 0); add('vocab', 'lk', '表記 · spelling', `<div class="word-front kana" lang="ja">${esc(v.r)}</div><div class="prompt">${esc(v.m)}: which spelling?</div>`, o, a, `${v.r} is written ${v.w}`); }
-  for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${esc(q.s).replace('（　）', '<span class="blank">（　　）</span>')}</div>`, q.options, q.answer, q.en);
-  for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${esc(q.s).replace(/【(.+?)】/, '<u>$1</u>')}</div>`, q.options, q.answer, q.why);
+  for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${ctxHtml(q.s)}</div>`, q.options, q.answer, q.en);
+  for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${paraHtml(q.s)}</div>`, q.options, q.answer, q.why);
   for (const q of m.vocab.usage) add('vocab', 'lk', '用法 · correct usage', `<div class="word-front" lang="ja">${esc(q.w)}</div>`, q.options, q.answer, q.why, { long: true });
   for (const q of m.gram.fill) add('gr', 'lk', '文法形式 · grammar', `<div class="g-q" lang="ja">${esc(q.q).replace('（　）', '<span class="blank">（　　）</span>')}</div>`, q.options, q.answer, q.why);
   for (const o of m.gram.order) { const [opts, a] = shuf(o.chunks, o.star);
@@ -2141,19 +2141,36 @@ function spellNotes(it) {
 }
 const pickHint = t => `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">${t}</span></div>`;
 
+// Word questions: the sentence is tappable (reading and meaning of each word); the blank or underline stays.
+const ctxHtml = s => glossHtml(s).replace('（　）', '<span class="blank">（　　）</span>');
+const paraHtml = s => glossHtml(s).replace('【', '<u>').replace('】', '</u>');
+// After answering: every option with its reading and meaning, the one you picked first. Options printed in kana
+// (kanji above N3) show their written form too.
+function optionNotes(q, chosen) {
+  if (!q) return '';
+  const rows = q.options.map((o, i) => {
+    const v = BY_WORD[(q.w || [])[i] || o];
+    if (!v) return '';
+    const head = o === v.w ? `${esc(v.w)} <span class="muted">${esc(v.r)}</span>` : `${esc(o)} <span class="muted">(written ${esc(v.w)})</span>`;
+    return `<div class="${i === chosen && i !== q.answer ? 'picked' : ''}"><b lang="ja">${head}</b> · ${esc(v.m)}</div>`;
+  }).filter(Boolean);
+  return rows.length ? `<div class="wrongs">${rows.join('')}</div>` : '';
+}
+
 function vocabScreen(it, tags) {
   const v = it.x;
   tags.push('<span class="tag">WORD</span>');
   if (['ctx', 'para', 'usage'].includes(it.task)) {
     const q = it.q, answered = session.revealed;
     tags.push(`<span class="tag" lang="ja">${{ ctx: '文脈規定 · WHICH WORD FITS?', para: '言い換え · CLOSEST MEANING', usage: '用法 · WHICH IS USED RIGHT?' }[it.task]}</span>`);
-    const prompt = it.task === 'ctx' ? `<div class="g-q" lang="ja">${esc(q.s).replace('（　）', '<span class="blank">（　　）</span>')}</div>`
-      : it.task === 'para' ? `<div class="g-q" lang="ja">${esc(q.s).replace(/【(.+?)】/, '<u>$1</u>')}</div><div class="prompt">Which is closest in meaning to the underlined part?</div>`
+    const prompt = it.task === 'ctx' ? `<div class="g-q" lang="ja">${ctxHtml(q.s)}</div>`
+      : it.task === 'para' ? `<div class="g-q" lang="ja">${paraHtml(q.s)}</div><div class="prompt">Which is closest in meaning to the underlined part?</div>`
       : `<div class="word-front" lang="ja">${esc(vform(v) === 'kanji' ? v.w : v.r)}</div><div class="prompt">Which sentence uses this word correctly?</div>`;
     const front = `${prompt}${it.task === 'usage' ? `<div class="opts g long">${q.options.map((o, i) => {
         const cls = !answered ? '' : i === q.answer ? ' right' : i === it.chosen ? ' wrong' : ' dim';
         return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`; }).join('')}</div>` : mcOptions(it)}
-      ${answered && q.why ? `<div class="why">${esc(q.why)}</div>` : ''}${answered && q.en ? `<div class="tr"><span class="muted">EN</span> ${esc(q.en)}</div>` : ''}`;
+      ${answered && q.why ? `<div class="why">${esc(q.why)}</div>` : ''}${answered && q.en ? `<div class="tr"><span class="muted">EN</span> ${esc(q.en)}</div>` : ''}
+      ${answered ? optionNotes(it.task === 'usage' ? null : q, it.chosen) : ''}`;
     return { inner: { front, back: answered ? vocabBackHtml(v) : '' }, bar: answered ? continueBar(it) : pickHint('Choose one') };
   }
   if (it.mode === 'learn') {
@@ -2646,6 +2663,8 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
     EXAM = Object.assign({ qr: [], dlg: [], read: [], vocab: {} }, ex);
     for (const x of EXAM.read) for (const [ja, gl] of Object.entries(x.gl || {})) GL[ja] = gl;
     for (const x of [...EXAM.qr, ...EXAM.dlg, ...(EXAM.mock_items || []), ...(EXAM.mocks || []).flatMap(m => m.read)]) for (const [ja, gl] of Object.entries(x.gl || {})) GL[ja] = gl;
+    for (const q of [...Object.values(EXAM.vocab), ...(EXAM.mocks || []).map(m => m.vocab)])
+      for (const x of [...(q.ctx || []), ...[].concat(q.para || [], q.usage || [])]) Object.assign(GL, x.gl || {});
     planCache = null;
     if (!session) render();
   });
