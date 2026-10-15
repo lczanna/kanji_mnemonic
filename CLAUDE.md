@@ -28,6 +28,8 @@ and moves parts ahead of the kanji that use them. Progress is keyed by kanji, so
 
 After adding words or changing a reading in `vocab.json`, run `python3 tools/kanji_readings.py` (how each kanji is
 read inside each word) and `python3 tools/gloss_fixes.py` (checked meanings and readings in the sentences).
+After rebuilding examples, grammar glosses or exam.json, run `python3 tools/kana_fill.py`: it adds tap meanings for
+kana words from `data/kana_meanings.json` (checked word by word; null marks tokenizer slips).
 
 ## Images
 

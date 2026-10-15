@@ -44,15 +44,19 @@ def fill_dict(d):
     for text in list(d):
         d[text], k = fill(text, d[text] or [])
         n += k
+        if not d[text]:
+            del d[text]   # nothing to tap
     return n
 
 
 def walk(o):
-    """Every gl dict in exam.json, plus the word questions' sentences that had no gloss yet."""
+    """Every gl dict in exam.json, plus word-question sentences and options that had no gloss yet."""
     n = 0
     if isinstance(o, dict):
-        if 's' in o and 'options' in o and isinstance(o.get('gl'), dict) and o['s'] not in o['gl']:
-            o['gl'][o['s']] = []
+        if 'options' in o and isinstance(o.get('gl'), dict):
+            for t in [o.get('s'), *o['options']]:
+                if isinstance(t, str) and t and t not in o['gl']:
+                    o['gl'][t] = []
         for k, v in o.items():
             n += fill_dict(v) if k == 'gl' and isinstance(v, dict) else walk(v)
     elif isinstance(o, list):

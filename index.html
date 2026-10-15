@@ -254,6 +254,8 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .opt.right { border-color: var(--good); background: color-mix(in srgb, var(--good) 14%, var(--surface)); }
 .opt.wrong { border-color: var(--again); background: color-mix(in srgb, var(--again) 14%, var(--surface)); }
 .opt.dim { opacity: .5; }
+.opt-w { display: grid; line-height: 1.15; }
+.opt-w small { font-family: var(--font-body); font-size: 12px; font-weight: 600; color: var(--muted); }
 .opt[disabled] { cursor: default; }
 .chunks .opt { font-size: 17px; justify-content: center; }
 .chunks .opt.with-gl { display: grid; justify-items: center; gap: 2px; }
@@ -332,6 +334,8 @@ label.mini { display: grid; gap: 2px; font-size: 12px; color: var(--muted); } la
 .kana-opts .opt { font-family: var(--font-body); font-weight: 700; font-size: 18px; }
 .gl { font: inherit; color: inherit; background: none; border: 0; padding: 0; border-bottom: 1px dotted color-mix(in srgb, var(--ai) 60%, transparent); cursor: pointer; }
 .gl:hover, .gl:focus-visible { background: var(--ai-soft); }
+/* The underlined part of a 言い換え question stays underlined when it's tappable. */
+u .gl { border-bottom: 2px solid currentColor; }
 .gl-pop { position: fixed; z-index: 40; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 18%, transparent); display: grid; gap: 4px; }
 .gl-word { font-family: var(--font-kanji); font-weight: 800; font-size: 22px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .gl-word span { font-family: var(--font-body); font-weight: 500; font-size: 16px; color: var(--ai); }
@@ -2116,11 +2120,13 @@ function kanjiScreen(it, tags) {
   return { inner: { front, back }, bar };
 }
 
-function mcOptions(it, kana, kanji) {
+function mcOptions(it, kana, kanji, q) {
   const answered = session.revealed;
   return `<div class="opts${kana ? ' kana-opts' : ''}${kanji ? ' kanji-opts' : ''}">${it.opts.map((o, i) => {
     const cls = !answered ? '' : o === it.answerText ? ' right' : i === it.chosen ? ' wrong' : ' dim';
-    return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`;
+    // Word questions: an option with a kanji you haven't studied yet shows its reading.
+    const rd = q && unstudied(o) && optReading(o, (q.w || [])[i]);
+    return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${rd ? `<span class="opt-w">${esc(o)}<small>${esc(rd)}</small></span>` : esc(o)}</button>`;
   }).join('')}</div>`;
 }
 function continueBar(it) {
@@ -2142,6 +2148,19 @@ function spellNotes(it) {
 }
 const pickHint = t => `<div class="row one"><span class="muted" style="text-align:center;font-size:13px">${t}</span></div>`;
 
+// Kanji you haven't started yet (no card), including ones above N3.
+const unstudied = o => [...o].some(c => c !== '々' && isKanji(c) && !appData.cards[c]);
+// How an option is read: the deck word's reading, else built from its tap glosses (readings of each word in it).
+function optReading(o, w) {
+  const v = BY_WORD[w || o];
+  if (v && v.w === o) return v.r;
+  const gl = GL[o];
+  if (!gl || !gl.length) return '';
+  let out = '', pos = 0;
+  for (const [st, len, r] of gl) { if (st < pos) continue; out += o.slice(pos, st) + r; pos = st + len; }
+  out += o.slice(pos);
+  return [...out].some(isKanji) ? '' : hira(out);
+}
 // Word questions: the sentence is tappable (reading and meaning of each word); the blank or underline stays.
 const ctxHtml = s => glossHtml(s).replace('（　）', '<span class="blank">（　　）</span>');
 const paraHtml = s => glossHtml(s).replace('【', '<u>').replace('】', '</u>');
@@ -2150,10 +2169,17 @@ const paraHtml = s => glossHtml(s).replace('【', '<u>').replace('】', '</u>');
 function optionNotes(q, chosen) {
   if (!q) return '';
   const rows = q.options.map((o, i) => {
-    const v = BY_WORD[(q.w || [])[i] || o];
-    if (!v) return '';
-    const head = o === v.w ? `${esc(v.w)} <span class="muted">${esc(v.r)}</span>` : `${esc(o)} <span class="muted">(written ${esc(v.w)})</span>`;
-    return `<div class="${i === chosen && i !== q.answer ? 'picked' : ''}"><b lang="ja">${head}</b> · ${esc(v.m)}</div>`;
+    const v = BY_WORD[(q.w || [])[i] || o], cls = i === chosen && i !== q.answer ? 'picked' : '';
+    if (v) {
+      const head = o === v.w ? `${esc(v.w)} <span class="muted">${esc(v.r)}</span>` : `${esc(o)} <span class="muted">(written ${esc(v.w)})</span>`;
+      return `<div class="${cls}"><b lang="ja">${head}</b> · ${esc(v.m)}</div>`;
+    }
+    // Not a deck word (a conjugated form like 続けて, or a phrase): its words' readings and meanings.
+    const gl = GL[o] || [];
+    if (!gl.length) return '';
+    const rd = optReading(o);
+    const parts = gl.map(([st, len, r, lemma, lr, m]) => `${gl.length > 1 ? `<span lang="ja">${esc(o.slice(st, st + len))}</span>: ` : ''}${esc(m || '')}${lemma !== o.slice(st, st + len) ? ` <span lang="ja">(${esc(lemma)})</span>` : ''}`);
+    return `<div class="${cls}"><b lang="ja">${esc(o)}${rd && rd !== o ? ` <span class="muted">${esc(rd)}</span>` : ''}</b> · ${parts.join('; ')}</div>`;
   }).filter(Boolean);
   return rows.length ? `<div class="wrongs">${rows.join('')}</div>` : '';
 }
@@ -2169,7 +2195,7 @@ function vocabScreen(it, tags) {
       : `<div class="word-front" lang="ja">${esc(vform(v) === 'kanji' ? v.w : v.r)}</div><div class="prompt">Which sentence uses this word correctly?</div>`;
     const front = `${prompt}${it.task === 'usage' ? `<div class="opts g long">${q.options.map((o, i) => {
         const cls = !answered ? '' : i === q.answer ? ' right' : i === it.chosen ? ' wrong' : ' dim';
-        return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`; }).join('')}</div>` : mcOptions(it)}
+        return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`; }).join('')}</div>` : mcOptions(it, false, false, q)}
       ${answered && q.why ? `<div class="why">${esc(q.why)}</div>` : ''}${answered && q.en ? `<div class="tr"><span class="muted">EN</span> ${esc(q.en)}</div>` : ''}
       ${answered ? optionNotes(it.task === 'usage' ? null : q, it.chosen) : ''}`;
     return { inner: { front, back: answered ? vocabBackHtml(v) : '' }, bar: answered ? continueBar(it) : pickHint('Choose one') };
