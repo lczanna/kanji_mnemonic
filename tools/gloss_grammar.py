@@ -13,7 +13,7 @@ import gzip, json, re, sys
 from pathlib import Path
 from sudachipy import dictionary, tokenizer
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from kana_glosses import kana_meaning  # noqa: E402
+from kana_glosses import KEIGO, kana_meaning  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ('名詞', '動詞', '形容詞', '副詞', '連体詞', '接続詞', '感動詞', '形状詞', '代名詞')
@@ -182,18 +182,34 @@ def potential(lemma, jm):
     return ''
 
 
+def kana_gloss(toks, i, text, start):
+    """A kana word's tap entry, or None. Meanings come only from the checked lists in kana_glosses.py, chosen
+    for this sentence. Helper verbs (〜ている, 〜てしまう) stay plain; polite ones get a meaning when used alone."""
+    m = toks[i]
+    s, p, lemma = m.surface(), m.part_of_speech(), m.dictionary_form()
+    if p[0] not in CONTENT:
+        return None
+    if p[1] == '非自立可能':
+        prev = toks[i - 1] if i else None
+        if lemma not in KEIGO or prev is not None and (prev.surface() in ('て', 'で') or prev.part_of_speech()[0] in ('動詞', '助動詞')):
+            return None
+        meaning = KEIGO[lemma]
+    else:
+        meaning = kana_meaning(lemma, text, p[0])
+    return [start, len(s), s, lemma, lemma, meaning] if meaning else None
+
+
 def gloss_sentence(text, jm):
     out, pos = [], 0
-    for m in TOK.tokenize(text, MODE):
+    toks = list(TOK.tokenize(text, MODE))
+    for i, m in enumerate(toks):
         s = m.surface()
         start = text.index(s, pos)
         pos = start + len(s)
         if not HAS_KANJI.search(s):
-            # Kana words get a meaning only from the checked list in kana_glosses.py, chosen for this sentence.
-            p = m.part_of_speech()
-            meaning = p[0] in CONTENT and p[1] != '非自立可能' and kana_meaning(m.dictionary_form(), text)
-            if meaning:
-                out.append([start, len(s), s, m.dictionary_form(), m.dictionary_form(), meaning])
+            g = kana_gloss(toks, i, text, start)
+            if g:
+                out.append(g)
             continue
         lemma = m.dictionary_form()
         r = OVERRIDE.get(s) or hira(m.reading_form())

@@ -5,7 +5,26 @@ the （　） blank, like おいし（　） read as いし "stone") stays plain
 
 KANA: dictionary form -> the meaning these sentences use.
 CONTEXT: (dictionary form, text the sentence contains) -> meaning for that use, checked before KANA.
+data/kana_meanings.json: every other kana word in the app's sentences, "dictionary form|part of speech" ->
+  {"m": meaning or null for tokenizer slips, "ctx": [[text the sentence contains, meaning], ...]}, checked
+  word by word against the sentences it appears in. KEIGO: polite helper verbs, glossed when used on their own.
 """
+import json
+from pathlib import Path
+
+MORE = json.loads((Path(__file__).resolve().parent.parent / 'data' / 'kana_meanings.json').read_text(encoding='utf8')) \
+    if (Path(__file__).resolve().parent.parent / 'data' / 'kana_meanings.json').exists() else {}
+KEIGO = {
+    'いたす': 'to do (humble form of する)',
+    'いただく': 'to receive; to eat, drink (humble)',
+    'いただける': 'could I have (humble: 〜いただけますか)',
+    'いらっしゃる': 'to come, go, be (honorific)',
+    'ござる': '(〜ございます) to be, to have (very polite)',
+    'なさる': 'to do (honorific form of する)',
+    'まいる': 'to go, to come (humble)',
+    'おる': 'to be (humble form of いる)',
+    'ほしい': 'to want (欲しい)',
+}
 
 KANA = {
     # grammar-pattern words: glossed with the meaning of the pattern they are part of
@@ -258,8 +277,13 @@ CONTEXT = {
 }
 
 
-def kana_meaning(lemma, sentence):
+def kana_meaning(lemma, sentence, pos=None):
     for (word, cue), meaning in CONTEXT.items():
         if word == lemma and cue in sentence:
             return meaning
-    return KANA.get(lemma)
+    if lemma in KANA or not pos:
+        return KANA.get(lemma)
+    x = MORE.get(f'{lemma}|{pos}')
+    if not x:
+        return None
+    return next((m for cue, m in x.get('ctx') or [] if cue in sentence), None) or x.get('m')
