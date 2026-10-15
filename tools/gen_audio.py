@@ -78,7 +78,11 @@ def to_pace(clip, text):
         a.write_bytes(clip)
         trim = 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse'
         run('-i', str(a), '-af', trim, '-ac', '1', '-ar', '24000', str(b))
-        dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(b)], capture_output=True, text=True).stdout or 0)
+        out = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(b)], capture_output=True, text=True).stdout.strip()
+        dur = float(out) if re.match(r'^[0-9.]+$', out) else 0
+        if not dur:   # trimming left nothing usable (a very quiet clip): keep the original
+            run('-i', str(a), '-ac', '1', '-ar', '24000', str(b))
+            return b.read_bytes()
         mora = len(reading(re.sub(r'[^一-鿿々ぁ-ゖァ-ヺー]', '', text))) or 1
         actual = mora / dur if dur else PACE            # mora per second as spoken
         speed = min(1.7, max(1.0, PACE / actual))        # only ever faster, and never chipmunk-fast
@@ -131,13 +135,15 @@ def join(clips, pause=PAUSE):
         return out.read_bytes()
 
 
-_tok = None
+_tok, _tok_lock = None, __import__('threading').Lock()
 def reading(text):
-    """Hiragana reading of a script line (Sudachi), punctuation removed, for comparing with the transcript."""
+    """Hiragana reading of a script line (Sudachi), punctuation removed, for comparing with the transcript.
+    Sudachi's tokenizer can't be shared between threads, hence the lock."""
     global _tok
     from sudachipy import dictionary
-    _tok = _tok or dictionary.Dictionary().tokenizer()
-    kata = ''.join(m.reading_form() for m in _tok.tokenize(text))
+    with _tok_lock:
+        _tok = _tok or dictionary.Dictionary().tokenizer()
+        kata = ''.join(m.reading_form() for m in _tok.tokenize(text))
     return norm(kata)
 
 
@@ -154,7 +160,7 @@ def check(x, audio):
     strip = lambda t: re.sub(r'[^一-鿿々ぁ-ゖァ-ヺー]', '', t)   # also punctuation, which Sudachi reads as きごう
     want = reading(strip(''.join(t for _, t in segments(x))))
     got = reading(strip(txt))   # the transcript may contain kanji: read it the same way
-    return difflib.SequenceMatcher(None, want, got).ratio(), txt.strip()
+    return difflib.SequenceMatcher(None, want, got, autojunk=False).ratio(), txt.strip()
 
 
 def make(x):

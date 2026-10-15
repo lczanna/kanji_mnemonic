@@ -1,0 +1,8894 @@
+{
+"彼": {
+"para": {
+"s": "【彼】は私の高校のときの友達です。",
+"options": [
+"あの男の人",
+"あの女の人",
+"あの子供たち",
+"あの店"
+],
+"answer": 0,
+"why": "彼 refers to a man or boy who is not present (\"he\")."
+},
+"usage": {
+"options": [
+"母は料理が上手で、彼の作るカレーは最高です。",
+"「彼、このペンを貸してください」と先生に言った。",
+"彼は来月からおおさかの会社で働くそうです。",
+"田中さんのお父さんは医者で、彼女は毎日病院で働いています。"
+],
+"answer": 2,
+"why": "彼 means \"he\" for a male third person; it is not used for one's mother or to address someone directly."
+}
+},
+"私": {
+"para": {
+"s": "【私】の名前は田中です。",
+"options": [
+"あなた",
+"ぼく",
+"彼",
+"君"
+],
+"answer": 1,
+"why": "ぼく is also a word for \"I\" (used by men and boys)."
+},
+"usage": {
+"options": [
+"弟がないていたので、「私はどうしたの？」と聞いた。",
+"道で会った人に「私はどこへ行きますか」と聞いた。",
+"店の人に「私はいくらですか」と聞いた。",
+"私は毎朝七時に起きます。"
+],
+"answer": 3,
+"why": "私 means \"I\"; the wrong sentences use it where \"you\" or \"this item\" is meant."
+}
+},
+"彼女": {
+"para": {
+"s": "兄は【彼女】と来週旅行に行く。",
+"options": [
+"付き合っている男の人",
+"会社の上の人",
+"付き合っている女の人",
+"近所の子供"
+],
+"answer": 2,
+"why": "Here 彼女 means \"girlfriend\", a woman one is dating."
+},
+"usage": {
+"options": [
+"彼女は駅の前の花屋で働いています。",
+"父が帰ってきたので、彼女に「お帰りなさい」と言った。",
+"弟は六歳で、彼女はよくゲームをしています。",
+"田中さんのお父さんは医者で、彼女は毎日病院で働いています。"
+],
+"answer": 0,
+"why": "彼女 is \"she\" or \"girlfriend\"; it cannot refer to a father or a brother."
+}
+},
+"為る": {
+"para": {
+"s": "日曜日は家でそうじを【して】います。",
+"options": [
+"見て",
+"作って",
+"待って",
+"やって"
+],
+"answer": 3,
+"why": "やる is a casual word with the same meaning as する (\"to do\")."
+},
+"usage": {
+"options": [
+"昨日は雨をして、試合が中止になった。",
+"毎朝、駅まで歩いて運動をしています。",
+"新しい服をして、パーティーに行った。",
+"友達に手紙をして、引っこしたことを伝えた。"
+],
+"answer": 1,
+"why": "運動をする is a normal pairing; rain 降る, clothes 着る and letters 書く/出す take other verbs."
+}
+},
+"と": null,
+"言う": {
+"para": {
+"s": "先生は明日テストがあると【言って】いました。",
+"options": [
+"聞いて",
+"話して",
+"書いて",
+"答えて"
+],
+"answer": 1,
+"why": "〜と話していた means the same as 〜と言っていた (\"said that\")."
+},
+"usage": {
+"options": [
+"毎晩、ラジオで音楽を言っています。",
+"新しい本を三時間言いました。",
+"日本語で友達と一時間言った。",
+"母に「ありがとう」と言いました。"
+],
+"answer": 3,
+"why": "言う takes a quote; music is 聞く, a book is 読む, chatting for an hour is 話す."
+}
+},
+"行く": {
+"para": {
+"s": "来週、家族と海へ【行きます】。",
+"options": [
+"帰ります",
+"来ます",
+"出かけます",
+"戻ります"
+],
+"answer": 2,
+"why": "出かける means to go out somewhere, the same as 行く here."
+},
+"usage": {
+"options": [
+"夏休みに友達と山へ行きました。",
+"昨日、私の家に友達が行きました。",
+"先週の土曜日、私は家へ行って、すぐ寝ました。",
+"雨がたくさん行って、川の水が多くなった。"
+],
+"answer": 0,
+"why": "Coming to my house is 来る, going home is 帰る, and rain 降る."
+}
+},
+"君": {
+"para": {
+"s": "【君】の意見を聞かせてくれないか。",
+"options": [
+"私",
+"彼",
+"だれ",
+"あなた"
+],
+"answer": 3,
+"why": "君 is a familiar \"you\", so あなた is closest."
+},
+"usage": {
+"options": [
+"社長に「君もお茶を飲みますか」と聞いた。",
+"部長は若い社員に「君、この書類を見てくれ」と言った。",
+"子供が先生に「君の名前は何？」と聞いた。",
+"お客様に「君は何をお探しですか」と言った。"
+],
+"answer": 1,
+"why": "君 is used toward equals or people below you, never toward a boss, a teacher or a customer."
+}
+},
+"彼ら": {
+"para": {
+"s": "【彼ら】は同じ大学の学生です。",
+"options": [
+"あの人たち",
+"あの人",
+"私たち",
+"あなたたち"
+],
+"answer": 0,
+"why": "彼ら is \"they\", several people other than the speaker and listener."
+},
+"usage": {
+"options": [
+"田中さんは一人で旅行に行ったが、彼らはとても楽しかったそうだ。",
+"私と妹は、彼らの部屋をそうじしました。",
+"彼らは毎週日曜日に公園でサッカーをしている。",
+"父は一人で住んでいて、彼らは毎日料理をしている。"
+],
+"answer": 2,
+"why": "彼ら refers to a group of other people; it cannot mean one person or \"we\"."
+}
+},
+"来る": {
+"para": {
+"s": "今年もさくらのきせつが【来た】。",
+"options": [
+"終わった",
+"やってきた",
+"止まった",
+"消えた"
+],
+"answer": 1,
+"why": "やってくる means \"to come / arrive\", the same as 来る."
+},
+"usage": {
+"options": [
+"来月、私は家族とアメリカへ来ます。",
+"昨日、友達の家へ来て、ゲームをしました。",
+"鳥が空を来ています。",
+"来週、国から母が日本に来ます。"
+],
+"answer": 3,
+"why": "来る is movement toward the speaker; going away from here is 行く, and birds 飛ぶ."
+}
+},
+"人": {
+"para": {
+"s": "あの【人】はだれですか。",
+"options": [
+"物",
+"所",
+"方",
+"店"
+],
+"answer": 2,
+"why": "方（かた） is a polite word for \"person\"."
+},
+"usage": {
+"options": [
+"駅の前にたくさんの人が集まっている。",
+"庭に古い人が一本立っている。",
+"つくえの上に人が三さつある。",
+"うちの人はとてもかわいい犬です。"
+],
+"answer": 0,
+"why": "人 means a human; a tree (木), books (本) and a dog are not 人."
+}
+},
+"居る": {
+"para": {
+"s": "父は今、家に【いません】。",
+"options": [
+"寝ています",
+"帰っています",
+"待っています",
+"出かけています"
+],
+"answer": 3,
+"why": "出かけている means \"is out\", i.e. is not at home."
+},
+"usage": {
+"options": [
+"テーブルの上にりんごが一ついる。",
+"公園に小さい子供が三人いる。",
+"駅の近くに大きい図書館がいます。",
+"私には車が二台います。"
+],
+"answer": 1,
+"why": "いる is for living things; objects and buildings use ある."
+}
+},
+"見る": {
+"para": {
+"s": "母が子供を【見て】いるあいだに、父は買い物に行った。",
+"options": [
+"世話をして",
+"探して",
+"呼んで",
+"教えて"
+],
+"answer": 0,
+"why": "Here 見る means \"to look after\", the same as 世話をする."
+},
+"usage": {
+"options": [
+"毎晩、ラジオで音楽を見ています。",
+"電話で友達の声を見た。",
+"夜、窓からほしを見た。",
+"新しいくつが足によく見ている。"
+],
+"answer": 2,
+"why": "見る is for things seen with the eyes; music and voices are 聞く, and shoes 合う."
+}
+},
+"思う": {
+"para": {
+"s": "母はいつも家族のことを【思って】いる。",
+"options": [
+"忘れて",
+"考えて",
+"話して",
+"見て"
+],
+"answer": 1,
+"why": "〜のことを考える means \"to think about\", like 〜のことを思う."
+},
+"usage": {
+"options": [
+"毎日、思って漢字を十こ覚えます。",
+"父は駅で友達を三十分思った。",
+"先生の話を思って、ノートに書いた。",
+"この映画はとても面白いと思います。"
+],
+"answer": 3,
+"why": "思う is for opinions and feelings (〜と思う); waiting is 待つ and listening 聞く."
+}
+},
+"物": {
+"para": {
+"s": "この店には安くていい【物】がたくさんある。",
+"options": [
+"客",
+"店員",
+"品物",
+"場所"
+],
+"answer": 2,
+"why": "品物 means goods or things for sale."
+},
+"usage": {
+"options": [
+"かばんの中にいろいろな物が入っている。",
+"あの物はとても親切な店員さんです。",
+"毎朝七時の物に起きます。",
+"私の物は田中です。"
+],
+"answer": 0,
+"why": "物 is a physical thing, not a person, a time or a name."
+}
+},
+"家": {
+"para": {
+"s": "仕事が終わったら、すぐ【家】に帰ります。",
+"options": [
+"店",
+"会社",
+"駅",
+"うち"
+],
+"answer": 3,
+"why": "うち also means \"one's home\"."
+},
+"usage": {
+"options": [
+"家で電車に乗って、会社へ行く。",
+"新しい家は駅から歩いて五分です。",
+"病気になったので、家へ行って医者にみてもらった。",
+"家で本を借りて、二週間で返した。"
+],
+"answer": 1,
+"why": "Trains are boarded at a station, doctors are at a hospital, and books are borrowed from a library."
+}
+},
+"仕事": {
+"para": {
+"s": "父の【仕事】は医者です。",
+"options": [
+"職業",
+"しゅみ",
+"病気",
+"名前"
+],
+"answer": 0,
+"why": "職業 means one's occupation or job."
+},
+"usage": {
+"options": [
+"日曜日は仕事なので、ゆっくり寝ます。",
+"この仕事はとてもおいしい。",
+"今日は仕事が多くて、帰りがおそくなった。",
+"仕事が降ってきたので、かさをさした。"
+],
+"answer": 2,
+"why": "Having lots of work makes you late; a work day is not a day to sleep in, and work cannot taste good or fall from the sky."
+}
+},
+"自分": {
+"para": {
+"s": "宿題は【自分】でやりなさい。",
+"options": [
+"みんな",
+"一人",
+"二人",
+"先生"
+],
+"answer": 1,
+"why": "自分でやる means \"do it yourself\", the same as 一人でやる."
+},
+"usage": {
+"options": [
+"駅で自分に会って、いっしょにお茶を飲んだ。",
+"この自分はとても高いですね。",
+"自分が三人集まって会議をした。",
+"自分の部屋は自分でそうじしなさい。"
+],
+"answer": 3,
+"why": "自分 means \"oneself\"; it cannot be another person you meet, an object, or several people."
+}
+},
+"本": {
+"para": {
+"s": "図書館で【本】を三さつ借りた。",
+"options": [
+"新聞",
+"切手",
+"書物",
+"手紙"
+],
+"answer": 2,
+"why": "書物 is a written word for books."
+},
+"usage": {
+"options": [
+"電車の中で本を読むのが好きです。",
+"昨日、友達から本で電話がかかってきた。",
+"のどがかわいたので、本を一本買った。",
+"寒いので、本を着て出かけた。"
+],
+"answer": 0,
+"why": "本 (book) is read; it is not a phone, a drink or clothing."
+}
+},
+"知る": {
+"para": {
+"s": "その話はもう【知って】います。",
+"options": [
+"忘れて",
+"話して",
+"書いて",
+"聞いて"
+],
+"answer": 3,
+"why": "聞いている (\"have heard\") here means already knowing about it."
+},
+"usage": {
+"options": [
+"来年、大学で英語を知るつもりです。",
+"駅までの道を知っていますか。",
+"毎朝、新聞を知ってから会社へ行く。",
+"田中さんとは、去年のパーティーで初めて知った。"
+],
+"answer": 1,
+"why": "知る is \"to know\"; studying is 勉強する, a newspaper is 読む, and meeting someone new is 知り合う."
+}
+},
+"会う": {
+"para": {
+"s": "駅で、昔の友達に【会った】。",
+"options": [
+"出会った",
+"別れた",
+"見送った",
+"待った"
+],
+"answer": 0,
+"why": "出会う means to meet or run into someone."
+},
+"usage": {
+"options": [
+"試験に会って、とてもうれしかった。",
+"このくつは私の足に会わない。",
+"日曜日に駅の前で友達と会う約束をした。",
+"毎晩、テレビで映画に会っている。"
+],
+"answer": 2,
+"why": "会う is for meeting people; shoes 合う and films 見る."
+}
+},
+"分かる": {
+"para": {
+"s": "先生の説明はよく【分かりました】。",
+"options": [
+"聞こえました",
+"理解できました",
+"見えました",
+"覚えました"
+],
+"answer": 1,
+"why": "理解する means \"to understand\"."
+},
+"usage": {
+"options": [
+"明日の試合に分かるように、毎日れんしゅうしている。",
+"窓から山がよく分かる。",
+"駅で友達を一時間分かった。",
+"この問題の答えが分かりません。"
+],
+"answer": 3,
+"why": "分かる means to understand; winning is 勝つ, seeing is 見える, waiting is 待つ."
+}
+},
+"好き": {
+"para": {
+"s": "私は料理を作ることが【好き】です。",
+"options": [
+"苦手",
+"下手",
+"楽しい",
+"きらい"
+],
+"answer": 2,
+"why": "Something you like doing is 楽しい (fun) for you."
+},
+"usage": {
+"options": [
+"私は冬より夏の方が好きです。",
+"熱があって、体がとても好きです。",
+"この部屋は好きなので、三人しか入れない。",
+"試験が好きに終わってよかった。"
+],
+"answer": 0,
+"why": "好き means \"liked\"; it cannot describe a sick body, a small room or how an exam went."
+}
+},
+"何": {
+"para": {
+"s": "【何】を食べたいですか。",
+"options": [
+"どこ",
+"だれ",
+"いつ",
+"どんな物"
+],
+"answer": 3,
+"why": "何 asks \"what (thing)\"."
+},
+"usage": {
+"options": [
+"何に住んでいますか。",
+"たんじょう日に何がほしいですか。",
+"会議には何が来ますか。",
+"何に日本へ来ましたか。"
+],
+"answer": 1,
+"why": "何 asks about things; places use どこ, people だれ, and times いつ."
+}
+},
+"持つ": {
+"para": {
+"s": "重いにもつを【持って】あげましょう。",
+"options": [
+"運んで",
+"置いて",
+"送って",
+"開けて"
+],
+"answer": 0,
+"why": "Holding heavy bags for someone means carrying (運ぶ) them."
+},
+"usage": {
+"options": [
+"来週の日曜日、大学で試験を持ちます。",
+"毎朝、コーヒーを持ってから出かけます。",
+"雨が降りそうなので、かさを持って行きます。",
+"寒いので、ぼうしを頭に持った。"
+],
+"answer": 2,
+"why": "持つ is \"to hold/carry\"; exams are 受ける, coffee is 飲む, and hats かぶる."
+}
+},
+"話す": {
+"para": {
+"s": "昨日、母と一時間ぐらい電話で【話した】。",
+"options": [
+"聞いた",
+"しゃべった",
+"書いた",
+"呼んだ"
+],
+"answer": 1,
+"why": "しゃべる is a casual word for \"to talk\"."
+},
+"usage": {
+"options": [
+"毎晩、日記を話してから寝ます。",
+"子供のとき、ピアノを話していた。",
+"友達の歌を話して、とても感動した。",
+"困ったことがあったら、何でも話してください。"
+],
+"answer": 3,
+"why": "話す is \"to speak\"; a diary is 書く, piano is ひく, and songs are 聞く."
+}
+},
+"車": {
+"para": {
+"s": "父は毎日【車】で会社に行く。",
+"options": [
+"電車",
+"自転車",
+"自動車",
+"船"
+],
+"answer": 2,
+"why": "自動車 is the full word for \"car\"."
+},
+"usage": {
+"options": [
+"駅まで車で送ってあげましょう。",
+"車に乗って、空から町を見た。",
+"車で海を渡って、しまへ行った。",
+"部屋があついので、車をつけた。"
+],
+"answer": 0,
+"why": "A car drives on roads; flying is 飛行機, crossing the sea is 船, and a room is cooled with an air conditioner."
+}
+},
+"聞く": {
+"para": {
+"s": "道が分からなかったので、警察の人に【聞いた】。",
+"options": [
+"答えた",
+"教えた",
+"話した",
+"たずねた"
+],
+"answer": 3,
+"why": "Here 聞く means \"to ask\", the same as たずねる."
+},
+"usage": {
+"options": [
+"毎朝、新聞を聞いてから出かける。",
+"分からないことがあったら、先生に聞いてください。",
+"窓から町の景色を聞いた。",
+"母の作った料理を聞いた。"
+],
+"answer": 1,
+"why": "聞く is for sounds and questions; newspapers are 読む, views are 見る, food is 食べる."
+}
+},
+"前": {
+"para": {
+"s": "駅の【前】で待っています。",
+"options": [
+"正面",
+"後ろ",
+"となり",
+"中"
+],
+"answer": 0,
+"why": "正面 means \"the front\" of a building."
+},
+"usage": {
+"options": [
+"食事の前に、「ごちそうさまでした」と言った。",
+"家を出る前に、駅できっぷを買った。",
+"寝る前に歯をみがきます。",
+"試験が始まる前に、答えを見直した。"
+],
+"answer": 2,
+"why": "前 means \"before\"; ごちそうさま, buying a ticket at the station and checking answers all happen after, not before."
+}
+},
+"所": {
+"para": {
+"s": "ここはとても静かな【所】ですね。",
+"options": [
+"時間",
+"場所",
+"物",
+"人"
+],
+"answer": 1,
+"why": "場所 means \"place\"."
+},
+"usage": {
+"options": [
+"三時の所に会いましょう。",
+"その所、私は家にいました。",
+"あの所は親切な人です。",
+"駅から近い所に住みたい。"
+],
+"answer": 3,
+"why": "所 is a place; times need 時, and a person is 人/方."
+}
+},
+"英語": {
+"para": {
+"s": "兄は【英語】が話せる。",
+"options": [
+"中国の言葉",
+"日本の言葉",
+"イギリスやアメリカの言葉",
+"外国の歌"
+],
+"answer": 2,
+"why": "英語 is the language of England and America."
+},
+"usage": {
+"options": [
+"英語で書かれた手紙を読んだ。",
+"日本の英語は東京です。",
+"母は英語のケーキをやいた。",
+"英語に乗ってアメリカへ行った。"
+],
+"answer": 0,
+"why": "英語 is a language; it is not a city, a style of cake or a vehicle."
+}
+},
+"問題": {
+"para": {
+"s": "このきかいには少し【問題】がある。",
+"options": [
+"いいところ",
+"古いところ",
+"新しいところ",
+"悪いところ"
+],
+"answer": 3,
+"why": "Here 問題 means a fault, something wrong."
+},
+"usage": {
+"options": [
+"問題を作ったので、みんなで食べよう。",
+"試験の問題はあまり難しくなかった。",
+"兄は問題が高いので、バスケットボールが上手だ。",
+"新しい問題を買って、着てみた。"
+],
+"answer": 1,
+"why": "問題 is a question or problem; it cannot be eaten, be tall, or be worn."
+}
+},
+"部屋": {
+"para": {
+"s": "ホテルの【部屋】から海が見えた。",
+"options": [
+"ルーム",
+"ロビー",
+"レストラン",
+"プール"
+],
+"answer": 0,
+"why": "ルーム is a loanword for \"room\"."
+},
+"usage": {
+"options": [
+"公園の部屋で子供たちが遊んでいる。",
+"部屋に乗って会社へ行く。",
+"ホテルの部屋はとても広くてきれいだった。",
+"川の部屋に魚がたくさんいる。"
+],
+"answer": 2,
+"why": "部屋 is a room in a building; parks and rivers have no rooms, and you cannot ride one."
+}
+},
+"買う": {
+"para": {
+"s": "駅前の店でくつを【買った】。",
+"options": [
+"売った",
+"手に入れた",
+"借りた",
+"返した"
+],
+"answer": 1,
+"why": "手に入れる means \"to get, obtain\"."
+},
+"usage": {
+"options": [
+"図書館で本を買って、来週返す。",
+"古い車を店に買って、お金をもらった。",
+"先生に質問を買った。",
+"スーパーでやさいと肉を買った。"
+],
+"answer": 3,
+"why": "買う is to pay to get something; library books are borrowed, selling is 売る, questions are する."
+}
+},
+"読む": {
+"para": {
+"s": "毎朝、新聞を【読みます】。",
+"options": [
+"書きます",
+"配ります",
+"目を通します",
+"買います"
+],
+"answer": 2,
+"why": "目を通す means to look through or read."
+},
+"usage": {
+"options": [
+"寝る前に、子供に絵本を読んであげる。",
+"毎晩、ラジオで音楽を読んでいる。",
+"手紙を読んで、ポストに入れた。",
+"友達の顔を読んで、あいさつした。"
+],
+"answer": 0,
+"why": "読む is for text; music is 聞く, a letter you post is one you 書く, and faces are 見る."
+}
+},
+"父": {
+"para": {
+"s": "【父】は銀行で働いています。",
+"options": [
+"私のおじいさん",
+"私のおじさん",
+"私の兄",
+"私のお父さん"
+],
+"answer": 3,
+"why": "父 is the humble word for one's own father."
+},
+"usage": {
+"options": [
+"田中さん、父はお元気ですか。",
+"父は毎朝六時に起きて、散歩をします。",
+"父は女の人で、料理が上手です。",
+"先生の父がいらっしゃいました。"
+],
+"answer": 1,
+"why": "父 is only for your own father; someone else's father is お父さん/お父様."
+}
+},
+"皆": {
+"para": {
+"s": "クラスの【皆】が先生の話を聞いていた。",
+"options": [
+"全員",
+"一人",
+"半分",
+"何人か"
+],
+"answer": 0,
+"why": "全員 means \"all the members\"."
+},
+"usage": {
+"options": [
+"友達の皆の名前は田中です。",
+"皆に一回、家族で旅行します。",
+"皆で写真をとりましょう。",
+"部屋の皆に、テレビがあります。"
+],
+"answer": 2,
+"why": "皆 means everyone; it cannot mean one person, \"per year\" or \"corner\"."
+}
+},
+"今": {
+"para": {
+"s": "【今】、母は出かけています。",
+"options": [
+"昨日",
+"ただいま",
+"毎日",
+"前"
+],
+"answer": 1,
+"why": "ただいま (formal) means \"right now\"."
+},
+"usage": {
+"options": [
+"今、昨日の夜は早く寝ました。",
+"今に出かけた。",
+"今の年に大学を出ました。",
+"今、何時ですか。"
+],
+"answer": 3,
+"why": "今 is \"now\"; \"this year\" is 今年, and it does not go with past events like yesterday."
+}
+},
+"学校": {
+"para": {
+"s": "弟は毎日歩いて【学校】に通っている。",
+"options": [
+"病院",
+"会社",
+"小学校",
+"銀行"
+],
+"answer": 2,
+"why": "For a young brother, 学校 is his 小学校 (elementary school)."
+},
+"usage": {
+"options": [
+"学校のじゅぎょうは八時半に始まる。",
+"体の具合が悪いので、学校へ行って薬をもらった。",
+"学校でお金を下ろした。",
+"学校で切手を買って、手紙を出した。"
+],
+"answer": 0,
+"why": "学校 is where lessons are; medicine, cash and stamps come from a hospital, bank and post office."
+}
+},
+"時間": {
+"para": {
+"s": "今日は【時間】がないので、また明日話しましょう。",
+"options": [
+"お金",
+"元気",
+"用事",
+"ひま"
+],
+"answer": 3,
+"why": "ひまがない means \"have no free time\"."
+},
+"usage": {
+"options": [
+"時間が高くて、買えなかった。",
+"会議の時間が三時から四時に変わった。",
+"時間を三つ買った。",
+"部屋のかべに時間をかけた。"
+],
+"answer": 1,
+"why": "時間 is time; prices (値段) and clocks (時計) are different words."
+}
+},
+"新しい": {
+"para": {
+"s": "【新しい】くつをはいて出かけた。",
+"options": [
+"買ったばかりの",
+"古い",
+"きたない",
+"小さい"
+],
+"answer": 0,
+"why": "Shoes you have just bought are new."
+},
+"usage": {
+"options": [
+"このパンは新しいので、もう食べないほうがいい。",
+"母は年をとっても新しいです。",
+"新しい家は駅から近い。",
+"祖父は九十歳で、とても新しい。"
+],
+"answer": 2,
+"why": "Bread you should not eat is 古い, and people are 若い, not 新しい."
+}
+},
+"雨": {
+"para": {
+"s": "【雨】の日は家で本を読む。",
+"options": [
+"天気がいい",
+"天気が悪い",
+"あつい",
+"寒い"
+],
+"answer": 1,
+"why": "A rainy day is a day of bad weather."
+},
+"usage": {
+"options": [
+"雨が強く吹いて、木がたおれた。",
+"雨が出て、明るくなった。",
+"空に雨が光っている。",
+"雨が降りそうだから、かさを持って行こう。"
+],
+"answer": 3,
+"why": "雨 falls (降る); wind blows, the sun comes out, and stars shine."
+}
+},
+"必要": {
+"para": {
+"s": "旅行にはパスポートが【必要】です。",
+"options": [
+"いらない物",
+"便利な物",
+"なくてはならない物",
+"高い物"
+],
+"answer": 2,
+"why": "必要 means something you must have."
+},
+"usage": {
+"options": [
+"この仕事には英語が必要です。",
+"明日は休みなので、早く起きる必要があります。",
+"必要に食べすぎて、おなかが痛い。",
+"この問題は必要なので、だれでもできる。"
+],
+"answer": 0,
+"why": "必要 means \"necessary\"; a day off means no need to get up early, and \"easy\" is 簡単."
+}
+},
+"子供": {
+"para": {
+"s": "公園で【子供】たちが遊んでいる。",
+"options": [
+"お年寄り",
+"大人",
+"若者",
+"小さい子"
+],
+"answer": 3,
+"why": "子供 are small children."
+},
+"usage": {
+"options": [
+"祖父は九十歳の子供です。",
+"姉には子供が二人いる。",
+"子供になったら、お酒が飲める。",
+"私の子供は七十歳の父です。"
+],
+"answer": 1,
+"why": "子供 means a child or one's son/daughter; grandfather and father are not one's 子供, and drinking age is 大人."
+}
+},
+"書く": {
+"para": {
+"s": "名前をここに【書いて】ください。",
+"options": [
+"記入して",
+"読んで",
+"見て",
+"消して"
+],
+"answer": 0,
+"why": "記入する means to fill in (write) on a form."
+},
+"usage": {
+"options": [
+"新聞を書いてから、会社へ行く。",
+"こくばんの字を書いてから、次のじゅぎょうを始めた。",
+"国の両親に手紙を書いた。",
+"毎日ピアノを書いている。"
+],
+"answer": 2,
+"why": "書く is \"to write\"; newspapers are read, the board is erased before the next class, and piano is played."
+}
+},
+"置く": {
+"para": {
+"s": "にもつをゆかに【置いた】。",
+"options": [
+"持った",
+"下ろした",
+"開けた",
+"運んだ"
+],
+"answer": 1,
+"why": "にもつを下ろす means to put luggage down."
+},
+"usage": {
+"options": [
+"毎朝、母に「おはよう」と置きます。",
+"試験に置いて、とてもうれしかった。",
+"寒いので、コートを置いて出かけた。",
+"かぎはテーブルの上に置いておきました。"
+],
+"answer": 3,
+"why": "置く is \"to put\"; greetings are 言う, and when it is cold you 着る a coat, not leave it."
+}
+},
+"昨日": {
+"para": {
+"s": "【昨日】は一日中雨だった。",
+"options": [
+"次の日",
+"先週",
+"前の日",
+"明日"
+],
+"answer": 2,
+"why": "前の日 (the previous day) is closest to 昨日."
+},
+"usage": {
+"options": [
+"昨日、友達と映画を見に行った。",
+"昨日、おおさかへ行くつもりです。",
+"昨日、試験があるので、今夜は早く寝ます。",
+"昨日になったら、出かけましょう。"
+],
+"answer": 0,
+"why": "昨日 is in the past and needs past tense; future plans use 明日."
+}
+},
+"明日": {
+"para": {
+"s": "【明日】の朝、出発します。",
+"options": [
+"前の日",
+"今日",
+"昨日",
+"次の日"
+],
+"answer": 3,
+"why": "次の日 (the next day) is closest to 明日."
+},
+"usage": {
+"options": [
+"明日、デパートで服を買いました。",
+"明日は雨が降るそうです。",
+"明日の夜は、よく寝た。",
+"明日、先生に会ったので、質問をした。"
+],
+"answer": 1,
+"why": "明日 is the future, so it cannot go with past-tense verbs."
+}
+},
+"先生": {
+"para": {
+"s": "【先生】に作文を見てもらった。",
+"options": [
+"教師",
+"学生",
+"友達",
+"店員"
+],
+"answer": 0,
+"why": "教師 means a teacher."
+},
+"usage": {
+"options": [
+"先生は今日、教室でじゅぎょうを習っている。",
+"先生は毎日学校で勉強を教わっている。",
+"分からないところを先生に質問した。",
+"店の先生に「いらっしゃいませ」と言われた。"
+],
+"answer": 2,
+"why": "A teacher teaches (教える), not learns; a shop clerk is 店員."
+}
+},
+"勉強": {
+"para": {
+"s": "兄は毎晩、遅くまで【勉強】している。",
+"options": [
+"運動",
+"学習",
+"料理",
+"仕事"
+],
+"answer": 1,
+"why": "学習 means study / learning."
+},
+"usage": {
+"options": [
+"母に勉強を作ってもらった。",
+"この勉強はとても高くて買えない。",
+"毎朝、勉強を飲んで出かける。",
+"日本語の勉強を始めて、一年になります。"
+],
+"answer": 3,
+"why": "勉強 is study; it cannot be cooked, bought or drunk."
+}
+},
+"年": {
+"para": {
+"s": "父と母は【年】が三つちがう。",
+"options": [
+"背",
+"体重",
+"ねんれい",
+"たんじょう日"
+],
+"answer": 2,
+"why": "Here 年 means age (ねんれい)."
+},
+"usage": {
+"options": [
+"兄と私は年が二つちがう。",
+"一年は十二の年がある。",
+"この年は午後三時です。",
+"一日は二十四の年がある。"
+],
+"answer": 0,
+"why": "年 means age or year; months (月) and hours (時間) are different."
+}
+},
+"出る": {
+"para": {
+"s": "毎朝七時に家を【出ます】。",
+"options": [
+"帰ります",
+"入ります",
+"着きます",
+"出発します"
+],
+"answer": 3,
+"why": "家を出発する means to set off from home, the same as 家を出る."
+},
+"usage": {
+"options": [
+"電車に出て、窓から外を見た。",
+"電話が鳴ったので、すぐに出た。",
+"疲れたので、ベッドに出て休んだ。",
+"家に出て、くつをぬいだ。"
+],
+"answer": 1,
+"why": "電話に出る (answer the phone) is correct; you 乗る a train and 入る a bed or house."
+}
+},
+"入る": {
+"para": {
+"s": "兄は今年、大学に【入った】。",
+"options": [
+"入学した",
+"そつぎょうした",
+"休んだ",
+"見学した"
+],
+"answer": 0,
+"why": "大学に入る means to enter university (入学する)."
+},
+"usage": {
+"options": [
+"駅でバスに入って、会社へ行った。",
+"試験に入って、とてもうれしかった。",
+"部屋に入る前に、ノックしてください。",
+"家を入って、学校へ向かった。"
+],
+"answer": 2,
+"why": "You 乗る a bus, 合格する an exam, and 出る a house when leaving."
+}
+},
+"お金": {
+"para": {
+"s": "旅行の【お金】をためている。",
+"options": [
+"時間",
+"費用",
+"にもつ",
+"予定"
+],
+"answer": 1,
+"why": "費用 means cost / money needed for something."
+},
+"usage": {
+"options": [
+"試験でいいお金をとった。",
+"友達にお金を教えて、駅まで行った。",
+"病院でお金を出してもらった。",
+"銀行でお金を下ろした。"
+],
+"answer": 3,
+"why": "Tests give points (点), you show the way (道), and hospitals give medicine (薬)."
+}
+},
+"手紙": {
+"para": {
+"s": "祖母から【手紙】がとどいた。",
+"options": [
+"こづつみ",
+"電話",
+"はがき",
+"写真"
+],
+"answer": 2,
+"why": "はがき (postcard) is also written mail, the closest to a letter."
+},
+"usage": {
+"options": [
+"引っこしたことを手紙で友達に知らせた。",
+"手紙で電話をかけた。",
+"手紙を聞いて、ないた。",
+"手紙をかけて、部屋を明るくした。"
+],
+"answer": 0,
+"why": "A letter is written and read; you cannot call, listen to it, or switch it on like a light."
+}
+},
+"程": {
+"para": {
+"s": "駅まで歩いて十分【程】です。",
+"options": [
+"だけ",
+"しか",
+"まで",
+"ぐらい"
+],
+"answer": 3,
+"why": "程 after a number means \"about\", like ぐらい."
+},
+"usage": {
+"options": [
+"母は料理が程上手です。",
+"会社までは、電車で三十分程かかります。",
+"今日は昨日程寒い。",
+"雨が程降っている。"
+],
+"answer": 1,
+"why": "程 follows a number (\"about\") or 〜ほど〜ない; it cannot be used alone like とても, and 昨日ほど needs a negative."
+}
+},
+"取る": {
+"para": {
+"s": "すみません、そのしおを【取って】ください。",
+"options": [
+"渡して",
+"入れて",
+"置いて",
+"作って"
+],
+"answer": 0,
+"why": "〜を取ってください at a table means \"please pass it to me\"."
+},
+"usage": {
+"options": [
+"毎朝、シャワーを取ってから出かける。",
+"寒いので、窓を取ってください。",
+"たなの上の箱を取ってください。",
+"来年、大学を取るつもりです。"
+],
+"answer": 2,
+"why": "Showers are あびる, windows しめる, and university entrance exams 受ける."
+}
+},
+"住む": {
+"para": {
+"s": "兄はおおさかに【住んで】いる。",
+"options": [
+"とまって",
+"暮らして",
+"働いて",
+"遊んで"
+],
+"answer": 1,
+"why": "暮らす means to live (somewhere)."
+},
+"usage": {
+"options": [
+"今夜はホテルに住みます。",
+"毎朝、いすに住んで新聞を読む。",
+"父は毎日、銀行に住んでいます。",
+"私は駅の近くのアパートに住んでいます。"
+],
+"answer": 3,
+"why": "One night in a hotel is とまる, sitting is 座る, and working at a bank is 働く."
+}
+},
+"計画": {
+"para": {
+"s": "夏休みの旅行の【計画】を立てた。",
+"options": [
+"けっか",
+"経験",
+"予定",
+"感想"
+],
+"answer": 2,
+"why": "予定を立てる and 計画を立てる both mean making a plan."
+},
+"usage": {
+"options": [
+"来年、家族で外国へ行く計画を立てている。",
+"昨日の試験の計画はとても悪かった。",
+"去年の旅行はいい計画になった。",
+"計画が高すぎて、買えない。"
+],
+"answer": 0,
+"why": "計画 is a plan for the future; results (けっか) and memories (思い出) are about the past."
+}
+},
+"考える": {
+"para": {
+"s": "どうすればいいか、ずっと【考えて】いる。",
+"options": [
+"忘れて",
+"話して",
+"見て",
+"思って"
+],
+"answer": 3,
+"why": "〜と思う / 〜を考える both express thinking things over."
+},
+"usage": {
+"options": [
+"毎晩、テレビを考えてから寝ます。",
+"この問題の答えを考えています。",
+"友達の声を考えて、すぐ分かった。",
+"昨日、手紙を考えて、ポストに入れた。"
+],
+"answer": 1,
+"why": "考える is mental thinking; TV is 見る, voices 聞く, letters 書く."
+}
+},
+"犬": {
+"para": {
+"s": "うちの【犬】は毎朝、散歩に行きたがる。",
+"options": [
+"ペット",
+"子供",
+"父",
+"鳥"
+],
+"answer": 0,
+"why": "Here 犬 is the family pet that goes for walks."
+},
+"usage": {
+"options": [
+"犬が木の上でかあかあと鳴いている。",
+"犬が空を飛んでいる。",
+"毎朝、犬を連れて公園を散歩する。",
+"犬が「ニャー」と鳴いた。"
+],
+"answer": 2,
+"why": "Dogs say ワンワン and walk; crows say かあかあ, birds fly, and cats say ニャー."
+}
+},
+"良い": {
+"para": {
+"s": "このかばんはかるくて使いやすくて、とても【良い】。",
+"options": [
+"ひどい",
+"すばらしい",
+"重い",
+"高い"
+],
+"answer": 1,
+"why": "すばらしい means \"wonderful, very good\"."
+},
+"usage": {
+"options": [
+"熱があって、気分がとても良いので、学校を休んだ。",
+"試験に落ちて、良かった。",
+"道が良いので、じこが多い。",
+"体に良い食べ物を選んで食べている。"
+],
+"answer": 3,
+"why": "良い is positive; fever, failing and accidents call for 悪い or 残念."
+}
+},
+"食べる": {
+"para": {
+"s": "昼ご飯に何を【食べました】か。",
+"options": [
+"飲みました",
+"作りました",
+"めし上がりました",
+"買いました"
+],
+"answer": 2,
+"why": "めし上がる is the respectful form of 食べる."
+},
+"usage": {
+"options": [
+"朝ご飯にパンを食べた。",
+"かぜ薬を食べて、早く寝た。",
+"毎朝、牛にゅうを食べる。",
+"寒いので、熱いおふろを食べた。"
+],
+"answer": 0,
+"why": "Medicine and milk are 飲む, and a bath is 入る."
+}
+},
+"男": {
+"para": {
+"s": "店の前に背の高い【男】が立っていた。",
+"options": [
+"女の人",
+"子供",
+"お年寄り",
+"男の人"
+],
+"answer": 3,
+"why": "男 means a man (男の人)."
+},
+"usage": {
+"options": [
+"私の姉はやさしい男です。",
+"部屋には男が二人、女が三人いた。",
+"男がワンワンとほえている。",
+"祖母は九十歳の男です。"
+],
+"answer": 1,
+"why": "男 is a male person; a sister, a grandmother and a barking dog are not."
+}
+},
+"電話": {
+"para": {
+"s": "友達から【電話】がかかってきた。",
+"options": [
+"れんらく",
+"手紙",
+"にもつ",
+"客"
+],
+"answer": 0,
+"why": "電話がかかってくる means someone contacts you (れんらく)."
+},
+"usage": {
+"options": [
+"電話を書いて、ポストに入れた。",
+"電話をあけて、空気を入れた。",
+"後で電話をかけます。",
+"電話でご飯を食べた。"
+],
+"answer": 2,
+"why": "電話 is made with かける; letters are posted, windows opened, and food eaten with chopsticks."
+}
+},
+"過ぎる": {
+"para": {
+"s": "日本に来てから三年が【過ぎた】。",
+"options": [
+"来た",
+"たった",
+"始まった",
+"続けた"
+],
+"answer": 1,
+"why": "時間がたつ means time passes, like 過ぎる."
+},
+"usage": {
+"options": [
+"試験に過ぎて、うれしかった。",
+"この服は私にちょうど過ぎます。",
+"雨が過ぎて、かさをさした。",
+"食べ過ぎて、おなかが痛い。"
+],
+"answer": 3,
+"why": "〜過ぎる means \"too much\" or \"to pass\"; passing an exam is 合格, a fit is ちょうどいい, rain 降る."
+}
+},
+"使う": {
+"para": {
+"s": "このペンを【使って】もいいですか。",
+"options": [
+"買って",
+"返して",
+"借りて",
+"書いて"
+],
+"answer": 2,
+"why": "Using someone else's pen means borrowing (借りる) it."
+},
+"usage": {
+"options": [
+"料理に新しいなべを使った。",
+"昨日は一日中家で使った。",
+"試合に使って、うれしかった。",
+"先生に作文を使ってもらった。"
+],
+"answer": 0,
+"why": "使う means \"to use\"; spending a day is 過ごす, winning is 勝つ, and checking an essay is 見る."
+}
+},
+"歩く": {
+"para": {
+"s": "公園の中をゆっくり【歩いた】。",
+"options": [
+"走った",
+"休んだ",
+"遊んだ",
+"散歩した"
+],
+"answer": 3,
+"why": "散歩する is to take a walk."
+},
+"usage": {
+"options": [
+"鳥が空を歩いている。",
+"天気がいいので、駅まで歩いて行こう。",
+"疲れたので、いすに歩いた。",
+"バスに歩いて、会社へ行った。"
+],
+"answer": 1,
+"why": "歩く is to walk on foot; birds fly, chairs are sat on, buses are ridden."
+}
+},
+"働く": {
+"para": {
+"s": "姉は銀行で【働いて】いる。",
+"options": [
+"勤めて",
+"遊んで",
+"住んで",
+"待って"
+],
+"answer": 0,
+"why": "勤める means to be employed / work at a place."
+},
+"usage": {
+"options": [
+"疲れたので、ソファで働いた。",
+"雨が強く働いている。",
+"父は毎日朝から夜まで働いている。",
+"子供たちが公園で楽しそうに働いている。"
+],
+"answer": 2,
+"why": "働く means to work; resting is 休む, rain 降る, and children 遊ぶ."
+}
+},
+"着く": {
+"para": {
+"s": "電車は十時に東京駅に【着きます】。",
+"options": [
+"出発します",
+"到着します",
+"止まります",
+"乗ります"
+],
+"answer": 1,
+"why": "到着する means to arrive."
+},
+"usage": {
+"options": [
+"寒いので、コートを着いて出かけた。",
+"毎朝七時に家を着く。",
+"電話が着いたので、すぐに出た。",
+"家に着いたら、電話してください。"
+],
+"answer": 3,
+"why": "着く (arrive) is different from 着る (wear); leaving home is 出る and phones 鳴る."
+}
+},
+"母": {
+"para": {
+"s": "【母】は料理がとても上手です。",
+"options": [
+"私の姉",
+"私のおばあさん",
+"私のお母さん",
+"私のおば"
+],
+"answer": 2,
+"why": "母 is the humble word for one's own mother."
+},
+"usage": {
+"options": [
+"母は毎朝、家族のためにおべんとうを作ってくれる。",
+"山田さん、母はお元気ですか。",
+"私の母は来年、小学校に入ります。",
+"家に帰って、「母、ただいま」と母に言った。"
+],
+"answer": 0,
+"why": "母 is used when talking about your own mother to others, not for someone else's mother or when calling her (お母さん)."
+}
+},
+"教える": {
+"para": {
+"s": "駅への行き方を【教えて】いただけませんか。",
+"options": [
+"習って",
+"聞いて",
+"調べて",
+"説明して"
+],
+"answer": 3,
+"why": "Here 教える means to explain or tell information."
+},
+"usage": {
+"options": [
+"毎週、先生にピアノを教えている。",
+"姉は小学校で音楽を教えている。",
+"分からないことがあったので、先生に教えた。",
+"新しい漢字を教えるために、毎晩ノートに書いて覚えている。"
+],
+"answer": 1,
+"why": "教える is giving knowledge; a student 習う from a teacher, 聞く questions and 覚える words."
+}
+},
+"大変": {
+"para": {
+"s": "【大変】お世話になりました。",
+"options": [
+"とても",
+"少し",
+"あまり",
+"まったく"
+],
+"answer": 0,
+"why": "大変 before an expression means \"very much\"."
+},
+"usage": {
+"options": [
+"今日はとても大変で、何もすることがない。",
+"この部屋は大変で、気持ちがいい。",
+"一人で引っこしのじゅんびをするのは大変だった。",
+"試験に合格して、大変残念でした。"
+],
+"answer": 2,
+"why": "大変 means hard/terrible or \"very\"; having nothing to do is ひま, and passing is not 残念."
+}
+},
+"悪い": {
+"para": {
+"s": "今日は気分が【悪い】ので、早く帰ります。",
+"options": [
+"いい",
+"よくない",
+"楽しい",
+"明るい"
+],
+"answer": 1,
+"why": "よくない means \"not good\", the same as 悪い."
+},
+"usage": {
+"options": [
+"試験に合格して、悪い気分だ。",
+"部屋が悪いので、電気をつけた。",
+"兄は背が悪い。",
+"天気が悪いので、試合は中止になった。"
+],
+"answer": 3,
+"why": "Passing feels good, a dark room is 暗い, and height is 低い."
+}
+},
+"作る": {
+"para": {
+"s": "母が晩ご飯を【作って】くれた。",
+"options": [
+"食べて",
+"買って",
+"用意して",
+"運んで"
+],
+"answer": 2,
+"why": "用意する means to prepare."
+},
+"usage": {
+"options": [
+"日曜日に家族のためにカレーを作った。",
+"旅行先で写真をたくさん作った。",
+"試験で百点を作った。",
+"友達と映画を作りに行った。"
+],
+"answer": 0,
+"why": "Photos are とる, points とる, and going to a movie is 見に行く."
+}
+},
+"待つ": {
+"para": {
+"s": "お返事を【待って】います。",
+"options": [
+"心配して",
+"書いて",
+"送って",
+"楽しみにして"
+],
+"answer": 3,
+"why": "Looking forward to a reply means waiting for it."
+},
+"usage": {
+"options": [
+"道が分からないので、駅で人に待った。",
+"電車がおくれていて、ホームで二十分待った。",
+"友達のたんじょう日にプレゼントを待った。",
+"毎朝、会社まで三十分待って行く。"
+],
+"answer": 1,
+"why": "待つ is \"to wait\"; asking is 聞く, giving is あげる, walking is 歩く."
+}
+},
+"一番": {
+"para": {
+"s": "クラスで【一番】背が高いのは田中さんです。",
+"options": [
+"最も",
+"少し",
+"もっと",
+"かなり"
+],
+"answer": 0,
+"why": "最も means \"the most\"."
+},
+"usage": {
+"options": [
+"兄は私より一番背が高い。",
+"毎週一番、プールへ行きます。",
+"くだものの中で、りんごが一番好きです。",
+"東京とおおさかでは、どちらが一番大きいですか。"
+],
+"answer": 2,
+"why": "一番 compares three or more; two things use より / どちらが, and frequency is 一回."
+}
+},
+"我々": {
+"para": {
+"s": "【われわれ】の会社は来年で五十年になる。",
+"options": [
+"あなたたち",
+"私たち",
+"彼ら",
+"君たち"
+],
+"answer": 1,
+"why": "われわれ is a formal word for \"we\"."
+},
+"usage": {
+"options": [
+"先生、われわれの意見を聞かせてください。",
+"田中さんは一人で住んでいて、われわれは料理が上手です。",
+"「われわれ、元気？」と友達にメールした。",
+"われわれはこの問題について、もう一度話し合う必要がある。"
+],
+"answer": 3,
+"why": "われわれ means \"we\" (formal), not \"you\" or a single other person."
+}
+},
+"中": {
+"para": {
+"s": "父は今、会議【中】です。",
+"options": [
+"の前",
+"の後",
+"をしているところ",
+"に行くところ"
+],
+"answer": 2,
+"why": "〜中 means \"in the middle of doing\"."
+},
+"usage": {
+"options": [
+"じゅぎょう中は、けいたい電話を使ってはいけません。",
+"会議が終わったので、今、会議中です。",
+"明日中に、昨日のレポートを出しました。",
+"食事中の後で、薬を飲んでください。"
+],
+"answer": 0,
+"why": "〜中 means during; it cannot be after something ends or mix with past tense like that."
+}
+},
+"駅": {
+"para": {
+"s": "次の【駅】で降ります。",
+"options": [
+"飛行機が止まる所",
+"船が止まる所",
+"車を止める所",
+"電車が止まる所"
+],
+"answer": 3,
+"why": "A 駅 is where trains stop."
+},
+"usage": {
+"options": [
+"駅で飛行機に乗って、北海道へ行った。",
+"駅の前で友達と待ち合わせた。",
+"駅で船に乗った。",
+"熱が出たので、駅でみてもらった。"
+],
+"answer": 1,
+"why": "Planes leave from airports, ships from ports, and doctors work at hospitals."
+}
+},
+"始める": {
+"para": {
+"s": "来月から英会話を【始める】つもりだ。",
+"options": [
+"スタートする",
+"やめる",
+"続ける",
+"終える"
+],
+"answer": 0,
+"why": "スタートする means to start."
+},
+"usage": {
+"options": [
+"じゅぎょうが九時に始めます。",
+"映画を最後まで見て、始めました。",
+"九時になったので、会議を始めましょう。",
+"仕事を始めたので、ゆっくり休もう。"
+],
+"answer": 2,
+"why": "始める is transitive (〜を始める); a class itself 始まる, and the end of something is 終わる."
+}
+},
+"病気": {
+"para": {
+"s": "祖母は【病気】で入院している。",
+"options": [
+"用事があって",
+"体が悪くて",
+"旅行中で",
+"元気で"
+],
+"answer": 1,
+"why": "病気 means being ill (体が悪い)."
+},
+"usage": {
+"options": [
+"今日はとても病気で、楽しい。",
+"病気がいいので、外で遊ぼう。",
+"病気を飲んで、寝た。",
+"病気が早く治るといいですね。"
+],
+"answer": 3,
+"why": "病気 is illness; being sick is not fun, weather is 天気, and you drink medicine (薬)."
+}
+},
+"会社": {
+"para": {
+"s": "父は毎朝八時に【会社】に行く。",
+"options": [
+"学校",
+"病院",
+"勤め先",
+"図書館"
+],
+"answer": 2,
+"why": "勤め先 means one's workplace."
+},
+"usage": {
+"options": [
+"兄は自動車の会社で働いている。",
+"会社の中に入院した。",
+"小学生の弟は、毎朝歩いて会社へ行く。",
+"会社で泳いで、体をきたえた。"
+],
+"answer": 0,
+"why": "会社 is a company; hospitals, schools and pools are different places."
+}
+},
+"結婚": {
+"para": {
+"s": "姉は来月【けっこんします】。",
+"options": [
+"引っこします",
+"入院します",
+"そつぎょうします",
+"およめに行きます"
+],
+"answer": 3,
+"why": "For a woman, およめに行く means to get married."
+},
+"usage": {
+"options": [
+"来月、新しい会社とけっこんすることになった。",
+"兄は大学の時の友達とけっこんした。",
+"私はねこと犬をけっこんしている。",
+"試験にけっこんして、大学に入った。"
+],
+"answer": 1,
+"why": "けっこん is marriage between people; joining a company, keeping pets and passing exams use other words."
+}
+},
+"少し": {
+"para": {
+"s": "しおを【少し】入れてください。",
+"options": [
+"ちょっと",
+"たくさん",
+"全部",
+"もっと"
+],
+"answer": 0,
+"why": "ちょっと means \"a little\"."
+},
+"usage": {
+"options": [
+"少しの人が集まって、会場に入れなかった。",
+"この料理はとても少しおいしい。",
+"少し休んでから、また仕事を始めよう。",
+"少しも分かりました。"
+],
+"answer": 2,
+"why": "少し means a small amount; a crowd is 大勢, とても少し is wrong, and 少しも needs a negative."
+}
+},
+"飲む": {
+"para": {
+"s": "お茶でも【飲みませんか】。",
+"options": [
+"作りませんか",
+"いかがですか",
+"買いませんか",
+"運びませんか"
+],
+"answer": 1,
+"why": "お茶でもいかがですか is a polite way to offer a drink."
+},
+"usage": {
+"options": [
+"パンを飲んで、学校へ行った。",
+"寒いので、熱いおふろを飲んだ。",
+"子供が友達とボールを飲んで遊んでいる。",
+"かぜをひいたので、薬を飲んで寝た。"
+],
+"answer": 3,
+"why": "飲む is for drinks and medicine; bread is eaten, baths are entered, balls are played with."
+}
+},
+"水": {
+"para": {
+"s": "この【水】は飲めません。",
+"options": [
+"ジュース",
+"牛にゅう",
+"ウォーター",
+"お茶"
+],
+"answer": 2,
+"why": "ウォーター is a loanword meaning water."
+},
+"usage": {
+"options": [
+"あついので、冷たい水が飲みたい。",
+"寒いので、水をつけた。",
+"冷たい水でやけどをした。",
+"水が三さつある。"
+],
+"answer": 0,
+"why": "Heaters are turned on, burns come from hot water, and books are counted in さつ."
+}
+},
+"欲しい": {
+"para": {
+"s": "新しいパソコンが【欲しい】。",
+"options": [
+"売りたい",
+"使いにくい",
+"古い",
+"買いたい"
+],
+"answer": 3,
+"why": "Wanting a new PC means you want to buy one."
+},
+"usage": {
+"options": [
+"私は来年、日本へ欲しいです。",
+"たんじょう日に新しい時計が欲しい。",
+"私はもう一度その映画を見て欲しい。",
+"部屋がきれいで、とても欲しい。"
+],
+"answer": 1,
+"why": "欲しい is for things you want; for your own actions use 〜たい (行きたい, 見たい)."
+}
+},
+"出発": {
+"para": {
+"s": "飛行機は九時に【出発】する。",
+"options": [
+"出る",
+"着く",
+"止まる",
+"降りる"
+],
+"answer": 0,
+"why": "出発する means to leave / depart (出る)."
+},
+"usage": {
+"options": [
+"電車が駅に出発しました。",
+"テレビの番組が出発した。",
+"明日の朝六時にホテルを出発します。",
+"新しい店が駅前に出発した。"
+],
+"answer": 2,
+"why": "出発 is departure; arriving is 到着, programs 始まる, and a new shop できる."
+}
+},
+"降る": {
+"para": {
+"s": "空から雪が【降って】きた。",
+"options": [
+"上がって",
+"落ちて",
+"消えて",
+"止まって"
+],
+"answer": 1,
+"why": "Snow falling from the sky is \"coming down\" (落ちてくる)."
+},
+"usage": {
+"options": [
+"強い風が降って、木がたおれた。",
+"次の駅で電車を降るときは、気をつけてください。",
+"熱が降って、元気になった。",
+"朝から雪が降っていて、外は真っ白だ。"
+],
+"answer": 3,
+"why": "降る is for rain and snow; wind 吹く, getting off a train is 降りる, and fevers 下がる."
+}
+},
+"息子": {
+"para": {
+"s": "うちの【息子】は今年大学生になった。",
+"options": [
+"女の子ども",
+"弟",
+"男の子ども",
+"夫"
+],
+"answer": 2,
+"why": "息子 is one's son (male child)."
+},
+"usage": {
+"options": [
+"息子は来年、小学校に入ります。",
+"姉には息子が二人いて、二人とも女の子です。",
+"私の息子は私より三十歳上です。",
+"母の息子は私の姉です。"
+],
+"answer": 0,
+"why": "A son is male and younger than his parent."
+}
+},
+"言葉": {
+"para": {
+"s": "その【言葉】の意味を辞書で調べた。",
+"options": [
+"文化",
+"写真",
+"料理",
+"単語"
+],
+"answer": 3,
+"why": "単語 means \"word\"."
+},
+"usage": {
+"options": [
+"言葉で写真をとった。",
+"先生の言葉を聞いて、元気が出た。",
+"言葉の上に座った。",
+"言葉が高くて、買えなかった。"
+],
+"answer": 1,
+"why": "言葉 are words that are said or heard, not physical objects."
+}
+},
+"上げる": {
+"para": {
+"s": "その店はコーヒーの値段を【上げた】。",
+"options": [
+"高くした",
+"安くした",
+"変えなかった",
+"下げた"
+],
+"answer": 0,
+"why": "Raising a price means making it higher."
+},
+"usage": {
+"options": [
+"かいだんを上げて、二かいへ行った。",
+"本を読むときは、電気を上げてください。",
+"分かった人は手を上げてください。",
+"雨が上げたら、出かけよう。"
+],
+"answer": 2,
+"why": "上げる is transitive; going upstairs and rain stopping use 上がる, and lights are つける."
+}
+},
+"美しい": {
+"para": {
+"s": "山の上から見た景色は【美しかった】。",
+"options": [
+"きたなかった",
+"きれいだった",
+"つまらなかった",
+"暗かった"
+],
+"answer": 1,
+"why": "きれい means beautiful."
+},
+"usage": {
+"options": [
+"部屋が美しいので、そうじした。",
+"このラーメンはとても美しい味がする。",
+"道が美しくて、車が通れない。",
+"秋になると、山が赤やきいろになって美しい。"
+],
+"answer": 3,
+"why": "美しい is for beautiful sights; taste is おいしい, and a narrow road is せまい."
+}
+},
+"町": {
+"para": {
+"s": "私が生まれた【町】はとても小さい。",
+"options": [
+"国",
+"家",
+"市",
+"店"
+],
+"answer": 2,
+"why": "市 (city) is closest to 町 (town)."
+},
+"usage": {
+"options": [
+"この町には古いおてらがたくさんある。",
+"このかばんの町にさいふがある。",
+"父の町は医者です。",
+"毎週、町を習っている。"
+],
+"answer": 0,
+"why": "町 is a town; inside a bag is 中, a job is 仕事, and lessons are about subjects."
+}
+},
+"帰る": {
+"para": {
+"s": "夏休みに国へ【帰る】つもりです。",
+"options": [
+"出かける",
+"来る",
+"遊ぶ",
+"戻る"
+],
+"answer": 3,
+"why": "戻る means to return."
+},
+"usage": {
+"options": [
+"初めて日本へ帰ったのは、三年前です。",
+"仕事が終わったら、まっすぐ家に帰る。",
+"借りた本を図書館に帰った。",
+"毎朝七時に会社へ帰ります。"
+],
+"answer": 1,
+"why": "帰る is returning to where you belong; a first visit is 来る/行く, books are 返す, going to work is 行く."
+}
+},
+"死ぬ": {
+"para": {
+"s": "育てていた花が【死んで】しまった。",
+"options": [
+"かれて",
+"さいて",
+"育って",
+"生まれて"
+],
+"answer": 0,
+"why": "For plants, dying is かれる (to wither)."
+},
+"usage": {
+"options": [
+"電気が死んだので、部屋が暗くなった。",
+"雨が死んだので、出かけた。",
+"かっていた金魚が死んで、子供が悲しんでいる。",
+"試合で死んで、くやしかった。"
+],
+"answer": 2,
+"why": "死ぬ is for living things; lights 消える, rain やむ, and games are 負ける."
+}
+},
+"終わる": {
+"para": {
+"s": "会議は五時に【終わった】。",
+"options": [
+"始まった",
+"すんだ",
+"止まった",
+"続いた"
+],
+"answer": 1,
+"why": "すむ means to be finished."
+},
+"usage": {
+"options": [
+"宿題を早く終わって、遊びに行った。",
+"電車が駅に終わった。",
+"新しい店が終わって、毎日にぎやかだ。",
+"じゅぎょうが終わったら、図書館へ行こう。"
+],
+"answer": 3,
+"why": "終わる is intransitive (〜が終わる); with を use 終える, trains 着く, new shops できる."
+}
+},
+"医者": {
+"para": {
+"s": "熱があるので、【医者】にみてもらった。",
+"options": [
+"かんごし",
+"店員",
+"医師",
+"せんぱい"
+],
+"answer": 2,
+"why": "医師 is a formal word for doctor."
+},
+"usage": {
+"options": [
+"医者に、たばこはやめたほうがいいと言われた。",
+"医者で薬をもらった。",
+"車が動かないので、医者に直してもらった。",
+"医者に髪を切ってもらった。"
+],
+"answer": 0,
+"why": "医者 is a person, not a place (病院で); cars and hair are handled by other people."
+}
+},
+"止める": {
+"para": {
+"s": "駅の前に車を【止めない】でください。",
+"options": [
+"運転しない",
+"洗わない",
+"売らない",
+"ちゅうしゃしない"
+],
+"answer": 3,
+"why": "車を止める means to park (ちゅうしゃする)."
+},
+"usage": {
+"options": [
+"バスが駅の前に止めた。",
+"赤信号で車を止めた。",
+"雨が止めたら、出かけよう。",
+"時計が止めて、時間が分からない。"
+],
+"answer": 1,
+"why": "止める is transitive (〜を止める); a bus or clock 止まる, and rain やむ."
+}
+},
+"乗る": {
+"para": {
+"s": "駅からバスに【乗って】ください。",
+"options": [
+"乗車して",
+"降りて",
+"待って",
+"乗りかえて"
+],
+"answer": 0,
+"why": "乗車する is the formal word for getting on a vehicle."
+},
+"usage": {
+"options": [
+"かいだんに乗って、二かいへ行った。",
+"新しい会社に乗って、もう三年になる。",
+"毎朝、七時の電車に乗る。",
+"疲れたので、いすに乗って休んだ。"
+],
+"answer": 2,
+"why": "乗る is for vehicles; stairs are 上がる, a company is 入る, and chairs are 座る."
+}
+},
+"忘れる": {
+"para": {
+"s": "電車にかさを【忘れて】しまった。",
+"options": [
+"持ってきて",
+"置いてきて",
+"買って",
+"開いて"
+],
+"answer": 1,
+"why": "忘れる here means to leave something behind."
+},
+"usage": {
+"options": [
+"古い服を忘れて、新しいのを買った。",
+"かぎを忘れて、ドアを開けた。",
+"試合に忘れて、くやしかった。",
+"宿題を家に忘れてきた。"
+],
+"answer": 3,
+"why": "忘れる is to forget; throwing away is すてる, a key is 使う to open a door, and games are 負ける."
+}
+},
+"学生": {
+"para": {
+"s": "兄はまだ【学生】です。",
+"options": [
+"社会人",
+"先生",
+"大学生",
+"会社員"
+],
+"answer": 2,
+"why": "Here 学生 means a university student."
+},
+"usage": {
+"options": [
+"この店は安いので、学生に人気がある。",
+"学生になったので、会社で働き始めた。",
+"この学生はとてもおいしい。",
+"学生が三本ある。"
+],
+"answer": 0,
+"why": "学生 is a student; starting work means becoming a 社会人."
+}
+},
+"多い": {
+"para": {
+"s": "この町は外国人が【多い】。",
+"options": [
+"少ない",
+"大きい",
+"若い",
+"たくさんいる"
+],
+"answer": 3,
+"why": "多い means there are many (たくさんいる)."
+},
+"usage": {
+"options": [
+"この部屋は多くて、気持ちがいい。",
+"今年は雨が多かった。",
+"このかばんはとても多い。",
+"多い人が駅に集まった。"
+],
+"answer": 1,
+"why": "多い means many in number; a room is 広い, a bag 重い, and before a noun it becomes 多くの."
+}
+},
+"走る": {
+"para": {
+"s": "子供たちが校庭を【走って】いる。",
+"options": [
+"かけて",
+"歩いて",
+"座って",
+"泳いで"
+],
+"answer": 0,
+"why": "かける (駆ける) means to run."
+},
+"usage": {
+"options": [
+"魚が川を走っている。",
+"雨が走って、かさをさした。",
+"遅れそうだったので、駅まで走った。",
+"鳥が空を走っている。"
+],
+"answer": 2,
+"why": "走る is running on legs; fish swim, rain falls and birds fly."
+}
+},
+"国": {
+"para": {
+"s": "夏休みに【国】へ帰ります。",
+"options": [
+"会社",
+"ふるさと",
+"店",
+"学校"
+],
+"answer": 1,
+"why": "Going back to one's 国 means going back to one's homeland (ふるさと)."
+},
+"usage": {
+"options": [
+"この国はかばんの中に入っている。",
+"庭に国が一本ある。",
+"国を三さつ読んだ。",
+"世界にはたくさんの国がある。"
+],
+"answer": 3,
+"why": "国 is a country; it cannot fit in a bag, grow like a tree, or be read."
+}
+},
+"余り": {
+"para": {
+"s": "このテストは【あまり】難しくなかった。",
+"options": [
+"とても",
+"少しも",
+"そんなに",
+"ぜんぜん"
+],
+"answer": 2,
+"why": "あまり〜ない means \"not very\", like そんなに〜ない."
+},
+"usage": {
+"options": [
+"今日はあまり寒くない。",
+"この料理はあまりおいしいです。",
+"あまり雨が降っている。",
+"兄はあまり背が高いです。"
+],
+"answer": 0,
+"why": "あまり meaning \"not very\" needs a negative ending."
+}
+},
+"受ける": {
+"para": {
+"s": "来月、日本語の試験を【受ける】。",
+"options": [
+"作る",
+"教える",
+"合格する",
+"受験する"
+],
+"answer": 3,
+"why": "受験する means to take an exam."
+},
+"usage": {
+"options": [
+"試験を受けて、生徒に配った。",
+"来年、大学の入学試験を受けるつもりだ。",
+"毎朝、シャワーを受けてから出かける。",
+"試合に受けて、うれしかった。"
+],
+"answer": 1,
+"why": "受ける is for exams; a teacher makes a test (作る), showers are あびる, and games are 勝つ."
+}
+},
+"試験": {
+"para": {
+"s": "明日、英語の【試験】がある。",
+"options": [
+"テスト",
+"宿題",
+"じゅぎょう",
+"会議"
+],
+"answer": 0,
+"why": "テスト is the same as 試験."
+},
+"usage": {
+"options": [
+"試験をかけて、友達と話した。",
+"試験でお金を下ろした。",
+"試験の前の日は、早く寝たほうがいい。",
+"昨日の試験はとてもおいしかった。"
+],
+"answer": 2,
+"why": "試験 is an exam; phones are かける, money comes from a bank, and food is おいしい."
+}
+},
+"難しい": {
+"para": {
+"s": "この問題は【難しい】。",
+"options": [
+"かんたんだ",
+"やさしくない",
+"楽しい",
+"長い"
+],
+"answer": 1,
+"why": "難しい means \"not easy\"."
+},
+"usage": {
+"options": [
+"このにもつは難しくて、持てない。",
+"店の人が難しくて、うれしかった。",
+"問題が難しいので、すぐに答えられた。",
+"この漢字は難しくて、読めない。"
+],
+"answer": 3,
+"why": "難しい means hard to do or understand; heavy is 重い, and hard questions cannot be answered quickly."
+}
+},
+"親切": {
+"para": {
+"s": "駅員さんが【親切に】道を教えてくれた。",
+"options": [
+"こわく",
+"早く",
+"やさしく",
+"小さく"
+],
+"answer": 2,
+"why": "親切に means kindly (やさしく)."
+},
+"usage": {
+"options": [
+"となりの人はいつも親切にしてくれる。",
+"このラーメンは親切だ。",
+"今日は天気が親切で、気持ちがいい。",
+"店員がとても親切で、気分が悪かった。"
+],
+"answer": 0,
+"why": "親切 describes kind people; food and weather are not 親切, and kindness does not make you feel bad."
+}
+},
+"若い": {
+"para": {
+"s": "その店には【若い】客が多い。",
+"options": [
+"年をとった",
+"お金持ちの",
+"外国の",
+"年をとっていない"
+],
+"answer": 3,
+"why": "若い means young, not old."
+},
+"usage": {
+"options": [
+"この家は去年建てたので、まだ若い。",
+"父は若いころ、外国で働いていた。",
+"このパンは若いので、おいしい。",
+"先月買ったばかりの若い車に乗っている。"
+],
+"answer": 1,
+"why": "若い is for people and living things; new objects are 新しい."
+}
+},
+"友達": {
+"para": {
+"s": "【友達】と映画を見に行った。",
+"options": [
+"友人",
+"先生",
+"家族",
+"店員"
+],
+"answer": 0,
+"why": "友人 is a slightly formal word for friend."
+},
+"usage": {
+"options": [
+"友達が三本ある。",
+"友達で手紙を書いた。",
+"友達とカフェで二時間話した。",
+"友達で写真をとった。"
+],
+"answer": 2,
+"why": "友達 is a person; pens and cameras are used to write and take photos."
+}
+},
+"失敗": {
+"para": {
+"s": "試験に【失敗した】。",
+"options": [
+"合格した",
+"落ちた",
+"遅れた",
+"受けた"
+],
+"answer": 1,
+"why": "試験に失敗する means to fail (落ちる) an exam."
+},
+"usage": {
+"options": [
+"道に失敗して、遅くなった。",
+"駅でさいふを失敗した。",
+"失敗して、みんなにほめられた。",
+"料理に失敗して、ケーキが黒くなった。"
+],
+"answer": 3,
+"why": "失敗 is failing at a task; getting lost is 迷う, losing a wallet is なくす, and failure is not praised."
+}
+},
+"高い": {
+"para": {
+"s": "たなの【高い】ところにある箱を取ってください。",
+"options": [
+"下の方の",
+"前の方の",
+"上の方の",
+"おくの方の"
+],
+"answer": 2,
+"why": "A high place on a shelf is the upper part (上の方)."
+},
+"usage": {
+"options": [
+"このレストランはおいしいけど、少し高い。",
+"このスープは高くて飲めない。",
+"父は年が高い。",
+"電車の中は人が高い。"
+],
+"answer": 0,
+"why": "Hot soup is 熱い, older is 年が上, and many people is 多い."
+}
+},
+"川": {
+"para": {
+"s": "家の近くに【川】が流れている。",
+"options": [
+"海",
+"いけ",
+"道",
+"小川"
+],
+"answer": 3,
+"why": "小川 is a small river or stream."
+},
+"usage": {
+"options": [
+"川が高くて、のぼれない。",
+"夏はよく川で泳いだ。",
+"川が降ってきたので、急いで帰った。",
+"川を開けて、部屋に入った。"
+],
+"answer": 1,
+"why": "川 is a river; mountains are climbed, rain falls, and doors are opened."
+}
+},
+"長い": {
+"para": {
+"s": "このスカートは私には少し【長い】。",
+"options": [
+"みじかくない",
+"みじかい",
+"広い",
+"せまい"
+],
+"answer": 0,
+"why": "長い is the opposite of みじかい, so みじかくない is closest."
+},
+"usage": {
+"options": [
+"姉は背が長い。",
+"今日は気おんが長い。",
+"夏休みは冬休みより長い。",
+"兄は私より年が長い。"
+],
+"answer": 2,
+"why": "Height is 背が高い, temperature 高い, and an older brother is 年上."
+}
+},
+"東京": {
+"para": {
+"s": "来週、【東京】へ行きます。",
+"options": [
+"日本の古い町",
+"日本の首都",
+"アメリカの町",
+"小さなむら"
+],
+"answer": 1,
+"why": "東京 is the capital (首都) of Japan."
+},
+"usage": {
+"options": [
+"東京は日本の国です。",
+"東京は大きい川です。",
+"東京の首都は日本です。",
+"東京は人が多くてにぎやかだ。"
+],
+"answer": 3,
+"why": "東京 is a city, the capital of Japan, not a country or a river."
+}
+},
+"同じ": {
+"para": {
+"s": "私と兄は【同じ】大学に通っている。",
+"options": [
+"ちがう",
+"近い",
+"いっしょの",
+"新しい"
+],
+"answer": 2,
+"why": "いっしょの means \"the same / shared\"."
+},
+"usage": {
+"options": [
+"姉と私は同じ服を持っている。",
+"赤と青は同じ色です。",
+"兄と私は年が三つ同じです。",
+"一と二は同じ数です。"
+],
+"answer": 0,
+"why": "同じ means identical; red and blue, ages three years apart, and one and two are different (ちがう)."
+}
+},
+"以上": {
+"para": {
+"s": "この仕事は三年【以上】続けている。",
+"options": [
+"よりみじかく",
+"ちょうど",
+"ぐらい",
+"より長く"
+],
+"answer": 3,
+"why": "以上 means \"or more / longer than\"."
+},
+"usage": {
+"options": [
+"以上で、今日の話を始めます。",
+"二十歳以上の人はお酒が飲めます。",
+"会議には十人以上しか来なかった。",
+"駅の以上に店がある。"
+],
+"answer": 1,
+"why": "以上 means \"or more\" or \"that's all\"; it cannot start a talk, pair with しか, or mean \"above\" a place."
+}
+},
+"名前": {
+"para": {
+"s": "ここにお【名前】を書いてください。",
+"options": [
+"しめい",
+"住所",
+"年れい",
+"電話番号"
+],
+"answer": 0,
+"why": "しめい (氏名) means one's full name."
+},
+"usage": {
+"options": [
+"私の名前は二十歳です。",
+"犬の名前は茶色です。",
+"この花の名前を知っていますか。",
+"店の名前は午後九時までです。"
+],
+"answer": 2,
+"why": "名前 is a name, not an age, a color, or opening hours."
+}
+},
+"遅れる": {
+"para": {
+"s": "電車が十分【遅れた】。",
+"options": [
+"早く着いた",
+"おそく着いた",
+"止まった",
+"出発した"
+],
+"answer": 1,
+"why": "遅れる means to arrive later than planned."
+},
+"usage": {
+"options": [
+"母はいつも遅れて歩く。",
+"昨日は夜遅れまで起きていた。",
+"兄は私より三歳遅れている。",
+"ねぼうして、会社に遅れた。"
+],
+"answer": 3,
+"why": "Slow walking is ゆっくり, late at night is 遅く, and being younger is 年下."
+}
+},
+"道": {
+"para": {
+"s": "この【道】をまっすぐ行くと駅です。",
+"options": [
+"店",
+"川",
+"通り",
+"はし"
+],
+"answer": 2,
+"why": "通り means street / road."
+},
+"usage": {
+"options": [
+"道が分からなくて、人に聞いた。",
+"道を三さつ買った。",
+"道で魚がたくさんとれる。",
+"この道はとてもおいしい。"
+],
+"answer": 0,
+"why": "道 is a road; it cannot be bought as books, fished in, or eaten."
+}
+},
+"旅行": {
+"para": {
+"s": "夏に家族で北海道を【旅行した】。",
+"options": [
+"引っこした",
+"散歩した",
+"出ちょうした",
+"旅した"
+],
+"answer": 3,
+"why": "旅する means to travel."
+},
+"usage": {
+"options": [
+"毎朝、駅まで旅行する。",
+"来月、友達と京都へ旅行に行く。",
+"部屋の中を旅行した。",
+"試験の旅行がよかった。"
+],
+"answer": 1,
+"why": "旅行 is a trip to distant places; a daily walk to the station or a room is not travel."
+}
+},
+"非常に": {
+"para": {
+"s": "今日は【非常に】寒い。",
+"options": [
+"とても",
+"少し",
+"あまり",
+"ぜんぜん"
+],
+"answer": 0,
+"why": "非常に means \"extremely\", like とても."
+},
+"usage": {
+"options": [
+"非常に、明日は休みです。",
+"毎月、非常に一回映画を見ます。",
+"彼の話は非常に面白かった。",
+"非常に寒いので、半そでで出かけた。"
+],
+"answer": 2,
+"why": "非常に modifies adjectives (very); it cannot stand alone or count frequency, and cold weather does not suit short sleeves."
+}
+},
+"決して": {
+"para": {
+"s": "このことは【決して】だれにも言いません。",
+"options": [
+"たまに",
+"絶対に",
+"時々",
+"もう一度"
+],
+"answer": 1,
+"why": "決して〜ない means \"never\", like 絶対に〜ない."
+},
+"usage": {
+"options": [
+"明日、決してパーティーに行きます。",
+"明日は決して晴れるでしょう。",
+"決して、少し待ってください。",
+"この約束は決して忘れません。"
+],
+"answer": 3,
+"why": "決して must be followed by a negative."
+}
+},
+"寝る": {
+"para": {
+"s": "昨日は十時に【寝ました】。",
+"options": [
+"起きました",
+"帰りました",
+"休みました",
+"食べました"
+],
+"answer": 2,
+"why": "休む can mean going to bed / sleeping."
+},
+"usage": {
+"options": [
+"熱があったので、一日中寝ていた。",
+"毎朝七時に寝て、会社へ行く。",
+"いすに寝て、テレビを見た。",
+"赤ちゃんが大きな声で寝ている。"
+],
+"answer": 0,
+"why": "寝る is to sleep; mornings are 起きる, chairs 座る, and loud babies 泣く."
+}
+},
+"起きる": {
+"para": {
+"s": "毎朝六時に【起きます】。",
+"options": [
+"寝ます",
+"出かけます",
+"帰ります",
+"目を覚まします"
+],
+"answer": 3,
+"why": "目を覚ます means to wake up."
+},
+"usage": {
+"options": [
+"子供の背が起きた。",
+"今朝はねぼうして、八時に起きた。",
+"電気が起きて、部屋が明るくなった。",
+"毎朝六時に太陽が起きる。"
+],
+"answer": 1,
+"why": "起きる is waking up; height のびる, lights つく, and the sun のぼる."
+}
+},
+"座る": {
+"para": {
+"s": "どうぞ、こちらに【座って】ください。",
+"options": [
+"おかけになって",
+"立って",
+"寝て",
+"待って"
+],
+"answer": 0,
+"why": "おかけになる is the polite way to ask someone to sit."
+},
+"usage": {
+"options": [
+"鳥が空に座っている。",
+"自転車に座って学校へ行った。",
+"電車で席が空いていたので座った。",
+"毎朝、駅まで座って行く。"
+],
+"answer": 2,
+"why": "座る is to sit; birds fly, bikes are ridden (乗る), and getting to the station is 歩く."
+}
+},
+"飛行機": {
+"para": {
+"s": "【飛行機】でおおさかから東京へ行った。",
+"options": [
+"海を走る乗り物",
+"空を飛ぶ乗り物",
+"地下を走る乗り物",
+"道を走る乗り物"
+],
+"answer": 1,
+"why": "An airplane is a vehicle that flies in the sky."
+},
+"usage": {
+"options": [
+"飛行機に乗って、次の駅で降りた。",
+"飛行機で魚をとった。",
+"飛行機で家から学校まで走った。",
+"飛行機の窓から白いくもが見えた。"
+],
+"answer": 3,
+"why": "Stations are for trains, fishing is done from boats, and short rides to school are by bicycle."
+}
+},
+"続ける": {
+"para": {
+"s": "雨の中、試合を【続けた】。",
+"options": [
+"やめた",
+"始めなかった",
+"やめなかった",
+"休んだ"
+],
+"answer": 2,
+"why": "続ける means to keep going and not stop."
+},
+"usage": {
+"options": [
+"毎日、日本語の勉強を続けています。",
+"雨が三日も続けている。",
+"会議が五時まで続けた。",
+"昨日で仕事を続けたので、今日から休みです。"
+],
+"answer": 0,
+"why": "続ける is transitive; rain and meetings 続く, and stopping work is やめる."
+}
+},
+"今日": {
+"para": {
+"s": "【今日】は日曜日です。",
+"options": [
+"昨日",
+"明日",
+"毎日",
+"本日"
+],
+"answer": 3,
+"why": "本日 is the formal word for today."
+},
+"usage": {
+"options": [
+"今日、来週の会議に出席しました。",
+"今日は朝から雨が降っている。",
+"今日に一回、薬を飲む。",
+"今日は今年の一月です。"
+],
+"answer": 1,
+"why": "今日 is this day; frequency is 一日に, and the current month is 今月."
+}
+},
+"生活": {
+"para": {
+"s": "東京での【生活】にはもう慣れた。",
+"options": [
+"暮らし",
+"仕事",
+"旅行",
+"勉強"
+],
+"answer": 0,
+"why": "暮らし means daily life."
+},
+"usage": {
+"options": [
+"私の生活は田中です。",
+"生活を三つ買った。",
+"一人の生活は楽しいけど、少しさびしい。",
+"生活の上に座った。"
+],
+"answer": 2,
+"why": "生活 is one's way of life, not a name or an object."
+}
+},
+"日本": {
+"para": {
+"s": "【日本】は山が多い国です。",
+"options": [
+"アメリカ",
+"この国",
+"中国",
+"外国"
+],
+"answer": 1,
+"why": "For a speaker in Japan, この国 means Japan."
+},
+"usage": {
+"options": [
+"日本は東京の首都です。",
+"日本は大きい町です。",
+"私は日本です。",
+"日本では、家に入るときにくつをぬぐ。"
+],
+"answer": 3,
+"why": "日本 is a country; Tokyo is its capital, and a Japanese person is 日本人."
+}
+},
+"次": {
+"para": {
+"s": "【次】は田中さんの番です。",
+"options": [
+"前",
+"最初",
+"今度",
+"昨日"
+],
+"answer": 2,
+"why": "今度 can mean \"next (time)\"."
+},
+"usage": {
+"options": [
+"次の駅で乗りかえてください。",
+"次の日に、昨日の会議があった。",
+"この料理は次においしい。",
+"次で寒いので、窓を閉めた。"
+],
+"answer": 0,
+"why": "次 means the next one in order; it does not mean \"very\" or \"because\"."
+}
+},
+"一つ": {
+"para": {
+"s": "りんごを【一つ】ください。",
+"options": [
+"一本",
+"一まい",
+"一さつ",
+"一こ"
+],
+"answer": 3,
+"why": "一こ is the counter for small round things like apples."
+},
+"usage": {
+"options": [
+"私は兄が一ついます。",
+"このケーキを一つください。",
+"毎週一つ、プールへ行く。",
+"部屋に犬が一ついる。"
+],
+"answer": 1,
+"why": "People are counted 一人, times 一回, and animals 一ぴき."
+}
+},
+"忙しい": {
+"para": {
+"s": "今週は仕事が【忙しい】。",
+"options": [
+"ひまがない",
+"ひまだ",
+"楽だ",
+"少ない"
+],
+"answer": 0,
+"why": "忙しい means having no free time."
+},
+"usage": {
+"options": [
+"日曜日は何もすることがなくて、忙しい。",
+"忙しいので、テレビを見てのんびりしている。",
+"年末は忙しくて、休みがとれない。",
+"この部屋は忙しいので、静かだ。"
+],
+"answer": 2,
+"why": "忙しい means busy; having nothing to do and relaxing are ひま."
+}
+},
+"両親": {
+"para": {
+"s": "夏休みに【両親】に会いに帰った。",
+"options": [
+"兄と姉",
+"父と母",
+"祖父と祖母",
+"友達"
+],
+"answer": 1,
+"why": "両親 means one's father and mother."
+},
+"usage": {
+"options": [
+"私の両親は三人います。",
+"両親の一人は私の兄です。",
+"両親は私より若い。",
+"両親は北海道に住んでいる。"
+],
+"answer": 3,
+"why": "両親 are exactly two people, one's father and mother."
+}
+},
+"生徒": {
+"para": {
+"s": "この学校には【生徒】が五百人いる。",
+"options": [
+"先生",
+"店員",
+"学生",
+"社員"
+],
+"answer": 2,
+"why": "生徒 are pupils at a school."
+},
+"usage": {
+"options": [
+"先生は生徒たちに宿題を出した。",
+"病院には生徒がたくさん入院している。",
+"この店の生徒はとても親切だ。",
+"生徒が先生にじゅぎょうを教えている。"
+],
+"answer": 0,
+"why": "生徒 are pupils who learn; hospital patients and shop staff are different."
+}
+},
+"より": null,
+"店": {
+"para": {
+"s": "駅の近くに新しい【店】ができた。",
+"options": [
+"ショップ",
+"駅",
+"病院",
+"家"
+],
+"answer": 0,
+"why": "ショップ is a loanword for shop."
+},
+"usage": {
+"options": [
+"熱があるので、店でみてもらった。",
+"店から電車に乗った。",
+"この店のパンはとてもおいしい。",
+"毎晩、店で寝ている。"
+],
+"answer": 2,
+"why": "Doctors are at hospitals, trains leave from stations, and you sleep at home."
+}
+},
+"早い": {
+"para": {
+"s": "今朝はいつもより【早く】起きた。",
+"options": [
+"おそく",
+"早めに",
+"ゆっくり",
+"長く"
+],
+"answer": 1,
+"why": "早めに means \"earlier than usual\"."
+},
+"usage": {
+"options": [
+"試験が早くて、答えられなかった。",
+"夜早くまで起きていた。",
+"父は母より三つ早い。",
+"朝早く起きて、散歩に行った。"
+],
+"answer": 3,
+"why": "A hard test is 難しい, late at night is 遅く, and older is 年上."
+}
+},
+"一杯": {
+"para": {
+"s": "駅は人で【いっぱい】だ。",
+"options": [
+"すいている",
+"静かだ",
+"こんでいる",
+"きれいだ"
+],
+"answer": 2,
+"why": "人でいっぱい means crowded (こんでいる)."
+},
+"usage": {
+"options": [
+"もうおなかがいっぱいで、何も食べられない。",
+"かばんがいっぱいなので、まだたくさん入る。",
+"部屋はいっぱいで、だれもいない。",
+"ちゅうしゃじょうはいっぱいなので、すぐに車を止められた。"
+],
+"answer": 0,
+"why": "いっぱい means full; a full bag, room or car park has no space left."
+}
+},
+"映画": {
+"para": {
+"s": "週末に【映画】を見に行った。",
+"options": [
+"音楽",
+"スポーツ",
+"本",
+"ムービー"
+],
+"answer": 3,
+"why": "ムービー is a loanword meaning movie."
+},
+"usage": {
+"options": [
+"映画を読んで、感想を書いた。",
+"この映画を見て、ないてしまった。",
+"映画を着て出かけた。",
+"映画で手紙を書いた。"
+],
+"answer": 1,
+"why": "映画 is watched (見る); it cannot be read, worn or written with."
+}
+},
+"二人": {
+"para": {
+"s": "【二人】で旅行に行った。",
+"options": [
+"友達と私",
+"私一人",
+"家族みんな",
+"三人"
+],
+"answer": 0,
+"why": "二人 means two people, for example a friend and me."
+},
+"usage": {
+"options": [
+"兄弟は二人で、兄と姉と弟がいる。",
+"うちには二人の犬がいる。",
+"二人で写真をとりましょう。",
+"ケーキを二人ください。"
+],
+"answer": 2,
+"why": "二人 counts two people; three siblings, dogs (二ひき) and cakes (二つ) are wrong."
+}
+},
+"泳ぐ": {
+"para": {
+"s": "夏はよく海で【泳いだ】。",
+"options": [
+"散歩をした",
+"水泳をした",
+"走った",
+"つりをした"
+],
+"answer": 1,
+"why": "水泳 means swimming."
+},
+"usage": {
+"options": [
+"鳥が空を泳いでいる。",
+"駅まで泳いで行った。",
+"車が道を泳いでいる。",
+"プールで一時間泳いだ。"
+],
+"answer": 3,
+"why": "泳ぐ happens in water; birds fly, and on land we walk or drive."
+}
+},
+"十分": {
+"para": {
+"s": "お金は【十分】あります。",
+"options": [
+"少し",
+"ぜんぜん",
+"たっぷり",
+"ちょっと"
+],
+"answer": 2,
+"why": "たっぷり means plenty."
+},
+"usage": {
+"options": [
+"時間は十分あるから、急がなくてもいい。",
+"十分なので、もう少しください。",
+"十分食べたので、おなかがすいた。",
+"十分寝たので、とても眠い。"
+],
+"answer": 0,
+"why": "十分 means enough, so you do not want more, are not hungry and are not sleepy."
+}
+},
+"試合": {
+"para": {
+"s": "明日、サッカーの【試合】がある。",
+"options": [
+"れんしゅう",
+"会議",
+"じゅぎょう",
+"ゲーム"
+],
+"answer": 3,
+"why": "ゲーム (game / match) means the same."
+},
+"usage": {
+"options": [
+"英語の試合に合格した。",
+"昨日の試合に勝った。",
+"けっこんの試合に出た。",
+"試合で手紙を出した。"
+],
+"answer": 1,
+"why": "試合 is a sports match; language tests are 試験 and weddings are 式."
+}
+},
+"顔": {
+"para": {
+"s": "母の【顔】を見て安心した。",
+"options": [
+"表情",
+"声",
+"手",
+"背中"
+],
+"answer": 0,
+"why": "表情 means facial expression."
+},
+"usage": {
+"options": [
+"顔で音楽を聞いた。",
+"顔にくつをはいた。",
+"朝起きて、顔を洗った。",
+"顔で字を書いた。"
+],
+"answer": 2,
+"why": "Music is heard with ears, shoes go on feet, and writing is done with hands."
+}
+},
+"目": {
+"para": {
+"s": "【目】が悪いので、めがねをかけている。",
+"options": [
+"耳",
+"しりょく",
+"足",
+"頭"
+],
+"answer": 1,
+"why": "目が悪い means poor eyesight (しりょく)."
+},
+"usage": {
+"options": [
+"目で音を聞いた。",
+"目で歩いた。",
+"目でにおいをかいだ。",
+"目を閉じて、音楽を聞いた。"
+],
+"answer": 3,
+"why": "Eyes see; ears hear, legs walk, and the nose smells."
+}
+},
+"入れる": {
+"para": {
+"s": "コーヒーにさとうを【入れます】か。",
+"options": [
+"出します",
+"売ります",
+"加えます",
+"作ります"
+],
+"answer": 2,
+"why": "加える means to add (something into something)."
+},
+"usage": {
+"options": [
+"かばんに本を入れた。",
+"電車に入れて、会社へ行った。",
+"寒いので、窓を入れた。",
+"毎朝、シャワーを入れてから出かける。"
+],
+"answer": 0,
+"why": "入れる is putting something inside; trains are 乗る, windows しめる, and showers あびる."
+}
+},
+"音楽": {
+"para": {
+"s": "寝る前に【音楽】を聞く。",
+"options": [
+"ニュース",
+"話",
+"英語",
+"曲"
+],
+"answer": 3,
+"why": "曲 means a piece of music / song."
+},
+"usage": {
+"options": [
+"音楽を読んで、感想を書いた。",
+"音楽を聞きながら、勉強する。",
+"音楽を飲みながら、休んだ。",
+"音楽で顔を洗った。"
+],
+"answer": 1,
+"why": "音楽 is listened to (聞く), not read, drunk or used to wash."
+}
+},
+"手": {
+"para": {
+"s": "何かいい【手】はありませんか。",
+"options": [
+"方法",
+"時間",
+"お金",
+"人"
+],
+"answer": 0,
+"why": "Here 手 means a way or method (方法)."
+},
+"usage": {
+"options": [
+"手で音楽を聞いた。",
+"手にくつをはいた。",
+"食事の前に手を洗いましょう。",
+"手を閉じて寝た。"
+],
+"answer": 2,
+"why": "Ears hear, feet wear shoes, and eyes close for sleep."
+}
+},
+"木": {
+"para": {
+"s": "このいすは【木】で作られている。",
+"options": [
+"てつ",
+"もくざい",
+"紙",
+"石"
+],
+"answer": 1,
+"why": "もくざい means wood as a material."
+},
+"usage": {
+"options": [
+"木が鳴いている。",
+"木を三さつ買った。",
+"木が走っている。",
+"公園の木の下でおべんとうを食べた。"
+],
+"answer": 3,
+"why": "Trees do not cry, run, or count as books."
+}
+},
+"楽しい": {
+"para": {
+"s": "昨日のパーティーは【楽しかった】。",
+"options": [
+"つまらなかった",
+"さびしかった",
+"面白かった",
+"悲しかった"
+],
+"answer": 2,
+"why": "面白い can mean fun/enjoyable."
+},
+"usage": {
+"options": [
+"友達と話すのは楽しい。",
+"試験に落ちて、楽しかった。",
+"このケーキは楽しい。",
+"かぜをひいて、とても楽しい。"
+],
+"answer": 0,
+"why": "楽しい describes enjoyable experiences; failing and colds are not fun, and cake is おいしい."
+}
+},
+"見つける": {
+"para": {
+"s": "なくしたかぎをやっと【見つけた】。",
+"options": [
+"なくした",
+"落とした",
+"探した",
+"発見した"
+],
+"answer": 3,
+"why": "発見する means to find / discover."
+},
+"usage": {
+"options": [
+"毎朝、新聞を見つける。",
+"駅の近くでいいレストランを見つけた。",
+"かぎが見つけた。",
+"友達を駅で一時間見つけた。"
+],
+"answer": 1,
+"why": "見つける is transitive (〜を見つける); with が use 見つかる; newspapers are 読む, waiting is 待つ."
+}
+},
+"一生懸命": {
+"para": {
+"s": "弟は【一生けんめい】勉強している。",
+"options": [
+"がんばって",
+"のんびり",
+"時々",
+"少し"
+],
+"answer": 0,
+"why": "一生けんめい means doing one's very best (がんばって)."
+},
+"usage": {
+"options": [
+"一生けんめい、明日は雨です。",
+"一生けんめい、何もしなかった。",
+"試験に合格するために、一生けんめい勉強した。",
+"このケーキは一生けんめいおいしい。"
+],
+"answer": 2,
+"why": "一生けんめい describes effort in an action, not weather, doing nothing, or taste."
+}
+},
+"歳": {
+"para": {
+"s": "弟は今年十【歳】になる。",
+"options": [
+"年",
+"才",
+"回",
+"人"
+],
+"answer": 1,
+"why": "才 is the simpler way of writing the age counter 歳."
+},
+"usage": {
+"options": [
+"このビルは五十歳です。",
+"りんごを三歳ください。",
+"会議は三歳かかった。",
+"祖父は今年八十歳になった。"
+],
+"answer": 3,
+"why": "歳 counts people's ages; buildings are 年, apples つ/こ, and durations 時間."
+}
+},
+"手伝う": {
+"para": {
+"s": "引っこしを【手伝って】くれてありがとう。",
+"options": [
+"見て",
+"止めて",
+"助けて",
+"待って"
+],
+"answer": 2,
+"why": "助ける means to help."
+},
+"usage": {
+"options": [
+"母が料理を作るのを手伝った。",
+"先生にお金を手伝った。",
+"病気が手伝って、元気になった。",
+"犬を手伝って公園へ行った。"
+],
+"answer": 0,
+"why": "手伝う is helping with a task; lending money is 貸す, recovering is 治る, and taking a dog is 連れる."
+}
+},
+"意見": {
+"para": {
+"s": "みんなの【意見】を聞いてから決めましょう。",
+"options": [
+"名前",
+"住所",
+"写真",
+"考え"
+],
+"answer": 3,
+"why": "意見 means one's opinion or idea (考え)."
+},
+"usage": {
+"options": [
+"意見を三本買った。",
+"会議で自分の意見を言った。",
+"毎朝、意見を飲む。",
+"意見に乗って会社へ行った。"
+],
+"answer": 1,
+"why": "意見 is an opinion; it cannot be bought, drunk or ridden."
+}
+},
+"女性": {
+"para": {
+"s": "受付に【女性】が二人いる。",
+"options": [
+"女の人",
+"男の人",
+"子供",
+"老人"
+],
+"answer": 0,
+"why": "女性 means a woman."
+},
+"usage": {
+"options": [
+"父はやさしい女性だ。",
+"兄は女性なので、ネクタイをしている。",
+"この会社では、たくさんの女性が働いている。",
+"私の祖父は九十歳の女性です。"
+],
+"answer": 2,
+"why": "女性 is a woman; a father, brother and grandfather are men (男性)."
+}
+},
+"大学": {
+"para": {
+"s": "兄は東京の【大学】に通っている。",
+"options": [
+"会社",
+"学校",
+"病院",
+"店"
+],
+"answer": 1,
+"why": "A university is a kind of school (学校)."
+},
+"usage": {
+"options": [
+"大学に入院した。",
+"大学で切手を買った。",
+"五歳の弟が大学に通っている。",
+"兄は大学で経済を勉強している。"
+],
+"answer": 3,
+"why": "大学 is a university for adults; hospitals, post offices and young children's schools are different."
+}
+},
+"立つ": {
+"para": {
+"s": "先生が教室の前に【立って】いる。",
+"options": [
+"座って",
+"寝て",
+"きりつして",
+"走って"
+],
+"answer": 2,
+"why": "起立する means to stand up."
+},
+"usage": {
+"options": [
+"バスがこんでいて、ずっと立っていた。",
+"雨が立っている。",
+"鳥が空を立っている。",
+"夜はベッドに立って寝ている。"
+],
+"answer": 0,
+"why": "立つ is standing on one's feet; rain falls, birds fly, and people lie down to sleep."
+}
+},
+"家族": {
+"para": {
+"s": "【家族】で旅行に行った。",
+"options": [
+"友達",
+"会社の人",
+"クラスのみんな",
+"父や母や兄弟"
+],
+"answer": 3,
+"why": "家族 means family members: parents, siblings, etc."
+},
+"usage": {
+"options": [
+"家族が三さつある。",
+"私の家族は四人です。",
+"家族で手紙を書いた。",
+"店で家族を買った。"
+],
+"answer": 1,
+"why": "家族 are people related to you; they are not books, pens or things to buy."
+}
+},
+"探す": {
+"para": {
+"s": "なくしたさいふを【探して】いる。",
+"options": [
+"見つけようとして",
+"見つけて",
+"なくして",
+"落として"
+],
+"answer": 0,
+"why": "探す means trying to find something."
+},
+"usage": {
+"options": [
+"なくしたかぎを探したので、もう心配ない。",
+"毎朝、テレビを探している。",
+"駅の近くでアパートを探している。",
+"先生に質問を探した。"
+],
+"answer": 2,
+"why": "Searching does not mean finding (見つける); TV is 見る and questions are する."
+}
+},
+"時計": {
+"para": {
+"s": "【時計】を見ると、もう三時だった。",
+"options": [
+"音楽を聞く道具",
+"時間を知る道具",
+"写真をとる道具",
+"字を書く道具"
+],
+"answer": 1,
+"why": "A clock/watch is a tool for telling the time."
+},
+"usage": {
+"options": [
+"時計で写真をとった。",
+"時計で字を書いた。",
+"時計を着て出かけた。",
+"この時計は五分進んでいる。"
+],
+"answer": 3,
+"why": "Cameras take photos, pens write, and watches are worn with つける/する, not 着る."
+}
+},
+"花": {
+"para": {
+"s": "庭に【花】がたくさんさいている。",
+"options": [
+"木",
+"草",
+"フラワー",
+"石"
+],
+"answer": 2,
+"why": "フラワー is a loanword for flower."
+},
+"usage": {
+"options": [
+"母のたんじょう日に花を買った。",
+"花が鳴いている。",
+"花が走っている。",
+"花を着た。"
+],
+"answer": 0,
+"why": "Flowers bloom (さく); they do not cry, run or get worn."
+}
+},
+"全て": {
+"para": {
+"s": "宿題は【全て】終わった。",
+"options": [
+"半分",
+"少し",
+"一つ",
+"全部"
+],
+"answer": 3,
+"why": "全部 means all, the same as 全て."
+},
+"usage": {
+"options": [
+"全てに一回、旅行する。",
+"試験の問題は全て分かった。",
+"全てが一人で来た。",
+"お金を全て使ったので、まだたくさん残っている。"
+],
+"answer": 1,
+"why": "全て means everything; if all money is used, nothing remains."
+}
+},
+"面白い": {
+"para": {
+"s": "この本はとても【面白い】。",
+"options": [
+"楽しい",
+"つまらない",
+"難しい",
+"古い"
+],
+"answer": 0,
+"why": "楽しい (enjoyable) is closest to 面白い here."
+},
+"usage": {
+"options": [
+"話が面白いので、ねむくなった。",
+"部屋が面白くて、寒い。",
+"昨日見た映画はとても面白かった。",
+"兄は背が面白い。"
+],
+"answer": 2,
+"why": "面白い means interesting/fun; boring talks make you sleepy, and height is 高い."
+}
+},
+"絵": {
+"para": {
+"s": "姉は【絵】をかくのが上手だ。",
+"options": [
+"字",
+"イラスト",
+"歌",
+"手紙"
+],
+"answer": 1,
+"why": "イラスト means a drawing / illustration."
+},
+"usage": {
+"options": [
+"絵を聞いた。",
+"絵を飲んだ。",
+"絵を歌った。",
+"美術館で古い絵を見た。"
+],
+"answer": 3,
+"why": "Pictures are looked at or drawn, not heard, drunk or sung."
+}
+},
+"最も": {
+"para": {
+"s": "この山は日本で【最も】高い山だ。",
+"options": [
+"もっと",
+"少し",
+"一番",
+"かなり"
+],
+"answer": 2,
+"why": "最も means \"the most\", the same as 一番."
+},
+"usage": {
+"options": [
+"一年で最も寒いのは一月です。",
+"兄は私より最も背が高い。",
+"最も、明日は雨です。",
+"毎週最も一回、プールへ行く。"
+],
+"answer": 0,
+"why": "最も compares among many; comparing two uses もっと/ずっと, and it does not stand alone."
+}
+},
+"説明": {
+"para": {
+"s": "先生がもう一度【説明】してくれた。",
+"options": [
+"質問",
+"注意",
+"返事",
+"解説"
+],
+"answer": 3,
+"why": "解説 means explanation / commentary."
+},
+"usage": {
+"options": [
+"説明が降ってきた。",
+"使い方を説明してもらった。",
+"質問がある人は、説明してください。",
+"説明を三本買った。"
+],
+"answer": 1,
+"why": "説明 is explaining; someone with a question asks (質問する) or raises a hand."
+}
+},
+"船": {
+"para": {
+"s": "【船】でしまへ渡った。",
+"options": [
+"ボート",
+"電車",
+"バス",
+"飛行機"
+],
+"answer": 0,
+"why": "ボート (boat) is closest to 船."
+},
+"usage": {
+"options": [
+"船で空を飛んだ。",
+"船で道を走った。",
+"船で海を渡ってしまへ行った。",
+"船で山にのぼった。"
+],
+"answer": 2,
+"why": "船 travels on water, not in the air, on roads or up mountains."
+}
+},
+"一緒に": {
+"para": {
+"s": "友達と【一緒に】映画を見た。",
+"options": [
+"べつべつに",
+"ともに",
+"一人で",
+"じゅんばんに"
+],
+"answer": 1,
+"why": "ともに means together."
+},
+"usage": {
+"options": [
+"一緒に、明日は休みです。",
+"私は一人で一緒に行きます。",
+"私は兄と一緒に背が高い。",
+"家族と一緒に食事をした。"
+],
+"answer": 3,
+"why": "一緒に means doing something together with others; same height is 同じくらい."
+}
+},
+"開ける": {
+"para": {
+"s": "箱を【開けた】。",
+"options": [
+"ふたをした",
+"つつんだ",
+"ふたを取った",
+"運んだ"
+],
+"answer": 2,
+"why": "Opening a box means taking off the lid."
+},
+"usage": {
+"options": [
+"寒いので、窓を開けないでください。",
+"ドアが開けた。",
+"電気を開けた。",
+"テレビを開けて、ニュースを見た。"
+],
+"answer": 0,
+"why": "開ける is transitive (〜を開ける); a door 開く by itself, and lights/TV are つける."
+}
+},
+"猫": {
+"para": {
+"s": "家で【猫】をかっている。",
+"options": [
+"ワンと鳴く動物",
+"モーと鳴く動物",
+"チュンと鳴く鳥",
+"ニャーと鳴く動物"
+],
+"answer": 3,
+"why": "A cat is the animal that says ニャー."
+},
+"usage": {
+"options": [
+"猫がワンワンとほえている。",
+"猫が窓のそばで寝ている。",
+"猫が空を飛んでいる。",
+"猫に乗って学校へ行く。"
+],
+"answer": 1,
+"why": "Cats meow and sleep; dogs bark, birds fly, and you cannot ride a cat."
+}
+},
+"着る": {
+"para": {
+"s": "寒いので、セーターを【着た】。",
+"options": [
+"身につけた",
+"ぬいだ",
+"洗った",
+"買った"
+],
+"answer": 0,
+"why": "身につける means to put on (clothes)."
+},
+"usage": {
+"options": [
+"くつを着て、外に出た。",
+"ぼうしを着た。",
+"今日は寒いので、コートを着て出かけた。",
+"めがねを着た。"
+],
+"answer": 2,
+"why": "着る is for clothes on the upper body; shoes はく, hats かぶる, glasses かける."
+}
+},
+"疲れる": {
+"para": {
+"s": "一日中歩いて【疲れた】。",
+"options": [
+"元気になった",
+"くたびれた",
+"楽しかった",
+"ねむくなった"
+],
+"answer": 1,
+"why": "くたびれる means to be worn out."
+},
+"usage": {
+"options": [
+"疲れたので、もっと走ろう。",
+"よく寝たので、疲れた。",
+"このパンは疲れているので、食べないほうがいい。",
+"仕事で疲れて、すぐ寝た。"
+],
+"answer": 3,
+"why": "疲れる is for people tired from activity; it does not make you want more exercise, and old bread is 古い."
+}
+},
+"上手": {
+"para": {
+"s": "姉は料理が【上手】です。",
+"options": [
+"下手",
+"苦手",
+"うまい",
+"きらい"
+],
+"answer": 2,
+"why": "うまい can mean skillful."
+},
+"usage": {
+"options": [
+"兄はギターがとても上手だ。",
+"この料理は上手です。",
+"今日は天気が上手で、気持ちがいい。",
+"私の家は駅から上手です。"
+],
+"answer": 0,
+"why": "上手 means skillful at something; food is おいしい, weather いい, and distance 近い."
+}
+},
+"選ぶ": {
+"para": {
+"s": "好きな色を一つ【選んで】ください。",
+"options": [
+"ぬって",
+"作って",
+"消して",
+"決めて"
+],
+"answer": 3,
+"why": "Choosing one means deciding (決める) on it."
+},
+"usage": {
+"options": [
+"一つしかないので、好きなのを選んでください。",
+"プレゼントに赤いかばんを選んだ。",
+"窓を選んで、空気を入れた。",
+"試験に選んで、うれしかった。"
+],
+"answer": 1,
+"why": "選ぶ requires several options; windows are 開ける, and exams are 合格する."
+}
+},
+"毎日": {
+"para": {
+"s": "【毎日】ジョギングをしている。",
+"options": [
+"一日も休まず",
+"時々",
+"週に一回",
+"月に一回"
+],
+"answer": 0,
+"why": "毎日 means every day without a break."
+},
+"usage": {
+"options": [
+"毎日に一回、旅行に行く。",
+"毎日、昨日は雨だった。",
+"毎日、日記を書いている。",
+"毎日、去年日本へ来た。"
+],
+"answer": 2,
+"why": "毎日 describes a repeated habit; it cannot go with single past events."
+}
+},
+"警察": {
+"para": {
+"s": "さいふを落としたので、【警察】にとどけた。",
+"options": [
+"病院",
+"交番",
+"銀行",
+"図書館"
+],
+"answer": 1,
+"why": "交番 is a small police box."
+},
+"usage": {
+"options": [
+"熱が出たので、警察にみてもらった。",
+"警察でお金を下ろした。",
+"警察で本を借りた。",
+"道でさいふをひろって、警察にとどけた。"
+],
+"answer": 3,
+"why": "Doctors, banks and libraries are other places."
+}
+},
+"開く": {
+"para": {
+"s": "来月、駅前でコンサートが【開かれる】。",
+"options": [
+"終わる",
+"中止される",
+"行われる",
+"決まる"
+],
+"answer": 2,
+"why": "開かれる means an event is held (行われる)."
+},
+"usage": {
+"options": [
+"教科書の十ページを開いてください。",
+"電気を開いて、部屋を明るくした。",
+"テレビを開いて、ニュースを見た。",
+"雨がやんで、空が開いた。"
+],
+"answer": 0,
+"why": "開く is for books and events; lights and TVs are つける, and the sky 晴れる."
+}
+},
+"急ぐ": {
+"para": {
+"s": "時間がないので【急いで】ください。",
+"options": [
+"ゆっくりして",
+"待って",
+"休んで",
+"早くして"
+],
+"answer": 3,
+"why": "急ぐ means to hurry (do it quickly)."
+},
+"usage": {
+"options": [
+"時間がたくさんあるので、急いでください。",
+"電車に遅れそうなので、駅まで急いだ。",
+"急いでいるので、ゆっくり歩こう。",
+"この時計は急いでいる。"
+],
+"answer": 1,
+"why": "急ぐ is hurrying; with lots of time you need not hurry, and a fast clock 進んでいる."
+}
+},
+"古い": {
+"para": {
+"s": "このくつはもう【古い】。",
+"options": [
+"新しくない",
+"新しい",
+"若い",
+"小さい"
+],
+"answer": 0,
+"why": "古い means old, not new."
+},
+"usage": {
+"options": [
+"祖父は八十歳で、とても古い。",
+"弟は三歳で、まだ古い。",
+"この町には古い建物が多い。",
+"この店は先週できたばかりで、とても古い。"
+],
+"answer": 2,
+"why": "People are 年をとった/若い, and a shop opened last week is 新しい."
+}
+},
+"眠る": {
+"para": {
+"s": "赤ちゃんがぐっすり【眠って】いる。",
+"options": [
+"起きて",
+"寝て",
+"ないて",
+"遊んで"
+],
+"answer": 1,
+"why": "寝る means to sleep."
+},
+"usage": {
+"options": [
+"毎朝七時に眠って、会社へ行く。",
+"眠いので、コーヒーを飲んで眠った。",
+"雨が眠っている。",
+"昨日は疲れて、十時間も眠った。"
+],
+"answer": 3,
+"why": "眠る is sleeping; mornings mean 起きる, coffee wakes you up, and rain 降る."
+}
+},
+"最近": {
+"para": {
+"s": "【最近】、駅の近くに新しい店が多い。",
+"options": [
+"昔",
+"来年",
+"このごろ",
+"子供のころ"
+],
+"answer": 2,
+"why": "このごろ means \"these days\"."
+},
+"usage": {
+"options": [
+"最近、よく眠れない。",
+"最近、来週旅行に行きます。",
+"最近、十年前に日本へ来ました。",
+"最近、明日は雨です。"
+],
+"answer": 0,
+"why": "最近 means the recent past up to now, not the future or long ago."
+}
+},
+"雪": {
+"para": {
+"s": "山は【雪】で白くなった。",
+"options": [
+"夏の強い雨",
+"秋の赤い葉",
+"春の花",
+"冬に空から降る白いもの"
+],
+"answer": 3,
+"why": "雪 is the white thing that falls in winter."
+},
+"usage": {
+"options": [
+"雪が強く吹いて、木がたおれた。",
+"雪がたくさん降って、電車が止まった。",
+"雪で手が熱くなった。",
+"空で雪が鳴って、光った。"
+],
+"answer": 1,
+"why": "Snow falls and is cold; wind blows and thunder (かみなり) rumbles."
+}
+},
+"必ず": {
+"para": {
+"s": "明日は【必ず】来てください。",
+"options": [
+"きっと",
+"たぶん",
+"時々",
+"もし"
+],
+"answer": 0,
+"why": "きっと 〜てください means \"be sure to\"."
+},
+"usage": {
+"options": [
+"明日は必ず雨が降らないかもしれない。",
+"時々必ず行きます。",
+"寝る前に必ず歯をみがく。",
+"必ず、昨日は休みでした。"
+],
+"answer": 2,
+"why": "必ず means \"always/without fail\"; it does not go with かもしれない or 時々."
+}
+},
+"強い": {
+"para": {
+"s": "今日は風が【強い】。",
+"options": [
+"よわい",
+"はげしい",
+"静かだ",
+"冷たい"
+],
+"answer": 1,
+"why": "はげしい means violent / intense."
+},
+"usage": {
+"options": [
+"この部屋は強くて広い。",
+"強いので、重い物が持てない。",
+"字が強くて読めない。",
+"兄は力が強い。"
+],
+"answer": 3,
+"why": "強い means strong; strong people can lift heavy things, and small text is 小さい."
+}
+},
+"送る": {
+"para": {
+"s": "母ににもつを【送った】。",
+"options": [
+"受け取った",
+"開けた",
+"発送した",
+"作った"
+],
+"answer": 2,
+"why": "発送する means to send (a package)."
+},
+"usage": {
+"options": [
+"友達を駅まで送った。",
+"友達から手紙を送った。",
+"毎晩、テレビを送っている。",
+"プレゼントを開けて、とても送った。"
+],
+"answer": 0,
+"why": "送る is sending or seeing someone off; receiving is もらう, TV is 見る, and being glad is 喜ぶ."
+}
+},
+"窓": {
+"para": {
+"s": "【窓】を開けて、空気を入れかえよう。",
+"options": [
+"かべ",
+"ゆか",
+"やね",
+"ガラスど"
+],
+"answer": 3,
+"why": "A window is like a glass door that opens to let air in."
+},
+"usage": {
+"options": [
+"窓でご飯を食べた。",
+"窓から海が見える。",
+"窓が鳴いている。",
+"窓で歯をみがいた。"
+],
+"answer": 1,
+"why": "Windows are for looking out and letting air in, not for eating or brushing teeth."
+}
+},
+"宿題": {
+"para": {
+"s": "【宿題】を忘れて、先生にしかられた。",
+"options": [
+"家でする勉強",
+"学校の試験",
+"クラブのれんしゅう",
+"先生の話"
+],
+"answer": 0,
+"why": "宿題 is study you do at home."
+},
+"usage": {
+"options": [
+"宿題を食べた。",
+"宿題が降ってきた。",
+"宿題が終わってから遊びに行く。",
+"宿題で電話をかけた。"
+],
+"answer": 2,
+"why": "宿題 is homework; it cannot be eaten, fall like rain, or make a call."
+}
+},
+"寒い": {
+"para": {
+"s": "今朝はとても【寒い】。",
+"options": [
+"気おんが高い",
+"気おんがひくい",
+"雨が多い",
+"風がない"
+],
+"answer": 1,
+"why": "寒い means the temperature is low."
+},
+"usage": {
+"options": [
+"このジュースは寒くておいしい。",
+"寒いので、エアコンで部屋をもっと冷やした。",
+"寒いスープを飲んだ。",
+"寒いので、コートを着て出かけた。"
+],
+"answer": 3,
+"why": "寒い is for weather/air; cold drinks and food are 冷たい, and cold rooms are heated."
+}
+},
+"方": {
+"para": {
+"s": "駅の【方】へ歩いて行った。",
+"options": [
+"中",
+"前",
+"方向",
+"上"
+],
+"answer": 2,
+"why": "方 here means direction (方向)."
+},
+"usage": {
+"options": [
+"この本よりあの本の方が面白い。",
+"りんごを三方ください。",
+"来週の方、旅行に行きます。",
+"雨の方が降った。"
+],
+"answer": 0,
+"why": "方 means direction or \"the one (that is more)\"; it is not a counter or a time word."
+}
+},
+"食事": {
+"para": {
+"s": "【食事】の後で薬を飲んでください。",
+"options": [
+"運動",
+"仕事",
+"散歩",
+"ご飯"
+],
+"answer": 3,
+"why": "ご飯 can mean a meal."
+},
+"usage": {
+"options": [
+"食事を三さつ読んだ。",
+"家族で食事をした。",
+"食事に乗って会社へ行く。",
+"食事が降ってきた。"
+],
+"answer": 1,
+"why": "食事 is a meal that is eaten, not read, ridden, or fallen from the sky."
+}
+},
+"呼ぶ": {
+"para": {
+"s": "母が台所から私を【呼んだ】。",
+"options": [
+"声をかけた",
+"待った",
+"見た",
+"送った"
+],
+"answer": 0,
+"why": "声をかける means to call out to someone."
+},
+"usage": {
+"options": [
+"本を呼んで、感想を書いた。",
+"子供のころ、ピアノを呼んでいた。",
+"具合が悪くなったので、きゅうきゅう車を呼んだ。",
+"友達に電話を呼んだ。"
+],
+"answer": 2,
+"why": "呼ぶ is calling someone/something to come; books are 読む, piano ひく, phones かける."
+}
+},
+"全部": {
+"para": {
+"s": "おかしを【全部】食べてしまった。",
+"options": [
+"少しだけ",
+"一つも残さず",
+"半分",
+"一つだけ"
+],
+"answer": 1,
+"why": "全部 means all, leaving nothing."
+},
+"usage": {
+"options": [
+"全部、明日は雨です。",
+"全部が一人で来た。",
+"お金を全部使ったので、まだたくさんある。",
+"宿題は全部終わった。"
+],
+"answer": 3,
+"why": "全部 means all of something; it cannot describe weather like that, and nothing remains after using all."
+}
+},
+"山": {
+"para": {
+"s": "週末に【山】に登った。",
+"options": [
+"海",
+"川",
+"高い所",
+"町"
+],
+"answer": 2,
+"why": "A mountain is a high place."
+},
+"usage": {
+"options": [
+"山の上から町が見える。",
+"山を一本買った。",
+"山に手紙を書いた。",
+"山がワンワンとほえた。"
+],
+"answer": 0,
+"why": "山 is a mountain; it cannot be bought, written to, or bark."
+}
+},
+"注意": {
+"para": {
+"s": "道を渡るときは車に【注意して】ください。",
+"options": [
+"乗って",
+"止めて",
+"運転して",
+"気をつけて"
+],
+"answer": 3,
+"why": "注意する means to be careful (気をつける)."
+},
+"usage": {
+"options": [
+"よく注意したので、けがをした。",
+"先生に、遅刻しないように注意された。",
+"注意が降ってきた。",
+"注意を着て出かけた。"
+],
+"answer": 1,
+"why": "注意 means care or a warning; being careful prevents injury, and it cannot fall or be worn."
+}
+},
+"笑う": {
+"para": {
+"s": "弟のおもしろい話を聞いて、家族みんなで【笑った】。",
+"options": [
+"楽しそうに声を出した",
+"大きな声でないた",
+"静かに話を聞いた",
+"急に怒りだした"
+],
+"answer": 0,
+"why": "「笑う」はおもしろくて楽しそうに声を出すこと。"
+},
+"usage": {
+"options": [
+"試験に落ちて悲しかったので、一晩中笑っていた。",
+"先生がじょうだんを言ったので、教室のみんなが笑った。",
+"毎朝、犬を連れて公園を笑っている。",
+"寒かったので、窓をしっかり笑ってからねた。"
+],
+"answer": 1,
+"why": "「笑う」はおもしろい・うれしいときにすること。悲しいときや「歩く」「閉める」の意味では使わない。"
+}
+},
+"午後": {
+"para": {
+"s": "明日の【午後】、病院へ行く予定です。",
+"options": [
+"朝早く",
+"昼ごはんのあと",
+"夜おそく",
+"昼ごはんの前"
+],
+"answer": 1,
+"why": "「午後」は昼の十二時から後の時間。"
+},
+"usage": {
+"options": [
+"午後は会議があるので、昼ごはんは早めに食べます。",
+"午後になったので、「おはようございます」とあいさつした。",
+"毎日、朝起きるとすぐ午後を食べる。",
+"この店は午後が広くて、たくさんの人が入れる。"
+],
+"answer": 0,
+"why": "「午後」は昼十二時から後の時間のこと。朝のあいさつや食べ物・広さには使わない。"
+}
+},
+"決める": {
+"para": {
+"s": "夏休みにどこへ行くか、もう【決めました】か。",
+"options": [
+"相談しました",
+"聞きました",
+"決定しました",
+"調べました"
+],
+"answer": 2,
+"why": "「決める」＝いくつかの中から一つにする＝「決定する」。"
+},
+"usage": {
+"options": [
+"雨が降りそうなので、窓を決めてください。",
+"熱があったので、薬を決めて早くねた。",
+"友だちに本を決めたら、まだ返してくれない。",
+"次の旅行先は、みんなで話し合って京都に決めた。"
+],
+"answer": 3,
+"why": "「決める」はどれにするかを選んで一つにすること。「閉める」「飲む」「貸す」の意味はない。"
+}
+},
+"合う": {
+"para": {
+"s": "その服はあなたによく【合って】いますね。",
+"options": [
+"似て",
+"待って",
+"会って",
+"似合って"
+],
+"answer": 3,
+"why": "服が人に「合う」＝「似合う」。「似ている」は形や顔が同じように見えること。"
+},
+"usage": {
+"options": [
+"電車が合ったので、会社に遅れてしまった。",
+"毎朝、駅で友だちと合って、いっしょに学校へ行く。",
+"このくつは大きさがちょうど足に合っている。",
+"母は毎朝早く合って、朝ごはんを作る。"
+],
+"answer": 2,
+"why": "「合う」は大きさ・答え・好みなどがぴったりすること。人と顔を見るのは「会う」。"
+}
+},
+"危険": {
+"para": {
+"s": "この川は深くて【危険】なので、泳がないでください。",
+"options": [
+"あぶない",
+"きたない",
+"つめたい",
+"うるさい"
+],
+"answer": 0,
+"why": "「危険」＝「あぶない」。"
+},
+"usage": {
+"options": [
+"このケーキは危険で、とてもおいしい。",
+"夜おそく一人で山に登るのは危険だ。",
+"試験がとても危険だったので、百点が取れた。",
+"あの人は危険な人なので、みんなに好かれている。"
+],
+"answer": 1,
+"why": "「危険」はけがやじこが起こりそうであぶないこと。おいしさや、試験のやさしさには使わない。"
+}
+},
+"世界": {
+"para": {
+"s": "【世界】には、まだ知らない国がたくさんある。",
+"options": [
+"この町",
+"地球の上",
+"日本の中",
+"学校の中"
+],
+"answer": 1,
+"why": "「世界」は地球の上のすべての国のこと。"
+},
+"usage": {
+"options": [
+"いつか世界のいろいろな国を旅行してみたい。",
+"部屋が世界なので、本を置く場所がない。",
+"私は毎朝、世界でコーヒーを飲む。",
+"この世界は昨日買ったばかりなので、まだ新しい。"
+],
+"answer": 0,
+"why": "「世界」は地球の上のすべての国や人のこと。部屋や買い物には使わない。"
+}
+},
+"点": {
+"para": {
+"s": "この計画には、いい【点】がたくさんある。",
+"options": [
+"時間",
+"理由",
+"ところ",
+"予定"
+],
+"answer": 2,
+"why": "「いい点」＝「いいところ」。"
+},
+"usage": {
+"options": [
+"地図を見て、駅から家までの点を調べた。",
+"明日の会議の点は、三時からです。",
+"このレストランは点が高いので、あまり行かない。",
+"この部屋は、駅に近い点が便利だ。"
+],
+"answer": 3,
+"why": "「点」は「ところ・部分」やテストの点数の意味。きょり・時間・値段には使わない。"
+}
+},
+"天気": {
+"para": {
+"s": "明日【天気】がよければ、海へ行こう。",
+"options": [
+"気持ち",
+"体の調子",
+"仕事の様子",
+"空の様子"
+],
+"answer": 3,
+"why": "「天気」は晴れ・雨など空の様子のこと。"
+},
+"usage": {
+"options": [
+"天気が高いので、薬を飲んで休んだ。",
+"この本の天気は、とてもおもしろかった。",
+"天気予報によると、明日は雨が降るそうだ。",
+"兄は天気が強いので、重いにもつも運べる。"
+],
+"answer": 2,
+"why": "「天気」は空の様子のこと。熱(高い)や力(強い)と間違えない。"
+}
+},
+"違う": {
+"para": {
+"s": "この答えは【違って】いると思います。",
+"options": [
+"まちがって",
+"合って",
+"決まって",
+"残って"
+],
+"answer": 0,
+"why": "「答えが違う」＝「まちがっている」。"
+},
+"usage": {
+"options": [
+"駅まで違って行ったので、十分で着いた。",
+"姉と私は顔はよく似ているが、好きな食べ物はぜんぜん違う。",
+"雨が違ったので、かさを持たずに出かけた。",
+"毎日、自転車で学校へ違っています。"
+],
+"answer": 1,
+"why": "「違う」は「同じではない」「まちがっている」の意味。「走る」「やむ」「通う」の意味では使わない。"
+}
+},
+"辞書": {
+"para": {
+"s": "わからない言葉は【辞書】で調べてください。",
+"options": [
+"写真がたくさんある本",
+"言葉の意味が書いてある本",
+"料理の作り方の本",
+"子どものための絵本"
+],
+"answer": 1,
+"why": "「辞書」は言葉の意味や読み方を調べる本。"
+},
+"usage": {
+"options": [
+"わからない言葉があったら、辞書を引いてみよう。",
+"毎朝、辞書を読んで今日のニュースを知る。",
+"旅行の前に、辞書を見て駅までの行き方を調べた。",
+"先生の話を辞書に書いて、忘れないようにした。"
+],
+"answer": 0,
+"why": "「辞書」は言葉の意味を調べる本。ニュースは新聞、道は地図、メモはノート。"
+}
+},
+"掛ける": {
+"para": {
+"s": "どうぞ、こちらに【お掛け】ください。",
+"options": [
+"お待ち",
+"お入り",
+"お座り",
+"お休み"
+],
+"answer": 2,
+"why": "いすに「掛ける」＝「座る」。"
+},
+"usage": {
+"options": [
+"毎朝、顔を掛けてから朝ごはんを食べる。",
+"試験に掛けたので、とてもうれしい。",
+"友だちに手紙を掛けたら、すぐに返事が来た。",
+"かべに家族の写真を掛けた。"
+],
+"answer": 3,
+"why": "「掛ける」は「かべなどにつるす」「電話をかける」「いすに座る」など。顔は「洗う」、手紙は「出す」。"
+}
+},
+"妻": {
+"para": {
+"s": "【妻】は毎朝、早く起きて仕事に行きます。",
+"options": [
+"娘",
+"姉",
+"母",
+"家内"
+],
+"answer": 3,
+"why": "「妻」＝自分のけっこん相手の女性＝「家内」。"
+},
+"usage": {
+"options": [
+"私の妻は男の子で、今年小学校に入った。",
+"父の妻は、私の祖母です。",
+"妻と二人で、週末に買い物に行った。",
+"「妻さん、お元気ですか」と山田さんにたずねた。"
+],
+"answer": 2,
+"why": "「妻」は自分のけっこん相手の女性。父の妻は母、ほかの人の妻は「おくさん」と言う。"
+}
+},
+"体": {
+"para": {
+"s": "毎日運動して、【体】を大切にしてください。",
+"options": [
+"けんこう",
+"時間",
+"お金",
+"心"
+],
+"answer": 0,
+"why": "「体を大切にする」＝「けんこうを大切にする」。"
+},
+"usage": {
+"options": [
+"体が降っているので、かさを持っていこう。",
+"かぜをひかないように、体に気をつけてください。",
+"毎朝、体を読んでから会社へ行く。",
+"この料理は体が足りないので、しおを入れた。"
+],
+"answer": 1,
+"why": "「体」は頭から足までの全部、またはけんこうのこと。"
+}
+},
+"反対": {
+"para": {
+"s": "父は私の外国への引っこしに【反対した】。",
+"options": [
+"よく考えた",
+"だめだと言った",
+"お金を出した",
+"とても喜んだ"
+],
+"answer": 1,
+"why": "「反対する」＝「それはよくない、だめだ」と言うこと。"
+},
+"usage": {
+"options": [
+"その計画には、クラスの半分の人が反対した。",
+"天気がいいので、反対を着て出かけた。",
+"友だちの意見に反対して、「そのとおりだ」と言った。",
+"この反対はとてもあまくておいしい。"
+],
+"answer": 0,
+"why": "「反対」は違う考えを持って「よくない」と言うこと。「そのとおりだ」と言うのは反対ではない。"
+}
+},
+"心配": {
+"para": {
+"s": "子どもの帰りが遅いので、母は【心配して】いる。",
+"options": [
+"喜んで",
+"笑って",
+"気にして",
+"安心して"
+],
+"answer": 2,
+"why": "「心配する」＝悪いことが起こらないかと「気にする」。"
+},
+"usage": {
+"options": [
+"このケーキはとても心配で、また食べたい。",
+"毎朝、犬を心配に連れていく。",
+"明日から夏休みなので、心配で楽しみだ。",
+"試験のけっかが心配で、夜よくねられなかった。"
+],
+"answer": 3,
+"why": "「心配」は悪いことが起こらないかと気になること。楽しみなときや味には使わない。"
+}
+},
+"日曜日": {
+"para": {
+"s": "【日曜日】は仕事が休みです。",
+"options": [
+"土曜日の前の日",
+"月曜日の次の日",
+"金曜日の次の日",
+"土曜日の次の日"
+],
+"answer": 3,
+"why": "「日曜日」は土曜日の次の日。"
+},
+"usage": {
+"options": [
+"毎年、日曜日になると雪がたくさん降る。",
+"日曜日は一週間に三回ある。",
+"日曜日は家族と公園へ行くことが多い。",
+"日曜日を一杯飲んで、元気になった。"
+],
+"answer": 2,
+"why": "「日曜日」は一週間に一回ある曜日。きせつや飲み物ではない。"
+}
+},
+"最初": {
+"para": {
+"s": "【最初】は日本語がぜんぜんわからなかった。",
+"options": [
+"はじめ",
+"最後",
+"いつも",
+"ときどき"
+],
+"answer": 0,
+"why": "「最初」＝「はじめ」。"
+},
+"usage": {
+"options": [
+"最初が強いので、かさがこわれてしまった。",
+"最初にこのボタンを押してから、名前を入れてください。",
+"朝ごはんを食べた最初に、歯をみがいた。",
+"このかばんは最初で、とても重い。"
+],
+"answer": 1,
+"why": "「最初」は「いちばんはじめ」。「〜した後」の意味や、風・重さには使わない。"
+}
+},
+"成功": {
+"para": {
+"s": "新しい計画は【成功した】。",
+"options": [
+"中止になった",
+"うまくいった",
+"始まったばかりだ",
+"失敗した"
+],
+"answer": 1,
+"why": "「成功する」＝「うまくいく」。"
+},
+"usage": {
+"options": [
+"何度もれんしゅうしたので、発表は成功した。",
+"道が成功していて、車が動かない。",
+"薬を飲んだら、かぜが成功した。",
+"試験に成功したので、来年もう一度受けることにした。"
+],
+"answer": 0,
+"why": "「成功」は計画したことがうまくいくこと。かぜは「治る」。成功したらもう一度受ける必要はない。"
+}
+},
+"動物": {
+"para": {
+"s": "娘は【動物】が大好きで、犬とねこをかっている。",
+"options": [
+"食べ物",
+"乗り物",
+"生き物",
+"飲み物"
+],
+"answer": 2,
+"why": "「動物」は犬やねこなどの「生き物」。"
+},
+"usage": {
+"options": [
+"のどがかわいたので、冷たい動物を買った。",
+"この動物はとてもあまくて、子どもに人気があるおかしだ。",
+"部屋の動物をつけて、本を読んだ。",
+"動物園で、ライオンやぞうを見た。"
+],
+"answer": 3,
+"why": "「動物」は生きて動くもの。飲み物・おかし・電気ではない。"
+}
+},
+"昨夜": {
+"para": {
+"s": "【昨夜】はおそくまで勉強していた。",
+"options": [
+"今日の夜",
+"明日の夜",
+"昨日の朝",
+"昨日の夜"
+],
+"answer": 3,
+"why": "「昨夜(ゆうべ)」＝昨日の夜。"
+},
+"usage": {
+"options": [
+"昨夜の朝、七時に起きた。",
+"明日の昨夜、パーティーをします。",
+"昨夜は雨の音がうるさくて、よくねられなかった。",
+"昨夜になったら、いっしょに映画を見に行こう。"
+],
+"answer": 2,
+"why": "「昨夜」は昨日の夜のことで、過去にしか使わない。"
+}
+},
+"頭": {
+"para": {
+"s": "来月の【頭】に引っこす予定です。",
+"options": [
+"はじめ",
+"終わり",
+"中ごろ",
+"次の月"
+],
+"answer": 0,
+"why": "月の「頭」＝月の「はじめ」。"
+},
+"usage": {
+"options": [
+"頭にくつをはいて、出かけた。",
+"朝から頭が痛いので、今日は早く帰ります。",
+"頭で歩いて、駅まで行った。",
+"頭が高いので、薬を飲んで休んだ。"
+],
+"answer": 1,
+"why": "「頭」は体のいちばん上の部分。熱は「高い」と言う。"
+}
+},
+"質問": {
+"para": {
+"s": "わからないことがあれば、先生に【質問して】ください。",
+"options": [
+"答えて",
+"聞いて",
+"見せて",
+"教えて"
+],
+"answer": 1,
+"why": "「質問する」＝わからないことを「聞く」。"
+},
+"usage": {
+"options": [
+"じゅぎょうのあとで、先生に質問した。",
+"宿題が終わったので、テレビを質問した。",
+"毎朝、駅まで質問して行く。",
+"母に手紙を質問した。"
+],
+"answer": 0,
+"why": "「質問」はわからないことをたずねること。人に対して使う。"
+}
+},
+"有名": {
+"para": {
+"s": "この店はケーキがおいしいことで【有名】だ。",
+"options": [
+"高い",
+"新しい",
+"よく知られている",
+"小さい"
+],
+"answer": 2,
+"why": "「有名」＝多くの人に「よく知られている」。"
+},
+"usage": {
+"options": [
+"私の有名は田中です。",
+"有名を払って、店を出た。",
+"弟はまだ有名なので、一人で電車に乗れない。",
+"この町は、きれいな海で有名だ。"
+],
+"answer": 3,
+"why": "「有名」は多くの人に知られていること。名前・お金・年には使わない。"
+}
+},
+"料理": {
+"para": {
+"s": "父は【料理】が上手です。",
+"options": [
+"絵をかくこと",
+"歌を歌うこと",
+"字を書くこと",
+"食事を作ること"
+],
+"answer": 3,
+"why": "「料理」は食べ物を作ること。"
+},
+"usage": {
+"options": [
+"毎朝、自分の部屋の料理をしてから出かける。",
+"父は車の料理が上手で、こわれてもすぐ直してくれる。",
+"母が作る料理の中で、カレーがいちばん好きだ。",
+"かみが長くなったので、店へ料理をしに行った。"
+],
+"answer": 2,
+"why": "「料理」は食べ物を作ること。そうじ・車を直すこと・かみを切ることには使わない。"
+}
+},
+"勝つ": {
+"para": {
+"s": "昨日の試合は、ぼくたちのチームが【勝った】。",
+"options": [
+"相手より多く点を取った",
+"相手に負けた",
+"試合に出なかった",
+"相手と同じ点だった"
+],
+"answer": 0,
+"why": "「勝つ」は相手より強くて、いいけっかになること。"
+},
+"usage": {
+"options": [
+"昨日はかぜに勝って、学校を休んだ。",
+"一生けんめいれんしゅうしたので、試合に勝った。",
+"店でシャツを勝って、家に帰った。",
+"雨が勝ったので、かさを持って出かけた。"
+],
+"answer": 1,
+"why": "「勝つ」は試合などで相手に負けないこと。かぜで休んだなら「負けた」、店では「買う」。"
+}
+},
+"娘": {
+"para": {
+"s": "【娘】は今年、大学生になった。",
+"options": [
+"うちの男の子",
+"うちの女の子",
+"家内",
+"母"
+],
+"answer": 1,
+"why": "「娘」は自分の女の子ども。"
+},
+"usage": {
+"options": [
+"娘が生まれてから、毎日が楽しい。",
+"私の娘は、今年十八歳になる男の子です。",
+"娘が生まれたので、兄はおじいさんになった。",
+"私の娘は、父の母です。"
+],
+"answer": 0,
+"why": "「娘」は自分の女の子ども。男の子は「息子」。"
+}
+},
+"兄": {
+"para": {
+"s": "【兄】は銀行で働いている。",
+"options": [
+"年下の男のきょうだい",
+"年上の女のきょうだい",
+"年上の男のきょうだい",
+"年下の女のきょうだい"
+],
+"answer": 2,
+"why": "「兄」は自分より年上の男のきょうだい。"
+},
+"usage": {
+"options": [
+"兄は私より五歳年下だ。",
+"兄が生まれたとき、私は十歳だった。",
+"私の兄は、今年中学生になった妹です。",
+"兄は私より三歳上で、いつも勉強を教えてくれる。"
+],
+"answer": 3,
+"why": "「兄」は自分より年上の男のきょうだい。年下や女の人ではない。"
+}
+},
+"夏": {
+"para": {
+"s": "【夏】になると、毎年海へ泳ぎに行く。",
+"options": [
+"一年でいちばん寒いきせつ",
+"花がさきはじめるきせつ",
+"木の葉が赤くなるきせつ",
+"一年でいちばんあついきせつ"
+],
+"answer": 3,
+"why": "「夏」は一年でいちばんあついきせつ。"
+},
+"usage": {
+"options": [
+"夏になって、雪で庭が真っ白になった。",
+"毎週夏に、ピアノを習っている。",
+"夏はあついので、冷たいものばかり飲んでしまう。",
+"この夏はとてもあまくておいしい。"
+],
+"answer": 2,
+"why": "「夏」は四つのきせつの中でいちばんあついきせつ。雪や曜日・食べ物ではない。"
+}
+},
+"怒る": {
+"para": {
+"s": "宿題をしなかったので、母が【怒った】。",
+"options": [
+"しかった",
+"ほめた",
+"笑った",
+"ないた"
+],
+"answer": 0,
+"why": "子どもに「怒る」＝「しかる」。"
+},
+"usage": {
+"options": [
+"プレゼントをもらって、とても怒った。",
+"弟が私のケーキを食べたので、本気で怒った。",
+"窓を怒って、部屋に風を入れた。",
+"先生に質問を怒ったら、すぐに答えてくれた。"
+],
+"answer": 1,
+"why": "「怒る」はいやなことがあって腹を立てること。うれしいときには使わない。"
+}
+},
+"新聞": {
+"para": {
+"s": "父は毎朝、【新聞】を読んでから出かけます。",
+"options": [
+"写真がたくさんある本",
+"ニュースが書いてある紙",
+"料理の作り方の本",
+"友だちからの手紙"
+],
+"answer": 1,
+"why": "「新聞」は毎日のニュースを伝える紙。"
+},
+"usage": {
+"options": [
+"毎朝、電車の中で新聞を読んでいる。",
+"友だちから、旅行先の新聞がとどいた。",
+"新聞を見ながら、知らない町を歩いた。",
+"テレビの新聞で、明日の天気を知った。"
+],
+"answer": 0,
+"why": "「新聞」はニュースが書いてある紙。旅行先からとどくのははがき、道は地図、テレビはニュース。"
+}
+},
+"出席": {
+"para": {
+"s": "明日の会議に【出席します】。",
+"options": [
+"休みます",
+"遅れます",
+"出ます",
+"終わります"
+],
+"answer": 2,
+"why": "会議に「出席する」＝会議に「出る」。"
+},
+"usage": {
+"options": [
+"かぜで学校を休んだので、じゅぎょうに出席した。",
+"毎朝、犬と公園を出席している。",
+"電車の席に出席して、本を読んだ。",
+"友だちのけっこん式に出席した。"
+],
+"answer": 3,
+"why": "「出席」は会議やじゅぎょうなどに出ること。休んだら出席ではない。席に「座る」とは違う。"
+}
+},
+"理由": {
+"para": {
+"s": "会社をやめた【理由】を教えてください。",
+"options": [
+"日",
+"場所",
+"時間",
+"わけ"
+],
+"answer": 3,
+"why": "「理由」＝「わけ」。"
+},
+"usage": {
+"options": [
+"理由がいいので、散歩に行こう。",
+"毎朝、理由を食べてから学校へ行く。",
+"遅れた理由を先生に話した。",
+"この理由は駅から遠いので、不便だ。"
+],
+"answer": 2,
+"why": "「理由」はどうしてそうなったかのわけ。天気・食べ物・場所ではない。"
+}
+},
+"昔": {
+"para": {
+"s": "【昔】、この町には大きなもりがあった。",
+"options": [
+"ずっと前",
+"最近",
+"今",
+"これから"
+],
+"answer": 0,
+"why": "「昔」＝「ずっと前」。"
+},
+"usage": {
+"options": [
+"昔、いっしょに映画を見に行きませんか。",
+"祖父は昔の話をするのが好きだ。",
+"来年の昔に、外国へ行くつもりだ。",
+"昔、ご飯を食べたら、すぐ出かけよう。"
+],
+"answer": 1,
+"why": "「昔」はずっと前のこと。これからのさそいや予定には使わない。"
+}
+},
+"聞こえる": {
+"para": {
+"s": "となりの部屋から、ピアノの音が【聞こえる】。",
+"options": [
+"目に入ってくる",
+"耳に入ってくる",
+"口に入ってくる",
+"手に入ってくる"
+],
+"answer": 1,
+"why": "「聞こえる」＝音が自然に「耳に入ってくる」。"
+},
+"usage": {
+"options": [
+"電話の声が小さくて、よく聞こえない。",
+"めがねをかけると、遠くの山がよく聞こえる。",
+"このスープはしおの味がよく聞こえる。",
+"わからないので、明日先生に聞こえてみます。"
+],
+"answer": 0,
+"why": "「聞こえる」は音や声が自然に耳に入ること。見えるもの・味には使わない。人にたずねるのは「聞く」。"
+}
+},
+"金持ち": {
+"para": {
+"s": "となりの家の人は【金持ち】だ。",
+"options": [
+"お金がない人",
+"力が強い人",
+"お金がたくさんある人",
+"頭がいい人"
+],
+"answer": 2,
+"why": "「金持ち」はお金をたくさん持っている人。"
+},
+"usage": {
+"options": [
+"お金がなくなって、金持ちになってしまった。",
+"金持ちを使って、パンを切った。",
+"金持ちなので、昼ごはんも買えない。",
+"彼は会社を作ってせいこうし、金持ちになった。"
+],
+"answer": 3,
+"why": "「金持ち」はお金がたくさんある人。お金がないのは反対。"
+}
+},
+"公園": {
+"para": {
+"s": "子どもたちは【公園】で遊んでいる。",
+"options": [
+"物を売る店",
+"本を借りる所",
+"病気を治す所",
+"だれでも遊べる広い場所"
+],
+"answer": 3,
+"why": "「公園」は人が遊んだり休んだりする広い場所。"
+},
+"usage": {
+"options": [
+"公園で切手を買って、手紙を出した。",
+"公園に乗って、駅まで行った。",
+"天気がいいので、公園でおべんとうを食べた。",
+"のどが痛いので、公園で薬をもらった。"
+],
+"answer": 2,
+"why": "「公園」は遊んだり休んだりする場所。切手や薬をもらう所ではない。"
+}
+},
+"覚える": {
+"para": {
+"s": "今日は新しい漢字を十こ【覚えた】。",
+"options": [
+"忘れないように頭に入れた",
+"書いてみた",
+"忘れてしまった",
+"先生に聞いた"
+],
+"answer": 0,
+"why": "「覚える」＝習ったことを頭に入れて忘れないこと。"
+},
+"usage": {
+"options": [
+"宿題を家に覚えてきて、先生にしかられた。",
+"この歌は何回も聞いたので、もう覚えてしまった。",
+"毎朝七時に覚えて、顔を洗う。",
+"店でパンを覚えて、家で食べた。"
+],
+"answer": 1,
+"why": "「覚える」は忘れないように頭に入れること。物を家に置いてくるのは「忘れる」。"
+}
+},
+"歌う": {
+"para": {
+"s": "カラオケで、好きな曲を【歌った】。",
+"options": [
+"曲に合わせておどった",
+"曲に合わせて声を出した",
+"曲をだまって聞いた",
+"曲をピアノでひいた"
+],
+"answer": 1,
+"why": "「歌う」は曲に合わせて声を出すこと。"
+},
+"usage": {
+"options": [
+"たんじょうびに、友だちがみんなで歌を歌ってくれた。",
+"犬を歌って、公園まで散歩した。",
+"毎晩、ねる前に日記を歌う。",
+"寒いので、ストーブを歌った。"
+],
+"answer": 0,
+"why": "「歌う」は歌を声に出すこと。日記は「書く」、ストーブは「つける」。"
+}
+},
+"全く": {
+"para": {
+"s": "彼の言っていることが【全く】わからない。",
+"options": [
+"少し",
+"時々",
+"全然",
+"だいたい"
+],
+"answer": 2,
+"why": "「全く〜ない」＝「全然〜ない」。"
+},
+"usage": {
+"options": [
+"全く雨が降るので、かさを持っていこう。",
+"この料理は全く少しだけからい。",
+"全く三時に駅で会いましょう。",
+"一年間勉強したのに、全くうまくならない。"
+],
+"answer": 3,
+"why": "「全く」はふつう否定といっしょに「全然」の意味で使う。"
+}
+},
+"いけない": null,
+"約束": {
+"para": {
+"s": "彼はいつも【約束】を守る。",
+"options": [
+"家",
+"ひみつ",
+"子ども",
+"人と決めたこと"
+],
+"answer": 3,
+"why": "「約束」は人と前もって「必ずする」と決めたこと。"
+},
+"usage": {
+"options": [
+"約束が降りそうなので、早く帰ろう。",
+"この約束はとても重くて、一人で持てない。",
+"明日、友だちと映画に行く約束をした。",
+"約束を飲んでから、ねた。"
+],
+"answer": 2,
+"why": "「約束」は人と前もって決めたこと。天気や物には使わない。"
+}
+},
+"正しい": {
+"para": {
+"s": "次の文の中から【正しい】ものを選んでください。",
+"options": [
+"まちがっていない",
+"長い",
+"新しい",
+"まちがっている"
+],
+"answer": 0,
+"why": "「正しい」＝「まちがっていない」。"
+},
+"usage": {
+"options": [
+"部屋が正しいので、電気をつけた。",
+"この漢字の正しい読み方を教えてください。",
+"このケーキはとても正しくて、おいしい。",
+"正しい風がふいて、木がたおれた。"
+],
+"answer": 1,
+"why": "「正しい」はまちがっていないこと。暗さ・味・強さには使わない。"
+}
+},
+"風": {
+"para": {
+"s": "窓を開けると、すずしい【風】が入ってきた。",
+"options": [
+"雨",
+"空気",
+"音",
+"光"
+],
+"answer": 1,
+"why": "窓から入ってくるすずしい「風」＝動いている「空気」。"
+},
+"usage": {
+"options": [
+"今日は風が強いので、かさがさせない。",
+"窓から明るい風が入って、部屋が明るくなった。",
+"風がたくさん降ったので、川の水が多くなった。",
+"台所から、カレーのいい風がしてきた。"
+],
+"answer": 0,
+"why": "「風」は動く空気。光・雨・においではない。"
+}
+},
+"登る": {
+"para": {
+"s": "週末、家族で山に【登った】。",
+"options": [
+"下りた",
+"見に行った",
+"上がった",
+"写真をとった"
+],
+"answer": 2,
+"why": "山に「登る」＝山の上へ「上がる」。"
+},
+"usage": {
+"options": [
+"駅で電車に登って、席に座った。",
+"毎朝六時に登って、ジョギングをする。",
+"かぜで、熱が三十九度まで登った。",
+"山の上まで登ると、町が小さく見えた。"
+],
+"answer": 3,
+"why": "「登る」は山などの上へ向かって進むこと。電車は「乗る」、熱は「上がる」。"
+}
+},
+"少年": {
+"para": {
+"s": "公園で【少年】たちがサッカーをしていた。",
+"options": [
+"女の子",
+"大人",
+"おじいさん",
+"男の子"
+],
+"answer": 3,
+"why": "「少年」はまだ大人になっていない男の子。"
+},
+"usage": {
+"options": [
+"その少年は、今年八十歳になった。",
+"庭の少年がきれいにさいた。",
+"その少年は、毎日一人で歩いて学校へ通っている。",
+"となりの家の少年は、三人の子どもの母親だ。"
+],
+"answer": 2,
+"why": "「少年」は子どもの男の子。年をとった人や花、女の人ではない。"
+}
+},
+"自転車": {
+"para": {
+"s": "毎日、【自転車】で学校に通っています。",
+"options": [
+"足で動かして乗る乗り物",
+"電気で走る長い乗り物",
+"空を飛ぶ乗り物",
+"海を進む乗り物"
+],
+"answer": 0,
+"why": "「自転車」は足で動かして乗る、車が二つある乗り物。"
+},
+"usage": {
+"options": [
+"自転車で海をわたって、となりのしまへ行った。",
+"駅まで自転車で十分ぐらいだ。",
+"自転車を着て、パーティーに行った。",
+"自転車を食べすぎて、おなかが痛くなった。"
+],
+"answer": 1,
+"why": "「自転車」は道を走る乗り物。海はわたれないし、着たり食べたりしない。"
+}
+},
+"戦争": null,
+"時々": {
+"para": {
+"s": "【時々】、近所の公園を散歩します。",
+"options": [
+"毎日",
+"たまに",
+"いつも",
+"ぜんぜん"
+],
+"answer": 1,
+"why": "「時々」＝「たまに」。"
+},
+"usage": {
+"options": [
+"時々、昼ごはんを外で食べる。",
+"このパンは時々で、とてもおいしい。",
+"私は時々、二〇〇〇年に生まれた。",
+"時々が多いので、気をつけてください。"
+],
+"answer": 0,
+"why": "「時々」はくり返すことが何回かあるときに使う。一回しかないことには使わない。"
+}
+},
+"鳥": {
+"para": {
+"s": "朝、庭で【鳥】が鳴いていた。",
+"options": [
+"水の中を泳ぐ生き物",
+"四本足で歩く生き物",
+"空を飛ぶ生き物",
+"土の中にいる小さな生き物"
+],
+"answer": 2,
+"why": "「鳥」ははねがあって空を飛ぶ生き物。"
+},
+"usage": {
+"options": [
+"夏の夜、鳥が多くて、うでを何か所もさされた。",
+"庭の鳥がきれいにさいた。",
+"魚屋で、新しい鳥を三びき買った。",
+"朝早く、窓の外で小さな鳥が鳴いていた。"
+],
+"answer": 3,
+"why": "「鳥」ははねがあって空を飛ぶ生き物。むし・花・魚ではない。"
+}
+},
+"意味": {
+"para": {
+"s": "先生の話の【意味】がよくわからなかった。",
+"options": [
+"声",
+"名前",
+"長さ",
+"言いたいこと"
+],
+"answer": 3,
+"why": "話の「意味」＝その話で言いたいこと・表していること。"
+},
+"usage": {
+"options": [
+"遅れた意味を先生に話した。",
+"この料理は意味がうすいので、しおを入れた。",
+"わからない言葉の意味を辞書で調べた。",
+"彼の意味では、この計画はうまくいかないそうだ。"
+],
+"answer": 2,
+"why": "「意味」は言葉などが表していること。理由・味・意見とは違う。"
+}
+},
+"服": {
+"para": {
+"s": "今日は新しい【服】を着て出かけた。",
+"options": [
+"洋服",
+"くつ",
+"かばん",
+"ぼうし"
+],
+"answer": 0,
+"why": "「服」＝「洋服」。体に着るもの。"
+},
+"usage": {
+"options": [
+"服を一杯ください。",
+"雨にぬれたので、服を着がえた。",
+"服で字を書いた。",
+"寒いので、服をつけて部屋をあたたかくした。"
+],
+"answer": 1,
+"why": "「服」は体に着るもの。飲み物やペン、ストーブではない。"
+}
+},
+"大きい": {
+"para": {
+"s": "この町には【大きい】公園がある。",
+"options": [
+"小さい",
+"広い",
+"古い",
+"静かな"
+],
+"answer": 1,
+"why": "公園が「大きい」＝「広い」。"
+},
+"usage": {
+"options": [
+"弟は体が大きくて、父より背が高い。",
+"今日はきおんが大きいので、半そでで出かけた。",
+"大きい天気が続いている。",
+"熱が大きいので、病院に行った。"
+],
+"answer": 0,
+"why": "「大きい」はサイズが大きいこと。きおんや熱は「高い」、天気は「いい」。"
+}
+},
+"散歩": {
+"para": {
+"s": "夕食のあと、犬と【散歩する】。",
+"options": [
+"近所を走る",
+"家で遊ぶ",
+"近所を歩く",
+"部屋で休む"
+],
+"answer": 2,
+"why": "「散歩する」は楽しみのためにゆっくり近所を歩くこと。"
+},
+"usage": {
+"options": [
+"毎朝、自転車で散歩して会社へ行く。",
+"急いでいたので、駅まで散歩した。",
+"散歩を一まい買って、友だちに送った。",
+"天気がいいので、川の近くを散歩した。"
+],
+"answer": 3,
+"why": "「散歩」は楽しみやけんこうのためにゆっくり歩くこと。急ぐときや、乗り物で通うときには使わない。"
+}
+},
+"小説": {
+"para": {
+"s": "姉は【小説】を読むのが好きだ。",
+"options": [
+"言葉の意味を調べる本",
+"写真が多い本",
+"料理の作り方の本",
+"作った話を書いた本"
+],
+"answer": 3,
+"why": "「小説」は作った話を書いた本。"
+},
+"usage": {
+"options": [
+"わからない言葉は、小説で意味を調べた。",
+"毎朝、小説を読んで、今日のニュースを知る。",
+"ねる前に、好きな作家の小説を読む。",
+"旅行で、きれいな小説をたくさんとった。"
+],
+"answer": 2,
+"why": "「小説」は作った話を書いた本。辞書・新聞・写真とは違う。"
+}
+},
+"電車": {
+"para": {
+"s": "毎朝、【電車】で会社に行きます。",
+"options": [
+"せんろの上を走る乗り物",
+"空を飛ぶ乗り物",
+"道を走る大きな車",
+"自分の足で動かす乗り物"
+],
+"answer": 0,
+"why": "「電車」はせんろの上を電気で走る乗り物。"
+},
+"usage": {
+"options": [
+"電車に乗って、海をわたってアメリカへ行った。",
+"電車が遅れて、会議に間に合わなかった。",
+"電車をうんてんして、家の前のせまい道を走った。",
+"毎日、電車を自分の足でこいで学校へ行く。"
+],
+"answer": 1,
+"why": "「電車」はせんろの上を走る乗り物。車や自転車とは違う。"
+}
+},
+"妹": {
+"para": {
+"s": "【妹】は私より三歳下です。",
+"options": [
+"年上の女のきょうだい",
+"年下の女のきょうだい",
+"年下の男のきょうだい",
+"年上の男のきょうだい"
+],
+"answer": 1,
+"why": "「妹」は自分より年下の女のきょうだい。"
+},
+"usage": {
+"options": [
+"妹はまだ小学生なので、宿題を手伝ってあげる。",
+"妹は私より二歳年上だ。",
+"妹が生まれたとき、私はまだ生まれていなかった。",
+"妹は母のお母さんです。"
+],
+"answer": 0,
+"why": "「妹」は自分より年下の女のきょうだい。自分より先に生まれた人ではない。"
+}
+},
+"何か": {
+"para": {
+"s": "おなかがすいたので、【何か】食べたい。",
+"options": [
+"いつか",
+"全部",
+"何でもいいから",
+"いつも"
+],
+"answer": 2,
+"why": "「何か食べたい」＝はっきり決めないで「何でもいいから」食べたい。"
+},
+"usage": {
+"options": [
+"朝から何か食べていないので、おなかがすいた。",
+"部屋の中には何かいません。",
+"何かの日、また会いましょう。",
+"れいぞうこに何か食べるものはありますか。"
+],
+"answer": 3,
+"why": "「何か」ははっきりわからない物。否定文では「何も」、日には「いつか」を使う。"
+}
+},
+"上": null,
+"生まれる": {
+"para": {
+"s": "姉に女の赤ちゃんが【生まれた】。",
+"options": [
+"大きくなった",
+"病気になった",
+"歩けるようになった",
+"たんじょうした"
+],
+"answer": 3,
+"why": "「生まれる」＝「たんじょうする」。"
+},
+"usage": {
+"options": [
+"毎朝七時に生まれて、顔を洗う。",
+"かぜで熱が生まれて、学校を休んだ。",
+"私は東京で生まれて、十歳までそこに住んでいた。",
+"父は来年八十歳に生まれる。"
+],
+"answer": 2,
+"why": "「生まれる」は赤ちゃんがこの世に出てくること。起きる・熱が出る・年になるとは違う。"
+}
+},
+"初めて": {
+"para": {
+"s": "【初めて】日本へ来たのは、二十歳のときだ。",
+"options": [
+"一回目に",
+"最後に",
+"何回も",
+"もう一度"
+],
+"answer": 0,
+"why": "「初めて」＝「一回目に」。"
+},
+"usage": {
+"options": [
+"毎日、初めて学校へ行く。",
+"初めてすしを食べたとき、とてもおいしいと思った。",
+"このドラマは初めて見たので、話をよく知っている。",
+"初めてに、ここに名前を書いてください。"
+],
+"answer": 1,
+"why": "「初めて」は一回目のこと。毎日することには使わない。じゅんばんは「はじめに」。"
+}
+},
+"払う": {
+"para": {
+"s": "レストランで、私がお金を【払った】。",
+"options": [
+"もらった",
+"出した",
+"借りた",
+"ためた"
+],
+"answer": 1,
+"why": "お金を「払う」＝お金を「出す」。"
+},
+"usage": {
+"options": [
+"電気代を銀行で払った。",
+"友だちのたんじょうびにプレゼントを払った。",
+"山に払って、写真をとった。",
+"先生の質問に大きな声で払った。"
+],
+"answer": 0,
+"why": "「払う」は買ったものなどのためにお金を出すこと。"
+}
+},
+"日": null,
+"変わる": {
+"para": {
+"s": "十年ぶりに来たら、町がすっかり【変わって】いた。",
+"options": [
+"前と同じままで",
+"少しも動かないで",
+"前と違う様子になって",
+"きれいにそうじされて"
+],
+"answer": 2,
+"why": "「変わる」＝前と違う様子になること。"
+},
+"usage": {
+"options": [
+"駅から家まで歩いて変わった。",
+"毎朝、パンを変わって食べる。",
+"暗いので、部屋の電気を変わってください。",
+"信号が赤から青に変わった。"
+],
+"answer": 3,
+"why": "「変わる」は自動し。「〜を」をとるときは「変える」。"
+}
+},
+"心": {
+"para": {
+"s": "彼女は【心】のやさしい人だ。",
+"options": [
+"体",
+"顔",
+"声",
+"気持ち"
+],
+"answer": 3,
+"why": "「心」＝人の「気持ち」。"
+},
+"usage": {
+"options": [
+"心が痛いので、目薬をさした。",
+"心を洗ってから、ご飯を食べた。",
+"心をこめて、母に手紙を書いた。",
+"心に乗って、駅まで行った。"
+],
+"answer": 2,
+"why": "「心」は人の気持ち。目や手、乗り物ではない。"
+}
+},
+"頼む": {
+"para": {
+"s": "友だちに、引っこしの手伝いを【頼んだ】。",
+"options": [
+"お願いした",
+"ことわった",
+"手伝った",
+"教えた"
+],
+"answer": 0,
+"why": "「頼む」＝「お願いする」。"
+},
+"usage": {
+"options": [
+"宿題を全部頼んだので、先生にほめられた。",
+"店の人に、プレゼント用につつんでくれるよう頼んだ。",
+"試験に頼んで、大学に入った。",
+"昨日は天気が頼んで、一日中晴れていた。"
+],
+"answer": 1,
+"why": "「頼む」は人に「〜してください」とお願いすること。"
+}
+},
+"利用": {
+"para": {
+"s": "この図書館はだれでも【利用できます】。",
+"options": [
+"作れます",
+"使えます",
+"買えます",
+"直せます"
+],
+"answer": 1,
+"why": "「利用する」＝「使う」。"
+},
+"usage": {
+"options": [
+"会社へ行くときは、いつもバスを利用している。",
+"雨が利用しているので、出かけない。",
+"毎朝六時に利用して、顔を洗う。",
+"子どもが利用して、ないている。"
+],
+"answer": 0,
+"why": "「利用」は物や場所を役に立てて使うこと。"
+}
+},
+"予定": {
+"para": {
+"s": "明日は何か【予定】がありますか。",
+"options": [
+"理由",
+"意見",
+"用事",
+"心配"
+],
+"answer": 2,
+"why": "「予定がある」＝することが決まっている＝「用事がある」。"
+},
+"usage": {
+"options": [
+"去年、予定でアメリカへ行った。",
+"この予定は大きくて重い。",
+"予定を無くして、さがしている。",
+"夏休みは、京都へ行く予定です。"
+],
+"answer": 3,
+"why": "「予定」はこれからすると決めていること。物ではない。"
+}
+},
+"足": {
+"para": {
+"s": "たくさん歩いたので、【足】がつかれた。",
+"options": [
+"物を持つための体の部分",
+"物を見るための体の部分",
+"物を食べるための体の部分",
+"歩くための体の部分"
+],
+"answer": 3,
+"why": "「足」は歩くための体の部分。"
+},
+"usage": {
+"options": [
+"足が悪くて、小さい字が読めない。",
+"足が高いので、薬を飲んだ。",
+"長い時間立っていたので、足が痛くなった。",
+"寒いので、足にマフラーをまいた。"
+],
+"answer": 2,
+"why": "「足」は歩くための部分。字を読むのは目、高くなるのは熱、マフラーは首。"
+}
+},
+"慣れる": {
+"para": {
+"s": "新しい仕事にはもう【慣れました】か。",
+"options": [
+"楽にできるようになりました",
+"あきました",
+"決めました",
+"遅れました"
+],
+"answer": 0,
+"why": "「慣れる」＝何度もして、楽にできるようになること。"
+},
+"usage": {
+"options": [
+"寒いので、窓を慣れてください。",
+"日本の生活にも、だいぶ慣れてきた。",
+"試験に慣れて、大学に入れた。",
+"お金に慣れて、新しい車を買った。"
+],
+"answer": 1,
+"why": "「慣れる」は何度も経験して、ふつうにできるようになること。"
+}
+},
+"間に合う": {
+"para": {
+"s": "走ったので、電車に【間に合った】。",
+"options": [
+"乗りおくれた",
+"遅れなかった",
+"乗りかえた",
+"待たされた"
+],
+"answer": 1,
+"why": "「間に合う」＝時間に「遅れない」。"
+},
+"usage": {
+"options": [
+"タクシーで行けば、会議に間に合うだろう。",
+"ねぼうしたので、学校に間に合った。",
+"昨日、駅で古い友だちに間に合った。",
+"二人の意見が間に合って、すぐに決まった。"
+],
+"answer": 0,
+"why": "「間に合う」は時間に遅れないこと。人に「会う」、意見が「合う」とは違う。"
+}
+},
+"会議": {
+"para": {
+"s": "午後から【会議】があります。",
+"options": [
+"試験",
+"休み",
+"話し合い",
+"食事会"
+],
+"answer": 2,
+"why": "「会議」は人が集まって話し合うこと。"
+},
+"usage": {
+"options": [
+"一人で会議をしてから、ねた。",
+"昼休みに、友だちと会議をして遊んだ。",
+"明日の数学の会議のために、遅くまで勉強した。",
+"今日の会議で、来年の計画について話し合った。"
+],
+"answer": 3,
+"why": "「会議」は何人かが集まって仕事などについて話し合うこと。遊びや試験ではない。"
+}
+},
+"朝": {
+"para": {
+"s": "【朝】は忙しいので、パンだけ食べる。",
+"options": [
+"昼の時間",
+"夜ねる前の時間",
+"休みの日",
+"起きてすぐの時間"
+],
+"answer": 3,
+"why": "「朝」は起きてから昼までの、一日のはじめの時間。"
+},
+"usage": {
+"options": [
+"朝の夜十時にねた。",
+"朝に乗って、会社へ行く。",
+"朝起きたら、外は雪で真っ白だった。",
+"「おやすみなさい」と朝のあいさつをした。"
+],
+"answer": 2,
+"why": "「朝」は一日のはじめの時間。夜や乗り物ではなく、朝のあいさつは「おはよう」。"
+}
+},
+"夕食": {
+"para": {
+"s": "今日の【夕食】はカレーです。",
+"options": [
+"晩ご飯",
+"朝ご飯",
+"昼ご飯",
+"おやつ"
+],
+"answer": 0,
+"why": "「夕食」＝「晩ご飯」。"
+},
+"usage": {
+"options": [
+"朝七時に夕食を食べて、学校へ行った。",
+"家族みんなで夕食を食べながら、話をした。",
+"夕食の時間に、学校で友だちとおべんとうを食べた。",
+"夕食のあと、すぐに会社へ行って、一日中働いた。"
+],
+"answer": 1,
+"why": "「夕食」は夕方や夜に食べる食事。朝や昼の食事ではない。"
+}
+},
+"歌": {
+"para": {
+"s": "この【歌】は若い人に人気がある。",
+"options": [
+"本",
+"曲",
+"店",
+"映画"
+],
+"answer": 1,
+"why": "「歌」＝「曲」。"
+},
+"usage": {
+"options": [
+"友だちのけっこん式で、みんなで歌を歌った。",
+"窓の外から、雨の歌が聞こえる。",
+"友だちのかいた歌を見て、上手だと思った。",
+"歌を最後まで読んで、話の終わりがわかった。"
+],
+"answer": 0,
+"why": "「歌」は声を出してうたう曲。雨は「音」、かくのは「絵」、読むのは「小説」。"
+}
+},
+"声": {
+"para": {
+"s": "弟の【声】は父によく似ている。",
+"options": [
+"顔",
+"字",
+"話すときの音",
+"歩き方"
+],
+"answer": 2,
+"why": "「声」は人が話すときに口から出る音。"
+},
+"usage": {
+"options": [
+"外から雨の声が聞こえる。",
+"ドアの声がして、だれかが入ってきた。",
+"犬の声をやさしくなでた。",
+"図書館では大きな声で話さないでください。"
+],
+"answer": 3,
+"why": "「声」は人や動物が口から出す音。物の音は「音」という。"
+}
+},
+"貸す": {
+"para": {
+"s": "友だちにかさを【貸した】。",
+"options": [
+"借りた",
+"返した",
+"あげた",
+"使わせてあげた"
+],
+"answer": 3,
+"why": "「貸す」＝あとで返してもらう約束で「使わせてあげる」こと。"
+},
+"usage": {
+"options": [
+"友だちから本を貸して、家で読んだ。",
+"店でパンを貸して、家で食べた。",
+"この図書館は、一回に五さつまで本を貸してくれる。",
+"山に貸して、写真をとった。"
+],
+"answer": 2,
+"why": "「貸す」は自分の物を人に使わせること。人から使わせてもらうのは「借りる」。"
+}
+},
+"研究": {
+"para": {
+"s": "兄は大学で日本のれきしを【研究して】いる。",
+"options": [
+"くわしく調べて",
+"教えて",
+"楽しんで",
+"話して"
+],
+"answer": 0,
+"why": "「研究する」＝くわしく調べて考えること。"
+},
+"usage": {
+"options": [
+"毎晩、テレビを研究しながらねる。",
+"大学で、新しい薬の研究をしている。",
+"研究を飲んでから、ねた。",
+"夕食の研究をしたので、おなかがいっぱいだ。"
+],
+"answer": 1,
+"why": "「研究」はあることをくわしく調べて考えること。"
+}
+},
+"落ちる": {
+"para": {
+"s": "大学の試験に【落ちた】。",
+"options": [
+"合格した",
+"合格しなかった",
+"受けなかった",
+"間に合わなかった"
+],
+"answer": 1,
+"why": "試験に「落ちる」＝「合格しない」。"
+},
+"usage": {
+"options": [
+"風がふいて、木から葉っぱが落ちてきた。",
+"試験に落ちて、うれしくて家族とおいわいした。",
+"毎朝、ベッドから落ちて顔を洗う。",
+"電車から落ちて、駅を出た。"
+],
+"answer": 0,
+"why": "「落ちる」は上から下へ動くこと、また試験に合格しないこと。電車からは「降りる」。"
+}
+},
+"今度": {
+"para": {
+"s": "【今度】の日曜日、映画を見に行かない?",
+"options": [
+"この前",
+"毎週",
+"次",
+"去年"
+],
+"answer": 2,
+"why": "「今度の」＝「次の」。"
+},
+"usage": {
+"options": [
+"今度、去年アメリカへ行った。",
+"今度が強いので、気をつけてください。",
+"今度を食べて、おなかがいっぱいになった。",
+"今度の旅行では、京都へ行くつもりだ。"
+],
+"answer": 3,
+"why": "「今度」は「この次」や「今回」のこと。去年のことや、物には使わない。"
+}
+},
+"始まる": {
+"para": {
+"s": "じゅぎょうは九時に【始まる】。",
+"options": [
+"終わる",
+"休みになる",
+"遅れる",
+"スタートする"
+],
+"answer": 3,
+"why": "「始まる」＝「スタートする」。"
+},
+"usage": {
+"options": [
+"先生が九時にじゅぎょうを始まった。",
+"新しいくつを始まって、出かけた。",
+"映画が始まる前に、飲み物を買った。",
+"毎朝六時に始まって、顔を洗う。"
+],
+"answer": 2,
+"why": "「始まる」は自動し。「〜を」をとるときは「始める」。"
+}
+},
+"答える": {
+"para": {
+"s": "先生の質問に、大きな声で【答えた】。",
+"options": [
+"返事をした",
+"質問した",
+"聞いた",
+"笑った"
+],
+"answer": 0,
+"why": "質問に「答える」＝「返事をする」。"
+},
+"usage": {
+"options": [
+"友だちに答えて、本を借りた。",
+"アンケートの質問に答えてください。",
+"毎朝、犬に答えて散歩に行く。",
+"店でかさを答えた。"
+],
+"answer": 1,
+"why": "「答える」は質問などに返事をすること。"
+}
+},
+"野球": {
+"para": {
+"s": "日曜日は友だちと【野球】をする。",
+"options": [
+"ボールを足でけるスポーツ",
+"ボールとバットを使うスポーツ",
+"水の中でするスポーツ",
+"雪の上でするスポーツ"
+],
+"answer": 1,
+"why": "「野球」はボールとバットを使うスポーツ。"
+},
+"usage": {
+"options": [
+"弟は学校で野球のチームに入っている。",
+"野球を一杯飲んだ。",
+"プールで野球をして泳いだ。",
+"野球で手紙を書いた。"
+],
+"answer": 0,
+"why": "「野球」はボールとバットでするスポーツ。"
+}
+},
+"外": {
+"para": {
+"s": "雨がやんだので、【外】で遊ぼう。",
+"options": [
+"部屋の中",
+"学校の中",
+"家の中ではない所",
+"車の中"
+],
+"answer": 2,
+"why": "「外」は建物などの中ではない所。"
+},
+"usage": {
+"options": [
+"外を食べて、元気になった。",
+"かばんの外に本を入れて、チャックを閉めた。",
+"外が痛いので、病院へ行った。",
+"寒いので、外に出るときはコートを着てください。"
+],
+"answer": 3,
+"why": "「外」は中ではない所。かばんに入れるなら「中」。"
+}
+},
+"場所": {
+"para": {
+"s": "会議の【場所】を教えてください。",
+"options": [
+"時間",
+"名前",
+"理由",
+"ところ"
+],
+"answer": 3,
+"why": "「場所」＝「ところ」。"
+},
+"usage": {
+"options": [
+"この場所はとてもおいしい。",
+"場所が遅れて、会議に間に合わなかった。",
+"駅の近くには、車を止める場所がない。",
+"場所を着て出かけた。"
+],
+"answer": 2,
+"why": "「場所」は人や物がある所。味や時間ではない。"
+}
+},
+"間": null,
+"進む": {
+"para": {
+"s": "この道をまっすぐ【進んで】ください。",
+"options": [
+"前に行って",
+"もどって",
+"止まって",
+"曲がって"
+],
+"answer": 0,
+"why": "「進む」＝「前に行く」。"
+},
+"usage": {
+"options": [
+"電車に進んで、会社へ行った。",
+"工事は予定どおりに進んでいる。",
+"先生に質問を進んだ。",
+"ドアを進んで、部屋に入った。"
+],
+"answer": 1,
+"why": "「進む」は前の方へ動くこと、またものごとがはかどること。"
+}
+},
+"訪ねる": {
+"para": {
+"s": "先週、昔の先生を【訪ねた】。",
+"options": [
+"電話した",
+"会いに行った",
+"手紙を書いた",
+"思い出した"
+],
+"answer": 1,
+"why": "人を「訪ねる」＝その人に「会いに行く」。"
+},
+"usage": {
+"options": [
+"京都に住んでいる友だちの家を訪ねた。",
+"毎晩、自分の部屋を訪ねてねる。",
+"新しいくつを訪ねて、出かけた。",
+"明日の天気を訪ねて、かさを持っていく。"
+],
+"answer": 0,
+"why": "「訪ねる」は人に会うためにその人の家などへ行くこと。"
+}
+},
+"似る": {
+"para": {
+"s": "娘は母親によく【似ている】。",
+"options": [
+"会っている",
+"怒っている",
+"そっくりだ",
+"頼っている"
+],
+"answer": 2,
+"why": "「似ている」＝ほとんど同じに見える＝「そっくりだ」。"
+},
+"usage": {
+"options": [
+"この服は、私の大きさに似ている。",
+"二つの答えが似ているので、全く違う。",
+"天気が似ていて、雨が降った。",
+"兄と私は声がよく似ているので、電話でよくまちがえられる。"
+],
+"answer": 3,
+"why": "「似る」は顔や形などがほとんど同じに見えること。サイズは「合う」。"
+}
+},
+"靴": {
+"para": {
+"s": "家に入るときは【靴】をぬいでください。",
+"options": [
+"頭にかぶるもの",
+"手にはめるもの",
+"体に着るもの",
+"足にはくもの"
+],
+"answer": 3,
+"why": "「靴」は足にはくもの。"
+},
+"usage": {
+"options": [
+"靴を着て、出かけた。",
+"寒いので、靴を手にはめた。",
+"雨の日は、ぬれてもいい靴をはく。",
+"頭に靴をかぶって、海へ行った。"
+],
+"answer": 2,
+"why": "「靴」は足にはくもので、「はく」「ぬぐ」と使う。"
+}
+},
+"お父さん": {
+"para": {
+"s": "【お父さん】は会社員です。",
+"options": [
+"父親",
+"母親",
+"兄",
+"祖父"
+],
+"answer": 0,
+"why": "「お父さん」＝「父親」。"
+},
+"usage": {
+"options": [
+"お父さんは、私の母のお母さんです。",
+"「お父さんはお元気ですか」と友だちに聞いた。",
+"私のお父さんは、私より二歳下の妹です。",
+"お父さんが生まれたとき、私は十歳だった。"
+],
+"answer": 1,
+"why": "「お父さん」は父親のこと。女の人や、自分より後に生まれた人ではない。"
+}
+},
+"今朝": {
+"para": {
+"s": "【今朝】は六時に起きた。",
+"options": [
+"昨日の朝",
+"今日の朝",
+"明日の朝",
+"今日の夜"
+],
+"answer": 1,
+"why": "「今朝」＝「今日の朝」。"
+},
+"usage": {
+"options": [
+"今朝、駅で古い友だちに会った。",
+"今朝の夜、家族と映画を見た。",
+"明日の今朝、七時に出かけます。",
+"今朝になったら、また来てください。"
+],
+"answer": 0,
+"why": "「今朝」は今日の朝のこと。夜や明日、これからのことには使わない。"
+}
+},
+"関係": {
+"para": {
+"s": "この問題は、あなたには【関係】がない。",
+"options": [
+"意味",
+"時間",
+"つながり",
+"理由"
+],
+"answer": 2,
+"why": "「関係」＝人や物事の「つながり」。"
+},
+"usage": {
+"options": [
+"駅までの関係がわからないので、地図を見た。",
+"二人は兄弟だが、関係が全然似ていない。",
+"彼の関係は、私の考えと違う。",
+"あの二つの会社は、とてもいい関係だ。"
+],
+"answer": 3,
+"why": "「関係」は人や物事のつながり。道・顔・意見ではない。"
+}
+},
+"赤ん坊": {
+"para": {
+"s": "となりの家の【赤ん坊】が、よくないている。",
+"options": [
+"子犬",
+"中学生",
+"おじいさん",
+"赤ちゃん"
+],
+"answer": 3,
+"why": "「赤ん坊」＝「赤ちゃん」。"
+},
+"usage": {
+"options": [
+"赤ん坊は毎朝、自分で車をうんてんして会社へ行く。",
+"赤ん坊を一杯飲んだ。",
+"赤ん坊がねているので、静かにしてください。",
+"父は今年六十歳の赤ん坊だ。"
+],
+"answer": 2,
+"why": "「赤ん坊」は生まれたばかりの小さい子ども。"
+}
+},
+"後": null,
+"借りる": {
+"para": {
+"s": "図書館で本を三さつ【借りた】。",
+"options": [
+"あとで返す約束で持って帰った",
+"お金を出して買った",
+"店に売った",
+"すぐに返した"
+],
+"answer": 0,
+"why": "「借りる」は人の物を、あとで返す約束で使わせてもらうこと。"
+},
+"usage": {
+"options": [
+"友だちが困っていたので、私の本を借りてあげた。",
+"友だちに辞書を借りたので、明日返さなければならない。",
+"店でパンを借りて、家で食べた。",
+"毎朝、駅まで歩いて借りる。"
+],
+"answer": 1,
+"why": "「借りる」は人の物を使わせてもらうこと。人に使わせるのは「貸す」。"
+}
+},
+"幾ら": {
+"para": {
+"s": "このりんごは【幾ら】ですか。",
+"options": [
+"何こ",
+"何円",
+"何歳",
+"何時"
+],
+"answer": 1,
+"why": "値段をたずねる「幾ら」＝「何円」。"
+},
+"usage": {
+"options": [
+"この靴は幾らでしたか。",
+"幾らに駅へ行きますか。",
+"弟さんは今年、幾らになりますか。",
+"昨日のパーティーには、幾らの人が来ましたか。"
+],
+"answer": 0,
+"why": "「幾ら」は値段やりょうをたずねる言葉。時間は「何時」、年は「いくつ・何歳」、人は「何人」。"
+}
+},
+"訪れる": {
+"para": {
+"s": "毎年たくさんの人が京都を【訪れる】。",
+"options": [
+"出ていく",
+"通りすぎる",
+"見に来る",
+"好きになる"
+],
+"answer": 2,
+"why": "場所を「訪れる」＝その場所へ「来る・行く」。"
+},
+"usage": {
+"options": [
+"毎朝、自分の部屋を訪れて着がえる。",
+"友だちに電話を訪れた。",
+"新しい服を訪れて、パーティーに行った。",
+"冬になると、このむらには多くのスキー客が訪れる。"
+],
+"answer": 3,
+"why": "「訪れる」はある場所へ行くこと(少しかたい言い方)。"
+}
+},
+"戻る": {
+"para": {
+"s": "忘れ物をしたので、家に【戻った】。",
+"options": [
+"出かけた",
+"着いた",
+"寄った",
+"帰った"
+],
+"answer": 3,
+"why": "前にいた所へ「戻る」＝「帰る」。"
+},
+"usage": {
+"options": [
+"借りた本を図書館に戻った。",
+"空に戻って、鳥のように飛んだ。",
+"昼休みが終わったら、すぐ会社に戻ってください。",
+"寒いので、窓を戻ってください。"
+],
+"answer": 2,
+"why": "「戻る」は自動しで、人が前の所へ帰ること。物は「戻す」「返す」。"
+}
+},
+"遅い": {
+"para": {
+"s": "弟は食べるのが【遅い】。",
+"options": [
+"ゆっくりだ",
+"速い",
+"好きだ",
+"上手だ"
+],
+"answer": 0,
+"why": "「遅い」＝速さが「ゆっくり」。"
+},
+"usage": {
+"options": [
+"この部屋は遅くて、たくさんの人が入れる。",
+"もう夜遅いので、静かにしてください。",
+"遅いにもつを、二人で運んだ。",
+"このかばんは遅いので、とても高い。"
+],
+"answer": 1,
+"why": "「遅い」は速さがゆっくりなこと、時間があとであること。広さや重さには使わない。"
+}
+},
+"薬": {
+"para": {
+"s": "かぜをひいたので、【薬】を飲んだ。",
+"options": [
+"のどがかわいたときに飲むもの",
+"病気を治すためのもの",
+"体を洗うためのもの",
+"ねる前に読むもの"
+],
+"answer": 1,
+"why": "「薬」は病気やけがを治すためのもの。"
+},
+"usage": {
+"options": [
+"食事のあとで、この薬を飲んでください。",
+"頭が痛いので、薬に行ってみてもらった。",
+"のどがかわいたので、薬を一本買って飲んだ。",
+"病気が治ったので、薬に「ありがとうございました」と言った。"
+],
+"answer": 0,
+"why": "「薬」は病気を治すために飲むもの。行く所は病院、お礼を言う相手は医者。"
+}
+},
+"調べる": {
+"para": {
+"s": "わからない言葉を辞書で【調べた】。",
+"options": [
+"書いた",
+"忘れた",
+"見て確かめた",
+"覚えた"
+],
+"answer": 2,
+"why": "「調べる」＝わからないことを本などで「見て確かめる」。"
+},
+"usage": {
+"options": [
+"毎朝六時に調べて、朝ごはんを食べる。",
+"友だちにかさを調べた。",
+"寒いので、窓を調べてねた。",
+"旅行の前に、インターネットでホテルの値段を調べた。"
+],
+"answer": 3,
+"why": "「調べる」はわからないことを見て確かめること。"
+}
+},
+"庭": {
+"para": {
+"s": "【庭】に花をうえた。",
+"options": [
+"家の中の部屋",
+"駅の前の道",
+"学校の教室",
+"家の前や後ろにある土地"
+],
+"answer": 3,
+"why": "「庭」は家のまわりの、木や花がある土地。"
+},
+"usage": {
+"options": [
+"庭でテレビを見ながら、ソファーでねてしまった。",
+"家の庭で、毎晩おふろに入る。",
+"天気がいい日は、子どもたちが庭で遊んでいる。",
+"電車の庭で、本を読んだ。"
+],
+"answer": 2,
+"why": "「庭」は家のまわりの、木や花がある外の土地。部屋や乗り物の中ではない。"
+}
+},
+"月": {
+"para": {
+"s": "【月】に一回、映画を見に行く。",
+"options": [
+"一か月",
+"一週間",
+"一年",
+"一日"
+],
+"answer": 0,
+"why": "「月に一回」＝「一か月に一回」。"
+},
+"usage": {
+"options": [
+"月が出ていて、昼のようにあつい。",
+"くもがなくて、月がきれいに見える。",
+"月がのぼって、朝になった。",
+"月がたくさんふって、外は真っ白だ。"
+],
+"answer": 1,
+"why": "「月」は夜の空に見えるもの。朝やあつさは太陽、白くなるのは雪。"
+}
+},
+"外国": {
+"para": {
+"s": "来年、【外国】で働きたい。",
+"options": [
+"自分の国",
+"自分の国ではない国",
+"生まれた町",
+"近くの町"
+],
+"answer": 1,
+"why": "「外国」は自分の国ではない国。"
+},
+"usage": {
+"options": [
+"外国へ行くときは、パスポートが必要だ。",
+"私は日本人なので、私の外国は日本です。",
+"駅の外国で、友だちを待った。",
+"外国は寒いので、コートを着て家を出た。"
+],
+"answer": 0,
+"why": "「外国」は自分の国ではない国。建物の「外」とは違う。"
+}
+},
+"箱": {
+"para": {
+"s": "古い本を【箱】に入れて、かたづけた。",
+"options": [
+"物を乗せる台",
+"物を切る道具",
+"物を入れる入れ物",
+"物を書く紙"
+],
+"answer": 2,
+"why": "「箱」は物を入れる四かくい入れ物。"
+},
+"usage": {
+"options": [
+"手紙を箱に入れて、切手をはってポストに出した。",
+"箱に水を入れて、花をさした。",
+"箱をはいて、出かけた。",
+"プレゼントをきれいな箱に入れた。"
+],
+"answer": 3,
+"why": "「箱」は物を入れる四かくい入れ物。手紙はふうとう、花は花びん。"
+}
+},
+"弟": {
+"para": {
+"s": "【弟】は今年、中学生になった。",
+"options": [
+"年上の男のきょうだい",
+"年下の女のきょうだい",
+"年上の女のきょうだい",
+"年下の男のきょうだい"
+],
+"answer": 3,
+"why": "「弟」は自分より年下の男のきょうだい。"
+},
+"usage": {
+"options": [
+"弟は私より二歳上だ。",
+"弟が生まれたとき、私はまだ生まれていなかった。",
+"弟は私より五歳下で、まだ高校生だ。",
+"弟は女の子で、今年小学生になった。"
+],
+"answer": 2,
+"why": "「弟」は自分より年下の男のきょうだい。"
+}
+},
+"金": {
+"para": {
+"s": "旅行に行きたいが、【金】がない。",
+"options": [
+"お金",
+"時間",
+"力",
+"友だち"
+],
+"answer": 0,
+"why": "「金(かね)」＝「お金」。"
+},
+"usage": {
+"options": [
+"金がたくさんあるので、一日中ひまだ。",
+"もっと金があれば、大きな家を買うのに。",
+"金が強いので、重いにもつも一人で運べる。",
+"金が高いので、病院へ行った。"
+],
+"answer": 1,
+"why": "「金(かね)」はお金のこと。時間・力・熱ではない。"
+}
+},
+"小さい": {
+"para": {
+"s": "この町には【小さい】店がたくさんある。",
+"options": [
+"大きい",
+"せまい",
+"新しい",
+"有名な"
+],
+"answer": 1,
+"why": "店が「小さい」＝店が「せまい」。"
+},
+"usage": {
+"options": [
+"このシャツは小さくて、着られない。",
+"熱が小さいので、もうだいじょうぶだ。",
+"今日はきおんが小さいので、コートを着て出かけた。",
+"時間が小さいので、急いでください。"
+],
+"answer": 0,
+"why": "「小さい」はサイズが大きくないこと。熱やきおんは「ひくい」、時間は「少ない・ない」。"
+}
+},
+"海": {
+"para": {
+"s": "夏休みは家族で【海】へ泳ぎに行った。",
+"options": [
+"山",
+"プール",
+"ビーチ",
+"川"
+],
+"answer": 2,
+"why": "泳ぎに行く「海」＝「ビーチ」。"
+},
+"usage": {
+"options": [
+"海に登って、写真をとった。",
+"家の前の小さな海で、子どもが魚をつっている。",
+"おふろの海に入って、体をあたためた。",
+"この町は海に近いので、魚がおいしい。"
+],
+"answer": 3,
+"why": "「海」は大きなしお水の所。山に登る、いけや川、おふろのおゆとは違う。"
+}
+},
+"姉": {
+"para": {
+"s": "【姉】は東京の大学に通っている。",
+"options": [
+"年下の女のきょうだい",
+"年上の男のきょうだい",
+"年下の男のきょうだい",
+"年上の女のきょうだい"
+],
+"answer": 3,
+"why": "「姉」は自分より年上の女のきょうだい。"
+},
+"usage": {
+"options": [
+"姉は私より三歳年下だ。",
+"姉は、私のお父さんです。",
+"姉は料理が上手なので、よく教えてもらう。",
+"姉が生まれたとき、私はもう十歳だった。"
+],
+"answer": 2,
+"why": "「姉」は自分より年上の女のきょうだい。"
+}
+},
+"向かう": {
+"para": {
+"s": "今、駅に【向かっています】。",
+"options": [
+"行く途中です",
+"着いたところです",
+"住んでいます",
+"待っています"
+],
+"answer": 0,
+"why": "駅に「向かっている」＝駅へ「行く途中」。"
+},
+"usage": {
+"options": [
+"本を向かって、読んだ。",
+"大きな台風が東京に向かっている。",
+"友だちに手紙を向かった。",
+"雨が向かってきたので、かさをさした。"
+],
+"answer": 1,
+"why": "「向かう」はある方向や場所へ進むこと。"
+}
+},
+"困る": {
+"para": {
+"s": "さいふをなくして、とても【困った】。",
+"options": [
+"うれしかった",
+"どうしたらいいかわからなかった",
+"安心した",
+"笑った"
+],
+"answer": 1,
+"why": "「困る」＝どうしたらいいかわからない、いやなじょうたいになること。"
+},
+"usage": {
+"options": [
+"道がわからなくて困っていたら、親切な人が教えてくれた。",
+"試験に合格して、とても困った。",
+"困ったので、窓を閉めた。",
+"パンを困って食べた。"
+],
+"answer": 0,
+"why": "「困る」は問題があって、どうしたらいいかわからないこと。"
+}
+},
+"頂く": {
+"para": {
+"s": "先生から手紙を【頂きました】。",
+"options": [
+"あげました",
+"送りました",
+"もらいました",
+"書きました"
+],
+"answer": 2,
+"why": "「頂く」は「もらう」のけんじょう語。"
+},
+"usage": {
+"options": [
+"お客様、どうぞたくさん頂いてください。",
+"私が作ったケーキを、先生が頂きました。",
+"明日は雨が頂くそうだ。",
+"部長から、旅行のおみやげを頂いた。"
+],
+"answer": 3,
+"why": "「頂く」は自分が「もらう・食べる」ときのけんじょう語。目上の人の動作には「めしあがる」を使う。"
+}
+},
+"お母さん": {
+"para": {
+"s": "【お母さん】は料理が上手だ。",
+"options": [
+"父親",
+"姉",
+"祖母",
+"母親"
+],
+"answer": 3,
+"why": "「お母さん」＝「母親」。"
+},
+"usage": {
+"options": [
+"お母さんは、私の兄です。",
+"私のお母さんは、男の人だ。",
+"お母さんに、早く帰ってきなさいと言われた。",
+"お母さんが生まれたとき、私は五歳だった。"
+],
+"answer": 2,
+"why": "「お母さん」は母親のこと。"
+}
+},
+"気持ち": {
+"para": {
+"s": "窓を開けると、【気持ち】がいい。",
+"options": [
+"気分",
+"天気",
+"元気",
+"空気"
+],
+"answer": 0,
+"why": "「気持ちがいい」＝「気分がいい」。"
+},
+"usage": {
+"options": [
+"気持ちが三十九度あるので、病院へ行った。",
+"友だちに助けてもらって、ありがとうという気持ちを伝えた。",
+"今日は気持ちがいいので、かさを持たずに出かけた。",
+"気持ちが強いので、重いにもつも運べる。"
+],
+"answer": 1,
+"why": "「気持ち」は心で感じること。熱・天気・力ではない。"
+}
+},
+"授業": {
+"para": {
+"s": "九時から【授業】が始まります。",
+"options": [
+"休み",
+"クラス",
+"試験",
+"会議"
+],
+"answer": 1,
+"why": "「授業」＝学校の「クラス」(レッスン)。"
+},
+"usage": {
+"options": [
+"今日の授業では、新しい漢字を習った。",
+"会社の授業で、新しい計画について話し合った。",
+"今日は授業が休みなので、学校で一日中勉強した。",
+"店で授業をして、新しい服を買った。"
+],
+"answer": 0,
+"why": "「授業」は学校で先生が教える時間。会社では「会議」、店では「買い物」。"
+}
+},
+"写真": {
+"para": {
+"s": "旅行で【写真】をたくさんとった。",
+"options": [
+"えんぴつでかいた絵",
+"自分で書いた手紙",
+"カメラでうつした絵",
+"旅行のおみやげ"
+],
+"answer": 2,
+"why": "「写真」はカメラでうつしたもの。"
+},
+"usage": {
+"options": [
+"写真を聞いて、楽しくなった。",
+"写真を書いて、友だちに出した。",
+"写真で、明日の天気を聞いた。",
+"家族の写真をかべに掛けている。"
+],
+"answer": 3,
+"why": "「写真」はカメラでうつしたもので、「とる」「見る」と使う。聞くのは音楽やラジオ。"
+}
+},
+"返事": {
+"para": {
+"s": "メールを送ったが、まだ【返事】がない。",
+"options": [
+"質問",
+"理由",
+"約束",
+"答え"
+],
+"answer": 3,
+"why": "「返事」＝もらったメールや質問への「答え」。"
+},
+"usage": {
+"options": [
+"友だちに借りた本を返事した。",
+"わからないことがあったので、先生に返事をした。",
+"先生に名前を呼ばれて、大きな声で返事をした。",
+"友だちが遅れた返事を教えてくれた。"
+],
+"answer": 2,
+"why": "「返事」は呼ばれたり手紙をもらったりしたときに答えること。本は「返す」、わからないことは「質問」、わけは「理由」。"
+}
+},
+"起こる": {
+"para": {
+"s": "駅の近くでじこが【起こった】。",
+"options": [
+"あった",
+"見えた",
+"止まった",
+"できた"
+],
+"answer": 0,
+"why": "じこが「起こる」＝じこが「ある」。"
+},
+"usage": {
+"options": [
+"毎朝六時に起こって、顔を洗う。",
+"じしんが起こったら、すぐに火を消してください。",
+"母に朝早く起こって、ねむい。",
+"子どもを七時に起こった。"
+],
+"answer": 1,
+"why": "「起こる」はじこや問題が生じること。目を覚ますのは「起きる」、人をめざめさせるのは「起こす」。"
+}
+},
+"かもしれない": null,
+"元気": {
+"para": {
+"s": "祖母は八十歳だが、とても【元気】だ。",
+"options": [
+"やさしい",
+"体がじょうぶ",
+"静か",
+"有名"
+],
+"answer": 1,
+"why": "「元気」＝体がじょうぶでけんこうなこと。"
+},
+"usage": {
+"options": [
+"しばらく会っていませんが、お元気ですか。",
+"元気なので、学校を休んで病院へ行った。",
+"この料理は元気で、とてもあまい。",
+"元気を払って、店を出た。"
+],
+"answer": 0,
+"why": "「元気」は体や気持ちが強く、けんこうなこと。"
+}
+},
+"冬": {
+"para": {
+"s": "【冬】になると、この町は雪が多い。",
+"options": [
+"一年でいちばんあついきせつ",
+"花がさくきせつ",
+"一年でいちばん寒いきせつ",
+"木の葉が赤くなるきせつ"
+],
+"answer": 2,
+"why": "「冬」は一年でいちばん寒いきせつ。"
+},
+"usage": {
+"options": [
+"冬になって、毎日あつくて海で泳いでいる。",
+"冬を食べて、おなかがいっぱいになった。",
+"冬の七時に、駅で会いましょう。",
+"冬は寒いので、あたたかいスープが飲みたくなる。"
+],
+"answer": 3,
+"why": "「冬」は四つのきせつの中でいちばん寒いきせつ。"
+}
+},
+"経験": {
+"para": {
+"s": "外国で働いた【経験】がある。",
+"options": [
+"予定",
+"理由",
+"約束",
+"こと"
+],
+"answer": 3,
+"why": "「〜た経験がある」＝「〜たことがある」。"
+},
+"usage": {
+"options": [
+"来年の夏休みの経験を、もう決めた。",
+"今日は経験がよくて、一日中晴れていた。",
+"初めての外国旅行は、いい経験になった。",
+"外国へ行った経験がないので、外国の話をたくさんできる。"
+],
+"answer": 2,
+"why": "「経験」は実際にやってみること、またそれで知ったこと。予定や天気ではない。"
+}
+},
+"遊ぶ": {
+"para": {
+"s": "子どもたちは公園で【遊んで】いる。",
+"options": [
+"楽しく時間をすごして",
+"勉強して",
+"働いて",
+"ねて"
+],
+"answer": 0,
+"why": "「遊ぶ」＝好きなことをして楽しくすごすこと。"
+},
+"usage": {
+"options": [
+"試験の前なので、図書館で遊んでたくさん勉強した。",
+"日曜日は、友だちとゲームをして遊んだ。",
+"熱があったので、一日中ベッドで遊んで休んだ。",
+"寒いので、窓を遊んでください。"
+],
+"answer": 1,
+"why": "「遊ぶ」は好きなことをして楽しむこと。勉強や休むことの意味はない。"
+}
+},
+"簡単": {
+"para": {
+"s": "今日の試験の問題は【簡単】だった。",
+"options": [
+"むずかしかった",
+"やさしかった",
+"長かった",
+"大切だった"
+],
+"answer": 1,
+"why": "問題が「簡単」＝問題が「やさしい」。"
+},
+"usage": {
+"options": [
+"この料理は作り方が簡単なので、だれでも作れる。",
+"簡単な問題なので、だれも答えられなかった。",
+"このにもつは簡単なので、一人で持てる。",
+"簡単を着て、出かけた。"
+],
+"answer": 0,
+"why": "「簡単」はやさしくて、むずかしくないこと。重さは「かるい」。"
+}
+},
+"夫": {
+"para": {
+"s": "【夫】は毎朝七時に家を出る。",
+"options": [
+"息子",
+"父",
+"主人",
+"兄"
+],
+"answer": 2,
+"why": "「夫」＝自分のけっこん相手の男の人＝「主人」。"
+},
+"usage": {
+"options": [
+"私の夫は、今年小学校に入った娘です。",
+"「夫さん、お元気ですか」と、友だちに聞いた。",
+"夫は女の人で、私の姉だ。",
+"夫と二人で、週末に映画を見に行った。"
+],
+"answer": 3,
+"why": "「夫」は自分のけっこん相手の男の人。ほかの人の夫は「ご主人」と言う。"
+}
+},
+"深い": {
+"para": {
+"s": "この川は【深い】ので、泳がないでください。",
+"options": [
+"広い",
+"長い",
+"きれいな",
+"あさくない"
+],
+"answer": 3,
+"why": "「深い」の反対は「あさい」。「深い」＝「あさくない」。"
+},
+"usage": {
+"options": [
+"深い山に登って、写真をとった。",
+"熱が深いので、病院に行った。",
+"このいけは深いので、子どもは入らないでください。",
+"このひもは深いので、二つに切った。"
+],
+"answer": 2,
+"why": "「深い」は上からそこまでが長いこと。山は「高い」、熱は「高い」、ひもは「長い」。"
+}
+},
+"途中": {
+"para": {
+"s": "学校へ行く【途中】で、先生に会った。",
+"options": [
+"道",
+"前",
+"後",
+"日"
+],
+"answer": 0,
+"why": "行く「途中で」＝行く「道で」。"
+},
+"usage": {
+"options": [
+"会議の途中が終わってから、家に帰った。",
+"映画の途中で、電話がかかってきた。",
+"駅の途中にある店で、パンを買った。",
+"家を出る途中に、ドアのかぎをかけた。"
+],
+"answer": 1,
+"why": "「途中」はある所へ行く間、またものごとが終わる前のこと。「〜のあと」「〜の前」とは違う。"
+}
+},
+"銀行": {
+"para": {
+"s": "【銀行】でお金を下ろした。",
+"options": [
+"本を借りる所",
+"お金をあずける所",
+"病気を治す所",
+"物を買う所"
+],
+"answer": 1,
+"why": "「銀行」はお金をあずけたり下ろしたりする所。"
+},
+"usage": {
+"options": [
+"給料は毎月、銀行に入る。",
+"銀行で切手を買って、手紙を出した。",
+"銀行で本を借りて、家で読んだ。",
+"銀行に乗って、駅まで行った。"
+],
+"answer": 0,
+"why": "「銀行」はお金に関係する所。切手や本ではない。"
+}
+},
+"売る": {
+"para": {
+"s": "この店では古い本を【売って】いる。",
+"options": [
+"買って",
+"読んで",
+"はんばいして",
+"借りて"
+],
+"answer": 2,
+"why": "「売る」＝「はんばいする」。"
+},
+"usage": {
+"options": [
+"店で新しいくつを売って、すぐにはいた。",
+"先生に質問を売った。",
+"図書館で本を売って、二週間後に返した。",
+"使わなくなった自転車を、友だちに売った。"
+],
+"answer": 3,
+"why": "「売る」はお金をもらって物をわたすこと。自分が手に入れるのは「買う」、図書館では「借りる」。"
+}
+},
+"場合": {
+"para": {
+"s": "雨の【場合】、試合は中止です。",
+"options": [
+"前",
+"後",
+"間",
+"とき"
+],
+"answer": 3,
+"why": "「雨の場合」＝「雨のとき」。"
+},
+"usage": {
+"options": [
+"この場合は駅から近くて便利だ。",
+"去年の夏の場合、家族で海へ行った。",
+"熱がある場合は、学校を休んでください。",
+"場合がないので、急いでください。"
+],
+"answer": 2,
+"why": "「場合」は「もし〜のとき」の意味。場所・過去の時・時間には使わない。"
+}
+},
+"静か": {
+"para": {
+"s": "図書館では【静かに】してください。",
+"options": [
+"音を立てないように",
+"早く",
+"きれいに",
+"元気に"
+],
+"answer": 0,
+"why": "「静かにする」＝音や声を立てないこと。"
+},
+"usage": {
+"options": [
+"パーティーは人が多くて、とても静かだった。",
+"この部屋は静かなので、勉強しやすい。",
+"このケーキは静かで、おいしい。",
+"静かな熱が出て、学校を休んだ。"
+],
+"answer": 1,
+"why": "「静か」は音や声がしないこと。人が多いパーティーはにぎやか。"
+}
+},
+"一度": {
+"para": {
+"s": "京都には【一度】行ったことがある。",
+"options": [
+"何回も",
+"一回",
+"毎年",
+"二回"
+],
+"answer": 1,
+"why": "「一度」＝「一回」。"
+},
+"usage": {
+"options": [
+"一度でいいから、ふじさんに登ってみたい。",
+"このかばんは一度で、とてもかるい。",
+"一度が強くて、かさがこわれた。",
+"一度を着て、出かけた。"
+],
+"answer": 0,
+"why": "「一度」は「一回」の意味。"
+}
+},
+"運ぶ": {
+"para": {
+"s": "重いにもつを二かいへ【運んだ】。",
+"options": [
+"置いた",
+"落とした",
+"持っていった",
+"買った"
+],
+"answer": 2,
+"why": "「運ぶ」＝物を持ってほかの所へうつすこと。"
+},
+"usage": {
+"options": [
+"先生に質問を運んだ。",
+"歌を運んで、楽しくなった。",
+"毎朝、自転車を運んで会社へ行く。",
+"引っこしのとき、友だちがにもつを運んでくれた。"
+],
+"answer": 3,
+"why": "「運ぶ」は物を持ってほかの所へうつすこと。自転車で行くなら「乗る」。"
+}
+},
+"来週": {
+"para": {
+"s": "【来週】の月曜日に会議がある。",
+"options": [
+"先週",
+"今週",
+"毎週",
+"次の週"
+],
+"answer": 3,
+"why": "「来週」＝「次の週」。"
+},
+"usage": {
+"options": [
+"来週、友だちと映画を見た。",
+"来週の昨日、会いましょう。",
+"来週から夏休みが始まる。",
+"来週は毎日七時に起きた。"
+],
+"answer": 2,
+"why": "「来週」は次の週で、これからのことに使う。"
+}
+},
+"盗む": {
+"para": {
+"s": "駅の前で自転車を【盗まれた】。",
+"options": [
+"とられた",
+"貸された",
+"こわされた",
+"止められた"
+],
+"answer": 0,
+"why": "「盗まれる」＝人に物をだまって「とられる」。"
+},
+"usage": {
+"options": [
+"友だちが困っていたので、私の本を盗んであげた。",
+"店の物を盗んではいけません。",
+"店でお金を払って、パンを盗んだ。",
+"天気が盗んで、雨になった。"
+],
+"answer": 1,
+"why": "「盗む」は人の物をだまってとること。"
+}
+},
+"休む": {
+"para": {
+"s": "かぜで会社を【休んだ】。",
+"options": [
+"遅れた",
+"行かなかった",
+"やめた",
+"早く出た"
+],
+"answer": 1,
+"why": "会社を「休む」＝その日は会社に「行かない」。"
+},
+"usage": {
+"options": [
+"つかれたので、少し休みましょう。",
+"一日中休んで、たくさん仕事をした。",
+"寒いので、窓を休んでください。",
+"電車の中で、本を休んで読んだ。"
+],
+"answer": 0,
+"why": "「休む」は仕事などをしないこと、体を楽にすること。"
+}
+},
+"大切": {
+"para": {
+"s": "これは祖母にもらった【大切な】時計です。",
+"options": [
+"新しい",
+"安い",
+"大事な",
+"古い"
+],
+"answer": 2,
+"why": "「大切な」＝「大事な」。"
+},
+"usage": {
+"options": [
+"大切なので、すぐにすててしまった。",
+"このスープは大切で、あまい。",
+"大切に乗って、学校へ行った。",
+"けんこうは何よりも大切だ。"
+],
+"answer": 3,
+"why": "「大切」はとても大事なこと。大切なものはすてない。"
+}
+},
+"今夜": {
+"para": {
+"s": "【今夜】はどこで夕食を食べようか。",
+"options": [
+"昨日の夜",
+"明日の夜",
+"今日の朝",
+"今日の夜"
+],
+"answer": 3,
+"why": "「今夜」＝「今日の夜」。"
+},
+"usage": {
+"options": [
+"今夜の朝、七時に起きた。",
+"昨日の今夜、友だちと会った。",
+"今夜は雨が降るそうだ。",
+"今夜は太陽が明るくて、まぶしい。"
+],
+"answer": 2,
+"why": "「今夜」は今日の夜。朝や昨日、太陽には使わない。"
+}
+},
+"習慣": {
+"para": {
+"s": "毎朝ジョギングするのが、私の【習慣】です。",
+"options": [
+"いつもしていること",
+"初めてしたこと",
+"一度だけしたこと",
+"これからしたいこと"
+],
+"answer": 0,
+"why": "「習慣」＝いつもくり返していること。"
+},
+"usage": {
+"options": [
+"昨日一回だけ、習慣で映画を見た。",
+"ねる前に歯をみがく習慣をつけましょう。",
+"来月の習慣は、もう全部決まっている。",
+"習慣が悪くて、熱が出た。"
+],
+"answer": 1,
+"why": "「習慣」はいつもくり返してしていること。一回だけのことや予定、体の調子ではない。"
+}
+},
+"渡る": {
+"para": {
+"s": "信号が青になってから、道を【渡って】ください。",
+"options": [
+"走って",
+"向こう側へ行って",
+"止まって",
+"待って"
+],
+"answer": 1,
+"why": "道を「渡る」＝道の「向こう側へ行く」。"
+},
+"usage": {
+"options": [
+"このはしを渡ると、駅が見えます。",
+"電車を渡って、会社へ行った。",
+"かいだんを渡って、二かいへ行った。",
+"寒いので、窓を渡ってください。"
+],
+"answer": 0,
+"why": "「渡る」は道・川・はしなどを、こちら側から向こう側へ行くこと。"
+}
+},
+"夢": {
+"para": {
+"s": "しょうらいの【夢】は、医者になることです。",
+"options": [
+"仕事",
+"予定",
+"きぼう",
+"心配"
+],
+"answer": 2,
+"why": "しょうらいの「夢」＝しょうらいの「きぼう」(そうなりたいと思うこと)。"
+},
+"usage": {
+"options": [
+"昨日の夜、こわい夢をした。",
+"旅行の夢を決めて、ホテルをよやくした。",
+"わからないので、先生に夢をした。",
+"昨夜、空を飛ぶ夢を見た。"
+],
+"answer": 3,
+"why": "「夢」はねているときに見るもの、またしょうらいしたいこと。「夢を見る」と言う。"
+}
+},
+"ずっと": {
+"para": {
+"s": "昨日は朝から夜まで【ずっと】雨だった。",
+"options": [
+"時々",
+"少し",
+"たまに",
+"続けて"
+],
+"answer": 3,
+"why": "「ずっと」＝長い間「続けて」。"
+},
+"usage": {
+"options": [
+"ずっと、明日の三時に会いましょう。",
+"このかばんはずっとで、重い。",
+"弟は朝からずっとゲームをしている。",
+"ずっと、二分だけ休んだ。"
+],
+"answer": 2,
+"why": "「ずっと」は長い間続くこと。みじかい時間や、一回だけの時刻には使わない。"
+}
+},
+"時代": {
+"para": {
+"s": "祖父の【時代】には、テレビがなかった。",
+"options": [
+"ころ",
+"場所",
+"家",
+"町"
+],
+"answer": 0,
+"why": "「祖父の時代」＝「祖父が若かったころ」。"
+},
+"usage": {
+"options": [
+"昨日の時代、三時に駅に着いた。",
+"学生時代の友だちと、ひさしぶりに会った。",
+"時代がないので、急いで行こう。",
+"時代がいいので、海へ行こう。"
+],
+"answer": 1,
+"why": "「時代」は長い時間を分けたある期間。みじかい時間や天気には使わない。"
+}
+},
+"あんまり": {
+"para": {
+"s": "この映画は【あんまり】おもしろくなかった。",
+"options": [
+"とても",
+"それほど",
+"もっと",
+"必ず"
+],
+"answer": 1,
+"why": "「あんまり〜ない」＝「それほど〜ない」。"
+},
+"usage": {
+"options": [
+"昨日はあんまりねていないので、ねむい。",
+"あんまり三時に会いましょう。",
+"あんまり、明日は晴れるでしょう。",
+"この店はあんまり安くないので、よく買い物に来る。"
+],
+"answer": 0,
+"why": "「あんまり」は否定といっしょに「それほど〜ない」の意味。安くない店にはよく来ない。"
+}
+},
+"伝える": {
+"para": {
+"s": "田中さんに、会議は三時からだと【伝えて】ください。",
+"options": [
+"聞いて",
+"決めて",
+"言って",
+"教えてもらって"
+],
+"answer": 2,
+"why": "「伝える」＝話や知らせをほかの人に「言う」こと。"
+},
+"usage": {
+"options": [
+"友だちに本を伝えた。",
+"天気が伝えて、雨になった。",
+"寒いので、窓を伝えてください。",
+"先生に、明日休むことを伝えた。"
+],
+"answer": 3,
+"why": "「伝える」は話や知らせをほかの人に知らせること。物には使わない。"
+}
+},
+"起こす": {
+"para": {
+"s": "明日の朝、六時に【起こして】ください。",
+"options": [
+"ねかせて",
+"待って",
+"連れて行って",
+"目をさまさせて"
+],
+"answer": 3,
+"why": "人を「起こす」＝人の「目をさまさせる」。"
+},
+"usage": {
+"options": [
+"毎朝六時に起こして、顔を洗う。",
+"大きなじしんが起こした。",
+"弟は朝なかなか起きないので、毎朝母が起こしている。",
+"寒いので、窓を起こしてください。"
+],
+"answer": 2,
+"why": "「起こす」は人をめざめさせること(他動し)。自分がめざめるのは「起きる」、じしんは「起こる」。"
+}
+},
+"信じる": {
+"para": {
+"s": "私は彼の話を【信じて】いる。",
+"options": [
+"本当だと思って",
+"うそだと思って",
+"忘れて",
+"聞いて"
+],
+"answer": 0,
+"why": "「信じる」＝「本当だと思う」。"
+},
+"usage": {
+"options": [
+"雨を信じて、かさをさした。",
+"友だちが「必ず来る」と言ったので、私は信じて待った。",
+"彼の話を信じたので、うそだと思った。",
+"パンを信じて食べた。"
+],
+"answer": 1,
+"why": "「信じる」は本当だと思うこと。うそだと思うのは反対。"
+}
+},
+"列車": {
+"para": {
+"s": "この【列車】は東京行きです。",
+"options": [
+"バス",
+"電車",
+"飛行機",
+"船"
+],
+"answer": 1,
+"why": "「列車」＝せんろを走る「電車」など。"
+},
+"usage": {
+"options": [
+"夜の列車に乗って、北海道へ行った。",
+"列車で海の上を飛んだ。",
+"毎朝、自分の列車をうんてんして会社へ行く。",
+"列車をこいで、公園まで行った。"
+],
+"answer": 0,
+"why": "「列車」はせんろを走る長い乗り物。飛行機・車・自転車とは違う。"
+}
+},
+"京都": null,
+"警官": {
+"para": {
+"s": "道がわからなかったので、【警官】に聞いた。",
+"options": [
+"店員",
+"医者",
+"おまわりさん",
+"先生"
+],
+"answer": 2,
+"why": "「警官」＝「おまわりさん」。"
+},
+"usage": {
+"options": [
+"病気になって、警官に薬をもらった。",
+"レストランで、警官に料理をちゅうもんした。",
+"学校で、警官に数学を教えてもらった。",
+"さいふを落としたので、交番の警官に話した。"
+],
+"answer": 3,
+"why": "「警官」は町の安全を守る人。医者・店員・先生とは違う。"
+}
+},
+"建物": {
+"para": {
+"s": "駅の前に大きな【建物】ができた。",
+"options": [
+"道",
+"公園",
+"木",
+"ビル"
+],
+"answer": 3,
+"why": "「建物」は家やビルなど、人が建てたもの。"
+},
+"usage": {
+"options": [
+"駅の前の建物を歩いて、左に曲がった。",
+"庭の建物に、赤い花がさいた。",
+"この町でいちばん高い建物は、駅の前のホテルだ。",
+"この建物は空を飛んで、外国へ行く。"
+],
+"answer": 2,
+"why": "「建物」は家やビルなど、人が建てたもの。道・木・飛行機ではない。"
+}
+},
+"準備": {
+"para": {
+"s": "旅行の【準備】はもうできましたか。",
+"options": [
+"用意",
+"予定",
+"心配",
+"写真"
+],
+"answer": 0,
+"why": "「準備」＝「用意」。"
+},
+"usage": {
+"options": [
+"旅行が終わってから、その旅行の準備をした。",
+"会議の前に、使う紙の準備をした。",
+"先生の準備に、大きな声で答えた。",
+"来週の準備では、雨が降るそうだ。"
+],
+"answer": 1,
+"why": "「準備」は前もって用意すること。"
+}
+},
+"飛ぶ": {
+"para": {
+"s": "その鳥は高く【飛んで】、見えなくなった。",
+"options": [
+"歩いて",
+"空へ上がって",
+"泳いで",
+"鳴いて"
+],
+"answer": 1,
+"why": "「飛ぶ」＝空中を進むこと。"
+},
+"usage": {
+"options": [
+"飛行機が空を飛んでいる。",
+"この本を一日で飛んで読んだ。",
+"新しいくつを飛んで、出かけた。",
+"先生に質問を飛んだ。"
+],
+"answer": 0,
+"why": "「飛ぶ」は空中を進むこと。ページをぬかすのは「飛ばす」。"
+}
+},
+"喜ぶ": {
+"para": {
+"s": "合格の知らせを聞いて、母はとても【喜んだ】。",
+"options": [
+"悲しんだ",
+"怒った",
+"うれしそうにした",
+"おどろいた"
+],
+"answer": 2,
+"why": "「喜ぶ」＝「うれしそうにする」。"
+},
+"usage": {
+"options": [
+"試験に落ちて、とても喜んだ。",
+"寒いので、窓を喜んでください。",
+"雨が喜んで、道がぬれた。",
+"プレゼントをもらって、子どもはとても喜んだ。"
+],
+"answer": 3,
+"why": "「喜ぶ」はうれしいと思うこと。悲しいときには使わない。"
+}
+},
+"考え": {
+"para": {
+"s": "それはいい【考え】ですね。",
+"options": [
+"天気",
+"場所",
+"時間",
+"アイデア"
+],
+"answer": 3,
+"why": "「いい考え」＝「いいアイデア」。"
+},
+"usage": {
+"options": [
+"考えが痛いので、薬を飲んだ。",
+"窓を開けると、すずしい考えが入ってきた。",
+"私の考えでは、この計画はうまくいかないと思う。",
+"今日の考えは、雨のち晴れです。"
+],
+"answer": 2,
+"why": "「考え」は頭で思ったこと、アイデア。頭・風・天気とは違う。"
+}
+},
+"無くす": {
+"para": {
+"s": "電車の中でかさを【無くした】。",
+"options": [
+"落とした",
+"買った",
+"借りた",
+"見つけた"
+],
+"answer": 0,
+"why": "「無くす」＝持っていた物がどこにあるかわからなくなること。"
+},
+"usage": {
+"options": [
+"新しい服を無くして、パーティーに行った。",
+"大切なかぎを無くしてしまった。",
+"プレゼントをもらって、とても無くした。",
+"窓を無くして、風を入れた。"
+],
+"answer": 1,
+"why": "「無くす」は持っていた物がなくなること。服は「着る」、窓は「開ける」。"
+}
+},
+"全然": {
+"para": {
+"s": "昨日は【全然】ねられなかった。",
+"options": [
+"よく",
+"少しも",
+"時々",
+"たくさん"
+],
+"answer": 1,
+"why": "「全然〜ない」＝「少しも〜ない」。"
+},
+"usage": {
+"options": [
+"英語は全然わからない。",
+"全然雨が降るので、かさを持っていこう。",
+"全然、明日三時に会いましょう。",
+"このかばんは全然で、重い。"
+],
+"answer": 0,
+"why": "「全然」は否定といっしょに使い、「少しも〜ない」の意味。"
+}
+},
+"空港": {
+"para": {
+"s": "【空港】まで友だちを迎えに行った。",
+"options": [
+"船が出たり着いたりする所",
+"電車が出たり着いたりする所",
+"飛行機が出たり着いたりする所",
+"バスが出たり着いたりする所"
+],
+"answer": 2,
+"why": "「空港」は飛行機が出たり着いたりする所。"
+},
+"usage": {
+"options": [
+"空港で電車に乗りかえて、次の駅で降りた。",
+"空港で船に乗って、しまへ行った。",
+"空港で本を三さつ借りた。",
+"空港に着いたら、すぐ電話してください。"
+],
+"answer": 3,
+"why": "「空港」は飛行機が出たり着いたりする所。駅・港・図書館とは違う。"
+}
+},
+"他": null,
+"なにも": {
+"para": {
+"s": "朝から【なにも】食べていない。",
+"options": [
+"何か",
+"たくさん",
+"時々",
+"少しも"
+],
+"answer": 3,
+"why": "「なにも〜ない」＝「少しも〜ない」。"
+},
+"usage": {
+"options": [
+"なにも食べたので、おなかがいっぱいだ。",
+"なにも、明日会いましょう。",
+"れいぞうこの中には、なにも入っていない。",
+"このかばんにはなにも入っているので、重い。"
+],
+"answer": 2,
+"why": "「なにも」は否定といっしょに「一つも〜ない」の意味。"
+}
+},
+"的": {
+"para": {
+"s": "彼が投げたボールは【的】の真ん中に当たった。",
+"options": [
+"ねらった所",
+"テーブル",
+"窓",
+"かべ"
+],
+"answer": 0,
+"why": "「的」はねらって当てるための目じるし。"
+},
+"usage": {
+"options": [
+"サッカーのボールが的に入って、一点とった。",
+"ボールを投げて、的に当てるゲームをした。",
+"的を開けて、部屋に入った。",
+"寒いので、的をかけてねた。"
+],
+"answer": 1,
+"why": "「的」はねらって当てるための目じるし。"
+}
+},
+"数学": {
+"para": {
+"s": "兄は【数学】がとくいだ。",
+"options": [
+"言葉を勉強する科目",
+"けいさんなどを勉強する科目",
+"昔のことを勉強する科目",
+"絵をかく科目"
+],
+"answer": 1,
+"why": "「数学」は数やけいさんを勉強する科目。"
+},
+"usage": {
+"options": [
+"数学のテストで百点をとった。",
+"数学の時間に、外でボールを投げて走った。",
+"数学の時間に、ピアノのれんしゅうをした。",
+"数学の時間に、昔の日本について習った。"
+],
+"answer": 0,
+"why": "「数学」は数やけいさんを勉強する科目。スポーツ・音楽・れきしとは違う。"
+}
+},
+"通る": {
+"para": {
+"s": "このバスは駅の前を【通ります】。",
+"options": [
+"止まります",
+"出発します",
+"通過します",
+"曲がります"
+],
+"answer": 2,
+"why": "駅の前を「通る」＝駅の前を「通過する」。"
+},
+"usage": {
+"options": [
+"先生に質問を通った。",
+"新しい服を通って、出かけた。",
+"雨が通ったので、かさをさした。",
+"毎日、学校へ行くときに公園の中を通る。"
+],
+"answer": 3,
+"why": "「通る」はある所を過ぎて行くこと。"
+}
+},
+"残る": {
+"para": {
+"s": "パーティーの料理がたくさん【残った】。",
+"options": [
+"足りなかった",
+"なくなった",
+"こわれた",
+"あまった"
+],
+"answer": 3,
+"why": "料理が「残る」＝料理が「あまる」。"
+},
+"usage": {
+"options": [
+"みんな帰ったので、私も残った。",
+"料理を全部食べたので、たくさん残った。",
+"仕事が終わらないので、まだ会社に残っている。",
+"天気が残って、雨になった。"
+],
+"answer": 2,
+"why": "「残る」はなくならないであること、またほかの人が帰ってもその場にいること。"
+}
+},
+"降りる": {
+"para": {
+"s": "次の駅で電車を【降ります】。",
+"options": [
+"出ます",
+"乗ります",
+"待ちます",
+"乗りかえます"
+],
+"answer": 0,
+"why": "電車を「降りる」＝電車から「出る」。"
+},
+"usage": {
+"options": [
+"外は雨が降りている。",
+"バスを降りて、駅まで歩いた。",
+"薬を飲んだら、熱が降りた。",
+"本を降りて、読んだ。"
+],
+"answer": 1,
+"why": "「降りる」は乗り物から外へ出ること。雨は「降る」、熱は「下がる」。"
+}
+},
+"暗い": {
+"para": {
+"s": "部屋が【暗い】ので、電気をつけた。",
+"options": [
+"寒い",
+"明るくない",
+"せまい",
+"静かだ"
+],
+"answer": 1,
+"why": "「暗い」＝「明るくない」。"
+},
+"usage": {
+"options": [
+"冬は五時になると、外はもう暗い。",
+"暗いので、電気を消した。",
+"このスープは暗くて、おいしい。",
+"天気がいいので、空がとても暗い。"
+],
+"answer": 0,
+"why": "「暗い」は光が少なくて、よく見えないこと。暗いときは電気をつける。"
+}
+},
+"止まる": {
+"para": {
+"s": "じこで電車が【止まった】。",
+"options": [
+"走りだした",
+"こんだ",
+"動かなくなった",
+"早く着いた"
+],
+"answer": 2,
+"why": "「止まる」＝動いていたものが「動かなくなる」。"
+},
+"usage": {
+"options": [
+"ちゅうしゃじょうに車を止まった。",
+"寒いので、窓を止まってください。",
+"止まっている電車が、とても速く走っている。",
+"時計が止まっていたので、遅れてしまった。"
+],
+"answer": 3,
+"why": "「止まる」は自動し。「〜を」をとるときは「止める」。"
+}
+},
+"最後": {
+"para": {
+"s": "彼に【最後】に会ったのは三年前だ。",
+"options": [
+"初めて",
+"毎回",
+"何度も",
+"いちばん終わり"
+],
+"answer": 3,
+"why": "「最後」＝「いちばん終わり」。"
+},
+"usage": {
+"options": [
+"いちばん最初に来た人が、最後だ。",
+"この道の最後に、駅があります。",
+"この本は、最後までおもしろかった。",
+"最後の日曜日、また会いましょう。"
+],
+"answer": 2,
+"why": "「最後」はいちばん終わり。道の先や「次の〜」の意味では使わない。"
+}
+},
+"値段": {
+"para": {
+"s": "このかばんの【値段】は高い。",
+"options": [
+"かかく",
+"重さ",
+"色",
+"形"
+],
+"answer": 0,
+"why": "「値段」＝「かかく」。"
+},
+"usage": {
+"options": [
+"このかばんは値段が重くて、一人では持てない。",
+"このレストランは値段が安くて、おいしい。",
+"値段がいいので、散歩に行こう。",
+"店で値段を払って、パンを買った。"
+],
+"answer": 1,
+"why": "「値段」は物のかかく。重さ・天気ではなく、払うのは「お金」。"
+}
+},
+"教育": {
+"para": {
+"s": "子どもの【教育】のために、引っこした。",
+"options": [
+"遊び",
+"勉強",
+"食事",
+"病気"
+],
+"answer": 1,
+"why": "子どもの「教育」＝子どもの「勉強」(教えて育てること)。"
+},
+"usage": {
+"options": [
+"母は長い間、小学校で教育の仕事をしていた。",
+"わからないことがあったので、先生に教育した。",
+"教育がいいので、散歩に行こう。",
+"毎朝、犬に教育をあげている。"
+],
+"answer": 0,
+"why": "「教育」は人に知っていることを教えて育てること。"
+}
+},
+"席": {
+"para": {
+"s": "電車で、お年よりに【席】をゆずった。",
+"options": [
+"にもつ",
+"かばん",
+"座る所",
+"きっぷ"
+],
+"answer": 2,
+"why": "「席」＝「座る所」。"
+},
+"usage": {
+"options": [
+"電車の席に立って、窓の外を見た。",
+"部屋の席を開けて、風を入れた。",
+"教室で、先生が席に名前を書いた。",
+"映画の席はもう全部うまっていた。"
+],
+"answer": 3,
+"why": "「席」は座る場所。立つ所・窓・こくばんではない。"
+}
+},
+"病院": {
+"para": {
+"s": "熱が高いので、【病院】へ行った。",
+"options": [
+"本を借りる所",
+"お金をあずける所",
+"物を買う所",
+"医者にみてもらう所"
+],
+"answer": 3,
+"why": "「病院」は病気やけがを医者に治してもらう所。"
+},
+"usage": {
+"options": [
+"病院で切手を買って、手紙を出した。",
+"病院で本を借りて、家で読んだ。",
+"祖母が入院しているので、毎週病院へ行く。",
+"病院でお金を下ろした。"
+],
+"answer": 2,
+"why": "「病院」は医者に病気を治してもらう所。"
+}
+},
+"本当": {
+"para": {
+"s": "彼の話は【本当】だった。",
+"options": [
+"事実",
+"うそ",
+"じょうだん",
+"夢"
+],
+"answer": 0,
+"why": "「本当」＝うそではない＝「事実」。"
+},
+"usage": {
+"options": [
+"彼は本当ばかり言うので、だれも信じない。",
+"その話は本当ですか。",
+"その話は本当なので、全く信じられない。",
+"本当が強いので、窓を閉めた。"
+],
+"answer": 1,
+"why": "「本当」はうそではないこと。信じられないのはうそ。"
+}
+},
+"力": {
+"para": {
+"s": "兄は【力】が強い。",
+"options": [
+"声",
+"パワー",
+"頭",
+"足"
+],
+"answer": 1,
+"why": "「力」＝「パワー」。"
+},
+"usage": {
+"options": [
+"重い箱を運ぶのに、とても力がいる。",
+"かぜで、力が三十九度まで上がった。",
+"力が大きいので、遠くまでよく聞こえる。",
+"今日は力がいいので、海へ行こう。"
+],
+"answer": 0,
+"why": "「力」は体の強さ、また何かをする能力。熱・声・天気ではない。"
+}
+},
+"動く": {
+"para": {
+"s": "このエアコンは古いが、まだ【動く】。",
+"options": [
+"こわれている",
+"売れる",
+"使える",
+"新しい"
+],
+"answer": 2,
+"why": "きかいが「動く」＝まだ「使える」。"
+},
+"usage": {
+"options": [
+"重い時計を一人で動いた。",
+"寒いので、窓を動いてください。",
+"止まっている車が、速く動いている。",
+"電車が動きはじめたので、席に座った。"
+],
+"answer": 3,
+"why": "「動く」は自動し。「〜を」をとるときは「動かす」。"
+}
+},
+"友人": {
+"para": {
+"s": "週末、【友人】と旅行に行った。",
+"options": [
+"家族",
+"先生",
+"親",
+"友だち"
+],
+"answer": 3,
+"why": "「友人」＝「友だち」(少しかたい言い方)。"
+},
+"usage": {
+"options": [
+"私の友人は、私の父です。",
+"この店の友人に、料理をちゅうもんした。",
+"大学時代の友人と、十年ぶりに会った。",
+"友人が痛いので、病院へ行った。"
+],
+"answer": 2,
+"why": "「友人」は友だち。家族・店員・体の部分ではない。"
+}
+},
+"健康": {
+"para": {
+"s": "祖父は九十歳だが、とても【健康】だ。",
+"options": [
+"元気",
+"有名",
+"静か",
+"大切"
+],
+"answer": 0,
+"why": "「健康」＝体が「元気」で病気がないこと。"
+},
+"usage": {
+"options": [
+"健康なので、病院に入院している。",
+"健康のために、毎朝歩いている。",
+"健康がいいので、散歩に行こう。",
+"毎日夜おそくまで起きているのは、健康にいい。"
+],
+"answer": 1,
+"why": "「健康」は体が元気で病気がないこと。"
+}
+},
+"若者": {
+"para": {
+"s": "この店は【若者】に人気がある。",
+"options": [
+"お年より",
+"若い人",
+"子ども",
+"外国人"
+],
+"answer": 1,
+"why": "「若者」＝「若い人」。"
+},
+"usage": {
+"options": [
+"最近の若者は、新聞をあまり読まないそうだ。",
+"祖父は八十歳の若者だ。",
+"若者はまだ二歳なので、歩けない。",
+"庭の若者がさいて、きれいになった。"
+],
+"answer": 0,
+"why": "「若者」は十代、二十代ぐらいの若い人。"
+}
+},
+"万": null,
+"教師": {
+"para": {
+"s": "姉は高校で【教師】をしている。",
+"options": [
+"学生",
+"医者",
+"先生",
+"店員"
+],
+"answer": 2,
+"why": "「教師」＝「先生」。"
+},
+"usage": {
+"options": [
+"病気になったので、教師に薬をもらった。",
+"レストランの教師に、料理をちゅうもんした。",
+"教師がうんてんするバスに乗って、駅まで行った。",
+"教師になって、子どもたちに英語を教えたい。"
+],
+"answer": 3,
+"why": "「教師」は学校などで教える人。医者・店員・うんてん手とは違う。"
+}
+},
+"与える": {
+"para": {
+"s": "先生は毎日、学生に宿題を【与えた】。",
+"options": [
+"集めた",
+"返した",
+"見せた",
+"出した"
+],
+"answer": 3,
+"why": "宿題を「与える」＝宿題を「出す」。"
+},
+"usage": {
+"options": [
+"先生から本を与えて、読んだ。",
+"雨を与えて、かさをさした。",
+"毎朝、犬にえさを与えている。",
+"寒いので、窓を与えてください。"
+],
+"answer": 2,
+"why": "「与える」は人や動物に物などをあげること。人からもらうのは「もらう」。"
+}
+},
+"春": {
+"para": {
+"s": "【春】になると、さくらがさく。",
+"options": [
+"冬の次のきせつ",
+"夏の次のきせつ",
+"秋の次のきせつ",
+"一年でいちばんあついきせつ"
+],
+"answer": 0,
+"why": "「春」は冬の次のきせつ。"
+},
+"usage": {
+"options": [
+"春は一週間に二回ある。",
+"春はあたたかくて、散歩が気持ちいい。",
+"春を食べて、出かけた。",
+"毎日、春に起きて会社へ行く。"
+],
+"answer": 1,
+"why": "「春」は四つのきせつの一つで、冬の次のきせつ。"
+}
+},
+"知らせる": {
+"para": {
+"s": "試験のけっかは、メールで【知らせます】。",
+"options": [
+"聞きます",
+"伝えます",
+"調べます",
+"送ってもらいます"
+],
+"answer": 1,
+"why": "「知らせる」＝「伝える」。"
+},
+"usage": {
+"options": [
+"引っこしたら、新しい住所を知らせてください。",
+"わからないので、先生に知らせて答えを聞いた。",
+"寒いので、窓を知らせてください。",
+"パンを知らせて、食べた。"
+],
+"answer": 0,
+"why": "「知らせる」はほかの人に知らないことを伝えること。"
+}
+},
+"二": null,
+"運動": {
+"para": {
+"s": "けんこうのために、毎日【運動して】いる。",
+"options": [
+"勉強して",
+"ねて",
+"体を動かして",
+"食べて"
+],
+"answer": 2,
+"why": "「運動する」＝「体を動かす」。"
+},
+"usage": {
+"options": [
+"一日中ベッドで運動して、ねていた。",
+"運動して、おなかがいっぱいになった。",
+"図書館で静かに座って運動して、本を読んだ。",
+"運動のあとは、たくさん水を飲みましょう。"
+],
+"answer": 3,
+"why": "「運動」は体を動かすこと、スポーツ。"
+}
+},
+"分": null,
+"空気": {
+"para": {
+"s": "山の上は【空気】がきれいだ。",
+"options": [
+"毎日飲むもの",
+"足で歩く道",
+"目で見る町",
+"息をすると体に入るもの"
+],
+"answer": 3,
+"why": "「空気」は息をするときにすうもの。"
+},
+"usage": {
+"options": [
+"空気を一杯飲んで、のどがかわいていたのが治った。",
+"空気が強いので、窓を閉めた。",
+"部屋の空気が悪いので、窓を開けた。",
+"空気がまぶしいので、カーテンを閉めた。"
+],
+"answer": 2,
+"why": "「空気」は私たちが息をするときにすうもの。水・風・光とは違う。"
+}
+},
+"図書館": {
+"para": {
+"s": "【図書館】で本を借りた。",
+"options": [
+"本を読んだり借りたりできる所",
+"お金をあずける所",
+"病気を治す所",
+"物を買う所"
+],
+"answer": 0,
+"why": "「図書館」は本を読んだり借りたりできる所。"
+},
+"usage": {
+"options": [
+"図書館で泳いで、つかれた。",
+"試験の前は、図書館で勉強する。",
+"図書館で本を買って、家に持って帰った。",
+"図書館でお金を下ろした。"
+],
+"answer": 1,
+"why": "「図書館」は本を読んだり借りたりする所。本を買うのは本屋。"
+}
+},
+"赤ちゃん": {
+"para": {
+"s": "姉に【赤ちゃん】が生まれた。",
+"options": [
+"子犬",
+"赤ん坊",
+"小学生",
+"中学生"
+],
+"answer": 1,
+"why": "「赤ちゃん」＝「赤ん坊」。"
+},
+"usage": {
+"options": [
+"赤ちゃんがないているので、ミルクをあげた。",
+"赤ちゃんが車をうんてんしている。",
+"父は七十歳の赤ちゃんだ。",
+"赤ちゃんを着て、出かけた。"
+],
+"answer": 0,
+"why": "「赤ちゃん」は生まれたばかりの小さい子ども。"
+}
+},
+"続く": {
+"para": {
+"s": "雨の日が一週間【続いた】。",
+"options": [
+"始まった",
+"終わった",
+"終わらなかった",
+"変わった"
+],
+"answer": 2,
+"why": "「続く」＝止まらないで、「終わらない」でつながること。"
+},
+"usage": {
+"options": [
+"先生は話を続いた。",
+"寒いので、窓を続いてください。",
+"パンを続いて食べた。",
+"会議は夜まで続いた。"
+],
+"answer": 3,
+"why": "「続く」は自動し。「〜を」をとるときは「続ける」。"
+}
+},
+"逃げる": {
+"para": {
+"s": "犬が家から【逃げた】。",
+"options": [
+"帰ってきた",
+"ねた",
+"鳴いた",
+"外へ出て行ってしまった"
+],
+"answer": 3,
+"why": "「逃げる」＝つかまらないように、その場所から出て行くこと。"
+},
+"usage": {
+"options": [
+"先生に宿題を逃げた。",
+"寒いので、窓を逃げてください。",
+"かごの鳥が逃げてしまった。",
+"パンを逃げて、食べた。"
+],
+"answer": 2,
+"why": "「逃げる」はつかまらないように、その場所からはなれること。"
+}
+},
+"人間": {
+"para": {
+"s": "【人間】は言葉を使う動物だ。",
+"options": [
+"人",
+"犬",
+"鳥",
+"魚"
+],
+"answer": 0,
+"why": "「人間」＝「人」。"
+},
+"usage": {
+"options": [
+"人間は空を飛ぶ生き物だ。",
+"人間はみんな、一人では生きていけない。",
+"うちの人間は、毎朝ワンワンと鳴く。",
+"人間は水の中でしか生きられない。"
+],
+"answer": 1,
+"why": "「人間」は人のこと。鳥・犬・魚とは違う。"
+}
+},
+"親": {
+"para": {
+"s": "【親】といっしょに住んでいる。",
+"options": [
+"兄と姉",
+"父と母",
+"子ども",
+"友だち"
+],
+"answer": 1,
+"why": "「親」＝「父と母」。"
+},
+"usage": {
+"options": [
+"親に心配をかけないように、毎週電話している。",
+"私の親は、今年小学校に入った。",
+"私の親は、兄と弟です。",
+"親が生まれたとき、私は五歳だった。"
+],
+"answer": 0,
+"why": "「親」は父と母のこと。"
+}
+},
+"一緒": {
+"para": {
+"s": "明日、【一緒に】映画を見に行きませんか。",
+"options": [
+"一人で",
+"早く",
+"二人で",
+"静かに"
+],
+"answer": 2,
+"why": "「一緒に」＝相手と「二人で」(何人かで)。"
+},
+"usage": {
+"options": [
+"昨日は一人で、一緒に買い物に行った。",
+"一緒が降ってきたので、家に入った。",
+"このパンは一緒で、おいしい。",
+"毎朝、妹と一緒に学校へ行く。"
+],
+"answer": 3,
+"why": "「一緒」は二人以上がいっしょに何かをすること。一人ではできない。"
+}
+},
+"火": {
+"para": {
+"s": "ストーブの【火】を消してください。",
+"options": [
+"電気",
+"水",
+"音",
+"ほのお"
+],
+"answer": 3,
+"why": "「火」＝もえて出る「ほのお」。"
+},
+"usage": {
+"options": [
+"火で手を洗った。",
+"火がふいて、木がゆれた。",
+"料理をするときは、火に気をつけてください。",
+"火が降ってきたので、かさをさした。"
+],
+"answer": 2,
+"why": "「火」は物がもえるときに出る、あつくて明るいもの。水・風・雨ではない。"
+}
+},
+"買い物": {
+"para": {
+"s": "母はスーパーへ【買い物に】行った。",
+"options": [
+"物を買いに",
+"物を売りに",
+"散歩に",
+"働きに"
+],
+"answer": 0,
+"why": "「買い物に行く」＝「物を買いに行く」。"
+},
+"usage": {
+"options": [
+"買い物で、古い本を店に売った。",
+"週末に、駅前の店で買い物をした。",
+"図書館で買い物をして、本を三さつ借りた。",
+"買い物をして、お金がふえた。"
+],
+"answer": 1,
+"why": "「買い物」は店で物を買うこと。売ったり借りたりすることではない。"
+}
+},
+"赤い": {
+"para": {
+"s": "【赤い】りんごを三つ買った。",
+"options": [
+"青い",
+"赤色の",
+"白い",
+"黒い"
+],
+"answer": 1,
+"why": "「赤い」＝「赤色の」。"
+},
+"usage": {
+"options": [
+"秋になると、木の葉が赤くなる。",
+"赤い声で歌った。",
+"赤い音楽を聞いた。",
+"雪はとても赤くて、きれいだ。"
+],
+"answer": 0,
+"why": "「赤い」はりんごのような色。声や音には使わない。雪は白い。"
+}
+},
+"白い": {
+"para": {
+"s": "【白い】シャツを着て出かけた。",
+"options": [
+"空のような色の",
+"夜のような色の",
+"雪のような色の",
+"木の葉のような色の"
+],
+"answer": 2,
+"why": "「白い」は雪のような色。"
+},
+"usage": {
+"options": [
+"白い声で話した。",
+"白い音が聞こえた。",
+"このスープは白い味がする。",
+"雪で庭が白くなった。"
+],
+"answer": 3,
+"why": "「白い」は雪のような色。声・音・味には使わない。"
+}
+},
+"機会": {
+"para": {
+"s": "日本人と話す【機会】があまりない。",
+"options": [
+"理由",
+"場所",
+"言葉",
+"チャンス"
+],
+"answer": 3,
+"why": "「機会」＝「チャンス」。"
+},
+"usage": {
+"options": [
+"機会がこわれたので、直してもらった。",
+"機会がいいので、海へ行こう。",
+"いい機会なので、新しい仕事にチャレンジしてみたい。",
+"大きな機会が出て、病院へ行った。"
+],
+"answer": 2,
+"why": "「機会」はちょうどいいとき、チャンス。こわれる「きかい」とは違う。"
+}
+}
+}

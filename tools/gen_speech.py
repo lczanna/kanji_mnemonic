@@ -75,7 +75,7 @@ def check(text, mp3):
     import difflib
     txt = A.post('/audio/transcriptions', {'model': A.STT_MODEL, 'language': 'ja', 'response_format': 'text'}, files=mp3).decode()
     strip = lambda t: re.sub(r'[^一-鿿々ぁ-ゖァ-ヺー]', '', t)
-    return difflib.SequenceMatcher(None, A.reading(strip(text)), A.reading(strip(txt))).ratio(), txt.strip()
+    return difflib.SequenceMatcher(None, A.reading(strip(text)), A.reading(strip(txt)), autojunk=False).ratio(), txt.strip()
 
 
 def main():
