@@ -289,7 +289,9 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .kanji-opts .opt { font-family: var(--font-kanji); font-size: 30px; justify-content: center; }
 .sprint-bar { width: 100%; display: flex; justify-content: space-between; font-weight: 700; color: var(--ai); }
 .ready { display: grid; grid-template-columns: auto 1fr auto; gap: 6px 10px; font-size: 14px; align-items: baseline; }
-.ready .ok { color: var(--good); } .ready .behind { color: var(--again); }
+.ready .ok, .ready2 .ok { color: var(--good); } .ready .behind, .ready2 .behind { color: var(--again); }
+.ready2 { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; font-size: 14px; align-items: baseline; }
+.ready2 .d { grid-column: 1 / -1; font-size: 13px; margin-bottom: 6px; }
 label.mini { display: grid; gap: 2px; font-size: 12px; color: var(--muted); } label.mini input { width: 64px; font-size: 16px; padding: 4px 6px; }
 .passage { width: 100%; font-size: 17px; line-height: 1.9; border-left: 3px solid var(--line); padding-left: 10px; }
 .passage p { margin: 0 0 4px; }
@@ -849,8 +851,7 @@ document.addEventListener('pointerdown', e => {
   try { if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel(); } catch (err) { /* audio is optional */ }
 }, true);
 // Words and sentences recorded with neural voices (tools/gen_speech.py): speech/index.json maps the text to a clip.
-let REC = null;
-getJson('speech/index.json', true).then(x => { if (x && !Array.isArray(x)) REC = x; });
+let REC = null;   // loaded with the other data at start-up
 function speak(text) {
   const id = REC && REC[text];
   if (id) return playRecorded(id, () => speakTTS(text), 'speech');
@@ -1560,10 +1561,10 @@ function readinessHtml() {
   const acc = (v, label) => v == null ? `<span class="muted">${label}: after 5 items</span>` : `<span class="${v >= 70 ? 'ok' : v >= 55 ? '' : 'behind'}">${v}% right (last 20)</span>`;
   const mk = v => m ? `<span class="${v >= 30 ? 'ok' : v >= 19 ? '' : 'behind'}">${v}/60</span>` : '';
   return `<div class="panel stack"><div class="section-label">Exam readiness · pass = 95/180 total and at least 19/60 in every section</div>
-    <div class="ready">
-      <span>Vocabulary &amp; grammar</span><span class="muted num">kanji ${st.kanji.have}/${st.kanji.total} · words ${st.vocab.have}/${st.vocab.total} · grammar ${st.grammar.have}/${st.grammar.total}</span>${mk(m && m.lk)}
-      <span>Reading</span>${acc(practiceAccuracy('read'), 'accuracy')}${mk(m && m.rd)}
-      <span>Listening</span>${acc(practiceAccuracy('listen'), 'accuracy')}${mk(m && m.ls)}
+    <div class="ready2">
+      <b>Vocabulary &amp; grammar</b>${mk(m && m.lk) || '<span></span>'}<span class="d muted num">studied: kanji ${st.kanji.have}/${st.kanji.total} · words ${st.vocab.have}/${st.vocab.total} · grammar ${st.grammar.have}/${st.grammar.total}</span>
+      <b>Reading</b>${mk(m && m.rd) || '<span></span>'}<span class="d">${acc(practiceAccuracy('read'), 'practice accuracy')}</span>
+      <b>Listening</b>${mk(m && m.ls) || '<span></span>'}<span class="d">${acc(practiceAccuracy('listen'), 'practice accuracy')}</span>
     </div>
     ${m ? `<div class="plan-line">Last practice test (${esc(m.date)}): ${m.lk + m.rd + m.ls}/180${[['Vocabulary & grammar', m.lk], ['Reading', m.rd], ['Listening', m.ls]].filter(([, v]) => v < 30).map(([n]) => ` · <b>${n} needs work</b>`).join('')}${m.rd < 30 || m.ls < 30 ? ' (its daily practice is doubled)' : ''}</div>` : '<div class="plan-line">Enter your section scores after each practice test: a weak section gets more daily practice.</div>'}
   </div>`;
@@ -2028,7 +2029,7 @@ function drawSession() {
   if (session.paused) return renderRoundBreak();
   const it = session.queue[session.i];
   const tags = [];
-  if (session.kind === 'study' && session.type === 'all' && it.type !== 'listen') tags.push(`<span class="tag" lang="ja">${TYPE_JP[it.type]}</span>`);
+  if (session.kind === 'study' && session.type === 'all' && TYPE_JP[it.type]) tags.push(`<span class="tag" lang="ja">${TYPE_JP[it.type]}</span>`);
   if (it.mode === 'learn') tags.push('<span class="tag new">NEW</span>');
   if (it.again) tags.push('<span class="tag relearn">AGAIN</span>');
   let inner, bar;
@@ -2607,6 +2608,7 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   render();
   restoreSession();
   initSync();
+  getJson('speech/index.json', true).then(x => { if (x && !Array.isArray(x)) REC = x; });
   // Exam practice (listening, reading, extra word questions) loads in the background.
   getJson('exam.json', true).then(ex => {
     if (!ex || Array.isArray(ex)) return;
