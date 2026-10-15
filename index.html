@@ -337,6 +337,8 @@ label.mini { display: grid; gap: 2px; font-size: 12px; color: var(--muted); } la
 .lk-story { font-size: 15px; }
 /* The underlined part of a 言い換え question stays underlined when it's tappable. */
 u .gl { border-bottom: 2px solid currentColor; }
+.gl-pop { overflow-y: auto; }
+.gl-story { font-size: 14px; line-height: 1.5; }
 .gl-pop { position: fixed; z-index: 40; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 18%, transparent); display: grid; gap: 4px; }
 .gl-word { font-family: var(--font-kanji); font-weight: 800; font-size: 22px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .gl-word span { font-family: var(--font-body); font-weight: 500; font-size: 16px; color: var(--ai); }
@@ -974,8 +976,11 @@ function showKanjiPop(btn) {
     hint.innerHTML = html;
     return;
   }
+  // Elsewhere (a word's "Built from" list, sentences): the kanji's own picture and story too, as on its card.
   const pop = $('gl-pop');
-  pop.innerHTML = html;
+  pop.innerHTML = `${html}${k.image ? `<img class="card-img" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="" onerror="imgFallback(this)">` : ''}
+    ${k.story ? `<div class="story gl-story">${storyHtml(k.story)}</div>` : ''}
+    <div><button class="small-btn" data-open-k="${esc(k.kanji)}">See its card</button></div>`;
   placePop(pop, btn);
 }
 function placePop(pop, btn) {
@@ -986,6 +991,7 @@ function placePop(pop, btn) {
   // Keep clear of the answer buttons: on phones with a home bar they sit higher than a fixed margin,
   // and a box over them would swallow the tap meant for Good or Easy.
   const bar = $('answer-bar'), floor = bar && !bar.hidden ? bar.getBoundingClientRect().top - 8 : innerHeight - 8;
+  pop.style.maxHeight = Math.max(160, floor - 16) + 'px';   // a tall box (picture and story) scrolls inside
   const below = b.bottom + 8, h = pop.offsetHeight;
   pop.style.top = (below + h <= floor ? below : Math.max(8, Math.min(b.top - h - 8, floor - h))) + 'px';
 }
