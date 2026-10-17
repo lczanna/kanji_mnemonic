@@ -721,8 +721,15 @@ function planToday() {
   // The shortfall is counted as of this morning, so learning during the day doesn't move today's target.
   const ps = appData.planStart || { date: today(), left }, st = planStatus(), bh = {};
   for (const ty of TYPES) bh[ty] = st[ty] && st[ty].start ? Math.max(0, -(st[ty].diff - (appData.newByDay[dayKey(ty)] || 0))) : 0;
+  // A shortfall is made up over the next 5 days (or what's left, if less), not spread thin to the finish date.
   let wAll = 0; for (let d = ps.date; d < finishNewBy(); d = addDays(d, 1)) wAll += dayWeight(d);
-  for (const ty of TYPES) target[ty] = left[ty] ? Math.min(left[ty], Math.ceil((ps.left[ty] || 0) * w / Math.max(0.001, wAll) + bh[ty] / W * w)) : 0;
+  let w5 = 0; for (let i = 0; i < 5; i++) w5 += dayWeight(addDays(today(), i));
+  const pace = {}, catchUp = {};
+  for (const ty of TYPES) {
+    pace[ty] = Math.ceil((ps.left[ty] || 0) * w / Math.max(0.001, wAll));
+    catchUp[ty] = bh[ty] ? Math.ceil(bh[ty] * w / Math.max(0.001, Math.min(W, w5))) : 0;
+    target[ty] = left[ty] ? Math.min(left[ty], pace[ty] + catchUp[ty]) : 0;
+  }
   if (target.kanji) target.kanji = Math.max(3, target.kanji);
   const due = TYPES.reduce((a, ty) => a + dueOf(ty).length, 0) + dueOf('part').length;
   // Exam practice (listening and reading) has its own share of the day's minutes.
@@ -742,7 +749,7 @@ function planToday() {
   const practiceMin = PRACTICE_MIN(practiceQuota());
   const minutes = Math.round((due * t.review + TYPES.reduce((a, ty) => a + limit[ty], 0) * t.fresh) / 60) + practiceMin;
   const trimmed = TYPES.reduce((a, ty) => a + limit[ty], 0) < wantNew;
-  planCache = { key, target, limit, due, minutes, practiceMin, budget: minutesOn(today()), trimmed, weekend: isWeekend(today()) };
+  planCache = { key, target, limit, due, minutes, practiceMin, budget: minutesOn(today()), trimmed, weekend: isWeekend(today()), pace, catchUp };
   return planCache;
 }
 // On track? Compare cards started with a straight line from the day the plan began to "all new cards done".
@@ -1297,19 +1304,22 @@ function mockBtn() {
 function planCardHtml() {
   const p = planToday(), st = planStatus(), lim = p.limit;
   const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' });
-  const doneToday = (appData.history[today()] || 0);
-  const row = (label, s) => {
-    if (!s.start) return '';
-    const cls = s.diff >= 0 ? 'ok' : 'behind';
-    const msg = s.diff >= 0 ? (s.diff ? `${s.diff} ahead` : 'on track') : `${-s.diff} behind`;
-    return `<span>${label}</span><span class="muted num">${s.have} of ${s.total}${s.known > 0 ? ` <small>(${s.known} known)</small>` : ''}</span><span class="${cls}">${msg}</span>`;
+  // Per deck: today's target and how much of it is done, then where you stand against the whole plan.
+  const row = (label, ty) => {
+    const s = st[ty];
+    if (!s || !s.start) return '';
+    const done = appData.newByDay[dayKey(ty)] || 0, goal = lim[ty];
+    const overall = s.diff > 0 ? `<span class="ok">${s.diff} ahead</span>` : s.diff < 0 ? `<span class="behind">${-s.diff} behind</span>` : '<span class="ok">on pace</span>';
+    const extra = Math.max(0, Math.min(p.catchUp[ty], goal - p.pace[ty]));   // the catch-up that fits in today's minutes
+    const why = extra ? ` <small class="muted">(incl. +${extra} to catch up)</small>` : '';
+    return `<span>${label}</span><span class="num ${goal && done >= goal ? 'ok' : ''}">${done}/${goal}${why}</span><span class="num">${overall}</span>`;
   };
   return `<div class="panel stack plan-card">
-    <div class="plan-top"><b>Today's plan · ${p.weekend ? 'weekend' : 'weekday'}</b><span class="muted num">≈ ${p.minutes} of ${p.budget} min</span></div>
-    <div class="plan-line">${p.due} reviews, then new: ${lim.kanji} kanji · ${lim.vocab} words · ${lim.grammar} grammar${p.practiceMin ? ` · exam practice ≈${p.practiceMin} min` : ''}${doneToday ? ` · <b>${doneToday} answered so far</b>` : ''}</div>
-    ${p.trimmed ? '<div class="plan-line">Reviews come first today, so there are fewer new cards. A longer day catches up.</div>' : ''}
-    <div class="pace">${row('Kanji', st.kanji)}${row('Words (top ' + FOCUS_WORDS + ')', st.vocab)}${row('Grammar', st.grammar)}</div>
-    <div class="plan-line">All new cards by ${fmt(finishNewBy())}. Minutes per day are in More → Settings; the plan adjusts every day.</div>
+    <div class="plan-top"><b>Today · ${p.weekend ? 'weekend' : 'weekday'}</b><span class="muted num">≈ ${p.minutes} of ${p.budget} min</span></div>
+    <div class="pace"><span class="muted">New</span><span class="muted">today</span><span class="muted">overall</span>
+      ${row('Kanji', 'kanji')}${row('Words', 'vocab')}${row('Grammar', 'grammar')}</div>
+    <div class="plan-line">Plus ${p.due} reviews${p.practiceMin ? ` and ≈${p.practiceMin} min of exam practice` : ''}.${p.trimmed ? ' Your minutes fit fewer new cards than the pace today; the rest is caught up over the next days.' : ''}</div>
+    <div class="plan-line">Ahead stays ahead: a long day banks cards for a busy one. Behind is caught up over 5 days. All new cards by ${fmt(finishNewBy())}.</div>
   </div>`;
 }
 
