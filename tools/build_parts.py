@@ -8,6 +8,9 @@ Teach parts before the kanji built from them, and record what each non-deck part
    the deck's part names (data/primitives.json and the deck keywords).
 2. Cards are reordered so that every deck kanji used as a part, directly or inside another part,
    comes before the cards that use it. Otherwise the order is unchanged.
+3. A part name can stand for different glyphs: [head] is the kanji 頭 in some stories but the part 頁 in 題,
+   [house] is 家 or the roof 宀. When the map's glyph isn't inside a card's kanji (by the IDS breakdown) and
+   another glyph with that name is, the card gets "pg": {part name: glyph}, which the app shows instead.
 
   curl -sSO https://raw.githubusercontent.com/cjkvi/cjkvi-ids/master/ids.txt
   python3 tools/build_parts.py ids.txt
@@ -81,6 +84,33 @@ def main():
         parts[n] = {'g': g, 'of': of}
         todo += of
 
+    # Which glyph each story part really is in each card's kanji.
+    names = {}
+    for c in cards:
+        names.setdefault(c['keyword'], []).append(c['kanji'])
+    for g, n in prim.items():
+        names.setdefault(n, []).append(g)
+
+    def inside(g, depth=0):
+        out = set()
+        for p in ids.get(g, []):
+            if p != g:
+                out |= {p} | (inside(p, depth + 1) if depth < 5 else set())
+        return out
+
+    fixed = 0
+    for c in cards:
+        within, pg = inside(c['kanji']), {}
+        for n in dict.fromkeys(re.findall(r'\[([^\]]+)\]', c['story']) + (c.get('components') or [])):
+            g = parts.get(n, {}).get('g')
+            alt = [x for x in names.get(n, []) if x in within]
+            if g not in within and alt:
+                pg[n] = alt[0]
+        if pg:
+            c['pg'] = pg; fixed += len(pg)
+        else:
+            c.pop('pg', None)
+
     def deck_deps(name, seen):
         """Deck kanji a part relies on: the part itself, or the deck kanji inside it."""
         if name in seen:
@@ -91,8 +121,14 @@ def main():
             return [g]
         return [k for p in parts.get(name, {}).get('of', []) for k in deck_deps(p, seen)]
 
-    deps = {c['kanji']: [k for n in re.findall(r'\[([^\]]+)\]', c['story']) for k in deck_deps(n, set()) if k != c['kanji']]
-            for c in cards}
+    def card_deps(c):
+        out = []
+        for n in re.findall(r'\[([^\]]+)\]', c['story']):
+            g = (c.get('pg') or {}).get(n)
+            out += ([g] if g in by_kanji else []) if g else deck_deps(n, set())
+        return [k for k in out if k != c['kanji']]
+
+    deps = {c['kanji']: card_deps(c) for c in cards}
     order, placed, active = [], set(), set()
 
     def place(k):
@@ -113,7 +149,8 @@ def main():
     (ROOT / 'kanji.json').write_text(json.dumps(deck, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
     pos = {c['kanji']: i for i, c in enumerate(order)}
     late = [(k, d) for k in deps for d in deps[k] if pos[d] > pos[k]]
-    print(f'{len(parts)} parts recorded, {moved} positions changed, parts still taught late: {late}')
+    print(f'{len(parts)} parts recorded, {fixed} story parts point to the glyph really in the kanji, '
+          f'{moved} positions changed, parts still taught late: {late}')
 
 
 if __name__ == '__main__':

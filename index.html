@@ -959,7 +959,9 @@ function kanjiInfoHtml(k, used) {
 // Story parts: tapping one shows what it is. A deck kanji shows its readings and a link to its card;
 // any other part shows what it is made of, and each of those pieces can be tapped in turn.
 function showPart(btn) {
-  const name = btn.dataset.part, p = PARTS[name] || {}, k = BY_KANJI[p.g];
+  // The same part name can stand for different glyphs ([head] is 頭, but 頁 inside 題): the card says which.
+  const ctx = BY_KANJI[(btn.closest('[data-in]') || {}).dataset?.in] || {};
+  const name = btn.dataset.part, own = (ctx.pg || {})[name], p = own ? { g: own } : PARTS[name] || {}, k = BY_KANJI[p.g];
   const pop = $('gl-pop');
   if (k) {
     const started = !!appData.cards[k.kanji];
@@ -968,7 +970,7 @@ function showPart(btn) {
   } else {
     pop.innerHTML = `<div class="gl-word" lang="ja">${esc(p.g || '')} <span>${esc(name)}</span></div>
       ${p.of && p.of.length ? `<div class="part-of">Made of ${p.of.map(n => `<button class="chip" data-part="${esc(n)}">${esc((PARTS[n] || {}).g || '')} ${esc(n)}</button>`).join('+')}</div>`
-        : '<div class="gl-lemma">A basic part, not split further in this deck.</div>'}`;
+        : `<div class="gl-lemma">${own ? `The part used in ${esc(ctx.kanji)}; it isn't a card of its own.` : 'A basic part, not split further in this deck.'}</div>`}`;
   }
   // Tapping a piece inside the box keeps the box where it is.
   if (!btn.closest('#gl-pop')) placePop(pop, btn);
@@ -988,7 +990,7 @@ function showKanjiPop(btn) {
   // Elsewhere (a word's "Built from" list, sentences): the kanji's own picture and story too, as on its card.
   const pop = $('gl-pop');
   pop.innerHTML = `${html}${k.image ? `<img class="card-img" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="" onerror="imgFallback(this)">` : ''}
-    ${k.story ? `<div class="story gl-story">${storyHtml(k.story)}</div>` : ''}
+    ${k.story ? `<div class="story gl-story" data-in="${esc(k.kanji)}">${storyHtml(k.story)}</div>` : ''}
     <div><button class="small-btn" data-open-k="${esc(k.kanji)}">See its card</button></div>`;
   placePop(pop, btn);
 }
@@ -1040,7 +1042,7 @@ function backHtml(k, mode) {
       <div class="vocab-row"><span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span><span class="m">${esc(v.m)}</span></div>`).join('')}</div></div>` : '';
   const body = mode === 'quiz' ? vocabH + soundH + story + img : img + story + soundH + vocabH;
   return `
-  <div class="back">
+  <div class="back" data-in="${esc(k.kanji)}">
     <div class="headline">
       <div class="k-small" lang="ja">${esc(k.kanji)}</div>
       <div>
@@ -1428,7 +1430,7 @@ function lookMnHtml(g, me, big) {
       // the feature picture is only a fallback for a kanji without one.
       const pic = !big ? '' : k && k.image ? `<img class="card-img" src="${esc(k.image)}" data-kanji="${esc(c)}" alt="" loading="lazy" onerror="imgFallback(this)">`
         : m.img ? `<img class="card-img" src="${esc(m.img)}" data-kanji="${esc(`l:${g.id}:${c}`)}" alt="" loading="lazy" onerror="imgFallback(this)">` : '';
-      return `<div class="lk-item${c === me ? ' me' : ''}">${pic}${big && k && k.story ? `<div class="story lk-story">${storyHtml(k.story)}</div>` : ''}
+      return `<div class="lk-item${c === me ? ' me' : ''}">${pic}${big && k && k.story ? `<div class="story lk-story" data-in="${esc(c)}">${storyHtml(k.story)}</div>` : ''}
         <div class="lk-line"><button class="lk-k${c === me ? ' me' : ''}" data-open-k="${esc(c)}">${strokeSvg(g, c)}<span class="kw">${esc(k ? k.keyword : '')}</span>${started(c) ? '' : '<small>not learned yet</small>'}</button>
           <div class="lk-say">${m.label ? `<span class="lk-label">${big ? 'Tell it apart · ' : ''}${esc(m.label)}</span>` : ''}<div>${esc(m.hook || (g.tips || {})[c] || '')}</div></div></div>
       </div>`; }).join('')}
