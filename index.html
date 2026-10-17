@@ -85,6 +85,12 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 
 .cta { display: grid; gap: 10px; }
+.tk-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tk { display: grid; gap: 2px; align-content: start; border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; }
+.tk-n { font-size: 12px; color: var(--muted); }
+.tk-v { font-size: 22px; }
+.tk-s { font-size: 11px; color: var(--muted); line-height: 1.35; }
+.tk-week { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 14px; }
 .more-ways summary { cursor: pointer; color: var(--muted); font-size: 14px; padding: 6px 2px; }
 .btn {
   border: 1px solid var(--line); background: var(--surface); border-radius: 12px;
@@ -1203,8 +1209,6 @@ function todayHtml() {
   const marks = [[-28, 'Practice test 1 · full, timed'], [-bufferDays(), 'All new cards done · review-only from here'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test'], [0, 'JLPT N3']]
     .filter((m, i, a) => a.findIndex(x => x[0] === m[0]) === i).sort((a, b) => a[0] - b[0])
     .map(([o, label]) => { const d = addDays(E, o); return { d, label, left: daysBetween(today(), d) }; });
-  const milestones = `<div class="panel"><div class="section-label">Plan</div><ol class="milestones">${marks.map(m => `
-      <li class="${m.left < 0 ? 'past' : m.left === 0 ? 'now' : ''}"><span class="when num">${new Date(m.d + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' })}</span><span>${esc(m.label)}</span><span class="left num">${m.left < 0 ? 'done' : m.left === 0 ? 'today' : 'in ' + m.left + 'd'}</span></li>`).join('')}</ol></div>`;
   const nCards = Object.keys(appData.cards).length;
   const needBackup = nCards >= 20 && SYNC.state !== 'synced' && (!appData.lastBackup || daysBetween(appData.lastBackup, today()) >= 5);
   const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
@@ -1213,24 +1217,6 @@ function todayHtml() {
   const listenN = 'speechSynthesis' in window ? listenPool().length : 0;
   const weakOn = finalWeek() && nCards > 0;
   const dueAll = rows.reduce((a, r) => a + r.due, 0);
-  const levels = [5, 4, 3].map(lv => {
-    const ks = DECK.filter(k => k.level === lv);
-    const known = ks.filter(k => ['good', 'mastered'].includes(status(k))).length;
-    const learning = ks.filter(k => ['learning', 'struggling'].includes(status(k))).length;
-    return `<div class="level-row"><span class="lv">N${lv}</span>
-      <div class="bar" role="img" aria-label="N${lv} kanji: ${known} solid, ${learning} learning of ${ks.length}">
-        <span class="s-known" style="width:${known / ks.length * 100}%"></span><span class="s-learning" style="width:${learning / ks.length * 100}%"></span></div>
-      <span class="num muted">${known + learning}/${ks.length}</span></div>`;
-  }).join('');
-  const extraBars = ['vocab', 'grammar'].filter(t => deckOf(t).length).map(t => {
-    const xs = deckOf(t), keys = xs.map(x => keyOf(t, x));
-    const known = keys.filter(k => ['good', 'mastered'].includes(statusKey(k))).length;
-    const learning = keys.filter(k => ['learning', 'struggling'].includes(statusKey(k))).length;
-    return `<div class="level-row"><span class="lv" lang="ja">${TYPE_JP[t]}</span>
-      <div class="bar" role="img" aria-label="${TYPE_LABEL[t]}: ${known} solid, ${learning} learning of ${xs.length}">
-        <span class="s-known" style="width:${known / xs.length * 100}%"></span><span class="s-learning" style="width:${learning / xs.length * 100}%"></span></div>
-      <span class="num muted">${known + learning}/${xs.length}</span></div>`;
-  }).join('');
   return `
   <div class="today-head">
     <span class="eyebrow">JLPT N3 · ${esc(appData.settings.examDate)}</span>
@@ -1241,7 +1227,6 @@ function todayHtml() {
   <div class="stack">
     ${parked ? `<button class="btn primary" id="go-resume"><span class="label"><b>Resume where you left off</b><small class="muted">Back to the same card</small></span><span class="count num">${parked.queue.length - parked.i}</span></button>` : ''}
     ${triageFirst ? triageBtn('btn primary', 'Start here: mark kanji you already know', 'One quick pass through the kanji. Each one you know is skipped, and its words unlock.') : ''}
-    ${finalWeek() ? '' : planCardHtml()}
     ${needBackup ? `<div class="notice stack" style="gap:8px"><b>Back up your progress</b><span>${appData.lastBackup ? `Last backup ${esc(appData.lastBackup)}.` : 'No backup yet.'} Progress lives only in this browser.</span>
       <div class="row-wrap"><button class="small-btn" id="quick-backup">Copy backup</button></div></div>` : '<div id="backup-note" class="muted" style="font-size:13px" aria-live="polite"></div>'}
     ${homeTip ? `<div class="notice stack" style="gap:8px"><b>Add this to your Home Screen</b><span>In Safari tap Share → Add to Home Screen, and open it from there. Safari can erase a site's data after 7 days without a visit; Home Screen apps are much safer.</span>
@@ -1273,14 +1258,8 @@ function todayHtml() {
       </div></details>
     </div>
     ${mockDue() ? mockFormHtml(true) : ''}
-    ${readinessHtml()}
-    ${weekHtml()}
-    ${milestones}
-    <div class="panel stack">
-      <div class="eyebrow">Progress</div>
-      <div class="levels">${levels}${extraBars}</div>
-      <div class="legend"><span><i style="background:var(--ai)"></i>solid (3+ weeks)</span><span><i style="background:color-mix(in srgb, var(--ai) 45%, var(--ai-soft))"></i>learning</span><span><i style="background:var(--ai-soft)"></i>not started</span></div>
-    </div>
+    ${finalWeek() ? '' : planCardHtml()}
+    ${trackerHtml(marks)}
     ${!storageOk ? `<div class="notice">This browser is blocking storage, so progress will not be saved. Use More → Back up progress before closing.</div>` : ''}
   </div>`;
 }
@@ -1345,8 +1324,7 @@ function planCardHtml() {
     <div class="plan-top"><b>Today · ${p.weekend ? 'weekend' : 'weekday'}</b><span class="muted num">≈ ${p.minutes} of ${p.budget} min</span></div>
     <div class="pace"><span class="muted">New</span><span class="muted">today</span><span class="muted">overall</span>
       ${row('Kanji', 'kanji')}${row('Words', 'vocab')}${row('Grammar', 'grammar')}</div>
-    <div class="plan-line">Plus ${p.due} reviews${p.practiceMin ? ` and ≈${p.practiceMin} min of exam practice` : ''}.${p.trimmed ? ' Your minutes fit fewer new cards than the pace today; the rest is caught up over the next days.' : ''}</div>
-    <div class="plan-line">Ahead stays ahead: a long day banks cards for a busy one. Behind is caught up over 5 days. All new cards by ${fmt(finishNewBy())}.</div>
+    <div class="plan-line muted">Plus ${p.due} reviews${p.practiceMin ? ` · ≈${p.practiceMin} min exam practice` : ''}${p.trimmed ? ' · the rest carries over to the next days' : ''} · all new cards by ${fmt(finishNewBy())}</div>
   </div>`;
 }
 
@@ -1725,51 +1703,40 @@ function examScreen(it, tags) {
   return { inner: { front }, bar: done ? examBar(it) : pickHint('Tap any word for its reading and meaning') };
 }
 // Exam readiness on Today: the three scored sections side by side, so a weak one shows early.
-function readinessHtml() {
-  if (!EXAM.qr.length) return '';
-  const st = planStatus(), m = latestMock();
-  const acc = (v, label) => v == null ? `<span class="muted">${label}: after 5 items</span>` : `<span class="${v >= 70 ? 'ok' : v >= 55 ? '' : 'behind'}">${v}% right (last 20)</span>`;
-  const mk = v => m ? `<span class="${v >= 30 ? 'ok' : v >= 19 ? '' : 'behind'}">${v}/60</span>` : '';
-  return `<div class="panel stack"><div class="section-label">Exam readiness · pass = 95/180 total and at least 19/60 in every section</div>
-    <div class="ready2">
-      <b>Vocabulary &amp; grammar</b>${mk(m && m.lk) || '<span></span>'}<span class="d muted num">studied: kanji ${st.kanji.have}/${st.kanji.total} · words ${st.vocab.have}/${st.vocab.total} · grammar ${st.grammar.have}/${st.grammar.total}</span>
-      <b>Reading</b>${mk(m && m.rd) || '<span></span>'}<span class="d">${acc(practiceAccuracy('read'), 'practice accuracy')}</span>
-      <b>Listening</b>${mk(m && m.ls) || '<span></span>'}<span class="d">${acc(practiceAccuracy('listen'), 'practice accuracy')}</span>
-    </div>
-    ${m ? `<div class="plan-line">Last practice test (${esc(m.date)}): ${m.lk + m.rd + m.ls}/180${[['Vocabulary & grammar', m.lk], ['Reading', m.rd], ['Listening', m.ls]].filter(([, v]) => v < 30).map(([n]) => ` · <b>${n} needs work</b>`).join('')}${m.rd < 30 || m.ls < 30 ? ' (its daily practice is doubled)' : ''}</div>` : '<div class="plan-line">Enter your section scores after each practice test: a weak section gets more daily practice.</div>'}
-  </div>`;
-}
-// This week at a glance: days studied, accuracy, exam practice against its target, most-missed cards, one focus.
-function weekHtml() {
-  const t = today(), days = [...Array(7)].map((_, i) => addDays(t, i - 6));
-  const studied = days.filter(d => appData.history[d]).length, reviews = days.reduce((a, d) => a + (appData.history[d] || 0), 0);
-  if (!reviews) return '';
-  const counted = days.filter(d => appData.historyOk[d] != null || !appData.history[d]);
-  const okN = days.reduce((a, d) => a + (appData.historyOk[d] || 0), 0), okOf = counted.reduce((a, d) => a + (appData.history[d] || 0), 0);
-  const acc = okOf >= 20 ? Math.round(okN / okOf * 100) : appData.stats.totalReviews ? Math.round(appData.stats.correctReviews / appData.stats.totalReviews * 100) : null;
+// One card with how you're doing: the three scored sections, this week in one line, one focus, the next date.
+function trackerHtml(marks) {
+  if (!DECK.length) return '';
+  const st = planStatus(), m = latestMock(), t = today();
+  const cls = (v, good, ok) => v == null ? '' : v >= good ? 'ok' : v >= ok ? '' : 'behind';
+  // Vocabulary & grammar: share of the cards started (kanji, top words, grammar), or the last mock score.
+  const have = st.kanji.have + st.vocab.have + st.grammar.have, all = st.kanji.total + st.vocab.total + st.grammar.total;
+  const studied = Math.round(have / Math.max(1, all) * 100);
+  const tile = (name, big, bigCls, sub) => `<div class="tk"><span class="tk-n">${name}</span><b class="tk-v num ${bigCls}">${big}</b><span class="tk-s">${sub}</span></div>`;
+  const pa = k => practiceAccuracy(k);
+  const sec = (k, mk) => m ? tile(k === 'read' ? 'Reading' : 'Listening', `${mk}/60`, cls(mk, 30, 19), 'last practice test')
+    : tile(k === 'read' ? 'Reading' : 'Listening', pa(k) == null ? '–' : pa(k) + '%', cls(pa(k), 70, 55), pa(k) == null ? 'needs 5 practice items' : 'practice, last 20');
+  // This week, in one line.
+  const days = [...Array(7)].map((_, i) => addDays(t, i - 6)), studiedDays = days.filter(d => appData.history[d]).length;
+  const c = calibStats(), revAcc = c.n >= 20 ? Math.round(c.act * 100) : appData.stats.totalReviews ? Math.round(appData.stats.correctReviews / appData.stats.totalReviews * 100) : null;
   const pTarget = days.reduce((a, d) => { const q = practiceQuota(d); return a + q.listen + q.read; }, 0), pDone = practiceThisWeek();
-  const leeches = Object.entries(appData.cards).filter(([k, c]) => !/^[pc]:/.test(k) && (c.lapses || 0) >= LEECH_LAPSES)
-    .sort((a, b) => b[1].lapses - a[1].lapses), nMissed = leeches.length;
-  const missed = leeches.slice(0, 4).map(([k]) => /^[vg]:/.test(k) ? k.slice(2) : k);
-  const focus = pDone < pTarget * 0.6 ? 'more listening & reading: let Study reach its exam practice, and use the bonus'
-    : acc != null && acc < 85 ? 'accuracy over new cards: skip extras, repair missed cards with the bonus'
-    : 'keep going: the plan is working';
-  const cls = (v, good, ok) => v >= good ? 'ok' : v >= ok ? '' : 'behind';
-  return `<div class="panel stack"><div class="section-label">This week</div>
-    <div class="ready2">
-      <b>Days studied</b><span class="${cls(studied, 6, 4)} num">${studied}/7</span><span class="d muted num">${reviews} answers</span>
-      <b>Accuracy</b><span class="${acc == null ? '' : cls(acc, 85, 75)} num">${acc == null ? '–' : acc + '%'}</span><span class="d muted">all answers, incl. first checks of new cards</span>
-      ${(() => { const c = calibStats(), k = appData.calibK;
-        if (!c.n) return '';
-        const act = Math.round(c.act * 100), pre = Math.round(c.pre * 100);
-        const note = c.n < CALIB_MIN ? `predicted ${pre}% · spacing tuned after ${CALIB_MIN} reviews (${c.n} so far)`
-          : !k || k.k === 1 ? `predicted ${pre}% · spacing fits you, unchanged`
-          : `predicted ${pre}% · spacing ${k.k < 1 ? 'shortened' : 'stretched'} ${Math.round(Math.abs(1 - k.k) * 100)}% to fit you`;
-        return `<b>Reviews</b><span class="${cls(act, 88, 80)} num">${act}%</span><span class="d muted">${note}</span>`; })()}
-      <b>Exam practice</b><span class="${cls(pDone, pTarget, pTarget * 0.6)} num">${pDone}/${pTarget}</span><span class="d muted">listening &amp; reading items</span>
-      ${nMissed ? `<b>Most missed</b><span class="num">${nMissed}</span><span class="d" lang="ja">${missed.map(esc).join('、')}</span>` : ''}
+  const k = appData.calibK;
+  const focus = !appData.stats.totalReviews ? 'start with Study: it sets up everything else'
+    : pDone < pTarget * 0.6 ? 'more listening & reading: finish Study (it includes them) and use the bonus'
+    : revAcc != null && revAcc < 85 ? 'accuracy before new cards: skip extras, let the bonus repair missed cards'
+    : 'keep going, the plan is working';
+  const next = (marks || []).find(x => x.left >= 0);
+  return `<div class="panel stack tracker">
+    <div class="section-label">How you're doing · pass = 95/180 and 19/60 in each section</div>
+    <div class="tk-row">
+      ${m ? tile('Vocab & grammar', `${m.lk}/60`, cls(m.lk, 30, 19), 'last practice test') : tile('Vocab & grammar', studied + '%', '', `studied: ${st.kanji.have} kanji · ${st.vocab.have} words · ${st.grammar.have} grammar`)}
+      ${sec('read', m && m.rd)}${sec('listen', m && m.ls)}
     </div>
+    <div class="tk-week"><span class="muted">This week</span>
+      <span class="${cls(studiedDays, 6, 4)} num">${studiedDays}/7 days</span>
+      <span class="${cls(revAcc, 88, 80)} num">${revAcc == null ? '–' : revAcc + '%'} remembered${k && k.k !== 1 ? ` <small class="muted">(spacing ${k.k < 1 ? '−' : '+'}${Math.round(Math.abs(1 - k.k) * 100)}%)</small>` : ''}</span>
+      <span class="${cls(pDone, pTarget, pTarget * 0.6)} num">${pDone}/${pTarget} practice</span></div>
     <div class="plan-line">Focus: <b>${focus}</b>.</div>
+    ${next ? `<div class="plan-line muted">Next: ${esc(next.label)} · ${new Date(next.d + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' })} · ${next.left ? 'in ' + next.left + ' days' : 'today'}</div>` : ''}
   </div>`;
 }
 // The plan's practice-test days (4 and 1 weeks before the exam, 2 if there's a buffer): a score form on Today.
