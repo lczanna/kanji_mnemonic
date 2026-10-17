@@ -1768,6 +1768,14 @@ function trackerHtml(marks) {
       <span class="${cls(studiedDays, 6, 4)} num">${studiedDays}/7 days</span>
       <span class="${cls(revAcc, 88, 80)} num">${revAcc == null ? '–' : revAcc + '%'} remembered${k && k.k !== 1 ? ` <small class="muted">(spacing ${k.k < 1 ? '−' : '+'}${Math.round(Math.abs(1 - k.k) * 100)}%)</small>` : ''}</span>
       <span class="${cls(pDone, pTarget, pTarget * 0.6)} num">${pDone}/${pTarget} practice</span></div>
+    ${(() => {   // most-missed cards, written the way you studied them (ちんたい, not 賃貸)
+      const shown = key => { if (key.startsWith('g:')) { const g = BY_GID[key.slice(2)]; return g ? g.pattern : null; }
+        if (!key.startsWith('v:')) return BY_KANJI[key] ? key : null;
+        const v = BY_WORD[key.slice(2)]; return v ? (vform(v) === 'kanji' ? v.w : v.r) : null; };
+      const ms = Object.entries(appData.cards).filter(([k, c]) => !/^[pc]:/.test(k) && (c.lapses || 0) >= LEECH_LAPSES)
+        .sort((a, b) => b[1].lapses - a[1].lapses).map(([k]) => shown(k)).filter(Boolean);
+      return ms.length ? `<div class="tk-week"><span class="muted">Most missed</span><span lang="ja">${ms.slice(0, 5).map(esc).join('、')}${ms.length > 5 ? ` <span class="muted">+${ms.length - 5}</span>` : ''}</span></div>` : '';
+    })()}
     <div class="plan-line">Focus: <b>${focus}</b>.</div>
     ${next ? `<div class="plan-line muted">Next: ${esc(next.label)} · ${new Date(next.d + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' })} · ${next.left ? 'in ' + next.left + ' days' : 'today'}</div>` : ''}
   </div>`;
