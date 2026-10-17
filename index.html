@@ -415,7 +415,7 @@ const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
   return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
-           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {},
+           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {}, calib: {}, calibK: null,
            settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
                        minWeekday: 30, minWeekend: 60 } };
 }
@@ -458,7 +458,7 @@ function syncBodies() {
     triaged: d.triaged, lastBackup: d.lastBackup || null, hideHomeTip: !!d.hideHomeTip,
     planStart: d.planStart || null, timing: d.timing || null,
     lookSeen: d.lookSeen || {}, confusions: d.confusions || {}, sprintBest: d.sprintBest || 0,
-    practice: d.practice || {}, mocks: d.mocks || [], historyOk: d.historyOk || {} } };
+    practice: d.practice || {}, mocks: d.mocks || [], historyOk: d.historyOk || {}, calib: d.calib || {}, calibK: d.calibK || null } };
   shards.forEach((cards, i) => { bodies['cards' + i] = { cards }; });
   return bodies;
 }
@@ -507,6 +507,8 @@ function mergeRemote(remote) {
   for (const [day, n] of Object.entries(m.history || {})) d.history[day] = Math.max(d.history[day] || 0, n);
   for (const [day, n] of Object.entries(m.newByDay || {})) d.newByDay[day] = Math.max(d.newByDay[day] || 0, n);
   for (const [day, n] of Object.entries(m.historyOk || {})) d.historyOk[day] = Math.max(d.historyOk[day] || 0, n);
+  for (const [day, x] of Object.entries(m.calib || {})) if (!d.calib[day] || x.n > d.calib[day].n) d.calib[day] = JSON.parse(JSON.stringify(x));
+  if (m.calibK && (!d.calibK || m.calibK.date > d.calibK.date)) d.calibK = JSON.parse(JSON.stringify(m.calibK));
   for (const [k, v] of Object.entries(m.triaged || {})) if (!d.triaged[k]) d.triaged[k] = v;
   const rs = m.stats || {};
   d.stats.totalReviews = Math.max(d.stats.totalReviews || 0, rs.totalReviews || 0);
@@ -601,17 +603,42 @@ function schedule(key, grade) {
   } else {
     const elapsed = Math.max(0, daysBetween(c.lastReview || t, t));
     const r = FSRS.R(Math.max(elapsed, 0.5), Math.max(c.stability || 0.5, 0.1));
+    // A real review (the card was last seen on an earlier day): record what the model predicted and what happened.
+    if (elapsed >= 1) { const x = appData.calib[t] = appData.calib[t] || { n: 0, ok: 0, pr: 0 }; x.n++; x.pr += r; if (grade > 1) x.ok++; }
     c.stability = Math.max(0.1, FSRS.nextS(c.difficulty || 5, c.stability || 0.5, r, grade));
     c.difficulty = FSRS.nextD(c.difficulty || 5, grade);
     c.reps = (c.reps || 0) + 1;
     if (grade === 1) c.lapses = (c.lapses || 0) + 1;
     c.lastReview = t;
   }
-  let days = Math.min(maxInterval(), FSRS.interval(c.stability, ret));
+  let days = Math.min(maxInterval(), Math.max(1, Math.round(FSRS.interval(c.stability, ret) * calibFactor())));
   // New cards always come back tomorrow (unless "Easy"): the first overnight check is where most forgetting happens.
   if (c.reps === 1 && grade < 4) days = Math.min(days, 1);
   c.due = addDays(t, days);
   appData.cards[key] = c;
+}
+// ============ CALIBRATION ============
+// FSRS's stock parameters fit the average learner. Each real review records the recall chance the model predicted
+// and whether you got it right. Once there are 150 such reviews in the last 4 weeks, the app compares the two:
+// if you remember less than predicted, intervals shrink (at most 20%); if more, they stretch (at most 15%).
+// The factor is re-checked weekly. Predictions use the model's own stability, so a change doesn't undo itself.
+const CALIB_MIN = 150;
+function calibStats() {
+  const from = addDays(today(), -27);
+  let n = 0, ok = 0, pr = 0;
+  for (const [d, x] of Object.entries(appData.calib)) if (d >= from) { n += x.n; ok += x.ok; pr += x.pr; }
+  return { n, act: n ? ok / n : null, pre: n ? pr / n : null };
+}
+function calibFactor() {
+  const k = appData.calibK, t = today();
+  if (k && daysBetween(k.date, t) < 7) return k.k;
+  const s = calibStats();
+  if (s.n < CALIB_MIN) return k ? k.k : 1;
+  // Same forgetting curve, solved for the stability that would have predicted what happened.
+  let f = Math.abs(s.act - s.pre) < 0.02 || s.act >= 0.995 ? 1 : Math.log(s.pre) / Math.log(s.act);
+  f = Math.round(Math.min(1.15, Math.max(0.8, f)) * 100) / 100;
+  appData.calibK = { k: f, date: t, act: Math.round(s.act * 100), pre: Math.round(s.pre * 100), n: s.n };
+  return f;
 }
 function markKnown(key) {
   // "Already know it": skip the lesson, but check it within the week (2–7 days, spread so they don't arrive
@@ -1731,7 +1758,14 @@ function weekHtml() {
   return `<div class="panel stack"><div class="section-label">This week</div>
     <div class="ready2">
       <b>Days studied</b><span class="${cls(studied, 6, 4)} num">${studied}/7</span><span class="d muted num">${reviews} answers</span>
-      <b>Accuracy</b><span class="${acc == null ? '' : cls(acc, 85, 75)} num">${acc == null ? '–' : acc + '%'}</span><span class="d muted">aim: 85–90%</span>
+      <b>Accuracy</b><span class="${acc == null ? '' : cls(acc, 85, 75)} num">${acc == null ? '–' : acc + '%'}</span><span class="d muted">all answers, incl. first checks of new cards</span>
+      ${(() => { const c = calibStats(), k = appData.calibK;
+        if (!c.n) return '';
+        const act = Math.round(c.act * 100), pre = Math.round(c.pre * 100);
+        const note = c.n < CALIB_MIN ? `predicted ${pre}% · spacing tuned after ${CALIB_MIN} reviews (${c.n} so far)`
+          : !k || k.k === 1 ? `predicted ${pre}% · spacing fits you, unchanged`
+          : `predicted ${pre}% · spacing ${k.k < 1 ? 'shortened' : 'stretched'} ${Math.round(Math.abs(1 - k.k) * 100)}% to fit you`;
+        return `<b>Reviews</b><span class="${cls(act, 88, 80)} num">${act}%</span><span class="d muted">${note}</span>`; })()}
       <b>Exam practice</b><span class="${cls(pDone, pTarget, pTarget * 0.6)} num">${pDone}/${pTarget}</span><span class="d muted">listening &amp; reading items</span>
       ${nMissed ? `<b>Most missed</b><span class="num">${nMissed}</span><span class="d" lang="ja">${missed.map(esc).join('、')}</span>` : ''}
     </div>
