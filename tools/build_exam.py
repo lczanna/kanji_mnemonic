@@ -97,6 +97,14 @@ def build_mocks(spec, qr, dlg, read, words, vocab, jm, fixes):
         ctx_words = pick(mid, 11, lambda v: v['w'] in words and 'ctx' in words[v['w']])
         para_words = pick(by_rank[:600], 5, lambda v: v['w'] in words and 'para' in words[v['w']])
         use_words = pick(by_rank[:600], 5, lambda v: v['w'] in words and 'usage' in words[v['w']])
+        # Questions and options are tappable too (reading and meaning of each word).
+        for q in sp['fill']:
+            q['gl'] = gloss_all([q['q'], *q['options']], jm, fixes)
+        sp['textgram']['gl'] = gloss_all([sp['textgram']['text'], *[o for b in sp['textgram']['blanks'] for o in b['options']]], jm, fixes)
+        for g in sp['gist']:
+            g['gl'] = gloss_all([*g['talk'], g['question'], *g['options']], jm, fixes)
+        for g in sp['say']:
+            g['gl'] = gloss_all([g['intro'], *g['options']], jm, fixes)
         m = {'id': sid,
              'vocab': {'read': [v['w'] for v in pick(mid, 8)],
                        'spell': [v['w'] for v in pick(mid, 6, lambda v: len(v.get('d') or []) == 3)],
@@ -105,7 +113,7 @@ def build_mocks(spec, qr, dlg, read, words, vocab, jm, fixes):
                        'usage': [dict(words[v['w']].pop('usage'), w=v['w'] if v.get('f') == 'kanji' else v['r']) for v in use_words]},
              'gram': {'fill': sp['fill'], 'order': sp['order'], 'textgram': sp['textgram']},
              'read': [*take(read, 4, lambda x: x['kind'] == 'short'), *take(read, 2, lambda x: x['kind'] == 'medium'),
-                      dict(sp['long'], kind='long', gl=gloss_all([sp['long']['text']], jm, fixes)), *take(read, 1, lambda x: x['kind'] == 'info')],
+                      dict(sp['long'], kind='long', gl=gloss_all([sp['long']['text'], *[t for q in sp['long']['questions'] for t in [q['q'], *q['options']]]], jm, fixes)), *take(read, 1, lambda x: x['kind'] == 'info')],
              'listen': []}
         for g in sp['gist'] + sp['say']:
             mock_listen.append(g)
@@ -133,9 +141,9 @@ def main():
     for x in qr:
         x['gl'] = gloss_all([x['line'], *x['options']], jm, fixes)
     for x in dlg:
-        x['gl'] = gloss_all([t['t'] for t in x['turns']], jm, fixes)
+        x['gl'] = gloss_all([t['t'] for t in x['turns']] + [x['question'], *x['options']], jm, fixes)
     for x in read:
-        x['gl'] = gloss_all([x['text']], jm, fixes)
+        x['gl'] = gloss_all([x['text'], *[t for q in x['questions'] for t in [q['q'], *q['options']]]], jm, fixes)
     vocab = json.loads((ROOT / 'vocab.json').read_text(encoding='utf8'))
     examples = json.loads((ROOT / 'examples.json').read_text(encoding='utf8'))
     ctx = ctx_questions(vocab, examples, random.Random(7))

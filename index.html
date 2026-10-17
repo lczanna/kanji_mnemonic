@@ -85,6 +85,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 
 .cta { display: grid; gap: 10px; }
+.opt-notes .right-note { border-left-color: var(--good); color: var(--ink); }
 .missed-words { display: grid; gap: 4px; font-size: 14px; }
 .tk-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .tk { display: grid; gap: 2px; align-content: start; border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; }
@@ -1701,6 +1702,16 @@ function practiceAccuracy(kind) {
     .map(([, r]) => r).sort((a, b) => (a.d < b.d ? 1 : -1)).slice(0, 20);
   return rs.length >= 5 ? Math.round(rs.filter(r => r.ok).length / rs.length * 100) : null;
 }
+// After answering: every option, tappable, with its English and (for the wrong ones) why it doesn't fit.
+// The one you picked is marked; the right one gets a tick.
+function optNotesHtml(q, chosen) {
+  if (!q || !q.options) return '';
+  const en = q.opts_en || [], w = q.wrong || {};
+  return `<div class="wrongs opt-notes">${q.options.map((o, i) => {
+    const right = i === q.answer, mine = i === chosen && !right;
+    return `<div class="${mine ? 'picked' : right ? 'right-note' : ''}"><b lang="ja">${i + 1}. ${glossHtml(o)}</b>${en[i] ? ` <span class="muted">· ${esc(en[i])}</span>` : ''}${right ? ' <span class="ok">✓</span>' : w[i] ? `<br>${esc(w[i])}` : ''}</div>`;
+  }).join('')}</div>`;
+}
 function examScreen(it, tags) {
   const x = it.x, id = x.id, done = session.revealed;
   const kind = id.startsWith('qr') ? 'qr' : id.startsWith('dl') ? 'dlg' : 'read';
@@ -1721,17 +1732,16 @@ function examScreen(it, tags) {
   if (kind === 'dlg') {
     tags.push('<span class="tag" lang="ja">聴解 · 会話 DIALOGUE</span>');
     const front = `<button class="big-play" data-play="${esc(id)}" aria-label="Play">▶</button>
-      <div class="prompt" lang="ja">${esc(x.question)}</div>
+      <div class="prompt" lang="ja">${glossHtml(x.question)}</div>
       ${optBtns(0, x.options, false)}
-      ${done ? `<div class="ex-script">${x.turns.map(t => `<div lang="ja"><b>${t.s === 'M' ? '男' : '女'}:</b> ${glossHtml(t.t)}</div>`).join('')}
-        <details><summary>English</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details>
-        <div class="why">${esc(x.why || '')}</div></div>` : ''}`;
+      ${done ? `<div class="why">${esc(x.why || '')}</div>${optNotesHtml(x, it.answers[0])}<div class="ex-script">${x.turns.map(t => `<div lang="ja"><b>${t.s === 'M' ? '男' : '女'}:</b> ${glossHtml(t.t)}</div>`).join('')}
+        <details><summary>English</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details></div>` : ''}`;
     return { inner: { front }, bar: done ? examBar(it) : pickHint('The exam plays it once; here you can replay with ▶') };
   }
   tags.push(`<span class="tag" lang="ja">読解 · ${x.kind === 'info' ? '情報検索 FIND THE INFO' : x.kind === 'medium' ? '中文 PASSAGE' : '短文 SHORT TEXT'}</span>`);
   const front = `<div class="passage" lang="ja">${x.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div>
-    ${x.questions.map((q, qi) => `<div class="g-q" lang="ja" style="font-size:16px">${esc(q.q)}</div>${optBtns(qi, q.options, false)}
-      ${it.answers[qi] != null ? `<div class="why">${esc(q.why || '')}</div>` : ''}`).join('')}
+    ${x.questions.map((q, qi) => `<div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q)}</div>${optBtns(qi, q.options, false)}
+      ${it.answers[qi] != null ? `<div class="why">${esc(q.why || '')}</div>${optNotesHtml(q, it.answers[qi])}` : ''}`).join('')}
     ${done ? `<details><summary>English translation</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details>` : ''}`;
   return { inner: { front }, bar: done ? examBar(it) : pickHint('Tap any word for its reading and meaning') };
 }
@@ -1877,19 +1887,19 @@ function buildMock(m) {
   for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${ctxHtml(q.s)}</div>`, q.options, q.answer, q.en);
   for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${paraHtml(q.s)}</div>`, q.options, q.answer, q.why);
   for (const q of m.vocab.usage) add('vocab', 'lk', '用法 · correct usage', `<div class="word-front" lang="ja">${esc(q.w)}</div>`, q.options, q.answer, q.why, { long: true });
-  for (const q of m.gram.fill) add('gr', 'lk', '文法形式 · grammar', `<div class="g-q" lang="ja">${esc(q.q).replace('（　）', '<span class="blank">（　　）</span>')}</div>`, q.options, q.answer, q.why);
+  for (const q of m.gram.fill) add('gr', 'lk', '文法形式 · grammar', `<div class="g-q" lang="ja">${ctxHtml(q.q)}</div>`, q.options, q.answer, q.why, { notes: q });
   for (const o of m.gram.order) { const [opts, a] = shuf(o.chunks, o.star);
     const slots = [0, 1, 2, 3].map(i => `<span class="slot">${i === o.star ? '★' : '＿＿'}</span>`).join('');
     add('gr', 'lk', '文の組み立て · ★ which part', `<div class="g-q order" lang="ja"><span>${esc(o.before)}</span>${slots}<span>${esc(o.after)}</span></div>`, opts, a, `${o.before}${o.chunks.join('')}${o.after} · ${o.why || ''}`); }
   const tg = m.gram.textgram;
-  if (tg) tg.blanks.forEach((b, i) => add('gr', 'lk', '文章の文法 · grammar in a text', `<div class="passage" lang="ja">${tg.text.split('\n').map(l => `<p>${esc(l)}</p>`).join('')}</div><div class="prompt">Which fits blank （${i + 1}）?</div>`, b.options, b.answer, b.why));
+  if (tg) tg.blanks.forEach((b, i) => add('gr', 'lk', '文章の文法 · grammar in a text', `<div class="passage" lang="ja">${tg.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div><div class="prompt">Which fits blank （${i + 1}）?</div>`, b.options, b.answer, b.why, { notes: b }));
   for (const p of m.read) p.questions.forEach(q => add('gr', 'rd', `読解 · ${p.kind === 'info' ? 'find the information' : p.kind === 'long' ? 'long passage' : p.kind === 'medium' ? 'passage' : 'short text'}`,
-    `<div class="passage" lang="ja">${p.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div><div class="g-q" lang="ja" style="font-size:16px">${esc(q.q)}</div>`, q.options, q.answer, q.why));
+    `<div class="passage" lang="ja">${p.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div><div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q)}</div>`, q.options, q.answer, q.why, { notes: q }));
   for (const id of m.listen) { const x = examById(id) || mockListenById(id); if (!x) continue;
-    if (id.startsWith('dl')) add('listen', 'ls', '聴解 · 会話', `<div class="prompt" lang="ja">${esc(x.question)}</div>`, x.options, x.answer, x.why, { play: id });
-    else if (id.startsWith('mg')) add('listen', 'ls', '聴解 · 概要理解 (the question and options are spoken)', '', x.options.map(() => ''), x.answer, x.why, { play: id });
-    else if (id.startsWith('ms')) add('listen', 'ls', '聴解 · 発話表現 (what do you say?)', `<div class="notice">${esc(x.scene)}</div>`, x.options.map(() => ''), x.answer, x.why, { play: id });
-    else add('listen', 'ls', '聴解 · 即時応答 (replies are spoken)', '', x.options.map(() => ''), x.answer, x.why, { play: id }); }
+    if (id.startsWith('dl')) add('listen', 'ls', '聴解 · 会話', `<div class="prompt" lang="ja">${glossHtml(x.question)}</div>`, x.options, x.answer, x.why, { play: id, notes: x });
+    else if (id.startsWith('mg')) add('listen', 'ls', '聴解 · 概要理解 (the question and options are spoken)', '', x.options.map(() => ''), x.answer, x.why, { play: id, notes: x });
+    else if (id.startsWith('ms')) add('listen', 'ls', '聴解 · 発話表現 (what do you say?)', `<div class="notice">${esc(x.scene)}</div>`, x.options.map(() => ''), x.answer, x.why, { play: id, notes: x });
+    else add('listen', 'ls', '聴解 · 即時応答 (replies are spoken)', '', x.options.map(() => ''), x.answer, x.why, { play: id, notes: x }); }
   return Q;
 }
 function startMock(setId) {
@@ -1959,7 +1969,8 @@ function mockEndHtml() {
     <div class="ready">${row('Vocabulary &amp; grammar', 'lk')}${row('Reading', 'rd')}${row('Listening', 'ls')}</div>
     <p class="muted">Saved: a section under 30 now gets double daily practice.</p>
     <details><summary>Review your ${wrong.length} mistake${wrong.length === 1 ? '' : 's'}</summary><div class="wrongs" style="margin-top:8px">${wrong.map(([q, i]) => `<div class="picked"><b>${esc(q.part)}</b>${q.play ? '' : `<span lang="ja">${q.prompt.replace(/<[^>]+>/g, ' ').slice(0, 160)}</span>`}<br>
-      Your answer: <span lang="ja">${session.answers[i] == null ? '—' : esc(q.opts[session.answers[i]] || String(session.answers[i] + 1))}</span> · right: <span lang="ja">${esc(q.opts[q.answer] || String(q.answer + 1))}</span><br><span class="muted">${esc(q.why)}</span></div>`).join('')}</div></details>
+      Your answer: <span lang="ja">${session.answers[i] == null ? '—' : esc(q.opts[session.answers[i]] || String(session.answers[i] + 1))}</span> · right: <span lang="ja">${esc(q.opts[q.answer] || String(q.answer + 1))}</span><br><span class="muted">${esc(q.why)}</span>
+      ${q.notes ? optNotesHtml(q.notes, session.answers[i]) : ''}</div>`).join('')}</div></details>
   </div></div>`;
 }
 
@@ -2944,7 +2955,8 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
     if (!ex || Array.isArray(ex)) return;
     EXAM = Object.assign({ qr: [], dlg: [], read: [], vocab: {} }, ex);
     for (const x of EXAM.read) for (const [ja, gl] of Object.entries(x.gl || {})) GL[ja] = gl;
-    for (const x of [...EXAM.qr, ...EXAM.dlg, ...(EXAM.mock_items || []), ...(EXAM.mocks || []).flatMap(m => m.read)]) for (const [ja, gl] of Object.entries(x.gl || {})) GL[ja] = gl;
+    for (const x of [...EXAM.qr, ...EXAM.dlg, ...(EXAM.mock_items || []), ...(EXAM.mock_listen || []), ...(EXAM.mocks || []).flatMap(m => [...m.read, ...m.gram.fill, m.gram.textgram].filter(Boolean))])
+      for (const [ja, gl] of Object.entries(x.gl || {})) GL[ja] = gl;
     for (const q of [...Object.values(EXAM.vocab), ...(EXAM.mocks || []).map(m => m.vocab)])
       for (const x of [...(q.ctx || []), ...[].concat(q.para || [], q.usage || [])]) Object.assign(GL, x.gl || {});
     planCache = null;
