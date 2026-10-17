@@ -19,6 +19,10 @@ Word pictures go to images/words/<word id>.jpg and vocab.json gets "img".
   python3 tools/gen_images.py --groups               # look-alike groups without a picture (data/lookalike_groups.json "scene")
 
 Group pictures go to images/lookalikes/<group id>.jpg; rerun tools/build_lookalikes.py afterwards.
+
+  python3 tools/gen_images.py --parts                # part cards without a picture (data/part_cards.json "picture")
+
+Part pictures go to images/parts/<code>.jpg; rerun tools/build_parts.py afterwards.
 """
 import argparse, base64, io, json, os, re, sys, time, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
@@ -32,6 +36,7 @@ VOCAB = ROOT / 'vocab.json'
 GROUPS = ROOT / 'data' / 'lookalike_groups.json'
 GOUT = ROOT / 'images' / 'lookalikes'
 WOUT = ROOT / 'images' / 'words'
+POUT = ROOT / 'images' / 'parts'
 API = 'https://api.openai.com/v1'
 # Newest first; the first one this key can use is picked.
 MODELS = ['gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2', 'gpt-image-1.5', 'gpt-image-1']
@@ -208,7 +213,9 @@ def feature_prompt(f):
 
 
 def generate(card, model, quality, suffix=''):
-    if 'feature' in card:   # one kanji of a look-alike group
+    if card.get('partcard'):   # a part card
+        name, out, text, key = f"{ord(card['kanji']):x}.jpg", POUT, f"{STYLE}\n\nScene: {depict(card['picture'])}\nThe idea to convey is '{card['keyword']}'.", card['kanji']
+    elif 'feature' in card:   # one kanji of a look-alike group
         name, out, text, key = f"{card['gid']}_{ord(card['kanji']):04x}.jpg", GOUT, feature_prompt(card), (card['gid'], card['kanji'])
     elif 'scene' in card:   # a look-alike group
         name, out, text, key = f"{card['id']}.jpg", GOUT, group_prompt(card), card['id']
@@ -245,6 +252,7 @@ def main():
     g.add_argument('--features', action='store_true', help='one picture per kanji in each look-alike group (its distinguishing feature)')
     g.add_argument('--words', action='store_true', help='every word with a memory hook but no picture yet')
     g.add_argument('--word', help='specific words, comma-separated, e.g. 賃貸,桜')
+    g.add_argument('--parts', action='store_true', help='part cards without a picture')
     g.add_argument('--leeches', metavar='PROGRESS_JSON', help='cards missed 3+ times, from a progress download')
     ap.add_argument('--quality', default='medium', choices=['low', 'medium', 'high'])
     ap.add_argument('--workers', type=int, default=4)
@@ -266,7 +274,12 @@ def main():
     GOUT.mkdir(parents=True, exist_ok=True)
 
     kw = {c['kanji']: c['keyword'] for c in cards}
-    if a.features:
+    if a.parts:
+        POUT.mkdir(parents=True, exist_ok=True)
+        pc = json.loads((ROOT / 'data' / 'part_cards.json').read_text(encoding='utf8'))
+        jobs = [(dict(x, kanji=g, partcard=True), a.quality, '') for g, x in pc.items()
+                if not g.startswith('_') and x.get('picture') and not (POUT / f'{ord(g):x}.jpg').exists()]
+    elif a.features:
         jobs = [(dict(f, gid=g['id'], kanji=k, keyword=kw.get(k, '')), a.quality, '') for g in groups for k, f in (g.get('mn') or {}).items()
                 if f.get('picture') and not f.get('img')]
     elif a.groups:
@@ -297,7 +310,9 @@ def main():
                 failed.append((k, err)); print('FAIL', k, err)
             else:
                 done += 1
-                if a.features:
+                if a.parts:
+                    pass   # build_parts.py picks up images/parts/<code>.jpg
+                elif a.features:
                     by_group[k[0]]['mn'][k[1]]['img'] = rel
                 elif a.groups:
                     by_group[k]['img'] = rel
@@ -309,7 +324,9 @@ def main():
                     by[k]['image'] = rel
                 print(f'{done}/{len(jobs)}', k, rel)
 
-    if a.groups or a.features:
+    if a.parts:
+        pass
+    elif a.groups or a.features:
         GROUPS.write_text(json.dumps(groups, ensure_ascii=False, indent=1), encoding='utf8')
     elif a.words or a.word:
         VOCAB.write_text(json.dumps(vocab, ensure_ascii=False, separators=(',', ':')), encoding='utf8')

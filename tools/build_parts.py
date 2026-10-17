@@ -11,6 +11,8 @@ Teach parts before the kanji built from them, and record what each non-deck part
 3. A part name can stand for different glyphs: [head] is the kanji 頭 in some stories but the part 頁 in 題,
    [house] is 家 or the roof 宀. When the map's glyph isn't inside a card's kanji (by the IDS breakdown) and
    another glyph with that name is, the card gets "pg": {part name: glyph}, which the app shows instead.
+4. Part cards (data/part_cards.json) go into kanji.json "partCards", each with "usedIn": the deck kanji whose
+   story uses it (in deck order) and "image" when images/parts/<code>.jpg exists.
 
   curl -sSO https://raw.githubusercontent.com/cjkvi/cjkvi-ids/master/ids.txt
   python3 tools/build_parts.py ids.txt
@@ -143,6 +145,17 @@ def main():
 
     for c in cards:
         place(c['kanji'])
+    pc = json.loads((ROOT / 'data' / 'part_cards.json').read_text(encoding='utf8'))
+    part_cards = []
+    for g, x in pc.items():
+        if g.startswith('_'):
+            continue
+        used = [c['kanji'] for c in order if any(((c.get('pg') or {}).get(n) or parts.get(n, {}).get('g')) == g
+                                                 for n in re.findall(r'\[([^\]]+)\]', c['story']))]
+        img = f'images/parts/{ord(g):x}.jpg'
+        part_cards.append(dict({'kanji': g, 'keyword': x['keyword'], 'components': x.get('components') or [], 'story': x['story'],
+                                'usedIn': used}, **({'image': img} if (ROOT / img).exists() else {})))
+    deck['partCards'] = sorted(part_cards, key=lambda p: min((i for i, c in enumerate(order) if c['kanji'] in p['usedIn']), default=9999))
     moved = sum(1 for a, b in zip(cards, order) if a is not b)
     deck['cards'] = order
     deck['parts'] = parts
