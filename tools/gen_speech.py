@@ -3,7 +3,7 @@
 Recorded audio for the ▶ buttons: the most useful words and sentences, spoken by OpenAI's neural voices in place
 of the phone's (better pitch accent and readings, and several different voices to get used to).
 
-What's recorded: the top 1,200 words, their example sentences, and the grammar examples, fill-in answers and
+What's recorded: every word, the example sentences of the top 1,200 words, and the grammar examples, fill-in answers and
 ordering sentences. Each clip is speech/<id>.mp3 (id = hash of the text the app speaks); speech/index.json maps that
 text to the id. Clips are checked like the listening items (transcribed back and compared with the reading).
 
@@ -42,6 +42,8 @@ def plan():
     for v in sorted(vocab, key=lambda v: v.get('p', 9999))[:FOCUS]:
         texts.append(say_text(v['w'], v['r']))
         texts += [ex[0] for ex in examples.get(v['w'], [])]
+    # The other words too (word only): the phone's voice can misread a compound (上京 as かみぎょう).
+    texts += [say_text(v['w'], v['r']) for v in sorted(vocab, key=lambda v: v.get('p', 9999))[FOCUS:]]
     for g in grammar:
         texts += [x['ja'] for x in g['examples']]
         texts += [f['q'].replace('（　）', f['choices'][f['answer']]) for f in g['fill']]
@@ -84,6 +86,7 @@ def main():
     g.add_argument('--plan', action='store_true'); g.add_argument('--run', action='store_true')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--workers', type=int, default=6)
+    ap.add_argument('--drop-weak', action='store_true', help="keep clips that didn't pass the check out of the index")
     a = ap.parse_args()
     texts = plan()
     if a.plan:
@@ -102,8 +105,10 @@ def main():
         for n, (text, cid, score, txt, err) in enumerate(pool.map(record, todo), 1):
             if err or score < 0.8:
                 weak[text] = {'score': round(score, 3), 'heard': txt, 'error': err}
-            if not err:
+            if not err and (score >= 0.8 or not a.drop_weak):
                 index[text] = cid
+            elif not err:
+                (OUT / f'{cid}.mp3').unlink(missing_ok=True)   # misread: the app's phone voice reads the kana instead
             if n % 100 == 0:
                 idx_path.write_text(json.dumps(index, ensure_ascii=False), encoding='utf8')
                 print(f'{n}/{len(todo)}', flush=True)

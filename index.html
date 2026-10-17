@@ -868,6 +868,9 @@ document.addEventListener('pointerdown', e => {
 // Words and sentences recorded with neural voices (tools/gen_speech.py): speech/index.json maps the text to a clip.
 let REC = null;   // loaded with the other data at start-up
 function speak(text) {
+  // A deck word's button made before the recordings list loaded still names the kanji; sayText now knows better.
+  const v = BY_WORD[text];
+  if (v && REC && !REC[text]) text = sayText(v.w, v.r);
   const id = REC && REC[text];
   if (id) return playRecorded(id, () => speakTTS(text), 'speech');
   speakTTS(text);
@@ -889,10 +892,16 @@ function speakTTS(text) {
 // Compounds with more than one reading (一日: いちにち or ついたち) and number words keep the kana too.
 const isKanji = c => /[\u4e00-\u9fff々]/.test(c);
 const SAY_KANA = new Set(['今日', '明日', '明後日', '一昨日', '日本', '昨夜', '昨日', '大人', '上手', '下手', '人気', '今年', '生物', '最中', '大家', '市場', '風車', '色紙', '一行', '心中', '工夫', '見物', '仮名', '目下', '十分', '分別', '上下', '大事', '一寸', '大分', '後生', '寒気', '上着', '下手']);
+// A compound without a recording goes to the phone's voice as kana too: from the kanji alone it can guess
+// another reading (上京 came out かみぎょう, a district of Kyoto, instead of じょうきょう).
+const longVowels = r => r.replace(/([おこごそぞとどのほぼぽもよろょ])う/g, '$1ー');
 function sayText(w, r) {
   const n = [...w].filter(isKanji).length;
-  if (n >= 2 && !SAY_KANA.has(w) && !/[一二三四五六七八九十百千万何]/.test(w)) return w;
-  if (n && isKanji(w[w.length - 1])) return r.replace(/([おこごそぞとどのほぼぽもよろょ])う/g, '$1ー');
+  if (n >= 2 && !SAY_KANA.has(w) && !/[一二三四五六七八九十百千万何]/.test(w)) {
+    if (!REC || REC[w]) return w;
+    return isKanji(w[w.length - 1]) ? longVowels(r) : longVowels(r.slice(0, -1)) + r.slice(-1);
+  }
+  if (n && isKanji(w[w.length - 1])) return longVowels(r);
   return r;
 }
 // Sentences keep their kanji; tapping a word shows its reading and meaning.
