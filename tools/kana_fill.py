@@ -5,6 +5,8 @@ Tap-to-read meanings for kana words in every sentence the app shows (word exampl
 Example sentences are glossed from the corpus's sense tags, which skip most kana words, and the other sentences
 only glossed kana words on the short checked list. This adds the kana words the sentence's glosses still miss,
 with meanings from tools/kana_glosses.py (data/kana_meanings.json). Glosses already there are kept as they are.
+It also fills words that kept no meaning at all (names, numbers, polite ご/お forms, half-kana compounds the
+dictionary lacks, like ご利用 or 牛にゅう) from data/gloss_missing.json, with a checked reading.
 Run it after build_examples.py, gloss_grammar.py or build_exam.py; running it twice changes nothing.
 
   python3 tools/kana_fill.py
@@ -16,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gloss_grammar import HAS_KANJI, MODE, TOK, kana_gloss  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
+MISSING = {k: v for k, v in json.loads((ROOT / 'data' / 'gloss_missing.json').read_text(encoding='utf8')).items() if not k.startswith('_')}
 KANA = re.compile(r'[ぁ-ヿ]')
 
 
@@ -36,6 +39,12 @@ def fill(text, gl):
         g = kana_gloss(toks, i, text, start)
         if g:
             add.append(g)
+    for g in gl:   # words with no meaning: the checked list, with its reading
+        w = text[g[0]:g[0] + g[1]]
+        if not g[5] and w in MISSING:
+            g[2], g[5] = MISSING[w]
+            if g[3] == w:
+                g[4] = g[2]
     return sorted(gl + add, key=lambda g: g[0]), len(add)
 
 
