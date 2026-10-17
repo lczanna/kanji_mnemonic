@@ -37,7 +37,18 @@
   ],
   "answer": 1,
   "en": "M: Ms. Yamada, have you already copied the materials for tomorrow's meeting?\nF: No, I'm just about to. Ten copies is fine, right?\nM: Ah, actually the meeting has moved to the afternoon. So a few more people may attend.\nF: I see. Then we don't know yet how many copies to make.\nM: Right. The copies can wait until the number is decided, so could you first email everyone that the time has changed?\nF: Understood. I'll send it right away.",
-  "why": "The man says the copies can wait and asks her to email everyone about the new time first. Copying ten copies was the original plan, but it was put off."
+  "why": "The man says the copies can wait and asks her to email everyone about the new time first. Copying ten copies was the original plan, but it was put off.",
+  "opts_en": [
+   "Make ten copies of the materials",
+   "Email everyone that the meeting time changed",
+   "Re-book the meeting room",
+   "Count the number of attendees"
+  ],
+  "wrong": {
+   "0": "The copies were postponed: コピーは人数が決まってからでいい.",
+   "2": "Booking the room again is never mentioned.",
+   "3": "She doesn't count people; copying waits until the number is decided."
+  }
  },
  {
   "id": "dl002",
@@ -73,7 +84,18 @@
   ],
   "answer": 0,
   "en": "F: You're late. Was the train delayed?\nM: No, the train was on time, but after I left the station I got lost.\nF: What? I sent you a map, didn't I?\nM: Yes, but my phone battery died, so I couldn't look at it.\nF: Oh, so that's what happened.",
-  "why": "His phone battery died, so he couldn't see the map and got lost. The train was on time, and he did receive the map."
+  "why": "His phone battery died, so he couldn't see the map and got lost. The train was on time, and he did receive the map.",
+  "opts_en": [
+   "His phone didn't work, so he got lost",
+   "He didn't get the map",
+   "He left the station late",
+   "The train was late"
+  ],
+  "wrong": {
+   "1": "She did send it (地図、送ったでしょう？) and he says うん.",
+   "2": "He got lost after leaving the station; he didn't leave late.",
+   "3": "The train was on time: 電車はいつも通りだった."
+  }
  },
  {
   "id": "dl003",
@@ -109,7 +131,18 @@
   ],
   "answer": 3,
   "en": "F: Excuse me, I'm looking for a present for my father.\nM: How about this sweater? It's a popular color this year.\nF: It's nice. But my father already has lots of sweaters...\nM: Then how about this umbrella? It's light and strong.\nF: An umbrella... He often leaves things somewhere, so he'd lose it soon. Oh, these gloves look warm. I'll take these.",
-  "why": "At the end she chooses the gloves. She rejects the sweater because he has many, and the umbrella because he would lose it."
+  "why": "At the end she chooses the gloves. She rejects the sweater because he has many, and the umbrella because he would lose it.",
+  "opts_en": [
+   "An umbrella",
+   "A hat",
+   "A sweater",
+   "Gloves"
+  ],
+  "wrong": {
+   "0": "Her father would probably lose it: すぐなくしそう.",
+   "1": "A hat is never mentioned.",
+   "2": "Her father already has many sweaters."
+  }
  },
  {
   "id": "dl004",
@@ -141,7 +174,18 @@
   ],
   "answer": 3,
   "en": "M: Excuse me, I'm in room 305. The air conditioner in my room isn't working.\nF: I'm very sorry. I'll send someone right away.\nM: No, that's fine. It's cool if I open the window. More importantly, the noise from the next room is so loud I can't sleep.\nF: I see. Then we'll prepare another room for you.",
-  "why": "He says 'それより' the noise from next door keeps him awake. The broken air conditioner is not a problem because he can open the window."
+  "why": "He says 'それより' the noise from next door keeps him awake. The broken air conditioner is not a problem because he can open the window.",
+  "opts_en": [
+   "The window won't open",
+   "The room is hot",
+   "The air conditioner doesn't work",
+   "The next room is noisy"
+  ],
+  "wrong": {
+   "0": "The window opens fine; he says opening it keeps the room cool.",
+   "1": "It isn't hot: 窓を開ければすずしい.",
+   "2": "He says the air conditioner doesn't matter: それはいいんです."
+  }
  },
  {
   "id": "dl005",
@@ -181,7 +225,18 @@
   ],
   "answer": 3,
   "en": "F: Hey, could you buy eggs and milk at the supermarket on your way home?\nM: Sure. Anything else?\nF: Oh, wait. We might still have eggs... Yes, there are still six. So just milk. And bread too, please.\nM: Bread, for breakfast?\nF: Yes. But the bakery in front of the station is better, so get the bread there.\nM: Got it.",
-  "why": "There are still eggs, and the bread should be bought at the bakery by the station, so only milk is bought at the supermarket."
+  "why": "There are still eggs, and the bread should be bought at the bakery by the station, so only milk is bought at the supermarket.",
+  "opts_en": [
+   "Eggs and bread",
+   "Milk and bread",
+   "Eggs and milk",
+   "Only milk"
+  ],
+  "wrong": {
+   "0": "There are still six eggs, and bread is bought at the station bakery.",
+   "1": "Bread comes from the bakery: パンはそっちで.",
+   "2": "Eggs aren't needed: まだ六つある."
+  }
  },
  {
   "id": "dl006",
@@ -225,7 +280,18 @@
   ],
   "answer": 2,
   "en": "F: Professor, about the report, I don't think I can hand it in by Friday.\nM: I see. Why is that?\nF: The book I want to borrow from the library has been borrowed by someone else...\nM: In that case, I'll wait until next Monday. But no later than that.\nF: Thank you. Oh, but I don't have class on Monday, so could it be Tuesday morning?\nM: If you send it by email, Monday is fine.\nF: Oh, right. Then I'll do that.",
-  "why": "She asks for Tuesday, but the teacher says she can email it on Monday, and she agrees. Tuesday was rejected."
+  "why": "She asks for Tuesday, but the teacher says she can email it on Monday, and she agrees. Tuesday was rejected.",
+  "opts_en": [
+   "This Friday",
+   "Next Tuesday",
+   "Next Monday",
+   "Next Wednesday"
+  ],
+  "wrong": {
+   "0": "She can't make Friday because the book she needs is checked out.",
+   "1": "She asked for Tuesday, but agreed to email it on Monday.",
+   "3": "Wednesday is never mentioned; Monday is the limit."
+  }
  },
  {
   "id": "dl007",
@@ -257,7 +323,18 @@
   ],
   "answer": 0,
   "en": "M: Tanaka, you didn't come to the party yesterday. Were you feeling sick?\nF: No, I was fine. I meant to go, but my mother suddenly decided to visit.\nM: Oh really. Your mother lives far away, right?\nF: Yes. She was actually supposed to come next week, but it got moved up.",
-  "why": "Her mother's visit was suddenly moved up. She says she was not sick."
+  "why": "Her mother's visit was suddenly moved up. She says she was not sick.",
+  "opts_en": [
+   "Because her mother suddenly came",
+   "Because she was busy with work",
+   "Because she felt ill",
+   "Because she forgot about it"
+  ],
+  "wrong": {
+   "1": "Work is never mentioned.",
+   "2": "She says she was fine: 元気だったよ.",
+   "3": "She meant to go (行くつもりだった); she didn't forget."
+  }
  },
  {
   "id": "dl008",
@@ -293,7 +370,18 @@
   ],
   "answer": 2,
   "en": "F: Your fever has gone down, but you still have a cough. Please keep taking the medicine.\nM: Yes. Um, can I go to work from tomorrow?\nF: Yes, work is fine. But please don't drink alcohol until the cough stops.\nM: What about exercise? I run every morning.\nF: A light walk is fine. Please wait until next week to run.",
-  "why": "The doctor says no alcohol until the cough stops and no running until next week. Going to work and walking are allowed."
+  "why": "The doctor says no alcohol until the cough stops and no running until next week. Going to work and walking are allowed.",
+  "opts_en": [
+   "Running and going to work",
+   "Going to work and taking medicine",
+   "Drinking alcohol and running",
+   "Walking and drinking alcohol"
+  ],
+  "wrong": {
+   "0": "Work is fine: 仕事はかまいませんよ.",
+   "1": "Work is fine, and he must keep taking the medicine.",
+   "3": "A light walk is allowed: かるい散歩ならいいですよ."
+  }
  },
  {
   "id": "dl009",
@@ -325,7 +413,18 @@
   ],
   "answer": 0,
   "en": "M: Where should we start getting ready for the move?\nF: Shouldn't we throw away things we don't need first?\nM: True. But before that we have to call the moving company. I hear weekends get booked up fast.\nF: Oh, right. Then that comes first.",
-  "why": "He says they must call the moving company before throwing things away, and she agrees that comes first."
+  "why": "He says they must call the moving company before throwing things away, and she agrees that comes first.",
+  "opts_en": [
+   "Call the moving company",
+   "Go see the new place",
+   "Pack things into boxes",
+   "Throw away unneeded things"
+  ],
+  "wrong": {
+   "1": "Seeing the new place isn't mentioned.",
+   "2": "Packing isn't discussed.",
+   "3": "That comes after the call: その前に引っ越しの会社に電話しないと."
+  }
  },
  {
   "id": "dl010",
@@ -365,7 +464,18 @@
   ],
   "answer": 0,
   "en": "F: Hello, this is Restaurant Sakura.\nM: Hello, this is Kinoshita. I have a reservation for four at seven on Saturday evening.\nF: Mr. Kinoshita. Thank you as always.\nM: Actually, one more person is coming, so we're five now. Is that OK?\nF: Yes, that's fine. Shall we keep the same time?\nM: Yes, the time stays the same.",
-  "why": "He wants to change from four people to five. He says the time stays the same."
+  "why": "He wants to change from four people to five. He says the time stays the same.",
+  "opts_en": [
+   "The number of people",
+   "The date",
+   "The name",
+   "The time"
+  ],
+  "wrong": {
+   "1": "He keeps Saturday; only the number changes.",
+   "2": "The name stays Kinoshita.",
+   "3": "He says the time stays the same: 時間は変わりません."
+  }
  },
  {
   "id": "dl011",
@@ -401,7 +511,18 @@
   ],
   "answer": 0,
   "en": "F: Excuse me, I'd like to borrow this book.\nM: Sure, your card please... Oh, sorry, this book can't be checked out.\nF: Oh, really?\nM: Yes. Books with a red sticker, like dictionaries and maps, are for reading in the library only. You can make copies, though.\nF: Then I'll copy just the parts I need.",
-  "why": "Books with a red sticker can only be read inside the library. She does have her card; nobody else has borrowed it."
+  "why": "Books with a red sticker can only be read inside the library. She does have her card; nobody else has borrowed it.",
+  "opts_en": [
+   "It's a book for reading inside the library",
+   "Someone else has borrowed it",
+   "She doesn't have a card",
+   "It's old and might fall apart"
+  ],
+  "wrong": {
+   "1": "The book is right there; it's a red-sticker book.",
+   "2": "No problem with her card is mentioned; the book itself can't be lent.",
+   "3": "Its condition isn't mentioned; red-sticker books are 館内で読むだけ."
+  }
  },
  {
   "id": "dl012",
@@ -441,7 +562,18 @@
   ],
   "answer": 0,
   "en": "M: What should I bring to tomorrow's picnic?\nF: We're all making lunch together, so you don't need to bring that. I was going to ask you for drinks, but...\nM: Sure.\nF: Oh, but Yamashita said she'd bring drinks. So could you bring a picnic mat?\nM: I have a big one at home.\nF: Great. Then please bring that.",
-  "why": "She first thinks of drinks, but Yamashita is bringing them, so she asks him for a mat."
+  "why": "She first thinks of drinks, but Yamashita is bringing them, so she asks him for a mat.",
+  "opts_en": [
+   "A picnic mat",
+   "Drinks",
+   "Plates",
+   "Lunch boxes"
+  ],
+  "wrong": {
+   "1": "Yamashita said he'd bring the drinks.",
+   "2": "Plates aren't mentioned.",
+   "3": "Everyone makes lunch together, so it's not needed: いらないよ."
+  }
  },
  {
   "id": "dl013",
@@ -481,7 +613,18 @@
   ],
   "answer": 0,
   "en": "F: Nakayama, is it true you're quitting the tennis club?\nM: Yeah.\nF: Why? Because practice is tough?\nM: I like practice. But I'm going to start cram school next year, so I won't have time.\nF: I see. Even though you're good at studying.\nM: My parents told me to go.",
-  "why": "He will start cram school and won't have time. He says he likes practice."
+  "why": "He will start cram school and won't have time. He says he likes practice.",
+  "opts_en": [
+   "Because he'll go to cram school and lose time",
+   "Because practice is tough",
+   "Because he is bad at studying",
+   "Because he has come to dislike tennis"
+  ],
+  "wrong": {
+   "1": "He says he likes practice: れんしゅうは好きなんだよ.",
+   "2": "The girl says he's good at studying: 勉強、できるのに.",
+   "3": "Nothing suggests he dislikes tennis; he likes practicing."
+  }
  },
  {
   "id": "dl014",
@@ -517,7 +660,18 @@
   ],
   "answer": 3,
   "en": "F: Excuse me, I want to go to the City Hospital. Which bus should I take?\nM: For the City Hospital, it's bus number 3. But the roads are busy at this time, so it takes about 30 minutes.\nF: I see. Is there another way?\nM: You can take the train, get off at the second station, and walk. It's about five minutes from the station. That's faster.\nF: Then I'll do that.",
-  "why": "The bus is slow because of traffic, so she takes the train and walks from the station."
+  "why": "The bus is slow because of traffic, so she takes the train and walks from the station.",
+  "opts_en": [
+   "Take the No. 3 bus",
+   "Take the train, then a bus from the station",
+   "Take a taxi",
+   "Take the train and walk from the station"
+  ],
+  "wrong": {
+   "0": "The bus takes 30 minutes due to traffic; she chooses the faster way.",
+   "1": "From the station she walks, about 5 minutes: 歩いても行けます.",
+   "2": "A taxi is never mentioned."
+  }
  },
  {
   "id": "dl015",
@@ -549,7 +703,18 @@
   ],
   "answer": 2,
   "en": "M: What did you think of that apartment? It's close to the station and the rent is cheap.\nF: Yes, the rooms are big and bright. I think it's nice.\nM: So, will you take it?\nF: Hmm, but there's a convenience store next door, so I think there'll be voices until late at night. I'm sensitive to noise.",
-  "why": "She worries about voices from the convenience store late at night. Location, rent and size are all good."
+  "why": "She worries about voices from the convenience store late at night. Location, rent and size are all good.",
+  "opts_en": [
+   "The rent is high",
+   "The room is small",
+   "It seems noisy",
+   "It's far from the station"
+  ],
+  "wrong": {
+   "0": "The rent is cheap: やちんも安い.",
+   "1": "The room is spacious: 部屋も広くて.",
+   "3": "It's close to the station: 駅から近い."
+  }
  },
  {
   "id": "dl016",
@@ -589,7 +754,18 @@
   ],
   "answer": 3,
   "en": "F: Please write your name and address on this form.\nM: OK... Done.\nF: Thank you. Also, do you have a driver's license or passport?\nM: Oh, I left both of them at home.\nF: Then I'll keep this form for you.\nM: Sorry. I'll go home and get them right away.",
-  "why": "He left his ID at home and says he will go back to get it. He has already written his address."
+  "why": "He left his ID at home and says he will go back to get it. He has already written his address.",
+  "opts_en": [
+   "Show his passport",
+   "Hand in the form",
+   "Write his address on the form",
+   "Go home to get his passport or ID"
+  ],
+  "wrong": {
+   "0": "He can't; he left both his license and passport at home.",
+   "1": "The form has already been taken: この用紙はおあずかりしておきます.",
+   "2": "He has already written it: 書きました."
+  }
  },
  {
   "id": "dl017",
@@ -629,7 +805,18 @@
   ],
   "answer": 0,
   "en": "M: What's wrong? You look upset.\nF: My computer suddenly stopped working.\nM: Is it turned on?\nF: Yes, that's fine. The screen comes on, but I can't type.\nM: Isn't the keyboard cable unplugged?\nF: Oh, you're right. It was unplugged.",
-  "why": "The keyboard cable was unplugged. The power was on and the screen worked."
+  "why": "The keyboard cable was unplugged. The power was on and the screen worked.",
+  "opts_en": [
+   "The keyboard cable was unplugged",
+   "The power wasn't on",
+   "The PC was broken",
+   "The screen didn't come on"
+  ],
+  "wrong": {
+   "1": "The power was fine: それはだいじょうぶ.",
+   "2": "Nothing was broken; the cable was just out: ぬけてた.",
+   "3": "The screen worked: 画面はつくんだけど."
+  }
  },
  {
   "id": "dl018",
@@ -673,7 +860,18 @@
   ],
   "answer": 0,
   "en": "M: What time shall we meet for the movie tomorrow? It starts at two, right?\nF: Yes. How about 1:30 in front of the theater?\nM: Why don't we have lunch together before that?\nF: Sounds good. Then let's meet at the station at twelve.\nM: Oh, but I have a dentist appointment in the morning that ends at twelve. It takes about twenty minutes to the station...\nF: Then shall we make it thirty minutes later?\nM: Yes, that would help.",
-  "why": "They first plan 12:00, but he has the dentist until 12, so they move it 30 minutes later to 12:30."
+  "why": "They first plan 12:00, but he has the dentist until 12, so they move it 30 minutes later to 12:30.",
+  "opts_en": [
+   "12:30",
+   "12:00",
+   "1:30",
+   "2:00"
+  ],
+  "wrong": {
+   "1": "His dentist visit ends at 12, so they moved it 30 minutes later.",
+   "2": "1:30 was the first idea, before they added lunch.",
+   "3": "2:00 is when the movie starts."
+  }
  },
  {
   "id": "dl019",
@@ -713,7 +911,18 @@
   ],
   "answer": 2,
   "en": "F: Oh, did you get a new phone?\nM: Yeah.\nF: Did your old one break when you dropped it?\nM: No, I dropped it but it didn't break. I changed it because the battery ran out so fast.\nF: It was old, after all.\nM: That's the main reason. Also, it takes nicer photos.",
-  "why": "He says the main reason is that the battery ran out fast. The phone didn't break, and the photos are only an extra reason."
+  "why": "He says the main reason is that the battery ran out fast. The phone didn't break, and the photos are only an extra reason.",
+  "opts_en": [
+   "Because it takes nice photos",
+   "Because it was on sale cheap",
+   "Because the battery ran out fast",
+   "Because he dropped and broke it"
+  ],
+  "wrong": {
+   "0": "Better photos are only an extra reason: あと、写真も.",
+   "1": "Price is never mentioned.",
+   "3": "He dropped it but it didn't break: こわれなかったんだ."
+  }
  },
  {
   "id": "dl020",
@@ -749,7 +958,18 @@
   ],
   "answer": 1,
   "en": "M: Ms. Ishida, could you show the new person starting today around the office?\nF: Yes, of course. When would be good?\nM: They arrive at 9:30, so please meet them at reception. Before the tour, they need to fill in papers at Human Resources, so take them there first.\nF: OK. So I'll show them around after that.\nM: Yes, please.",
-  "why": "Before the tour the new person must fill in papers at HR, so she takes them to HR first. The tour comes after that."
+  "why": "Before the tour the new person must fill in papers at HR, so she takes them to HR first. The tour comes after that.",
+  "opts_en": [
+   "Teach how to fill in papers",
+   "Take them to HR",
+   "Show them around the office",
+   "Explain her own work"
+  ],
+  "wrong": {
+   "0": "HR has them fill in papers; she only takes them there.",
+   "2": "The tour comes after HR: そのあとで会社の中をあんない.",
+   "3": "Explaining her work isn't mentioned."
+  }
  },
  {
   "id": "dl021",
@@ -789,7 +1009,18 @@
   ],
   "answer": 1,
   "en": "M: What would you like today?\nF: It's getting hot, so I want it shorter. About to my shoulders.\nM: Nice. What about your bangs?\nF: Leave the bangs long. Oh, actually, please cut them a little. They get in my eyes.\nM: OK. What about color?\nF: No color today.",
-  "why": "She first says to leave the bangs, then changes her mind and asks for them to be cut a little. She doesn't want color."
+  "why": "She first says to leave the bangs, then changes her mind and asks for them to be cut a little. She doesn't want color.",
+  "opts_en": [
+   "Cut to the shoulders and change the color",
+   "Cut to the shoulders and trim the bangs a little",
+   "Cut to the shoulders, bangs left alone",
+   "Just trim the bangs a little"
+  ],
+  "wrong": {
+   "0": "She declines color: 色は今日はいいです.",
+   "2": "She changed her mind: やっぱり少しだけ切ってください.",
+   "3": "She also wants it cut to shoulder length."
+  }
  },
  {
   "id": "dl022",
@@ -821,7 +1052,18 @@
   ],
   "answer": 1,
   "en": "F: You look happy. Did something happen?\nM: Yeah. I passed the exam I took the other day.\nF: Wow, congratulations.\nM: Thanks. But what makes me even happier is that a high school friend I've wanted to see for ages contacted me yesterday.",
-  "why": "He says 'それよりうれしいのは' hearing from his high school friend. Passing the exam makes him happy, but less so."
+  "why": "He says 'それよりうれしいのは' hearing from his high school friend. Passing the exam makes him happy, but less so.",
+  "opts_en": [
+   "Being praised by a friend",
+   "Hearing from a high school friend",
+   "Getting a new job",
+   "Passing the exam"
+  ],
+  "wrong": {
+   "0": "No one praised him; the friend just contacted him.",
+   "2": "A new job is never mentioned.",
+   "3": "Passing makes him happy, but それよりうれしいのは hearing from his friend."
+  }
  },
  {
   "id": "dl023",
@@ -865,7 +1107,18 @@
   ],
   "answer": 3,
   "en": "M: Excuse me, I want to make 50 copies of this document, but the copier isn't working.\nF: Maybe it's out of paper... Oh, there's paper. It's probably broken.\nM: That's a problem. I need them for the three o'clock meeting.\nF: Why don't you use the copier on the second floor?\nM: The second floor is under construction, so we can't go in.\nF: Then how about copying them at the convenience store by the station? You can pay with the company card.\nM: Good idea. I'll do that.",
-  "why": "The copier here is broken and the second floor is closed for construction, so he goes to the convenience store."
+  "why": "The copier here is broken and the second floor is closed for construction, so he goes to the convenience store.",
+  "opts_en": [
+   "The copier in this room",
+   "Another company",
+   "The 2nd-floor copier",
+   "The convenience store by the station"
+  ],
+  "wrong": {
+   "0": "It's broken: たぶんこしょうですね.",
+   "1": "Another company is never mentioned.",
+   "2": "The 2nd floor is under construction: 工事中で入れない."
+  }
  },
  {
   "id": "dl024",
@@ -901,7 +1154,18 @@
   ],
   "answer": 1,
   "en": "M: I'm looking forward to our trip to Hokkaido next week.\nF: Me too. But there's something I'm a little worried about.\nM: The weather? You said there'd be lots of snow.\nF: Snow is fine. I like the cold too. The thing is, I don't like planes. I get scared when they shake.\nM: I see. Then let's try to get seats near the front. I hear they shake less.",
-  "why": "She is afraid of planes shaking. She says snow and cold are fine."
+  "why": "She is afraid of planes shaking. She says snow and cold are fine.",
+  "opts_en": [
+   "Not getting a seat",
+   "Flying",
+   "Lots of snow",
+   "The cold"
+  ],
+  "wrong": {
+   "0": "Seats are his idea to reduce shaking, not her worry.",
+   "2": "She says 雪は平気.",
+   "3": "She likes the cold: 寒いのも好き."
+  }
  },
  {
   "id": "dl025",
@@ -945,7 +1209,18 @@
   ],
   "answer": 1,
   "en": "F: Can you deliver this sofa?\nM: Yes. When would you like it?\nF: This Saturday, please.\nM: I'm sorry, Saturday is already full. Sunday or next Tuesday is possible.\nF: I'm going out on Sunday... I work on Tuesday, but I'm home in the evening.\nM: Then how about around six on Tuesday evening?\nF: Yes, please.",
-  "why": "Saturday is full and she is out on Sunday, so it is Tuesday evening, when she is home after work."
+  "why": "Saturday is full and she is out on Sunday, so it is Tuesday evening, when she is home after work.",
+  "opts_en": [
+   "This Saturday",
+   "Next Tuesday evening",
+   "This Sunday",
+   "Next Tuesday morning"
+  ],
+  "wrong": {
+   "0": "Saturday is already fully booked: 土曜日はもういっぱい.",
+   "2": "She will be out on Sunday: 日曜日は出かける.",
+   "3": "She works on Tuesday and is home only in the evening, so 6 p.m."
+  }
  },
  {
   "id": "dl026",
@@ -985,7 +1260,18 @@
   ],
   "answer": 1,
   "en": "F: You're driving to Grandpa's house this weekend, right?\nM: I was going to, but I decided to take the train.\nF: Why? Isn't the car easier?\nM: It is easier, but it's a long weekend, so I hear the roads will be really crowded.\nF: Oh, I see. And the train is cheaper, too.\nM: No, actually, for the whole family the train costs more. But it can't be helped.",
-  "why": "He expects heavy traffic on the long weekend. The woman guesses the train is cheaper, but he says it is actually more expensive."
+  "why": "He expects heavy traffic on the long weekend. The woman guesses the train is cheaper, but he says it is actually more expensive.",
+  "opts_en": [
+   "Grandpa told him to",
+   "Roads will likely be crowded",
+   "The train is cheaper",
+   "The car broke down"
+  ],
+  "wrong": {
+   "0": "Grandpa's wishes aren't mentioned.",
+   "2": "For the whole family the train is more expensive: 電車のほうが高いんだよ.",
+   "3": "The car is fine; driving is easier (楽は楽) but roads are crowded."
+  }
  },
  {
   "id": "dl027",
@@ -1021,7 +1307,18 @@
   ],
   "answer": 2,
   "en": "M: Now I'll explain tomorrow's field trip. Please gather in front of the school at 8 a.m.\nF: Do we need to bring lunch?\nM: We'll eat lunch in the factory cafeteria, so you don't need it. Please bring a drink.\nF: What about a notebook and a pen?\nM: You'll get a pamphlet at the factory, so you can write on that. You don't need a notebook, but don't forget a pen.",
-  "why": "Lunch is at the factory and notes go on the pamphlet, so they bring only a drink and a pen."
+  "why": "Lunch is at the factory and notes go on the pamphlet, so they bring only a drink and a pen.",
+  "opts_en": [
+   "A notebook and a pen",
+   "Lunch and a drink",
+   "A drink and a pen",
+   "Lunch and a notebook"
+  ],
+  "wrong": {
+   "0": "No notebook; they write on the pamphlet: ノートはいりません.",
+   "1": "Lunch is at the factory cafeteria, so no lunch box.",
+   "3": "Neither lunch nor a notebook is needed."
+  }
  },
  {
   "id": "dl028",
@@ -1057,7 +1354,18 @@
   ],
   "answer": 1,
   "en": "M: Do you come to this cafe often?\nF: Yes, every week.\nM: Because the coffee is good?\nF: The coffee is just OK. The cake is so-so too. But it's quiet here and easy to study.\nM: It sure is quiet.",
-  "why": "She says the coffee and cake are only average; she comes because it is quiet and good for studying."
+  "why": "She says the coffee and cake are only average; she comes because it is quiet and good for studying.",
+  "opts_en": [
+   "Because the coffee is good",
+   "Because it's quiet and easy to study in",
+   "Because the cake is good",
+   "Because it's close to home"
+  ],
+  "wrong": {
+   "0": "She says the coffee is just average: コーヒーはふつう.",
+   "2": "The cake is only so-so: ケーキもまあまあ.",
+   "3": "Distance from home is never mentioned."
+  }
  },
  {
   "id": "dl029",
@@ -1097,7 +1405,18 @@
   ],
   "answer": 2,
   "en": "F: Can you help me make curry?\nM: Sure. What should I do?\nF: Then could you cut the onions?\nM: Hmm, onions make my eyes hurt. I'd rather do something else.\nF: Oh well. I'll do the onions, so could you peel the carrots and potatoes?\nM: OK.",
-  "why": "He refuses the onions, so she asks him to peel the carrots and potatoes instead."
+  "why": "He refuses the onions, so she asks him to peel the carrots and potatoes instead.",
+  "opts_en": [
+   "Cook the rice",
+   "Wash the pot",
+   "Peel the carrots and potatoes",
+   "Cut the onions"
+  ],
+  "wrong": {
+   "0": "Rice is never mentioned.",
+   "1": "Washing the pot is never mentioned.",
+   "3": "Onions hurt his eyes, so she does them: たまねぎはわたしがやる."
+  }
  },
  {
   "id": "dl030",
@@ -1129,7 +1448,18 @@
   ],
   "answer": 1,
   "en": "M: Huh, that bakery is closed. Today shouldn't be its day off.\nF: There's a notice. 'Because the owner is ill'... no. It says 'Closed this week for work inside the shop.'\nM: I see. Maybe they're renovating. Then let's buy bread at the shop by the station.\nF: Yes, let's.",
-  "why": "The notice says it is closed for work inside the shop. She first misreads it as illness, then corrects herself."
+  "why": "The notice says it is closed for work inside the shop. She first misreads it as illness, then corrects herself.",
+  "opts_en": [
+   "It's a regular day off",
+   "There is work going on inside",
+   "The owner is sick",
+   "The bread sold out"
+  ],
+  "wrong": {
+   "0": "He says today shouldn't be a day off: 休みの日じゃないはず.",
+   "2": "She misread at first, then corrected herself: じゃないね.",
+   "3": "Selling out isn't mentioned."
+  }
  },
  {
   "id": "dl031",
@@ -1177,7 +1507,18 @@
   ],
   "answer": 3,
   "en": "M: Hello, this is Maeda from Midori Trading. Is Mr. Yamamoto, the manager, there?\nF: I'm sorry, Yamamoto is in a meeting right now.\nM: I see. Then could you tell him to call me when the meeting is over?\nF: Certainly. May I have your phone number?\nM: I think he knows it, but just in case, it's 090-1234-5678.\nF: Certainly.\nM: Oh, sorry. I'll be out in the afternoon, so please tell him to email me instead.\nF: Yes, by email. I'll pass that on.",
-  "why": "He first asks for a call, but at the end changes it to email because he'll be out."
+  "why": "He first asks for a call, but at the end changes it to email because he'll be out.",
+  "opts_en": [
+   "To call Maeda",
+   "That Maeda will come to the office",
+   "To end the meeting early",
+   "To email Maeda"
+  ],
+  "wrong": {
+   "0": "He first asked for a call, but changed it: やっぱりメールでお願いします.",
+   "1": "Maeda says he'll be out in the afternoon, not coming over.",
+   "2": "He only asks for contact after the meeting ends."
+  }
  },
  {
   "id": "dl032",
@@ -1217,7 +1558,18 @@
   ],
   "answer": 3,
   "en": "F: What's wrong? You've emptied your whole bag.\nM: I can't find my key. My house key.\nF: What about your pockets?\nM: I looked... oh, here it is. It was in my jacket pocket. But now my wallet's missing.\nF: Didn't you leave it at the shop when you paid just now?\nM: Maybe. I'll go and check.",
-  "why": "He finds the key in his jacket, but then his wallet is missing, so he goes back to the shop to look for it."
+  "why": "He finds the key in his jacket, but then his wallet is missing, so he goes back to the shop to look for it.",
+  "opts_en": [
+   "His jacket",
+   "His bag",
+   "His house key",
+   "His wallet"
+  ],
+  "wrong": {
+   "0": "The jacket is where he found the key; he isn't looking for it.",
+   "1": "He's already searched his bag.",
+   "2": "The key was found in his jacket pocket: あ、あった."
+  }
  },
  {
   "id": "dl033",
@@ -1261,7 +1613,18 @@
   ],
   "answer": 1,
   "en": "F: What should we give Yamaguchi for the farewell party?\nM: How about a bouquet?\nF: Flowers are nice, but Yamaguchi is moving far away, so they might be hard to take home.\nM: I see. Then how about we all chip in for a camera? He said he likes photography.\nF: Nice, but isn't it too expensive? 3,000 yen each won't be enough.\nM: Then let's get a photo album. That's light, too.\nF: OK, let's do that.",
-  "why": "Flowers are hard to carry and a camera is too expensive, so they choose a photo album."
+  "why": "Flowers are hard to carry and a camera is too expensive, so they choose a photo album.",
+  "opts_en": [
+   "A camera",
+   "A photo album",
+   "Photos",
+   "A bouquet"
+  ],
+  "wrong": {
+   "0": "Too expensive at 3,000 yen each: 高すぎない？",
+   "2": "Photos go in the album; the album is the gift.",
+   "3": "Flowers would be hard to carry since he's moving far."
+  }
  },
  {
   "id": "dl034",
@@ -1301,7 +1664,18 @@
   ],
   "answer": 0,
   "en": "M: Excuse me.\nF: Yes, can I help you?\nM: This isn't what I ordered.\nF: Oh, it's the hamburger steak set, isn't it?\nM: The set is right, but I asked for bread instead of rice.\nF: I'm very sorry. I'll change it right away.",
-  "why": "The set itself is correct; the problem is that he asked for bread, not rice."
+  "why": "The set itself is correct; the problem is that he asked for bread, not rice.",
+  "opts_en": [
+   "He wanted bread, not rice",
+   "The food is cold",
+   "It's a different set meal",
+   "The food hasn't come yet"
+  ],
+  "wrong": {
+   "1": "Temperature is never mentioned.",
+   "2": "The set itself is right: 定食は合ってる.",
+   "3": "The food has arrived; the side is wrong."
+  }
  },
  {
   "id": "dl035",
@@ -1337,7 +1711,18 @@
   ],
   "answer": 3,
   "en": "M: Are you free on Saturday? We're all going to the mountains. Want to come?\nF: I'd like to, but I'm helping my sister move on Saturday.\nM: I see. Some people are going on Sunday too.\nF: Sunday I have my part-time job. But the move might finish in the morning, so then maybe I'll just come to the barbecue in the evening.\nM: Yes, come along.",
-  "why": "On Saturday she first helps her sister move; the barbecue is only later if the move ends early. The part-time job is on Sunday."
+  "why": "On Saturday she first helps her sister move; the barbecue is only later if the move ends early. The part-time job is on Sunday.",
+  "opts_en": [
+   "Go to the mountains",
+   "Work her part-time job",
+   "Go to the barbecue",
+   "Help her sister move"
+  ],
+  "wrong": {
+   "0": "She can't go Saturday because of the move.",
+   "1": "The part-time job is on Sunday: 日曜日はアルバイト.",
+   "2": "The barbecue is in the evening, only if the move ends early."
+  }
  },
  {
   "id": "dl036",
@@ -1369,7 +1754,18 @@
   ],
   "answer": 0,
   "en": "F: Excuse me, could I change seats?\nM: Is something wrong? Is the luggage of the person behind you in the way?\nF: No, that's not it. The people in front of me are talking so loudly...\nM: I see. There are free seats toward the back, so I'll show you.",
-  "why": "She denies the luggage problem; the reason is that the people in front are talking loudly."
+  "why": "She denies the luggage problem; the reason is that the people in front are talking loudly.",
+  "opts_en": [
+   "The person in front is loud",
+   "The luggage behind is in the way",
+   "She wants a window seat",
+   "The seat is cramped"
+  ],
+  "wrong": {
+   "1": "She denies it: いいえ、そうじゃないんです.",
+   "2": "A window seat isn't mentioned.",
+   "3": "Seat size isn't mentioned."
+  }
  },
  {
   "id": "dl037",
@@ -1405,7 +1801,18 @@
   ],
   "answer": 2,
   "en": "F: Welcome home. There's something I'd like you to do.\nM: What?\nF: Could you clean the bath? And after that, walk the dog.\nM: Sure. But it's getting dark, so I'll go for the walk first.\nF: Good idea. Please do.",
-  "why": "She asks for the bath first, but he says he'll walk the dog first because it's getting dark, and she agrees."
+  "why": "She asks for the bath first, but he says he'll walk the dog first because it's getting dark, and she agrees.",
+  "opts_en": [
+   "Go shopping",
+   "Wash the bath",
+   "Walk the dog",
+   "Make dinner"
+  ],
+  "wrong": {
+   "0": "Shopping isn't asked for.",
+   "1": "He'll wash the bath after the walk, because it's getting dark: 散歩を先に行ってくる.",
+   "3": "Dinner isn't mentioned."
+  }
  },
  {
   "id": "dl038",
@@ -1437,7 +1844,18 @@
   ],
   "answer": 1,
   "en": "F: How was the movie yesterday?\nM: I didn't really understand the story, but the music was great.\nF: Oh? What about the actors?\nM: There weren't many famous people, but they were all good. But the best thing was the music. I'd like to hear it again.",
-  "why": "He says '一番は音楽'. The actors were good but not the best part, and he didn't understand the story."
+  "why": "He says '一番は音楽'. The actors were good but not the best part, and he didn't understand the story.",
+  "opts_en": [
+   "The actors",
+   "The music",
+   "The story",
+   "The scenery"
+  ],
+  "wrong": {
+   "0": "The actors were good, but でも、一番は音楽.",
+   "2": "He didn't understand the story: 話はよく分からなかった.",
+   "3": "Scenery isn't mentioned."
+  }
  },
  {
   "id": "dl039",
@@ -1481,7 +1899,18 @@
   ],
   "answer": 0,
   "en": "M: Excuse me, I'd like to apply for study abroad.\nF: Sure. Fill in this form, attach one photo and hand it in. You also need a teacher's signature.\nM: I haven't taken a photo yet. Can I hand in just the form first?\nF: No, please hand it in when you have everything. The deadline is next Friday.\nM: OK. Then I'll go and get a photo taken first.\nF: Signatures sometimes take time, so you'd better get that first.\nM: Oh, right. I'll do that.",
-  "why": "He plans to get a photo first, but she advises getting the signature first because it takes time, and he agrees."
+  "why": "He plans to get a photo first, but she advises getting the signature first because it takes time, and he agrees.",
+  "opts_en": [
+   "Go get the teacher's signature",
+   "Go get a photo taken",
+   "Submit the application form",
+   "Tell the teacher the deadline"
+  ],
+  "wrong": {
+   "1": "He planned that, but she advised getting the signature first.",
+   "2": "He can't submit until everything is ready: 全部そろってから.",
+   "3": "Not mentioned; she told him the deadline."
+  }
  },
  {
   "id": "dl040",
@@ -1517,7 +1946,18 @@
   ],
   "answer": 2,
   "en": "M: Oh, are you off work today?\nF: Yes, I'm going to the hospital this afternoon.\nM: Are you sick?\nF: No, not me. My grandmother is in the hospital. My mother can't go today, so I'm visiting her instead.\nM: I see. I hope she gets better soon.",
-  "why": "She is visiting her grandmother, who is in hospital, in place of her mother. She herself is not sick."
+  "why": "She is visiting her grandmother, who is in hospital, in place of her mother. She herself is not sick.",
+  "opts_en": [
+   "For work",
+   "Because her mother is in hospital",
+   "To visit her grandmother in hospital",
+   "Because she is unwell"
+  ],
+  "wrong": {
+   "0": "She took the day off work; it's a personal visit.",
+   "1": "Her grandmother is in hospital; her mother just can't go today.",
+   "3": "She says it's not her: わたしじゃなくて."
+  }
  },
  {
   "id": "dl041",
@@ -1557,7 +1997,18 @@
   ],
   "answer": 3,
   "en": "M: Are you ready to order?\nF: A hot coffee and this cheesecake, please.\nM: I'm very sorry. The cheesecake is already sold out today.\nF: I see. What about the chocolate cake?\nM: Yes, we have that. It's 100 yen cheaper as a set right now. But the only drink in the set is tea.\nF: In that case, I'll have the set, and tea is fine.",
-  "why": "The cheesecake is sold out, and she takes the set, which only comes with tea, so she gives up the coffee."
+  "why": "The cheesecake is sold out, and she takes the set, which only comes with tea, so she gives up the coffee.",
+  "opts_en": [
+   "Cheesecake and tea",
+   "Chocolate cake and coffee",
+   "Cheesecake and coffee",
+   "Chocolate cake and tea"
+  ],
+  "wrong": {
+   "0": "Cheesecake is sold out: もう売り切れて.",
+   "1": "The set only comes with tea, so she gives up coffee.",
+   "2": "Cheesecake is sold out, and she switched to tea."
+  }
  },
  {
   "id": "dl042",
@@ -1593,7 +2044,18 @@
   ],
   "answer": 2,
   "en": "F: Are you buying that bike? It looks cool.\nM: Yeah, I like the color and the shape, but...\nF: Is it expensive?\nM: It's cheaper than I thought. But it's a bit heavy. My building has no elevator, so carrying it up to the fourth floor would be hard.\nF: I see. Then let's look at others.",
-  "why": "It is heavy and he would have to carry it up four floors. The price is lower than he expected, and he likes the color and shape."
+  "why": "It is heavy and he would have to carry it up four floors. The price is lower than he expected, and he likes the color and shape.",
+  "opts_en": [
+   "It's expensive",
+   "He doesn't like the shape",
+   "It's heavy and hard to carry",
+   "He doesn't like the color"
+  ],
+  "wrong": {
+   "0": "It's cheaper than he expected: 思ったより安い.",
+   "1": "He likes the shape: 色も形も気に入ってる.",
+   "3": "He likes the color: 色も形も気に入ってる."
+  }
  },
  {
   "id": "dl043",
@@ -1637,7 +2099,18 @@
   ],
   "answer": 2,
   "en": "F: About next week's meeting, when would suit you?\nM: How about Monday?\nF: I'm out all day on Monday. How about Tuesday afternoon?\nM: I have a meeting Tuesday afternoon. What about Wednesday morning?\nF: Yes, that's fine.\nM: Oh, sorry, I'm in Osaka from Wednesday morning. Let's make it Thursday morning.\nF: Understood.",
-  "why": "They agree on Wednesday morning, but the manager remembers he is in Osaka, so it becomes Thursday morning."
+  "why": "They agree on Wednesday morning, but the manager remembers he is in Osaka, so it becomes Thursday morning.",
+  "opts_en": [
+   "Tuesday afternoon",
+   "Monday",
+   "Thursday morning",
+   "Wednesday morning"
+  ],
+  "wrong": {
+   "0": "The manager has a meeting Tuesday afternoon.",
+   "1": "She is out all day Monday: 一日中出かけている.",
+   "3": "The manager remembers he's in Osaka on Wednesday."
+  }
  },
  {
   "id": "dl044",
@@ -1673,7 +2146,18 @@
   ],
   "answer": 2,
   "en": "F: How's the new office?\nM: It's closer to the station now and the rooms are bright. It's good.\nF: That's great.\nM: But there aren't many places to eat lunch, which is a problem. There aren't many shops nearby.\nF: Oh, that's inconvenient.",
-  "why": "He says the problem is the lack of places to eat lunch. The station is closer and the rooms are bright."
+  "why": "He says the problem is the lack of places to eat lunch. The station is closer and the rooms are bright.",
+  "opts_en": [
+   "The room is small",
+   "The room is dark",
+   "Few places to eat nearby",
+   "It's far from the station"
+  ],
+  "wrong": {
+   "0": "Room size isn't a complaint.",
+   "1": "The room is bright: 部屋も明るくて.",
+   "3": "It's closer to the station: 駅から近くなった."
+  }
  },
  {
   "id": "dl045",
@@ -1709,7 +2193,18 @@
   ],
   "answer": 1,
   "en": "F: Excuse me, I'd like to send this package.\nM: Sure... Oh, we can't send it in this box. The box is torn.\nF: Oh, then what should I do...\nM: We sell new boxes here, so please repack it in one of those. I'll lend you some tape too.\nF: Then I'll take one of those boxes.",
-  "why": "The box is torn, so she buys a new box at the counter and repacks it. The tape is lent, not bought."
+  "why": "The box is torn, so she buys a new box at the counter and repacks it. The tape is lent, not bought.",
+  "opts_en": [
+   "Buy tape",
+   "Buy a new box and repack",
+   "Send the package as is",
+   "Look for a box at home"
+  ],
+  "wrong": {
+   "0": "The tape is lent: テープもお貸しします.",
+   "2": "The box is torn, so it can't be sent as is.",
+   "3": "She buys a box there: その箱を一つください."
+  }
  },
  {
   "id": "dl046",
@@ -1741,7 +2236,18 @@
   ],
   "answer": 2,
   "en": "M: Excuse me, what time does this shop close?\nF: We usually close at 9 p.m., but today there's a big cleaning inside the shop, so we close at seven.\nM: Oh, it's already 6:30.\nF: Yes, I'm sorry. About thirty minutes left.",
-  "why": "It usually closes at 9, but today it closes at 7 because of cleaning. 6:30 is the time now."
+  "why": "It usually closes at 9, but today it closes at 7 because of cleaning. 6:30 is the time now.",
+  "opts_en": [
+   "6:30",
+   "9:00",
+   "7:00",
+   "8:00"
+  ],
+  "wrong": {
+   "0": "6:30 is the current time: もう6時半.",
+   "1": "9 is the usual closing time, but today it's earlier for cleaning.",
+   "3": "8 o'clock is never mentioned."
+  }
  },
  {
   "id": "dl047",
@@ -1785,7 +2291,18 @@
   ],
   "answer": 2,
   "en": "F: My mother's coming today. Could you make something for dinner?\nM: Sure. How about tempura?\nF: My mother can't eat oily food lately.\nM: Then sashimi?\nF: She likes fish, but not raw.\nM: Then shall I grill some fish?\nF: Yes, that's good.",
-  "why": "Tempura is too oily and sashimi is raw, so he grills fish."
+  "why": "Tempura is too oily and sashimi is raw, so he grills fish.",
+  "opts_en": [
+   "A meat dish",
+   "Sashimi",
+   "Grilled fish",
+   "Tempura"
+  ],
+  "wrong": {
+   "0": "Meat is never suggested.",
+   "1": "She doesn't like raw fish: 生はちょっと.",
+   "3": "Her mother can't eat oily food: あぶらっぽいものはだめ."
+  }
  },
  {
   "id": "dl048",
@@ -1821,7 +2338,18 @@
   ],
   "answer": 3,
   "en": "M: I heard you're going to cooking classes?\nF: Yes, since last month.\nM: Because you're getting married?\nF: No. I moved near my office and started eating out more, so it costs a lot. If I cook myself, it's cheaper, right?\nM: I see.",
-  "why": "She eats out too much and it is expensive, so she wants to cook. She denies the marriage guess."
+  "why": "She eats out too much and it is expensive, so she wants to cook. She denies the marriage guess.",
+  "opts_en": [
+   "She needs it for work",
+   "She's getting married",
+   "She likes cooking",
+   "Eating out costs money"
+  ],
+  "wrong": {
+   "0": "Work only comes in because she moved near the office.",
+   "1": "She denies it: ちがうよ.",
+   "2": "She never says she likes cooking; it's about saving money."
+  }
  },
  {
   "id": "dl049",
@@ -1857,7 +2385,18 @@
   ],
   "answer": 1,
   "en": "M: Did you hear the seminar room changed today?\nF: Yes. Not the usual 302, but the room next to the library, right?\nM: Actually, that room can't be used either, so it's in the professor's office now.\nF: The office is small. Will it be OK?\nM: Apparently it's fine since there are fewer people today.",
-  "why": "The room next to the library also became unavailable, so the seminar is in the professor's office."
+  "why": "The room next to the library also became unavailable, so the seminar is in the professor's office.",
+  "opts_en": [
+   "Room 302",
+   "The professor's office",
+   "The room next to the library",
+   "Inside the library"
+  ],
+  "wrong": {
+   "0": "Room 302 is the usual room, but not today: いつもの302じゃなくて.",
+   "2": "That room also became unavailable: 使えなくなって.",
+   "3": "The library itself was never the venue."
+  }
  },
  {
   "id": "dl050",
@@ -1897,7 +2436,18 @@
   ],
   "answer": 2,
   "en": "M: Excuse me, I'm your neighbor.\nF: Yes?\nM: It's about the garbage. Monday isn't the day for burnable garbage.\nF: Oh, really?\nM: Yes. Monday is for bottles and cans; burnable garbage is Tuesday and Friday. I brought you a calendar, here you are.\nF: I'm sorry, thank you. I'll be careful.",
-  "why": "She put out burnable garbage on Monday, which is the bottle-and-can day. He wants her to use Tuesday and Friday. He gives her the calendar."
+  "why": "She put out burnable garbage on Monday, which is the bottle-and-can day. He wants her to use Tuesday and Friday. He gives her the calendar.",
+  "opts_en": [
+   "Buy a calendar",
+   "Separate bottles and cans",
+   "Put burnable garbage out on the set days",
+   "Put garbage out on Monday"
+  ],
+  "wrong": {
+   "0": "He brought her a calendar himself.",
+   "1": "Separating isn't the issue; she used the wrong day.",
+   "3": "Monday is the problem: 月曜日はもえるゴミの日じゃない."
+  }
  },
  {
   "id": "dl051",
@@ -1937,7 +2487,18 @@
   ],
   "answer": 1,
   "en": "F: Hello, sorry, I've got a fever. Could you buy something on your way home?\nM: Sure. Medicine?\nF: I have medicine at home, so that's fine. I'd like a sports drink and some jelly.\nM: OK. Anything else?\nF: Oh, there's still one sports drink in the fridge. So just jelly is fine.\nM: Got it. I'll be home soon.",
-  "why": "She has medicine, and then finds a sports drink in the fridge, so only jelly is needed."
+  "why": "She has medicine, and then finds a sports drink in the fridge, so only jelly is needed.",
+  "opts_en": [
+   "A sports drink and jelly",
+   "Jelly",
+   "Medicine",
+   "Medicine and jelly"
+  ],
+  "wrong": {
+   "0": "There's still a sports drink in the fridge: まだ一本あった.",
+   "2": "She has medicine at home: 薬は家にあるからいい.",
+   "3": "No medicine is needed; it's already at home."
+  }
  },
  {
   "id": "dl052",
@@ -1969,7 +2530,18 @@
   ],
   "answer": 3,
   "en": "F: Oh, you're early. Weren't you working overtime today?\nM: I was supposed to, but the elevator stopped and they decided to check the electricity in the whole building.\nF: And?\nM: So everyone was sent home early.",
-  "why": "The whole building's electricity was being checked, so everyone went home. He had planned overtime, so his work did not end early."
+  "why": "The whole building's electricity was being checked, so everyone went home. He had planned overtime, so his work did not end early.",
+  "opts_en": [
+   "Because he felt sick",
+   "Because a meeting was cancelled",
+   "Because his work finished early",
+   "Because the building's electricity was being checked"
+  ],
+  "wrong": {
+   "0": "Health is never mentioned.",
+   "1": "No meeting is mentioned; the elevator stopped.",
+   "2": "He planned overtime; everyone was sent home because of the inspection."
+  }
  },
  {
   "id": "dl053",
@@ -2013,7 +2585,18 @@
   ],
   "answer": 1,
   "en": "F: I'd like to sign up for a trip next month.\nM: Certainly. Which trip?\nF: This two-day hot spring tour.\nM: Thank you. Please fill in this form. We also need the name and date of birth of the person traveling with you.\nF: Oh, I don't know my friend's date of birth.\nM: Then could you ask first? You may take the form home.\nF: Understood. I'll call and ask right away.",
-  "why": "She needs her friend's date of birth for the form, so she calls her friend first. She cannot hand in the form yet."
+  "why": "She needs her friend's date of birth for the form, so she calls her friend first. She cannot hand in the form yet.",
+  "opts_en": [
+   "Choose another course",
+   "Call her friend",
+   "Hand in the form",
+   "Pay for the trip"
+  ],
+  "wrong": {
+   "0": "She keeps the hot-spring course.",
+   "2": "She can't yet; she needs the friend's birthday first.",
+   "3": "Payment isn't mentioned; she first calls: すぐに電話して聞いてみます."
+  }
  },
  {
   "id": "dl054",
@@ -2045,7 +2628,18 @@
   ],
   "answer": 2,
   "en": "M: How's the new English teacher?\nF: Her explanations are easy to understand. And there isn't much homework.\nM: Sounds good.\nF: Yeah. But her voice is quiet, so you can't hear from the back seats. That's the problem.",
-  "why": "The problem is her quiet voice. She says the explanations are clear and the homework is light."
+  "why": "The problem is her quiet voice. She says the explanations are clear and the homework is light.",
+  "opts_en": [
+   "Too much homework",
+   "Unclear explanations",
+   "A quiet voice",
+   "Making her sit at the back"
+  ],
+  "wrong": {
+   "0": "宿題も多くない.",
+   "1": "説明は分かりやすい.",
+   "3": "The back seat matters only because she can't hear; the teacher doesn't assign it."
+  }
  },
  {
   "id": "dl055",
@@ -2089,7 +2683,18 @@
   ],
   "answer": 0,
   "en": "M: Excuse me, I left my umbrella on a train yesterday.\nF: Do you know which train?\nM: The one I got off at this station around 7 p.m.\nF: Please wait a moment... Here it is. A black umbrella. It's at the last station on the line.\nM: I see. Do I have to go and get it?\nF: No, we can send it here, but it takes about three days.\nM: I want to use it tomorrow, so I'll go and get it now.",
-  "why": "Sending it takes three days and he needs it tomorrow, so he goes to the last station to pick it up."
+  "why": "Sending it takes three days and he needs it tomorrow, so he goes to the last station to pick it up.",
+  "opts_en": [
+   "Go to the last station to get the umbrella",
+   "Come back in three days",
+   "Buy a new umbrella",
+   "Have it sent to this station"
+  ],
+  "wrong": {
+   "1": "Three days is how long sending would take; he isn't waiting.",
+   "2": "He's getting his own umbrella back.",
+   "3": "Sending takes about three days, and he needs it tomorrow."
+  }
  },
  {
   "id": "dl056",
@@ -2121,7 +2726,18 @@
   ],
   "answer": 2,
   "en": "M: You look tired. Working late again?\nF: No, work finished early.\nM: Then what?\nF: The person upstairs uses the washing machine in the middle of the night, and the noise wakes me up.",
-  "why": "Her upstairs neighbor's washing machine woke her at night. Her work actually ended early."
+  "why": "Her upstairs neighbor's washing machine woke her at night. Her work actually ended early.",
+  "opts_en": [
+   "She got up early",
+   "She did laundry",
+   "Noise at night kept her awake",
+   "She worked late"
+  ],
+  "wrong": {
+   "0": "She was woken at night, not getting up early.",
+   "1": "The neighbor upstairs used the washing machine, not her.",
+   "3": "Work ended early: 仕事は早く終わった."
+  }
  },
  {
   "id": "dl057",
@@ -2161,7 +2777,18 @@
   ],
   "answer": 3,
   "en": "F: What are you wearing to tomorrow's interview?\nM: I'm thinking of my black suit.\nF: Isn't black hot? They say it'll be really hot tomorrow.\nM: But it's an interview, so it has to be a suit...\nF: Then why not carry the jacket and put it on before you get to the company?\nM: Good idea. I'll do that.",
-  "why": "He keeps the black suit but carries the jacket and puts it on just before arriving. He does not go without a suit."
+  "why": "He keeps the black suit but carries the jacket and puts it on just before arriving. He does not go without a suit.",
+  "opts_en": [
+   "Wear a white jacket",
+   "Go without a suit",
+   "Leave the jacket at home",
+   "Put the jacket on before reaching the company"
+  ],
+  "wrong": {
+   "0": "He wears a black suit; no white jacket is mentioned.",
+   "1": "He insists on a suit: スーツじゃないと.",
+   "2": "He takes the jacket with him: 上着は持っていって."
+  }
  },
  {
   "id": "dl058",
@@ -2197,7 +2824,18 @@
   ],
   "answer": 0,
   "en": "F: Excuse me, I bought these shoes yesterday.\nM: Yes. Didn't the size fit?\nF: No, the size is fine. There's a small scratch here.\nM: I'm very sorry. Shall we exchange them, or give you a refund?\nF: I really like these shoes, so please exchange them for the same pair.",
-  "why": "She likes the shoes, so she wants the same pair, not a refund. The size is fine."
+  "why": "She likes the shoes, so she wants the same pair, not a refund. The size is fine.",
+  "opts_en": [
+   "Exchange for the same shoes",
+   "Repair the scratch",
+   "Change to a bigger size",
+   "Get a refund"
+  ],
+  "wrong": {
+   "1": "Repair isn't offered or asked for; she wants an exchange.",
+   "2": "The size is fine: サイズはいいんです.",
+   "3": "She likes the shoes too much to get her money back."
+  }
  },
  {
   "id": "dl059",
@@ -2241,7 +2879,18 @@
   ],
   "answer": 0,
   "en": "F: Professor, about next week's presentations, what number am I?\nM: You're third, Ms. Ogawa.\nF: Um, actually I have a hospital appointment that day and need to leave early. Could I change my place?\nM: I see. Then would you like to go first?\nF: First is a bit... I might not be ready in time.\nM: Then talk to the second person and ask them to swap with you.\nF: Yes, I will.",
-  "why": "She refuses going first, so the teacher tells her to ask the second presenter to swap."
+  "why": "She refuses going first, so the teacher tells her to ask the second presenter to swap.",
+  "opts_en": [
+   "Talk to the second presenter",
+   "Change the hospital appointment",
+   "Present first",
+   "Present third"
+  ],
+  "wrong": {
+   "1": "She keeps the appointment and changes the order instead.",
+   "2": "She declines first: 一番目は、ちょっと…",
+   "3": "She must leave early, so she wants to swap from third."
+  }
  },
  {
   "id": "dl060",
@@ -2273,7 +2922,18 @@
   ],
   "answer": 3,
   "en": "F: How did you find this hotel?\nM: I looked online. It's a bit far from the station, but it said the breakfast is good.\nF: The view from the room is beautiful too.\nM: Yes, but I didn't know about that. I was surprised when we got here.",
-  "why": "He chose it because of the good breakfast. He didn't know about the view beforehand, and it is far from the station."
+  "why": "He chose it because of the good breakfast. He didn't know about the view beforehand, and it is far from the station.",
+  "opts_en": [
+   "The view from the room is nice",
+   "It's cheap",
+   "It's near the station",
+   "Reviews said breakfast was good"
+  ],
+  "wrong": {
+   "0": "He didn't know about the view: それは知らなかった.",
+   "1": "Price isn't mentioned.",
+   "2": "It's a bit far from the station: ちょっと遠い."
+  }
  },
  {
   "id": "dl061",
@@ -2317,7 +2977,18 @@
   ],
   "answer": 1,
   "en": "F: Excuse me, I'd like to use the pool. It's my first time.\nM: Then we'll make a membership card, so please fill in this form.\nF: OK.\nM: Also, you must wear a cap in the pool. Do you have one?\nF: No, I don't. Can I buy one now?\nM: Yes, we sell them here. But please fill in the form first. The card takes about ten minutes to make.\nF: I see.",
-  "why": "She wants to buy a cap now, but he tells her to fill in the form first because the card takes time."
+  "why": "She wants to buy a cap now, but he tells her to fill in the form first because the card takes time.",
+  "opts_en": [
+   "Buy a cap",
+   "Fill in the form with her name etc.",
+   "Go into the pool",
+   "Change clothes"
+  ],
+  "wrong": {
+   "0": "She'll buy it later; he says 先に用紙を書いてください.",
+   "2": "She needs a membership card and a cap first.",
+   "3": "Changing clothes isn't mentioned."
+  }
  },
  {
   "id": "dl062",
@@ -2349,7 +3020,18 @@
   ],
   "answer": 3,
   "en": "M: Aren't you having cake? You used to love it.\nF: Yes, I like it, but I've stopped for now.\nM: Diet?\nF: No. The dentist said I have a cavity. I'm holding off until it's treated.",
-  "why": "She has a cavity and is avoiding sweets until it is treated. She denies the diet guess."
+  "why": "She has a cavity and is avoiding sweets until it is treated. She denies the diet guess.",
+  "opts_en": [
+   "She's full",
+   "She's on a diet",
+   "She came to dislike cake",
+   "She's holding off until her cavity is fixed"
+  ],
+  "wrong": {
+   "0": "Being full isn't mentioned.",
+   "1": "She denies it: ちがうの.",
+   "2": "She still likes it: 好きなんだけど."
+  }
  },
  {
   "id": "dl063",
@@ -2389,7 +3071,18 @@
   ],
   "answer": 1,
   "en": "M: If the weather's nice this weekend, shall we go to the beach?\nF: Sounds good. But the forecast says rain on Saturday.\nM: What about Sunday?\nF: It'll be sunny on Sunday. But a friend of mine is coming over Sunday night.\nM: Then let's leave early Sunday morning and come back in the evening.\nF: Yes, let's. On Saturday, shall we watch a movie at home?",
-  "why": "Saturday will rain, so they go to the beach on Sunday and come back before the friend visits. The movie is for Saturday."
+  "why": "Saturday will rain, so they go to the beach on Sunday and come back before the friend visits. The movie is for Saturday.",
+  "opts_en": [
+   "Visit a friend's house",
+   "Go to the beach",
+   "Watch a movie at home",
+   "Stay home because of rain"
+  ],
+  "wrong": {
+   "0": "Her friend comes to her place on Sunday evening.",
+   "2": "The movie at home is for Saturday.",
+   "3": "Rain is Saturday; Sunday will be sunny."
+  }
  },
  {
   "id": "dl064",
@@ -2421,7 +3114,18 @@
   ],
   "answer": 2,
   "en": "M: The train isn't moving at all.\nF: There was an announcement a moment ago. A passenger at the previous station got sick, and they're taking care of them.\nM: Good thing it's not an accident.\nF: Yes. They said it'll move in about ten minutes.",
-  "why": "A passenger got sick at the previous station. The man says it is not an accident."
+  "why": "A passenger got sick at the previous station. The man says it is not an accident.",
+  "opts_en": [
+   "Because there was an accident",
+   "Because the train ahead is late",
+   "Because a passenger got sick",
+   "Because of heavy rain"
+  ],
+  "wrong": {
+   "0": "He says he's glad it's not an accident: じこじゃなくてよかった.",
+   "1": "No train ahead is mentioned; a sick passenger is being treated.",
+   "3": "Weather isn't mentioned."
+  }
  },
  {
   "id": "dl065",
@@ -2457,7 +3161,18 @@
   ],
   "answer": 0,
   "en": "F: Do you have this dress in size M?\nM: Sorry, we don't have M in the store now. We can order it from another store, but it takes about three days.\nF: I see. I want to wear it to a party next week, so that'll be in time.\nM: Yes. Or we have size L now. Would you like to try it on?\nF: I think L would be too big, so please order the M.",
-  "why": "She declines trying on the L and asks the shop to order the M, which will arrive in time."
+  "why": "She declines trying on the L and asks the shop to order the M, which will arrive in time.",
+  "opts_en": [
+   "Have the M size ordered in",
+   "Go to another shop",
+   "Buy the L size",
+   "Try on the L size"
+  ],
+  "wrong": {
+   "1": "The shop orders it from another branch; she doesn't go.",
+   "2": "She thinks L is too big: Lは大きいと思う.",
+   "3": "She declines trying it and asks them to order: 取り寄せてください."
+  }
  },
  {
   "id": "dl066",
@@ -2489,7 +3204,18 @@
   ],
   "answer": 1,
   "en": "F: What do you do on weekends, Mr. Yamada? You used to go fishing a lot.\nM: I quit fishing recently. Now I'm into cooking. On weekends I bake bread at home.\nF: Wow, amazing. Do you go to cooking classes?\nM: No, I learn online and make it myself.",
-  "why": "He bakes bread at home on weekends. He quit fishing and does not go to cooking classes."
+  "why": "He bakes bread at home on weekends. He quit fishing and does not go to cooking classes.",
+  "opts_en": [
+   "Goes fishing",
+   "Bakes bread at home",
+   "Climbs mountains",
+   "Goes to a cooking class"
+  ],
+  "wrong": {
+   "0": "He quit fishing: つりは最近やめちゃって.",
+   "2": "Mountain climbing isn't mentioned.",
+   "3": "He learns online by himself: ネットを見て、自分で作っています."
+  }
  },
  {
   "id": "dl067",
@@ -2521,7 +3247,18 @@
   ],
   "answer": 3,
   "en": "M: Ms. Ono, could you give this document to the manager?\nF: Sure. He's not at his desk now, so I'll leave it on his desk.\nM: No, it's important, so hand it to him directly. He'll be back at three.\nF: Understood. I'll keep it until then.",
-  "why": "She plans to leave it on the desk, but he says to hand it over directly when the manager returns at three."
+  "why": "She plans to leave it on the desk, but he says to hand it over directly when the manager returns at three.",
+  "opts_en": [
+   "Send it to the manager right away",
+   "Give it back to the man",
+   "Put it on the manager's desk",
+   "Hand it to the manager directly at 3"
+  ],
+  "wrong": {
+   "0": "The manager isn't there; she'll keep it until three.",
+   "1": "She says she'll hold on to it herself: わたしが持っていますね.",
+   "2": "The man says no; it's important, so hand it over: ちょくせつわたして."
+  }
  },
  {
   "id": "dl068",
@@ -2553,7 +3290,18 @@
   ],
   "answer": 3,
   "en": "M: You're moving? Your apartment now is big and nice.\nF: Yes, I like the place, but my office is far now.\nM: Oh, your office moved, didn't it?\nF: Yes. Now it takes an hour and a half by train.",
-  "why": "Her office moved and the commute is now 90 minutes. She likes the apartment itself."
+  "why": "Her office moved and the commute is now 90 minutes. She likes the apartment itself.",
+  "opts_en": [
+   "The room is old",
+   "The rent is high",
+   "The room is small",
+   "It takes long to get to work"
+  ],
+  "wrong": {
+   "0": "The apartment is きれい and she likes it.",
+   "1": "Rent isn't mentioned.",
+   "2": "It's spacious: 広くてきれい."
+  }
  },
  {
   "id": "dl069",
@@ -2597,7 +3345,18 @@
   ],
   "answer": 0,
   "en": "F: What are you giving Grandma for her birthday?\nM: I gave her a sweater last year, so I'm thinking of flowers this year.\nF: Mom said she's giving flowers.\nM: I see. Then sweets? Grandma likes sweet things, right?\nF: Sure, but it seems her doctor told her not to eat too many sweets lately.\nM: Then how about a photo frame, with a family photo in it?\nF: That's nice.",
-  "why": "Mom is giving flowers and the doctor told Grandma to limit sweets, so he chooses a photo frame."
+  "why": "Mom is giving flowers and the doctor told Grandma to limit sweets, so he chooses a photo frame.",
+  "opts_en": [
+   "A photo frame",
+   "Flowers",
+   "Sweets",
+   "A sweater"
+  ],
+  "wrong": {
+   "1": "Mom is giving flowers.",
+   "2": "The doctor told her not to eat too many sweets.",
+   "3": "The sweater was last year's gift."
+  }
  },
  {
   "id": "dl070",
@@ -2633,7 +3392,18 @@
   ],
   "answer": 3,
   "en": "F: I heard tomorrow's meeting was moved to next week?\nM: Yes.\nF: Because the manager is on a business trip?\nM: No, the manager can attend, but the data for the meeting isn't ready yet.\nF: I see.",
-  "why": "The data isn't ready. He says the manager can attend, so the business trip guess is wrong."
+  "why": "The data isn't ready. He says the manager can attend, so the business trip guess is wrong.",
+  "opts_en": [
+   "Because the room is unavailable",
+   "Because the manager is on a business trip",
+   "Because few people can attend",
+   "Because the data isn't ready"
+  ],
+  "wrong": {
+   "0": "The room is never mentioned.",
+   "1": "He says the manager can attend: 部長は出られるんですが.",
+   "2": "Attendance isn't mentioned."
+  }
  },
  {
   "id": "dl071",
@@ -2677,7 +3447,18 @@
   ],
   "answer": 0,
   "en": "F: This Saturday we're all eating at Tanaka's house. What should I bring?\nM: Drinks?\nF: Tanaka said he'll get drinks.\nM: Then dessert?\nF: Kinoshita is making dessert.\nM: Then why not make a salad?\nF: Good idea. A salad is quick to make.",
-  "why": "Drinks and dessert are already covered by others, so she makes a salad."
+  "why": "Drinks and dessert are already covered by others, so she makes a salad.",
+  "opts_en": [
+   "Salad",
+   "Flowers",
+   "Dessert",
+   "Drinks"
+  ],
+  "wrong": {
+   "1": "Flowers are never mentioned.",
+   "2": "Kinoshita makes dessert: 木下さんが作ってくる.",
+   "3": "Tanaka prepares drinks: 田中さんが用意する."
+  }
  },
  {
   "id": "dl072",
@@ -2709,7 +3490,18 @@
   ],
   "answer": 3,
   "en": "F: How was the exam yesterday?\nM: The kanji questions were hard, but I think I got most of them.\nF: What about reading?\nM: That was the worst. There were lots of long texts, and I couldn't read to the end.",
-  "why": "He says the reading section was the worst because he couldn't finish. The kanji was hard but he did most of it."
+  "why": "He says the reading section was the worst because he couldn't finish. The kanji was hard but he did most of it.",
+  "opts_en": [
+   "Writing",
+   "Kanji",
+   "Listening",
+   "Reading"
+  ],
+  "wrong": {
+   "0": "No writing section is mentioned.",
+   "1": "Kanji was hard, but he did most of it: だいたいできた.",
+   "2": "No listening section is mentioned."
+  }
  },
  {
   "id": "dl073",
@@ -2753,7 +3545,18 @@
   ],
   "answer": 2,
   "en": "M: Excuse me, what time is checkout?\nF: It's eleven o'clock.\nM: My flight is in the evening. Can I leave my bags until then?\nF: Yes, we'll keep them at the front desk.\nM: Great. Also, how should I get to the airport?\nF: A bus leaves from in front of the hotel. A reservation is needed, so shall I make one for you?\nM: Yes, please.",
-  "why": "He leaves his bags at the front desk until his evening flight. Sending them to the airport is not mentioned."
+  "why": "He leaves his bags at the front desk until his evening flight. Sending them to the airport is not mentioned.",
+  "opts_en": [
+   "Take it out with him",
+   "Leave it in the room",
+   "Leave it at the front desk",
+   "Send it to the airport"
+  ],
+  "wrong": {
+   "0": "He wants to leave it until his evening flight, not carry it.",
+   "1": "He must check out at 11; the front desk will hold it.",
+   "3": "Sending bags to the airport isn't mentioned; only a bus is booked."
+  }
  },
  {
   "id": "dl074",
@@ -2785,7 +3588,18 @@
   ],
   "answer": 0,
   "en": "F: What surprised you when you came to Japan?\nM: I thought it would be the trains coming on time, but I'd heard about that before, so not really.\nF: Then what?\nM: That you can pay for everything at convenience stores. Even the electricity and gas bills.",
-  "why": "He was most surprised that bills can be paid at convenience stores. He already knew about the punctual trains."
+  "why": "He was most surprised that bills can be paid at convenience stores. He already knew about the punctual trains.",
+  "opts_en": [
+   "You can pay various bills at convenience stores",
+   "Electricity is expensive",
+   "Trains run on time",
+   "There are many convenience stores"
+  ],
+  "wrong": {
+   "1": "He mentions paying the electric bill, not its price.",
+   "2": "He'd heard that before, so it didn't surprise him: あまり.",
+   "3": "The number of stores isn't mentioned; paying anything there is."
+  }
  },
  {
   "id": "dl075",
@@ -2829,7 +3643,18 @@
   ],
   "answer": 0,
   "en": "F: Excuse me, it's my first time here.\nM: Then your health insurance card, please.\nF: Here you are.\nM: Then please write how you're feeling today on this sheet. After that, take your temperature.\nF: OK.\nM: Oh, sorry, please take your temperature first. Here's the thermometer.\nF: Understood.",
-  "why": "He first says to write on the sheet, then corrects himself: take her temperature first. She has already handed over her card."
+  "why": "He first says to write on the sheet, then corrects himself: take her temperature first. She has already handed over her card.",
+  "opts_en": [
+   "Take her temperature",
+   "Hand over her insurance card",
+   "Fill in the form",
+   "See the doctor"
+  ],
+  "wrong": {
+   "1": "She already did that: はい、どうぞ.",
+   "2": "He corrected himself: 熱は先にはかってください.",
+   "3": "Seeing the doctor comes later."
+  }
  },
  {
   "id": "dl076",
@@ -2861,7 +3686,18 @@
   ],
   "answer": 1,
   "en": "F: Did you get the concert tickets?\nM: No, I didn't buy them.\nF: Were they sold out?\nM: No, there were still some, but to buy online you had to become a member. That was a hassle, so I gave up.",
-  "why": "Tickets were still available; he gave up because he had to register as a member."
+  "why": "Tickets were still available; he gave up because he had to register as a member.",
+  "opts_en": [
+   "Because they were sold out",
+   "Because becoming a member was a hassle",
+   "Because he's busy on the concert day",
+   "Because it was expensive"
+  ],
+  "wrong": {
+   "0": "They were still available: まだあった.",
+   "2": "No other plans are mentioned.",
+   "3": "Price isn't mentioned."
+  }
  },
  {
   "id": "dl077",
@@ -2901,7 +3737,18 @@
   ],
   "answer": 2,
   "en": "F: Hello, what time are you coming home today?\nM: Around eight, I think.\nF: Then I'll make dinner.\nM: Oh, sorry, I'm eating with people from work before coming home. I forgot to tell you.\nF: Oh. Then I'll eat alone. Will you be late?\nM: I'll be home by ten.",
-  "why": "He is having dinner with coworkers and will be home by ten. The 8 o'clock plan was cancelled; the woman is the one eating alone."
+  "why": "He is having dinner with coworkers and will be home by ten. The 8 o'clock plan was cancelled; the woman is the one eating alone.",
+  "opts_en": [
+   "Come home around 8 and eat dinner at home",
+   "Work overtime",
+   "Eat dinner with coworkers, then go home",
+   "Eat dinner alone"
+  ],
+  "wrong": {
+   "0": "Plans changed: 会社の人と食べて帰ることになった.",
+   "1": "He's eating with coworkers, not working late.",
+   "3": "The woman eats alone, not him: わたしは一人で食べる."
+  }
  },
  {
   "id": "dl078",
@@ -2937,7 +3784,18 @@
   ],
   "answer": 2,
   "en": "M: Have you been to the new park?\nF: Yes, I went last week. It's big and there were lots of flowers.\nM: I'm thinking of taking my kids.\nF: Good idea, but the play area was still under construction. They say it'll be ready next month.\nM: I see. Then I'll wait until next month.",
-  "why": "The play area is still under construction. The park itself is open and has many flowers."
+  "why": "The play area is still under construction. The park itself is open and has many flowers.",
+  "opts_en": [
+   "The park isn't open yet",
+   "The park is far",
+   "The play area isn't finished",
+   "The flowers aren't blooming yet"
+  ],
+  "wrong": {
+   "0": "The park is open; she went last week.",
+   "1": "Distance isn't mentioned.",
+   "3": "There were lots of flowers: 花もたくさんあったよ."
+  }
  },
  {
   "id": "dl079",
@@ -2977,7 +3835,18 @@
   ],
   "answer": 3,
   "en": "M: Ms. Nakayama, I read your report. The content is well written.\nF: Thank you.\nM: But the graphs are a little hard to read. I think you should change the colors.\nF: Yes.\nM: Also, the summary at the end is too short... No, actually the summary is fine. Just fix the graphs.\nF: Understood.",
-  "why": "He mentions the summary but takes it back and says to fix only the graph colors."
+  "why": "He mentions the summary but takes it back and says to fix only the graph colors.",
+  "opts_en": [
+   "The content",
+   "The graph colors and the summary",
+   "The final summary",
+   "The graph colors"
+  ],
+  "wrong": {
+   "0": "He praises the content: よく書けています.",
+   "1": "He takes back the summary comment: まとめはこれでいいかな.",
+   "2": "He decides the summary is fine; only the graph: グラフだけ直してください."
+  }
  },
  {
   "id": "dl080",
@@ -3013,6 +3882,17 @@
   ],
   "answer": 1,
   "en": "M: You've been cycling to work lately.\nF: Yes.\nM: Is it for exercise?\nF: That's part of it, but mainly because the morning trains are just too crowded.\nM: Ah, the morning trains are tough.",
-  "why": "She says the main reason ('一番は') is the crowded morning trains; exercise is only a minor reason."
+  "why": "She says the main reason ('一番は') is the crowded morning trains; exercise is only a minor reason.",
+  "opts_en": [
+   "The office got closer",
+   "The morning trains are crowded",
+   "Train fares are high",
+   "For exercise"
+  ],
+  "wrong": {
+   "0": "The office location isn't mentioned.",
+   "2": "Train fares aren't mentioned.",
+   "3": "That's a reason (それもあります), but not the main one."
+  }
  }
 ]

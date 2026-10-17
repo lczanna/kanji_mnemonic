@@ -10,7 +10,18 @@
      "ように"
     ],
     "answer": 2,
-    "why": "〜たほうがいい gives advice: 'you'd better take an umbrella'."
+    "why": "〜たほうがいい gives advice: 'you'd better take an umbrella'.",
+    "opts_en": [
+     "ことが → (〜たことがある) have done",
+     "ばかり → (〜たばかり) just did",
+     "ほうが → (〜たほうがいい) had better",
+     "ように → so that / like"
+    ],
+    "wrong": {
+     "0": "〜たことがいい isn't a pattern; 〜たことがある means 'have done'.",
+     "1": "〜たばかり means 'just did'; it can't give advice with いい.",
+     "3": "〜たようにいい doesn't form advice."
+    }
    },
    {
     "q": "日本語が上手になりたいので、毎日ニュースを聞く（　）しています。",
@@ -21,7 +32,18 @@
      "らしく"
     ],
     "answer": 0,
-    "why": "〜ようにしている = making an effort to do something regularly."
+    "why": "〜ようにしている = making an effort to do something regularly.",
+    "opts_en": [
+     "ように → (〜ようにしている) make a point of",
+     "ために → in order to",
+     "そうに → looking like",
+     "らしく → like / typical of"
+    ],
+    "wrong": {
+     "1": "ため needs に before する: 聞くためにしています doesn't make sense here.",
+     "2": "そう attaches to stems (聞きそう) and means 'looks like', which doesn't fit.",
+     "3": "らしく means 'in the manner of', not a habit you keep up."
+    }
    },
    {
     "q": "兄は料理が上手ですが、毎日作る（　）ではありません。",
@@ -32,7 +54,18 @@
      "わけ"
     ],
     "answer": 3,
-    "why": "〜わけではない = it doesn't mean that / not necessarily (partial denial)."
+    "why": "〜わけではない = it doesn't mean that / not necessarily (partial denial).",
+    "opts_en": [
+     "はず → should / expected to",
+     "ところ → about to / just",
+     "こと → (〜ことではない) it's not a matter of",
+     "わけ → (〜わけではない) it doesn't mean that"
+    ],
+    "wrong": {
+     "0": "はずではない means 'wasn't supposed to', not 'doesn't mean he cooks daily'.",
+     "1": "作るところではない would mean 'not about to cook', which doesn't fit.",
+     "2": "作ることではない isn't a natural partial denial here; わけではない is."
+    }
    },
    {
     "q": "この会社では、朝９時までに受付でサインすることに（　）。",
@@ -43,7 +76,18 @@
      "おきます"
     ],
     "answer": 1,
-    "why": "〜ことになっている describes a rule or arrangement: 'it is the rule that…'."
+    "why": "〜ことになっている describes a rule or arrangement: 'it is the rule that…'.",
+    "opts_en": [
+     "いきます → go",
+     "なっています → (〜ことになっている) it's the rule",
+     "みえます → looks / seems",
+     "おきます → (〜ておく) do in advance"
+    ],
+    "wrong": {
+     "0": "ことにいく isn't a pattern.",
+     "2": "ことにみえる isn't a pattern.",
+     "3": "おく follows the て-form, not ことに."
+    }
    },
    {
     "q": "弟はゲーム（　）していて、全然勉強しない。",
@@ -54,7 +98,18 @@
      "しか"
     ],
     "answer": 1,
-    "why": "Nばかりしている = doing nothing but N. しか needs a negative verb."
+    "why": "Nばかりしている = doing nothing but N. しか needs a negative verb.",
+    "opts_en": [
+     "だけに → precisely because",
+     "ばかり → nothing but",
+     "ほど → to the extent",
+     "しか → only (with negative)"
+    ],
+    "wrong": {
+     "0": "だけに means 'precisely because', which doesn't fit 'doing games'.",
+     "2": "ほど means 'to the degree of' and can't mean 'all the time'.",
+     "3": "しか needs a negative verb, but していて is positive."
+    }
    },
    {
     "q": "今、家を出る（　）だから、10分ぐらいで駅に着くと思う。",
@@ -65,7 +120,18 @@
      "ところ"
     ],
     "answer": 3,
-    "why": "Dictionary form + ところだ = about to do it right now."
+    "why": "Dictionary form + ところだ = about to do it right now.",
+    "opts_en": [
+     "はず → should / expected to",
+     "ため → in order to / because",
+     "ばかり → (〜たばかり) just did",
+     "ところ → (dict. + ところ) about to"
+    ],
+    "wrong": {
+     "0": "出るはず means 'expected to leave', odd for one's own action now.",
+     "1": "出るためだ means 'it's in order to leave', which makes no sense.",
+     "2": "ばかり for 'just did' needs past form: 出たばかり."
+    }
    },
    {
     "q": "先生がお書きになった本を（　）ことがありますか。",
@@ -76,7 +142,18 @@
      "読ませた"
     ],
     "answer": 0,
-    "why": "You are asking about the listener's action, so use the respectful form お〜になる, not the humble はいけんする / お〜する."
+    "why": "You are asking about the listener's action, so use the respectful form お〜になる, not the humble はいけんする / お〜する.",
+    "opts_en": [
+     "お読みになった → read (respectful)",
+     "はいけんした → looked at (humble)",
+     "お読みした → read (humble)",
+     "読ませた → made / let someone read"
+    ],
+    "wrong": {
+     "1": "はいけんする is humble, for your own actions, not the listener's.",
+     "2": "お〜する is humble, for your own actions, not the listener's.",
+     "3": "Causative 'made someone read' doesn't fit 'have you read…?'."
+    }
    },
    {
     "q": "わたしは子どものころ、きらいな魚を母に毎日（　）、とてもいやでした。",
@@ -87,7 +164,18 @@
      "食べたくて"
     ],
     "answer": 2,
-    "why": "Causative-passive 食べさせられる: I was made to eat it by my mother (against my will), which explains いやでした."
+    "why": "Causative-passive 食べさせられる: I was made to eat it by my mother (against my will), which explains いやでした.",
+    "opts_en": [
+     "食べさせて → made (someone) eat",
+     "食べてもらって → had (her) eat for me",
+     "食べさせられて → was made to eat",
+     "食べたくて → wanted to eat"
+    ],
+    "wrong": {
+     "0": "That means I made my mother eat, but the speaker was the one forced.",
+     "1": "This means my mother ate as a favor to me, which doesn't fit.",
+     "3": "The fish was disliked, so wanting to eat it contradicts いやでした."
+    }
    },
    {
     "q": "駅に着いた（　）、電車が出てしまった。",
@@ -98,7 +186,18 @@
      "とたんに"
     ],
     "answer": 3,
-    "why": "Past form + とたん(に) = the moment / just as something happened."
+    "why": "Past form + とたん(に) = the moment / just as something happened.",
+    "opts_en": [
+     "ながら → while",
+     "うちに → while / before",
+     "までに → by (deadline)",
+     "とたんに → the moment"
+    ],
+    "wrong": {
+     "0": "ながら needs a verb stem (着きながら) and means two simultaneous actions.",
+     "1": "うちに doesn't follow past form here and means 'while still'.",
+     "2": "までに is a deadline and doesn't follow 着いた."
+    }
    },
    {
     "q": "この本は子ども（　）書かれているので、ことばがやさしい。",
@@ -109,7 +208,18 @@
      "までに"
     ],
     "answer": 1,
-    "why": "N向けに = aimed at / intended for N (children), so the words are easy."
+    "why": "N向けに = aimed at / intended for N (children), so the words are easy.",
+    "opts_en": [
+     "として → as (in the role of)",
+     "向けに → aimed at",
+     "にとって → for (from someone's viewpoint)",
+     "までに → by (a deadline)"
+    ],
+    "wrong": {
+     "0": "子どもとして書かれている would mean written in the role of a child.",
+     "2": "にとって gives someone's viewpoint, not a target audience.",
+     "3": "までに marks a deadline, not an audience."
+    }
    },
    {
     "q": "毎日聞いていたら、少しずつニュースがわかる（　）。",
@@ -120,7 +230,18 @@
      "ことにしました"
     ],
     "answer": 2,
-    "why": "Non-volitional わかる + ようになる = came to be able to understand (change over time)."
+    "why": "Non-volitional わかる + ようになる = came to be able to understand (change over time).",
+    "opts_en": [
+     "ことになりました → it was decided",
+     "ようにしました → made a point of",
+     "ようになりました → came to (be able)",
+     "ことにしました → decided to"
+    ],
+    "wrong": {
+     "0": "ことになる is for decisions or arrangements, not abilities growing over time.",
+     "1": "ようにする is a conscious effort; わかる isn't something you choose.",
+     "3": "ことにする is a decision; you can't decide to understand."
+    }
    },
    {
     "q": "すみません、部長はもう（　）か。",
@@ -131,7 +252,18 @@
      "帰っていただきました"
     ],
     "answer": 0,
-    "why": "Respectful form of 帰る for a superior: お帰りになる. お帰りする is humble."
+    "why": "Respectful form of 帰る for a superior: お帰りになる. お帰りする is humble.",
+    "opts_en": [
+     "Has he gone home? (respectful)",
+     "お帰りする (humble, wrong)",
+     "made/let him go home",
+     "had him go home (for us)"
+    ],
+    "wrong": {
+     "1": "お〜する is humble, used for yourself, not a superior.",
+     "2": "帰らせました means 'made/let someone go home' (causative).",
+     "3": "帰っていただきました means 'we had him go home', not asking if he left."
+    }
    },
    {
     "q": "あんなに勉強した（　）、試験に落ちてしまった。",
@@ -142,7 +274,18 @@
      "ために"
     ],
     "answer": 1,
-    "why": "〜のに expresses an unexpected or disappointing result: 'even though I studied so hard'."
+    "why": "〜のに expresses an unexpected or disappointing result: 'even though I studied so hard'.",
+    "opts_en": [
+     "ので → because",
+     "のに → even though",
+     "から → because",
+     "ために → because of / in order to"
+    ],
+    "wrong": {
+     "0": "'Because I studied so hard, I failed' makes no sense.",
+     "2": "'Because I studied so hard, I failed' makes no sense.",
+     "3": "ために gives cause or purpose; studying didn't cause the failure."
+    }
    }
   ],
   "order": [
@@ -219,7 +362,18 @@
       "たとえば"
      ],
      "answer": 1,
-     "why": "The writer says the library is convenient, BUT until last year rarely went there — a contrast, so でも."
+     "why": "The writer says the library is convenient, BUT until last year rarely went there — a contrast, so でも.",
+     "opts_en": [
+      "だから → so",
+      "でも → but",
+      "それに → besides",
+      "たとえば → for example"
+     ],
+     "wrong": {
+      "0": "Being convenient wouldn't cause rarely going; that's a contrast, not a result.",
+      "2": "それに adds a similar point, but the next idea contrasts.",
+      "3": "Not going to the library isn't an example of it being convenient."
+     }
     },
     {
      "q": "（２）",
@@ -230,7 +384,18 @@
       "もらいました"
      ],
      "answer": 3,
-     "why": "友だちに教えてもらいました: the friend (marked by に) taught me. くれました would need 友だちが."
+     "why": "友だちに教えてもらいました: the friend (marked by に) taught me. くれました would need 友だちが.",
+     "opts_en": [
+      "gave (to someone)",
+      "gave (to me)",
+      "gave (to an inferior)",
+      "received (had someone do for me)"
+     ],
+     "wrong": {
+      "0": "あげる is giving to others, but the friend taught me.",
+      "1": "くれる needs 友だちが; with 友だちに the verb must be もらう.",
+      "2": "やる is giving to an inferior, not receiving."
+     }
     },
     {
      "q": "（３）",
@@ -241,7 +406,18 @@
       "させました"
      ],
      "answer": 0,
-     "why": "好きになる = come to like. 好きにする means 'do as you like'."
+     "why": "好きになる = come to like. 好きにする means 'do as you like'.",
+     "opts_en": [
+      "なりました → became (好きになる: come to like)",
+      "しました → did (好きにする: do as you like)",
+      "いきました → went",
+      "させました → made (someone do)"
+     ],
+     "wrong": {
+      "1": "好きにする means 'do as you please', not 'come to like'.",
+      "2": "好きにいく isn't an expression.",
+      "3": "Causative; nobody was made to do anything."
+     }
     },
     {
      "q": "（４）",
@@ -252,7 +428,18 @@
       "しまいます"
      ],
      "answer": 2,
-     "why": "〜ている describes what people are doing: 楽しんでいます."
+     "why": "〜ている describes what people are doing: 楽しんでいます.",
+     "opts_en": [
+      "あります → (〜てある) has been done",
+      "おきます → do in advance",
+      "います → (〜ている) are doing",
+      "しまいます → end up doing"
+     ],
+     "wrong": {
+      "0": "〜てある describes a state left by someone's action, not people enjoying.",
+      "1": "〜ておく means doing in advance, which doesn't fit enjoying their time.",
+      "3": "〜てしまう implies completion or regret, wrong for a calm description."
+     }
     },
     {
      "q": "（５）",
@@ -263,7 +450,18 @@
       "あります"
      ],
      "answer": 1,
-     "why": "ぜひ…行ってみてください is an invitation to the readers (みなさん)."
+     "why": "ぜひ…行ってみてください is an invitation to the readers (みなさん).",
+     "opts_en": [
+      "seems to (have gone)",
+      "please try (going)",
+      "ended up (going)",
+      "has been (done)"
+     ],
+     "wrong": {
+      "0": "行ってみたいです would be 'want to try'; みたいです 'seems' doesn't invite readers.",
+      "2": "行ってしまいました is past regret, not an invitation to みなさん.",
+      "3": "行ってあります isn't grammatical here."
+     }
     }
    ],
    "en": "Every Saturday I go to the library in my neighborhood. It is a five-minute walk from the station and very convenient. But until last year I had hardly ever been to a library, because I thought books were something you buy and read. Also, I felt libraries were too quiet and a little nerve-racking. One day a friend told me, 'At the library you can watch old movies, not just read books.' When I went, there really were lots of movies, and since then I have come to like the library. All kinds of people come: students doing homework, elderly people reading newspapers, mothers reading to their children. Everyone quietly enjoys their own time. These days, before buying a book I first look for it at the library. It saves money, and I feel very happy when I find a book I want to read. Please try visiting your local library too."
@@ -280,7 +478,18 @@
       "朝ご飯を食べないで会社に行っていた"
      ],
      "answer": 3,
-     "why": "Paragraph 1: 朝ご飯も食べずに家を出ていました. The 5 a.m. walk is the senpai's habit."
+     "why": "Paragraph 1: 朝ご飯も食べずに家を出ていました. The 5 a.m. walk is the senpai's habit.",
+     "opts_en": [
+      "Got up at 5 every morning",
+      "Was fast at morning work",
+      "Walked around the neighborhood in the morning",
+      "Went to work without breakfast"
+     ],
+     "wrong": {
+      "0": "Getting up at 5 is the senpai's habit.",
+      "1": "Mornings were foggy with many mistakes: 頭がぼんやりして.",
+      "2": "The morning walk is also the senpai's routine."
+     }
     },
     {
      "q": "最初の一週間、朝とても眠かったのはなぜか。",
@@ -291,7 +500,18 @@
       "仕事がいそがしかったから"
      ],
      "answer": 0,
-     "why": "夜、寝る時間が変わらなかったので — bedtime stayed the same while getting up earlier."
+     "why": "夜、寝る時間が変わらなかったので — bedtime stayed the same while getting up earlier.",
+     "opts_en": [
+      "Because bedtime was the same as before",
+      "Because they got up at 5",
+      "Because they walked too much",
+      "Because work was busy"
+     ],
+     "wrong": {
+      "1": "The senior gets up at 5; the writer only got up 30 minutes earlier.",
+      "2": "The writer never says they walked; that's the senior's habit.",
+      "3": "Work being busy isn't the reason given."
+     }
     },
     {
      "q": "「わたし」は、眠いという問題をどうやって解決したか。",
@@ -302,7 +522,18 @@
       "会社の近くに引っ越した"
      ],
      "answer": 2,
-     "why": "夜11時にはスマホを見るのをやめて、早く寝るようにしました."
+     "why": "夜11時にはスマホを見るのをやめて、早く寝るようにしました.",
+     "opts_en": [
+      "Started eating a big breakfast",
+      "Started walking with the senior every morning",
+      "Stopped phone use at 11 p.m. and went to bed early",
+      "Moved near the office"
+     ],
+     "wrong": {
+      "0": "Breakfast amount isn't the solution; sleeping earlier is.",
+      "1": "The senior walks alone; the writer didn't join.",
+      "3": "Moving is never mentioned."
+     }
     },
     {
      "q": "このぶんしょうで「わたし」が一番言いたいことは何か。",
@@ -313,7 +544,18 @@
       "せんぱいの言うことは何でも聞いたほうがいい"
      ],
      "answer": 1,
-     "why": "Last paragraph: 大切なのは、いきなり大きく変えようとしないこと… 小さなことから始めれば."
+     "why": "Last paragraph: 大切なのは、いきなり大きく変えようとしないこと… 小さなことから始めれば.",
+     "opts_en": [
+      "You should get up at 5",
+      "When changing your life, start small",
+      "You can't work without breakfast",
+      "Always do what your senpai says"
+     ],
+     "wrong": {
+      "0": "The writer thought 5 a.m. was impossible and now gets up at 6.",
+      "2": "Breakfast is a detail; the conclusion is about starting small.",
+      "3": "The writer adapted the advice, starting with just 30 minutes."
+     }
     }
    ],
    "en": "Until last year I was very bad at getting up in the morning. I slept until the last minute and left home without breakfast, so in the mornings my head was foggy and I made many small mistakes at work. One day a senior colleague in my department told me, 'If you use your mornings, your whole day changes.' He gets up at 5, walks around the neighborhood for about 30 minutes, then has a relaxed breakfast. I thought getting up that early was impossible, but I started by getting up just 30 minutes earlier. The first week was really hard: I still went to bed at the same time, so I was very sleepy. So I stopped looking at my phone at 11 p.m. and went to bed earlier, and gradually I began waking up naturally. Now I get up at 6 every day and plan my day over breakfast. My morning work is much faster and I make fewer mistakes. I think the key is not to try to change everything at once; if you start small, it isn't so hard to keep going."
@@ -341,7 +583,18 @@
     ],
     "en": "A woman on the radio: Do you ever have trouble falling asleep? I used to often lie in bed for over an hour. After looking into it, I learned that habits before bed matter. For example, looking at your phone right up to bedtime keeps your brain from resting. So I stopped using my phone an hour before bed and read a book instead, and now I fall asleep much faster. Please try it.",
     "why": "The whole talk is about habits that help you fall asleep; the phone and the book are only examples.",
-    "answer": 0
+    "answer": 0,
+    "opts_en": [
+     "Habits for sleeping well",
+     "New ways to use a smartphone",
+     "Recommended books",
+     "How to choose a bed"
+    ],
+    "wrong": {
+     "1": "The phone is only an example of what keeps you awake.",
+     "2": "Reading is mentioned as a habit, but no specific books are recommended.",
+     "3": "Choosing a bed is never discussed."
+    }
    },
    {
     "id": "mgA2",
@@ -364,7 +617,18 @@
     ],
     "en": "A manager to staff: From next month we will change how meetings are run. Until now the Monday morning meeting took about an hour, but many said it was too long, so it will be 30 minutes. Instead, please email your materials by the day before. If everyone reads them in advance, the discussion can be shorter.",
     "why": "The meeting becomes 30 minutes and materials must be sent the day before. The day and the number of meetings do not change.",
-    "answer": 2
+    "answer": 2,
+    "opts_en": [
+     "Moving meetings from Monday to Friday",
+     "Making more materials",
+     "Shortening meetings and sending materials the day before",
+     "Holding more meetings"
+    ],
+    "wrong": {
+     "0": "The day isn't changed; only the length.",
+     "1": "The amount of materials isn't discussed; their timing is.",
+     "3": "The number of meetings doesn't change."
+    }
    },
    {
     "id": "mgA3",
@@ -387,7 +651,18 @@
     ],
     "en": "An international student: What surprised me first in Japan was how to put out the trash. At home we put almost everything in one bag, but in Japan you have to separate burnables, plastic, bottles and cans. The collection days are fixed too, so at first I often made mistakes and neighbors warned me. Now separating is natural for me, and I want to keep doing it when I go home.",
     "why": "He says separating is now natural (当たり前) and he wants to continue it at home, so he sees it as a good habit.",
-    "answer": 1
+    "answer": 1,
+    "opts_en": [
+     "Too many categories; dislikes it",
+     "Used to it now; thinks it's a good habit",
+     "Thinks the home country's way is better",
+     "Thinks the neighbors are too strict"
+    ],
+    "wrong": {
+     "0": "Separating is now natural for him: 当たり前になりました.",
+     "2": "He wants to keep the Japanese way back home.",
+     "3": "Neighbors corrected him, but he doesn't complain about them."
+    }
    }
   ],
   "say": [
@@ -401,7 +676,16 @@
      "すみません、メニューを見てもいいですよ。"
     ],
     "why": "〜てもらえますか is a polite request. 見せてあげましょうか offers to show; 見てもいいですよ gives permission.",
-    "answer": 1
+    "answer": 1,
+    "opts_en": [
+     "Excuse me, shall I show you the menu?",
+     "Excuse me, could you show me the menu?",
+     "Excuse me, you may look at the menu."
+    ],
+    "wrong": {
+     "0": "見せてあげましょうか offers to show the menu to someone; the server should show you.",
+     "2": "見てもいいですよ gives someone permission; it's not a request."
+    }
    },
    {
     "id": "msA2",
@@ -413,7 +697,16 @@
      "手伝ってくれて、ありがとう。"
     ],
     "why": "〜ましょうか offers to do something. 手伝ってもらえませんか asks for help; ありがとう thanks someone who already helped.",
-    "answer": 0
+    "answer": 0,
+    "opts_en": [
+     "Shall I help with something?",
+     "Could you help me with something?",
+     "Thanks for helping me."
+    ],
+    "wrong": {
+     "1": "てもらえませんか asks them for help, the opposite of offering.",
+     "2": "That thanks someone who already helped you."
+    }
    },
    {
     "id": "msA3",
@@ -425,7 +718,16 @@
      "遅れてしまって、すみません。"
     ],
     "why": "You apologize for being late. お先に失礼します is said when leaving before others.",
-    "answer": 2
+    "answer": 2,
+    "opts_en": [
+     "Excuse me for leaving first.",
+     "Please take your time.",
+     "Sorry for being late."
+    ],
+    "wrong": {
+     "0": "お先に失礼します is said when leaving before others.",
+     "1": "どうぞ、ごゆっくり tells someone to relax; it isn't an apology."
+    }
    },
    {
     "id": "msA4",
@@ -437,7 +739,16 @@
      "これ、着てみてもいいですか。"
     ],
     "why": "〜てもいいですか asks permission. 着てみたらどうですか suggests that someone else try it on.",
-    "answer": 2
+    "answer": 2,
+    "opts_en": [
+     "Why don't you try it on?",
+     "Shall I try it on to show you?",
+     "May I try this on?"
+    ],
+    "wrong": {
+     "0": "〜たらどうですか suggests someone else try it on.",
+     "1": "着てみせましょうか offers to model it for someone, not to ask permission."
+    }
    }
   ]
  },
@@ -452,7 +763,18 @@
      "ろう"
     ],
     "answer": 1,
-    "why": "Volitional + とする = to be about to / try to do: 出ようとしたとき 'just as I was about to leave'."
+    "why": "Volitional + とする = to be about to / try to do: 出ようとしたとき 'just as I was about to leave'.",
+    "opts_en": [
+     "たい → want to",
+     "よう → (volitional + とする) about to",
+     "そう → looks like",
+     "ろう → (not a valid form here)"
+    ],
+    "wrong": {
+     "0": "出たいとした isn't grammatical; とする needs the volitional.",
+     "2": "出そうとした isn't the pattern; volitional 出よう is needed.",
+     "3": "出ろう isn't a valid form of 出る."
+    }
    },
    {
     "q": "メールは昨日送りましたから、もう着いている（　）です。",
@@ -463,7 +785,18 @@
      "はず"
     ],
     "answer": 3,
-    "why": "〜はずだ = should be (expectation based on a reason: it was sent yesterday)."
+    "why": "〜はずだ = should be (expectation based on a reason: it was sent yesterday).",
+    "opts_en": [
+     "だらけ → full of / covered in",
+     "ため → because of / for",
+     "まま → (stays) as it is",
+     "はず → should (expected)"
+    ],
+    "wrong": {
+     "0": "だらけ follows nouns and means 'covered in', not an expectation.",
+     "1": "着いているためです would mean 'it's because it arrived', which doesn't follow from から.",
+     "2": "まま means an unchanged state, not an expectation."
+    }
    },
    {
     "q": "暗くなら（　）、帰りましょう。",
@@ -474,7 +807,18 @@
      "ないところで"
     ],
     "answer": 0,
-    "why": "〜ないうちに = before something happens (while it hasn't yet got dark)."
+    "why": "〜ないうちに = before something happens (while it hasn't yet got dark).",
+    "opts_en": [
+     "ないうちに → before (it happens)",
+     "ないまでに → (not a form)",
+     "ないあいだ → while not",
+     "ないところで → where not"
+    ],
+    "wrong": {
+     "1": "までに follows the plain form (暗くなるまでに), not ない.",
+     "2": "ないあいだ means 'during the time it isn't', not 'before it happens'.",
+     "3": "ところで describes a place or point, not 'before'."
+    }
    },
    {
     "q": "今日は私が料理を作る（　）、あなたがおさらを洗ってね。",
@@ -485,7 +829,18 @@
      "うちに"
     ],
     "answer": 2,
-    "why": "〜かわりに = in exchange / instead: I cook, and in return you wash the dishes."
+    "why": "〜かわりに = in exchange / instead: I cook, and in return you wash the dishes.",
+    "opts_en": [
+     "ために → in order to",
+     "までに → by (deadline)",
+     "かわりに → instead / in exchange",
+     "うちに → while"
+    ],
+    "wrong": {
+     "0": "作るために means 'in order to cook', not an exchange.",
+     "1": "までに is a deadline: 'by the time I cook' doesn't fit.",
+     "3": "作るうちに means 'while cooking', not 'in return'."
+    }
    },
    {
     "q": "この本は読め（　）読むほどおもしろくなる。",
@@ -496,7 +851,18 @@
      "のに"
     ],
     "answer": 0,
-    "why": "〜ば〜ほど = the more…, the more…: 読めば読むほど."
+    "why": "〜ば〜ほど = the more…, the more…: 読めば読むほど.",
+    "opts_en": [
+     "ば → (〜ば〜ほど) the more… the more",
+     "て → and / -ing",
+     "たら → if / when",
+     "のに → even though"
+    ],
+    "wrong": {
+     "1": "〜て〜ほど isn't a pattern; it must be 〜ば〜ほど.",
+     "2": "〜たら〜ほど isn't a pattern, and 読めたら would mean 'if I can read'.",
+     "3": "のに means 'even though' and doesn't pair with ほど."
+    }
    },
    {
     "q": "国（　）、あいさつのしかたがちがう。",
@@ -507,7 +873,18 @@
      "として"
     ],
     "answer": 2,
-    "why": "Nによって = depending on N: greetings differ depending on the country."
+    "why": "Nによって = depending on N: greetings differ depending on the country.",
+    "opts_en": [
+     "について → about",
+     "に対して → toward / against",
+     "によって → depending on",
+     "として → as"
+    ],
+    "wrong": {
+     "0": "について means 'about', and 'greetings differ about the country' doesn't make sense.",
+     "1": "に対して means 'toward' or 'in contrast to', not 'depending on'.",
+     "3": "として means 'in the role of', which doesn't fit."
+    }
    },
    {
     "q": "大事な書類を電車の中に忘れて（　）。",
@@ -518,7 +895,18 @@
      "しまいました"
     ],
     "answer": 3,
-    "why": "〜てしまう shows an unintended, regrettable action: I (accidentally) left it."
+    "why": "〜てしまう shows an unintended, regrettable action: I (accidentally) left it.",
+    "opts_en": [
+     "〜ておく → did in advance",
+     "〜てみる → tried",
+     "〜てある → has been done",
+     "〜てしまう → ended up (regret)"
+    ],
+    "wrong": {
+     "0": "おきました means on purpose in advance; nobody forgets a document deliberately.",
+     "1": "みました means 'tried leaving it', which makes no sense.",
+     "2": "てある needs a transitive state like 置いてある, not 忘れて."
+    }
    },
    {
     "q": "すみません、今日は体の具合が悪いので、早く帰ら（　）でしょうか。",
@@ -529,7 +917,18 @@
      "せてあげない"
     ],
     "answer": 1,
-    "why": "Causative + ていただけないでしょうか = very polite request for permission: 'may I go home early?'"
+    "why": "Causative + ていただけないでしょうか = very polite request for permission: 'may I go home early?'",
+    "opts_en": [
+     "れていただけない → (passive) + could you",
+     "せていただけない → could you let me (causative)",
+     "せてもらわない → won't get let",
+     "せてあげない → won't let them"
+    ],
+    "wrong": {
+     "0": "帰られて is passive/respectful; asking permission needs causative 帰らせて.",
+     "2": "もらわないでしょうか is not a polite request form; you need いただけない.",
+     "3": "〜てあげる is doing something for others, not asking for yourself."
+    }
    },
    {
     "q": "電車の中で、となりの人に足を（　）。",
@@ -540,7 +939,18 @@
      "ふまれました"
     ],
     "answer": 3,
-    "why": "Suffering passive: my foot was stepped on by the person next to me (人に＋passive)."
+    "why": "Suffering passive: my foot was stepped on by the person next to me (人に＋passive).",
+    "opts_en": [
+     "ふみました → stepped on",
+     "ふませました → made (someone) step on",
+     "ふまれさせました → (ungrammatical)",
+     "ふまれました → had (my foot) stepped on"
+    ],
+    "wrong": {
+     "0": "Active ふみました would mean I stepped on it, but 人に marks who did it.",
+     "1": "Causative means I made the person step on my foot, which is odd.",
+     "2": "This mixes passive and causative and isn't a correct form."
+    }
    },
    {
     "q": "この薬はとても苦くて、飲み（　）です。",
@@ -551,7 +961,18 @@
      "そう"
     ],
     "answer": 0,
-    "why": "Verb stem + にくい = hard to do. Because it is bitter, it is hard to take."
+    "why": "Verb stem + にくい = hard to do. Because it is bitter, it is hard to take.",
+    "opts_en": [
+     "にくい → hard to",
+     "やすい → easy to",
+     "たい → want to",
+     "そう → looks like"
+    ],
+    "wrong": {
+     "1": "It's bitter, so it's hard, not easy, to take.",
+     "2": "Bitterness gives no reason to want to drink it.",
+     "3": "飲みそう means 'looks likely to drink', which doesn't fit."
+    }
    },
    {
     "q": "子どもには、自分で考えられる人になって（　）と思っています。",
@@ -562,7 +983,18 @@
      "くれる"
     ],
     "answer": 1,
-    "why": "〜てほしい = I want someone (the child) to do / become something."
+    "why": "〜てほしい = I want someone (the child) to do / become something.",
+    "opts_en": [
+     "もらう → get (someone) to",
+     "ほしい → want (someone) to",
+     "あげたい → want to do for someone",
+     "くれる → (someone) does for me"
+    ],
+    "wrong": {
+     "0": "〜てもらうと思っています states a plan, not a wish; a wish needs もらいたい.",
+     "2": "あげたい is doing something for the child, not wishing the child becomes something.",
+     "3": "〜てくれると思っています is a prediction, not a wish."
+    }
    },
    {
     "q": "（客に）こちらの書類は、明日わたしが（　）。",
@@ -573,7 +1005,18 @@
      "送ってくださいます"
     ],
     "answer": 2,
-    "why": "Speaking about your own action to a customer, use the humble form お〜する."
+    "why": "Speaking about your own action to a customer, use the humble form お〜する.",
+    "opts_en": [
+     "お送りになります → (honorific) will send",
+     "送られます → (honorific/passive) will send",
+     "お送りします → (humble) I will send",
+     "送ってくださいます → (someone) kindly sends"
+    ],
+    "wrong": {
+     "0": "お〜になる is honorific, for the customer's actions, not your own.",
+     "1": "送られる is respectful or passive; you don't use it for yourself.",
+     "3": "くださる is for someone else doing you a favor, not your own action."
+    }
    },
    {
     "q": "この自転車は先週買った（　）なのに、もうこわれてしまった。",
@@ -584,7 +1027,18 @@
      "ばかり"
     ],
     "answer": 3,
-    "why": "Past + ばかり = only recently did (feels recent to the speaker, even a week ago). たところ is only for 'just this moment'."
+    "why": "Past + ばかり = only recently did (feels recent to the speaker, even a week ago). たところ is only for 'just this moment'.",
+    "opts_en": [
+     "ところ → just now",
+     "まま → as is / unchanged",
+     "はず → should",
+     "ばかり → (〜たばかり) only recently"
+    ],
+    "wrong": {
+     "0": "買ったところ is for 'just this moment', not a week ago.",
+     "1": "買ったまま means 'left as bought', not 'recently bought'.",
+     "2": "買ったはず means 'should have bought', not a contrast with breaking."
+    }
    }
   ],
   "order": [
@@ -661,7 +1115,18 @@
       "いただきました"
      ],
      "answer": 2,
-     "why": "Fixed expression: お世話になりました 'thank you for all your help'."
+     "why": "Fixed expression: お世話になりました 'thank you for all your help'.",
+     "opts_en": [
+      "しました → did (お世話をする: took care of)",
+      "くれました → gave (to me)",
+      "なりました → (お世話になる) was looked after",
+      "いただきました → received"
+     ],
+     "wrong": {
+      "0": "お世話をしました would mean I took care of the teacher, reversing the roles.",
+      "1": "お世話にくれる isn't an expression.",
+      "3": "お世話にいただく isn't an expression; the set phrase is お世話になりました."
+     }
     },
     {
      "q": "（２）",
@@ -672,7 +1137,18 @@
       "つまり"
      ],
      "answer": 0,
-     "why": "She uses Japanese every day at work, but (contrary to expectation) at first the words wouldn't come — contrast: ところが."
+     "why": "She uses Japanese every day at work, but (contrary to expectation) at first the words wouldn't come — contrast: ところが.",
+     "opts_en": [
+      "ところが → however (unexpectedly)",
+      "だから → so",
+      "そのうえ → moreover",
+      "つまり → in other words"
+     ],
+     "wrong": {
+      "1": "Using Japanese daily doesn't cause the words not to come; it's a contrast.",
+      "2": "そのうえ adds a similar point, but trouble speaking contrasts with using it daily.",
+      "3": "つまり rephrases, but the next sentence says something unexpected."
+     }
     },
     {
      "q": "（３）",
@@ -683,7 +1159,18 @@
       "うちに"
      ],
      "answer": 3,
-     "why": "〜ないうちに here means 'while (not using it)': in the half year without using it, she forgot a lot."
+     "why": "〜ないうちに here means 'while (not using it)': in the half year without using it, she forgot a lot.",
+     "opts_en": [
+      "in order to / because",
+      "by (deadline)",
+      "so that",
+      "while (not using)"
+     ],
+     "wrong": {
+      "0": "A cause with ために would need past 使わなかったために; ないうちに expresses forgetting over that time.",
+      "1": "までに is a deadline and doesn't fit 'over half a year'.",
+      "2": "ように means 'so that', which gives the wrong meaning."
+     }
     },
     {
      "q": "（４）",
@@ -694,7 +1181,18 @@
       "ありました"
      ],
      "answer": 1,
-     "why": "〜ことにする = decide to do: she decided to read aloud every night."
+     "why": "〜ことにする = decide to do: she decided to read aloud every night.",
+     "opts_en": [
+      "いました → was",
+      "しました → (〜ことにする) decided",
+      "されました → was done",
+      "ありました → there was"
+     ],
+     "wrong": {
+      "0": "ことにいる isn't a pattern.",
+      "2": "The passive doesn't fit her own decision.",
+      "3": "ことにある doesn't express a decision."
+     }
     },
     {
      "q": "（５）",
@@ -705,7 +1203,18 @@
       "いただけ"
      ],
      "answer": 2,
-     "why": "Closing of a letter: お体に気をつけてください 'please take care of yourself'."
+     "why": "Closing of a letter: お体に気をつけてください 'please take care of yourself'.",
+     "opts_en": [
+      "ほしい → (〜てほしい) want you to",
+      "おきます → do in advance",
+      "ください → please",
+      "いただけ → (incomplete form)"
+     ],
+     "wrong": {
+      "0": "気をつけてほしい is too direct for a letter to a teacher and lacks the polite ending.",
+      "1": "〜ておきます means 'I'll do in advance', which makes no sense here.",
+      "3": "いただけ is incomplete; it would need ますか or ませんか."
+     }
     }
    ],
    "en": "Dear teacher, how are you? It has already been half a year since I went back to my country. Thank you so much for everything during my year in Japan. Since returning, I have been working at a travel agency. My job is talking with customers from Japan, so I use Japanese every day. However, at first the words just wouldn't come and I was really stuck. In Japan I spoke Japanese every day with you and my classmates, but in six months of not using it, I forgot a lot. So I decided to read a Japanese book aloud every night before bed. I write down words I don't know in a notebook and memorize them. Now customers tell me my Japanese is good. Next spring I plan to go to Tokyo for work, and I would be very happy if I could see you then. It is getting cold, so please take care of yourself."
@@ -722,7 +1231,18 @@
       "子どもの物だけを集めて配る"
      ],
      "answer": 1,
-     "why": "Paragraph 1: 使わなくなった物を…置いておくと、ほしい人が自由に持って帰れる. Nothing is sold or lent."
+     "why": "Paragraph 1: 使わなくなった物を…置いておくと、ほしい人が自由に持って帰れる. Nothing is sold or lent.",
+     "opts_en": [
+      "Selling and buying things cheaply",
+      "Leave unwanted things; those who want them take them",
+      "Borrow the hall's things freely",
+      "Collect and hand out only children's things"
+     ],
+     "wrong": {
+      "0": "Nothing is sold: ほしい人が自由に持って帰れる.",
+      "2": "Items are given by residents, not lent by the hall.",
+      "3": "A child's book is just an example; anything unused can be left."
+     }
     },
     {
      "q": "最初、物があまり集まらなかったのはなぜか。",
@@ -733,7 +1253,18 @@
       "知らない人に物をあげるのが心配な人が多かったから"
      ],
      "answer": 3,
-     "why": "知らない人に自分の物をあげるのは少し心配だ、という人が多かったから."
+     "why": "知らない人に自分の物をあげるのは少し心配だ、という人が多かったから.",
+     "opts_en": [
+      "The shelf was too small",
+      "Few people came to the community center",
+      "Writing messages was a bother",
+      "Many people worried about giving things to strangers"
+     ],
+     "wrong": {
+      "0": "The shelf is described as big: 大きなたな.",
+      "1": "Visitor numbers are not given as the reason.",
+      "2": "Messages were added later and actually helped items increase."
+     }
     },
     {
      "q": "メッセージをつけるようになってから、どうなったか。",
@@ -744,7 +1275,18 @@
       "たなに置ける物が決められた"
      ],
      "answer": 0,
-     "why": "すると、たなの物がどんどん増えていきました."
+     "why": "すると、たなの物がどんどん増えていきました.",
+     "opts_en": [
+      "Items on the shelf increased",
+      "Nobody took things home anymore",
+      "Staff cleared the shelf",
+      "Rules were set for what can be placed"
+     ],
+     "wrong": {
+      "1": "The opposite: people felt safe taking things home: 安心して持って帰れる.",
+      "2": "The staff added messages; they didn't clear the shelf.",
+      "3": "No rules about items are mentioned; only messages were added."
+     }
     },
     {
      "q": "自転車を置いたあと、「わたし」はどんな気持ちになったか。",
@@ -755,7 +1297,18 @@
       "息子にしかられて、悲しかった"
      ],
      "answer": 2,
-     "why": "Last sentence: 知らない人と心がつながったような、あたたかい気持ちになりました."
+     "why": "Last sentence: 知らない人と心がつながったような、あたたかい気持ちになりました.",
+     "opts_en": [
+      "Regretted giving the bike a little",
+      "Wanted to leave something pricier next",
+      "Felt warm, as if connected to a stranger",
+      "Was scolded by her son and felt sad"
+     ],
+     "wrong": {
+      "0": "No regret; she felt warm.",
+      "1": "Price is never mentioned.",
+      "3": "Her son doesn't scold her; he'd stopped using the bike."
+     }
     }
    ],
    "en": "There is a small community center in my town. Last spring a big shelf labeled 'Help yourself' was set up there. You bring things you no longer use and leave them, and anyone who wants them can take them home. At first not many things were brought, because many people felt a little uneasy giving their things to strangers. So the center staff asked people to attach a short handwritten message, for example: 'Books my child read when little. For someone who will take good care of them.' After that, the things on the shelf increased steadily. Reading the message, you feel you can see the face of the person who used the item, so you can take it home without worry. Sometimes people who took something leave a thank-you note. Last month I left the bicycle my son had outgrown. The next week there was a note: 'My daughter rides it happily every day. Thank you.' Not only did I avoid throwing it away, I felt warm, as if my heart had connected with a stranger."
@@ -782,7 +1335,18 @@
     ],
     "en": "A TV announcer: Since last month you can borrow bicycles in front of the station in this town. Register with your phone and it costs 200 yen a day. There are ten return spots around town and you can return the bike at any of them. It is popular not only with tourists but also with residents. Now you can easily get to shops and parks a little far from the station. Except on rainy days, lots of these bikes are on the streets every day.",
     "why": "The talk explains the new bike-rental service: price, return spots, who uses it.",
-    "answer": 3
+    "answer": 3,
+    "opts_en": [
+     "How to ride a bicycle properly",
+     "A new shop in front of the station",
+     "Why tourists increased",
+     "The town's new bike rental"
+    ],
+    "wrong": {
+     "0": "Riding rules aren't discussed.",
+     "1": "It's about bike rental at the station, not a shop.",
+     "2": "Tourists are mentioned only as users, not as increasing."
+    }
    },
    {
     "id": "mgB2",
@@ -805,7 +1369,18 @@
     ],
     "en": "A doctor to a man: I looked at your test results and there is no major problem. But you have gained a little weight since last year. You said you sit all day at work. It's not serious enough for medicine, but please try to walk about 20 minutes every day. Even using the stairs instead of the elevator makes a big difference. Please come back in three months.",
     "why": "She says medicine isn't needed and recommends walking about 20 minutes a day.",
-    "answer": 1
+    "answer": 1,
+    "opts_en": [
+     "Taking medicine every day",
+     "Walking a little every day",
+     "Taking time off work",
+     "Being hospitalized right away"
+    ],
+    "wrong": {
+     "0": "She says it's not bad enough for medicine: 薬を飲むほどではありません.",
+     "2": "She mentions he sits at work but doesn't suggest taking time off.",
+     "3": "There's no big problem: 大きな問題はありませんでした."
+    }
    },
    {
     "id": "mgB3",
@@ -828,7 +1403,18 @@
     ],
     "en": "A cooking-class teacher: Today we'll make curry. It's easy, but to make it tasty there is one important thing: fry the onions slowly. If you rush them over high heat they burn and don't become sweet. Fry them over low heat for about 20 minutes until brown. It takes time, but that alone changes the taste a lot.",
     "why": "The one important point is frying the onions slowly; strong heat is what he warns against.",
-    "answer": 2
+    "answer": 2,
+    "opts_en": [
+     "Cooking fast on high heat",
+     "Using good meat",
+     "Frying onions slowly",
+     "Adding lots of curry powder"
+    ],
+    "wrong": {
+     "0": "High heat burns the onions: 強い火でいためると、こげてしまって.",
+     "1": "Meat is never mentioned.",
+     "3": "Curry powder is never mentioned."
+    }
    }
   ],
   "say": [
@@ -842,7 +1428,16 @@
      "チェックインまで、かばんをあずかっていただけますか。"
     ],
     "why": "〜ていただけますか politely asks the staff to keep (あずかる) your bag. The others offer or give permission.",
-    "answer": 2
+    "answer": 2,
+    "opts_en": [
+     "I'll keep your bag for you until check-in.",
+     "You may leave your bag until check-in.",
+     "Could you keep my bag until check-in?"
+    ],
+    "wrong": {
+     "0": "あずかってあげます offers to keep someone's bag, which is the staff's line.",
+     "1": "This gives permission, which is what the staff would say."
+    }
    },
    {
     "id": "msB2",
@@ -854,7 +1449,16 @@
      "ざんねんだったね。"
     ],
     "why": "おめでとう congratulates. おだいじに is for someone who is sick; ざんねん is for bad news.",
-    "answer": 0
+    "answer": 0,
+    "opts_en": [
+     "Congratulations! You worked hard.",
+     "Get well soon.",
+     "That's too bad."
+    ],
+    "wrong": {
+     "1": "おだいじに is said to someone who is sick.",
+     "2": "ざんねん is for bad news, but the friend passed."
+    }
    },
    {
     "id": "msB3",
@@ -866,7 +1470,16 @@
      "おかえりなさい。"
     ],
     "why": "お先に失礼します is said when leaving before others. お先にどうぞ lets someone go first; おかえりなさい welcomes someone home.",
-    "answer": 1
+    "answer": 1,
+    "opts_en": [
+     "After you.",
+     "Excuse me for leaving first.",
+     "Welcome home."
+    ],
+    "wrong": {
+     "0": "お先にどうぞ lets someone else go first.",
+     "2": "おかえりなさい welcomes someone coming home."
+    }
    },
    {
     "id": "msB4",
@@ -878,7 +1491,16 @@
      "すみません、空港へ行く電車を教えてあげます。"
     ],
     "why": "Asking 'which one is…' (どれですか) is the question. The others invite or offer to teach.",
-    "answer": 1
+    "answer": 1,
+    "opts_en": [
+     "Excuse me, let's take the train to the airport.",
+     "Excuse me, which train goes to the airport?",
+     "Excuse me, I'll tell you the train to the airport."
+    ],
+    "wrong": {
+     "0": "〜ましょう invites a stranger along instead of asking.",
+     "2": "教えてあげます offers to teach; you're the one who needs information."
+    }
    }
   ]
  }
