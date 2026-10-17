@@ -415,7 +415,7 @@ const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
   return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
-           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {},
+           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {},
            settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
                        minWeekday: 30, minWeekend: 60 } };
 }
@@ -458,7 +458,7 @@ function syncBodies() {
     triaged: d.triaged, lastBackup: d.lastBackup || null, hideHomeTip: !!d.hideHomeTip,
     planStart: d.planStart || null, timing: d.timing || null,
     lookSeen: d.lookSeen || {}, confusions: d.confusions || {}, sprintBest: d.sprintBest || 0,
-    practice: d.practice || {}, mocks: d.mocks || [] } };
+    practice: d.practice || {}, mocks: d.mocks || [], historyOk: d.historyOk || {} } };
   shards.forEach((cards, i) => { bodies['cards' + i] = { cards }; });
   return bodies;
 }
@@ -506,6 +506,7 @@ function mergeRemote(remote) {
   if (!m) return;
   for (const [day, n] of Object.entries(m.history || {})) d.history[day] = Math.max(d.history[day] || 0, n);
   for (const [day, n] of Object.entries(m.newByDay || {})) d.newByDay[day] = Math.max(d.newByDay[day] || 0, n);
+  for (const [day, n] of Object.entries(m.historyOk || {})) d.historyOk[day] = Math.max(d.historyOk[day] || 0, n);
   for (const [k, v] of Object.entries(m.triaged || {})) if (!d.triaged[k]) d.triaged[k] = v;
   const rs = m.stats || {};
   d.stats.totalReviews = Math.max(d.stats.totalReviews || 0, rs.totalReviews || 0);
@@ -633,6 +634,7 @@ function logReview(passed) {
   appData.stats.totalReviews++;
   if (passed) appData.stats.correctReviews++;
   appData.history[t] = (appData.history[t] || 0) + 1;
+  if (passed) appData.historyOk[t] = (appData.historyOk[t] || 0) + 1;   // right answers per day, for the week panel
   if (appData.stats.lastReviewDate !== t) {
     appData.stats.streak = appData.stats.lastReviewDate === addDays(t, -1) ? (appData.stats.streak || 0) + 1 : 1;
     appData.stats.lastReviewDate = t;
@@ -1219,6 +1221,7 @@ function todayHtml() {
     </div>
     ${mockDue() ? mockFormHtml(true) : ''}
     ${readinessHtml()}
+    ${weekHtml()}
     ${milestones}
     <div class="panel stack">
       <div class="eyebrow">Progress</div>
@@ -1678,6 +1681,32 @@ function readinessHtml() {
       <b>Listening</b>${mk(m && m.ls) || '<span></span>'}<span class="d">${acc(practiceAccuracy('listen'), 'practice accuracy')}</span>
     </div>
     ${m ? `<div class="plan-line">Last practice test (${esc(m.date)}): ${m.lk + m.rd + m.ls}/180${[['Vocabulary & grammar', m.lk], ['Reading', m.rd], ['Listening', m.ls]].filter(([, v]) => v < 30).map(([n]) => ` · <b>${n} needs work</b>`).join('')}${m.rd < 30 || m.ls < 30 ? ' (its daily practice is doubled)' : ''}</div>` : '<div class="plan-line">Enter your section scores after each practice test: a weak section gets more daily practice.</div>'}
+  </div>`;
+}
+// This week at a glance: days studied, accuracy, exam practice against its target, most-missed cards, one focus.
+function weekHtml() {
+  const t = today(), days = [...Array(7)].map((_, i) => addDays(t, i - 6));
+  const studied = days.filter(d => appData.history[d]).length, reviews = days.reduce((a, d) => a + (appData.history[d] || 0), 0);
+  if (!reviews) return '';
+  const counted = days.filter(d => appData.historyOk[d] != null || !appData.history[d]);
+  const okN = days.reduce((a, d) => a + (appData.historyOk[d] || 0), 0), okOf = counted.reduce((a, d) => a + (appData.history[d] || 0), 0);
+  const acc = okOf >= 20 ? Math.round(okN / okOf * 100) : appData.stats.totalReviews ? Math.round(appData.stats.correctReviews / appData.stats.totalReviews * 100) : null;
+  const pTarget = days.reduce((a, d) => { const q = practiceQuota(d); return a + q.listen + q.read; }, 0), pDone = practiceThisWeek();
+  const leeches = Object.entries(appData.cards).filter(([k, c]) => !/^[pc]:/.test(k) && (c.lapses || 0) >= LEECH_LAPSES)
+    .sort((a, b) => b[1].lapses - a[1].lapses), nMissed = leeches.length;
+  const missed = leeches.slice(0, 4).map(([k]) => /^[vg]:/.test(k) ? k.slice(2) : k);
+  const focus = pDone < pTarget * 0.6 ? 'more listening & reading: let Study reach its exam practice, and use the bonus'
+    : acc != null && acc < 85 ? 'accuracy over new cards: skip extras, repair missed cards with the bonus'
+    : 'keep going: the plan is working';
+  const cls = (v, good, ok) => v >= good ? 'ok' : v >= ok ? '' : 'behind';
+  return `<div class="panel stack"><div class="section-label">This week</div>
+    <div class="ready2">
+      <b>Days studied</b><span class="${cls(studied, 6, 4)} num">${studied}/7</span><span class="d muted num">${reviews} answers</span>
+      <b>Accuracy</b><span class="${acc == null ? '' : cls(acc, 85, 75)} num">${acc == null ? '–' : acc + '%'}</span><span class="d muted">aim: 85–90%</span>
+      <b>Exam practice</b><span class="${cls(pDone, pTarget, pTarget * 0.6)} num">${pDone}/${pTarget}</span><span class="d muted">listening &amp; reading items</span>
+      ${nMissed ? `<b>Most missed</b><span class="num">${nMissed}</span><span class="d" lang="ja">${missed.map(esc).join('、')}</span>` : ''}
+    </div>
+    <div class="plan-line">Focus: <b>${focus}</b>.</div>
   </div>`;
 }
 // The plan's practice-test days (4 and 1 weeks before the exam, 2 if there's a buffer): a score form on Today.
