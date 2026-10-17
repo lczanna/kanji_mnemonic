@@ -369,6 +369,9 @@ u .gl { border-bottom: 2px solid currentColor; }
 // ============ DATA ============
 // Three decks share one scheduler. Progress keys: kanji character, "v:<word>", "g:<grammar id>".
 let DECK = [], BY_KANJI = {};      // kanji (kanji.json)
+// Part cards (kanji.json "partCards"): complex parts like 是 "just so", learned just before the first kanji that
+// uses them. Their progress is kept under "c:<glyph>"; they stay out of the kanji counts and the daily plan.
+let PART_DECK = [], BY_PART = {}, PARTS_OF = {};
 let VOCAB = [], BY_WORD = {};      // words (vocab.json)
 let GRAMMAR = [], BY_GID = {};     // grammar (grammar.json)
 let GL = {};                       // sentence → tappable words [start, length, reading, lemma, lemmaReading, meaning]
@@ -378,8 +381,8 @@ let PARTS = {};                    // story part name → {g: glyph, of: [part n
 const TYPES = ['kanji', 'vocab', 'grammar'];
 const TYPE_LABEL = { kanji: 'Kanji', vocab: 'Words', grammar: 'Grammar' };
 const TYPE_JP = { kanji: '漢字', vocab: '語彙', grammar: '文法' };
-function deckOf(type) { return type === 'kanji' ? DECK : type === 'vocab' ? VOCAB : GRAMMAR; }
-function keyOf(type, x) { return type === 'kanji' ? x.kanji : type === 'vocab' ? 'v:' + x.w : 'g:' + x.id; }
+function deckOf(type) { return type === 'kanji' ? DECK : type === 'vocab' ? VOCAB : type === 'part' ? PART_DECK : GRAMMAR; }
+function keyOf(type, x) { return type === 'kanji' ? x.kanji : type === 'vocab' ? 'v:' + x.w : type === 'part' ? 'c:' + x.kanji : 'g:' + x.id; }
 
 // ============ DATES (local time, not UTC) ============
 function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
@@ -709,7 +712,7 @@ function planToday() {
   const target = {};
   for (const ty of TYPES) target[ty] = left[ty] ? Math.ceil(left[ty] / W * w) : 0;
   if (target.kanji) target.kanji = Math.max(3, target.kanji);
-  const due = TYPES.reduce((a, ty) => a + dueOf(ty).length, 0);
+  const due = TYPES.reduce((a, ty) => a + dueOf(ty).length, 0) + dueOf('part').length;
   // Exam practice (listening and reading) has its own share of the day's minutes.
   const budget = Math.max(5, minutesOn(today()) - PRACTICE_MIN(practiceQuota())) * 60;
   // Reviews first. The minutes left go to new cards in order of exam value: grammar (cheap, many points),
@@ -962,8 +965,13 @@ function showPart(btn) {
   // The same part name can stand for different glyphs ([head] is 頭, but 頁 inside 題): the card says which.
   const ctx = BY_KANJI[(btn.closest('[data-in]') || {}).dataset?.in] || {};
   const name = btn.dataset.part, own = (ctx.pg || {})[name], p = own ? { g: own } : PARTS[name] || {}, k = BY_KANJI[p.g];
-  const pop = $('gl-pop');
-  if (k) {
+  const pop = $('gl-pop'), pc = !k && BY_PART[p.g];
+  if (pc) {
+    pop.innerHTML = `<div class="gl-word" lang="ja">${esc(pc.kanji)} <span>${esc(name)}</span></div>
+      ${pc.image ? `<img class="card-img" src="${esc(pc.image)}" data-kanji="${esc('c:' + pc.kanji)}" alt="" onerror="imgFallback(this)">` : ''}
+      <div class="story gl-story" data-in="${esc(pc.kanji)}">${storyHtml(pc.story || '')}</div>
+      <div class="gl-lemma">${appData.cards['c:' + pc.kanji] ? 'One of your part cards.' : 'A part card: it comes up before the first kanji that uses it.'}</div>`;
+  } else if (k) {
     const started = !!appData.cards[k.kanji];
     pop.innerHTML = `${kanjiInfoHtml(k)}<div class="gl-lemma">Part name: ${esc(name)}${started ? '' : ' · not studied yet'}</div>
       <div><button class="small-btn" data-open-k="${esc(k.kanji)}">See its card</button></div>`;
@@ -1804,6 +1812,7 @@ function mockEndHtml() {
 let session = null;
 
 function quizItem(type, x) {
+  if (type === 'part') return { type, x, mode: 'quiz' };
   const c = appData.cards[keyOf(type, x)];
   const reps = c ? c.reps || 0 : 0;
   if (type === 'kanji') {
@@ -1880,16 +1889,34 @@ function extraLabel(mix) {
 }
 function startStudy(type, extra) {
   if (type === 'all') {
-    const items = [...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), ...duePairItems(), ...drillItems()];
-    const fresh = [...pendingLookLessons(), ...interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))))];
+    const items = [...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()];
+    const fresh = [...pendingLookLessons(), ...pendingParts(), ...interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))))];
     // Exam practice (listening and reading) closes the session.
     return runQueue(items, fresh, 'all', practiceItems());
   }
-  const items = [...dueOf(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? [...duePairItems(), ...drillItems()] : [])];
-  const fresh = [...(type === 'kanji' ? pendingLookLessons() : []), ...(extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }))];
+  const items = [...dueOf(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? [...duePartItems(), ...duePairItems(), ...drillItems()] : [])];
+  const fresh = [...(type === 'kanji' ? [...pendingLookLessons(), ...pendingParts()] : []), ...(extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }))];
   return runQueue(items, fresh, type);
 }
+// A new kanji brings the part cards it needs that you haven't learned yet, right before it.
+function withParts(fresh) {
+  const out = [], seen = new Set(fresh.filter(f => f.type === 'part').map(f => f.x.kanji));
+  for (const f of fresh) {
+    if (f.type === 'kanji' && f.mode === 'learn')
+      for (const p of PARTS_OF[f.x.kanji] || [])
+        if (!appData.cards['c:' + p.kanji] && !seen.has(p.kanji)) { seen.add(p.kanji); out.push({ type: 'part', x: p, mode: 'learn', extra: f.extra }); }
+    out.push(f);
+  }
+  return out;
+}
+// Parts of kanji you started before part cards existed: a few a day until they're all learned.
+function pendingParts(limit = 3) {
+  return PART_DECK.filter(p => !appData.cards['c:' + p.kanji] && (p.usedIn || []).some(k => appData.cards[k]))
+    .slice(0, limit).map(x => ({ type: 'part', x, mode: 'learn' }));
+}
+const duePartItems = () => dueOf('part').map(x => quizItem('part', x));
 function runQueue(items, fresh, type, tail) {
+  fresh = withParts(fresh);
   // Interleave: a new card after every 3 reviews keeps sessions from front-loading all the hard work.
   const queue = [];
   let ri = 0;
@@ -1955,7 +1982,7 @@ function startTriage() {
 const SESSION_KEY = 'kanji_srs_session';
 let parked = null;   // a session you stepped out of; Today offers to resume it
 function lookup(type, key) {
-  return type === 'kanji' ? BY_KANJI[key] : type === 'vocab' ? BY_WORD[key.slice(2)] : BY_GID[key.slice(2)];
+  return type === 'kanji' ? BY_KANJI[key] : type === 'vocab' ? BY_WORD[key.slice(2)] : type === 'part' ? BY_PART[key.slice(2)] : BY_GID[key.slice(2)];
 }
 function packItem(it) {
   if (it.type === 'listen' || it.type === 'mock') return it;
@@ -2081,6 +2108,7 @@ function drawSession() {
   if (it.again) tags.push('<span class="tag relearn">AGAIN</span>');
   let inner, bar;
   if (it.type === 'kanji') ({ inner, bar } = kanjiScreen(it, tags));
+  else if (it.type === 'part') ({ inner, bar } = partScreen(it, tags));
   else if (it.type === 'vocab') ({ inner, bar } = vocabScreen(it, tags));
   else if (it.type === 'listen') ({ inner, bar } = listenScreen(it, tags));
   else if (it.type === 'exam') ({ inner, bar } = examScreen(it, tags));
@@ -2097,6 +2125,27 @@ function drawSession() {
   $('answer-bar').innerHTML = bar;
 }
 
+// ============ PART CARDS ============
+function partBackHtml(p) {
+  const img = p.image ? `<img class="card-img" src="${esc(p.image)}" data-kanji="${esc('c:' + p.kanji)}" alt="" loading="lazy" onerror="imgFallback(this)">` : '';
+  const used = (p.usedIn || []).map(k => BY_KANJI[k]).filter(Boolean);
+  return `<div class="back" data-in="${esc(p.kanji)}">
+    <div class="headline"><div class="k-small" lang="ja">${esc(p.kanji)}</div>
+      <div><div class="keyword">${esc(p.keyword)}</div><div class="meaning">a part, not a kanji you're tested on</div>
+        ${(p.components || []).length ? `<div class="chips" style="margin-top:6px">${p.components.map(c => `<button class="chip" data-part="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}</div></div>
+    ${img}<div class="story">${storyHtml(p.story || '')}</div>
+    ${used.length ? `<div><div class="section-label">You'll find it in</div><div class="chips">${used.map(k => `<button class="chip" data-kt="${esc(k.kanji)}"><span lang="ja">${esc(k.kanji)}</span> ${esc(k.keyword)}</button>`).join('')}</div></div>` : ''}
+  </div>`;
+}
+function partScreen(it, tags) {
+  const p = it.x;
+  tags.push('<span class="tag">部品 · PART</span>');
+  const showBack = it.mode === 'learn' || session.revealed;
+  const front = showBack ? '' : `<div class="cell"><span class="k" lang="ja">${esc(p.kanji)}</span></div><div class="prompt">Say this part's name and picture its story, then tap to check.</div>`;
+  const prompt = it.mode === 'learn' ? `<div class="prompt">New part: it's inside ${(p.usedIn || []).slice(0, 3).join('、')}. Learn it first and those kanji become easy.</div>` : '';
+  return { inner: { front: front + prompt, back: showBack ? partBackHtml(p) : '' },
+    bar: it.mode === 'learn' ? learnBar : session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
+}
 function kanjiScreen(it, tags) {
   const k = it.x;
   if (it.mode === 'look') {
@@ -2429,6 +2478,7 @@ function next() {
 // Look back at cards already done this session (‹ button or swipe right). Read-only: nothing is re-graded.
 function backFor(it) {
   if (it.type === 'kanji') return backHtml(it.x, 'learn');
+  if (it.type === 'part') return partBackHtml(it.x);
   if (it.type === 'vocab') return vocabBackHtml(it.x);
   if (it.type === 'grammar') return grammarBackHtml(it.x);
   if (it.type === 'exam') return `<div class="passage" lang="ja">${esc(it.x.text || it.x.line || (it.x.turns || []).map(t => t.t).join(' / '))}</div>`;
@@ -2502,7 +2552,7 @@ document.addEventListener('click', e => {
   switch (id) {
     case 'go-triage': return startTriage();
     case 'go-all': return startStudy('all');
-    case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x)))), ...duePairItems(), ...drillItems()], pendingLookLessons(), 'all');
+    case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()], pendingLookLessons(), 'all');
     case 'go-weak': return startWeak();
     case 'go-listen': return startListen();
     case 'l-yes': session.heard++; session.done++; return next();
@@ -2698,6 +2748,10 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   CAST_NOTE = kd.castNote || '';
   PARTS = kd.parts || {};
   BY_KANJI = Object.fromEntries(DECK.map(k => [k.kanji, k]));
+  PART_DECK = (kd.partCards || []).map(p => Object.assign({ on: [], kun: [], vocab: [], part: true }, p));
+  BY_PART = Object.fromEntries(PART_DECK.map(p => [p.kanji, p]));
+  PARTS_OF = {};
+  for (const p of PART_DECK) for (const k of p.usedIn || []) (PARTS_OF[k] = PARTS_OF[k] || []).push(p);
   VOCAB = vd; BY_WORD = Object.fromEntries(VOCAB.map(v => [v.w, v]));
   GRAMMAR = gd; BY_GID = Object.fromEntries(GRAMMAR.map(g => [g.id, g]));
   for (const g of GRAMMAR) Object.assign(GL, g.gl || {});
