@@ -656,9 +656,11 @@ function recall(c) {
 }
 // A word unlocks once every kanji in it has passed its next-day check (or was marked as already known).
 function kanjiReady(ch) { const c = appData.cards[ch]; return !!c && (c.triaged || (c.reps || 0) >= 2); }
-// Kana-only words and words with kanji above N3 are studied by sound and meaning, so they never wait on kanji.
+// Words wait until you've learned their N3 kanji ("k"). That includes words with a kanji above N3 (賃貸 waits for
+// 貸 "lend"): they're studied by sound, but the kanji you can know carries the meaning, and without it they kept
+// slipping. Kana-only words and words whose kanji are all above N3 have none to wait for.
 function vform(v) { return v.f || 'kanji'; }
-function unlocked(type, x) { return type !== 'vocab' || vform(x) !== 'kanji' || x.k.every(kanjiReady); }
+function unlocked(type, x) { return type !== 'vocab' || (x.k || []).every(kanjiReady); }
 function unseenOf(type) { return deckOf(type).filter(x => !appData.cards[keyOf(type, x)]); }
 function unseen() { return unseenOf('kanji'); }
 function dueOf(type) {
@@ -713,7 +715,14 @@ function planToday() {
   if (planCache && planCache.key === key) return planCache;
   const left = planLeft(), W = weightedDaysLeft(), w = dayWeight(today()), t = timing();
   const target = {};
-  for (const ty of TYPES) target[ty] = left[ty] ? Math.ceil(left[ty] / W * w) : 0;
+  // Each day asks for its share of the plan as set on day one (weekends weighted by their minutes), plus a share
+  // of any shortfall. Being ahead doesn't shrink the next days: the lead is kept for a busy day, and if it lasts
+  // you simply finish early.
+  // The shortfall is counted as of this morning, so learning during the day doesn't move today's target.
+  const ps = appData.planStart || { date: today(), left }, st = planStatus(), bh = {};
+  for (const ty of TYPES) bh[ty] = st[ty] && st[ty].start ? Math.max(0, -(st[ty].diff - (appData.newByDay[dayKey(ty)] || 0))) : 0;
+  let wAll = 0; for (let d = ps.date; d < finishNewBy(); d = addDays(d, 1)) wAll += dayWeight(d);
+  for (const ty of TYPES) target[ty] = left[ty] ? Math.min(left[ty], Math.ceil((ps.left[ty] || 0) * w / Math.max(0.001, wAll) + bh[ty] / W * w)) : 0;
   if (target.kanji) target.kanji = Math.max(3, target.kanji);
   const due = TYPES.reduce((a, ty) => a + dueOf(ty).length, 0) + dueOf('part').length;
   // Exam practice (listening and reading) has its own share of the day's minutes.
@@ -768,6 +777,16 @@ function newLeftToday(type) {
 }
 function newQueueOf(type, extra) {
   let pool = unseenOf(type).filter(x => unlocked(type, x));
+  // Kanji that words you've already started need come first, the ones behind your most-missed words first:
+  // a word you keep missing often lacks its kanji.
+  if (type === 'kanji') {
+    const need = {};
+    for (const [key, c] of Object.entries(appData.cards)) {
+      const v = key.startsWith('v:') && BY_WORD[key.slice(2)];
+      if (v) for (const ch of v.k || []) need[ch] = Math.max(need[ch] || 0, 1 + (c.lapses || 0));
+    }
+    pool = pool.map((x, i) => [x, i]).sort((a, b) => (need[b[0].kanji] || 0) - (need[a[0].kanji] || 0) || a[1] - b[1]).map(([x]) => x);
+  }
   // Words built from kanji you've learned go first: they also reinforce those kanji.
   // Basic words from a kanji's card are assumed known when you marked that kanji as already known.
   if (type === 'vocab') pool = pool.filter(v => v.src !== 'card' || !v.k.length || !v.k.every(ch => (appData.cards[ch] || {}).triaged));
