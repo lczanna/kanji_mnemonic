@@ -415,7 +415,7 @@ const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
   return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
-           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [],
+           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {},
            settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
                        minWeekday: 30, minWeekend: 60 } };
 }
@@ -1196,12 +1196,13 @@ function todayHtml() {
       ${(() => {
         // One main button: everything due, today's new cards, look-alikes and exam practice. When today's plan is
         // done but you're behind it, the same button catches up 5 at a time; only fully on track does it rest.
-        const catchUp = !total && behindText && extra.length;
+        const catchUp = !total && behindText && extra.length, bonus = !total && !catchUp && bonusPick();
         const title = total ? 'Study' : catchUp ? 'Catch up' : 'All done for today ✓';
         const sub = total ? [...rows.filter(r => r.due + r.nNew).map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`), ...(partN ? [`Parts ${partN}`] : []), ...(lessonN ? [`Look-alikes ${lessonN}`] : []), ...(pairN + drillN ? [`Look-alike checks ${pairN + drillN}`] : []), ...(practiceN ? [`Exam practice ${practiceN}`] : [])].join(' · ')
-          : catchUp ? `Today's plan is done, but you're ${behindText} behind. Tap to catch up 5 at a time (${extraLabel(extra)}).` : "You're on track. Come back tomorrow, or play a sprint.";
-        return `<button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total || catchUp ? '' : 'disabled'}>
-          <span class="label"><b>${title}</b><small class="muted">${sub}</small></span><span class="count num">${total || (catchUp ? '+' + extra.length : '')}</span></button>`;
+          : catchUp ? `Today's plan is done, but you're ${behindText} behind. Tap to catch up 5 at a time (${extraLabel(extra)}).`
+          : bonus ? `Have 10 more minutes? Tap for the best use of them: ${bonus.label}.` : "You're on track. Come back tomorrow, or play a sprint.";
+        return `<button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total || catchUp || bonus ? '' : 'disabled'}>
+          <span class="label"><b>${title}</b><small class="muted">${sub}</small></span><span class="count num">${total || (catchUp ? '+' + extra.length : bonus ? '+' : '')}</span></button>`;
       })()}
       ${weakOn ? `<button class="btn" id="go-weak"><span class="label"><b>Weak spots</b><small class="muted">The 40 cards you're most likely to forget, due or not</small></span><span class="count num">40</span></button>` : ''}
       ${mockDue() && (EXAM.mocks || []).length ? mockBtn() : ''}
@@ -1228,6 +1229,45 @@ function todayHtml() {
   </div>`;
 }
 
+// ============ BONUS: THE BEST USE OF 10 SPARE MINUTES ============
+// When today's plan is done, the main button picks one thing, in order of exam value per minute:
+// catch up if you're truly behind; repair cards you keep missing (hook and picture first, then a check that
+// doesn't move their schedule); exam practice if it's light or weak; new cards only while accuracy is healthy.
+// Reviewing healthy cards early is never picked: it gains almost nothing per minute.
+const LEECH_LAPSES = 3;
+function leechKeys(n = 10) {
+  const t = today();
+  return Object.entries(appData.cards).filter(([k, c]) => !/^[pc]:/.test(k) && (c.lapses || 0) >= LEECH_LAPSES && appData.repaired[k] !== t)
+    .map(([k]) => k).sort((a, b) => (appData.cards[b].lapses - appData.cards[a].lapses) || (recall(appData.cards[a]) - recall(appData.cards[b]))).slice(0, n);
+}
+const typeOfKey = k => k.startsWith('v:') ? 'vocab' : k.startsWith('g:') ? 'grammar' : 'kanji';
+function startRepair() {
+  const xs = leechKeys().map(k => ({ type: typeOfKey(k), x: lookup(typeOfKey(k), k) })).filter(a => a.x);
+  const learn = xs.map(a => ({ type: a.type, x: a.x, mode: 'learn', repair: true }));
+  const check = xs.map(a => Object.assign(quizItem(a.type, a.x), { practiceOnly: true }));
+  const queue = [];
+  learn.forEach((l, i) => { queue.push(l); if (i >= 2) queue.push(check[i - 2]); });
+  queue.push(...check.slice(Math.max(0, learn.length - 2)));
+  if (!queue.length) return;
+  session = { queue, i: 0, revealed: false, done: 0, kind: 'study', type: 'all' };
+  openSheet();
+}
+function practiceThisWeek() {
+  const from = addDays(today(), -6);
+  return Object.values(appData.practice).filter(r => r.d >= from).length;
+}
+function bonusPick() {
+  const extra = extraMix(), bh = behindBy();
+  if (TYPES.some(t => bh[t]) && extra.length) return { label: `catch up ${extraLabel(extra)}`, run: () => runQueue([], extra, 'all') };
+  const leeches = leechKeys();
+  if (leeches.length) return { label: `repair ${leeches.length} card${leeches.length > 1 ? 's' : ''} you keep missing (story and picture first)`, run: startRepair };
+  const acc = appData.stats.totalReviews >= 50 ? appData.stats.correctReviews / appData.stats.totalReviews : 1;
+  const pl = practiceAccuracy('listen'), pr = practiceAccuracy('read');
+  const practiceWeak = practiceThisWeek() < 20 || (pl != null && pl < 70) || (pr != null && pr < 70);
+  if (EXAM.qr.length && (practiceWeak || acc < 0.85)) return { label: 'extra listening & reading practice', run: () => runQueue(practiceItems(true), [], 'all') };
+  if (extra.length) return { label: `learn ${extraLabel(extra)}`, run: () => runQueue([], extra, 'all') };
+  return EXAM.qr.length ? { label: 'extra listening & reading practice', run: () => runQueue(practiceItems(true), [], 'all') } : null;
+}
 function mockBtn() {
   const done = new Set(appData.mocks.filter(m => m.src === 'app').map(m => m.set)), next = EXAM.mocks.find(m => !done.has(m.id)) || EXAM.mocks[0];
   return `<button class="btn" id="go-mock" data-set="${esc(next.id)}"><span class="label"><b><span lang="ja">模擬試験</span> Practice exam ${esc(next.id)}</b><small class="muted">${mockDue() ? "It's practice test week: " : ''}full timed N3 mock, 30 + 70 + 40 minutes, scored like the real test${done.size ? ` · done: ${[...done].join(', ')}` : ''}. Leave and resume any time.</small></span><span class="count num">2h20</span></button>`;
@@ -2125,7 +2165,7 @@ function drawSession() {
   const it = session.queue[session.i];
   const tags = [];
   if (session.kind === 'study' && session.type === 'all' && TYPE_JP[it.type]) tags.push(`<span class="tag" lang="ja">${TYPE_JP[it.type]}</span>`);
-  if (it.mode === 'learn') tags.push('<span class="tag new">NEW</span>');
+  if (it.mode === 'learn' && !it.repair) tags.push('<span class="tag new">NEW</span>');
   if (it.again) tags.push('<span class="tag relearn">AGAIN</span>');
   let inner, bar;
   if (it.type === 'kanji') ({ inner, bar } = kanjiScreen(it, tags));
@@ -2135,6 +2175,11 @@ function drawSession() {
   else if (it.type === 'exam') ({ inner, bar } = examScreen(it, tags));
   else if (it.type === 'mock') ({ inner, bar } = mockScreen(it, tags));
   else ({ inner, bar } = grammarScreen(it, tags));
+  if (it.repair && it.mode === 'learn') {
+    tags.push('<span class="tag relearn">REPAIR</span>');
+    bar = '<div class="row one"><button class="ans next" id="a-repair">Read the story again · got it</button></div>';
+  }
+  if (it.practiceOnly) tags.push('<span class="tag">CHECK · SCHEDULE UNCHANGED</span>');
   // Leech: a card missed 4+ times needs a better hook, not more repetition.
   const lc = it.type !== 'listen' && it.type !== 'exam' && it.type !== 'mock' && it.mode !== 'look' && !it.sprint && appData.cards[keyOf(it.type, it.x)];
   if (lc && (lc.lapses || 0) >= 4) {
@@ -2467,6 +2512,11 @@ function grade(g) {
   const it = session.queue[session.i];
   if (it.drill) { drillResult(it); saveData(); session.done++; return next(); }   // practice: no card is rescheduled
   if (it.lookCheck) { session.done++; return next(); }   // the quick check after a look-alike lesson: practice only
+  if (it.practiceOnly) {   // a repair check: practice only, so an early "Good" doesn't push the card's review away
+    session.done++;
+    if (g === 1) insertLater(Object.assign(quizItem(it.type, it.x), { practiceOnly: true, again: true }), 4);
+    return next();
+  }
   if (it.pairCard) {   // a look-alike pair card: its own schedule, not the kanji's
     if (!it.again) { schedule(it.pairCard, g); logReview(g > 1); }
     session.done++;
@@ -2575,7 +2625,12 @@ document.addEventListener('click', e => {
     case 'go-all': {
       if (dueOf('vocab').length + dueOf('kanji').length + dueOf('grammar').length + newQueueOf('kanji').length + newQueueOf('vocab').length + newQueueOf('grammar').length
         + practiceItems().length + duePairItems().length + drillItems().length + pendingLookLessons().length + dueOf('part').length + pendingParts().length) return startStudy('all');
-      const mix = extraMix(); if (mix.length) runQueue([], mix, 'all'); return;   // plan done but behind: catch up
+      const b = bonusPick(); if (b) b.run(); return;   // plan done: catch up, or the best use of spare minutes
+    }
+    case 'a-repair': {
+      const it = session.queue[session.i];
+      appData.repaired[keyOf(it.type, it.x)] = today(); saveData();
+      return next();
     }
     case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()], pendingLookLessons(), 'all');
     case 'go-weak': return startWeak();
@@ -2685,7 +2740,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') return closeSheet();
   const choice = it.mode === 'quiz' && ['spell', 'fill', 'readmc', 'which', 'ctx', 'para', 'usage'].includes(it.task);
   if (it.mode === 'listen') { if (!session.revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); session.revealed = true; renderSession(); } else if (session.revealed && (e.key === '1' || e.key === '2')) $(e.key === '1' ? 'l-no' : 'l-yes').click(); return; }
-  if (it.mode === 'learn' && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); $('a-learned').click(); }
+  if (it.mode === 'learn' && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); ($('a-learned') || $('a-repair')).click(); }
   else if (it.mode === 'triage') { if (e.key === 'ArrowRight' || e.key === 'k') triageAnswer(true); if (e.key === 'ArrowLeft' || e.key === 'n') triageAnswer(false); }
   else if (choice && !session.revealed && '1234'.includes(e.key)) answerChoice(+e.key - 1);
   else if ((choice || it.task === 'order') && session.revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); grade(it.correct ? 3 : 1); }
