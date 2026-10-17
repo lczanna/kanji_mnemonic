@@ -85,6 +85,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 
 .cta { display: grid; gap: 10px; }
+.more-ways summary { cursor: pointer; color: var(--muted); font-size: 14px; padding: 6px 2px; }
 .btn {
   border: 1px solid var(--line); background: var(--surface); border-radius: 12px;
   padding: 14px 16px; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 12px;
@@ -737,8 +738,10 @@ function planToday() {
 function planStatus() {
   const left = planLeft();
   if (!appData.planStart) { appData.planStart = { date: today(), left }; saveData(); }
-  const ps = appData.planStart, span = Math.max(1, daysBetween(ps.date, finishNewBy()));
-  const frac = Math.min(1, Math.max(0, daysBetween(ps.date, today()) / span));
+  // The line is weighted like the plan: weekend days carry more of the work (their extra minutes), so finishing a
+  // weekday's plan never shows as "behind" just because the weekend is still to come.
+  const ps = appData.planStart, weight = (a, b) => { let w = 0; for (let d = a; d < b; d = addDays(d, 1)) w += dayWeight(d); return w; };
+  const frac = Math.min(1, Math.max(0, weight(ps.date, today()) / Math.max(0.001, weight(ps.date, finishNewBy()))));
   const out = {};
   for (const ty of TYPES) {
     const start = ps.left[ty] || 0, done = start - left[ty], should = Math.round(start * frac);
@@ -1139,7 +1142,8 @@ function todayHtml() {
   const behindText = TYPES.filter(t => bh[t]).map(t => `${bh[t]} ${t === 'kanji' ? 'kanji' : t === 'vocab' ? (bh[t] > 1 ? 'words' : 'word') : 'grammar'}`).join(' · ');
   const drillN = drillItems().length, lessonN = pendingLookLessons().length, pairN = duePairItems().length;
   const practiceN = finalWeek() && daysToExam() < 0 ? 0 : practiceItems().length;
-  const total = rows.reduce((a, r) => a + r.due + r.nNew, 0) + drillN + lessonN + pairN + practiceN;
+  const partN = dueOf('part').length + pendingParts().length;
+  const total = rows.reduce((a, r) => a + r.due + r.nNew, 0) + drillN + lessonN + pairN + practiceN + partN;
   const E = appData.settings.examDate;
   const marks = [[-28, 'Practice test 1 · full, timed'], [-bufferDays(), 'All new cards done · review-only from here'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test'], [0, 'JLPT N3']]
     .filter((m, i, a) => a.findIndex(x => x[0] === m[0]) === i).sort((a, b) => a[0] - b[0])
@@ -1189,20 +1193,28 @@ function todayHtml() {
       <div class="row-wrap"><button class="small-btn" id="hide-home-tip">Done</button></div></div>` : ''}
     ${finalWeek() && daysToExam() >= 0 ? `<div class="notice"><b>Review-only stretch.</b> No new cards until the exam. Clear your reviews, run Weak spots, and do your timed practice tests.</div>` : ''}
     <div class="cta">
-      <button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total === 0 ? 'disabled' : ''}>
-        <span class="label"><b>${total ? 'Study everything' : behindText ? "Today's plan is done" : 'All done for today'}</b><small class="muted">${!total && behindText ? `Your minutes are used up, but you're behind the plan by ${behindText}. Catch up below if you have time.` : [...rows.map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`), ...(lessonN ? [`Look-alikes ${lessonN}`] : []), ...(pairN ? [`Look-alike pairs ${pairN}`] : []), ...(drillN ? [`Mix-up drills ${drillN}`] : []), ...(practiceN ? [`Exam practice ${practiceN}`] : [])].join(' · ')}</small></span>
-        <span class="count num">${total}</span>
-      </button>
-      ${dueAll && total > dueAll ? `<button class="btn" id="go-reviews"><span class="label"><b>Busy day: reviews only</b><small class="muted">Keep what you know. New cards wait and the plan spreads them out.</small></span><span class="count num">${dueAll}</span></button>` : ''}
+      ${(() => {
+        // One main button: everything due, today's new cards, look-alikes and exam practice. When today's plan is
+        // done but you're behind it, the same button catches up 5 at a time; only fully on track does it rest.
+        const catchUp = !total && behindText && extra.length;
+        const title = total ? 'Study' : catchUp ? 'Catch up' : 'All done for today ✓';
+        const sub = total ? [...rows.filter(r => r.due + r.nNew).map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`), ...(partN ? [`Parts ${partN}`] : []), ...(lessonN ? [`Look-alikes ${lessonN}`] : []), ...(pairN + drillN ? [`Look-alike checks ${pairN + drillN}`] : []), ...(practiceN ? [`Exam practice ${practiceN}`] : [])].join(' · ')
+          : catchUp ? `Today's plan is done, but you're ${behindText} behind. Tap to catch up 5 at a time (${extraLabel(extra)}).` : "You're on track. Come back tomorrow, or play a sprint.";
+        return `<button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total || catchUp ? '' : 'disabled'}>
+          <span class="label"><b>${title}</b><small class="muted">${sub}</small></span><span class="count num">${total || (catchUp ? '+' + extra.length : '')}</span></button>`;
+      })()}
       ${weakOn ? `<button class="btn" id="go-weak"><span class="label"><b>Weak spots</b><small class="muted">The 40 cards you're most likely to forget, due or not</small></span><span class="count num">40</span></button>` : ''}
-      ${studyBtns}
-      ${(EXAM.mocks || []).length ? (() => { const done = new Set(appData.mocks.filter(m => m.src === 'app').map(m => m.set)), next = EXAM.mocks.find(m => !done.has(m.id)) || EXAM.mocks[0];
-        return `<button class="btn" id="go-mock" data-set="${esc(next.id)}"><span class="label"><b><span lang="ja">模擬試験</span> Practice exam ${esc(next.id)}</b><small class="muted">Full timed N3 mock: 30 + 70 + 40 minutes, scored like the real test${done.size ? ` · done: ${[...done].join(', ')}` : ''}. Leave and resume any time.</small></span><span class="count num">2h20</span></button>`; })() : ''}
-      ${EXAM.qr.length ? `<button class="btn" id="go-practice"><span class="label"><b><span lang="ja">試験練習</span> Exam practice: listening &amp; reading</b><small class="muted">${practiceN ? `Today: ${practiceN} item${practiceN > 1 ? 's' : ''} in the exam's own formats` : "Today's share is done · tap for 4 more"}</small></span><span class="count num">${practiceN || '+4'}</span></button>` : ''}
+      ${mockDue() && (EXAM.mocks || []).length ? mockBtn() : ''}
       ${sprintGroups().length >= 5 ? `<button class="btn" id="go-sprint"><span class="label"><b><span lang="ja">似た漢字</span> Look-alike sprint</b><small class="muted">60 seconds: pick the right kanji among look-alikes${appData.sprintBest ? ` · best ${appData.sprintBest}` : ''}</small></span><span class="count num">▶</span></button>` : ''}
-      ${listenN >= 5 ? `<button class="btn" id="go-listen"><span class="label"><b><span lang="ja">聴解</span> Listening drill</b><small class="muted">20 words and sentences you've studied, by ear only</small></span><span class="count num">▶</span></button>` : ''}
-      ${triageLeft && !triageFirst ? triageBtn('btn', 'Mark kanji you already know', 'One quick pass. Known kanji also unlock their words.') : ''}
-      ${extra.length ? `<button class="btn${!total && behindText ? ' primary' : ''}" id="go-extra"><span class="label"><b>${behindText ? 'Have more time? Catch up 5' : 'Have more time? Learn 5 more'}</b><small class="muted">${extraLabel(extra)}${behindText ? ", where you're behind" : ', most useful first'}. Tomorrow's plan counts them.</small></span><span class="count num">+${extra.length}</span></button>` : ''}
+      <details class="more-ways"><summary>More ways to study</summary><div class="cta" style="margin-top:10px">
+        ${dueAll && total > dueAll ? `<button class="btn" id="go-reviews"><span class="label"><b>Busy day: reviews only</b><small class="muted">Keep what you know. New cards wait and the plan spreads them out.</small></span><span class="count num">${dueAll}</span></button>` : ''}
+        ${studyBtns}
+        ${EXAM.qr.length ? `<button class="btn" id="go-practice"><span class="label"><b><span lang="ja">試験練習</span> Extra exam practice</b><small class="muted">${practiceN ? `Today's ${practiceN} item${practiceN > 1 ? 's are' : ' is'} already in Study` : "Today's share is done"} · tap for more listening &amp; reading</small></span><span class="count num">+4</span></button>` : ''}
+        ${listenN >= 5 ? `<button class="btn" id="go-listen"><span class="label"><b><span lang="ja">聴解</span> Listening drill</b><small class="muted">20 words and sentences you've studied, by ear only</small></span><span class="count num">▶</span></button>` : ''}
+        ${!mockDue() && (EXAM.mocks || []).length ? mockBtn() : ''}
+        ${extra.length && !(!total && behindText) ? `<button class="btn" id="go-extra"><span class="label"><b>${behindText ? 'Catch up 5' : 'Learn 5 more'}</b><small class="muted">${extraLabel(extra)}${behindText ? ", where you're behind" : ', most useful first'}. Tomorrow's plan counts them.</small></span><span class="count num">+${extra.length}</span></button>` : ''}
+        ${triageLeft && !triageFirst ? triageBtn('btn', 'Mark kanji you already know', 'One quick pass. Known kanji also unlock their words.') : ''}
+      </div></details>
     </div>
     ${mockDue() ? mockFormHtml(true) : ''}
     ${readinessHtml()}
@@ -1216,6 +1228,10 @@ function todayHtml() {
   </div>`;
 }
 
+function mockBtn() {
+  const done = new Set(appData.mocks.filter(m => m.src === 'app').map(m => m.set)), next = EXAM.mocks.find(m => !done.has(m.id)) || EXAM.mocks[0];
+  return `<button class="btn" id="go-mock" data-set="${esc(next.id)}"><span class="label"><b><span lang="ja">模擬試験</span> Practice exam ${esc(next.id)}</b><small class="muted">${mockDue() ? "It's practice test week: " : ''}full timed N3 mock, 30 + 70 + 40 minutes, scored like the real test${done.size ? ` · done: ${[...done].join(', ')}` : ''}. Leave and resume any time.</small></span><span class="count num">2h20</span></button>`;
+}
 function planCardHtml() {
   const p = planToday(), st = planStatus(), lim = p.limit;
   const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' });
@@ -1887,12 +1903,17 @@ function extraLabel(mix) {
   const name = { kanji: () => 'kanji', vocab: n => n > 1 ? 'words' : 'word', grammar: n => n > 1 ? 'grammar points' : 'grammar point' };
   return TYPES.filter(c).map(t => `${c(t)} ${name[t](c(t))}`).join(' · ');
 }
+function spreadIn(items, extras, every = 10) {
+  const out = [], ex = extras.slice();
+  items.forEach((x, i) => { out.push(x); if ((i + 1) % every === 0 && ex.length) out.push(ex.shift()); });
+  return out.concat(ex);
+}
 function startStudy(type, extra) {
   if (type === 'all') {
     const items = [...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()];
     const fresh = [...pendingLookLessons(), ...pendingParts(), ...interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))))];
-    // Exam practice (listening and reading) closes the session.
-    return runQueue(items, fresh, 'all', practiceItems());
+    // Exam practice (listening and reading) is spread through the session, so it gets done even on a short day.
+    return runQueue(spreadIn(items, practiceItems()), fresh, 'all');
   }
   const items = [...dueOf(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? [...duePartItems(), ...duePairItems(), ...drillItems()] : [])];
   const fresh = [...(type === 'kanji' ? [...pendingLookLessons(), ...pendingParts()] : []), ...(extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }))];
@@ -2551,7 +2572,11 @@ document.addEventListener('click', e => {
   if (t.dataset.slot !== undefined) return unpickSlot(+t.dataset.slot);
   switch (id) {
     case 'go-triage': return startTriage();
-    case 'go-all': return startStudy('all');
+    case 'go-all': {
+      if (dueOf('vocab').length + dueOf('kanji').length + dueOf('grammar').length + newQueueOf('kanji').length + newQueueOf('vocab').length + newQueueOf('grammar').length
+        + practiceItems().length + duePairItems().length + drillItems().length + pendingLookLessons().length + dueOf('part').length + pendingParts().length) return startStudy('all');
+      const mix = extraMix(); if (mix.length) runQueue([], mix, 'all'); return;   // plan done but behind: catch up
+    }
     case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()], pendingLookLessons(), 'all');
     case 'go-weak': return startWeak();
     case 'go-listen': return startListen();
