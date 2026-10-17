@@ -85,6 +85,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 
 .cta { display: grid; gap: 10px; }
+.missed-words { display: grid; gap: 4px; font-size: 14px; }
 .tk-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .tk { display: grid; gap: 2px; align-content: start; border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; }
 .tk-n { font-size: 12px; color: var(--muted); }
@@ -1390,6 +1391,9 @@ function statsHtml() {
   }
   const leeches = DECK.filter(k => (appData.cards[k.kanji] || {}).lapses >= 3)
     .sort((a, b) => appData.cards[b.kanji].lapses - appData.cards[a.kanji].lapses);
+  // Words shown the way you studied them: kana for words learned by sound (ちんたい), the kanji under it.
+  const missedWords = VOCAB.filter(v => (appData.cards['v:' + v.w] || {}).lapses >= 3)
+    .sort((a, b) => appData.cards['v:' + b.w].lapses - appData.cards['v:' + a.w].lapses);
   const started = type => deckOf(type).length - unseenOf(type).length;
   return `
   <div class="stack">
@@ -1415,6 +1419,12 @@ function statsHtml() {
       ${leeches.length ? `<div class="leech-list">${leeches.map(k => `<button class="leech" data-k="${esc(k.kanji)}" lang="ja" aria-label="${esc(k.keyword)}">${esc(k.kanji)}</button>`).join('')}</div>
         <p class="muted" style="font-size:13px;margin:8px 0 0">These are the best candidates for a new story or picture.</p>`
       : '<p class="muted" style="margin:0;font-size:13px">None yet. Kanji you keep failing will collect here.</p>'}
+    </div>
+    <div class="panel">
+      <div class="section-label">Words missed 3+ times</div>
+      ${missedWords.length ? `<div class="missed-words">${missedWords.map(v => `<div><b lang="ja">${esc(vform(v) === 'kanji' ? v.w : v.r)}</b>${vform(v) === 'mixed' ? ` <small class="muted" lang="ja">(${esc(v.w)})</small>` : vform(v) === 'kanji' ? ` <small class="muted" lang="ja">${esc(v.r)}</small>` : ''} <span class="muted">· ${esc(v.m.split(/[;,]/)[0])} · missed ${appData.cards['v:' + v.w].lapses}×</span></div>`).join('')}</div>
+        <p class="muted" style="font-size:13px;margin:8px 0 0">The bonus on Today repairs these for you: story and picture first, then a check.</p>`
+      : '<p class="muted" style="margin:0;font-size:13px">None yet.</p>'}
     </div>
   </div>`;
 }
