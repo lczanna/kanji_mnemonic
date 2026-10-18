@@ -87,6 +87,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .cta { display: grid; gap: 10px; }
 .opt-notes .right-note { border-left-color: var(--good); color: var(--ink); }
 .kl { font: inherit; color: inherit; background: none; border: 0; padding: 0; border-bottom: 1px dotted color-mix(in srgb, var(--ai) 60%, transparent); cursor: pointer; }
+.chunks ruby rt { font-size: 10px; color: var(--ai); font-weight: 500; }
 .missed-words { display: grid; gap: 4px; font-size: 14px; }
 .tk-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .tk { display: grid; gap: 2px; align-content: start; border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; }
@@ -2490,6 +2491,29 @@ function chunkGl(o, i, links) {
   // links: after answering, each deck kanji can be tapped (not inside the part buttons, which are buttons themselves)
   return words.length ? `<span class="cgl">${words.map(([w, r, m]) => `${links ? kanjiLinks(w) : esc(w)}${r && r !== w ? ` <b>${esc(r)}</b>` : ''} · ${esc(m)}`).join('<br>')}</span>` : '';
 }
+// Furigana: the reading over each run of kanji, the kana in between matched against the reading (間に合う まにあう →
+// 間(ま)に合(あ)う). Returns [[text, reading or null], ...], or null when the reading doesn't line up.
+function furiSegments(w, r) {
+  const runs = w.match(/[\u4e00-\u9fff々]+|[^\u4e00-\u9fff々]+/g) || [];
+  const m = new RegExp('^' + runs.map(x => isKanji(x[0]) ? '(.+?)' : '(' + hira(x).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')').join('') + '$').exec(hira(r));
+  return m ? runs.map((x, i) => [x, isKanji(x[0]) ? m[i + 1] : null]) : null;
+}
+// A part of an ordering task with readings over its kanji (from its words' readings), meanings left out.
+function chunkRuby(o, i, c) {
+  let out = '', pos = 0;
+  for (const [w, r] of (o.cgl || [])[i] || []) {
+    const segs = r && furiSegments(w, r);
+    if (!segs) continue;
+    const at = c.indexOf(segs[0][0], pos);
+    if (at < 0) continue;
+    out += esc(c.slice(pos, at)); pos = at;
+    for (const [t, rd] of segs) {
+      if (!c.startsWith(t, pos)) break;   // a conjugated word: stop where the sentence's form differs (合う → 合い)
+      out += rd ? `<ruby>${esc(t)}<rt>${esc(rd)}</rt></ruby>` : esc(t); pos += t.length;
+    }
+  }
+  return out + esc(c.slice(pos));
+}
 // After answering: why each wrong option doesn't fit, the one you picked first.
 function wrongsHtml(f, chosen) {
   const w = f.wrong || {};
@@ -2541,11 +2565,12 @@ function grammarScreen(it, tags) {
     ${answered ? '' : trHtml(it, o.en, false)}
     ${answered ? `<div class="why">${esc(o.en)} ${sayBtn(o.before + o.chunks.join('') + o.after)}</div>${partsHtml(o)}` :
       `<div class="opts chunks">${st.pool.map((p, j) => {
-        // A part with a kanji you haven't learned yet shows its reading and meaning: the task tests grammar, not guessing.
-        const gl = (it.showGl || unstudied(p.c)) && chunkGl(o, p.i);
-        return `<button class="opt${gl ? ' with-gl' : ''}" data-chunk="${j}" lang="ja">${esc(p.c)}${gl || ''}</button>`; }).join('')}</div>
+        // A part with a kanji you haven't learned yet shows the reading over it (meanings stay behind the button
+        // below): the task tests grammar, not guessing what an unknown word says.
+        const gl = it.showGl && chunkGl(o, p.i);
+        return `<button class="opt${gl ? ' with-gl' : ''}" data-chunk="${j}" lang="ja">${!gl && unstudied(p.c) ? chunkRuby(o, p.i, p.c) : esc(p.c)}${gl || ''}</button>`; }).join('')}</div>
        <div class="prompt">Tap the parts in order. Tap a filled slot to take it back.</div>
-       ${(o.cgl || []).some(x => x.length) && !it.showGl ? '<div class="tr"><button class="small-btn" id="g-cgl">Show readings &amp; meanings</button></div>' : ''}`}`;
+       ${(o.cgl || []).some(x => x.length) && !it.showGl ? '<div class="tr"><button class="small-btn" id="g-cgl">Show meanings</button></div>' : ''}`}`;
   return { inner: { front, back: answered ? grammarBackHtml(g, true) : '' }, bar: answered ? cont : '<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Fill all four slots</span></div>' };
 }
 
