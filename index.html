@@ -86,6 +86,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 
 .cta { display: grid; gap: 10px; }
 .opt-notes .right-note { border-left-color: var(--good); color: var(--ink); }
+.kl { font: inherit; color: inherit; background: none; border: 0; padding: 0; border-bottom: 1px dotted color-mix(in srgb, var(--ai) 60%, transparent); cursor: pointer; }
 .missed-words { display: grid; gap: 4px; font-size: 14px; }
 .tk-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .tk { display: grid; gap: 2px; align-content: start; border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; }
@@ -987,13 +988,19 @@ function glossHtml(text) {
   }
   return html + esc(text.slice(pos));
 }
+// Outside questions, every deck kanji in a word can be tapped: its reading in this word, picture, story and card.
+function kanjiLinks(w) {
+  return [...w].map(ch => BY_KANJI[ch] ? `<button class="kl" data-kt="${esc(ch)}" data-w="${esc(w)}">${esc(ch)}</button>` : esc(ch)).join('');
+}
 function showGloss(btn) {
   const [w, r, lemma, lr, m] = JSON.parse(btn.dataset.gl);
   const pop = $('gl-pop');
   // Words written in kana need no reading line; their dictionary form shows only when it differs.
   pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} ${r !== w ? `<span>${esc(r)}</span>` : ''} ${sayBtn(sayText(w, r), 'Play ' + w)}</div>
     ${lemma !== w ? `<div class="gl-lemma" lang="ja">dictionary form: ${esc(lemma)}${lr && lr !== lemma ? `（${esc(lr)}）` : ''}</div>` : ''}
-    <div class="gl-m">${esc(m || 'name or rare word')}</div>`;
+    <div class="gl-m">${esc(m || 'name or rare word')}</div>
+    ${(() => { const word = BY_WORD[lemma] ? lemma : w, ks = [...new Set([...word].filter(ch => BY_KANJI[ch]))];
+      return ks.length ? `<div class="chips">${ks.map(ch => `<button class="chip" data-kt="${esc(ch)}" data-w="${esc(word)}"><span lang="ja">${esc(ch)}</span> ${esc(BY_KANJI[ch].keyword)}</button>`).join('')}</div>` : ''; })()}`;
   placePop(pop, btn);
   speak(sayText(w, r));
 }
@@ -1062,11 +1069,11 @@ function showKanjiPop(btn) {
     return;
   }
   // Elsewhere (a word's "Built from" list, sentences): the kanji's own picture and story too, as on its card.
-  const pop = $('gl-pop');
+  const pop = $('gl-pop'), inPop = !!btn.closest('#gl-pop');   // tapped inside a word's box: the box stays put
   pop.innerHTML = `${html}${k.image ? `<img class="card-img" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="" onerror="imgFallback(this)">` : ''}
     ${k.story ? `<div class="story gl-story" data-in="${esc(k.kanji)}">${storyHtml(k.story)}</div>` : ''}
     <div><button class="small-btn" data-open-k="${esc(k.kanji)}">See its card</button></div>`;
-  placePop(pop, btn);
+  if (inPop) pop.scrollTop = 0; else placePop(pop, btn);
 }
 function placePop(pop, btn) {
   pop.hidden = false;
@@ -1113,7 +1120,7 @@ function backHtml(k, mode) {
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
-      <div class="vocab-row"><span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span><span class="m">${esc(v.m)}</span></div>`).join('')}</div></div>` : '';
+      <div class="vocab-row"><span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span><span class="m">${esc(v.m)}</span></div>`).join('')}</div></div>` : '';
   const body = mode === 'quiz' ? vocabH + soundH + story + img : img + story + soundH + vocabH;
   return `
   <div class="back" data-in="${esc(k.kanji)}">
@@ -1138,7 +1145,7 @@ function vocabBackHtml(v, mode) {
   const f = vform(v);
   const img = v.img ? `<img class="card-img${mode === 'learn' ? '' : ' small'}" src="${esc(v.img)}" data-kanji="${esc(v.id)}" alt="Picture for the memory hook" loading="lazy" onerror="imgFallback(this)">` : '';
   const head = f === 'kanji'
-    ? `<span class="w" lang="ja">${esc(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span>`
+    ? `<span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span>`
     : `<span class="w kana" lang="ja">${esc(v.r)}</span><span class="rd" lang="ja">${sayBtn(sayText(v.w, v.r), 'Play ' + v.r)}</span>`;
   return `<div class="back">
     <div class="word-head">${head}</div>
@@ -2418,7 +2425,7 @@ function optionNotes(q, chosen) {
   const rows = q.options.map((o, i) => {
     const v = BY_WORD[(q.w || [])[i] || o], cls = i === chosen && i !== q.answer ? 'picked' : '';
     if (v) {
-      const head = o === v.w ? `${esc(v.w)} <span class="muted">${esc(v.r)}</span>` : `${esc(o)} <span class="muted">(written ${esc(v.w)})</span>`;
+      const head = o === v.w ? `${kanjiLinks(v.w)} <span class="muted">${esc(v.r)}</span>` : `${esc(o)} <span class="muted">(written ${kanjiLinks(v.w)})</span>`;
       return `<div class="${cls}"><b lang="ja">${head}</b> · ${esc(v.m)}</div>`;
     }
     // Not a deck word (a conjugated form like 続けて, or a phrase): its words' readings and meanings.
@@ -2707,7 +2714,7 @@ document.addEventListener('click', e => {
   if (!t) { if (e.target === $('modal')) $('modal').hidden = true; return; }
   if (t.dataset.say !== undefined) { e.stopPropagation(); return speak(t.dataset.say); }
   if (t.dataset.gl) { e.stopPropagation(); return showGloss(t); }
-  if (t.dataset.kt && t.closest('.sheet')) { e.stopPropagation(); return showKanjiPop(t); }
+  if (t.dataset.kt && t.closest('.sheet, #modal, #gl-pop')) { e.stopPropagation(); return showKanjiPop(t); }
   if (t.dataset.part) { e.stopPropagation(); return showPart(t); }
   if (t.dataset.openK) { $('gl-pop').hidden = true; return showDetail(t.dataset.openK); }
   if (t.dataset.hist !== undefined) return showHistory(+t.dataset.hist);
