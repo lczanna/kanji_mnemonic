@@ -1153,7 +1153,11 @@ function vocabBackHtml(v, mode) {
   return `<div class="back">
     <div class="word-head">${head}</div>
     <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
-    ${f === 'mixed' ? `<p class="g-note">Written <span lang="ja" class="kform">${esc(v.w)}</span>. Its kanji are above N3, so the exam normally prints this word in kana: know the sound and the meaning.</p>` : ''}
+    ${f === 'mixed' ? (() => {
+      // Name the kanji: which are above N3 (why the exam prints it in kana) and which are in your deck (tappable).
+      const above = [...new Set([...v.w].filter(ch => isKanji(ch) && ch !== '々' && !BY_KANJI[ch]))], mine = [...new Set([...v.w].filter(ch => BY_KANJI[ch]))];
+      return `<p class="g-note">Written <span lang="ja" class="kform">${kanjiLinks(v.w)}</span>. <span lang="ja">${esc(above.join('、'))}</span> ${above.length > 1 ? 'are' : 'is'} above N3, so the exam normally prints this word in kana: know the sound and the meaning.${mine.length ? ` <span lang="ja">${mine.map(ch => `${esc(ch)}</span> (${esc(BY_KANJI[ch].keyword)})<span lang="ja">`).join('、')}</span> ${mine.length > 1 ? 'are' : 'is'} in your deck: tap ${mine.length > 1 ? 'them' : 'it'} for ${mine.length > 1 ? 'their' : 'its'} story.` : ''}</p>`;
+    })() : ''}
     ${v.mn ? `<div><div class="section-label">Memory hook</div>${img}<div class="story">${storyHtml(v.mn)}</div></div>` : ''}
     ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en, , here]) => `
       <div class="ex"><div class="ja" lang="ja">${glossHtml(ja)} ${sayBtn(ja)}</div><div class="en">${esc(en)}</div>${here ? `<div class="sense"><span lang="ja">${esc(vform(v) === 'kanji' ? v.w : v.r)}</span> here: ${esc(here)}</div>` : ''}</div>`).join('')}</div></div>` : ''}
