@@ -1164,9 +1164,10 @@ function vocabBackHtml(v, mode) {
 }
 function grammarBackHtml(g, compact) {
   return `<div class="back">
-    <div class="g-head"><span class="pattern" lang="ja">${esc(g.pattern)}</span></div>
+    <div class="g-head"><span class="pattern" lang="ja">${kanjiLinks(g.pattern)}</span></div>
+    ${g.pr ? `<div class="rd" lang="ja" style="color:var(--ai)">${esc(g.pr)} ${sayBtn(g.pr.replace(/[〜（）()]/g, '').split('／')[0], 'Play ' + g.pattern)}</div>` : ''}
     <div class="keyword" style="font-size:17px">${esc(g.meaning)}</div>
-    <dl class="readings"><dt>FORM</dt><dd lang="ja">${esc(g.formation)}</dd></dl>
+    <dl class="readings"><dt>FORM</dt><dd lang="ja">${kanjiLinks(g.formation)}</dd></dl>
     ${compact ? '' : `<p class="g-note">${esc(g.note)}</p>`}
     <div><div class="section-label">Examples</div><div class="examples">${g.examples.map(x => `
       <div class="ex"><div class="ja" lang="ja">${glossHtml(x.ja)} ${sayBtn(x.ja)}</div><div class="en">${esc(x.en)}</div></div>`).join('')}</div></div>
