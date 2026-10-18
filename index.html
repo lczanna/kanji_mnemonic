@@ -425,7 +425,7 @@ const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
   return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
-           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {}, calib: {}, calibK: null,
+           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {}, calib: {}, calibK: null, timeLog: { review: [], learn: [] }, planDay: null,
            settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
                        minWeekday: 30, minWeekend: 60 } };
 }
@@ -468,7 +468,8 @@ function syncBodies() {
     triaged: d.triaged, lastBackup: d.lastBackup || null, hideHomeTip: !!d.hideHomeTip,
     planStart: d.planStart || null, timing: d.timing || null,
     lookSeen: d.lookSeen || {}, confusions: d.confusions || {}, sprintBest: d.sprintBest || 0,
-    practice: d.practice || {}, mocks: d.mocks || [], historyOk: d.historyOk || {}, calib: d.calib || {}, calibK: d.calibK || null } };
+    practice: d.practice || {}, mocks: d.mocks || [], historyOk: d.historyOk || {}, calib: d.calib || {}, calibK: d.calibK || null,
+    timeLog: d.timeLog || null, planDay: d.planDay || null } };
   shards.forEach((cards, i) => { bodies['cards' + i] = { cards }; });
   return bodies;
 }
@@ -529,6 +530,11 @@ function mergeRemote(remote) {
   if (m.hideHomeTip) d.hideHomeTip = true;
   if (m.planStart && (!d.planStart || m.planStart.date < d.planStart.date)) d.planStart = m.planStart;
   if (m.timing && !d.timing) d.timing = m.timing;
+  for (const kind of ['review', 'learn']) {   // the device with more recent answers timed keeps its list
+    const r = (m.timeLog || {})[kind] || [];
+    if (r.length > ((d.timeLog || {})[kind] || []).length) d.timeLog = Object.assign({}, d.timeLog, { [kind]: r.slice() });
+  }
+  if (m.planDay && (!d.planDay || m.planDay.date > d.planDay.date)) d.planDay = Object.assign({}, m.planDay);
   for (const [g, day] of Object.entries(m.lookSeen || {})) if (!d.lookSeen[g]) d.lookSeen[g] = day;
   for (const [pair, c] of Object.entries(m.confusions || {})) if (!d.confusions[pair]) d.confusions[pair] = Object.assign({}, c);
   d.sprintBest = Math.max(d.sprintBest || 0, m.sprintBest || 0);
@@ -734,23 +740,34 @@ function planLeft() {
 }
 // Seconds per card, learned from your own answers. A new card costs its learning screen plus the quiz
 // a few cards later and the check the next day.
+// The estimate is the average of the last 50 answers with the slowest and quickest tenth left out, so a pause
+// with the phone down (or a long look at a popup) doesn't make the plan think every card takes that long.
+const TIME_CAP = { review: 60, learn: 120 }, TIME_DEFAULT = { review: 10, learn: 30 };
+function trimmedMean(xs) {
+  const a = xs.slice().sort((x, y) => x - y), cut = Math.floor(a.length / 10), mid = a.slice(cut, a.length - cut);
+  return Math.round(mid.reduce((x, y) => x + y, 0) / mid.length * 10) / 10;
+}
 function timing() {
-  const t = Object.assign({ review: 10, learn: 30 }, appData.timing || {});
+  const log = appData.timeLog || {}, t = {};
+  // Until 10 answers are timed, the usual speed (the old running estimate counted pauses in full, so it's not used).
+  for (const kind of ['review', 'learn']) t[kind] = (log[kind] || []).length >= 10 ? trimmedMean(log[kind]) : TIME_DEFAULT[kind];
   return { review: t.review, fresh: t.learn + 2 * t.review };
 }
 function noteTime(kind, since) {
   if (!since) return;
-  const sec = Math.min(90, Math.max(2, (Date.now() - since) / 1000));   // ignore breaks away from the phone
-  const t = Object.assign({ review: 10, learn: 30 }, appData.timing);   // a fresh object: never edit one in place
-  t[kind] = Math.round((t[kind] * 0.9 + sec * 0.1) * 10) / 10;
-  appData.timing = t;
+  const sec = Math.round(Math.min(TIME_CAP[kind], Math.max(2, (Date.now() - since) / 1000)));
+  const log = Object.assign({ review: [], learn: [] }, appData.timeLog);   // fresh arrays: never edit one in place
+  log[kind] = log[kind].concat(sec).slice(-50);
+  appData.timeLog = log;
+  const t = timing();
+  appData.timing = { review: t.review, learn: Math.round((t.fresh - 2 * t.review) * 10) / 10 };
 }
 // The plan is fixed once per day (and when settings change), so finishing reviews early doesn't keep adding new cards.
 let planCache = null;
 function planToday() {
   const key = today() + JSON.stringify(appData.settings) + appData.mocks.length;
   if (planCache && planCache.key === key) return planCache;
-  const left = planLeft(), W = weightedDaysLeft(), w = dayWeight(today()), t = timing();
+  const left = planLeft(), W = weightedDaysLeft(), w = dayWeight(today());
   const target = {};
   // Each day asks for its share of the plan as set on day one (weekends weighted by their minutes), plus a share
   // of any shortfall. Being ahead doesn't shrink the next days: the lead is kept for a busy day, and if it lasts
@@ -768,7 +785,11 @@ function planToday() {
     target[ty] = left[ty] ? Math.min(left[ty], pace[ty] + catchUp[ty]) : 0;
   }
   if (target.kanji) target.kanji = Math.max(3, target.kanji);
-  const due = TYPES.reduce((a, ty) => a + dueOf(ty).length, 0) + dueOf('part').length;
+  // Reviews and speed are taken once, the first time the plan is made each day: reviews done and cards learned
+  // later in the day (they come back for a check) must not change how many new cards today has room for.
+  if (!appData.planDay || appData.planDay.date !== today())
+    { appData.planDay = { date: today(), due: TYPES.reduce((a, ty) => a + dueOf(ty).length, 0) + dueOf('part').length, t: timing() }; saveLocal(); }
+  const due = appData.planDay.due, t = appData.planDay.t || timing();
   // Exam practice (listening and reading) has its own share of the day's minutes.
   const budget = Math.max(5, minutesOn(today()) - PRACTICE_MIN(practiceQuota())) * 60;
   // Reviews first. The minutes left go to new cards in order of exam value: grammar (cheap, many points),
@@ -786,7 +807,7 @@ function planToday() {
   const practiceMin = PRACTICE_MIN(practiceQuota());
   const minutes = Math.round((due * t.review + TYPES.reduce((a, ty) => a + limit[ty], 0) * t.fresh) / 60) + practiceMin;
   const trimmed = TYPES.reduce((a, ty) => a + limit[ty], 0) < wantNew;
-  planCache = { key, target, limit, due, minutes, practiceMin, budget: minutesOn(today()), trimmed, weekend: isWeekend(today()), pace, catchUp };
+  planCache = { key, target, limit, due, t, minutes, practiceMin, budget: minutesOn(today()), trimmed, weekend: isWeekend(today()), pace, catchUp };
   return planCache;
 }
 // On track? Compare cards started with a straight line from the day the plan began to "all new cards done".
@@ -1368,14 +1389,15 @@ function planCardHtml() {
     const done = appData.newByDay[dayKey(ty)] || 0, goal = lim[ty];
     const overall = s.diff > 0 ? `<span class="ok">${s.diff} ahead</span>` : s.diff < 0 ? `<span class="behind">${-s.diff} behind</span>` : '<span class="ok">on pace</span>';
     const extra = Math.max(0, Math.min(p.catchUp[ty], goal - p.pace[ty]));   // the catch-up that fits in today's minutes
-    const why = extra ? ` <small class="muted">(incl. +${extra} to catch up)</small>` : '';
+    // When the minutes can't hold the plan's share, say what the plan asked for, so a small goal isn't a mystery.
+    const why = extra ? ` <small class="muted">(incl. +${extra} to catch up)</small>` : goal < p.target[ty] ? ` <small class="muted">(plan: ${p.target[ty]})</small>` : '';
     return `<span>${label}</span><span class="num ${goal && done >= goal ? 'ok' : ''}">${done}/${goal}${why}</span><span class="num">${overall}</span>`;
   };
   return `<div class="panel stack plan-card">
     <div class="plan-top"><b>Today · ${p.weekend ? 'weekend' : 'weekday'}</b><span class="muted num">≈ ${p.minutes} of ${p.budget} min</span></div>
     <div class="pace"><span class="muted">New</span><span class="muted">today</span><span class="muted">overall</span>
       ${row('Kanji', 'kanji')}${row('Words', 'vocab')}${row('Grammar', 'grammar')}</div>
-    <div class="plan-line muted">Plus ${p.due} reviews${p.practiceMin ? ` · ≈${p.practiceMin} min exam practice` : ''}${p.trimmed ? ' · the rest carries over to the next days' : ''} · all new cards by ${fmt(finishNewBy())}</div>
+    <div class="plan-line muted">Plus ${p.due} reviews${p.practiceMin ? ` · ≈${p.practiceMin} min exam practice` : ''}${p.trimmed ? ` · reviews take ≈${Math.round(p.due * p.t.review / 60)} min, so the rest carries over` : ''} · all new cards by ${fmt(finishNewBy())}</div>
   </div>`;
 }
 
