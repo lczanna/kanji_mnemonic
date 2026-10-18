@@ -2485,9 +2485,10 @@ function vocabScreen(it, tags) {
 }
 
 // Ordering task: readings and meanings of the words in a chunk, shown only when asked for.
-function chunkGl(o, i) {
+function chunkGl(o, i, links) {
   const words = (o.cgl || [])[i] || [];
-  return words.length ? `<span class="cgl">${words.map(([w, r, m]) => `${esc(w)}${r && r !== w ? ` <b>${esc(r)}</b>` : ''} · ${esc(m)}`).join('<br>')}</span>` : '';
+  // links: after answering, each deck kanji can be tapped (not inside the part buttons, which are buttons themselves)
+  return words.length ? `<span class="cgl">${words.map(([w, r, m]) => `${links ? kanjiLinks(w) : esc(w)}${r && r !== w ? ` <b>${esc(r)}</b>` : ''} · ${esc(m)}`).join('<br>')}</span>` : '';
 }
 // After answering: why each wrong option doesn't fit, the one you picked first.
 function wrongsHtml(f, chosen) {
@@ -2498,8 +2499,8 @@ function wrongsHtml(f, chosen) {
 }
 // After an ordering task: each part in the right order, with the readings and meanings of its words.
 function partsHtml(o) {
-  const rows = o.chunks.map((c, i) => [c, chunkGl(o, i)]).filter(([, gl]) => gl);
-  return rows.length ? `<div class="parts-gl">${rows.map(([c, gl]) => `<div><b lang="ja">${esc(c)}</b><span lang="ja">${gl}</span></div>`).join('')}</div>` : '';
+  const rows = o.chunks.map((c, i) => [c, chunkGl(o, i, true)]).filter(([, gl]) => gl);
+  return rows.length ? `<div class="parts-gl">${rows.map(([c, gl]) => `<div><b lang="ja">${kanjiLinks(c)}</b><span lang="ja">${gl}</span></div>`).join('')}</div>` : '';
 }
 // The question's English: behind a button until you answer, then shown.
 function trHtml(it, en, answered) {
@@ -2539,7 +2540,10 @@ function grammarScreen(it, tags) {
   const front = `<div class="g-q order" lang="ja"><span>${glossHtml(o.before)}</span>${slots}<span>${glossHtml(o.after)}</span></div>
     ${answered ? '' : trHtml(it, o.en, false)}
     ${answered ? `<div class="why">${esc(o.en)} ${sayBtn(o.before + o.chunks.join('') + o.after)}</div>${partsHtml(o)}` :
-      `<div class="opts chunks">${st.pool.map((p, j) => `<button class="opt${it.showGl ? ' with-gl' : ''}" data-chunk="${j}" lang="ja">${esc(p.c)}${it.showGl ? chunkGl(o, p.i) : ''}</button>`).join('')}</div>
+      `<div class="opts chunks">${st.pool.map((p, j) => {
+        // A part with a kanji you haven't learned yet shows its reading and meaning: the task tests grammar, not guessing.
+        const gl = (it.showGl || unstudied(p.c)) && chunkGl(o, p.i);
+        return `<button class="opt${gl ? ' with-gl' : ''}" data-chunk="${j}" lang="ja">${esc(p.c)}${gl || ''}</button>`; }).join('')}</div>
        <div class="prompt">Tap the parts in order. Tap a filled slot to take it back.</div>
        ${(o.cgl || []).some(x => x.length) && !it.showGl ? '<div class="tr"><button class="small-btn" id="g-cgl">Show readings &amp; meanings</button></div>' : ''}`}`;
   return { inner: { front, back: answered ? grammarBackHtml(g, true) : '' }, bar: answered ? cont : '<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Fill all four slots</span></div>' };
