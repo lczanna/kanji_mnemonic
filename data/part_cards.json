@@ -106,10 +106,11 @@
   "keyword": "just so",
   "components": [
    "sun",
-   "one"
+   "one",
+   "stop"
   ],
-  "story": "The [sun] is set on a [one]-plank shelf, nudged left, then right, until it sits {just so}: perfectly straight, perfectly centered, perfectly fussy.",
-  "picture": "A fussy dinosaur carefully straightening a glowing sun on a single wooden shelf with a tiny level."
+  "story": "The [sun] sits on a [one]-plank shelf bolted to a [stop] sign; a fussy dinosaur nudges the sign left, then right, until it all stands {just so}: perfectly straight, perfectly centered.",
+  "picture": "A fussy green dinosaur carefully straightening a red octagonal stop sign whose post holds a small wooden shelf with a glowing miniature sun on it, checking it with a spirit level."
  },
  "昜": {
   "keyword": "piggy bank",
@@ -376,8 +377,8 @@
    "ice",
    "ice"
   ],
-  "story": "A chick spreads its wings: the left one crusted with [ice], the right one with more [ice]. Frozen stiff, its {feathers} crackle as it tries to flap.",
-  "picture": "A small chick spreading two frost-covered wings, icicles hanging from its feathers."
+  "story": "Two wings side by side, each a hooked frame holding two chips of [ice] like a pair of frozen [ice] feathers: a chick flaps them and its {feathers} crackle.",
+  "picture": "A small chick spreading two stiff wings, each wing a hooked frame with two shiny ice crystals inside, its frozen feathers crackling."
  },
  "至": {
   "keyword": "climax",
@@ -624,18 +625,18 @@
    "hood",
    "mouth"
   ],
-  "story": "A [hood] for a skull sits on a [hood] of ribs over a gaping [mouth] of hip bones: a rattling {skeleton}, ready to race.",
-  "picture": "A cartoon skeleton crouched at a starting line on a road, bones rattling."
+  "story": "A skull [hood] with a little crossbar inside sits on a wider [hood] of ribs, over a gaping [mouth] of hip bones: a rattling {skeleton}, ready to race.",
+  "picture": "A friendly cartoon skeleton in running shoes at a starting line, its skull, ribcage and hip bones clearly visible."
  },
  "祭": {
   "keyword": "ritual",
   "components": [
-   "bound up (small)",
-   "ice",
+   "flesh",
+   "crotch",
    "altar"
   ],
-  "story": "Meat [bound up (small)] in leaves and chilled on [ice] is laid on the [altar] as villagers chant: the yearly {ritual}, lit by a roaring bonfire.",
-  "picture": "Villagers placing leaf-wrapped food on ice upon a stone altar, with a big bonfire glowing behind."
+  "story": "A slab of [flesh] held up in a hand (the [crotch] shape) is laid on the [altar] as villagers chant: the yearly {ritual}, lit by a roaring bonfire.",
+  "picture": "A villager raising a slab of meat in one hand and placing it on a stone altar while a crowd chants around a roaring bonfire at a village festival."
  },
  "系": {
   "keyword": "lineage",
@@ -725,10 +726,11 @@
   "keyword": "lattice",
   "components": [
    "well",
-   "one"
+   "one",
+   "hood"
   ],
-  "story": "Beams crossed like a [well] frame, stacked on [one] long crossbar and repeated below: a sturdy wooden {lattice}, rigid enough to strap a back straight.",
-  "picture": "A tall rigid wooden lattice frame made of crossed beams, standing upright like a back brace."
+  "story": "Beams crossed like a [well] frame sit on [one] long crossbar over a [hood]-shaped frame crossed by more beams: a sturdy wooden {lattice}, rigid enough to strap a back straight.",
+  "picture": "A sturdy wooden lattice frame of crossed beams, stacked in layers, leaning against a barn wall."
  },
  "釆": {
   "keyword": "valentine",
@@ -1019,11 +1021,10 @@
   "keyword": "shouting giant",
   "components": [
    "mouth",
-   "one",
-   "eight"
+   "heavens"
   ],
-  "story": "A huge [mouth] gapes over [one] broad shoulder line and [eight] striding legs: a {shouting giant} booming so loudly the hills shake.",
-  "picture": "A giant with a huge open mouth shouting, hills trembling around him."
+  "story": "A huge [mouth] gapes on top of a giant whose body reaches the [heavens]: a {shouting giant} booming so loudly the clouds shake.",
+  "picture": "A gentle giant towering into the clouds, mouth wide open as he shouts, the clouds trembling around his head."
  },
  "苗": {
   "keyword": "seedling",
@@ -1043,12 +1044,11 @@
  "髟": {
   "keyword": "shaggy hair",
   "components": [
-   "one",
-   "elbow",
+   "long",
    "three hairs"
   ],
-  "story": "Above [one] stern brow line, an [elbow] juts out and [three hairs] swoop to the right: a wild mop of {shaggy hair} begging for a barber.",
-  "picture": "A friendly man with an enormous wild mop of shaggy hair trailing to the ground, a barber staring in shock."
+  "story": "On the left, [long] hair streams down to the floor; on the right, [three hairs] swoop outward: a wild mop of {shaggy hair} begging for a barber.",
+  "picture": "A cheerful person with extremely long hair streaming to the floor and three big swooping strands sticking out to the side, sitting in a barber's chair."
  },
  "禺": {
   "keyword": "monkey",
