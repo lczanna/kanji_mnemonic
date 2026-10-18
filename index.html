@@ -2002,7 +2002,9 @@ function quizItem(type, x) {
     // Every third check (from the second) of a kanji with a started look-alike: pick it among its look-alikes.
     if (reps >= 2 && reps % 3 === 2 && peersOf(x.kanji).some(c => (appData.cards[c] || {}).reps >= 1)) return whichItem(x);
     // Mature kanji alternate between the bare kanji and a real exam word, because N3 tests readings of words.
-    const words = (x.vocab || []).filter(v => v.w.length > 1);
+    // Only words whose other kanji you've started: a word with an unknown kanji (首都 before 都) tests guessing,
+    // and a miss would count against this kanji. Kanji above N3 count as unknown.
+    const words = (x.vocab || []).filter(v => v.w.length > 1 && [...v.w].every(ch => !isKanji(ch) || ch === '々' || ch === x.kanji || appData.cards[ch]));
     const useWord = reps >= 2 && words.length && reps % 2 === 0;
     const word = useWord ? words[reps % words.length] : null;
     const traps = word ? readingTraps(word.r) : null;
