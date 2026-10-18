@@ -2526,14 +2526,14 @@ function partsHtml(o) {
 // The question's English: behind a button until you answer, then shown.
 function trHtml(it, en, answered) {
   if (!en) return '';
-  return `<div class="tr">${answered || it.showTr ? `<span class="muted">EN</span> ${esc(en)}` : '<button class="small-btn" id="g-tr">Show translation</button>'}</div>`;
+  return `<div class="tr">${answered || it.showTr ? `<span class="muted">EN</span> ${esc(en)}${!answered ? ' <small class="muted">· shown before answering, so this counts as a miss</small>' : ''}` : '<button class="small-btn" id="g-tr">Show translation <small class="muted">(counts as a miss)</small></button>'}</div>`;
 }
 function grammarScreen(it, tags) {
   const g = it.x;
   tags.push('<span class="tag">GRAMMAR</span>');
   if (it.mode === 'learn') return { inner: { front: '', back: grammarBackHtml(g) }, bar: learnBar };
   const answered = session.revealed;
-  const cont = `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : 'Missed · it will come back'}</button></div>`;
+  const cont = `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : it.hinted ? 'Translation used · it will come back' : 'Missed · it will come back'}</button></div>`;
   if (it.task === 'fill') {
     tags.push('<span class="tag">文法 · FILL THE BLANK</span>');
     const f = it.f;
@@ -2592,7 +2592,7 @@ function pickChunk(j) {
   const slot = [0, 1, 2, 3].find(i => !st.picked[i]);
   st.picked[slot] = p;
   if (st.picked.filter(Boolean).length === 4) {
-    it.correct = st.picked.every((x, i) => x.i === i);
+    it.correct = !it.hinted && st.picked.every((x, i) => x.i === i);
     session.revealed = true;
   }
   renderSession();
@@ -2786,7 +2786,11 @@ document.addEventListener('click', e => {
     case 'go-resume': return resumeSession();
     case 'a-reveal': session.revealed = true; return renderSession();
     case 'r-more': session.paused = false; return renderSession();
-    case 'g-tr': session.queue[session.i].showTr = true; return renderSession();
+    case 'g-tr': {   // the translation before answering gives the meaning away: it counts as a miss, like a hint
+      const it = session.queue[session.i];
+      it.showTr = true; if (!session.revealed) it.hinted = true;
+      return renderSession();
+    }
     case 'g-cgl': session.queue[session.i].showGl = true; return renderSession();
     case 'a-continue': { const it = session.queue[session.i]; return grade(it.correct ? 3 : 1); }
     case 'a-look': {
