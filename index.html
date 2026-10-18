@@ -87,6 +87,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .cta { display: grid; gap: 10px; }
 .opt-notes .right-note { border-left-color: var(--good); color: var(--ink); }
 .kl { font: inherit; color: inherit; background: none; border: 0; padding: 0; border-bottom: 1px dotted color-mix(in srgb, var(--ai) 60%, transparent); cursor: pointer; }
+.word-link { font-size: 12px; padding: 2px 8px; margin-left: 6px; }
 .missed-words { display: grid; gap: 4px; font-size: 14px; }
 .tk-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .tk { display: grid; gap: 2px; align-content: start; border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; }
@@ -1058,7 +1059,9 @@ function showPart(btn) {
 }
 function showKanjiPop(btn) {
   const k = BY_KANJI[btn.dataset.kt]; if (!k) return;
-  const html = kanjiInfoHtml(k, btn.dataset.w ? readingIn(btn.dataset.w, k.kanji) : null);
+  const c = appData.cards[k.kanji];
+  const html = kanjiInfoHtml(k, btn.dataset.w ? readingIn(btn.dataset.w, k.kanji) : null)
+    + (c ? '' : '<div class="gl-lemma"><b>Not studied yet</b> · it comes up in your plan</div>');
   // On a word prompt the hint sits under the word, so it never covers the answer options.
   const front = btn.closest('.word-front');
   if (front) {
@@ -1120,7 +1123,7 @@ function backHtml(k, mode) {
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
-      <div class="vocab-row"><span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span><span class="m">${esc(v.m)}</span></div>`).join('')}</div></div>` : '';
+      <div class="vocab-row"><span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span><span class="m">${esc(v.m)}${BY_WORD[v.w] && appData.cards['v:' + v.w] ? ` <button class="chip word-link" data-v="${esc(v.w)}">your word card ›</button>` : ''}</span></div>`).join('')}</div></div>` : '';
   const body = mode === 'quiz' ? vocabH + soundH + story + img : img + story + soundH + vocabH;
   return `
   <div class="back" data-in="${esc(k.kanji)}">
