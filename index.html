@@ -348,7 +348,7 @@ label.mini { display: grid; gap: 2px; font-size: 12px; color: var(--muted); } la
 .lk-story { font-size: 15px; }
 /* The underlined part of a 言い換え question stays underlined when it's tappable. */
 u .gl { border-bottom: 2px solid currentColor; }
-.gl-pop { overflow-y: auto; }
+.gl-pop { overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 .gl-story { font-size: 14px; line-height: 1.5; }
 .gl-pop { position: fixed; z-index: 40; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 18%, transparent); display: grid; gap: 4px; }
 .gl-word { font-family: var(--font-kanji); font-weight: 800; font-size: 22px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
@@ -1037,12 +1037,12 @@ function kanjiInfoHtml(k, used) {
 // any other part shows what it is made of, and each of those pieces can be tapped in turn.
 function showPart(btn) {
   // The same part name can stand for different glyphs ([head] is 頭, but 頁 inside 題): the card says which.
-  const ctx = BY_KANJI[(btn.closest('[data-in]') || {}).dataset?.in] || {};
+  const ctx = BY_KANJI[(btn.closest('[data-in]') || {}).dataset?.in] || {}, inPop = !!btn.closest('#gl-pop');
   const name = btn.dataset.part, own = (ctx.pg || {})[name], p = own ? { g: own } : PARTS[name] || {}, k = BY_KANJI[p.g];
   const pop = $('gl-pop'), pc = !k && BY_PART[p.g];
   if (pc) {
     pop.innerHTML = `<div class="gl-word" lang="ja">${esc(pc.kanji)} <span>${esc(name)}</span></div>
-      ${pc.image ? `<img class="card-img" src="${esc(pc.image)}" data-kanji="${esc('c:' + pc.kanji)}" alt="" onerror="imgFallback(this)">` : ''}
+      ${pc.image ? `<img class="card-img" src="${esc(pc.image)}" data-kanji="${esc('c:' + pc.kanji)}" alt="" onload="fitPop()" onerror="imgFallback(this)">` : ''}
       <div class="story gl-story" data-in="${esc(pc.kanji)}">${storyHtml(pc.story || '')}</div>
       <div class="gl-lemma">${appData.cards['c:' + pc.kanji] ? 'One of your part cards.' : 'A part card: it comes up before the first kanji that uses it.'}</div>`;
   } else if (k) {
@@ -1054,8 +1054,8 @@ function showPart(btn) {
       ${p.of && p.of.length ? `<div class="part-of">Made of ${p.of.map(n => `<button class="chip" data-part="${esc(n)}">${esc((PARTS[n] || {}).g || '')} ${esc(n)}</button>`).join('+')}</div>`
         : `<div class="gl-lemma">${own ? `The part used in ${esc(ctx.kanji)}; it isn't a card of its own.` : 'A basic part, not split further in this deck.'}</div>`}`;
   }
-  // Tapping a piece inside the box keeps the box where it is.
-  if (!btn.closest('#gl-pop')) placePop(pop, btn);
+  // Tapping a piece inside the box keeps the box where it is (moved up only if it would run off the screen).
+  if (!inPop) placePop(pop, btn); else fitPop();
 }
 function showKanjiPop(btn) {
   const k = BY_KANJI[btn.dataset.kt]; if (!k) return;
@@ -1073,10 +1073,10 @@ function showKanjiPop(btn) {
   }
   // Elsewhere (a word's "Built from" list, sentences): the kanji's own picture and story too, as on its card.
   const pop = $('gl-pop'), inPop = !!btn.closest('#gl-pop');   // tapped inside a word's box: the box stays put
-  pop.innerHTML = `${html}${k.image ? `<img class="card-img" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="" onerror="imgFallback(this)">` : ''}
+  pop.innerHTML = `${html}${k.image ? `<img class="card-img" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="" onload="fitPop()" onerror="imgFallback(this)">` : ''}
     ${k.story ? `<div class="story gl-story" data-in="${esc(k.kanji)}">${storyHtml(k.story)}</div>` : ''}
     <div><button class="small-btn" data-open-k="${esc(k.kanji)}">See its card</button></div>`;
-  if (inPop) pop.scrollTop = 0; else placePop(pop, btn);
+  if (inPop) { pop.scrollTop = 0; fitPop(); } else placePop(pop, btn);
 }
 function placePop(pop, btn) {
   pop.hidden = false;
@@ -1089,6 +1089,16 @@ function placePop(pop, btn) {
   pop.style.maxHeight = Math.max(160, floor - 16) + 'px';   // a tall box (picture and story) scrolls inside
   const below = b.bottom + 8, h = pop.offsetHeight;
   pop.style.top = (below + h <= floor ? below : Math.max(8, Math.min(b.top - h - 8, floor - h))) + 'px';
+}
+// The box's content changed in place (a kanji tapped inside a word's box, a picture loaded): keep it on screen,
+// moving it up as far as needed; anything still taller than the screen scrolls inside the box.
+function fitPop() {
+  const pop = $('gl-pop');
+  if (pop.hidden) return;
+  const bar = $('answer-bar'), floor = bar && !bar.hidden ? bar.getBoundingClientRect().top - 8 : innerHeight - 8;
+  pop.style.maxHeight = Math.max(160, floor - 16) + 'px';
+  const top = parseFloat(pop.style.top) || 8, h = pop.offsetHeight;
+  if (top + h > floor) pop.style.top = Math.max(8, floor - h) + 'px';
 }
 function sayBtn(text, label) { return 'speechSynthesis' in window ? `<button class="say" data-say="${esc(text)}" aria-label="${esc(label || 'Play audio')}">▶</button>` : ''; }
 
