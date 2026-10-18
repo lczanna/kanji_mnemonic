@@ -1156,7 +1156,7 @@ function vocabBackHtml(v, mode) {
     ${f === 'mixed' ? (() => {
       // Name the kanji: which are above N3 (why the exam prints it in kana) and which are in your deck (tappable).
       const above = [...new Set([...v.w].filter(ch => isKanji(ch) && ch !== '々' && !BY_KANJI[ch]))], mine = [...new Set([...v.w].filter(ch => BY_KANJI[ch]))];
-      return `<p class="g-note">Written <span lang="ja" class="kform">${kanjiLinks(v.w)}</span>. <span lang="ja">${esc(above.join('、'))}</span> ${above.length > 1 ? 'are' : 'is'} above N3, so the exam normally prints this word in kana: know the sound and the meaning.${mine.length ? ` <span lang="ja">${mine.map(ch => `${esc(ch)}</span> (${esc(BY_KANJI[ch].keyword)})<span lang="ja">`).join('、')}</span> ${mine.length > 1 ? 'are' : 'is'} in your deck: tap ${mine.length > 1 ? 'them' : 'it'} for ${mine.length > 1 ? 'their' : 'its'} story.` : ''}</p>`;
+      return `<p class="g-note">Written <span lang="ja" class="kform">${kanjiLinks(v.w)}</span>. <span lang="ja">${esc(above.join('、'))}</span> ${above.length > 1 ? 'are' : 'is'} above N3, so the exam normally prints this word in kana: know the sound and the meaning.${mine.length ? ` In your deck: ${mine.map(ch => `<span lang="ja">${esc(ch)}</span> (${esc(BY_KANJI[ch].keyword)}) ${appData.cards[ch] ? '<span class="ok">✓ studied</span>' : '<span class="muted">not studied yet</span>'}`).join(' · ')}. Tap ${mine.length > 1 ? 'them' : 'it'} for the story.` : ''}</p>`;
     })() : ''}
     ${v.mn ? `<div><div class="section-label">Memory hook</div>${img}<div class="story">${storyHtml(v.mn)}</div></div>` : ''}
     ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en, , here]) => `
@@ -1166,7 +1166,8 @@ function vocabBackHtml(v, mode) {
       const used = readingIn(v.w, ch), cast = k && k.sound && k.sound[0];
       const castHere = cast && used && used.on && hira(cast.r) === used.on;
       const rd = used && used.r ? ` · <span lang="ja">${esc(used.r)}</span>${castHere ? ` ${esc(cast.hook)}` : used.on ? '' : ' (kun)'}` : '';
-      return `<button class="part" data-k="${esc(ch)}" data-kt="${esc(ch)}" data-w="${esc(v.w)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${rd}</span></button>`; }).join('')}</div></div>` : ''}
+      const st = !k ? '' : appData.cards[ch] ? ' <small class="ok">✓ studied</small>' : ' <small class="muted">not studied yet</small>';
+      return `<button class="part" data-k="${esc(ch)}" data-kt="${esc(ch)}" data-w="${esc(v.w)}"><span class="k" lang="ja">${esc(ch)}</span><span>${esc(k ? k.keyword : '')}${rd}${st}</span></button>`; }).join('')}</div></div>` : ''}
   </div>`;
 }
 function grammarBackHtml(g, compact) {
