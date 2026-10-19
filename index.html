@@ -2372,7 +2372,28 @@ const learnBar = `<div class="row two"><button class="ans skip" id="a-known">Alr
 const ROUND = 50;
 // A card that fails to draw is skipped rather than freezing the session (its progress is untouched),
 // and the error is shown so it can be reported.
+// A new kanji whose story uses a deck kanji (or part card) you haven't learned: that part is taught right before it,
+// whatever built the session (an older saved session, extras, repair).
+function partsFirst() {
+  const it = session && session.queue[session.i];
+  if (!it || it.type !== 'kanji' || it.mode !== 'learn' || appData.cards[it.x.kanji]) return;
+  const need = [], seen = new Set();
+  const add = k => {
+    if (seen.has(k.kanji)) return;
+    seen.add(k.kanji);
+    for (const d of deckParts(k)) if (!appData.cards[d.kanji]) add(d);
+    if (k !== it.x) need.push({ type: 'kanji', x: k, mode: 'learn', extra: it.extra });
+  };
+  add(it.x);
+  const ahead = withParts([...need, it]).filter(f => f !== it && !(f.type === 'part' && appData.cards['c:' + f.x.kanji]));
+  if (!ahead.length) return;
+  // Drop later copies of the same cards, then teach them here.
+  const keys = new Set(ahead.map(f => keyOf(f.type, f.x)));
+  session.queue = session.queue.filter((f, j) => j <= session.i || f.mode !== 'learn' || !keys.has(keyOf(f.type, f.x)));
+  session.queue.splice(session.i, 0, ...ahead);
+}
 function renderSession() {
+  partsFirst();
   for (let tries = 0; session && tries < 5; tries++) {
     try { return drawSession(); }
     catch (e) {
