@@ -28,6 +28,8 @@ STROKES = {'one', 'slash', 'drop', 'walking stick', 'fishhook', 'barb'}
 OVERRIDES = {'computer': ['rice field', 'soil'], 'fortune-telling': ['magic wand', 'mouth'],
              'excuse': [], 'brush': [], 'adjusted': [], 'acorn': [], 'long robe': [], 'melancholy': [],
              'bushel basket': [], 'bamboo': [], 'axe': []}
+# Parts with no character of their own: the app describes where they are instead.
+SHAPES = {'stairs': 'the left half of 段'}
 
 
 def load_ids(path):
@@ -84,6 +86,8 @@ def main():
             of = []
         of = OVERRIDES.get(n, of)
         parts[n] = {'g': g, 'of': of}
+        if n in SHAPES:
+            parts[n]['d'] = SHAPES[n]
         todo += of
 
     # Which glyph each story part really is in each card's kanji.

@@ -1109,7 +1109,7 @@ function showPart(btn) {
   } else {
     pop.innerHTML = `<div class="gl-word" lang="ja">${esc(p.g || '')} <span>${esc(name)}</span></div>
       ${p.of && p.of.length ? `<div class="part-of">Made of ${p.of.map(n => `<button class="chip" data-part="${esc(n)}">${esc((PARTS[n] || {}).g || '')} ${esc(n)}</button>`).join('+')}</div>`
-        : `<div class="gl-lemma">${own ? `The part used in ${esc(ctx.kanji)}; it isn't a card of its own.` : 'A basic part, not split further in this deck.'}</div>`}`;
+        : `<div class="gl-lemma">${own ? `The part used in ${esc(ctx.kanji)}; it isn't a card of its own.` : p.d ? `No character of its own: it's ${esc(p.d)}.` : 'A basic part, not split further in this deck.'}</div>`}`;
   }
   // Tapping a piece inside the box keeps the box where it is (moved up only if it would run off the screen).
   if (!inPop) placePop(pop, btn); else fitPop();
