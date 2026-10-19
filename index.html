@@ -1199,21 +1199,35 @@ function sayBtn(text, label) { return 'speechSynthesis' in window ? `<button cla
 // (kanji by character, word pictures by word id).
 let packIndex = null;
 const packs = {};
+// A pack is about 1 MB: on a patchy phone connection the first try can fail, so each load gets three tries.
+async function packFor(k) {
+  for (let i = 0; ; i++) {
+    let n = null;
+    try {
+      packIndex = packIndex || getJson('images/packs/index.json');
+      n = (await packIndex)[k];
+      if (n == null) return null;   // not packed
+      packs[n] = packs[n] || getJson(`images/packs/p${String(n).padStart(2, '0')}.json`);
+      return (await packs[n])[k] || null;
+    } catch (e) {
+      packIndex = null; if (n != null) delete packs[n];
+      if (i >= 2) throw e;
+      await new Promise(r => setTimeout(r, 1500 * (i + 1)));
+    }
+  }
+}
 async function imgFallback(img) {
   const k = img.dataset.kanji;
   if (!k || img.dataset.tried) return img.remove();
   img.dataset.tried = '1';
-  let n = null;
   try {
-    packIndex = packIndex || getJson('images/packs/index.json');
-    n = (await packIndex)[k];
-    if (n == null) throw new Error('not packed');
-    packs[n] = packs[n] || getJson(`images/packs/p${String(n).padStart(2, '0')}.json`);
-    img.src = (await packs[n])[k];
-  } catch (e) {
-    packIndex = null; if (n != null) delete packs[n];   // try again next time, e.g. after a dropped connection
-    img.remove();
-  }
+    const src = await packFor(k);
+    if (src) img.src = src; else img.remove();
+  } catch (e) { img.remove(); }
+}
+// Fetch the packs holding the pictures of a session's new cards ahead of time, one at a time.
+function warmPacks(keys) {
+  keys.reduce((p, k) => p.then(() => packFor(k)).catch(() => {}), Promise.resolve());
 }
 
 // ============ CARD BACKS ============
@@ -2229,6 +2243,7 @@ function pendingParts(limit = 3) {
 const duePartItems = () => dueOf('part').map(x => quizItem('part', x));
 function runQueue(items, fresh, type, tail) {
   fresh = withParts(fresh);
+  warmPacks(fresh.filter(f => f.type !== 'grammar').slice(0, 12).map(f => f.type === 'vocab' ? f.x.img && f.x.id : keyOf(f.type, f.x)).filter(Boolean));
   // Interleave: a new card after every 3 reviews keeps sessions from front-loading all the hard work.
   const queue = [];
   let ri = 0;
