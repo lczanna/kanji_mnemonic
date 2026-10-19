@@ -7,6 +7,8 @@ only glossed kana words on the short checked list. This adds the kana words the 
 with meanings from tools/kana_glosses.py (data/kana_meanings.json). Glosses already there are kept as they are.
 It also fills words that kept no meaning at all (names, numbers, polite ご/お forms, half-kana compounds the
 dictionary lacks, like ご利用 or 牛にゅう) from data/gloss_missing.json, with a checked reading.
+It also tidies meanings the builders cut at a fixed length ("to be directed toward (t"): they end at the last
+whole sense instead.
 Run it after build_examples.py, gloss_grammar.py or build_exam.py; running it twice changes nothing.
 
   python3 tools/kana_fill.py
@@ -20,6 +22,49 @@ from gloss_grammar import HAS_KANJI, MODE, TOK, kana_gloss  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 MISSING = {k: v for k, v in json.loads((ROOT / 'data' / 'gloss_missing.json').read_text(encoding='utf8')).items() if not k.startswith('_')}
 KANA = re.compile(r'[ぁ-ヿ]')
+
+
+SEP = re.compile(r'; | / |, ')
+
+
+def tidy(m):
+    """A meaning cut mid-sense loses the cut piece: unclosed brackets, or a cut at the builders' length limit."""
+    t = tidy_once(m)
+    while t != m:
+        m, t = t, tidy_once(t)
+    return t
+
+
+def tidy_once(m):
+    if not isinstance(m, str):
+        return m
+    cut = m.count('(') > m.count(')') or len(m) in (60, 70)
+    if not cut:
+        return m
+    ends = [x.start() for x in SEP.finditer(m)]
+    for e in reversed(ends):
+        head = m[:e]
+        if head.count('(') == head.count(')'):
+            return head
+    head = m.split('(')[0].strip()
+    return (head or m.rstrip(' ,;') + '…)') if m.count('(') > m.count(')') else m
+
+
+def tidy_all(o, cgl=False):
+    """Every gloss entry [start, len, reading, lemma, lemma reading, meaning] and ordering-task word [w, r, meaning]."""
+    n = 0
+    if isinstance(o, dict):
+        for k, v in o.items():
+            n += tidy_all(v, k == 'cgl')
+    elif isinstance(o, list):
+        if len(o) == 6 and isinstance(o[0], int) and isinstance(o[5], str):
+            t = tidy(o[5]); n += t != o[5]; o[5] = t
+        elif cgl and len(o) == 3 and all(isinstance(x, str) for x in o):
+            t = tidy(o[2]); n += t != o[2]; o[2] = t
+        else:
+            for v in o:
+                n += tidy_all(v, cgl)
+    return n
 
 
 def fill(text, gl):
@@ -83,14 +128,17 @@ def main():
         for e in lst:
             e[2], k = fill(e[0], e[2] or [])
             n += k
+    print(f'examples.json: {tidy_all(ex)} cut meanings tidied')
     save('examples.json', ex)
     print(f'examples.json: {n} kana words added')
     gr = load('grammar.json')
     n = sum(fill_dict(g.setdefault('gl', {})) for g in gr)
+    print(f'grammar.json: {tidy_all(gr)} cut meanings tidied')
     save('grammar.json', gr)
     print(f'grammar.json: {n} kana words added')
     exam = load('exam.json')
     n = walk(exam)
+    print(f'exam.json: {tidy_all(exam)} cut meanings tidied')
     save('exam.json', exam)
     print(f'exam.json: {n} kana words added')
 

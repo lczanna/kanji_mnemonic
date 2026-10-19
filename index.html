@@ -1050,13 +1050,22 @@ function glossHtml(text) {
 function kanjiLinks(w) {
   return [...w].map(ch => BY_KANJI[ch] ? `<button class="kl" data-kt="${esc(ch)}" data-w="${esc(w)}">${esc(ch)}</button>` : esc(ch)).join('');
 }
+// A link to a word's card when the word is in the deck, saying whether you've studied it yet.
+// A word written in kana (ていねい) finds its card (丁寧) when only one deck word has that reading.
+let BY_READING = null;
+function wordLink(w) {
+  if (!BY_READING) { BY_READING = {}; for (const x of VOCAB) (BY_READING[x.r] = BY_READING[x.r] || []).push(x); }
+  const same = BY_READING[w] || [], v = BY_WORD[w] || (same.length === 1 ? same[0] : null);
+  if (!v) return '';
+  return ` <button class="chip word-link" data-v="${esc(v.w)}">${appData.cards['v:' + v.w] ? 'your word card ›' : 'word card · not studied yet ›'}</button>`;
+}
 function showGloss(btn) {
   const [w, r, lemma, lr, m] = JSON.parse(btn.dataset.gl);
   const pop = $('gl-pop');
   // Words written in kana need no reading line; their dictionary form shows only when it differs.
   pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} ${r !== w ? `<span>${esc(r)}</span>` : ''} ${sayBtn(sayText(w, r), 'Play ' + w)}</div>
     ${lemma !== w ? `<div class="gl-lemma" lang="ja">dictionary form: ${esc(lemma)}${lr && lr !== lemma ? `（${esc(lr)}）` : ''}</div>` : ''}
-    <div class="gl-m">${esc(m || 'name or rare word')}</div>
+    <div class="gl-m">${esc(m || 'name or rare word')}${wordLink(BY_WORD[lemma] ? lemma : w)}</div>
     ${(() => { const word = BY_WORD[lemma] ? lemma : w, ks = [...new Set([...word].filter(ch => BY_KANJI[ch]))];
       return ks.length ? `<div class="chips">${ks.map(ch => `<button class="chip" data-kt="${esc(ch)}" data-w="${esc(word)}"><span lang="ja">${esc(ch)}</span> ${esc(BY_KANJI[ch].keyword)}</button>`).join('')}</div>` : ''; })()}`;
   placePop(pop, btn);
@@ -2505,13 +2514,13 @@ function optionNotes(q, chosen) {
     const v = BY_WORD[(q.w || [])[i] || o], cls = i === chosen && i !== q.answer ? 'picked' : '';
     if (v) {
       const head = o === v.w ? `${kanjiLinks(v.w)} <span class="muted">${esc(v.r)}</span>` : `${esc(o)} <span class="muted">(written ${kanjiLinks(v.w)})</span>`;
-      return `<div class="${cls}"><b lang="ja">${head}</b> · ${esc(v.m)}</div>`;
+      return `<div class="${cls}"><b lang="ja">${head}</b> · ${esc(v.m)}${wordLink(v.w)}</div>`;
     }
     // Not a deck word (a conjugated form like 続けて, or a phrase): its words' readings and meanings.
     const gl = GL[o] || [];
     if (!gl.length) return '';
     const rd = optReading(o);
-    const parts = gl.map(([st, len, r, lemma, lr, m]) => `${gl.length > 1 ? `<span lang="ja">${esc(o.slice(st, st + len))}</span>: ` : ''}${esc(m || '')}${lemma !== o.slice(st, st + len) ? ` <span lang="ja">(${esc(lemma)})</span>` : ''}`);
+    const parts = gl.map(([st, len, r, lemma, lr, m]) => `${gl.length > 1 ? `<span lang="ja">${esc(o.slice(st, st + len))}</span>: ` : ''}${esc(m || '')}${lemma !== o.slice(st, st + len) ? ` <span lang="ja">(${esc(lemma)})</span>` : ''}${wordLink(BY_WORD[lemma] ? lemma : o.slice(st, st + len))}`);
     return `<div class="${cls}"><b lang="ja">${esc(o)}${rd && rd !== o ? ` <span class="muted">${esc(rd)}</span>` : ''}</b> · ${parts.join('; ')}</div>`;
   }).filter(Boolean);
   return rows.length ? `<div class="wrongs">${rows.join('')}</div>` : '';
@@ -2567,7 +2576,7 @@ function vocabScreen(it, tags) {
 function chunkGl(o, i, links) {
   const words = (o.cgl || [])[i] || [];
   // links: after answering, each deck kanji can be tapped (not inside the part buttons, which are buttons themselves)
-  return words.length ? `<span class="cgl">${words.map(([w, r, m]) => `${links ? kanjiLinks(w) : esc(w)}${r && r !== w ? ` <b>${esc(r)}</b>` : ''} · ${esc(m)}`).join('<br>')}</span>` : '';
+  return words.length ? `<span class="cgl">${words.map(([w, r, m]) => `${links ? kanjiLinks(w) : esc(w)}${r && r !== w ? ` <b>${esc(r)}</b>` : ''} · ${esc(m)}${links ? wordLink(w) : ''}`).join('<br>')}</span>` : '';
 }
 // After answering: why each wrong option doesn't fit, the one you picked first.
 function wrongsHtml(f, chosen) {
@@ -2807,7 +2816,7 @@ document.addEventListener('click', e => {
   if (t.closest('#tabs')) { view = t.dataset.view; confirmingReset = false; render(); window.scrollTo(0, 0); return; }
   if (t.dataset.k && !t.closest('.sheet')) return showDetail(t.dataset.k);
   if (t.dataset.k && t.closest('.sheet')) return;
-  if (t.dataset.v) { const v = BY_WORD[t.dataset.v]; if (v) showModal('v:' + v.w, vocabBackHtml(v)); return; }
+  if (t.dataset.v) { $('gl-pop').hidden = true; const v = BY_WORD[t.dataset.v]; if (v) showModal('v:' + v.w, vocabBackHtml(v)); return; }
   if (t.dataset.gId) { const g = BY_GID[t.dataset.gId]; if (g) showModal('g:' + g.id, grammarBackHtml(g)); return; }
   if (t.dataset.dtype) { deckFilter.type = t.dataset.dtype; deckFilter.q = ''; render(); return; }
   if (t.dataset.lv !== undefined) { deckFilter.level = +t.dataset.lv; render(); return; }
