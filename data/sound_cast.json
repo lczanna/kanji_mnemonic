@@ -1,5 +1,5 @@
 {
- "_convention": "Every on'yomi is played by one recurring character whose English name starts with or clearly contains that sound (ショウ = Showman, カン = Kangaroo): long readings ending in ウ/イ get a stretched vowel (コ Collie vs コウ Coach, ケ Kettle vs ケイ Cake), and endings in ク/ツ/ッ/キ/チ keep that consonant (コク Cockatoo, ジツ Jiu-jitsu fighter). Voiced readings (゛) use a sound-alike 'muddy cousin' of the unvoiced character, always shown splattered with two drops of mud like the two ゛ dots and, where possible, sharing its scene (シ Sheep / ジ Jeep, ショウ Showman / ジョウ Joker, コウ Coach / ゴウ Goalie, セン Sensei / ゼン Zen monk, ヒ Hippo / ビ Beaver), so mud always means ゛.",
+ "_convention": "Every on'yomi is played by one recurring character whose English name starts with or clearly contains that sound (ショウ = Showman, カン = Kangaroo): long readings ending in ウ/イ get a stretched vowel (コ Collie vs コウ Coach, ケ Kettle vs ケイ Cake), and endings in ク/ツ/ッ/キ/チ keep that consonant (コク Cockatoo, ジツ Jiu-jitsu fighter). Voiced readings (゛) use a sound-alike 'muddy cousin' of the unvoiced character, always shown splattered with two drops of mud like the two ゛ dots and, where possible, sharing its scene (シ Sheep / ジ Jeep, ショウ Showman / ジョウ Joker, コウ Coach / ゴウ Goalie, セン Sensei / ゼン Zen monk, ヒ Hippo / ビ Beaver), so mud always means ゛. Where the short and long readings could be mixed up, they share a world and size marks length: キョ is the Kyoto maiko (the young apprentice), キョウ the grown Kyoto Geisha.",
  "カ": {
   "hook": "Car",
   "emoji": "🚗"
@@ -61,8 +61,8 @@
   "emoji": "⛸️"
  },
  "キョ": {
-  "hook": "Tokyo salaryman",
-  "emoji": "💼"
+  "hook": "Kyoto maiko",
+  "emoji": "🌸"
  },
  "ギョ": {
   "hook": "Gyoro (goggle-eyed goldfish)",

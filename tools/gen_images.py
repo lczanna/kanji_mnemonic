@@ -84,6 +84,7 @@ def pick_model():
 # Trademarked characters, brands and real people get refused or drawn with logos, so the
 # picture prompt describes a look-alike instead. The story text the app shows is unchanged.
 DEPICT = {
+    'Kyoto maiko': 'a small, young apprentice geisha in a bright flowered kimono with dangling hair ornaments',
     'Mickey Mouse': 'a cheerful little mouse',
     'Han Solo': 'a cocky pilot in a leather jacket',
     'Chewbacca': 'a tall shaggy brown furry beast',
@@ -120,6 +121,7 @@ DEPICT = {
 }
 # Words whose hook the image filter refuses as written: a plainer scene for the picture only (the app shows the hook).
 PICTURE = {
+    '免許': 'A wise grey-bearded old man in a tweed jacket (the mentor) hands a small, young apprentice geisha in a bright flowered kimono a shiny new driving license; she beams. A small car waits behind them.',
     "合う": "A tiny mouse happily slides its paw into a little shoe that fits perfectly, in a cozy mouse house.",
     "日曜日": "a small old hermit with big ears, a brown robe and a walking stick relaxes in a hammock under a bright sun on a lazy, sunny day off.",
     "与える": "A kind queen hands a pile of golden acorns to a delighted squirrel in a forest clearing.",

@@ -1217,13 +1217,32 @@ async function imgFallback(img) {
 }
 
 // ============ CARD BACKS ============
+// Short and long readings are different characters (キョ the Kyoto maiko, キョウ the Kyoto Geisha): each names the other.
+function castSibling(r) {
+  const long = CAST[r + 'ウ'], short = r.endsWith('ウ') && CAST[r.slice(0, -1)];
+  const [len, other, c] = long ? ['short', r + 'ウ', long] : short ? ['long', r.slice(0, -1), short] : [];
+  return c ? ` <small class="muted">· ${len} vowel; <span lang="ja">${esc(other)}</span> is the ${esc(c.hook)}</small>` : '';
+}
+// Picked a reading that only differs by a long vowel (きょうねん for きょねん): which kanji is short or long, and its character.
+const kata = t => t.replace(/[\u3041-\u3096]/g, c => String.fromCharCode(c.charCodeAt(0) + 0x60));
+function lengthNote(it) {
+  const right = it.answerText, picked = it.opts[it.chosen], w = it.word || it.x;
+  if (!picked || picked === right || !w) return '';
+  const drop = (a, b) => [...a].some((ch, i) => (ch === 'う' || ch === 'い' || ch === 'ー') && a.slice(0, i) + a.slice(i + 1) === b);
+  const longPicked = drop(picked, right);
+  if (!longPicked && !drop(right, picked)) return '';
+  const rows = [...w.w].map(ch => { const kr = ((BY_WORD[w.w] || {}).kr || {})[ch]; return kr && BY_KANJI[ch] ? [ch, kr] : null; }).filter(Boolean)
+    .map(([ch, kr]) => { const r = kata(kr), c = CAST[r], sib = CAST[r.endsWith('ウ') ? r.slice(0, -1) : r + 'ウ'];
+      return c && sib ? `<div><b lang="ja">${esc(ch)}</b> is <span lang="ja">${esc(kr)}</span>: ${esc(c.emoji || '')} ${esc(c.hook)}, not the ${esc(sib.hook)}</div>` : ''; }).join('');
+  return `<div class="wrongs"><div class="picked"><b lang="ja">${esc(picked)}</b>${longPicked ? 'adds a long vowel' : 'drops a long vowel'}: it's <span lang="ja">${esc(right)}</span>.</div>${rows}</div>`;
+}
 function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
   // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
   const img = k.image ? `<img class="card-img${mode === 'quiz' ? ' small' : ''}" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="imgFallback(this)">` : '';
   const story = `<div class="story">${storyHtml(k.story || '')}</div>`;
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
-      `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}</span></div>`).join('')}</div>` : '';
+      `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}${castSibling(x.r)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
       <div class="vocab-row"><span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span><span class="m">${esc(v.m)}${BY_WORD[v.w] && appData.cards['v:' + v.w] ? ` <button class="chip word-link" data-v="${esc(v.w)}">your word card ›</button>` : ''}</span></div>`).join('')}</div></div>` : '';
   const body = mode === 'quiz' ? vocabH + soundH + story + img : img + story + soundH + vocabH;
@@ -2490,7 +2509,7 @@ function kanjiScreen(it, tags) {
     : it.mode === 'learn' ? 'New kanji: read the story, say the words out loud.' : 'Say a reading and the meaning, then tap to check.';
   if (it.task === 'readmc') {
     tags.push('<span class="tag">漢字読み · PICK THE READING</span>');
-    const front = `<div class="word-front" lang="ja">${kanjiTapHtml(word.w)}</div>${mcOptions(it, true)}`;
+    const front = `<div class="word-front" lang="ja">${kanjiTapHtml(word.w)}</div>${mcOptions(it, true)}${session.revealed ? lengthNote(it) : ''}`;
     return { inner: { front, back: session.revealed ? backHtml(k, 'quiz') : '' },
       bar: session.revealed ? continueBar(it) : pickHint('Watch for long vowels, small っ and ゛') };
   }
@@ -2601,7 +2620,7 @@ function vocabScreen(it, tags) {
   if (it.task === 'readmc') {
     tags.push('<span class="tag">漢字読み · PICK THE READING</span>');
     if (session.revealed) speak(sayText(v.w, v.r));
-    const front = `<div class="word-front" lang="ja">${kanjiTapHtml(v.w)}</div>${mcOptions(it, true)}`;
+    const front = `<div class="word-front" lang="ja">${kanjiTapHtml(v.w)}</div>${mcOptions(it, true)}${session.revealed ? lengthNote(it) : ''}`;
     return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
       bar: session.revealed ? continueBar(it) : pickHint('Watch for long vowels, small っ and ゛') };
   }
