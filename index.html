@@ -876,6 +876,20 @@ function newLeftToday(type) {
   if (finalWeek()) return 0;
   return Math.max(0, dailyLimit(type) - (appData.newByDay[dayKey(type)] || 0));
 }
+// Deck kanji a kanji's story uses as parts, directly or inside another part ([how many] is 幾 in 機).
+const DECK_PARTS = {};
+function deckParts(k) {
+  if (DECK_PARTS[k.kanji]) return DECK_PARTS[k.kanji];
+  const out = [], walk = (name, seen) => {
+    if (seen.has(name)) return;
+    seen.add(name);
+    const g = (k.pg || {})[name] || (PARTS[name] || {}).g;
+    if (BY_KANJI[g]) { if (g !== k.kanji) out.push(BY_KANJI[g]); return; }
+    for (const n of (PARTS[name] || {}).of || []) walk(n, seen);
+  };
+  for (const n of new Set([...(k.story || '').matchAll(/\[([^\]]+)\]/g)].map(m => m[1]).concat(k.components || []))) walk(n, new Set());
+  return (DECK_PARTS[k.kanji] = [...new Set(out)]);
+}
 function newQueueOf(type, extra) {
   let pool = unseenOf(type).filter(x => unlocked(type, x));
   // Kanji that words you've already started need come first, the ones behind your most-missed words first:
@@ -886,7 +900,19 @@ function newQueueOf(type, extra) {
       const v = key.startsWith('v:') && BY_WORD[key.slice(2)];
       if (v) for (const ch of v.k || []) need[ch] = Math.max(need[ch] || 0, 1 + (c.lapses || 0));
     }
+    // A kanji you've learned whose part you haven't (you met 機 before 幾): that part comes first of all.
+    for (const k of DECK) if (appData.cards[k.kanji]) for (const d of deckParts(k)) if (!appData.cards[d.kanji]) need[d.kanji] = 1000;
     pool = pool.map((x, i) => [x, i]).sort((a, b) => (need[b[0].kanji] || 0) - (need[a[0].kanji] || 0) || a[1] - b[1]).map(([x]) => x);
+    // A kanji moved up still comes after the deck kanji its story is built from (幾 before 機), so its parts are known.
+    const out = [], seen = new Set();
+    const add = x => {
+      if (seen.has(x.kanji) || appData.cards[x.kanji]) return;
+      seen.add(x.kanji);
+      for (const d of deckParts(x)) add(d);
+      out.push(x);
+    };
+    pool.forEach(add);
+    pool = out;
   }
   // Words built from kanji you've learned go first: they also reinforce those kanji.
   // Basic words from a kanji's card are assumed known when you marked that kanji as already known.
