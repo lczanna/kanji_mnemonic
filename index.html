@@ -2037,7 +2037,7 @@ function buildMock(m) {
     const [o, a] = shuf([v.r, ...traps], 0); add('vocab', 'lk', '漢字読み · reading', `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">How is this read?</div>`, o, a, `${v.w} = ${v.r}: ${v.m}`); }
   for (const w of m.vocab.spell) { const v = BY_WORD[w]; if (!v || !(v.d || []).length) continue;
     const [o, a] = shuf([v.w, ...v.d], 0); add('vocab', 'lk', '表記 · spelling', `<div class="word-front kana" lang="ja">${esc(v.r)}</div><div class="prompt">${esc(v.m)}: which spelling?</div>`, o, a, `${v.r} is written ${v.w}`); }
-  for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${ctxHtml(q.s)}</div>`, q.options, q.answer, q.en);
+  for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${ctxHtml(q.s)}</div>`, sameScript(q.options, q.w), q.answer, q.en);
   for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${paraHtml(q.s)}</div>`, q.options, q.answer, q.why);
   for (const q of m.vocab.usage) add('vocab', 'lk', '用法 · correct usage', `<div class="word-front" lang="ja">${esc(q.w)}</div>`, q.options, q.answer, q.why + (q.why_en ? ' · ' + q.why_en : ''), { long: true, notes: q });
   for (const q of m.gram.fill) add('gr', 'lk', '文法形式 · grammar', `<div class="g-q" lang="ja">${ctxHtml(q.q)}</div>`, q.options, q.answer, q.why, { notes: q });
@@ -2545,12 +2545,32 @@ function kanjiScreen(it, tags) {
   return { inner: { front, back }, bar };
 }
 
+// Word options are shown in one script: when some are kana only (a word you studied in kana, like あんない), the
+// others are shown in kana too, or the odd one out gives the answer away.
+const HAS_KANJI = /[\u3400-\u9fff々]/;
+function kanaOf(o, w) {
+  const v = BY_WORD[w];
+  if (v && v.w === o) return v.r;
+  let out = '', pos = 0;
+  for (const [st, len, r] of GL[o] || []) { if (st < pos) continue; out += o.slice(pos, st) + (r || o.slice(st, st + len)); pos = st + len; }
+  out += o.slice(pos);
+  return HAS_KANJI.test(out) ? null : out;
+}
+function sameScript(opts, words) {
+  const k = opts.map(o => HAS_KANJI.test(o));
+  if (k.every(Boolean) || !k.some(Boolean)) return opts;
+  const kana = opts.map((o, i) => k[i] ? kanaOf(o, (words || [])[i]) : o);
+  return kana.every(Boolean) ? kana : opts;
+}
 function mcOptions(it, kana, kanji, q) {
   const answered = session.revealed;
+  const shown = q ? sameScript(it.opts, q.w) : it.opts;
   return `<div class="opts${kana ? ' kana-opts' : ''}${kanji ? ' kanji-opts' : ''}">${it.opts.map((o, i) => {
-    const cls = !answered ? '' : o === it.answerText ? ' right' : i === it.chosen ? ' wrong' : ' dim';
+    const plain = shown[i] !== o;   // shown in kana: no reading needed
+    o = shown[i];
+    const cls = !answered ? '' : it.opts[i] === it.answerText ? ' right' : i === it.chosen ? ' wrong' : ' dim';
     // Word questions: an option with a kanji you haven't studied yet shows its reading.
-    const rd = q && unstudied(o) && optReading(o, (q.w || [])[i]);
+    const rd = q && !plain && unstudied(o) && optReading(o, (q.w || [])[i]);
     return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${rd ? `<span class="opt-w">${esc(o)}<small>${esc(rd)}</small></span>` : esc(o)}</button>`;
   }).join('')}</div>`;
 }
