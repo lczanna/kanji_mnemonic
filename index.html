@@ -1860,7 +1860,9 @@ function optNotesHtml(q, chosen) {
   const en = q.opts_en || [], w = q.wrong || {};
   return `<div class="wrongs opt-notes">${q.options.map((o, i) => {
     const right = i === q.answer, mine = i === chosen && !right;
-    return `<div class="${mine ? 'picked' : right ? 'right-note' : ''}"><b lang="ja">${i + 1}. ${glossHtml(o)}</b>${en[i] ? ` <span class="muted">· ${esc(en[i])}</span>` : ''}${right ? ' <span class="ok">✓</span>' : w[i] ? `<br>${esc(w[i])}` : ''}</div>`;
+    // A wrong option's note: why it doesn't fit, and (usage questions) the sentence put right.
+    const wn = w[i] && typeof w[i] === 'object' ? `<br>${esc(w[i].why || '')}${w[i].fix ? `<br><span class="ok">✓</span> <span lang="ja">${glossHtml(w[i].fix)}</span>${w[i].fix_en ? ` <span class="muted">· ${esc(w[i].fix_en)}</span>` : ''}` : ''}` : w[i] ? `<br>${esc(w[i])}` : '';
+    return `<div class="${mine ? 'picked' : right ? 'right-note' : ''}"><b lang="ja">${i + 1}. ${glossHtml(o)}</b>${en[i] ? ` <span class="muted">· ${esc(en[i])}</span>` : ''}${right ? ' <span class="ok">✓</span>' : wn}</div>`;
   }).join('')}</div>`;
 }
 function examScreen(it, tags) {
@@ -2037,7 +2039,7 @@ function buildMock(m) {
     const [o, a] = shuf([v.w, ...v.d], 0); add('vocab', 'lk', '表記 · spelling', `<div class="word-front kana" lang="ja">${esc(v.r)}</div><div class="prompt">${esc(v.m)}: which spelling?</div>`, o, a, `${v.r} is written ${v.w}`); }
   for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${ctxHtml(q.s)}</div>`, q.options, q.answer, q.en);
   for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${paraHtml(q.s)}</div>`, q.options, q.answer, q.why);
-  for (const q of m.vocab.usage) add('vocab', 'lk', '用法 · correct usage', `<div class="word-front" lang="ja">${esc(q.w)}</div>`, q.options, q.answer, q.why, { long: true });
+  for (const q of m.vocab.usage) add('vocab', 'lk', '用法 · correct usage', `<div class="word-front" lang="ja">${esc(q.w)}</div>`, q.options, q.answer, q.why + (q.why_en ? ' · ' + q.why_en : ''), { long: true, notes: q });
   for (const q of m.gram.fill) add('gr', 'lk', '文法形式 · grammar', `<div class="g-q" lang="ja">${ctxHtml(q.q)}</div>`, q.options, q.answer, q.why, { notes: q });
   for (const o of m.gram.order) { const [opts, a] = shuf(o.chunks, o.star);
     const slots = [0, 1, 2, 3].map(i => `<span class="slot">${i === o.star ? '★' : '＿＿'}</span>`).join('');
@@ -2619,8 +2621,8 @@ function vocabScreen(it, tags) {
     const front = `${prompt}${it.task === 'usage' ? `<div class="opts g long">${q.options.map((o, i) => {
         const cls = !answered ? '' : i === q.answer ? ' right' : i === it.chosen ? ' wrong' : ' dim';
         return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`; }).join('')}</div>` : mcOptions(it, false, false, q)}
-      ${answered && q.why ? `<div class="why">${esc(q.why)}</div>` : ''}${answered && q.en ? `<div class="tr"><span class="muted">EN</span> ${esc(q.en)}</div>` : ''}
-      ${answered ? optionNotes(it.task === 'usage' ? null : q, it.chosen) : ''}`;
+      ${answered && q.why ? `<div class="why">${esc(q.why)}${q.why_en ? `<br><span class="muted">${esc(q.why_en)}</span>` : ''}</div>` : ''}${answered && q.en ? `<div class="tr"><span class="muted">EN</span> ${esc(q.en)}</div>` : ''}
+      ${answered ? (it.task === 'usage' ? optNotesHtml(q, it.chosen) : optionNotes(q, it.chosen)) : ''}`;
     return { inner: { front, back: answered ? vocabBackHtml(v) : '' }, bar: answered ? continueBar(it) : pickHint('Choose one') };
   }
   if (it.mode === 'learn') {

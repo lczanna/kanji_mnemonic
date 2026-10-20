@@ -158,7 +158,8 @@ def main():
         if 'para' in words[w]:
             words[w]['para']['gl'] = gloss_all([words[w]['para']['s'], *words[w]['para']['options']], jm, fixes)
         if 'usage' in words[w]:
-            words[w]['usage']['gl'] = gloss_all(words[w]['usage']['options'], jm, fixes)
+            u = words[w]['usage']   # its options, and the corrected sentences shown after answering ("wrong" fix)
+            u['gl'] = gloss_all([*u['options'], *[x['fix'] for x in (u.get('wrong') or {}).values() if x.get('fix')]], jm, fixes)
     mocks, mock_listen = build_mocks(data('exam_mock.json') or {}, qr, dlg, read, words, vocab, jm, fixes)
     used = {i for m in mocks for i in m['listen']} | {p['id'] for m in mocks for p in m['read'] if p.get('id')}
     qr, dlg, read = [x for x in qr if x['id'] not in used], [x for x in dlg if x['id'] not in used], [x for x in read if x['id'] not in used]
