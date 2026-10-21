@@ -9,7 +9,20 @@
 "あの店"
 ],
 "answer": 0,
-"why": "彼 refers to a man or boy who is not present (\"he\")."
+"why": "彼 refers to a man or boy who is not present (\"he\").",
+"en": "He is my friend from high school.",
+"opts_en": [
+"that man",
+"that woman",
+"those children",
+"that shop"
+],
+"wrong": {
+"1": "彼 is a man, not a woman.",
+"2": "彼 is one person, not children.",
+"3": "店 is a shop, not a person."
+},
+"why_en": "彼 refers to a man or boy who is not present ('he')."
 },
 "usage": {
 "options": [
@@ -56,7 +69,20 @@
 "君"
 ],
 "answer": 1,
-"why": "ぼく is also a word for \"I\" (used by men and boys)."
+"why": "ぼく is also a word for \"I\" (used by men and boys).",
+"en": "My name is Tanaka.",
+"opts_en": [
+"you",
+"I (male)",
+"he",
+"you (familiar)"
+],
+"wrong": {
+"0": "あなた means you.",
+"2": "彼 means he.",
+"3": "君 means you."
+},
+"why_en": "ぼく is also a word for 'I' (used by men and boys)."
 },
 "usage": {
 "options": [
@@ -103,7 +129,20 @@
 "近所の子供"
 ],
 "answer": 2,
-"why": "Here 彼女 means \"girlfriend\", a woman one is dating."
+"why": "Here 彼女 means \"girlfriend\", a woman one is dating.",
+"en": "My older brother is going on a trip with his girlfriend next week.",
+"opts_en": [
+"boyfriend",
+"boss",
+"girlfriend",
+"neighbor's child"
+],
+"wrong": {
+"0": "彼女 is a woman, not a man.",
+"1": "上の人 is a boss.",
+"3": "近所の子供 is a neighbor's child."
+},
+"why_en": "Here 彼女 means 'girlfriend', a woman one is dating."
 },
 "usage": {
 "options": [
@@ -150,7 +189,20 @@
 "やって"
 ],
 "answer": 3,
-"why": "やる is a casual word with the same meaning as する (\"to do\")."
+"why": "やる is a casual word with the same meaning as する (\"to do\").",
+"en": "On Sundays I do the cleaning at home.",
+"opts_en": [
+"watch",
+"make",
+"wait",
+"do"
+],
+"wrong": {
+"0": "見る means to watch.",
+"1": "そうじを作る is not a phrase; 作る means to make.",
+"2": "待つ means to wait."
+},
+"why_en": "やる is a casual word with the same meaning as する ('to do')."
 },
 "usage": {
 "options": [
@@ -198,7 +250,20 @@
 "答えて"
 ],
 "answer": 1,
-"why": "〜と話していた means the same as 〜と言っていた (\"said that\")."
+"why": "〜と話していた means the same as 〜と言っていた (\"said that\").",
+"en": "The teacher said there's a test tomorrow.",
+"opts_en": [
+"heard",
+"said/told",
+"wrote",
+"answered"
+],
+"wrong": {
+"0": "聞く means heard; the teacher was speaking.",
+"2": "書く means wrote.",
+"3": "答える means answered a question."
+},
+"why_en": "〜と話していた means the same as 〜と言っていた ('said that')."
 },
 "usage": {
 "options": [
@@ -245,7 +310,20 @@
 "戻ります"
 ],
 "answer": 2,
-"why": "出かける means to go out somewhere, the same as 行く here."
+"why": "出かける means to go out somewhere, the same as 行く here.",
+"en": "Next week I'm going to the sea with my family.",
+"opts_en": [
+"going home",
+"coming",
+"going out",
+"returning"
+],
+"wrong": {
+"0": "帰る means going home.",
+"1": "来る means coming (toward the speaker).",
+"3": "戻る means going back."
+},
+"why_en": "出かける means going out somewhere, the same as 行く here."
 },
 "usage": {
 "options": [
@@ -292,7 +370,20 @@
 "あなた"
 ],
 "answer": 3,
-"why": "君 is a familiar \"you\", so あなた is closest."
+"why": "君 is a familiar \"you\", so あなた is closest.",
+"en": "Won't you tell me your opinion?",
+"opts_en": [
+"I",
+"he",
+"who",
+"you"
+],
+"wrong": {
+"0": "私 is 'I'.",
+"1": "彼 is 'he'.",
+"2": "だれ is 'who'."
+},
+"why_en": "君 is a familiar 'you', so あなた is closest."
 },
 "usage": {
 "options": [
@@ -339,7 +430,20 @@
 "あなたたち"
 ],
 "answer": 0,
-"why": "彼ら is \"they\", several people other than the speaker and listener."
+"why": "彼ら is \"they\", several people other than the speaker and listener.",
+"en": "They are students at the same university.",
+"opts_en": [
+"those people",
+"that person",
+"we",
+"you (pl.)"
+],
+"wrong": {
+"1": "あの人 is just one person.",
+"2": "私たち means we.",
+"3": "あなたたち means you."
+},
+"why_en": "彼ら is 'they': several people other than speaker and listener."
 },
 "usage": {
 "options": [
@@ -386,7 +490,20 @@
 "消えた"
 ],
 "answer": 1,
-"why": "やってくる means \"to come / arrive\", the same as 来る."
+"why": "やってくる means \"to come / arrive\", the same as 来る.",
+"en": "Cherry blossom season has come again this year.",
+"opts_en": [
+"ended",
+"arrived",
+"stopped",
+"disappeared"
+],
+"wrong": {
+"0": "終わる means ended, the opposite.",
+"2": "止まる means to stop.",
+"3": "消える means to disappear."
+},
+"why_en": "やってくる means 'to come / arrive', the same as 来る."
 },
 "usage": {
 "options": [
@@ -433,7 +550,20 @@
 "店"
 ],
 "answer": 2,
-"why": "方（かた） is a polite word for \"person\"."
+"why": "方（かた） is a polite word for \"person\".",
+"en": "Who is that person?",
+"opts_en": [
+"thing",
+"place",
+"person (polite)",
+"shop"
+],
+"wrong": {
+"0": "物 is a thing.",
+"1": "所 is a place.",
+"3": "店 is a shop."
+},
+"why_en": "方 (かた) is a polite word for 'person'."
 },
 "usage": {
 "options": [
@@ -480,7 +610,20 @@
 "出かけています"
 ],
 "answer": 3,
-"why": "出かけている means \"is out\", i.e. is not at home."
+"why": "出かけている means \"is out\", i.e. is not at home.",
+"en": "My father isn't home now.",
+"opts_en": [
+"is sleeping",
+"is back home",
+"is waiting",
+"is out"
+],
+"wrong": {
+"0": "寝ている means he's home asleep.",
+"1": "帰っている means he's home, the opposite.",
+"2": "待っている means waiting."
+},
+"why_en": "出かけている means 'is out', i.e. not at home."
 },
 "usage": {
 "options": [
@@ -527,7 +670,20 @@
 "教えて"
 ],
 "answer": 0,
-"why": "Here 見る means \"to look after\", the same as 世話をする."
+"why": "Here 見る means \"to look after\", the same as 世話をする.",
+"en": "While the mother looked after the child, the father went shopping.",
+"opts_en": [
+"take care of",
+"search for",
+"call",
+"teach"
+],
+"wrong": {
+"1": "探す means to search for.",
+"2": "呼ぶ means to call.",
+"3": "教える means to teach."
+},
+"why_en": "Here 見る means 'to look after', the same as 世話をする."
 },
 "usage": {
 "options": [
@@ -574,7 +730,20 @@
 "見て"
 ],
 "answer": 1,
-"why": "〜のことを考える means \"to think about\", like 〜のことを思う."
+"why": "〜のことを考える means \"to think about\", like 〜のことを思う.",
+"en": "My mother is always thinking about the family.",
+"opts_en": [
+"forgetting",
+"thinking about",
+"talking",
+"looking"
+],
+"wrong": {
+"0": "忘れる means to forget, the opposite.",
+"2": "話す means to talk about, not think.",
+"3": "見る means to look at."
+},
+"why_en": "〜のことを考える means 'to think about', like 〜のことを思う."
 },
 "usage": {
 "options": [
@@ -621,7 +790,20 @@
 "場所"
 ],
 "answer": 2,
-"why": "品物 means goods or things for sale."
+"why": "品物 means goods or things for sale.",
+"en": "This shop has lots of cheap, good things.",
+"opts_en": [
+"customers",
+"clerks",
+"goods",
+"places"
+],
+"wrong": {
+"0": "客 are customers.",
+"1": "店員 are clerks.",
+"3": "場所 means places."
+},
+"why_en": "品物 means goods for sale."
 },
 "usage": {
 "options": [
@@ -668,7 +850,20 @@
 "うち"
 ],
 "answer": 3,
-"why": "うち also means \"one's home\"."
+"why": "うち also means \"one's home\".",
+"en": "When work is over, I'll go straight home.",
+"opts_en": [
+"shop",
+"company",
+"station",
+"home"
+],
+"wrong": {
+"0": "店 is a shop.",
+"1": "会社 is the workplace, where you already are.",
+"2": "駅 is a station."
+},
+"why_en": "うち also means 'one's home'."
 },
 "usage": {
 "options": [
@@ -715,7 +910,20 @@
 "名前"
 ],
 "answer": 0,
-"why": "職業 means one's occupation or job."
+"why": "職業 means one's occupation or job.",
+"en": "My father's job is a doctor.",
+"opts_en": [
+"occupation",
+"hobby",
+"illness",
+"name"
+],
+"wrong": {
+"1": "しゅみ is a hobby.",
+"2": "病気 is illness.",
+"3": "名前 is a name."
+},
+"why_en": "職業 means one's occupation or job."
 },
 "usage": {
 "options": [
@@ -762,7 +970,20 @@
 "先生"
 ],
 "answer": 1,
-"why": "自分でやる means \"do it yourself\", the same as 一人でやる."
+"why": "自分でやる means \"do it yourself\", the same as 一人でやる.",
+"en": "Do your homework by yourself.",
+"opts_en": [
+"everyone",
+"alone",
+"two people",
+"the teacher"
+],
+"wrong": {
+"0": "みんな means everyone together.",
+"2": "二人 means two people.",
+"3": "先生 is the teacher, not you."
+},
+"why_en": "自分でやる means 'do it yourself', the same as 一人でやる."
 },
 "usage": {
 "options": [
@@ -809,7 +1030,20 @@
 "手紙"
 ],
 "answer": 2,
-"why": "書物 is a written word for books."
+"why": "書物 is a written word for books.",
+"en": "I borrowed three books at the library.",
+"opts_en": [
+"newspaper",
+"stamp",
+"book (written word)",
+"letter"
+],
+"wrong": {
+"0": "新聞 is a newspaper.",
+"1": "切手 is a stamp.",
+"3": "手紙 is a letter."
+},
+"why_en": "書物 is a written word for books."
 },
 "usage": {
 "options": [
@@ -856,7 +1090,20 @@
 "聞いて"
 ],
 "answer": 3,
-"why": "聞いている (\"have heard\") here means already knowing about it."
+"why": "聞いている (\"have heard\") here means already knowing about it.",
+"en": "I already know that story.",
+"opts_en": [
+"forgot",
+"talked",
+"wrote",
+"heard"
+],
+"wrong": {
+"0": "忘れる means forgot, the opposite.",
+"1": "話す means talked about it.",
+"2": "書く means wrote."
+},
+"why_en": "聞いている ('have heard') here means already knowing about it."
 },
 "usage": {
 "options": [
@@ -903,7 +1150,20 @@
 "待った"
 ],
 "answer": 0,
-"why": "出会う means to meet or run into someone."
+"why": "出会う means to meet or run into someone.",
+"en": "At the station, I met an old friend.",
+"opts_en": [
+"ran into",
+"parted",
+"saw off",
+"waited"
+],
+"wrong": {
+"1": "別れる means to part.",
+"2": "見送る means to see someone off.",
+"3": "待つ means to wait."
+},
+"why_en": "出会う means to meet or run into someone."
 },
 "usage": {
 "options": [
@@ -950,7 +1210,20 @@
 "覚えました"
 ],
 "answer": 1,
-"why": "理解する means \"to understand\"."
+"why": "理解する means \"to understand\".",
+"en": "I understood the teacher's explanation well.",
+"opts_en": [
+"could hear",
+"could understand",
+"could see",
+"memorized"
+],
+"wrong": {
+"0": "聞こえる means you could hear it, not understand.",
+"2": "見える means could see.",
+"3": "覚える means memorized."
+},
+"why_en": "理解する means 'to understand'."
 },
 "usage": {
 "options": [
@@ -997,7 +1270,20 @@
 "きらい"
 ],
 "answer": 2,
-"why": "Something you like doing is 楽しい (fun) for you."
+"why": "Something you like doing is 楽しい (fun) for you.",
+"en": "I like cooking.",
+"opts_en": [
+"weak at",
+"bad at",
+"fun",
+"dislike"
+],
+"wrong": {
+"0": "苦手 means weak at.",
+"1": "下手 means bad at.",
+"3": "きらい means dislike, the opposite."
+},
+"why_en": "Something you like doing is 楽しい (fun) for you."
 },
 "usage": {
 "options": [
@@ -1044,7 +1330,20 @@
 "どんな物"
 ],
 "answer": 3,
-"why": "何 asks \"what (thing)\"."
+"why": "何 asks \"what (thing)\".",
+"en": "What do you want to eat?",
+"opts_en": [
+"where",
+"who",
+"when",
+"what kind of thing"
+],
+"wrong": {
+"0": "どこ means where.",
+"1": "だれ means who.",
+"2": "いつ means when."
+},
+"why_en": "何 asks 'what (thing)'."
 },
 "usage": {
 "options": [
@@ -1091,7 +1390,20 @@
 "開けて"
 ],
 "answer": 0,
-"why": "Holding heavy bags for someone means carrying (運ぶ) them."
+"why": "Holding heavy bags for someone means carrying (運ぶ) them.",
+"en": "Let me carry your heavy bags for you.",
+"opts_en": [
+"carry",
+"put down",
+"send",
+"open"
+],
+"wrong": {
+"1": "置く means put down.",
+"2": "送る means send.",
+"3": "開ける means open."
+},
+"why_en": "Holding heavy bags for someone means carrying (運ぶ) them."
 },
 "usage": {
 "options": [
@@ -1138,7 +1450,20 @@
 "呼んだ"
 ],
 "answer": 1,
-"why": "しゃべる is a casual word for \"to talk\"."
+"why": "しゃべる is a casual word for \"to talk\".",
+"en": "Yesterday I talked with my mother on the phone for about an hour.",
+"opts_en": [
+"listened",
+"chatted",
+"wrote",
+"called (out to)"
+],
+"wrong": {
+"0": "聞く means to listen, only one side.",
+"2": "書く means to write.",
+"3": "呼ぶ means to call someone over, not talk."
+},
+"why_en": "しゃべる is a casual word for 'to talk'."
 },
 "usage": {
 "options": [
@@ -1185,7 +1510,20 @@
 "船"
 ],
 "answer": 2,
-"why": "自動車 is the full word for \"car\"."
+"why": "自動車 is the full word for \"car\".",
+"en": "My father goes to work by car every day.",
+"opts_en": [
+"train",
+"bicycle",
+"automobile",
+"ship"
+],
+"wrong": {
+"0": "電車 is a train.",
+"1": "自転車 is a bicycle.",
+"3": "船 is a ship."
+},
+"why_en": "自動車 is the full word for 'car'."
 },
 "usage": {
 "options": [
@@ -1232,7 +1570,20 @@
 "たずねた"
 ],
 "answer": 3,
-"why": "Here 聞く means \"to ask\", the same as たずねる."
+"why": "Here 聞く means \"to ask\", the same as たずねる.",
+"en": "I didn't know the way, so I asked a police officer.",
+"opts_en": [
+"answered",
+"taught",
+"talked",
+"asked"
+],
+"wrong": {
+"0": "答える means to answer.",
+"1": "教える means to teach or tell.",
+"2": "話す means to talk, not ask."
+},
+"why_en": "Here 聞く means 'to ask', the same as たずねる."
 },
 "usage": {
 "options": [
@@ -1279,7 +1630,20 @@
 "中"
 ],
 "answer": 0,
-"why": "正面 means \"the front\" of a building."
+"why": "正面 means \"the front\" of a building.",
+"en": "I'll be waiting in front of the station.",
+"opts_en": [
+"the front",
+"behind",
+"next to",
+"inside"
+],
+"wrong": {
+"1": "後ろ means behind, the opposite.",
+"2": "となり means next to.",
+"3": "中 means inside."
+},
+"why_en": "正面 means the front of a building."
 },
 "usage": {
 "options": [
@@ -1326,7 +1690,20 @@
 "人"
 ],
 "answer": 1,
-"why": "場所 means \"place\"."
+"why": "場所 means \"place\".",
+"en": "This is a very quiet place, isn't it?",
+"opts_en": [
+"time",
+"place",
+"thing",
+"person"
+],
+"wrong": {
+"0": "時間 is time.",
+"2": "物 is a thing.",
+"3": "人 is a person."
+},
+"why_en": "場所 means 'place'."
 },
 "usage": {
 "options": [
@@ -1373,7 +1750,20 @@
 "外国の歌"
 ],
 "answer": 2,
-"why": "英語 is the language of England and America."
+"why": "英語 is the language of England and America.",
+"en": "My older brother can speak English.",
+"opts_en": [
+"the language of China",
+"the language of Japan",
+"the language of England and America",
+"foreign songs"
+],
+"wrong": {
+"0": "That is Chinese.",
+"1": "That is Japanese.",
+"3": "外国の歌 means foreign songs, not a language."
+},
+"why_en": "英語 is the language of England and America."
 },
 "usage": {
 "options": [
@@ -1420,7 +1810,20 @@
 "悪いところ"
 ],
 "answer": 3,
-"why": "Here 問題 means a fault, something wrong."
+"why": "Here 問題 means a fault, something wrong.",
+"en": "This machine has a bit of a problem.",
+"opts_en": [
+"good point",
+"old part",
+"new part",
+"bad point"
+],
+"wrong": {
+"0": "いいところ is a good point, the opposite.",
+"1": "古いところ is an old part, not necessarily faulty.",
+"2": "新しいところ is a new part."
+},
+"why_en": "Here 問題 means a fault, something wrong (悪いところ)."
 },
 "usage": {
 "options": [
@@ -1467,7 +1870,20 @@
 "プール"
 ],
 "answer": 0,
-"why": "ルーム is a loanword for \"room\"."
+"why": "ルーム is a loanword for \"room\".",
+"en": "I could see the sea from my hotel room.",
+"opts_en": [
+"room",
+"lobby",
+"restaurant",
+"pool"
+],
+"wrong": {
+"1": "ロビー is the lobby.",
+"2": "レストラン is a restaurant.",
+"3": "プール is a pool."
+},
+"why_en": "ルーム is a loanword for 'room'."
 },
 "usage": {
 "options": [
@@ -1514,7 +1930,20 @@
 "返した"
 ],
 "answer": 1,
-"why": "手に入れる means \"to get, obtain\"."
+"why": "手に入れる means \"to get, obtain\".",
+"en": "I bought shoes at the shop in front of the station.",
+"opts_en": [
+"sold",
+"got/obtained",
+"borrowed",
+"returned"
+],
+"wrong": {
+"0": "売る means sold, the opposite.",
+"2": "借りる means borrowed.",
+"3": "返す means returned."
+},
+"why_en": "手に入れる means 'to get, obtain'."
 },
 "usage": {
 "options": [
@@ -1561,7 +1990,20 @@
 "買います"
 ],
 "answer": 2,
-"why": "目を通す means to look through or read."
+"why": "目を通す means to look through or read.",
+"en": "I read the newspaper every morning.",
+"opts_en": [
+"write",
+"deliver",
+"look through",
+"buy"
+],
+"wrong": {
+"0": "書く means write.",
+"1": "配る means deliver.",
+"3": "買う means buy."
+},
+"why_en": "目を通す means to look through or read."
 },
 "usage": {
 "options": [
@@ -1608,7 +2050,20 @@
 "私のお父さん"
 ],
 "answer": 3,
-"why": "父 is the humble word for one's own father."
+"why": "父 is the humble word for one's own father.",
+"en": "My father works at a bank.",
+"opts_en": [
+"my grandfather",
+"my uncle",
+"my older brother",
+"my dad"
+],
+"wrong": {
+"0": "おじいさん is a grandfather.",
+"1": "おじさん is an uncle.",
+"2": "兄 is an older brother."
+},
+"why_en": "父 is the humble word for one's own father."
 },
 "usage": {
 "options": [
@@ -1655,7 +2110,20 @@
 "何人か"
 ],
 "answer": 0,
-"why": "全員 means \"all the members\"."
+"why": "全員 means \"all the members\".",
+"en": "Everyone in the class was listening to the teacher.",
+"opts_en": [
+"all members",
+"one person",
+"half",
+"some people"
+],
+"wrong": {
+"1": "一人 is one person.",
+"2": "半分 is half.",
+"3": "何人か is some people."
+},
+"why_en": "全員 means 'all the members'."
 },
 "usage": {
 "options": [
@@ -1702,7 +2170,20 @@
 "前"
 ],
 "answer": 1,
-"why": "ただいま (formal) means \"right now\"."
+"why": "ただいま (formal) means \"right now\".",
+"en": "My mother is out right now.",
+"opts_en": [
+"yesterday",
+"right now",
+"every day",
+"before"
+],
+"wrong": {
+"0": "昨日 is yesterday.",
+"2": "毎日 means every day.",
+"3": "前 means before."
+},
+"why_en": "ただいま (formal) means 'right now'."
 },
 "usage": {
 "options": [
@@ -1749,7 +2230,20 @@
 "銀行"
 ],
 "answer": 2,
-"why": "For a young brother, 学校 is his 小学校 (elementary school)."
+"why": "For a young brother, 学校 is his 小学校 (elementary school).",
+"en": "My younger brother walks to school every day.",
+"opts_en": [
+"hospital",
+"company",
+"elementary school",
+"bank"
+],
+"wrong": {
+"0": "病院 is a hospital.",
+"1": "会社 is a company.",
+"3": "銀行 is a bank."
+},
+"why_en": "For a young brother, 学校 is his 小学校 (elementary school)."
 },
 "usage": {
 "options": [
@@ -1796,7 +2290,20 @@
 "ひま"
 ],
 "answer": 3,
-"why": "ひまがない means \"have no free time\"."
+"why": "ひまがない means \"have no free time\".",
+"en": "I don't have time today, so let's talk again tomorrow.",
+"opts_en": [
+"money",
+"energy",
+"errand",
+"free time"
+],
+"wrong": {
+"0": "お金 is money.",
+"1": "元気 is energy/health.",
+"2": "用事 is an errand; 用事がない means you are free."
+},
+"why_en": "ひまがない means 'have no free time'."
 },
 "usage": {
 "options": [
@@ -1843,7 +2350,20 @@
 "小さい"
 ],
 "answer": 0,
-"why": "Shoes you have just bought are new."
+"why": "Shoes you have just bought are new.",
+"en": "I went out wearing new shoes.",
+"opts_en": [
+"just bought",
+"old",
+"dirty",
+"small"
+],
+"wrong": {
+"1": "古い means old, the opposite.",
+"2": "きたない means dirty.",
+"3": "小さい means small."
+},
+"why_en": "Shoes you have just bought are new."
 },
 "usage": {
 "options": [
@@ -1890,7 +2410,20 @@
 "寒い"
 ],
 "answer": 1,
-"why": "A rainy day is a day of bad weather."
+"why": "A rainy day is a day of bad weather.",
+"en": "On rainy days I read books at home.",
+"opts_en": [
+"good weather",
+"bad weather",
+"hot",
+"cold"
+],
+"wrong": {
+"0": "天気がいい is the opposite.",
+"2": "あつい means hot, not rain.",
+"3": "寒い means cold, not rain."
+},
+"why_en": "A rainy day is a day of bad weather."
 },
 "usage": {
 "options": [
@@ -1937,7 +2470,20 @@
 "高い物"
 ],
 "answer": 2,
-"why": "必要 means something you must have."
+"why": "必要 means something you must have.",
+"en": "You need a passport for the trip.",
+"opts_en": [
+"unneeded thing",
+"handy thing",
+"thing you must have",
+"expensive thing"
+],
+"wrong": {
+"0": "いらない means unneeded, the opposite.",
+"1": "便利 means handy, not essential.",
+"3": "高い means expensive."
+},
+"why_en": "必要 means something you must have."
 },
 "usage": {
 "options": [
@@ -1984,7 +2530,20 @@
 "小さい子"
 ],
 "answer": 3,
-"why": "子供 are small children."
+"why": "子供 are small children.",
+"en": "Children are playing in the park.",
+"opts_en": [
+"elderly people",
+"adults",
+"young people",
+"small kids"
+],
+"wrong": {
+"0": "お年寄り are old people.",
+"1": "大人 are adults.",
+"2": "若者 are young adults, not children."
+},
+"why_en": "子供 are small children."
 },
 "usage": {
 "options": [
@@ -2031,7 +2590,20 @@
 "消して"
 ],
 "answer": 0,
-"why": "記入する means to fill in (write) on a form."
+"why": "記入する means to fill in (write) on a form.",
+"en": "Please write your name here.",
+"opts_en": [
+"fill in",
+"read",
+"look",
+"erase"
+],
+"wrong": {
+"1": "読む means to read.",
+"2": "見る means to look.",
+"3": "消す means to erase."
+},
+"why_en": "記入する means to fill in (write) on a form."
 },
 "usage": {
 "options": [
@@ -2078,7 +2650,20 @@
 "運んだ"
 ],
 "answer": 1,
-"why": "にもつを下ろす means to put luggage down."
+"why": "にもつを下ろす means to put luggage down.",
+"en": "I put the luggage on the floor.",
+"opts_en": [
+"held",
+"put down",
+"opened",
+"carried"
+],
+"wrong": {
+"0": "持つ means held.",
+"2": "開ける means opened.",
+"3": "運ぶ means carried."
+},
+"why_en": "にもつを下ろす means to put luggage down."
 },
 "usage": {
 "options": [
@@ -2125,7 +2710,20 @@
 "明日"
 ],
 "answer": 2,
-"why": "前の日 (the previous day) is closest to 昨日."
+"why": "前の日 (the previous day) is closest to 昨日.",
+"en": "It rained all day yesterday.",
+"opts_en": [
+"the next day",
+"last week",
+"the day before",
+"tomorrow"
+],
+"wrong": {
+"0": "次の日 is the next day.",
+"1": "先週 is last week.",
+"3": "明日 is tomorrow."
+},
+"why_en": "前の日 (the previous day) is closest to 昨日."
 },
 "usage": {
 "options": [
@@ -2172,7 +2770,20 @@
 "次の日"
 ],
 "answer": 3,
-"why": "次の日 (the next day) is closest to 明日."
+"why": "次の日 (the next day) is closest to 明日.",
+"en": "We leave tomorrow morning.",
+"opts_en": [
+"the day before",
+"today",
+"yesterday",
+"the next day"
+],
+"wrong": {
+"0": "前の日 is the day before.",
+"1": "今日 is today.",
+"2": "昨日 is yesterday."
+},
+"why_en": "次の日 (the next day) is closest to 明日."
 },
 "usage": {
 "options": [
@@ -2219,7 +2830,20 @@
 "店員"
 ],
 "answer": 0,
-"why": "教師 means a teacher."
+"why": "教師 means a teacher.",
+"en": "I had my teacher look at my essay.",
+"opts_en": [
+"teacher",
+"student",
+"friend",
+"clerk"
+],
+"wrong": {
+"1": "学生 is a student.",
+"2": "友達 is a friend.",
+"3": "店員 is a shop clerk."
+},
+"why_en": "教師 means a teacher."
 },
 "usage": {
 "options": [
@@ -2266,7 +2890,20 @@
 "仕事"
 ],
 "answer": 1,
-"why": "学習 means study / learning."
+"why": "学習 means study / learning.",
+"en": "My older brother studies until late every night.",
+"opts_en": [
+"exercise",
+"learning/study",
+"cooking",
+"work"
+],
+"wrong": {
+"0": "運動 is exercise.",
+"2": "料理 is cooking.",
+"3": "仕事 is work."
+},
+"why_en": "学習 means study or learning."
 },
 "usage": {
 "options": [
@@ -2313,7 +2950,20 @@
 "たんじょう日"
 ],
 "answer": 2,
-"why": "Here 年 means age (ねんれい)."
+"why": "Here 年 means age (ねんれい).",
+"en": "My father and mother are three years apart in age.",
+"opts_en": [
+"height",
+"weight",
+"age",
+"birthday"
+],
+"wrong": {
+"0": "背 is height.",
+"1": "体重 is weight.",
+"3": "たんじょう日 is a birthday, not a number of years."
+},
+"why_en": "Here 年 means age (ねんれい)."
 },
 "usage": {
 "options": [
@@ -2360,7 +3010,20 @@
 "出発します"
 ],
 "answer": 3,
-"why": "家を出発する means to set off from home, the same as 家を出る."
+"why": "家を出発する means to set off from home, the same as 家を出る.",
+"en": "I leave home at seven every morning.",
+"opts_en": [
+"go home",
+"enter",
+"arrive",
+"set off"
+],
+"wrong": {
+"0": "帰る means go home.",
+"1": "入る means enter, the opposite.",
+"2": "着く means arrive."
+},
+"why_en": "家を出発する means setting off from home, the same as 家を出る."
 },
 "usage": {
 "options": [
@@ -2407,7 +3070,20 @@
 "見学した"
 ],
 "answer": 0,
-"why": "大学に入る means to enter university (入学する)."
+"why": "大学に入る means to enter university (入学する).",
+"en": "My older brother entered university this year.",
+"opts_en": [
+"enrolled",
+"graduated",
+"took time off",
+"visited"
+],
+"wrong": {
+"1": "そつぎょう means graduated, the opposite.",
+"2": "休む means took time off.",
+"3": "見学 means visited to observe."
+},
+"why_en": "大学に入る means to enter university (入学する)."
 },
 "usage": {
 "options": [
@@ -2454,7 +3130,20 @@
 "予定"
 ],
 "answer": 1,
-"why": "費用 means cost / money needed for something."
+"why": "費用 means cost / money needed for something.",
+"en": "I'm saving money for the trip.",
+"opts_en": [
+"time",
+"expenses",
+"luggage",
+"plans"
+],
+"wrong": {
+"0": "時間 is time.",
+"2": "にもつ is luggage.",
+"3": "予定 is plans."
+},
+"why_en": "費用 means the cost, the money needed for something."
 },
 "usage": {
 "options": [
@@ -2501,7 +3190,20 @@
 "写真"
 ],
 "answer": 2,
-"why": "はがき (postcard) is also written mail, the closest to a letter."
+"why": "はがき (postcard) is also written mail, the closest to a letter.",
+"en": "A letter arrived from my grandmother.",
+"opts_en": [
+"parcel",
+"phone call",
+"postcard",
+"photo"
+],
+"wrong": {
+"0": "こづつみ is a parcel, not a letter.",
+"1": "電話 is a phone call.",
+"3": "写真 is a photo."
+},
+"why_en": "はがき (postcard) is also written mail, the closest to a letter."
 },
 "usage": {
 "options": [
@@ -2548,7 +3250,20 @@
 "ぐらい"
 ],
 "answer": 3,
-"why": "程 after a number means \"about\", like ぐらい."
+"why": "程 after a number means \"about\", like ぐらい.",
+"en": "It's about ten minutes' walk to the station.",
+"opts_en": [
+"only",
+"only (with negative)",
+"until",
+"about"
+],
+"wrong": {
+"0": "だけ means 'only'.",
+"1": "しか means 'only' with a negative.",
+"2": "まで means 'until/up to'."
+},
+"why_en": "程 after a number means 'about', like ぐらい."
 },
 "usage": {
 "options": [
@@ -2595,7 +3310,20 @@
 "作って"
 ],
 "answer": 0,
-"why": "〜を取ってください at a table means \"please pass it to me\"."
+"why": "〜を取ってください at a table means \"please pass it to me\".",
+"en": "Excuse me, could you pass me that salt?",
+"opts_en": [
+"hand over",
+"put in",
+"put down",
+"make"
+],
+"wrong": {
+"1": "入れる means to put it in something.",
+"2": "置く means to put it down.",
+"3": "作る means to make it."
+},
+"why_en": "At a table, 〜を取ってください means 'please pass it to me' (渡して)."
 },
 "usage": {
 "options": [
@@ -2642,7 +3370,20 @@
 "遊んで"
 ],
 "answer": 1,
-"why": "暮らす means to live (somewhere)."
+"why": "暮らす means to live (somewhere).",
+"en": "My older brother lives in Osaka.",
+"opts_en": [
+"staying (temporarily)",
+"living",
+"working",
+"playing"
+],
+"wrong": {
+"0": "とまる means staying a night or so, not living.",
+"2": "働く means working.",
+"3": "遊ぶ means playing."
+},
+"why_en": "暮らす means to live (somewhere)."
 },
 "usage": {
 "options": [
@@ -2689,7 +3430,20 @@
 "感想"
 ],
 "answer": 2,
-"why": "予定を立てる and 計画を立てる both mean making a plan."
+"why": "予定を立てる and 計画を立てる both mean making a plan.",
+"en": "I made a plan for the summer vacation trip.",
+"opts_en": [
+"result",
+"experience",
+"plan/schedule",
+"impressions"
+],
+"wrong": {
+"0": "けっか is a result.",
+"1": "経験 is experience.",
+"3": "感想 is impressions."
+},
+"why_en": "予定を立てる and 計画を立てる both mean making a plan."
 },
 "usage": {
 "options": [
@@ -2736,7 +3490,20 @@
 "思って"
 ],
 "answer": 3,
-"why": "〜と思う / 〜を考える both express thinking things over."
+"why": "〜と思う / 〜を考える both express thinking things over.",
+"en": "I've been thinking about what to do for a long time.",
+"opts_en": [
+"forgetting",
+"talking",
+"looking",
+"thinking"
+],
+"wrong": {
+"0": "忘れる means forgetting, the opposite.",
+"1": "話す means talking.",
+"2": "見る means looking."
+},
+"why_en": "思う and 考える both express thinking things over."
 },
 "usage": {
 "options": [
@@ -2783,7 +3550,20 @@
 "鳥"
 ],
 "answer": 0,
-"why": "Here 犬 is the family pet that goes for walks."
+"why": "Here 犬 is the family pet that goes for walks.",
+"en": "Our dog wants to go for a walk every morning.",
+"opts_en": [
+"pet",
+"child",
+"father",
+"bird"
+],
+"wrong": {
+"1": "子供 is a child.",
+"2": "父 is father.",
+"3": "鳥 is a bird."
+},
+"why_en": "Here 犬 is the family pet that goes for walks."
 },
 "usage": {
 "options": [
@@ -2830,7 +3610,20 @@
 "高い"
 ],
 "answer": 1,
-"why": "すばらしい means \"wonderful, very good\"."
+"why": "すばらしい means \"wonderful, very good\".",
+"en": "This bag is light and easy to use; it's really good.",
+"opts_en": [
+"terrible",
+"wonderful",
+"heavy",
+"expensive"
+],
+"wrong": {
+"0": "ひどい means terrible, the opposite.",
+"2": "重い means heavy; the bag is light.",
+"3": "高い means expensive."
+},
+"why_en": "すばらしい means 'wonderful, very good'."
 },
 "usage": {
 "options": [
@@ -2877,7 +3670,20 @@
 "買いました"
 ],
 "answer": 2,
-"why": "めし上がる is the respectful form of 食べる."
+"why": "めし上がる is the respectful form of 食べる.",
+"en": "What did you eat for lunch?",
+"opts_en": [
+"drank",
+"made",
+"ate (respectful)",
+"bought"
+],
+"wrong": {
+"0": "飲む means drank.",
+"1": "作る means made.",
+"3": "買う means bought."
+},
+"why_en": "めし上がる is the respectful form of 食べる."
 },
 "usage": {
 "options": [
@@ -2924,7 +3730,20 @@
 "男の人"
 ],
 "answer": 3,
-"why": "男 means a man (男の人)."
+"why": "男 means a man (男の人).",
+"en": "A tall man was standing in front of the shop.",
+"opts_en": [
+"woman",
+"child",
+"elderly person",
+"man"
+],
+"wrong": {
+"0": "女の人 is a woman.",
+"1": "子供 is a child.",
+"2": "お年寄り is an old person."
+},
+"why_en": "男 means a man (男の人)."
 },
 "usage": {
 "options": [
@@ -2971,7 +3790,20 @@
 "客"
 ],
 "answer": 0,
-"why": "電話がかかってくる means someone contacts you (れんらく)."
+"why": "電話がかかってくる means someone contacts you (れんらく).",
+"en": "I got a phone call from a friend.",
+"opts_en": [
+"contact",
+"letter",
+"package",
+"guest"
+],
+"wrong": {
+"1": "手紙 is a letter; a letter doesn't 'come ringing' (かかってくる).",
+"2": "にもつ is a package or luggage, not a call.",
+"3": "客 is a visitor or customer, not a call."
+},
+"why_en": "電話がかかってくる means someone gets in touch with you, i.e. れんらく."
 },
 "usage": {
 "options": [
@@ -3018,7 +3850,20 @@
 "続けた"
 ],
 "answer": 1,
-"why": "時間がたつ means time passes, like 過ぎる."
+"why": "時間がたつ means time passes, like 過ぎる.",
+"en": "Three years have passed since I came to Japan.",
+"opts_en": [
+"came",
+"passed",
+"started",
+"continued"
+],
+"wrong": {
+"0": "来る means came.",
+"2": "始まる means started.",
+"3": "続ける means kept doing; it needs an object."
+},
+"why_en": "時間がたつ means time passes, like 過ぎる."
 },
 "usage": {
 "options": [
@@ -3065,7 +3910,20 @@
 "書いて"
 ],
 "answer": 2,
-"why": "Using someone else's pen means borrowing (借りる) it."
+"why": "Using someone else's pen means borrowing (借りる) it.",
+"en": "May I use this pen?",
+"opts_en": [
+"buy",
+"return",
+"borrow",
+"write"
+],
+"wrong": {
+"0": "買う means to buy it, not just use it.",
+"1": "返す means to give it back.",
+"3": "書く means to write; it isn't about the pen itself."
+},
+"why_en": "Using someone else's pen means borrowing (借りる) it."
 },
 "usage": {
 "options": [
@@ -3112,7 +3970,20 @@
 "散歩した"
 ],
 "answer": 3,
-"why": "散歩する is to take a walk."
+"why": "散歩する is to take a walk.",
+"en": "I walked slowly through the park.",
+"opts_en": [
+"ran",
+"rested",
+"played",
+"took a walk"
+],
+"wrong": {
+"0": "走る means to run.",
+"1": "休む means to rest.",
+"2": "遊ぶ means to play."
+},
+"why_en": "散歩する means to take a walk."
 },
 "usage": {
 "options": [
@@ -3159,7 +4030,20 @@
 "待って"
 ],
 "answer": 0,
-"why": "勤める means to be employed / work at a place."
+"why": "勤める means to be employed / work at a place.",
+"en": "My older sister works at a bank.",
+"opts_en": [
+"is employed",
+"plays",
+"lives",
+"waits"
+],
+"wrong": {
+"1": "遊ぶ means to play.",
+"2": "住む means to live.",
+"3": "待つ means to wait."
+},
+"why_en": "勤める means to be employed at a place."
 },
 "usage": {
 "options": [
@@ -3206,7 +4090,20 @@
 "乗ります"
 ],
 "answer": 1,
-"why": "到着する means to arrive."
+"why": "到着する means to arrive.",
+"en": "The train arrives at Tokyo Station at ten.",
+"opts_en": [
+"departs",
+"arrives",
+"stops",
+"boards"
+],
+"wrong": {
+"0": "出発する means to depart, the opposite.",
+"2": "止まる means to stop, not necessarily arrive.",
+"3": "乗る means to get on."
+},
+"why_en": "到着する means to arrive."
 },
 "usage": {
 "options": [
@@ -3253,7 +4150,20 @@
 "私のおば"
 ],
 "answer": 2,
-"why": "母 is the humble word for one's own mother."
+"why": "母 is the humble word for one's own mother.",
+"en": "My mother is very good at cooking.",
+"opts_en": [
+"my older sister",
+"my grandmother",
+"my mother",
+"my aunt"
+],
+"wrong": {
+"0": "姉 is an older sister.",
+"1": "おばあさん is a grandmother.",
+"3": "おば is an aunt."
+},
+"why_en": "母 is the humble word for one's own mother."
 },
 "usage": {
 "options": [
@@ -3300,7 +4210,20 @@
 "説明して"
 ],
 "answer": 3,
-"why": "Here 教える means to explain or tell information."
+"why": "Here 教える means to explain or tell information.",
+"en": "Could you tell me how to get to the station?",
+"opts_en": [
+"learn",
+"ask",
+"look up",
+"explain"
+],
+"wrong": {
+"0": "習う means to learn from someone.",
+"1": "聞く means to ask; that's what the speaker does.",
+"2": "調べる means to look up yourself."
+},
+"why_en": "Here 教える means to explain or tell information (説明する)."
 },
 "usage": {
 "options": [
@@ -3347,7 +4270,20 @@
 "まったく"
 ],
 "answer": 0,
-"why": "大変 before an expression means \"very much\"."
+"why": "大変 before an expression means \"very much\".",
+"en": "Thank you very much for all your help.",
+"opts_en": [
+"very",
+"a little",
+"(not) very",
+"completely"
+],
+"wrong": {
+"1": "少し means a little.",
+"2": "あまり means 'not very' with a negative.",
+"3": "まったく is mostly 'not at all' with a negative."
+},
+"why_en": "大変 before an expression means 'very much'."
 },
 "usage": {
 "options": [
@@ -3394,7 +4330,20 @@
 "明るい"
 ],
 "answer": 1,
-"why": "よくない means \"not good\", the same as 悪い."
+"why": "よくない means \"not good\", the same as 悪い.",
+"en": "I feel unwell today, so I'll go home early.",
+"opts_en": [
+"good",
+"not good",
+"fun",
+"cheerful"
+],
+"wrong": {
+"0": "いい means good, the opposite.",
+"2": "楽しい means fun.",
+"3": "明るい means cheerful."
+},
+"why_en": "よくない means 'not good', the same as 悪い."
 },
 "usage": {
 "options": [
@@ -3441,7 +4390,20 @@
 "運んで"
 ],
 "answer": 2,
-"why": "用意する means to prepare."
+"why": "用意する means to prepare.",
+"en": "My mother made dinner for me.",
+"opts_en": [
+"ate",
+"bought",
+"prepared",
+"carried"
+],
+"wrong": {
+"0": "食べる means ate.",
+"1": "買う means bought.",
+"3": "運ぶ means carried."
+},
+"why_en": "用意する means to prepare."
 },
 "usage": {
 "options": [
@@ -3488,7 +4450,20 @@
 "楽しみにして"
 ],
 "answer": 3,
-"why": "Looking forward to a reply means waiting for it."
+"why": "Looking forward to a reply means waiting for it.",
+"en": "I'm waiting for your reply.",
+"opts_en": [
+"worrying",
+"writing",
+"sending",
+"looking forward to"
+],
+"wrong": {
+"0": "心配 means worrying, which is negative.",
+"1": "書く means writing it yourself.",
+"2": "送る means sending it yourself."
+},
+"why_en": "Looking forward to a reply (楽しみにする) is waiting for it."
 },
 "usage": {
 "options": [
@@ -3535,7 +4510,20 @@
 "かなり"
 ],
 "answer": 0,
-"why": "最も means \"the most\"."
+"why": "最も means \"the most\".",
+"en": "The tallest in the class is Tanaka.",
+"opts_en": [
+"the most",
+"a little",
+"more",
+"fairly"
+],
+"wrong": {
+"1": "少し means a little.",
+"2": "もっと means more.",
+"3": "かなり means fairly."
+},
+"why_en": "最も means 'the most', the same as 一番."
 },
 "usage": {
 "options": [
@@ -3582,7 +4570,20 @@
 "君たち"
 ],
 "answer": 1,
-"why": "われわれ is a formal word for \"we\"."
+"why": "われわれ is a formal word for \"we\".",
+"en": "Our company will turn fifty next year.",
+"opts_en": [
+"you (pl.)",
+"we",
+"they",
+"you guys"
+],
+"wrong": {
+"0": "あなたたち means 'you'.",
+"2": "彼ら means 'they'.",
+"3": "君たち means 'you guys'."
+},
+"why_en": "われわれ is a formal word for 'we'."
 },
 "usage": {
 "options": [
@@ -3629,7 +4630,20 @@
 "に行くところ"
 ],
 "answer": 2,
-"why": "〜中 means \"in the middle of doing\"."
+"why": "〜中 means \"in the middle of doing\".",
+"en": "My father is in a meeting now.",
+"opts_en": [
+"before",
+"after",
+"in the middle of doing",
+"about to go to"
+],
+"wrong": {
+"0": "会議の前 means before the meeting.",
+"1": "会議の後 means after the meeting.",
+"3": "に行くところ means about to go, not in it yet."
+},
+"why_en": "〜中 means 'in the middle of doing'."
 },
 "usage": {
 "options": [
@@ -3676,7 +4690,20 @@
 "電車が止まる所"
 ],
 "answer": 3,
-"why": "A 駅 is where trains stop."
+"why": "A 駅 is where trains stop.",
+"en": "I'll get off at the next station.",
+"opts_en": [
+"where planes stop",
+"where ships stop",
+"where you park cars",
+"where trains stop"
+],
+"wrong": {
+"0": "That is an airport.",
+"1": "That is a port.",
+"2": "That is a parking lot."
+},
+"why_en": "A 駅 is where trains stop."
 },
 "usage": {
 "options": [
@@ -3723,7 +4750,20 @@
 "終える"
 ],
 "answer": 0,
-"why": "スタートする means to start."
+"why": "スタートする means to start.",
+"en": "I plan to start English conversation from next month.",
+"opts_en": [
+"start",
+"quit",
+"continue",
+"finish"
+],
+"wrong": {
+"1": "やめる means to quit.",
+"2": "続ける means to keep going; it has already started.",
+"3": "終える means to finish."
+},
+"why_en": "スタートする means to start."
 },
 "usage": {
 "options": [
@@ -3770,7 +4810,20 @@
 "元気で"
 ],
 "answer": 1,
-"why": "病気 means being ill (体が悪い)."
+"why": "病気 means being ill (体が悪い).",
+"en": "My grandmother is in hospital because of illness.",
+"opts_en": [
+"has an errand",
+"is unwell",
+"is traveling",
+"is healthy"
+],
+"wrong": {
+"0": "用事 is an errand.",
+"2": "旅行中 means traveling.",
+"3": "元気 means healthy, the opposite."
+},
+"why_en": "病気 means being ill (体が悪い)."
 },
 "usage": {
 "options": [
@@ -3817,7 +4870,20 @@
 "図書館"
 ],
 "answer": 2,
-"why": "勤め先 means one's workplace."
+"why": "勤め先 means one's workplace.",
+"en": "My father goes to the office at eight every morning.",
+"opts_en": [
+"school",
+"hospital",
+"workplace",
+"library"
+],
+"wrong": {
+"0": "学校 is a school.",
+"1": "病院 is a hospital.",
+"3": "図書館 is a library."
+},
+"why_en": "勤め先 means one's workplace."
 },
 "usage": {
 "options": [
@@ -3864,7 +4930,20 @@
 "およめに行きます"
 ],
 "answer": 3,
-"why": "For a woman, およめに行く means to get married."
+"why": "For a woman, およめに行く means to get married.",
+"en": "My older sister is getting married next month.",
+"opts_en": [
+"moving house",
+"entering hospital",
+"graduating",
+"marrying (as a bride)"
+],
+"wrong": {
+"0": "引っこす means to move house.",
+"1": "入院 means to enter hospital.",
+"2": "そつぎょう means to graduate."
+},
+"why_en": "For a woman, およめに行く means to get married."
 },
 "usage": {
 "options": [
@@ -3911,7 +4990,20 @@
 "もっと"
 ],
 "answer": 0,
-"why": "ちょっと means \"a little\"."
+"why": "ちょっと means \"a little\".",
+"en": "Please add a little salt.",
+"opts_en": [
+"a little",
+"a lot",
+"all of it",
+"more"
+],
+"wrong": {
+"1": "たくさん means a lot, the opposite.",
+"2": "全部 means all of it.",
+"3": "もっと means more; it compares to before."
+},
+"why_en": "ちょっと means 'a little', the same as 少し."
 },
 "usage": {
 "options": [
@@ -3958,7 +5050,20 @@
 "運びませんか"
 ],
 "answer": 1,
-"why": "お茶でもいかがですか is a polite way to offer a drink."
+"why": "お茶でもいかがですか is a polite way to offer a drink.",
+"en": "Won't you have some tea?",
+"opts_en": [
+"make",
+"how about",
+"buy",
+"carry"
+],
+"wrong": {
+"0": "作る means to make.",
+"2": "買う means to buy.",
+"3": "運ぶ means to carry."
+},
+"why_en": "お茶でもいかがですか is a polite way to offer a drink."
 },
 "usage": {
 "options": [
@@ -4005,7 +5110,20 @@
 "お茶"
 ],
 "answer": 2,
-"why": "ウォーター is a loanword meaning water."
+"why": "ウォーター is a loanword meaning water.",
+"en": "You can't drink this water.",
+"opts_en": [
+"juice",
+"milk",
+"water",
+"tea"
+],
+"wrong": {
+"0": "ジュース is juice.",
+"1": "牛にゅう is milk.",
+"3": "お茶 is tea."
+},
+"why_en": "ウォーター is a loanword meaning water."
 },
 "usage": {
 "options": [
@@ -4052,7 +5170,20 @@
 "買いたい"
 ],
 "answer": 3,
-"why": "Wanting a new PC means you want to buy one."
+"why": "Wanting a new PC means you want to buy one.",
+"en": "I want a new computer.",
+"opts_en": [
+"want to sell",
+"hard to use",
+"old",
+"want to buy"
+],
+"wrong": {
+"0": "売りたい means want to sell, the opposite.",
+"1": "使いにくい means hard to use.",
+"2": "古い means old."
+},
+"why_en": "Wanting a new PC means you want to buy one."
 },
 "usage": {
 "options": [
@@ -4099,7 +5230,20 @@
 "降りる"
 ],
 "answer": 0,
-"why": "出発する means to leave / depart (出る)."
+"why": "出発する means to leave / depart (出る).",
+"en": "The plane departs at nine.",
+"opts_en": [
+"leave",
+"arrive",
+"stop",
+"get off"
+],
+"wrong": {
+"1": "着く means arrive, the opposite.",
+"2": "止まる means stop.",
+"3": "降りる means get off."
+},
+"why_en": "出発する means to leave or depart (出る)."
 },
 "usage": {
 "options": [
@@ -4146,7 +5290,20 @@
 "止まって"
 ],
 "answer": 1,
-"why": "Snow falling from the sky is \"coming down\" (落ちてくる)."
+"why": "Snow falling from the sky is \"coming down\" (落ちてくる).",
+"en": "Snow started falling from the sky.",
+"opts_en": [
+"rising",
+"falling/dropping",
+"disappearing",
+"stopping"
+],
+"wrong": {
+"0": "上がる means to go up, the opposite.",
+"2": "消える means to disappear.",
+"3": "止まる means to stop."
+},
+"why_en": "Snow falling from the sky is coming down, i.e. 落ちてくる."
 },
 "usage": {
 "options": [
@@ -4193,7 +5350,20 @@
 "夫"
 ],
 "answer": 2,
-"why": "息子 is one's son (male child)."
+"why": "息子 is one's son (male child).",
+"en": "Our son became a university student this year.",
+"opts_en": [
+"female child",
+"younger brother",
+"male child",
+"husband"
+],
+"wrong": {
+"0": "That is a daughter.",
+"1": "弟 is a younger brother.",
+"3": "夫 is a husband."
+},
+"why_en": "息子 is one's son (male child)."
 },
 "usage": {
 "options": [
@@ -4240,7 +5410,20 @@
 "単語"
 ],
 "answer": 3,
-"why": "単語 means \"word\"."
+"why": "単語 means \"word\".",
+"en": "I looked up the meaning of that word in a dictionary.",
+"opts_en": [
+"culture",
+"photo",
+"dish",
+"word"
+],
+"wrong": {
+"0": "文化 is culture.",
+"1": "写真 is a photo.",
+"2": "料理 is a dish."
+},
+"why_en": "単語 means 'word'."
 },
 "usage": {
 "options": [
@@ -4287,7 +5470,20 @@
 "下げた"
 ],
 "answer": 0,
-"why": "Raising a price means making it higher."
+"why": "Raising a price means making it higher.",
+"en": "That shop raised the price of coffee.",
+"opts_en": [
+"made higher",
+"made cheaper",
+"didn't change",
+"lowered"
+],
+"wrong": {
+"1": "安くした means made cheaper, the opposite.",
+"2": "変えなかった means didn't change it.",
+"3": "下げた means lowered, the opposite."
+},
+"why_en": "Raising a price means making it higher (高くした)."
 },
 "usage": {
 "options": [
@@ -4334,7 +5530,20 @@
 "暗かった"
 ],
 "answer": 1,
-"why": "きれい means beautiful."
+"why": "きれい means beautiful.",
+"en": "The view from the mountaintop was beautiful.",
+"opts_en": [
+"dirty",
+"beautiful",
+"boring",
+"dark"
+],
+"wrong": {
+"0": "きたない means dirty, the opposite.",
+"2": "つまらない means boring.",
+"3": "暗い means dark."
+},
+"why_en": "きれい means beautiful."
 },
 "usage": {
 "options": [
@@ -4381,7 +5590,20 @@
 "店"
 ],
 "answer": 2,
-"why": "市 (city) is closest to 町 (town)."
+"why": "市 (city) is closest to 町 (town).",
+"en": "The town I was born in is very small.",
+"opts_en": [
+"country",
+"house",
+"city",
+"shop"
+],
+"wrong": {
+"0": "国 is a country, far too big.",
+"1": "家 is a house.",
+"3": "店 is a shop."
+},
+"why_en": "市 (city) is the closest to 町 (town)."
 },
 "usage": {
 "options": [
@@ -4428,7 +5650,20 @@
 "戻る"
 ],
 "answer": 3,
-"why": "戻る means to return."
+"why": "戻る means to return.",
+"en": "I plan to go back to my country for summer vacation.",
+"opts_en": [
+"go out",
+"come",
+"play",
+"return"
+],
+"wrong": {
+"0": "出かける means go out.",
+"1": "来る means come.",
+"2": "遊ぶ means play."
+},
+"why_en": "戻る means to return."
 },
 "usage": {
 "options": [
@@ -4475,7 +5710,20 @@
 "生まれて"
 ],
 "answer": 0,
-"why": "For plants, dying is かれる (to wither)."
+"why": "For plants, dying is かれる (to wither).",
+"en": "The flowers I was growing died.",
+"opts_en": [
+"withered",
+"bloomed",
+"grew",
+"were born"
+],
+"wrong": {
+"1": "さく means bloomed, the opposite.",
+"2": "育つ means grew.",
+"3": "生まれる means were born."
+},
+"why_en": "For plants, dying is かれる (to wither)."
 },
 "usage": {
 "options": [
@@ -4522,7 +5770,20 @@
 "続いた"
 ],
 "answer": 1,
-"why": "すむ means to be finished."
+"why": "すむ means to be finished.",
+"en": "The meeting ended at five.",
+"opts_en": [
+"started",
+"was finished",
+"stopped",
+"continued"
+],
+"wrong": {
+"0": "始まる means started, the opposite.",
+"2": "止まる means stopped (as a motion).",
+"3": "続く means continued."
+},
+"why_en": "すむ means to be finished."
 },
 "usage": {
 "options": [
@@ -4569,7 +5830,20 @@
 "せんぱい"
 ],
 "answer": 2,
-"why": "医師 is a formal word for doctor."
+"why": "医師 is a formal word for doctor.",
+"en": "I had a fever, so I saw a doctor.",
+"opts_en": [
+"nurse",
+"clerk",
+"doctor (formal)",
+"senior student"
+],
+"wrong": {
+"0": "かんごし is a nurse.",
+"1": "店員 is a shop clerk.",
+"3": "せんぱい is a senior."
+},
+"why_en": "医師 is a formal word for doctor."
 },
 "usage": {
 "options": [
@@ -4616,7 +5890,20 @@
 "ちゅうしゃしない"
 ],
 "answer": 3,
-"why": "車を止める means to park (ちゅうしゃする)."
+"why": "車を止める means to park (ちゅうしゃする).",
+"en": "Please don't stop your car in front of the station.",
+"opts_en": [
+"don't drive",
+"don't wash",
+"don't sell",
+"don't park"
+],
+"wrong": {
+"0": "運転しない means don't drive; the issue is leaving the car there.",
+"1": "洗わない means don't wash it.",
+"2": "売らない means don't sell it."
+},
+"why_en": "車を止める here means to park (ちゅうしゃする)."
 },
 "usage": {
 "options": [
@@ -4663,7 +5950,20 @@
 "乗りかえて"
 ],
 "answer": 0,
-"why": "乗車する is the formal word for getting on a vehicle."
+"why": "乗車する is the formal word for getting on a vehicle.",
+"en": "Please get on the bus from the station.",
+"opts_en": [
+"board (a vehicle)",
+"get off",
+"wait",
+"transfer"
+],
+"wrong": {
+"1": "降りる means to get off, the opposite.",
+"2": "待つ means to wait.",
+"3": "乗りかえる means to change to another vehicle."
+},
+"why_en": "乗車する is the formal word for getting on a vehicle."
 },
 "usage": {
 "options": [
@@ -4710,7 +6010,20 @@
 "開いて"
 ],
 "answer": 1,
-"why": "忘れる here means to leave something behind."
+"why": "忘れる here means to leave something behind.",
+"en": "I left my umbrella on the train.",
+"opts_en": [
+"brought",
+"left behind",
+"bought",
+"opened"
+],
+"wrong": {
+"0": "持ってくる means brought it, the opposite.",
+"2": "買う means bought.",
+"3": "開く means opened."
+},
+"why_en": "忘れる here means to leave something behind (置いてくる)."
 },
 "usage": {
 "options": [
@@ -4757,7 +6070,20 @@
 "会社員"
 ],
 "answer": 2,
-"why": "Here 学生 means a university student."
+"why": "Here 学生 means a university student.",
+"en": "My older brother is still a student.",
+"opts_en": [
+"working adult",
+"teacher",
+"university student",
+"company employee"
+],
+"wrong": {
+"0": "社会人 is a working adult, the opposite.",
+"1": "先生 is a teacher.",
+"3": "会社員 is an office worker."
+},
+"why_en": "Here 学生 means a university student."
 },
 "usage": {
 "options": [
@@ -4804,7 +6130,20 @@
 "たくさんいる"
 ],
 "answer": 3,
-"why": "多い means there are many (たくさんいる)."
+"why": "多い means there are many (たくさんいる).",
+"en": "This town has a lot of foreigners.",
+"opts_en": [
+"few",
+"big",
+"young",
+"there are many"
+],
+"wrong": {
+"0": "少ない means few, the opposite.",
+"1": "大きい means big.",
+"2": "若い means young."
+},
+"why_en": "多い means there are many (たくさんいる)."
 },
 "usage": {
 "options": [
@@ -4851,7 +6190,20 @@
 "泳いで"
 ],
 "answer": 0,
-"why": "かける (駆ける) means to run."
+"why": "かける (駆ける) means to run.",
+"en": "The children are running in the schoolyard.",
+"opts_en": [
+"dashing/running",
+"walking",
+"sitting",
+"swimming"
+],
+"wrong": {
+"1": "歩く means walking.",
+"2": "座る means sitting.",
+"3": "泳ぐ means swimming."
+},
+"why_en": "かける (駆ける) means to run."
 },
 "usage": {
 "options": [
@@ -4898,7 +6250,20 @@
 "学校"
 ],
 "answer": 1,
-"why": "Going back to one's 国 means going back to one's homeland (ふるさと)."
+"why": "Going back to one's 国 means going back to one's homeland (ふるさと).",
+"en": "I'm going back to my home country for summer vacation.",
+"opts_en": [
+"company",
+"hometown",
+"shop",
+"school"
+],
+"wrong": {
+"0": "会社 is a company.",
+"2": "店 is a shop.",
+"3": "学校 is a school."
+},
+"why_en": "Going back to one's 国 means going back to one's homeland (ふるさと)."
 },
 "usage": {
 "options": [
@@ -4945,7 +6310,20 @@
 "ぜんぜん"
 ],
 "answer": 2,
-"why": "あまり〜ない means \"not very\", like そんなに〜ない."
+"why": "あまり〜ない means \"not very\", like そんなに〜ない.",
+"en": "This test wasn't very difficult.",
+"opts_en": [
+"very",
+"(not) at all",
+"(not) that",
+"(not) at all"
+],
+"wrong": {
+"0": "とても doesn't mean 'not very' with a negative.",
+"1": "少しも〜ない means 'not at all', too strong.",
+"3": "ぜんぜん〜ない means 'not at all', too strong."
+},
+"why_en": "あまり〜ない means 'not very', like そんなに〜ない."
 },
 "usage": {
 "options": [
@@ -4992,7 +6370,20 @@
 "受験する"
 ],
 "answer": 3,
-"why": "受験する means to take an exam."
+"why": "受験する means to take an exam.",
+"en": "Next month I'll take a Japanese exam.",
+"opts_en": [
+"make",
+"teach",
+"pass",
+"take an exam"
+],
+"wrong": {
+"0": "作る means to make the exam.",
+"1": "教える means to teach.",
+"2": "合格する means to pass, not just take it."
+},
+"why_en": "受験する means to take an exam."
 },
 "usage": {
 "options": [
@@ -5039,7 +6430,20 @@
 "会議"
 ],
 "answer": 0,
-"why": "テスト is the same as 試験."
+"why": "テスト is the same as 試験.",
+"en": "There's an English exam tomorrow.",
+"opts_en": [
+"test",
+"homework",
+"class",
+"meeting"
+],
+"wrong": {
+"1": "宿題 is homework.",
+"2": "じゅぎょう is a class.",
+"3": "会議 is a meeting."
+},
+"why_en": "テスト is the same as 試験."
 },
 "usage": {
 "options": [
@@ -5086,7 +6490,20 @@
 "長い"
 ],
 "answer": 1,
-"why": "難しい means \"not easy\"."
+"why": "難しい means \"not easy\".",
+"en": "This problem is difficult.",
+"opts_en": [
+"easy",
+"not easy",
+"fun",
+"long"
+],
+"wrong": {
+"0": "かんたん means easy, the opposite.",
+"2": "楽しい means fun.",
+"3": "長い means long."
+},
+"why_en": "難しい means 'not easy'."
 },
 "usage": {
 "options": [
@@ -5133,7 +6550,20 @@
 "小さく"
 ],
 "answer": 2,
-"why": "親切に means kindly (やさしく)."
+"why": "親切に means kindly (やさしく).",
+"en": "The station worker kindly told me the way.",
+"opts_en": [
+"scarily",
+"quickly",
+"gently/kindly",
+"quietly"
+],
+"wrong": {
+"0": "こわく means in a scary way.",
+"1": "早く means quickly.",
+"3": "小さく means small(ly)."
+},
+"why_en": "親切に means kindly (やさしく)."
 },
 "usage": {
 "options": [
@@ -5180,7 +6610,20 @@
 "年をとっていない"
 ],
 "answer": 3,
-"why": "若い means young, not old."
+"why": "若い means young, not old.",
+"en": "That shop has many young customers.",
+"opts_en": [
+"old",
+"rich",
+"foreign",
+"not old"
+],
+"wrong": {
+"0": "年をとった means old, the opposite.",
+"1": "お金持ち means rich.",
+"2": "外国の means foreign."
+},
+"why_en": "若い means young, i.e. not old."
 },
 "usage": {
 "options": [
@@ -5227,7 +6670,20 @@
 "店員"
 ],
 "answer": 0,
-"why": "友人 is a slightly formal word for friend."
+"why": "友人 is a slightly formal word for friend.",
+"en": "I went to see a movie with a friend.",
+"opts_en": [
+"friend (formal)",
+"teacher",
+"family",
+"clerk"
+],
+"wrong": {
+"1": "先生 is a teacher.",
+"2": "家族 is family.",
+"3": "店員 is a shop clerk."
+},
+"why_en": "友人 is a slightly formal word for friend."
 },
 "usage": {
 "options": [
@@ -5274,7 +6730,20 @@
 "受けた"
 ],
 "answer": 1,
-"why": "試験に失敗する means to fail (落ちる) an exam."
+"why": "試験に失敗する means to fail (落ちる) an exam.",
+"en": "I failed the exam.",
+"opts_en": [
+"passed",
+"failed",
+"was late",
+"took"
+],
+"wrong": {
+"0": "合格 means passed, the opposite.",
+"2": "遅れる means was late.",
+"3": "受ける means took it, not the result."
+},
+"why_en": "試験に失敗する means to fail (落ちる) an exam."
 },
 "usage": {
 "options": [
@@ -5321,7 +6790,20 @@
 "おくの方の"
 ],
 "answer": 2,
-"why": "A high place on a shelf is the upper part (上の方)."
+"why": "A high place on a shelf is the upper part (上の方).",
+"en": "Please get the box in the high place on the shelf.",
+"opts_en": [
+"lower",
+"front",
+"upper",
+"back"
+],
+"wrong": {
+"0": "下の方 means the lower part, the opposite.",
+"1": "前の方 means the front part.",
+"3": "おくの方 means the back part."
+},
+"why_en": "A high place on a shelf is the upper part (上の方)."
 },
 "usage": {
 "options": [
@@ -5368,7 +6850,20 @@
 "小川"
 ],
 "answer": 3,
-"why": "小川 is a small river or stream."
+"why": "小川 is a small river or stream.",
+"en": "A river flows near my house.",
+"opts_en": [
+"sea",
+"pond",
+"road",
+"stream"
+],
+"wrong": {
+"0": "海 is the sea, not a river.",
+"1": "いけ is a pond; water in a pond doesn't flow.",
+"2": "道 is a road, not water."
+},
+"why_en": "小川 is a small river or stream, the closest to 川."
 },
 "usage": {
 "options": [
@@ -5415,7 +6910,20 @@
 "せまい"
 ],
 "answer": 0,
-"why": "長い is the opposite of みじかい, so みじかくない is closest."
+"why": "長い is the opposite of みじかい, so みじかくない is closest.",
+"en": "This skirt is a little long for me.",
+"opts_en": [
+"not short",
+"short",
+"wide",
+"tight"
+],
+"wrong": {
+"1": "みじかい means short, the opposite.",
+"2": "広い means wide.",
+"3": "せまい means narrow/tight."
+},
+"why_en": "長い is the opposite of みじかい, so みじかくない is closest."
 },
 "usage": {
 "options": [
@@ -5462,7 +6970,20 @@
 "小さなむら"
 ],
 "answer": 1,
-"why": "東京 is the capital (首都) of Japan."
+"why": "東京 is the capital (首都) of Japan.",
+"en": "I'm going to Tokyo next week.",
+"opts_en": [
+"old Japanese town",
+"capital of Japan",
+"American city",
+"small village"
+],
+"wrong": {
+"0": "That fits Kyoto or Nara better.",
+"2": "Tokyo is not in America.",
+"3": "Tokyo is not a small village."
+},
+"why_en": "東京 is the capital (首都) of Japan."
 },
 "usage": {
 "options": [
@@ -5509,7 +7030,20 @@
 "新しい"
 ],
 "answer": 2,
-"why": "いっしょの means \"the same / shared\"."
+"why": "いっしょの means \"the same / shared\".",
+"en": "My brother and I go to the same university.",
+"opts_en": [
+"different",
+"near",
+"the same/shared",
+"new"
+],
+"wrong": {
+"0": "ちがう means different, the opposite.",
+"1": "近い means near.",
+"3": "新しい means new."
+},
+"why_en": "いっしょの means 'the same, shared'."
 },
 "usage": {
 "options": [
@@ -5556,7 +7090,20 @@
 "より長く"
 ],
 "answer": 3,
-"why": "以上 means \"or more / longer than\"."
+"why": "以上 means \"or more / longer than\".",
+"en": "I've kept up this job for more than three years.",
+"opts_en": [
+"shorter than",
+"exactly",
+"about",
+"longer than"
+],
+"wrong": {
+"0": "よりみじかく means shorter, the opposite.",
+"1": "ちょうど means exactly.",
+"2": "ぐらい means about."
+},
+"why_en": "以上 means 'or more / longer than'."
 },
 "usage": {
 "options": [
@@ -5603,7 +7150,20 @@
 "電話番号"
 ],
 "answer": 0,
-"why": "しめい (氏名) means one's full name."
+"why": "しめい (氏名) means one's full name.",
+"en": "Please write your name here.",
+"opts_en": [
+"full name",
+"address",
+"age",
+"phone number"
+],
+"wrong": {
+"1": "住所 is address.",
+"2": "年れい is age.",
+"3": "電話番号 is a phone number."
+},
+"why_en": "しめい (氏名) means one's full name."
 },
 "usage": {
 "options": [
@@ -5650,7 +7210,20 @@
 "出発した"
 ],
 "answer": 1,
-"why": "遅れる means to arrive later than planned."
+"why": "遅れる means to arrive later than planned.",
+"en": "The train was ten minutes late.",
+"opts_en": [
+"arrived early",
+"arrived late",
+"stopped",
+"departed"
+],
+"wrong": {
+"0": "早く着く means arrived early, the opposite.",
+"2": "止まる means stopped.",
+"3": "出発する means departed."
+},
+"why_en": "遅れる means arriving later than planned."
 },
 "usage": {
 "options": [
@@ -5697,7 +7270,20 @@
 "はし"
 ],
 "answer": 2,
-"why": "通り means street / road."
+"why": "通り means street / road.",
+"en": "Go straight along this road and you'll reach the station.",
+"opts_en": [
+"shop",
+"river",
+"street",
+"bridge"
+],
+"wrong": {
+"0": "店 is a shop.",
+"1": "川 is a river.",
+"3": "はし is a bridge."
+},
+"why_en": "通り means street or road."
 },
 "usage": {
 "options": [
@@ -5744,7 +7330,20 @@
 "旅した"
 ],
 "answer": 3,
-"why": "旅する means to travel."
+"why": "旅する means to travel.",
+"en": "In summer my family traveled around Hokkaido.",
+"opts_en": [
+"moved house",
+"took a walk",
+"went on business",
+"traveled"
+],
+"wrong": {
+"0": "引っこす means to move house.",
+"1": "散歩 is a walk.",
+"2": "出ちょう is a business trip, not family travel."
+},
+"why_en": "旅する means to travel."
 },
 "usage": {
 "options": [
@@ -5791,7 +7390,20 @@
 "ぜんぜん"
 ],
 "answer": 0,
-"why": "非常に means \"extremely\", like とても."
+"why": "非常に means \"extremely\", like とても.",
+"en": "It's extremely cold today.",
+"opts_en": [
+"very",
+"a little",
+"not very",
+"not at all"
+],
+"wrong": {
+"1": "少し means a little, much weaker.",
+"2": "あまり (with negative) means 'not very'.",
+"3": "ぜんぜん (with negative) means 'not at all'."
+},
+"why_en": "非常に means 'extremely', like とても."
 },
 "usage": {
 "options": [
@@ -5838,7 +7450,20 @@
 "もう一度"
 ],
 "answer": 1,
-"why": "決して〜ない means \"never\", like 絶対に〜ない."
+"why": "決して〜ない means \"never\", like 絶対に〜ない.",
+"en": "I will never tell this to anyone.",
+"opts_en": [
+"occasionally",
+"absolutely",
+"sometimes",
+"once more"
+],
+"wrong": {
+"0": "たまに means occasionally.",
+"2": "時々 means sometimes.",
+"3": "もう一度 means once more."
+},
+"why_en": "決して〜ない means 'never', like 絶対に〜ない."
 },
 "usage": {
 "options": [
@@ -5885,7 +7510,20 @@
 "食べました"
 ],
 "answer": 2,
-"why": "休む can mean going to bed / sleeping."
+"why": "休む can mean going to bed / sleeping.",
+"en": "Yesterday I went to bed at ten.",
+"opts_en": [
+"got up",
+"went home",
+"went to bed/rested",
+"ate"
+],
+"wrong": {
+"0": "起きる means got up, the opposite.",
+"1": "帰る means went home.",
+"3": "食べる means ate."
+},
+"why_en": "休む can mean going to bed / sleeping."
 },
 "usage": {
 "options": [
@@ -5932,7 +7570,20 @@
 "目を覚まします"
 ],
 "answer": 3,
-"why": "目を覚ます means to wake up."
+"why": "目を覚ます means to wake up.",
+"en": "I get up at six every morning.",
+"opts_en": [
+"go to bed",
+"go out",
+"go home",
+"wake up"
+],
+"wrong": {
+"0": "寝る means to go to bed, the opposite.",
+"1": "出かける means to go out.",
+"2": "帰る means to go home."
+},
+"why_en": "目を覚ます means to wake up."
 },
 "usage": {
 "options": [
@@ -5979,7 +7630,20 @@
 "待って"
 ],
 "answer": 0,
-"why": "おかけになる is the polite way to ask someone to sit."
+"why": "おかけになる is the polite way to ask someone to sit.",
+"en": "Please sit here.",
+"opts_en": [
+"sit (polite)",
+"stand",
+"lie down",
+"wait"
+],
+"wrong": {
+"1": "立つ means stand, the opposite.",
+"2": "寝る means lie down.",
+"3": "待つ means wait."
+},
+"why_en": "おかけになる is the polite way to ask someone to sit."
 },
 "usage": {
 "options": [
@@ -6026,7 +7690,20 @@
 "道を走る乗り物"
 ],
 "answer": 1,
-"why": "An airplane is a vehicle that flies in the sky."
+"why": "An airplane is a vehicle that flies in the sky.",
+"en": "I went from Osaka to Tokyo by plane.",
+"opts_en": [
+"vehicle on the sea",
+"vehicle that flies",
+"vehicle underground",
+"vehicle on roads"
+],
+"wrong": {
+"0": "That is a ship.",
+"2": "That is a subway.",
+"3": "That is a car or bus."
+},
+"why_en": "An airplane is a vehicle that flies in the sky."
 },
 "usage": {
 "options": [
@@ -6073,7 +7750,20 @@
 "休んだ"
 ],
 "answer": 2,
-"why": "続ける means to keep going and not stop."
+"why": "続ける means to keep going and not stop.",
+"en": "We continued the match in the rain.",
+"opts_en": [
+"quit",
+"didn't start",
+"didn't stop",
+"rested"
+],
+"wrong": {
+"0": "やめた means stopped, the opposite.",
+"1": "始めなかった means it never began.",
+"3": "休んだ means took a break."
+},
+"why_en": "続ける means to keep going and not stop."
 },
 "usage": {
 "options": [
@@ -6120,7 +7810,20 @@
 "本日"
 ],
 "answer": 3,
-"why": "本日 is the formal word for today."
+"why": "本日 is the formal word for today.",
+"en": "Today is Sunday.",
+"opts_en": [
+"yesterday",
+"tomorrow",
+"every day",
+"today (formal)"
+],
+"wrong": {
+"0": "昨日 is yesterday.",
+"1": "明日 is tomorrow.",
+"2": "毎日 means every day."
+},
+"why_en": "本日 is the formal word for today."
 },
 "usage": {
 "options": [
@@ -6167,7 +7870,20 @@
 "勉強"
 ],
 "answer": 0,
-"why": "暮らし means daily life."
+"why": "暮らし means daily life.",
+"en": "I've already gotten used to life in Tokyo.",
+"opts_en": [
+"living",
+"work",
+"travel",
+"study"
+],
+"wrong": {
+"1": "仕事 is only work.",
+"2": "旅行 is travel.",
+"3": "勉強 is study."
+},
+"why_en": "暮らし means daily life."
 },
 "usage": {
 "options": [
@@ -6214,7 +7930,20 @@
 "外国"
 ],
 "answer": 1,
-"why": "For a speaker in Japan, この国 means Japan."
+"why": "For a speaker in Japan, この国 means Japan.",
+"en": "Japan is a mountainous country.",
+"opts_en": [
+"America",
+"this country",
+"China",
+"foreign countries"
+],
+"wrong": {
+"0": "アメリカ is a different country.",
+"2": "中国 is China, a different country.",
+"3": "外国 means foreign countries, not Japan."
+},
+"why_en": "For a speaker in Japan, この国 (this country) means Japan."
 },
 "usage": {
 "options": [
@@ -6261,7 +7990,20 @@
 "昨日"
 ],
 "answer": 2,
-"why": "今度 can mean \"next (time)\"."
+"why": "今度 can mean \"next (time)\".",
+"en": "Next is Mr. Tanaka's turn.",
+"opts_en": [
+"before",
+"first",
+"next (time)",
+"yesterday"
+],
+"wrong": {
+"0": "前 means before.",
+"1": "最初 means first.",
+"3": "昨日 means yesterday."
+},
+"why_en": "今度 can mean 'next (time)'."
 },
 "usage": {
 "options": [
@@ -6308,7 +8050,20 @@
 "一こ"
 ],
 "answer": 3,
-"why": "一こ is the counter for small round things like apples."
+"why": "一こ is the counter for small round things like apples.",
+"en": "One apple, please.",
+"opts_en": [
+"one (long thing)",
+"one (flat thing)",
+"one (book)",
+"one (small item)"
+],
+"wrong": {
+"0": "一本 counts long thin things.",
+"1": "一まい counts flat things.",
+"2": "一さつ counts books."
+},
+"why_en": "一こ is the counter for small round things like apples."
 },
 "usage": {
 "options": [
@@ -6355,7 +8110,20 @@
 "少ない"
 ],
 "answer": 0,
-"why": "忙しい means having no free time."
+"why": "忙しい means having no free time.",
+"en": "I'm busy with work this week.",
+"opts_en": [
+"have no free time",
+"have free time",
+"is easy",
+"is little"
+],
+"wrong": {
+"1": "ひまだ means free, the opposite.",
+"2": "楽 means easy.",
+"3": "少ない means there is little work."
+},
+"why_en": "忙しい means having no free time."
 },
 "usage": {
 "options": [
@@ -6402,7 +8170,20 @@
 "友達"
 ],
 "answer": 1,
-"why": "両親 means one's father and mother."
+"why": "両親 means one's father and mother.",
+"en": "During summer vacation I went home to see my parents.",
+"opts_en": [
+"older brother and sister",
+"father and mother",
+"grandparents",
+"friends"
+],
+"wrong": {
+"0": "Those are siblings.",
+"2": "Those are grandparents.",
+"3": "友達 are friends."
+},
+"why_en": "両親 means one's father and mother."
 },
 "usage": {
 "options": [
@@ -6449,7 +8230,20 @@
 "社員"
 ],
 "answer": 2,
-"why": "生徒 are pupils at a school."
+"why": "生徒 are pupils at a school.",
+"en": "This school has five hundred pupils.",
+"opts_en": [
+"teachers",
+"clerks",
+"students",
+"employees"
+],
+"wrong": {
+"0": "先生 are teachers.",
+"1": "店員 are shop clerks.",
+"3": "社員 are company employees."
+},
+"why_en": "生徒 are pupils at a school (学生)."
 },
 "usage": {
 "options": [
@@ -6497,7 +8291,20 @@
 "家"
 ],
 "answer": 0,
-"why": "ショップ is a loanword for shop."
+"why": "ショップ is a loanword for shop.",
+"en": "A new shop opened near the station.",
+"opts_en": [
+"shop",
+"station",
+"hospital",
+"house"
+],
+"wrong": {
+"1": "駅 is a station.",
+"2": "病院 is a hospital.",
+"3": "家 is a house."
+},
+"why_en": "ショップ is a loanword for shop."
 },
 "usage": {
 "options": [
@@ -6544,7 +8351,20 @@
 "長く"
 ],
 "answer": 1,
-"why": "早めに means \"earlier than usual\"."
+"why": "早めに means \"earlier than usual\".",
+"en": "This morning I got up earlier than usual.",
+"opts_en": [
+"late",
+"early",
+"slowly",
+"long"
+],
+"wrong": {
+"0": "おそく means late, the opposite.",
+"2": "ゆっくり means slowly.",
+"3": "長く means for a long time."
+},
+"why_en": "早めに means 'earlier than usual'."
 },
 "usage": {
 "options": [
@@ -6591,7 +8411,20 @@
 "きれいだ"
 ],
 "answer": 2,
-"why": "人でいっぱい means crowded (こんでいる)."
+"why": "人でいっぱい means crowded (こんでいる).",
+"en": "The station is full of people.",
+"opts_en": [
+"empty",
+"quiet",
+"crowded",
+"clean"
+],
+"wrong": {
+"0": "すいている means empty, the opposite.",
+"1": "静か means quiet.",
+"3": "きれい means clean."
+},
+"why_en": "人でいっぱい means crowded (こんでいる)."
 },
 "usage": {
 "options": [
@@ -6638,7 +8471,20 @@
 "ムービー"
 ],
 "answer": 3,
-"why": "ムービー is a loanword meaning movie."
+"why": "ムービー is a loanword meaning movie.",
+"en": "On the weekend I went to see a movie.",
+"opts_en": [
+"music",
+"sports",
+"book",
+"movie"
+],
+"wrong": {
+"0": "音楽 is music.",
+"1": "スポーツ is sports.",
+"2": "本 is a book."
+},
+"why_en": "ムービー is a loanword meaning movie."
 },
 "usage": {
 "options": [
@@ -6685,7 +8531,20 @@
 "三人"
 ],
 "answer": 0,
-"why": "二人 means two people, for example a friend and me."
+"why": "二人 means two people, for example a friend and me.",
+"en": "The two of us went on a trip.",
+"opts_en": [
+"a friend and I",
+"just me",
+"the whole family",
+"three people"
+],
+"wrong": {
+"1": "一人 is just one person.",
+"2": "家族みんな is usually more than two.",
+"3": "三人 is three people."
+},
+"why_en": "二人 means two people, for example a friend and me."
 },
 "usage": {
 "options": [
@@ -6732,7 +8591,20 @@
 "つりをした"
 ],
 "answer": 1,
-"why": "水泳 means swimming."
+"why": "水泳 means swimming.",
+"en": "In summer I often swam in the sea.",
+"opts_en": [
+"took walks",
+"went swimming",
+"ran",
+"went fishing"
+],
+"wrong": {
+"0": "散歩 is a walk.",
+"2": "走る means to run.",
+"3": "つり is fishing."
+},
+"why_en": "水泳 means swimming."
 },
 "usage": {
 "options": [
@@ -6779,7 +8651,20 @@
 "ちょっと"
 ],
 "answer": 2,
-"why": "たっぷり means plenty."
+"why": "たっぷり means plenty.",
+"en": "I have enough money.",
+"opts_en": [
+"a little",
+"(not) at all",
+"plenty",
+"a bit"
+],
+"wrong": {
+"0": "少し means a little.",
+"1": "ぜんぜん means not at all.",
+"3": "ちょっと means a bit."
+},
+"why_en": "たっぷり means plenty."
 },
 "usage": {
 "options": [
@@ -6826,7 +8711,20 @@
 "ゲーム"
 ],
 "answer": 3,
-"why": "ゲーム (game / match) means the same."
+"why": "ゲーム (game / match) means the same.",
+"en": "There's a soccer match tomorrow.",
+"opts_en": [
+"practice",
+"meeting",
+"class",
+"game/match"
+],
+"wrong": {
+"0": "れんしゅう is practice.",
+"1": "会議 is a meeting.",
+"2": "じゅぎょう is a class."
+},
+"why_en": "ゲーム (game / match) means the same."
 },
 "usage": {
 "options": [
@@ -6873,7 +8771,20 @@
 "背中"
 ],
 "answer": 0,
-"why": "表情 means facial expression."
+"why": "表情 means facial expression.",
+"en": "Seeing my mother's face, I felt relieved.",
+"opts_en": [
+"expression",
+"voice",
+"hand",
+"back"
+],
+"wrong": {
+"1": "声 is voice.",
+"2": "手 is a hand.",
+"3": "背中 is the back."
+},
+"why_en": "表情 means facial expression."
 },
 "usage": {
 "options": [
@@ -6920,7 +8831,20 @@
 "頭"
 ],
 "answer": 1,
-"why": "目が悪い means poor eyesight (しりょく)."
+"why": "目が悪い means poor eyesight (しりょく).",
+"en": "My eyes are bad, so I wear glasses.",
+"opts_en": [
+"ears",
+"eyesight",
+"legs",
+"head"
+],
+"wrong": {
+"0": "耳 are ears.",
+"2": "足 are legs.",
+"3": "頭 is the head (or brains)."
+},
+"why_en": "目が悪い means poor eyesight (しりょく)."
 },
 "usage": {
 "options": [
@@ -6967,7 +8891,20 @@
 "作ります"
 ],
 "answer": 2,
-"why": "加える means to add (something into something)."
+"why": "加える means to add (something into something).",
+"en": "Do you put sugar in your coffee?",
+"opts_en": [
+"serve",
+"sell",
+"add",
+"make"
+],
+"wrong": {
+"0": "出す means to serve.",
+"1": "売る means to sell.",
+"3": "作る means to make."
+},
+"why_en": "加える means to add something into something."
 },
 "usage": {
 "options": [
@@ -7014,7 +8951,20 @@
 "曲"
 ],
 "answer": 3,
-"why": "曲 means a piece of music / song."
+"why": "曲 means a piece of music / song.",
+"en": "I listen to music before going to bed.",
+"opts_en": [
+"news",
+"talk",
+"English",
+"tunes"
+],
+"wrong": {
+"0": "ニュース is the news.",
+"1": "話 is a talk or story.",
+"2": "英語 is English."
+},
+"why_en": "曲 means a piece of music or song."
 },
 "usage": {
 "options": [
@@ -7061,7 +9011,20 @@
 "人"
 ],
 "answer": 0,
-"why": "Here 手 means a way or method (方法)."
+"why": "Here 手 means a way or method (方法).",
+"en": "Isn't there some good way?",
+"opts_en": [
+"method",
+"time",
+"money",
+"person"
+],
+"wrong": {
+"1": "時間 is time.",
+"2": "お金 is money.",
+"3": "人 is a person."
+},
+"why_en": "Here 手 means a way or method (方法)."
 },
 "usage": {
 "options": [
@@ -7108,7 +9071,20 @@
 "石"
 ],
 "answer": 1,
-"why": "もくざい means wood as a material."
+"why": "もくざい means wood as a material.",
+"en": "This chair is made of wood.",
+"opts_en": [
+"iron",
+"lumber/wood",
+"paper",
+"stone"
+],
+"wrong": {
+"0": "てつ is iron.",
+"2": "紙 is paper.",
+"3": "石 is stone."
+},
+"why_en": "もくざい means wood as a material."
 },
 "usage": {
 "options": [
@@ -7155,7 +9131,20 @@
 "悲しかった"
 ],
 "answer": 2,
-"why": "面白い can mean fun/enjoyable."
+"why": "面白い can mean fun/enjoyable.",
+"en": "Yesterday's party was fun.",
+"opts_en": [
+"boring",
+"lonely",
+"fun/interesting",
+"sad"
+],
+"wrong": {
+"0": "つまらない means boring, the opposite.",
+"1": "さびしい means lonely.",
+"3": "悲しい means sad."
+},
+"why_en": "面白い can mean fun or enjoyable."
 },
 "usage": {
 "options": [
@@ -7202,7 +9191,20 @@
 "発見した"
 ],
 "answer": 3,
-"why": "発見する means to find / discover."
+"why": "発見する means to find / discover.",
+"en": "I finally found the key I lost.",
+"opts_en": [
+"lost",
+"dropped",
+"searched",
+"discovered"
+],
+"wrong": {
+"0": "なくす means lost, the opposite.",
+"1": "落とす means dropped.",
+"2": "探す means searched, not necessarily found."
+},
+"why_en": "発見する means to find or discover."
 },
 "usage": {
 "options": [
@@ -7249,7 +9251,20 @@
 "少し"
 ],
 "answer": 0,
-"why": "一生けんめい means doing one's very best (がんばって)."
+"why": "一生けんめい means doing one's very best (がんばって).",
+"en": "My younger brother is studying as hard as he can.",
+"opts_en": [
+"working hard",
+"leisurely",
+"sometimes",
+"a little"
+],
+"wrong": {
+"1": "のんびり means relaxed and easygoing, the opposite.",
+"2": "時々 means 'sometimes'; it says nothing about effort.",
+"3": "少し means 'a little', not with all one's effort."
+},
+"why_en": "一生けんめい means doing one's very best, like がんばって."
 },
 "usage": {
 "options": [
@@ -7296,7 +9311,20 @@
 "人"
 ],
 "answer": 1,
-"why": "才 is the simpler way of writing the age counter 歳."
+"why": "才 is the simpler way of writing the age counter 歳.",
+"en": "My younger brother turns ten this year.",
+"opts_en": [
+"year",
+"years old (simple form)",
+"times",
+"people"
+],
+"wrong": {
+"0": "年 counts years, not age in this form.",
+"2": "回 counts times.",
+"3": "人 counts people."
+},
+"why_en": "才 is the simpler way of writing the age counter 歳."
 },
 "usage": {
 "options": [
@@ -7343,7 +9371,20 @@
 "待って"
 ],
 "answer": 2,
-"why": "助ける means to help."
+"why": "助ける means to help.",
+"en": "Thank you for helping me move.",
+"opts_en": [
+"watch",
+"stop",
+"help",
+"wait"
+],
+"wrong": {
+"0": "見る means watch.",
+"1": "止める means stop.",
+"3": "待つ means wait."
+},
+"why_en": "助ける means to help."
 },
 "usage": {
 "options": [
@@ -7390,7 +9431,20 @@
 "考え"
 ],
 "answer": 3,
-"why": "意見 means one's opinion or idea (考え)."
+"why": "意見 means one's opinion or idea (考え).",
+"en": "Let's decide after hearing everyone's opinions.",
+"opts_en": [
+"names",
+"addresses",
+"photos",
+"thoughts"
+],
+"wrong": {
+"0": "名前 are names.",
+"1": "住所 are addresses.",
+"2": "写真 are photos."
+},
+"why_en": "意見 means one's opinion or idea (考え)."
 },
 "usage": {
 "options": [
@@ -7437,7 +9491,20 @@
 "老人"
 ],
 "answer": 0,
-"why": "女性 means a woman."
+"why": "女性 means a woman.",
+"en": "There are two women at reception.",
+"opts_en": [
+"women",
+"men",
+"children",
+"elderly people"
+],
+"wrong": {
+"1": "男の人 are men.",
+"2": "子供 are children.",
+"3": "老人 are old people."
+},
+"why_en": "女性 means a woman (女の人)."
 },
 "usage": {
 "options": [
@@ -7484,7 +9551,20 @@
 "店"
 ],
 "answer": 1,
-"why": "A university is a kind of school (学校)."
+"why": "A university is a kind of school (学校).",
+"en": "My older brother goes to a university in Tokyo.",
+"opts_en": [
+"company",
+"school",
+"hospital",
+"shop"
+],
+"wrong": {
+"0": "会社 is a company; you work there, not study.",
+"2": "病院 is a hospital.",
+"3": "店 is a shop."
+},
+"why_en": "A university is a kind of school (学校)."
 },
 "usage": {
 "options": [
@@ -7531,7 +9611,20 @@
 "走って"
 ],
 "answer": 2,
-"why": "起立する means to stand up."
+"why": "起立する means to stand up.",
+"en": "The teacher is standing at the front of the classroom.",
+"opts_en": [
+"sitting",
+"sleeping",
+"standing up",
+"running"
+],
+"wrong": {
+"0": "座る means to sit, the opposite.",
+"1": "寝る means to sleep or lie down.",
+"3": "走る means to run."
+},
+"why_en": "起立する means to stand up."
 },
 "usage": {
 "options": [
@@ -7578,7 +9671,20 @@
 "父や母や兄弟"
 ],
 "answer": 3,
-"why": "家族 means family members: parents, siblings, etc."
+"why": "家族 means family members: parents, siblings, etc.",
+"en": "I went on a trip with my family.",
+"opts_en": [
+"friends",
+"coworkers",
+"everyone in class",
+"father, mother and siblings"
+],
+"wrong": {
+"0": "友達 are friends.",
+"1": "会社の人 are coworkers.",
+"2": "クラスのみんな are classmates."
+},
+"why_en": "家族 means family members: parents, siblings, etc."
 },
 "usage": {
 "options": [
@@ -7625,7 +9731,20 @@
 "落として"
 ],
 "answer": 0,
-"why": "探す means trying to find something."
+"why": "探す means trying to find something.",
+"en": "I'm looking for the wallet I lost.",
+"opts_en": [
+"trying to find",
+"found",
+"lost",
+"dropped"
+],
+"wrong": {
+"1": "見つけた means already found it.",
+"2": "なくす means to lose.",
+"3": "落とす means to drop."
+},
+"why_en": "探す means trying to find something."
 },
 "usage": {
 "options": [
@@ -7672,7 +9791,20 @@
 "字を書く道具"
 ],
 "answer": 1,
-"why": "A clock/watch is a tool for telling the time."
+"why": "A clock/watch is a tool for telling the time.",
+"en": "I looked at the clock and it was already three.",
+"opts_en": [
+"tool to listen to music",
+"tool to tell time",
+"tool to take photos",
+"tool to write"
+],
+"wrong": {
+"0": "That is a music player.",
+"2": "That is a camera.",
+"3": "That is a pen."
+},
+"why_en": "A clock or watch is a tool for telling the time."
 },
 "usage": {
 "options": [
@@ -7719,7 +9851,20 @@
 "石"
 ],
 "answer": 2,
-"why": "フラワー is a loanword for flower."
+"why": "フラワー is a loanword for flower.",
+"en": "Lots of flowers are blooming in the garden.",
+"opts_en": [
+"tree",
+"grass",
+"flower",
+"stone"
+],
+"wrong": {
+"0": "木 is a tree.",
+"1": "草 is grass.",
+"3": "石 is a stone."
+},
+"why_en": "フラワー is a loanword for flower."
 },
 "usage": {
 "options": [
@@ -7766,7 +9911,20 @@
 "全部"
 ],
 "answer": 3,
-"why": "全部 means all, the same as 全て."
+"why": "全部 means all, the same as 全て.",
+"en": "I finished all my homework.",
+"opts_en": [
+"half",
+"a little",
+"one",
+"all"
+],
+"wrong": {
+"0": "半分 is half.",
+"1": "少し is a little.",
+"2": "一つ is only one."
+},
+"why_en": "全部 means all, the same as 全て."
 },
 "usage": {
 "options": [
@@ -7813,7 +9971,20 @@
 "古い"
 ],
 "answer": 0,
-"why": "楽しい (enjoyable) is closest to 面白い here."
+"why": "楽しい (enjoyable) is closest to 面白い here.",
+"en": "This book is very interesting.",
+"opts_en": [
+"enjoyable",
+"boring",
+"difficult",
+"old"
+],
+"wrong": {
+"1": "つまらない means boring, the opposite.",
+"2": "難しい means difficult.",
+"3": "古い means old."
+},
+"why_en": "楽しい (enjoyable) is closest to 面白い here."
 },
 "usage": {
 "options": [
@@ -7860,7 +10031,20 @@
 "手紙"
 ],
 "answer": 1,
-"why": "イラスト means a drawing / illustration."
+"why": "イラスト means a drawing / illustration.",
+"en": "My older sister is good at drawing pictures.",
+"opts_en": [
+"letters/characters",
+"illustration",
+"song",
+"letter"
+],
+"wrong": {
+"0": "字 means written characters.",
+"2": "歌 is a song.",
+"3": "手紙 is a letter."
+},
+"why_en": "イラスト means a drawing or illustration."
 },
 "usage": {
 "options": [
@@ -7907,7 +10091,20 @@
 "かなり"
 ],
 "answer": 2,
-"why": "最も means \"the most\", the same as 一番."
+"why": "最も means \"the most\", the same as 一番.",
+"en": "This is the highest mountain in Japan.",
+"opts_en": [
+"more",
+"a little",
+"the most",
+"fairly"
+],
+"wrong": {
+"0": "もっと means 'more', a comparison of two.",
+"1": "少し means a little.",
+"3": "かなり means fairly, not the top."
+},
+"why_en": "最も means 'the most', the same as 一番."
 },
 "usage": {
 "options": [
@@ -7954,7 +10151,20 @@
 "解説"
 ],
 "answer": 3,
-"why": "解説 means explanation / commentary."
+"why": "解説 means explanation / commentary.",
+"en": "The teacher explained it once more.",
+"opts_en": [
+"question",
+"warning",
+"reply",
+"explanation/commentary"
+],
+"wrong": {
+"0": "質問 is a question.",
+"1": "注意 is a warning.",
+"2": "返事 is a reply."
+},
+"why_en": "解説 means explanation or commentary."
 },
 "usage": {
 "options": [
@@ -8001,7 +10211,20 @@
 "飛行機"
 ],
 "answer": 0,
-"why": "ボート (boat) is closest to 船."
+"why": "ボート (boat) is closest to 船.",
+"en": "I crossed to the island by ship.",
+"opts_en": [
+"boat",
+"train",
+"bus",
+"airplane"
+],
+"wrong": {
+"1": "電車 can't cross water.",
+"2": "バス runs on roads.",
+"3": "飛行機 flies; it is not a ship."
+},
+"why_en": "ボート (boat) is closest to 船."
 },
 "usage": {
 "options": [
@@ -8048,7 +10271,20 @@
 "じゅんばんに"
 ],
 "answer": 1,
-"why": "ともに means together."
+"why": "ともに means together.",
+"en": "I watched a movie together with a friend.",
+"opts_en": [
+"separately",
+"together",
+"alone",
+"in turn"
+],
+"wrong": {
+"0": "べつべつに means separately, the opposite.",
+"2": "一人で means alone.",
+"3": "じゅんばんに means in turn."
+},
+"why_en": "ともに means together."
 },
 "usage": {
 "options": [
@@ -8095,7 +10331,20 @@
 "運んだ"
 ],
 "answer": 2,
-"why": "Opening a box means taking off the lid."
+"why": "Opening a box means taking off the lid.",
+"en": "I opened the box.",
+"opts_en": [
+"put a lid on",
+"wrapped",
+"took off the lid",
+"carried"
+],
+"wrong": {
+"0": "ふたをする means to close it, the opposite.",
+"1": "つつむ means to wrap.",
+"3": "運ぶ means to carry."
+},
+"why_en": "Opening a box means taking off the lid."
 },
 "usage": {
 "options": [
@@ -8142,7 +10391,20 @@
 "ニャーと鳴く動物"
 ],
 "answer": 3,
-"why": "A cat is the animal that says ニャー."
+"why": "A cat is the animal that says ニャー.",
+"en": "I keep a cat at home.",
+"opts_en": [
+"animal that says 'woof'",
+"animal that says 'moo'",
+"bird that says 'tweet'",
+"animal that says 'meow'"
+],
+"wrong": {
+"0": "That is a dog.",
+"1": "That is a cow.",
+"2": "That is a sparrow."
+},
+"why_en": "A cat is the animal that says ニャー."
 },
 "usage": {
 "options": [
@@ -8189,7 +10451,20 @@
 "買った"
 ],
 "answer": 0,
-"why": "身につける means to put on (clothes)."
+"why": "身につける means to put on (clothes).",
+"en": "It was cold, so I put on a sweater.",
+"opts_en": [
+"put on",
+"took off",
+"washed",
+"bought"
+],
+"wrong": {
+"1": "ぬぐ means took off, the opposite.",
+"2": "洗う means washed.",
+"3": "買う means bought."
+},
+"why_en": "身につける means to put on (clothes)."
 },
 "usage": {
 "options": [
@@ -8236,7 +10511,20 @@
 "ねむくなった"
 ],
 "answer": 1,
-"why": "くたびれる means to be worn out."
+"why": "くたびれる means to be worn out.",
+"en": "I walked all day and got tired.",
+"opts_en": [
+"got energetic",
+"was worn out",
+"was fun",
+"got sleepy"
+],
+"wrong": {
+"0": "元気になる is the opposite.",
+"2": "楽しい means it was fun.",
+"3": "ねむい means sleepy, not tired."
+},
+"why_en": "くたびれる means to be worn out."
 },
 "usage": {
 "options": [
@@ -8283,7 +10571,20 @@
 "きらい"
 ],
 "answer": 2,
-"why": "うまい can mean skillful."
+"why": "うまい can mean skillful.",
+"en": "My older sister is good at cooking.",
+"opts_en": [
+"bad at",
+"weak at",
+"skillful",
+"dislike"
+],
+"wrong": {
+"0": "下手 means unskillful, the opposite.",
+"1": "苦手 means weak at.",
+"3": "きらい means dislike."
+},
+"why_en": "うまい can mean skillful."
 },
 "usage": {
 "options": [
@@ -8330,7 +10631,20 @@
 "決めて"
 ],
 "answer": 3,
-"why": "Choosing one means deciding (決める) on it."
+"why": "Choosing one means deciding (決める) on it.",
+"en": "Please choose one color you like.",
+"opts_en": [
+"paint",
+"make",
+"erase",
+"decide"
+],
+"wrong": {
+"0": "ぬる means to paint.",
+"1": "作る means to make.",
+"2": "消す means to erase."
+},
+"why_en": "Choosing one means deciding (決める) on it."
 },
 "usage": {
 "options": [
@@ -8377,7 +10691,20 @@
 "月に一回"
 ],
 "answer": 0,
-"why": "毎日 means every day without a break."
+"why": "毎日 means every day without a break.",
+"en": "I jog every day.",
+"opts_en": [
+"without missing a day",
+"sometimes",
+"once a week",
+"once a month"
+],
+"wrong": {
+"1": "時々 means sometimes.",
+"2": "週に一回 is once a week.",
+"3": "月に一回 is once a month."
+},
+"why_en": "毎日 means every day without a break."
 },
 "usage": {
 "options": [
@@ -8424,7 +10751,20 @@
 "図書館"
 ],
 "answer": 1,
-"why": "交番 is a small police box."
+"why": "交番 is a small police box.",
+"en": "I lost my wallet, so I reported it to the police.",
+"opts_en": [
+"hospital",
+"police box",
+"bank",
+"library"
+],
+"wrong": {
+"0": "病院 is a hospital.",
+"2": "銀行 is a bank.",
+"3": "図書館 is a library."
+},
+"why_en": "交番 is a small police box, where you report lost things."
 },
 "usage": {
 "options": [
@@ -8471,7 +10811,20 @@
 "決まる"
 ],
 "answer": 2,
-"why": "開かれる means an event is held (行われる)."
+"why": "開かれる means an event is held (行われる).",
+"en": "Next month a concert will be held in front of the station.",
+"opts_en": [
+"end",
+"be canceled",
+"be held",
+"be decided"
+],
+"wrong": {
+"0": "終わる means to end.",
+"1": "中止 means canceled, the opposite.",
+"3": "決まる means to be decided."
+},
+"why_en": "開かれる means an event is held (行われる)."
 },
 "usage": {
 "options": [
@@ -8518,7 +10871,20 @@
 "早くして"
 ],
 "answer": 3,
-"why": "急ぐ means to hurry (do it quickly)."
+"why": "急ぐ means to hurry (do it quickly).",
+"en": "There's no time, so please hurry.",
+"opts_en": [
+"take your time",
+"wait",
+"rest",
+"do it quickly"
+],
+"wrong": {
+"0": "ゆっくり means slowly, the opposite.",
+"1": "待つ means to wait.",
+"2": "休む means to rest."
+},
+"why_en": "急ぐ means to hurry (do it quickly)."
 },
 "usage": {
 "options": [
@@ -8565,7 +10931,20 @@
 "小さい"
 ],
 "answer": 0,
-"why": "古い means old, not new."
+"why": "古い means old, not new.",
+"en": "These shoes are already old.",
+"opts_en": [
+"not new",
+"new",
+"young",
+"small"
+],
+"wrong": {
+"1": "新しい means new, the opposite.",
+"2": "若い is for people's age, not things.",
+"3": "小さい means small."
+},
+"why_en": "古い means old, i.e. not new."
 },
 "usage": {
 "options": [
@@ -8612,7 +10991,20 @@
 "遊んで"
 ],
 "answer": 1,
-"why": "寝る means to sleep."
+"why": "寝る means to sleep.",
+"en": "The baby is sleeping soundly.",
+"opts_en": [
+"awake",
+"sleeping",
+"crying",
+"playing"
+],
+"wrong": {
+"0": "起きる means awake, the opposite.",
+"2": "なく means crying.",
+"3": "遊ぶ means playing."
+},
+"why_en": "寝る means to sleep, like 眠る."
 },
 "usage": {
 "options": [
@@ -8659,7 +11051,20 @@
 "子供のころ"
 ],
 "answer": 2,
-"why": "このごろ means \"these days\"."
+"why": "このごろ means \"these days\".",
+"en": "Recently there are many new shops near the station.",
+"opts_en": [
+"long ago",
+"next year",
+"these days",
+"childhood"
+],
+"wrong": {
+"0": "昔 means long ago.",
+"1": "来年 means next year.",
+"3": "子供のころ means in childhood."
+},
+"why_en": "このごろ means 'these days'."
 },
 "usage": {
 "options": [
@@ -8706,7 +11111,20 @@
 "冬に空から降る白いもの"
 ],
 "answer": 3,
-"why": "雪 is the white thing that falls in winter."
+"why": "雪 is the white thing that falls in winter.",
+"en": "The mountain turned white with snow.",
+"opts_en": [
+"heavy summer rain",
+"red autumn leaves",
+"spring flowers",
+"white stuff that falls in winter"
+],
+"wrong": {
+"0": "Rain doesn't make it white.",
+"1": "Red leaves make it red.",
+"2": "Flowers are spring, not snow."
+},
+"why_en": "雪 is the white thing that falls from the sky in winter."
 },
 "usage": {
 "options": [
@@ -8753,7 +11171,20 @@
 "もし"
 ],
 "answer": 0,
-"why": "きっと 〜てください means \"be sure to\"."
+"why": "きっと 〜てください means \"be sure to\".",
+"en": "Please be sure to come tomorrow.",
+"opts_en": [
+"surely",
+"probably",
+"sometimes",
+"if"
+],
+"wrong": {
+"1": "たぶん means probably.",
+"2": "時々 means sometimes.",
+"3": "もし means if."
+},
+"why_en": "きっと〜てください means 'be sure to', like 必ず."
 },
 "usage": {
 "options": [
@@ -8800,7 +11231,20 @@
 "冷たい"
 ],
 "answer": 1,
-"why": "はげしい means violent / intense."
+"why": "はげしい means violent / intense.",
+"en": "The wind is strong today.",
+"opts_en": [
+"weak",
+"violent",
+"quiet",
+"cold"
+],
+"wrong": {
+"0": "よわい means weak, the opposite.",
+"2": "静かだ means calm/quiet, the opposite of a strong wind.",
+"3": "冷たい means cold, which is about temperature, not strength."
+},
+"why_en": "はげしい means violent or intense, like a strong wind."
 },
 "usage": {
 "options": [
@@ -8847,7 +11291,20 @@
 "作った"
 ],
 "answer": 2,
-"why": "発送する means to send (a package)."
+"why": "発送する means to send (a package).",
+"en": "I sent a package to my mother.",
+"opts_en": [
+"received",
+"opened",
+"shipped",
+"made"
+],
+"wrong": {
+"0": "受け取る means received, the opposite.",
+"1": "開ける means opened.",
+"3": "作る means made."
+},
+"why_en": "発送する means to send (a package)."
 },
 "usage": {
 "options": [
@@ -8894,7 +11351,20 @@
 "ガラスど"
 ],
 "answer": 3,
-"why": "A window is like a glass door that opens to let air in."
+"why": "A window is like a glass door that opens to let air in.",
+"en": "Let's open the window and let in fresh air.",
+"opts_en": [
+"wall",
+"floor",
+"roof",
+"glass door"
+],
+"wrong": {
+"0": "かべ is a wall; it doesn't open.",
+"1": "ゆか is the floor.",
+"2": "やね is the roof."
+},
+"why_en": "A window is like a glass door that opens to let air in."
 },
 "usage": {
 "options": [
@@ -8941,7 +11411,20 @@
 "先生の話"
 ],
 "answer": 0,
-"why": "宿題 is study you do at home."
+"why": "宿題 is study you do at home.",
+"en": "I forgot my homework and was scolded by the teacher.",
+"opts_en": [
+"study done at home",
+"school exam",
+"club practice",
+"teacher's talk"
+],
+"wrong": {
+"1": "That is an exam.",
+"2": "That is club practice.",
+"3": "That is a lecture."
+},
+"why_en": "宿題 is study you do at home."
 },
 "usage": {
 "options": [
@@ -8988,7 +11471,20 @@
 "風がない"
 ],
 "answer": 1,
-"why": "寒い means the temperature is low."
+"why": "寒い means the temperature is low.",
+"en": "It's very cold this morning.",
+"opts_en": [
+"temperature is high",
+"temperature is low",
+"lots of rain",
+"no wind"
+],
+"wrong": {
+"0": "That is hot, the opposite.",
+"2": "雨が多い is about rain.",
+"3": "風がない is about wind."
+},
+"why_en": "寒い means the temperature is low."
 },
 "usage": {
 "options": [
@@ -9035,7 +11531,20 @@
 "上"
 ],
 "answer": 2,
-"why": "方 here means direction (方向)."
+"why": "方 here means direction (方向).",
+"en": "I walked toward the station.",
+"opts_en": [
+"inside",
+"in front",
+"direction",
+"above"
+],
+"wrong": {
+"0": "中 means inside.",
+"1": "前 means in front.",
+"3": "上 means above."
+},
+"why_en": "方 here means direction (方向)."
 },
 "usage": {
 "options": [
@@ -9082,7 +11591,20 @@
 "ご飯"
 ],
 "answer": 3,
-"why": "ご飯 can mean a meal."
+"why": "ご飯 can mean a meal.",
+"en": "Please take the medicine after meals.",
+"opts_en": [
+"exercise",
+"work",
+"walk",
+"meal"
+],
+"wrong": {
+"0": "運動 is exercise.",
+"1": "仕事 is work.",
+"2": "散歩 is a walk."
+},
+"why_en": "ご飯 can mean a meal."
 },
 "usage": {
 "options": [
@@ -9129,7 +11651,20 @@
 "送った"
 ],
 "answer": 0,
-"why": "声をかける means to call out to someone."
+"why": "声をかける means to call out to someone.",
+"en": "My mother called me from the kitchen.",
+"opts_en": [
+"called out to",
+"waited",
+"looked",
+"sent"
+],
+"wrong": {
+"1": "待つ means waited.",
+"2": "見る means looked.",
+"3": "送る means sent."
+},
+"why_en": "声をかける means to call out to someone."
 },
 "usage": {
 "options": [
@@ -9176,7 +11711,20 @@
 "一つだけ"
 ],
 "answer": 1,
-"why": "全部 means all, leaving nothing."
+"why": "全部 means all, leaving nothing.",
+"en": "I ate all the snacks.",
+"opts_en": [
+"only a little",
+"without leaving any",
+"half",
+"only one"
+],
+"wrong": {
+"0": "少しだけ means only a little.",
+"2": "半分 means half.",
+"3": "一つだけ means only one."
+},
+"why_en": "全部 means all, leaving nothing."
 },
 "usage": {
 "options": [
@@ -9223,7 +11771,20 @@
 "町"
 ],
 "answer": 2,
-"why": "A mountain is a high place."
+"why": "A mountain is a high place.",
+"en": "On the weekend I climbed a mountain.",
+"opts_en": [
+"sea",
+"river",
+"high place",
+"town"
+],
+"wrong": {
+"0": "海 is the sea.",
+"1": "川 is a river.",
+"3": "町 is a town."
+},
+"why_en": "A mountain is a high place."
 },
 "usage": {
 "options": [
@@ -9270,7 +11831,20 @@
 "気をつけて"
 ],
 "answer": 3,
-"why": "注意する means to be careful (気をつける)."
+"why": "注意する means to be careful (気をつける).",
+"en": "Please watch out for cars when crossing the road.",
+"opts_en": [
+"get in",
+"stop",
+"drive",
+"be careful"
+],
+"wrong": {
+"0": "乗る means to ride in the car.",
+"1": "止める means to stop the car.",
+"2": "運転する means to drive."
+},
+"why_en": "注意する means to be careful (気をつける)."
 },
 "usage": {
 "options": [
@@ -9317,7 +11891,20 @@
 "急に怒りだした"
 ],
 "answer": 0,
-"why": "「笑う」はおもしろくて楽しそうに声を出すこと。"
+"why": "「笑う」はおもしろくて楽しそうに声を出すこと。",
+"en": "Hearing my brother's funny story, the whole family laughed.",
+"opts_en": [
+"made a happy sound",
+"cried loudly",
+"listened quietly",
+"suddenly got angry"
+],
+"wrong": {
+"1": "大きな声でなく means to cry loudly.",
+"2": "Listening quietly is not laughing.",
+"3": "怒る means getting angry."
+},
+"why_en": "笑う means to make a happy sound because something is funny."
 },
 "usage": {
 "options": [
@@ -9364,7 +11951,20 @@
 "昼ごはんの前"
 ],
 "answer": 1,
-"why": "「午後」は昼の十二時から後の時間。"
+"why": "「午後」は昼の十二時から後の時間。",
+"en": "Tomorrow afternoon I plan to go to the hospital.",
+"opts_en": [
+"early morning",
+"after lunch",
+"late at night",
+"before lunch"
+],
+"wrong": {
+"0": "朝早く is early morning.",
+"2": "夜おそく is late at night.",
+"3": "昼ごはんの前 is morning."
+},
+"why_en": "午後 is the time after noon."
 },
 "usage": {
 "options": [
@@ -9411,7 +12011,20 @@
 "調べました"
 ],
 "answer": 2,
-"why": "「決める」＝いくつかの中から一つにする＝「決定する」。"
+"why": "「決める」＝いくつかの中から一つにする＝「決定する」。",
+"en": "Have you already decided where to go for summer vacation?",
+"opts_en": [
+"consulted",
+"asked",
+"decided (formal)",
+"looked into"
+],
+"wrong": {
+"0": "相談する means to discuss.",
+"1": "聞く means to ask.",
+"3": "調べる means to look into."
+},
+"why_en": "決める means choosing one option, i.e. 決定する."
 },
 "usage": {
 "options": [
@@ -9458,7 +12071,20 @@
 "似合って"
 ],
 "answer": 3,
-"why": "服が人に「合う」＝「似合う」。「似ている」は形や顔が同じように見えること。"
+"why": "服が人に「合う」＝「似合う」。「似ている」は形や顔が同じように見えること。",
+"en": "Those clothes really suit you.",
+"opts_en": [
+"resemble",
+"wait",
+"meet",
+"suit"
+],
+"wrong": {
+"0": "似ている means looks similar, not suits.",
+"1": "待つ means to wait.",
+"2": "会う means to meet."
+},
+"why_en": "Clothes 合う a person means they 似合う (suit) them; 似ている means looking alike."
 },
 "usage": {
 "options": [
@@ -9505,7 +12131,20 @@
 "うるさい"
 ],
 "answer": 0,
-"why": "「危険」＝「あぶない」。"
+"why": "「危険」＝「あぶない」。",
+"en": "This river is deep and dangerous, so please don't swim.",
+"opts_en": [
+"dangerous",
+"dirty",
+"cold",
+"noisy"
+],
+"wrong": {
+"1": "きたない means dirty.",
+"2": "つめたい means cold.",
+"3": "うるさい means noisy."
+},
+"why_en": "危険 means the same as あぶない."
 },
 "usage": {
 "options": [
@@ -9552,7 +12191,20 @@
 "学校の中"
 ],
 "answer": 1,
-"why": "「世界」は地球の上のすべての国のこと。"
+"why": "「世界」は地球の上のすべての国のこと。",
+"en": "There are still many countries in the world I don't know.",
+"opts_en": [
+"this town",
+"on the earth",
+"inside Japan",
+"inside the school"
+],
+"wrong": {
+"0": "この町 is just one town, not the whole world.",
+"2": "日本の中 is only inside Japan; 世界 has many countries.",
+"3": "学校の中 means inside the school, far too small."
+},
+"why_en": "世界 means all the countries on the earth."
 },
 "usage": {
 "options": [
@@ -9599,7 +12251,20 @@
 "予定"
 ],
 "answer": 2,
-"why": "「いい点」＝「いいところ」。"
+"why": "「いい点」＝「いいところ」。",
+"en": "This plan has many good points.",
+"opts_en": [
+"time",
+"reason",
+"aspect/point",
+"schedule"
+],
+"wrong": {
+"0": "時間 is time.",
+"1": "理由 is a reason.",
+"3": "予定 is a schedule."
+},
+"why_en": "いい点 means the same as いいところ."
 },
 "usage": {
 "options": [
@@ -9646,7 +12311,20 @@
 "空の様子"
 ],
 "answer": 3,
-"why": "「天気」は晴れ・雨など空の様子のこと。"
+"why": "「天気」は晴れ・雨など空の様子のこと。",
+"en": "If the weather is good tomorrow, let's go to the sea.",
+"opts_en": [
+"feelings",
+"physical condition",
+"state of work",
+"state of the sky"
+],
+"wrong": {
+"0": "気持ち means feelings.",
+"1": "体の調子 means health condition.",
+"2": "仕事の様子 means how work is going."
+},
+"why_en": "天気 means the state of the sky: sunny, rainy, etc."
 },
 "usage": {
 "options": [
@@ -9693,7 +12371,20 @@
 "残って"
 ],
 "answer": 0,
-"why": "「答えが違う」＝「まちがっている」。"
+"why": "「答えが違う」＝「まちがっている」。",
+"en": "I think this answer is wrong.",
+"opts_en": [
+"mistaken",
+"correct",
+"decided",
+"left over"
+],
+"wrong": {
+"1": "合っている means correct, the opposite.",
+"2": "決まっている means decided.",
+"3": "残っている means remaining."
+},
+"why_en": "答えが違う means the answer is まちがっている (wrong)."
 },
 "usage": {
 "options": [
@@ -9740,7 +12431,20 @@
 "子どものための絵本"
 ],
 "answer": 1,
-"why": "「辞書」は言葉の意味や読み方を調べる本。"
+"why": "「辞書」は言葉の意味や読み方を調べる本。",
+"en": "Please look up words you don't know in a dictionary.",
+"opts_en": [
+"book with many photos",
+"book with word meanings",
+"cookbook",
+"picture book for kids"
+],
+"wrong": {
+"0": "That is a photo book.",
+"2": "That is a cookbook.",
+"3": "That is a picture book."
+},
+"why_en": "辞書 is a book for looking up meanings and readings of words."
 },
 "usage": {
 "options": [
@@ -9787,7 +12491,20 @@
 "お休み"
 ],
 "answer": 2,
-"why": "いすに「掛ける」＝「座る」。"
+"why": "いすに「掛ける」＝「座る」。",
+"en": "Please have a seat here.",
+"opts_en": [
+"wait",
+"come in",
+"sit",
+"rest"
+],
+"wrong": {
+"0": "お待ちください means please wait.",
+"1": "お入りください means please come in.",
+"3": "お休みください means please rest."
+},
+"why_en": "いすに掛ける means to sit (座る)."
 },
 "usage": {
 "options": [
@@ -9834,7 +12551,20 @@
 "家内"
 ],
 "answer": 3,
-"why": "「妻」＝自分のけっこん相手の女性＝「家内」。"
+"why": "「妻」＝自分のけっこん相手の女性＝「家内」。",
+"en": "My wife gets up early every morning and goes to work.",
+"opts_en": [
+"daughter",
+"older sister",
+"mother",
+"my wife"
+],
+"wrong": {
+"0": "娘 is a daughter.",
+"1": "姉 is an older sister.",
+"2": "母 is mother."
+},
+"why_en": "妻 is the woman you're married to, also called 家内."
 },
 "usage": {
 "options": [
@@ -9881,7 +12611,20 @@
 "心"
 ],
 "answer": 0,
-"why": "「体を大切にする」＝「けんこうを大切にする」。"
+"why": "「体を大切にする」＝「けんこうを大切にする」。",
+"en": "Exercise every day and take care of your body.",
+"opts_en": [
+"health",
+"time",
+"money",
+"heart"
+],
+"wrong": {
+"1": "時間 is time.",
+"2": "お金 is money.",
+"3": "心 is the heart/mind."
+},
+"why_en": "体を大切にする means the same as けんこうを大切にする."
 },
 "usage": {
 "options": [
@@ -9928,7 +12671,20 @@
 "とても喜んだ"
 ],
 "answer": 1,
-"why": "「反対する」＝「それはよくない、だめだ」と言うこと。"
+"why": "「反対する」＝「それはよくない、だめだ」と言うこと。",
+"en": "My father opposed my moving abroad.",
+"opts_en": [
+"thought carefully",
+"said no",
+"paid",
+"was very happy"
+],
+"wrong": {
+"0": "よく考える means thought carefully.",
+"2": "お金を出す means paid.",
+"3": "喜ぶ means was happy, the opposite."
+},
+"why_en": "反対する means saying 'that's not good, no'."
 },
 "usage": {
 "options": [
@@ -9975,7 +12731,20 @@
 "安心して"
 ],
 "answer": 2,
-"why": "「心配する」＝悪いことが起こらないかと「気にする」。"
+"why": "「心配する」＝悪いことが起こらないかと「気にする」。",
+"en": "The child is late coming home, so the mother is worried.",
+"opts_en": [
+"is glad",
+"is laughing",
+"is concerned",
+"is relieved"
+],
+"wrong": {
+"0": "喜ぶ means to be happy.",
+"1": "笑う means to laugh.",
+"3": "安心 means relieved, the opposite."
+},
+"why_en": "心配する means to worry that something bad will happen (気にする)."
 },
 "usage": {
 "options": [
@@ -10022,7 +12791,20 @@
 "土曜日の次の日"
 ],
 "answer": 3,
-"why": "「日曜日」は土曜日の次の日。"
+"why": "「日曜日」は土曜日の次の日。",
+"en": "I'm off work on Sunday.",
+"opts_en": [
+"the day before Saturday",
+"the day after Monday",
+"the day after Friday",
+"the day after Saturday"
+],
+"wrong": {
+"0": "That is Friday.",
+"1": "That is Tuesday.",
+"2": "That is Saturday."
+},
+"why_en": "日曜日 is the day after Saturday."
 },
 "usage": {
 "options": [
@@ -10069,7 +12851,20 @@
 "ときどき"
 ],
 "answer": 0,
-"why": "「最初」＝「はじめ」。"
+"why": "「最初」＝「はじめ」。",
+"en": "At first, I didn't understand Japanese at all.",
+"opts_en": [
+"the beginning",
+"the end",
+"always",
+"sometimes"
+],
+"wrong": {
+"1": "最後 is the end, the opposite.",
+"2": "いつも means always.",
+"3": "ときどき means sometimes."
+},
+"why_en": "最初 means the same as はじめ (the beginning)."
 },
 "usage": {
 "options": [
@@ -10116,7 +12911,20 @@
 "失敗した"
 ],
 "answer": 1,
-"why": "「成功する」＝「うまくいく」。"
+"why": "「成功する」＝「うまくいく」。",
+"en": "The new plan succeeded.",
+"opts_en": [
+"was canceled",
+"went well",
+"just started",
+"failed"
+],
+"wrong": {
+"0": "中止 means canceled.",
+"2": "始まったばかり means it just started.",
+"3": "失敗 means failed, the opposite."
+},
+"why_en": "成功する means the same as うまくいく."
 },
 "usage": {
 "options": [
@@ -10163,7 +12971,20 @@
 "飲み物"
 ],
 "answer": 2,
-"why": "「動物」は犬やねこなどの「生き物」。"
+"why": "「動物」は犬やねこなどの「生き物」。",
+"en": "My daughter loves animals and keeps a dog and a cat.",
+"opts_en": [
+"food",
+"vehicles",
+"living things",
+"drinks"
+],
+"wrong": {
+"0": "食べ物 is food.",
+"1": "乗り物 are vehicles.",
+"3": "飲み物 are drinks."
+},
+"why_en": "動物 are living things (生き物) like dogs and cats."
 },
 "usage": {
 "options": [
@@ -10210,7 +13031,20 @@
 "昨日の夜"
 ],
 "answer": 3,
-"why": "「昨夜(ゆうべ)」＝昨日の夜。"
+"why": "「昨夜(ゆうべ)」＝昨日の夜。",
+"en": "Last night I studied until late.",
+"opts_en": [
+"tonight",
+"tomorrow night",
+"yesterday morning",
+"last night"
+],
+"wrong": {
+"0": "今日の夜 is tonight.",
+"1": "明日の夜 is tomorrow night.",
+"2": "昨日の朝 is yesterday morning."
+},
+"why_en": "昨夜 (ゆうべ) means 昨日の夜."
 },
 "usage": {
 "options": [
@@ -10257,7 +13091,20 @@
 "次の月"
 ],
 "answer": 0,
-"why": "月の「頭」＝月の「はじめ」。"
+"why": "月の「頭」＝月の「はじめ」。",
+"en": "I plan to move at the start of next month.",
+"opts_en": [
+"beginning",
+"end",
+"middle",
+"the following month"
+],
+"wrong": {
+"1": "終わり means end, the opposite.",
+"2": "中ごろ means the middle.",
+"3": "次の月 is the month after."
+},
+"why_en": "月の頭 means the beginning of the month."
 },
 "usage": {
 "options": [
@@ -10304,7 +13151,20 @@
 "教えて"
 ],
 "answer": 1,
-"why": "「質問する」＝わからないことを「聞く」。"
+"why": "「質問する」＝わからないことを「聞く」。",
+"en": "If there's something you don't understand, please ask the teacher.",
+"opts_en": [
+"answer",
+"ask",
+"show",
+"teach"
+],
+"wrong": {
+"0": "答える means to answer, the opposite.",
+"2": "見せる means to show.",
+"3": "教える means to teach, the teacher's role."
+},
+"why_en": "質問する means to ask (聞く) about what you don't understand."
 },
 "usage": {
 "options": [
@@ -10351,7 +13211,20 @@
 "小さい"
 ],
 "answer": 2,
-"why": "「有名」＝多くの人に「よく知られている」。"
+"why": "「有名」＝多くの人に「よく知られている」。",
+"en": "This shop is famous for its delicious cake.",
+"opts_en": [
+"expensive",
+"new",
+"well-known",
+"small"
+],
+"wrong": {
+"0": "高い means expensive.",
+"1": "新しい means new.",
+"3": "小さい means small."
+},
+"why_en": "有名 means well known by many people."
 },
 "usage": {
 "options": [
@@ -10398,7 +13271,20 @@
 "食事を作ること"
 ],
 "answer": 3,
-"why": "「料理」は食べ物を作ること。"
+"why": "「料理」は食べ物を作ること。",
+"en": "My father is good at cooking.",
+"opts_en": [
+"drawing",
+"singing",
+"writing characters",
+"making meals"
+],
+"wrong": {
+"0": "That is drawing.",
+"1": "That is singing.",
+"2": "That is handwriting."
+},
+"why_en": "料理 means making food."
 },
 "usage": {
 "options": [
@@ -10445,7 +13331,20 @@
 "相手と同じ点だった"
 ],
 "answer": 0,
-"why": "「勝つ」は相手より強くて、いいけっかになること。"
+"why": "「勝つ」は相手より強くて、いいけっかになること。",
+"en": "Our team won yesterday's game.",
+"opts_en": [
+"scored more than the other team",
+"lost to them",
+"didn't play",
+"tied"
+],
+"wrong": {
+"1": "負ける means lost, the opposite.",
+"2": "出なかった means didn't play.",
+"3": "同じ点 means a tie."
+},
+"why_en": "勝つ means getting a better result than the opponent."
 },
 "usage": {
 "options": [
@@ -10492,7 +13391,20 @@
 "母"
 ],
 "answer": 1,
-"why": "「娘」は自分の女の子ども。"
+"why": "「娘」は自分の女の子ども。",
+"en": "My daughter became a university student this year.",
+"opts_en": [
+"our boy",
+"our girl",
+"my wife",
+"mother"
+],
+"wrong": {
+"0": "男の子 is a son.",
+"2": "家内 is one's wife.",
+"3": "母 is mother."
+},
+"why_en": "娘 is one's female child."
 },
 "usage": {
 "options": [
@@ -10539,7 +13451,20 @@
 "年下の女のきょうだい"
 ],
 "answer": 2,
-"why": "「兄」は自分より年上の男のきょうだい。"
+"why": "「兄」は自分より年上の男のきょうだい。",
+"en": "My older brother works at a bank.",
+"opts_en": [
+"younger brother",
+"older sister",
+"older brother",
+"younger sister"
+],
+"wrong": {
+"0": "That is 弟.",
+"1": "That is 姉.",
+"3": "That is 妹."
+},
+"why_en": "兄 is a male sibling older than you."
 },
 "usage": {
 "options": [
@@ -10586,7 +13511,20 @@
 "一年でいちばんあついきせつ"
 ],
 "answer": 3,
-"why": "「夏」は一年でいちばんあついきせつ。"
+"why": "「夏」は一年でいちばんあついきせつ。",
+"en": "Every summer I go to the sea to swim.",
+"opts_en": [
+"coldest season",
+"season flowers start blooming",
+"season leaves turn red",
+"hottest season"
+],
+"wrong": {
+"0": "That is winter.",
+"1": "That is spring.",
+"2": "That is autumn."
+},
+"why_en": "夏 is the hottest season of the year."
 },
 "usage": {
 "options": [
@@ -10633,7 +13571,20 @@
 "ないた"
 ],
 "answer": 0,
-"why": "子どもに「怒る」＝「しかる」。"
+"why": "子どもに「怒る」＝「しかる」。",
+"en": "I didn't do my homework, so my mother got angry.",
+"opts_en": [
+"scolded",
+"praised",
+"laughed",
+"cried"
+],
+"wrong": {
+"1": "ほめる means praised, the opposite.",
+"2": "笑う means laughed.",
+"3": "なく means cried."
+},
+"why_en": "Getting angry at a child (怒る) means scolding (しかる)."
 },
 "usage": {
 "options": [
@@ -10680,7 +13631,20 @@
 "友だちからの手紙"
 ],
 "answer": 1,
-"why": "「新聞」は毎日のニュースを伝える紙。"
+"why": "「新聞」は毎日のニュースを伝える紙。",
+"en": "My father reads the newspaper every morning before going out.",
+"opts_en": [
+"book with lots of photos",
+"paper with news written on it",
+"cookbook",
+"letter from a friend"
+],
+"wrong": {
+"0": "That is a photo book.",
+"2": "That is a cookbook.",
+"3": "That is a letter."
+},
+"why_en": "新聞 is paper that brings each day's news."
 },
 "usage": {
 "options": [
@@ -10727,7 +13691,20 @@
 "終わります"
 ],
 "answer": 2,
-"why": "会議に「出席する」＝会議に「出る」。"
+"why": "会議に「出席する」＝会議に「出る」。",
+"en": "I will attend tomorrow's meeting.",
+"opts_en": [
+"be absent",
+"be late",
+"attend",
+"end"
+],
+"wrong": {
+"0": "休む means be absent, the opposite.",
+"1": "遅れる means be late.",
+"3": "終わる means end."
+},
+"why_en": "会議に出席する means the same as 会議に出る."
 },
 "usage": {
 "options": [
@@ -10774,7 +13751,20 @@
 "わけ"
 ],
 "answer": 3,
-"why": "「理由」＝「わけ」。"
+"why": "「理由」＝「わけ」。",
+"en": "Please tell me the reason you quit the company.",
+"opts_en": [
+"day",
+"place",
+"time",
+"reason"
+],
+"wrong": {
+"0": "日 is a day.",
+"1": "場所 is a place.",
+"2": "時間 is time."
+},
+"why_en": "理由 means the same as わけ."
 },
 "usage": {
 "options": [
@@ -10821,7 +13811,20 @@
 "これから"
 ],
 "answer": 0,
-"why": "「昔」＝「ずっと前」。"
+"why": "「昔」＝「ずっと前」。",
+"en": "Long ago there was a big forest in this town.",
+"opts_en": [
+"long ago",
+"recently",
+"now",
+"from now on"
+],
+"wrong": {
+"1": "最近 means recently.",
+"2": "今 means now.",
+"3": "これから means from now on."
+},
+"why_en": "昔 means the same as ずっと前."
 },
 "usage": {
 "options": [
@@ -10868,7 +13871,20 @@
 "手に入ってくる"
 ],
 "answer": 1,
-"why": "「聞こえる」＝音が自然に「耳に入ってくる」。"
+"why": "「聞こえる」＝音が自然に「耳に入ってくる」。",
+"en": "I can hear a piano from the next room.",
+"opts_en": [
+"comes into the eyes",
+"comes into the ears",
+"comes into the mouth",
+"comes into the hands"
+],
+"wrong": {
+"0": "目に入る is seeing, not hearing.",
+"2": "口に入る means something goes in the mouth.",
+"3": "手に入る means to obtain something."
+},
+"why_en": "聞こえる means a sound naturally comes into your ears (耳に入ってくる)."
 },
 "usage": {
 "options": [
@@ -10915,7 +13931,20 @@
 "頭がいい人"
 ],
 "answer": 2,
-"why": "「金持ち」はお金をたくさん持っている人。"
+"why": "「金持ち」はお金をたくさん持っている人。",
+"en": "The person next door is rich.",
+"opts_en": [
+"person with no money",
+"strong person",
+"person with lots of money",
+"smart person"
+],
+"wrong": {
+"0": "That is a poor person, the opposite.",
+"1": "That is a strong person.",
+"3": "That is a smart person."
+},
+"why_en": "金持ち is a person with a lot of money."
 },
 "usage": {
 "options": [
@@ -10962,7 +13991,20 @@
 "だれでも遊べる広い場所"
 ],
 "answer": 3,
-"why": "「公園」は人が遊んだり休んだりする広い場所。"
+"why": "「公園」は人が遊んだり休んだりする広い場所。",
+"en": "The children are playing in the park.",
+"opts_en": [
+"shop",
+"place to borrow books",
+"place to treat illness",
+"open space anyone can play"
+],
+"wrong": {
+"0": "That is a shop.",
+"1": "That is a library.",
+"2": "That is a hospital."
+},
+"why_en": "公園 is a wide space where people play or rest."
 },
 "usage": {
 "options": [
@@ -11009,7 +14051,20 @@
 "先生に聞いた"
 ],
 "answer": 0,
-"why": "「覚える」＝習ったことを頭に入れて忘れないこと。"
+"why": "「覚える」＝習ったことを頭に入れて忘れないこと。",
+"en": "Today I memorized ten new kanji.",
+"opts_en": [
+"put in my head so as not to forget",
+"tried writing",
+"forgot",
+"asked the teacher"
+],
+"wrong": {
+"1": "Writing them isn't necessarily memorizing.",
+"2": "忘れる means forgot, the opposite.",
+"3": "Asking the teacher is not memorizing."
+},
+"why_en": "覚える means putting what you learned in your head so you don't forget it."
 },
 "usage": {
 "options": [
@@ -11056,7 +14111,20 @@
 "曲をピアノでひいた"
 ],
 "answer": 1,
-"why": "「歌う」は曲に合わせて声を出すこと。"
+"why": "「歌う」は曲に合わせて声を出すこと。",
+"en": "At karaoke, I sang my favorite song.",
+"opts_en": [
+"danced to the song",
+"voiced along with the song",
+"listened silently",
+"played it on piano"
+],
+"wrong": {
+"0": "おどる means dance.",
+"2": "だまって聞く means listening silently.",
+"3": "ピアノでひく means playing piano."
+},
+"why_en": "歌う means making your voice follow a tune."
 },
 "usage": {
 "options": [
@@ -11103,7 +14171,20 @@
 "だいたい"
 ],
 "answer": 2,
-"why": "「全く〜ない」＝「全然〜ない」。"
+"why": "「全く〜ない」＝「全然〜ない」。",
+"en": "I don't understand what he's saying at all.",
+"opts_en": [
+"a little",
+"sometimes",
+"(not) at all",
+"roughly"
+],
+"wrong": {
+"0": "少し means a little.",
+"1": "時々 means sometimes.",
+"3": "だいたい means roughly."
+},
+"why_en": "全く〜ない means the same as 全然〜ない."
 },
 "usage": {
 "options": [
@@ -11151,7 +14232,20 @@
 "人と決めたこと"
 ],
 "answer": 3,
-"why": "「約束」は人と前もって「必ずする」と決めたこと。"
+"why": "「約束」は人と前もって「必ずする」と決めたこと。",
+"en": "He always keeps his promises.",
+"opts_en": [
+"house",
+"secret",
+"child",
+"thing decided with someone"
+],
+"wrong": {
+"0": "家 is a house.",
+"1": "ひみつ is a secret; 'keep a secret' is different.",
+"2": "子ども is a child."
+},
+"why_en": "約束 is something you decided with someone in advance that you will do."
 },
 "usage": {
 "options": [
@@ -11198,7 +14292,20 @@
 "まちがっている"
 ],
 "answer": 0,
-"why": "「正しい」＝「まちがっていない」。"
+"why": "「正しい」＝「まちがっていない」。",
+"en": "Choose the correct one from the following sentences.",
+"opts_en": [
+"not wrong",
+"long",
+"new",
+"wrong"
+],
+"wrong": {
+"1": "長い means long.",
+"2": "新しい means new.",
+"3": "まちがっている means wrong, the opposite."
+},
+"why_en": "正しい means the same as まちがっていない."
 },
 "usage": {
 "options": [
@@ -11245,7 +14352,20 @@
 "光"
 ],
 "answer": 1,
-"why": "窓から入ってくるすずしい「風」＝動いている「空気」。"
+"why": "窓から入ってくるすずしい「風」＝動いている「空気」。",
+"en": "When I opened the window, a cool breeze came in.",
+"opts_en": [
+"rain",
+"air",
+"sound",
+"light"
+],
+"wrong": {
+"0": "雨 is rain.",
+"2": "音 is sound.",
+"3": "光 is light."
+},
+"why_en": "A cool 風 coming in the window is moving air (空気)."
 },
 "usage": {
 "options": [
@@ -11292,7 +14412,20 @@
 "写真をとった"
 ],
 "answer": 2,
-"why": "山に「登る」＝山の上へ「上がる」。"
+"why": "山に「登る」＝山の上へ「上がる」。",
+"en": "On the weekend, my family climbed a mountain.",
+"opts_en": [
+"went down",
+"went to see",
+"went up",
+"took photos"
+],
+"wrong": {
+"0": "下りる means to go down.",
+"1": "見に行く means only to go see it.",
+"3": "写真をとる means to take photos."
+},
+"why_en": "山に登る means to go up (上がる) the mountain."
 },
 "usage": {
 "options": [
@@ -11339,7 +14472,20 @@
 "男の子"
 ],
 "answer": 3,
-"why": "「少年」はまだ大人になっていない男の子。"
+"why": "「少年」はまだ大人になっていない男の子。",
+"en": "Boys were playing soccer in the park.",
+"opts_en": [
+"girls",
+"adults",
+"old men",
+"boys"
+],
+"wrong": {
+"0": "女の子 are girls.",
+"1": "大人 are adults.",
+"2": "おじいさん are old men."
+},
+"why_en": "少年 is a boy who is not yet an adult."
 },
 "usage": {
 "options": [
@@ -11386,7 +14532,20 @@
 "海を進む乗り物"
 ],
 "answer": 0,
-"why": "「自転車」は足で動かして乗る、車が二つある乗り物。"
+"why": "「自転車」は足で動かして乗る、車が二つある乗り物。",
+"en": "I go to school by bicycle every day.",
+"opts_en": [
+"vehicle you move with your feet",
+"long electric vehicle",
+"vehicle that flies",
+"vehicle that crosses the sea"
+],
+"wrong": {
+"1": "That is a train.",
+"2": "That is a plane.",
+"3": "That is a ship."
+},
+"why_en": "自転車 is a two-wheeled vehicle you power with your feet."
 },
 "usage": {
 "options": [
@@ -11434,7 +14593,20 @@
 "ぜんぜん"
 ],
 "answer": 1,
-"why": "「時々」＝「たまに」。"
+"why": "「時々」＝「たまに」。",
+"en": "I sometimes take walks in the nearby park.",
+"opts_en": [
+"every day",
+"occasionally",
+"always",
+"never"
+],
+"wrong": {
+"0": "毎日 means every day.",
+"2": "いつも means always.",
+"3": "ぜんぜん means never/not at all."
+},
+"why_en": "時々 means the same as たまに."
 },
 "usage": {
 "options": [
@@ -11481,7 +14653,20 @@
 "土の中にいる小さな生き物"
 ],
 "answer": 2,
-"why": "「鳥」ははねがあって空を飛ぶ生き物。"
+"why": "「鳥」ははねがあって空を飛ぶ生き物。",
+"en": "In the morning, birds were singing in the garden.",
+"opts_en": [
+"creature that swims in water",
+"creature that walks on four legs",
+"creature that flies in the sky",
+"small creature in the soil"
+],
+"wrong": {
+"0": "That is a fish.",
+"1": "That is an animal like a dog.",
+"3": "That is a worm or insect."
+},
+"why_en": "鳥 is a creature with wings that flies in the sky."
 },
 "usage": {
 "options": [
@@ -11528,7 +14713,20 @@
 "言いたいこと"
 ],
 "answer": 3,
-"why": "話の「意味」＝その話で言いたいこと・表していること。"
+"why": "話の「意味」＝その話で言いたいこと・表していること。",
+"en": "I didn't really understand the meaning of the teacher's talk.",
+"opts_en": [
+"voice",
+"name",
+"length",
+"what they wanted to say"
+],
+"wrong": {
+"0": "声 is the voice.",
+"1": "名前 is a name.",
+"2": "長さ is the length."
+},
+"why_en": "The 意味 of a talk is what the speaker wants to say."
 },
 "usage": {
 "options": [
@@ -11575,7 +14773,20 @@
 "ぼうし"
 ],
 "answer": 0,
-"why": "「服」＝「洋服」。体に着るもの。"
+"why": "「服」＝「洋服」。体に着るもの。",
+"en": "Today I went out wearing new clothes.",
+"opts_en": [
+"clothes",
+"shoes",
+"bag",
+"hat"
+],
+"wrong": {
+"1": "くつ are shoes.",
+"2": "かばん is a bag.",
+"3": "ぼうし is a hat."
+},
+"why_en": "服 means the same as 洋服: clothes you wear."
 },
 "usage": {
 "options": [
@@ -11622,7 +14833,20 @@
 "静かな"
 ],
 "answer": 1,
-"why": "公園が「大きい」＝「広い」。"
+"why": "公園が「大きい」＝「広い」。",
+"en": "This town has a big park.",
+"opts_en": [
+"small",
+"spacious",
+"old",
+"quiet"
+],
+"wrong": {
+"0": "小さい means small, the opposite.",
+"2": "古い means old.",
+"3": "静か means quiet."
+},
+"why_en": "A park being 大きい means it is 広い (spacious)."
 },
 "usage": {
 "options": [
@@ -11669,7 +14893,20 @@
 "部屋で休む"
 ],
 "answer": 2,
-"why": "「散歩する」は楽しみのためにゆっくり近所を歩くこと。"
+"why": "「散歩する」は楽しみのためにゆっくり近所を歩くこと。",
+"en": "After dinner I take a walk with the dog.",
+"opts_en": [
+"run around the neighborhood",
+"play at home",
+"walk around the neighborhood",
+"rest in my room"
+],
+"wrong": {
+"0": "走る means running, not walking.",
+"1": "家で遊ぶ means playing at home.",
+"3": "休む means resting."
+},
+"why_en": "散歩する means walking slowly around the neighborhood for pleasure."
 },
 "usage": {
 "options": [
@@ -11716,7 +14953,20 @@
 "作った話を書いた本"
 ],
 "answer": 3,
-"why": "「小説」は作った話を書いた本。"
+"why": "「小説」は作った話を書いた本。",
+"en": "My older sister likes reading novels.",
+"opts_en": [
+"book for word meanings",
+"book with many photos",
+"cookbook",
+"book of made-up stories"
+],
+"wrong": {
+"0": "That is a dictionary.",
+"1": "That is a photo book.",
+"2": "That is a cookbook."
+},
+"why_en": "小説 is a book of invented stories."
 },
 "usage": {
 "options": [
@@ -11763,7 +15013,20 @@
 "自分の足で動かす乗り物"
 ],
 "answer": 0,
-"why": "「電車」はせんろの上を電気で走る乗り物。"
+"why": "「電車」はせんろの上を電気で走る乗り物。",
+"en": "Every morning I go to work by train.",
+"opts_en": [
+"vehicle that runs on rails",
+"vehicle that flies",
+"big vehicle on roads",
+"vehicle you power yourself"
+],
+"wrong": {
+"1": "That is a plane.",
+"2": "That is a bus or truck.",
+"3": "That is a bicycle."
+},
+"why_en": "電車 is a vehicle that runs on rails using electricity."
 },
 "usage": {
 "options": [
@@ -11810,7 +15073,20 @@
 "年上の男のきょうだい"
 ],
 "answer": 1,
-"why": "「妹」は自分より年下の女のきょうだい。"
+"why": "「妹」は自分より年下の女のきょうだい。",
+"en": "My younger sister is three years younger than me.",
+"opts_en": [
+"older sister",
+"younger sister",
+"younger brother",
+"older brother"
+],
+"wrong": {
+"0": "That is 姉.",
+"2": "That is 弟.",
+"3": "That is 兄."
+},
+"why_en": "妹 is a female sibling younger than you."
 },
 "usage": {
 "options": [
@@ -11857,7 +15133,20 @@
 "いつも"
 ],
 "answer": 2,
-"why": "「何か食べたい」＝はっきり決めないで「何でもいいから」食べたい。"
+"why": "「何か食べたい」＝はっきり決めないで「何でもいいから」食べたい。",
+"en": "I'm hungry, so I want to eat something.",
+"opts_en": [
+"someday",
+"everything",
+"anything at all",
+"always"
+],
+"wrong": {
+"0": "いつか means someday.",
+"1": "全部 means everything.",
+"3": "いつも means always."
+},
+"why_en": "何か食べたい means wanting to eat something, whatever it is."
 },
 "usage": {
 "options": [
@@ -11905,7 +15194,20 @@
 "たんじょうした"
 ],
 "answer": 3,
-"why": "「生まれる」＝「たんじょうする」。"
+"why": "「生まれる」＝「たんじょうする」。",
+"en": "A baby girl was born to my older sister.",
+"opts_en": [
+"grew big",
+"got sick",
+"became able to walk",
+"was born"
+],
+"wrong": {
+"0": "大きくなる means grew up.",
+"1": "病気になる means got sick.",
+"2": "歩けるようになる means learned to walk."
+},
+"why_en": "生まれる means the same as たんじょうする."
 },
 "usage": {
 "options": [
@@ -11952,7 +15254,20 @@
 "もう一度"
 ],
 "answer": 0,
-"why": "「初めて」＝「一回目に」。"
+"why": "「初めて」＝「一回目に」。",
+"en": "The first time I came to Japan was when I was twenty.",
+"opts_en": [
+"the first time",
+"the last time",
+"many times",
+"once more"
+],
+"wrong": {
+"1": "最後に means the last time.",
+"2": "何回も means many times.",
+"3": "もう一度 means once more."
+},
+"why_en": "初めて means the same as 一回目に."
 },
 "usage": {
 "options": [
@@ -11999,7 +15314,20 @@
 "ためた"
 ],
 "answer": 1,
-"why": "お金を「払う」＝お金を「出す」。"
+"why": "お金を「払う」＝お金を「出す」。",
+"en": "At the restaurant, I paid.",
+"opts_en": [
+"received",
+"paid out",
+"borrowed",
+"saved"
+],
+"wrong": {
+"0": "もらう means received.",
+"2": "借りる means borrowed.",
+"3": "ためる means saved."
+},
+"why_en": "お金を払う means the same as お金を出す."
 },
 "usage": {
 "options": [
@@ -12047,7 +15375,20 @@
 "きれいにそうじされて"
 ],
 "answer": 2,
-"why": "「変わる」＝前と違う様子になること。"
+"why": "「変わる」＝前と違う様子になること。",
+"en": "When I came back after ten years, the town had completely changed.",
+"opts_en": [
+"stayed the same",
+"not moved at all",
+"become different from before",
+"been cleaned"
+],
+"wrong": {
+"0": "Staying the same is the opposite.",
+"1": "Not moving at all is the opposite of changing.",
+"3": "Being cleaned is only one specific change."
+},
+"why_en": "変わる means to become different from before."
 },
 "usage": {
 "options": [
@@ -12094,7 +15435,20 @@
 "気持ち"
 ],
 "answer": 3,
-"why": "「心」＝人の「気持ち」。"
+"why": "「心」＝人の「気持ち」。",
+"en": "She is a kind-hearted person.",
+"opts_en": [
+"body",
+"face",
+"voice",
+"feelings"
+],
+"wrong": {
+"0": "体 is the body.",
+"1": "顔 is the face.",
+"2": "声 is the voice."
+},
+"why_en": "心 means a person's feelings (気持ち)."
 },
 "usage": {
 "options": [
@@ -12141,7 +15495,20 @@
 "教えた"
 ],
 "answer": 0,
-"why": "「頼む」＝「お願いする」。"
+"why": "「頼む」＝「お願いする」。",
+"en": "I asked a friend to help with my move.",
+"opts_en": [
+"asked (a favor)",
+"refused",
+"helped",
+"taught"
+],
+"wrong": {
+"1": "ことわる means to refuse.",
+"2": "手伝う means to help, the friend's role.",
+"3": "教える means to teach."
+},
+"why_en": "頼む means the same as お願いする."
 },
 "usage": {
 "options": [
@@ -12188,7 +15555,20 @@
 "直せます"
 ],
 "answer": 1,
-"why": "「利用する」＝「使う」。"
+"why": "「利用する」＝「使う」。",
+"en": "Anyone can use this library.",
+"opts_en": [
+"can make",
+"can use",
+"can buy",
+"can fix"
+],
+"wrong": {
+"0": "作る means to make.",
+"2": "買う means to buy.",
+"3": "直す means to fix."
+},
+"why_en": "利用する means the same as 使う."
 },
 "usage": {
 "options": [
@@ -12235,7 +15615,20 @@
 "心配"
 ],
 "answer": 2,
-"why": "「予定がある」＝することが決まっている＝「用事がある」。"
+"why": "「予定がある」＝することが決まっている＝「用事がある」。",
+"en": "Do you have any plans tomorrow?",
+"opts_en": [
+"reason",
+"opinion",
+"things to do",
+"worry"
+],
+"wrong": {
+"0": "理由 is a reason.",
+"1": "意見 is an opinion.",
+"3": "心配 is a worry."
+},
+"why_en": "予定がある means you have something set to do, i.e. 用事がある."
 },
 "usage": {
 "options": [
@@ -12282,7 +15675,20 @@
 "歩くための体の部分"
 ],
 "answer": 3,
-"why": "「足」は歩くための体の部分。"
+"why": "「足」は歩くための体の部分。",
+"en": "I walked a lot, so my legs are tired.",
+"opts_en": [
+"body part for holding",
+"body part for seeing",
+"body part for eating",
+"body part for walking"
+],
+"wrong": {
+"0": "That is a hand.",
+"1": "That is an eye.",
+"2": "That is a mouth."
+},
+"why_en": "足 is the body part for walking."
 },
 "usage": {
 "options": [
@@ -12329,7 +15735,20 @@
 "遅れました"
 ],
 "answer": 0,
-"why": "「慣れる」＝何度もして、楽にできるようになること。"
+"why": "「慣れる」＝何度もして、楽にできるようになること。",
+"en": "Have you gotten used to your new job yet?",
+"opts_en": [
+"became able to do it easily",
+"got bored",
+"decided",
+"was late"
+],
+"wrong": {
+"1": "あきる means got tired of it.",
+"2": "決める means decided.",
+"3": "遅れる means was late."
+},
+"why_en": "慣れる means becoming able to do something easily after doing it many times."
 },
 "usage": {
 "options": [
@@ -12376,7 +15795,20 @@
 "待たされた"
 ],
 "answer": 1,
-"why": "「間に合う」＝時間に「遅れない」。"
+"why": "「間に合う」＝時間に「遅れない」。",
+"en": "I ran, so I made it in time for the train.",
+"opts_en": [
+"missed it",
+"wasn't late",
+"transferred",
+"was made to wait"
+],
+"wrong": {
+"0": "乗りおくれる means missed it, the opposite.",
+"2": "乗りかえる means transferred.",
+"3": "待たされる means was made to wait."
+},
+"why_en": "間に合う means not being late (遅れない)."
 },
 "usage": {
 "options": [
@@ -12423,7 +15855,20 @@
 "食事会"
 ],
 "answer": 2,
-"why": "「会議」は人が集まって話し合うこと。"
+"why": "「会議」は人が集まって話し合うこと。",
+"en": "There is a meeting from the afternoon.",
+"opts_en": [
+"exam",
+"break",
+"discussion",
+"dinner party"
+],
+"wrong": {
+"0": "試験 is an exam.",
+"1": "休み is a break or day off.",
+"3": "食事会 is a meal gathering, not for discussion."
+},
+"why_en": "会議 means people gathering to discuss (話し合い)."
 },
 "usage": {
 "options": [
@@ -12470,7 +15915,20 @@
 "起きてすぐの時間"
 ],
 "answer": 3,
-"why": "「朝」は起きてから昼までの、一日のはじめの時間。"
+"why": "「朝」は起きてから昼までの、一日のはじめの時間。",
+"en": "Mornings are busy, so I only eat bread.",
+"opts_en": [
+"noon",
+"before bed",
+"day off",
+"right after waking"
+],
+"wrong": {
+"0": "昼 is midday.",
+"1": "That is night.",
+"2": "休みの日 is a day off."
+},
+"why_en": "朝 is the start of the day, from waking until noon."
 },
 "usage": {
 "options": [
@@ -12517,7 +15975,20 @@
 "おやつ"
 ],
 "answer": 0,
-"why": "「夕食」＝「晩ご飯」。"
+"why": "「夕食」＝「晩ご飯」。",
+"en": "Today's dinner is curry.",
+"opts_en": [
+"dinner",
+"breakfast",
+"lunch",
+"snack"
+],
+"wrong": {
+"1": "朝ご飯 is breakfast.",
+"2": "昼ご飯 is lunch.",
+"3": "おやつ is a snack."
+},
+"why_en": "夕食 means the same as 晩ご飯."
 },
 "usage": {
 "options": [
@@ -12564,7 +16035,20 @@
 "映画"
 ],
 "answer": 1,
-"why": "「歌」＝「曲」。"
+"why": "「歌」＝「曲」。",
+"en": "This song is popular with young people.",
+"opts_en": [
+"book",
+"tune/song",
+"shop",
+"movie"
+],
+"wrong": {
+"0": "本 is a book.",
+"2": "店 is a shop.",
+"3": "映画 is a movie."
+},
+"why_en": "歌 here means the same as 曲 (a piece of music)."
 },
 "usage": {
 "options": [
@@ -12611,7 +16095,20 @@
 "歩き方"
 ],
 "answer": 2,
-"why": "「声」は人が話すときに口から出る音。"
+"why": "「声」は人が話すときに口から出る音。",
+"en": "My younger brother's voice is very similar to my father's.",
+"opts_en": [
+"face",
+"handwriting",
+"sound when talking",
+"way of walking"
+],
+"wrong": {
+"0": "顔 is a face.",
+"1": "字 is handwriting.",
+"3": "歩き方 is a way of walking."
+},
+"why_en": "声 is the sound that comes from your mouth when you talk."
 },
 "usage": {
 "options": [
@@ -12658,7 +16155,20 @@
 "使わせてあげた"
 ],
 "answer": 3,
-"why": "「貸す」＝あとで返してもらう約束で「使わせてあげる」こと。"
+"why": "「貸す」＝あとで返してもらう約束で「使わせてあげる」こと。",
+"en": "I lent my umbrella to a friend.",
+"opts_en": [
+"borrowed",
+"returned",
+"gave",
+"let them use"
+],
+"wrong": {
+"0": "借りる means borrowed, the opposite.",
+"1": "返す means returned.",
+"2": "あげる means gave for good."
+},
+"why_en": "貸す means letting someone use something on a promise to get it back."
 },
 "usage": {
 "options": [
@@ -12705,7 +16215,20 @@
 "話して"
 ],
 "answer": 0,
-"why": "「研究する」＝くわしく調べて考えること。"
+"why": "「研究する」＝くわしく調べて考えること。",
+"en": "My older brother is researching Japanese history at university.",
+"opts_en": [
+"investigating in detail",
+"teaching",
+"enjoying",
+"talking"
+],
+"wrong": {
+"1": "教える means to teach.",
+"2": "楽しむ means to enjoy.",
+"3": "話す means to talk."
+},
+"why_en": "研究する means to investigate in detail and think about it."
 },
 "usage": {
 "options": [
@@ -12752,7 +16275,20 @@
 "間に合わなかった"
 ],
 "answer": 1,
-"why": "試験に「落ちる」＝「合格しない」。"
+"why": "試験に「落ちる」＝「合格しない」。",
+"en": "I failed the university exam.",
+"opts_en": [
+"passed",
+"didn't pass",
+"didn't take",
+"was late"
+],
+"wrong": {
+"0": "合格 means passed, the opposite.",
+"2": "受けなかった means didn't take it.",
+"3": "間に合わない means wasn't in time."
+},
+"why_en": "試験に落ちる means not passing."
 },
 "usage": {
 "options": [
@@ -12799,7 +16335,20 @@
 "去年"
 ],
 "answer": 2,
-"why": "「今度の」＝「次の」。"
+"why": "「今度の」＝「次の」。",
+"en": "Want to go see a movie this coming Sunday?",
+"opts_en": [
+"last time",
+"every week",
+"next",
+"last year"
+],
+"wrong": {
+"0": "この前 means last time, the opposite.",
+"1": "毎週 means every week.",
+"3": "去年 means last year."
+},
+"why_en": "今度の means the same as 次の (next)."
 },
 "usage": {
 "options": [
@@ -12846,7 +16395,20 @@
 "スタートする"
 ],
 "answer": 3,
-"why": "「始まる」＝「スタートする」。"
+"why": "「始まる」＝「スタートする」。",
+"en": "Class starts at nine.",
+"opts_en": [
+"ends",
+"becomes a break",
+"is late",
+"starts"
+],
+"wrong": {
+"0": "終わる means ends, the opposite.",
+"1": "休みになる means is canceled.",
+"2": "遅れる means to be delayed."
+},
+"why_en": "始まる means the same as スタートする."
 },
 "usage": {
 "options": [
@@ -12893,7 +16455,20 @@
 "笑った"
 ],
 "answer": 0,
-"why": "質問に「答える」＝「返事をする」。"
+"why": "質問に「答える」＝「返事をする」。",
+"en": "I answered the teacher's question in a loud voice.",
+"opts_en": [
+"replied",
+"asked",
+"listened",
+"laughed"
+],
+"wrong": {
+"1": "質問する means to ask, the opposite.",
+"2": "聞く means to listen or ask.",
+"3": "笑う means to laugh."
+},
+"why_en": "質問に答える means the same as 返事をする."
 },
 "usage": {
 "options": [
@@ -12940,7 +16515,20 @@
 "雪の上でするスポーツ"
 ],
 "answer": 1,
-"why": "「野球」はボールとバットを使うスポーツ。"
+"why": "「野球」はボールとバットを使うスポーツ。",
+"en": "On Sundays I play baseball with friends.",
+"opts_en": [
+"sport kicking a ball",
+"sport with ball and bat",
+"sport in water",
+"sport on snow"
+],
+"wrong": {
+"0": "That is soccer.",
+"2": "That is swimming.",
+"3": "That is skiing."
+},
+"why_en": "野球 is the sport played with a ball and bat."
 },
 "usage": {
 "options": [
@@ -12987,7 +16575,20 @@
 "車の中"
 ],
 "answer": 2,
-"why": "「外」は建物などの中ではない所。"
+"why": "「外」は建物などの中ではない所。",
+"en": "The rain stopped, so let's play outside.",
+"opts_en": [
+"inside the room",
+"inside the school",
+"somewhere not in the house",
+"inside the car"
+],
+"wrong": {
+"0": "部屋の中 is inside, the opposite.",
+"1": "学校の中 is inside.",
+"3": "車の中 is inside a car."
+},
+"why_en": "外 is a place not inside a building."
 },
 "usage": {
 "options": [
@@ -13034,7 +16635,20 @@
 "ところ"
 ],
 "answer": 3,
-"why": "「場所」＝「ところ」。"
+"why": "「場所」＝「ところ」。",
+"en": "Please tell me where the meeting is.",
+"opts_en": [
+"time",
+"name",
+"reason",
+"place"
+],
+"wrong": {
+"0": "時間 is time.",
+"1": "名前 is name.",
+"2": "理由 is reason."
+},
+"why_en": "場所 means the same as ところ."
 },
 "usage": {
 "options": [
@@ -13082,7 +16696,20 @@
 "曲がって"
 ],
 "answer": 0,
-"why": "「進む」＝「前に行く」。"
+"why": "「進む」＝「前に行く」。",
+"en": "Please go straight along this road.",
+"opts_en": [
+"go forward",
+"go back",
+"stop",
+"turn"
+],
+"wrong": {
+"1": "もどる means go back, the opposite.",
+"2": "止まる means to stop.",
+"3": "曲がる means to turn."
+},
+"why_en": "進む means the same as 前に行く."
 },
 "usage": {
 "options": [
@@ -13129,7 +16756,20 @@
 "思い出した"
 ],
 "answer": 1,
-"why": "人を「訪ねる」＝その人に「会いに行く」。"
+"why": "人を「訪ねる」＝その人に「会いに行く」。",
+"en": "Last week I visited my old teacher.",
+"opts_en": [
+"phoned",
+"went to see",
+"wrote a letter",
+"remembered"
+],
+"wrong": {
+"0": "電話する means phoned, not visited.",
+"2": "手紙を書く means wrote a letter.",
+"3": "思い出す means remembered."
+},
+"why_en": "訪ねる a person means going to see them."
 },
 "usage": {
 "options": [
@@ -13176,7 +16816,20 @@
 "頼っている"
 ],
 "answer": 2,
-"why": "「似ている」＝ほとんど同じに見える＝「そっくりだ」。"
+"why": "「似ている」＝ほとんど同じに見える＝「そっくりだ」。",
+"en": "The daughter looks just like her mother.",
+"opts_en": [
+"is meeting",
+"is angry",
+"looks just like",
+"relies on"
+],
+"wrong": {
+"0": "会う means to meet.",
+"1": "怒る means to be angry.",
+"3": "頼る means to rely on."
+},
+"why_en": "似ている means looking almost the same, i.e. そっくりだ."
 },
 "usage": {
 "options": [
@@ -13223,7 +16876,20 @@
 "足にはくもの"
 ],
 "answer": 3,
-"why": "「靴」は足にはくもの。"
+"why": "「靴」は足にはくもの。",
+"en": "Please take off your shoes when entering the house.",
+"opts_en": [
+"worn on the head",
+"worn on the hands",
+"worn on the body",
+"worn on the feet"
+],
+"wrong": {
+"0": "That is a hat.",
+"1": "That is gloves.",
+"2": "That is clothes."
+},
+"why_en": "靴 are worn on the feet."
 },
 "usage": {
 "options": [
@@ -13270,7 +16936,20 @@
 "祖父"
 ],
 "answer": 0,
-"why": "「お父さん」＝「父親」。"
+"why": "「お父さん」＝「父親」。",
+"en": "Dad is an office worker.",
+"opts_en": [
+"father",
+"mother",
+"older brother",
+"grandfather"
+],
+"wrong": {
+"1": "母親 is mother.",
+"2": "兄 is older brother.",
+"3": "祖父 is grandfather."
+},
+"why_en": "お父さん means the same as 父親."
 },
 "usage": {
 "options": [
@@ -13317,7 +16996,20 @@
 "今日の夜"
 ],
 "answer": 1,
-"why": "「今朝」＝「今日の朝」。"
+"why": "「今朝」＝「今日の朝」。",
+"en": "This morning I got up at six.",
+"opts_en": [
+"yesterday morning",
+"this morning",
+"tomorrow morning",
+"tonight"
+],
+"wrong": {
+"0": "昨日の朝 is yesterday morning.",
+"2": "明日の朝 is tomorrow morning.",
+"3": "今日の夜 is tonight."
+},
+"why_en": "今朝 means 今日の朝."
 },
 "usage": {
 "options": [
@@ -13364,7 +17056,20 @@
 "理由"
 ],
 "answer": 2,
-"why": "「関係」＝人や物事の「つながり」。"
+"why": "「関係」＝人や物事の「つながり」。",
+"en": "This matter has nothing to do with you.",
+"opts_en": [
+"meaning",
+"time",
+"connection",
+"reason"
+],
+"wrong": {
+"0": "意味 means meaning.",
+"1": "時間 means time.",
+"3": "理由 means reason."
+},
+"why_en": "関係 means a connection (つながり) between people or things."
 },
 "usage": {
 "options": [
@@ -13411,7 +17116,20 @@
 "赤ちゃん"
 ],
 "answer": 3,
-"why": "「赤ん坊」＝「赤ちゃん」。"
+"why": "「赤ん坊」＝「赤ちゃん」。",
+"en": "The baby next door often cries.",
+"opts_en": [
+"puppy",
+"junior high student",
+"old man",
+"baby"
+],
+"wrong": {
+"0": "子犬 is a puppy.",
+"1": "中学生 is a teenager.",
+"2": "おじいさん is an old man."
+},
+"why_en": "赤ん坊 means the same as 赤ちゃん."
 },
 "usage": {
 "options": [
@@ -13459,7 +17177,20 @@
 "すぐに返した"
 ],
 "answer": 0,
-"why": "「借りる」は人の物を、あとで返す約束で使わせてもらうこと。"
+"why": "「借りる」は人の物を、あとで返す約束で使わせてもらうこと。",
+"en": "I borrowed three books from the library.",
+"opts_en": [
+"took home promising to return",
+"bought",
+"sold to a shop",
+"returned right away"
+],
+"wrong": {
+"1": "買う means bought.",
+"2": "売る means sold.",
+"3": "すぐに返す means returned immediately."
+},
+"why_en": "借りる means using someone's thing on a promise to return it later."
 },
 "usage": {
 "options": [
@@ -13506,7 +17237,20 @@
 "何時"
 ],
 "answer": 1,
-"why": "値段をたずねる「幾ら」＝「何円」。"
+"why": "値段をたずねる「幾ら」＝「何円」。",
+"en": "How much is this apple?",
+"opts_en": [
+"how many",
+"how many yen",
+"how old",
+"what time"
+],
+"wrong": {
+"0": "何こ asks how many.",
+"2": "何歳 asks age.",
+"3": "何時 asks the time."
+},
+"why_en": "幾ら asking a price means 何円 (how many yen)."
 },
 "usage": {
 "options": [
@@ -13553,7 +17297,20 @@
 "好きになる"
 ],
 "answer": 2,
-"why": "場所を「訪れる」＝その場所へ「来る・行く」。"
+"why": "場所を「訪れる」＝その場所へ「来る・行く」。",
+"en": "Many people visit Kyoto every year.",
+"opts_en": [
+"leave",
+"pass through",
+"come to see",
+"come to like"
+],
+"wrong": {
+"0": "出ていく means leave, the opposite.",
+"1": "通りすぎる means pass by without stopping.",
+"3": "好きになる means come to like."
+},
+"why_en": "訪れる a place means to come or go there."
 },
 "usage": {
 "options": [
@@ -13600,7 +17357,20 @@
 "帰った"
 ],
 "answer": 3,
-"why": "前にいた所へ「戻る」＝「帰る」。"
+"why": "前にいた所へ「戻る」＝「帰る」。",
+"en": "I forgot something, so I went back home.",
+"opts_en": [
+"went out",
+"arrived",
+"dropped by",
+"returned"
+],
+"wrong": {
+"0": "出かける means went out, the opposite.",
+"1": "着く means arrived (not 'back').",
+"2": "寄る means stopped by on the way."
+},
+"why_en": "Going back (戻る) to where you were means 帰る."
 },
 "usage": {
 "options": [
@@ -13647,7 +17417,20 @@
 "上手だ"
 ],
 "answer": 0,
-"why": "「遅い」＝速さが「ゆっくり」。"
+"why": "「遅い」＝速さが「ゆっくり」。",
+"en": "My younger brother eats slowly.",
+"opts_en": [
+"slow",
+"fast",
+"likes it",
+"good at it"
+],
+"wrong": {
+"1": "速い means fast, the opposite.",
+"2": "好き means likes it.",
+"3": "上手 means good at it."
+},
+"why_en": "遅い means slow in speed (ゆっくり)."
 },
 "usage": {
 "options": [
@@ -13694,7 +17477,20 @@
 "ねる前に読むもの"
 ],
 "answer": 1,
-"why": "「薬」は病気やけがを治すためのもの。"
+"why": "「薬」は病気やけがを治すためのもの。",
+"en": "I caught a cold, so I took medicine.",
+"opts_en": [
+"something to drink when thirsty",
+"something to cure illness",
+"something to wash the body",
+"something to read before bed"
+],
+"wrong": {
+"0": "That's a drink like water.",
+"2": "That's soap.",
+"3": "That's a book."
+},
+"why_en": "薬 is something that cures illness or injury."
 },
 "usage": {
 "options": [
@@ -13741,7 +17537,20 @@
 "覚えた"
 ],
 "answer": 2,
-"why": "「調べる」＝わからないことを本などで「見て確かめる」。"
+"why": "「調べる」＝わからないことを本などで「見て確かめる」。",
+"en": "I looked up the words I didn't know in a dictionary.",
+"opts_en": [
+"wrote",
+"forgot",
+"checked by looking",
+"memorized"
+],
+"wrong": {
+"0": "書く means wrote.",
+"1": "忘れる means forgot.",
+"3": "覚える means memorized."
+},
+"why_en": "調べる means to check something unknown by looking in a book etc."
 },
 "usage": {
 "options": [
@@ -13788,7 +17597,20 @@
 "家の前や後ろにある土地"
 ],
 "answer": 3,
-"why": "「庭」は家のまわりの、木や花がある土地。"
+"why": "「庭」は家のまわりの、木や花がある土地。",
+"en": "I planted flowers in the garden.",
+"opts_en": [
+"room in the house",
+"road in front of the station",
+"classroom",
+"ground around the house"
+],
+"wrong": {
+"0": "That is inside the house.",
+"1": "That is a road.",
+"2": "That is a classroom."
+},
+"why_en": "庭 is the land around a house with trees and flowers."
 },
 "usage": {
 "options": [
@@ -13835,7 +17657,20 @@
 "一日"
 ],
 "answer": 0,
-"why": "「月に一回」＝「一か月に一回」。"
+"why": "「月に一回」＝「一か月に一回」。",
+"en": "Once a month I go to see a movie.",
+"opts_en": [
+"one month",
+"one week",
+"one year",
+"one day"
+],
+"wrong": {
+"1": "一週間 is a week.",
+"2": "一年 is a year.",
+"3": "一日 is a day."
+},
+"why_en": "月に一回 means 一か月に一回."
 },
 "usage": {
 "options": [
@@ -13882,7 +17717,20 @@
 "近くの町"
 ],
 "answer": 1,
-"why": "「外国」は自分の国ではない国。"
+"why": "「外国」は自分の国ではない国。",
+"en": "Next year I want to work abroad.",
+"opts_en": [
+"one's own country",
+"a country not one's own",
+"hometown",
+"nearby town"
+],
+"wrong": {
+"0": "自分の国 is your own country, the opposite.",
+"2": "生まれた町 is your hometown.",
+"3": "近くの町 is a nearby town."
+},
+"why_en": "外国 is a country that isn't your own."
 },
 "usage": {
 "options": [
@@ -13929,7 +17777,20 @@
 "物を書く紙"
 ],
 "answer": 2,
-"why": "「箱」は物を入れる四かくい入れ物。"
+"why": "「箱」は物を入れる四かくい入れ物。",
+"en": "I put the old books in a box and tidied up.",
+"opts_en": [
+"stand to put things on",
+"tool to cut things",
+"container to put things in",
+"paper to write on"
+],
+"wrong": {
+"0": "That is a table or stand.",
+"1": "That is scissors or a knife.",
+"3": "That is writing paper."
+},
+"why_en": "箱 is a square container to put things in."
 },
 "usage": {
 "options": [
@@ -13976,7 +17837,20 @@
 "年下の男のきょうだい"
 ],
 "answer": 3,
-"why": "「弟」は自分より年下の男のきょうだい。"
+"why": "「弟」は自分より年下の男のきょうだい。",
+"en": "My younger brother started junior high this year.",
+"opts_en": [
+"older brother",
+"younger sister",
+"older sister",
+"younger brother"
+],
+"wrong": {
+"0": "That is 兄.",
+"1": "That is 妹.",
+"2": "That is 姉."
+},
+"why_en": "弟 is a male sibling younger than you."
 },
 "usage": {
 "options": [
@@ -14023,7 +17897,20 @@
 "友だち"
 ],
 "answer": 0,
-"why": "「金(かね)」＝「お金」。"
+"why": "「金(かね)」＝「お金」。",
+"en": "I want to travel, but I have no money.",
+"opts_en": [
+"money",
+"time",
+"strength",
+"friends"
+],
+"wrong": {
+"1": "時間 is time.",
+"2": "力 is strength.",
+"3": "友だち are friends."
+},
+"why_en": "金 (かね) means the same as お金."
 },
 "usage": {
 "options": [
@@ -14070,7 +17957,20 @@
 "有名な"
 ],
 "answer": 1,
-"why": "店が「小さい」＝店が「せまい」。"
+"why": "店が「小さい」＝店が「せまい」。",
+"en": "There are many small shops in this town.",
+"opts_en": [
+"big",
+"cramped/small",
+"new",
+"famous"
+],
+"wrong": {
+"0": "大きい means big, the opposite.",
+"2": "新しい means new.",
+"3": "有名 means famous."
+},
+"why_en": "A shop being 小さい means it is せまい (small in space)."
 },
 "usage": {
 "options": [
@@ -14117,7 +18017,20 @@
 "川"
 ],
 "answer": 2,
-"why": "泳ぎに行く「海」＝「ビーチ」。"
+"why": "泳ぎに行く「海」＝「ビーチ」。",
+"en": "During summer vacation my family went swimming at the sea.",
+"opts_en": [
+"mountain",
+"pool",
+"beach",
+"river"
+],
+"wrong": {
+"0": "山 is a mountain.",
+"1": "プール is a pool.",
+"3": "川 is a river."
+},
+"why_en": "The 海 where you go swimming is the ビーチ."
 },
 "usage": {
 "options": [
@@ -14164,7 +18077,20 @@
 "年上の女のきょうだい"
 ],
 "answer": 3,
-"why": "「姉」は自分より年上の女のきょうだい。"
+"why": "「姉」は自分より年上の女のきょうだい。",
+"en": "My older sister goes to a university in Tokyo.",
+"opts_en": [
+"younger sister",
+"older brother",
+"younger brother",
+"older sister"
+],
+"wrong": {
+"0": "That is 妹.",
+"1": "That is 兄.",
+"2": "That is 弟."
+},
+"why_en": "姉 is a female sibling older than you."
 },
 "usage": {
 "options": [
@@ -14211,7 +18137,20 @@
 "待っています"
 ],
 "answer": 0,
-"why": "駅に「向かっている」＝駅へ「行く途中」。"
+"why": "駅に「向かっている」＝駅へ「行く途中」。",
+"en": "I'm heading to the station now.",
+"opts_en": [
+"on the way",
+"just arrived",
+"live there",
+"waiting"
+],
+"wrong": {
+"1": "着いたところ means already arrived.",
+"2": "住んでいる means living there.",
+"3": "待っている means waiting."
+},
+"why_en": "駅に向かっている means on the way to the station."
 },
 "usage": {
 "options": [
@@ -14258,7 +18197,20 @@
 "笑った"
 ],
 "answer": 1,
-"why": "「困る」＝どうしたらいいかわからない、いやなじょうたいになること。"
+"why": "「困る」＝どうしたらいいかわからない、いやなじょうたいになること。",
+"en": "I lost my wallet and was really in trouble.",
+"opts_en": [
+"was happy",
+"didn't know what to do",
+"was relieved",
+"laughed"
+],
+"wrong": {
+"0": "うれしい means happy.",
+"2": "安心 means relieved, the opposite.",
+"3": "笑う means laughed."
+},
+"why_en": "困る means being in a bad state where you don't know what to do."
 },
 "usage": {
 "options": [
@@ -14305,7 +18257,20 @@
 "書きました"
 ],
 "answer": 2,
-"why": "「頂く」は「もらう」のけんじょう語。"
+"why": "「頂く」は「もらう」のけんじょう語。",
+"en": "I received a letter from my teacher.",
+"opts_en": [
+"gave",
+"sent",
+"received",
+"wrote"
+],
+"wrong": {
+"0": "あげる means gave, the opposite.",
+"1": "送る means sent.",
+"3": "書く means wrote."
+},
+"why_en": "頂く is the humble form of もらう."
 },
 "usage": {
 "options": [
@@ -14352,7 +18317,20 @@
 "母親"
 ],
 "answer": 3,
-"why": "「お母さん」＝「母親」。"
+"why": "「お母さん」＝「母親」。",
+"en": "Mom is good at cooking.",
+"opts_en": [
+"father",
+"older sister",
+"grandmother",
+"mother"
+],
+"wrong": {
+"0": "父親 is father.",
+"1": "姉 is older sister.",
+"2": "祖母 is grandmother."
+},
+"why_en": "お母さん means the same as 母親."
 },
 "usage": {
 "options": [
@@ -14399,7 +18377,20 @@
 "空気"
 ],
 "answer": 0,
-"why": "「気持ちがいい」＝「気分がいい」。"
+"why": "「気持ちがいい」＝「気分がいい」。",
+"en": "It feels good when you open the window.",
+"opts_en": [
+"mood/feeling",
+"weather",
+"energy",
+"air"
+],
+"wrong": {
+"1": "天気 is the weather.",
+"2": "元気 is energy/health.",
+"3": "空気 is the air itself."
+},
+"why_en": "気持ちがいい means the same as 気分がいい."
 },
 "usage": {
 "options": [
@@ -14446,7 +18437,20 @@
 "会議"
 ],
 "answer": 1,
-"why": "「授業」＝学校の「クラス」(レッスン)。"
+"why": "「授業」＝学校の「クラス」(レッスン)。",
+"en": "Class starts at nine.",
+"opts_en": [
+"break",
+"class",
+"exam",
+"meeting"
+],
+"wrong": {
+"0": "休み is a break.",
+"2": "試験 is an exam.",
+"3": "会議 is a meeting."
+},
+"why_en": "授業 means a class (lesson) at school."
 },
 "usage": {
 "options": [
@@ -14493,7 +18497,20 @@
 "旅行のおみやげ"
 ],
 "answer": 2,
-"why": "「写真」はカメラでうつしたもの。"
+"why": "「写真」はカメラでうつしたもの。",
+"en": "I took a lot of photos on the trip.",
+"opts_en": [
+"picture drawn in pencil",
+"letter I wrote",
+"image taken with a camera",
+"trip souvenir"
+],
+"wrong": {
+"0": "A pencil drawing is not a photo.",
+"1": "A letter is not a photo.",
+"3": "おみやげ is a souvenir."
+},
+"why_en": "写真 is an image taken with a camera."
 },
 "usage": {
 "options": [
@@ -14540,7 +18557,20 @@
 "答え"
 ],
 "answer": 3,
-"why": "「返事」＝もらったメールや質問への「答え」。"
+"why": "「返事」＝もらったメールや質問への「答え」。",
+"en": "I sent an email, but there's no reply yet.",
+"opts_en": [
+"question",
+"reason",
+"promise",
+"answer"
+],
+"wrong": {
+"0": "質問 is a question.",
+"1": "理由 is a reason.",
+"2": "約束 is a promise."
+},
+"why_en": "返事 is an answer (答え) to an email or question you got."
 },
 "usage": {
 "options": [
@@ -14587,7 +18617,20 @@
 "できた"
 ],
 "answer": 0,
-"why": "じこが「起こる」＝じこが「ある」。"
+"why": "じこが「起こる」＝じこが「ある」。",
+"en": "An accident happened near the station.",
+"opts_en": [
+"there was",
+"was visible",
+"stopped",
+"was made"
+],
+"wrong": {
+"1": "見える means could be seen.",
+"2": "止まる means stopped.",
+"3": "できる means was made/built."
+},
+"why_en": "じこが起こる means the same as じこがある."
 },
 "usage": {
 "options": [
@@ -14635,7 +18678,20 @@
 "有名"
 ],
 "answer": 1,
-"why": "「元気」＝体がじょうぶでけんこうなこと。"
+"why": "「元気」＝体がじょうぶでけんこうなこと。",
+"en": "My grandmother is eighty but very healthy.",
+"opts_en": [
+"kind",
+"physically strong",
+"quiet",
+"famous"
+],
+"wrong": {
+"0": "やさしい means kind.",
+"2": "静か means quiet.",
+"3": "有名 means famous."
+},
+"why_en": "元気 means having a strong, healthy body."
 },
 "usage": {
 "options": [
@@ -14682,7 +18738,20 @@
 "木の葉が赤くなるきせつ"
 ],
 "answer": 2,
-"why": "「冬」は一年でいちばん寒いきせつ。"
+"why": "「冬」は一年でいちばん寒いきせつ。",
+"en": "In winter, this town gets a lot of snow.",
+"opts_en": [
+"the hottest season",
+"season flowers bloom",
+"the coldest season",
+"season leaves turn red"
+],
+"wrong": {
+"0": "That is summer.",
+"1": "That is spring.",
+"3": "That is autumn."
+},
+"why_en": "冬 is the coldest season of the year."
 },
 "usage": {
 "options": [
@@ -14729,7 +18798,20 @@
 "こと"
 ],
 "answer": 3,
-"why": "「〜た経験がある」＝「〜たことがある」。"
+"why": "「〜た経験がある」＝「〜たことがある」。",
+"en": "I have experience working abroad.",
+"opts_en": [
+"plan",
+"reason",
+"promise",
+"(the fact of having done)"
+],
+"wrong": {
+"0": "予定 is a plan for the future.",
+"1": "理由 is a reason.",
+"2": "約束 is a promise."
+},
+"why_en": "〜た経験がある means the same as 〜たことがある."
 },
 "usage": {
 "options": [
@@ -14776,7 +18858,20 @@
 "ねて"
 ],
 "answer": 0,
-"why": "「遊ぶ」＝好きなことをして楽しくすごすこと。"
+"why": "「遊ぶ」＝好きなことをして楽しくすごすこと。",
+"en": "The children are playing in the park.",
+"opts_en": [
+"spending time happily",
+"studying",
+"working",
+"sleeping"
+],
+"wrong": {
+"1": "勉強 means studying.",
+"2": "働く means working.",
+"3": "寝る means sleeping."
+},
+"why_en": "遊ぶ means doing what you like and having fun."
 },
 "usage": {
 "options": [
@@ -14823,7 +18918,20 @@
 "大切だった"
 ],
 "answer": 1,
-"why": "問題が「簡単」＝問題が「やさしい」。"
+"why": "問題が「簡単」＝問題が「やさしい」。",
+"en": "Today's exam questions were easy.",
+"opts_en": [
+"difficult",
+"easy",
+"long",
+"important"
+],
+"wrong": {
+"0": "むずかしい means difficult, the opposite.",
+"2": "長い means long.",
+"3": "大切 means important."
+},
+"why_en": "A question being 簡単 means it is やさしい (easy)."
 },
 "usage": {
 "options": [
@@ -14870,7 +18978,20 @@
 "兄"
 ],
 "answer": 2,
-"why": "「夫」＝自分のけっこん相手の男の人＝「主人」。"
+"why": "「夫」＝自分のけっこん相手の男の人＝「主人」。",
+"en": "My husband leaves home at seven every morning.",
+"opts_en": [
+"son",
+"father",
+"husband",
+"older brother"
+],
+"wrong": {
+"0": "息子 is a son.",
+"1": "父 is father.",
+"3": "兄 is older brother."
+},
+"why_en": "夫 is the man you are married to, also called 主人."
 },
 "usage": {
 "options": [
@@ -14917,7 +19038,20 @@
 "あさくない"
 ],
 "answer": 3,
-"why": "「深い」の反対は「あさい」。「深い」＝「あさくない」。"
+"why": "「深い」の反対は「あさい」。「深い」＝「あさくない」。",
+"en": "This river is deep, so please don't swim.",
+"opts_en": [
+"wide",
+"long",
+"clean",
+"not shallow"
+],
+"wrong": {
+"0": "広い means wide.",
+"1": "長い means long.",
+"2": "きれい means clean."
+},
+"why_en": "The opposite of 深い is あさい, so 深い means あさくない."
 },
 "usage": {
 "options": [
@@ -14964,7 +19098,20 @@
 "日"
 ],
 "answer": 0,
-"why": "行く「途中で」＝行く「道で」。"
+"why": "行く「途中で」＝行く「道で」。",
+"en": "On the way to school, I met my teacher.",
+"opts_en": [
+"road/way",
+"before",
+"after",
+"day"
+],
+"wrong": {
+"1": "前 means before going.",
+"2": "後 means after.",
+"3": "日 means day."
+},
+"why_en": "行く途中で means the same as 行く道で (on the way)."
 },
 "usage": {
 "options": [
@@ -15011,7 +19158,20 @@
 "物を買う所"
 ],
 "answer": 1,
-"why": "「銀行」はお金をあずけたり下ろしたりする所。"
+"why": "「銀行」はお金をあずけたり下ろしたりする所。",
+"en": "I withdrew money at the bank.",
+"opts_en": [
+"place to borrow books",
+"place to deposit money",
+"place to treat illness",
+"place to buy things"
+],
+"wrong": {
+"0": "That is a library.",
+"2": "That is a hospital.",
+"3": "That is a shop."
+},
+"why_en": "銀行 is where you deposit and withdraw money."
 },
 "usage": {
 "options": [
@@ -15058,7 +19218,20 @@
 "借りて"
 ],
 "answer": 2,
-"why": "「売る」＝「はんばいする」。"
+"why": "「売る」＝「はんばいする」。",
+"en": "This shop sells old books.",
+"opts_en": [
+"buys",
+"reads",
+"sells (formal)",
+"borrows/lends"
+],
+"wrong": {
+"0": "買う means to buy, the opposite.",
+"1": "読む means to read.",
+"3": "借りる means to borrow."
+},
+"why_en": "売る means the same as はんばいする."
 },
 "usage": {
 "options": [
@@ -15105,7 +19278,20 @@
 "とき"
 ],
 "answer": 3,
-"why": "「雨の場合」＝「雨のとき」。"
+"why": "「雨の場合」＝「雨のとき」。",
+"en": "In case of rain, the game is canceled.",
+"opts_en": [
+"before",
+"after",
+"during",
+"when"
+],
+"wrong": {
+"0": "前 means before.",
+"1": "後 means after.",
+"2": "間 means during."
+},
+"why_en": "雨の場合 means the same as 雨のとき."
 },
 "usage": {
 "options": [
@@ -15152,7 +19338,20 @@
 "元気に"
 ],
 "answer": 0,
-"why": "「静かにする」＝音や声を立てないこと。"
+"why": "「静かにする」＝音や声を立てないこと。",
+"en": "Please be quiet in the library.",
+"opts_en": [
+"so as not to make noise",
+"quickly",
+"neatly",
+"energetically"
+],
+"wrong": {
+"1": "早く means quickly.",
+"2": "きれいに means neatly.",
+"3": "元気に means energetically."
+},
+"why_en": "静かにする means not making noise or talking loudly."
 },
 "usage": {
 "options": [
@@ -15199,7 +19398,20 @@
 "二回"
 ],
 "answer": 1,
-"why": "「一度」＝「一回」。"
+"why": "「一度」＝「一回」。",
+"en": "I've been to Kyoto once.",
+"opts_en": [
+"many times",
+"once",
+"every year",
+"twice"
+],
+"wrong": {
+"0": "何回も means many times.",
+"2": "毎年 means every year.",
+"3": "二回 means twice."
+},
+"why_en": "一度 means the same as 一回."
 },
 "usage": {
 "options": [
@@ -15246,7 +19458,20 @@
 "買った"
 ],
 "answer": 2,
-"why": "「運ぶ」＝物を持ってほかの所へうつすこと。"
+"why": "「運ぶ」＝物を持ってほかの所へうつすこと。",
+"en": "I carried the heavy luggage to the second floor.",
+"opts_en": [
+"put",
+"dropped",
+"took (there)",
+"bought"
+],
+"wrong": {
+"0": "置く means to put down, not move.",
+"1": "落とす means to drop.",
+"3": "買う means to buy."
+},
+"why_en": "運ぶ means to carry something to another place."
 },
 "usage": {
 "options": [
@@ -15293,7 +19518,20 @@
 "次の週"
 ],
 "answer": 3,
-"why": "「来週」＝「次の週」。"
+"why": "「来週」＝「次の週」。",
+"en": "There's a meeting on Monday next week.",
+"opts_en": [
+"last week",
+"this week",
+"every week",
+"the next week"
+],
+"wrong": {
+"0": "先週 is last week.",
+"1": "今週 is this week.",
+"2": "毎週 is every week."
+},
+"why_en": "来週 means the same as 次の週."
 },
 "usage": {
 "options": [
@@ -15340,7 +19578,20 @@
 "止められた"
 ],
 "answer": 0,
-"why": "「盗まれる」＝人に物をだまって「とられる」。"
+"why": "「盗まれる」＝人に物をだまって「とられる」。",
+"en": "My bicycle was stolen in front of the station.",
+"opts_en": [
+"was taken",
+"was lent",
+"was broken",
+"was stopped"
+],
+"wrong": {
+"1": "貸される is not 'stolen'; lending is with permission.",
+"2": "こわされる means was broken.",
+"3": "止められる means was stopped."
+},
+"why_en": "盗まれる means having something taken without asking (とられる)."
 },
 "usage": {
 "options": [
@@ -15387,7 +19638,20 @@
 "早く出た"
 ],
 "answer": 1,
-"why": "会社を「休む」＝その日は会社に「行かない」。"
+"why": "会社を「休む」＝その日は会社に「行かない」。",
+"en": "I took a day off work because of a cold.",
+"opts_en": [
+"was late",
+"didn't go",
+"quit",
+"left early"
+],
+"wrong": {
+"0": "遅れる means arrived late.",
+"2": "やめる means quit the job.",
+"3": "早く出る means left early."
+},
+"why_en": "会社を休む means not going to work that day."
 },
 "usage": {
 "options": [
@@ -15434,7 +19698,20 @@
 "古い"
 ],
 "answer": 2,
-"why": "「大切な」＝「大事な」。"
+"why": "「大切な」＝「大事な」。",
+"en": "This is a precious watch I got from my grandmother.",
+"opts_en": [
+"new",
+"cheap",
+"important",
+"old"
+],
+"wrong": {
+"0": "新しい means new.",
+"1": "安い means cheap.",
+"3": "古い means old; it says nothing about value."
+},
+"why_en": "大切な means the same as 大事な."
 },
 "usage": {
 "options": [
@@ -15481,7 +19758,20 @@
 "今日の夜"
 ],
 "answer": 3,
-"why": "「今夜」＝「今日の夜」。"
+"why": "「今夜」＝「今日の夜」。",
+"en": "Where shall we eat dinner tonight?",
+"opts_en": [
+"last night",
+"tomorrow night",
+"this morning",
+"this evening"
+],
+"wrong": {
+"0": "昨日の夜 is last night.",
+"1": "明日の夜 is tomorrow night.",
+"2": "今日の朝 is this morning, not night."
+},
+"why_en": "今夜 means 今日の夜 (tonight)."
 },
 "usage": {
 "options": [
@@ -15528,7 +19818,20 @@
 "これからしたいこと"
 ],
 "answer": 0,
-"why": "「習慣」＝いつもくり返していること。"
+"why": "「習慣」＝いつもくり返していること。",
+"en": "Jogging every morning is my habit.",
+"opts_en": [
+"something I always do",
+"something I did for the first time",
+"something I did only once",
+"something I want to do from now"
+],
+"wrong": {
+"1": "A first time is not a habit.",
+"2": "Once is not a habit.",
+"3": "A future wish is not a habit yet."
+},
+"why_en": "習慣 means something you do repeatedly, all the time."
 },
 "usage": {
 "options": [
@@ -15575,7 +19878,20 @@
 "待って"
 ],
 "answer": 1,
-"why": "道を「渡る」＝道の「向こう側へ行く」。"
+"why": "道を「渡る」＝道の「向こう側へ行く」。",
+"en": "Please cross the road after the light turns green.",
+"opts_en": [
+"run",
+"go to the other side",
+"stop",
+"wait"
+],
+"wrong": {
+"0": "走る means to run.",
+"2": "止まる means to stop.",
+"3": "待つ means to wait."
+},
+"why_en": "道を渡る means to go to the other side of the road."
 },
 "usage": {
 "options": [
@@ -15622,7 +19938,20 @@
 "心配"
 ],
 "answer": 2,
-"why": "しょうらいの「夢」＝しょうらいの「きぼう」(そうなりたいと思うこと)。"
+"why": "しょうらいの「夢」＝しょうらいの「きぼう」(そうなりたいと思うこと)。",
+"en": "My dream for the future is to become a doctor.",
+"opts_en": [
+"job",
+"plan",
+"hope",
+"worry"
+],
+"wrong": {
+"0": "仕事 is a job, not what you wish for.",
+"1": "予定 is a fixed schedule.",
+"3": "心配 is a worry."
+},
+"why_en": "しょうらいの夢 means a hope (きぼう): what you want to become."
 },
 "usage": {
 "options": [
@@ -15669,7 +19998,20 @@
 "続けて"
 ],
 "answer": 3,
-"why": "「ずっと」＝長い間「続けて」。"
+"why": "「ずっと」＝長い間「続けて」。",
+"en": "Yesterday it rained the whole time from morning to night.",
+"opts_en": [
+"sometimes",
+"a little",
+"occasionally",
+"continuously"
+],
+"wrong": {
+"0": "時々 means sometimes; ずっと says it never stopped.",
+"1": "少し means a little.",
+"2": "たまに means occasionally."
+},
+"why_en": "ずっと means continuously (続けて) for a long time."
 },
 "usage": {
 "options": [
@@ -15716,7 +20058,20 @@
 "町"
 ],
 "answer": 0,
-"why": "「祖父の時代」＝「祖父が若かったころ」。"
+"why": "「祖父の時代」＝「祖父が若かったころ」。",
+"en": "In my grandfather's era, there was no TV.",
+"opts_en": [
+"time/days",
+"place",
+"house",
+"town"
+],
+"wrong": {
+"1": "場所 is a place.",
+"2": "家 is a house.",
+"3": "町 is a town."
+},
+"why_en": "祖父の時代 means when grandfather was young (ころ)."
 },
 "usage": {
 "options": [
@@ -15763,7 +20118,20 @@
 "必ず"
 ],
 "answer": 1,
-"why": "「あんまり〜ない」＝「それほど〜ない」。"
+"why": "「あんまり〜ない」＝「それほど〜ない」。",
+"en": "This movie wasn't very interesting.",
+"opts_en": [
+"very",
+"(not) that",
+"more",
+"certainly"
+],
+"wrong": {
+"0": "とても means very; it doesn't go with ない this way.",
+"2": "もっと means more.",
+"3": "必ず means certainly."
+},
+"why_en": "あんまり〜ない means the same as それほど〜ない."
 },
 "usage": {
 "options": [
@@ -15810,7 +20178,20 @@
 "教えてもらって"
 ],
 "answer": 2,
-"why": "「伝える」＝話や知らせをほかの人に「言う」こと。"
+"why": "「伝える」＝話や知らせをほかの人に「言う」こと。",
+"en": "Please tell Mr. Tanaka that the meeting is from three o'clock.",
+"opts_en": [
+"ask",
+"decide",
+"say/tell",
+"have (him) teach you"
+],
+"wrong": {
+"0": "聞く means to ask, the opposite direction.",
+"1": "決める means to decide the time.",
+"3": "教えてもらう means you receive the information."
+},
+"why_en": "伝える means to say (言う) a message to another person."
 },
 "usage": {
 "options": [
@@ -15857,7 +20238,20 @@
 "目をさまさせて"
 ],
 "answer": 3,
-"why": "人を「起こす」＝人の「目をさまさせる」。"
+"why": "人を「起こす」＝人の「目をさまさせる」。",
+"en": "Please wake me up at six tomorrow morning.",
+"opts_en": [
+"put to bed",
+"wait",
+"take along",
+"make wake up"
+],
+"wrong": {
+"0": "ねかせる means put to bed, the opposite.",
+"1": "待つ means wait.",
+"2": "連れて行く means take along."
+},
+"why_en": "起こす a person means making them wake up."
 },
 "usage": {
 "options": [
@@ -15904,7 +20298,20 @@
 "聞いて"
 ],
 "answer": 0,
-"why": "「信じる」＝「本当だと思う」。"
+"why": "「信じる」＝「本当だと思う」。",
+"en": "I believe his story.",
+"opts_en": [
+"think it's true",
+"think it's a lie",
+"forget",
+"listen"
+],
+"wrong": {
+"1": "Thinking it's a lie is the opposite.",
+"2": "忘れる means to forget.",
+"3": "聞く means to listen, not believe."
+},
+"why_en": "信じる means to think something is true."
 },
 "usage": {
 "options": [
@@ -15951,7 +20358,20 @@
 "船"
 ],
 "answer": 1,
-"why": "「列車」＝せんろを走る「電車」など。"
+"why": "「列車」＝せんろを走る「電車」など。",
+"en": "This train is bound for Tokyo.",
+"opts_en": [
+"bus",
+"train",
+"airplane",
+"ship"
+],
+"wrong": {
+"0": "バス is a bus.",
+"2": "飛行機 is an airplane.",
+"3": "船 is a ship."
+},
+"why_en": "列車 is something running on rails, such as a 電車."
 },
 "usage": {
 "options": [
@@ -15999,7 +20419,20 @@
 "先生"
 ],
 "answer": 2,
-"why": "「警官」＝「おまわりさん」。"
+"why": "「警官」＝「おまわりさん」。",
+"en": "I didn't know the way, so I asked a police officer.",
+"opts_en": [
+"clerk",
+"doctor",
+"police officer (casual)",
+"teacher"
+],
+"wrong": {
+"0": "店員 is a shop clerk.",
+"1": "医者 is a doctor.",
+"3": "先生 is a teacher."
+},
+"why_en": "警官 means the same as おまわりさん."
 },
 "usage": {
 "options": [
@@ -16046,7 +20479,20 @@
 "ビル"
 ],
 "answer": 3,
-"why": "「建物」は家やビルなど、人が建てたもの。"
+"why": "「建物」は家やビルなど、人が建てたもの。",
+"en": "A big building went up in front of the station.",
+"opts_en": [
+"road",
+"park",
+"tree",
+"building"
+],
+"wrong": {
+"0": "道 is a road.",
+"1": "公園 is a park.",
+"2": "木 is a tree."
+},
+"why_en": "建物 is something people build, like a house or ビル."
 },
 "usage": {
 "options": [
@@ -16093,7 +20539,20 @@
 "写真"
 ],
 "answer": 0,
-"why": "「準備」＝「用意」。"
+"why": "「準備」＝「用意」。",
+"en": "Are your preparations for the trip done yet?",
+"opts_en": [
+"preparation",
+"plan",
+"worry",
+"photo"
+],
+"wrong": {
+"1": "予定 is a plan or schedule, not getting things ready.",
+"2": "心配 means worry.",
+"3": "写真 means photo."
+},
+"why_en": "準備 means the same as 用意 (getting ready)."
 },
 "usage": {
 "options": [
@@ -16140,7 +20599,20 @@
 "鳴いて"
 ],
 "answer": 1,
-"why": "「飛ぶ」＝空中を進むこと。"
+"why": "「飛ぶ」＝空中を進むこと。",
+"en": "The bird flew high and disappeared.",
+"opts_en": [
+"walked",
+"rose into the sky",
+"swam",
+"sang"
+],
+"wrong": {
+"0": "歩く means walked.",
+"2": "泳ぐ means swam.",
+"3": "鳴く means sang/called."
+},
+"why_en": "飛ぶ means moving through the air."
 },
 "usage": {
 "options": [
@@ -16187,7 +20659,20 @@
 "おどろいた"
 ],
 "answer": 2,
-"why": "「喜ぶ」＝「うれしそうにする」。"
+"why": "「喜ぶ」＝「うれしそうにする」。",
+"en": "Hearing she passed, my mother was overjoyed.",
+"opts_en": [
+"was sad",
+"got angry",
+"looked happy",
+"was surprised"
+],
+"wrong": {
+"0": "悲しむ means was sad, the opposite.",
+"1": "怒る means got angry.",
+"3": "おどろく means surprised, not necessarily happy."
+},
+"why_en": "喜ぶ means the same as うれしそうにする."
 },
 "usage": {
 "options": [
@@ -16234,7 +20719,20 @@
 "アイデア"
 ],
 "answer": 3,
-"why": "「いい考え」＝「いいアイデア」。"
+"why": "「いい考え」＝「いいアイデア」。",
+"en": "That's a good idea.",
+"opts_en": [
+"weather",
+"place",
+"time",
+"idea"
+],
+"wrong": {
+"0": "天気 is the weather.",
+"1": "場所 is a place.",
+"2": "時間 is time."
+},
+"why_en": "いい考え means the same as いいアイデア."
 },
 "usage": {
 "options": [
@@ -16281,7 +20779,20 @@
 "見つけた"
 ],
 "answer": 0,
-"why": "「無くす」＝持っていた物がどこにあるかわからなくなること。"
+"why": "「無くす」＝持っていた物がどこにあるかわからなくなること。",
+"en": "I lost my umbrella on the train.",
+"opts_en": [
+"dropped",
+"bought",
+"borrowed",
+"found"
+],
+"wrong": {
+"1": "買う means bought.",
+"2": "借りる means borrowed.",
+"3": "見つける means found, the opposite."
+},
+"why_en": "無くす means you no longer know where something you had is."
 },
 "usage": {
 "options": [
@@ -16328,7 +20839,20 @@
 "たくさん"
 ],
 "answer": 1,
-"why": "「全然〜ない」＝「少しも〜ない」。"
+"why": "「全然〜ない」＝「少しも〜ない」。",
+"en": "I couldn't sleep at all last night.",
+"opts_en": [
+"well",
+"(not) at all",
+"sometimes",
+"a lot"
+],
+"wrong": {
+"0": "よく means well.",
+"2": "時々 means sometimes.",
+"3": "たくさん means a lot."
+},
+"why_en": "全然〜ない means the same as 少しも〜ない."
 },
 "usage": {
 "options": [
@@ -16375,7 +20899,20 @@
 "バスが出たり着いたりする所"
 ],
 "answer": 2,
-"why": "「空港」は飛行機が出たり着いたりする所。"
+"why": "「空港」は飛行機が出たり着いたりする所。",
+"en": "I went to the airport to pick up a friend.",
+"opts_en": [
+"where ships come and go",
+"where trains come and go",
+"where planes come and go",
+"where buses come and go"
+],
+"wrong": {
+"0": "That is a port.",
+"1": "That is a station.",
+"3": "That is a bus terminal."
+},
+"why_en": "空港 is where planes take off and land."
 },
 "usage": {
 "options": [
@@ -16423,7 +20960,20 @@
 "少しも"
 ],
 "answer": 3,
-"why": "「なにも〜ない」＝「少しも〜ない」。"
+"why": "「なにも〜ない」＝「少しも〜ない」。",
+"en": "I haven't eaten anything since morning.",
+"opts_en": [
+"something",
+"a lot",
+"sometimes",
+"(not) at all"
+],
+"wrong": {
+"0": "何か means something, which doesn't take ない.",
+"1": "たくさん means a lot.",
+"2": "時々 means sometimes."
+},
+"why_en": "なにも〜ない means the same as 少しも〜ない."
 },
 "usage": {
 "options": [
@@ -16470,7 +21020,20 @@
 "かべ"
 ],
 "answer": 0,
-"why": "「的」はねらって当てるための目じるし。"
+"why": "「的」はねらって当てるための目じるし。",
+"en": "The ball he threw hit the center of the target.",
+"opts_en": [
+"the spot aimed at",
+"table",
+"window",
+"wall"
+],
+"wrong": {
+"1": "テーブル is a table.",
+"2": "窓 is a window.",
+"3": "かべ is a wall."
+},
+"why_en": "的 is a mark you aim at and try to hit."
 },
 "usage": {
 "options": [
@@ -16517,7 +21080,20 @@
 "絵をかく科目"
 ],
 "answer": 1,
-"why": "「数学」は数やけいさんを勉強する科目。"
+"why": "「数学」は数やけいさんを勉強する科目。",
+"en": "My older brother is good at math.",
+"opts_en": [
+"subject about language",
+"subject about calculation",
+"subject about the past",
+"subject of drawing"
+],
+"wrong": {
+"0": "That is language study.",
+"2": "That is history.",
+"3": "That is art."
+},
+"why_en": "数学 is the subject of numbers and calculation."
 },
 "usage": {
 "options": [
@@ -16564,7 +21140,20 @@
 "曲がります"
 ],
 "answer": 2,
-"why": "駅の前を「通る」＝駅の前を「通過する」。"
+"why": "駅の前を「通る」＝駅の前を「通過する」。",
+"en": "This bus passes in front of the station.",
+"opts_en": [
+"stops",
+"departs",
+"passes through",
+"turns"
+],
+"wrong": {
+"0": "止まる means it stops there.",
+"1": "出発する means it departs.",
+"3": "曲がる means it turns."
+},
+"why_en": "駅の前を通る means the same as 駅の前を通過する."
 },
 "usage": {
 "options": [
@@ -16611,7 +21200,20 @@
 "あまった"
 ],
 "answer": 3,
-"why": "料理が「残る」＝料理が「あまる」。"
+"why": "料理が「残る」＝料理が「あまる」。",
+"en": "A lot of the party food was left over.",
+"opts_en": [
+"wasn't enough",
+"ran out",
+"broke",
+"was left over"
+],
+"wrong": {
+"0": "足りない means not enough, the opposite.",
+"1": "なくなる means ran out, the opposite.",
+"2": "こわれる means broke."
+},
+"why_en": "料理が残る means the same as 料理があまる."
 },
 "usage": {
 "options": [
@@ -16658,7 +21260,20 @@
 "乗りかえます"
 ],
 "answer": 0,
-"why": "電車を「降りる」＝電車から「出る」。"
+"why": "電車を「降りる」＝電車から「出る」。",
+"en": "I get off the train at the next station.",
+"opts_en": [
+"exit",
+"board",
+"wait",
+"transfer"
+],
+"wrong": {
+"1": "乗る means get on, the opposite.",
+"2": "待つ means wait.",
+"3": "乗りかえる means change trains."
+},
+"why_en": "電車を降りる means getting out of (出る) the train."
 },
 "usage": {
 "options": [
@@ -16705,7 +21320,20 @@
 "静かだ"
 ],
 "answer": 1,
-"why": "「暗い」＝「明るくない」。"
+"why": "「暗い」＝「明るくない」。",
+"en": "The room was dark, so I turned on the light.",
+"opts_en": [
+"cold",
+"not bright",
+"narrow",
+"quiet"
+],
+"wrong": {
+"0": "寒い means cold.",
+"2": "せまい means small/narrow.",
+"3": "静か means quiet."
+},
+"why_en": "暗い means the same as 明るくない."
 },
 "usage": {
 "options": [
@@ -16752,7 +21380,20 @@
 "早く着いた"
 ],
 "answer": 2,
-"why": "「止まる」＝動いていたものが「動かなくなる」。"
+"why": "「止まる」＝動いていたものが「動かなくなる」。",
+"en": "The train stopped because of an accident.",
+"opts_en": [
+"started running",
+"got crowded",
+"stopped moving",
+"arrived early"
+],
+"wrong": {
+"0": "走りだす means started moving, the opposite.",
+"1": "こむ means got crowded.",
+"3": "早く着く means arrived early."
+},
+"why_en": "止まる means something moving stops moving."
 },
 "usage": {
 "options": [
@@ -16799,7 +21440,20 @@
 "いちばん終わり"
 ],
 "answer": 3,
-"why": "「最後」＝「いちばん終わり」。"
+"why": "「最後」＝「いちばん終わり」。",
+"en": "The last time I saw him was three years ago.",
+"opts_en": [
+"first time",
+"every time",
+"many times",
+"the very end"
+],
+"wrong": {
+"0": "初めて means the first time, the opposite.",
+"1": "毎回 means every time.",
+"2": "何度も means many times."
+},
+"why_en": "最後 means the same as いちばん終わり."
 },
 "usage": {
 "options": [
@@ -16846,7 +21500,20 @@
 "形"
 ],
 "answer": 0,
-"why": "「値段」＝「かかく」。"
+"why": "「値段」＝「かかく」。",
+"en": "The price of this bag is high.",
+"opts_en": [
+"price",
+"weight",
+"color",
+"shape"
+],
+"wrong": {
+"1": "重さ is weight.",
+"2": "色 is color.",
+"3": "形 is shape."
+},
+"why_en": "値段 means the same as かかく (price)."
 },
 "usage": {
 "options": [
@@ -16893,7 +21560,20 @@
 "病気"
 ],
 "answer": 1,
-"why": "子どもの「教育」＝子どもの「勉強」(教えて育てること)。"
+"why": "子どもの「教育」＝子どもの「勉強」(教えて育てること)。",
+"en": "We moved for the sake of the children's education.",
+"opts_en": [
+"play",
+"study",
+"meals",
+"illness"
+],
+"wrong": {
+"0": "遊び is play.",
+"2": "食事 is meals.",
+"3": "病気 is illness."
+},
+"why_en": "A child's 教育 is their 勉強 (being taught and raised)."
 },
 "usage": {
 "options": [
@@ -16940,7 +21620,20 @@
 "きっぷ"
 ],
 "answer": 2,
-"why": "「席」＝「座る所」。"
+"why": "「席」＝「座る所」。",
+"en": "On the train I gave my seat to an elderly person.",
+"opts_en": [
+"luggage",
+"bag",
+"place to sit",
+"ticket"
+],
+"wrong": {
+"0": "にもつ is luggage.",
+"1": "かばん is a bag.",
+"3": "きっぷ is a ticket."
+},
+"why_en": "席 means a place to sit."
 },
 "usage": {
 "options": [
@@ -16987,7 +21680,20 @@
 "医者にみてもらう所"
 ],
 "answer": 3,
-"why": "「病院」は病気やけがを医者に治してもらう所。"
+"why": "「病院」は病気やけがを医者に治してもらう所。",
+"en": "I had a high fever, so I went to the hospital.",
+"opts_en": [
+"place to borrow books",
+"place to deposit money",
+"place to buy things",
+"place to see a doctor"
+],
+"wrong": {
+"0": "That is a library.",
+"1": "That is a bank.",
+"2": "That is a shop."
+},
+"why_en": "病院 is where a doctor treats illness or injury."
 },
 "usage": {
 "options": [
@@ -17034,7 +21740,20 @@
 "夢"
 ],
 "answer": 0,
-"why": "「本当」＝うそではない＝「事実」。"
+"why": "「本当」＝うそではない＝「事実」。",
+"en": "His story was true.",
+"opts_en": [
+"fact",
+"lie",
+"joke",
+"dream"
+],
+"wrong": {
+"1": "うそ means a lie, the opposite.",
+"2": "じょうだん is a joke.",
+"3": "夢 is a dream."
+},
+"why_en": "本当 means not a lie, i.e. 事実 (fact)."
 },
 "usage": {
 "options": [
@@ -17081,7 +21800,20 @@
 "足"
 ],
 "answer": 1,
-"why": "「力」＝「パワー」。"
+"why": "「力」＝「パワー」。",
+"en": "My older brother is strong.",
+"opts_en": [
+"voice",
+"power",
+"head",
+"legs"
+],
+"wrong": {
+"0": "声 is voice.",
+"2": "頭 is head/brains.",
+"3": "足 is legs."
+},
+"why_en": "力 means the same as パワー."
 },
 "usage": {
 "options": [
@@ -17128,7 +21860,20 @@
 "新しい"
 ],
 "answer": 2,
-"why": "きかいが「動く」＝まだ「使える」。"
+"why": "きかいが「動く」＝まだ「使える」。",
+"en": "This air conditioner is old but still works.",
+"opts_en": [
+"is broken",
+"sells",
+"can be used",
+"is new"
+],
+"wrong": {
+"0": "こわれている means broken, the opposite.",
+"1": "売れる means it sells well.",
+"3": "新しい means new; it's old."
+},
+"why_en": "A machine that 動く can still be used (使える)."
 },
 "usage": {
 "options": [
@@ -17175,7 +21920,20 @@
 "友だち"
 ],
 "answer": 3,
-"why": "「友人」＝「友だち」(少しかたい言い方)。"
+"why": "「友人」＝「友だち」(少しかたい言い方)。",
+"en": "On the weekend I went on a trip with a friend.",
+"opts_en": [
+"family",
+"teacher",
+"parent",
+"friend"
+],
+"wrong": {
+"0": "家族 is family.",
+"1": "先生 is a teacher.",
+"2": "親 is a parent."
+},
+"why_en": "友人 means the same as 友だち (a bit formal)."
 },
 "usage": {
 "options": [
@@ -17222,7 +21980,20 @@
 "大切"
 ],
 "answer": 0,
-"why": "「健康」＝体が「元気」で病気がないこと。"
+"why": "「健康」＝体が「元気」で病気がないこと。",
+"en": "My grandfather is ninety but very healthy.",
+"opts_en": [
+"well/healthy",
+"famous",
+"quiet",
+"important"
+],
+"wrong": {
+"1": "有名 means famous.",
+"2": "静か means quiet.",
+"3": "大切 means important."
+},
+"why_en": "健康 means the body is well (元気) with no illness."
 },
 "usage": {
 "options": [
@@ -17269,7 +22040,20 @@
 "外国人"
 ],
 "answer": 1,
-"why": "「若者」＝「若い人」。"
+"why": "「若者」＝「若い人」。",
+"en": "This shop is popular with young people.",
+"opts_en": [
+"elderly people",
+"young people",
+"children",
+"foreigners"
+],
+"wrong": {
+"0": "お年より are old people, the opposite.",
+"2": "子ども are children.",
+"3": "外国人 are foreigners."
+},
+"why_en": "若者 means the same as 若い人."
 },
 "usage": {
 "options": [
@@ -17317,7 +22101,20 @@
 "店員"
 ],
 "answer": 2,
-"why": "「教師」＝「先生」。"
+"why": "「教師」＝「先生」。",
+"en": "My older sister is a teacher at a high school.",
+"opts_en": [
+"student",
+"doctor",
+"teacher",
+"clerk"
+],
+"wrong": {
+"0": "学生 is a student.",
+"1": "医者 is a doctor.",
+"3": "店員 is a shop clerk."
+},
+"why_en": "教師 means the same as 先生."
 },
 "usage": {
 "options": [
@@ -17364,7 +22161,20 @@
 "出した"
 ],
 "answer": 3,
-"why": "宿題を「与える」＝宿題を「出す」。"
+"why": "宿題を「与える」＝宿題を「出す」。",
+"en": "The teacher gave the students homework every day.",
+"opts_en": [
+"collected",
+"returned",
+"showed",
+"gave/set"
+],
+"wrong": {
+"0": "集める means collected.",
+"1": "返す means returned.",
+"2": "見せる means showed."
+},
+"why_en": "宿題を与える means the same as 宿題を出す."
 },
 "usage": {
 "options": [
@@ -17411,7 +22221,20 @@
 "一年でいちばんあついきせつ"
 ],
 "answer": 0,
-"why": "「春」は冬の次のきせつ。"
+"why": "「春」は冬の次のきせつ。",
+"en": "In spring, the cherry trees bloom.",
+"opts_en": [
+"season after winter",
+"season after summer",
+"season after autumn",
+"the hottest season"
+],
+"wrong": {
+"1": "That is autumn.",
+"2": "That is winter.",
+"3": "That is summer."
+},
+"why_en": "春 is the season after winter."
 },
 "usage": {
 "options": [
@@ -17458,7 +22281,20 @@
 "送ってもらいます"
 ],
 "answer": 1,
-"why": "「知らせる」＝「伝える」。"
+"why": "「知らせる」＝「伝える」。",
+"en": "We will let you know the exam results by email.",
+"opts_en": [
+"ask",
+"tell/convey",
+"look up",
+"have it sent"
+],
+"wrong": {
+"0": "聞く means to ask.",
+"2": "調べる means to look into.",
+"3": "送ってもらう means you receive it."
+},
+"why_en": "知らせる means the same as 伝える (to let someone know)."
 },
 "usage": {
 "options": [
@@ -17506,7 +22342,20 @@
 "食べて"
 ],
 "answer": 2,
-"why": "「運動する」＝「体を動かす」。"
+"why": "「運動する」＝「体を動かす」。",
+"en": "I exercise every day for my health.",
+"opts_en": [
+"study",
+"sleep",
+"move my body",
+"eat"
+],
+"wrong": {
+"0": "勉強 means study.",
+"1": "寝る means sleep.",
+"3": "食べる means eat."
+},
+"why_en": "運動する means the same as 体を動かす."
 },
 "usage": {
 "options": [
@@ -17554,7 +22403,20 @@
 "息をすると体に入るもの"
 ],
 "answer": 3,
-"why": "「空気」は息をするときにすうもの。"
+"why": "「空気」は息をするときにすうもの。",
+"en": "The air is clean on top of the mountain.",
+"opts_en": [
+"something you drink every day",
+"road you walk on",
+"town you see",
+"what enters the body when you breathe"
+],
+"wrong": {
+"0": "That is water.",
+"1": "That is a road.",
+"2": "That is a town."
+},
+"why_en": "空気 is what you take in when you breathe."
 },
 "usage": {
 "options": [
@@ -17601,7 +22463,20 @@
 "物を買う所"
 ],
 "answer": 0,
-"why": "「図書館」は本を読んだり借りたりできる所。"
+"why": "「図書館」は本を読んだり借りたりできる所。",
+"en": "I borrowed a book at the library.",
+"opts_en": [
+"place to read and borrow books",
+"place to deposit money",
+"place to treat illness",
+"place to buy things"
+],
+"wrong": {
+"1": "That is a bank.",
+"2": "That is a hospital.",
+"3": "That is a shop."
+},
+"why_en": "図書館 is a place where you can read and borrow books."
 },
 "usage": {
 "options": [
@@ -17648,7 +22523,20 @@
 "中学生"
 ],
 "answer": 1,
-"why": "「赤ちゃん」＝「赤ん坊」。"
+"why": "「赤ちゃん」＝「赤ん坊」。",
+"en": "My older sister had a baby.",
+"opts_en": [
+"puppy",
+"baby",
+"elementary schooler",
+"junior high student"
+],
+"wrong": {
+"0": "子犬 is a puppy.",
+"2": "小学生 is a school child.",
+"3": "中学生 is a teenager."
+},
+"why_en": "赤ちゃん means the same as 赤ん坊."
 },
 "usage": {
 "options": [
@@ -17695,7 +22583,20 @@
 "変わった"
 ],
 "answer": 2,
-"why": "「続く」＝止まらないで、「終わらない」でつながること。"
+"why": "「続く」＝止まらないで、「終わらない」でつながること。",
+"en": "Rainy days continued for a week.",
+"opts_en": [
+"began",
+"ended",
+"didn't end",
+"changed"
+],
+"wrong": {
+"0": "始まる means began.",
+"1": "終わる means ended, the opposite.",
+"3": "変わる means changed."
+},
+"why_en": "続く means to go on without stopping or ending."
 },
 "usage": {
 "options": [
@@ -17742,7 +22643,20 @@
 "外へ出て行ってしまった"
 ],
 "answer": 3,
-"why": "「逃げる」＝つかまらないように、その場所から出て行くこと。"
+"why": "「逃げる」＝つかまらないように、その場所から出て行くこと。",
+"en": "The dog ran away from home.",
+"opts_en": [
+"came back",
+"slept",
+"barked",
+"went out and left"
+],
+"wrong": {
+"0": "帰ってくる means came back, the opposite.",
+"1": "ねる means slept.",
+"2": "鳴く means barked."
+},
+"why_en": "逃げる means leaving a place so as not to be caught."
 },
 "usage": {
 "options": [
@@ -17789,7 +22703,20 @@
 "魚"
 ],
 "answer": 0,
-"why": "「人間」＝「人」。"
+"why": "「人間」＝「人」。",
+"en": "Humans are animals that use language.",
+"opts_en": [
+"people",
+"dogs",
+"birds",
+"fish"
+],
+"wrong": {
+"1": "犬 are dogs.",
+"2": "鳥 are birds.",
+"3": "魚 are fish."
+},
+"why_en": "人間 means the same as 人."
 },
 "usage": {
 "options": [
@@ -17836,7 +22763,20 @@
 "友だち"
 ],
 "answer": 1,
-"why": "「親」＝「父と母」。"
+"why": "「親」＝「父と母」。",
+"en": "I live with my parents.",
+"opts_en": [
+"older brother and sister",
+"father and mother",
+"children",
+"friends"
+],
+"wrong": {
+"0": "Those are siblings.",
+"2": "子ども are children.",
+"3": "友だち are friends."
+},
+"why_en": "親 means father and mother."
 },
 "usage": {
 "options": [
@@ -17883,7 +22823,20 @@
 "静かに"
 ],
 "answer": 2,
-"why": "「一緒に」＝相手と「二人で」(何人かで)。"
+"why": "「一緒に」＝相手と「二人で」(何人かで)。",
+"en": "Shall we go see a movie together tomorrow?",
+"opts_en": [
+"alone",
+"early",
+"the two of us",
+"quietly"
+],
+"wrong": {
+"0": "一人で means alone, the opposite.",
+"1": "早く means early.",
+"3": "静かに means quietly."
+},
+"why_en": "一緒に (with the listener) means going as two (二人で)."
 },
 "usage": {
 "options": [
@@ -17930,7 +22883,20 @@
 "ほのお"
 ],
 "answer": 3,
-"why": "「火」＝もえて出る「ほのお」。"
+"why": "「火」＝もえて出る「ほのお」。",
+"en": "Please put out the fire in the heater.",
+"opts_en": [
+"electricity",
+"water",
+"sound",
+"flame"
+],
+"wrong": {
+"0": "電気 is electricity or the light.",
+"1": "水 is water.",
+"2": "音 is sound."
+},
+"why_en": "火 means the flame (ほのお) that burns."
 },
 "usage": {
 "options": [
@@ -17977,7 +22943,20 @@
 "働きに"
 ],
 "answer": 0,
-"why": "「買い物に行く」＝「物を買いに行く」。"
+"why": "「買い物に行く」＝「物を買いに行く」。",
+"en": "My mother went shopping at the supermarket.",
+"opts_en": [
+"to buy things",
+"to sell things",
+"for a walk",
+"to work"
+],
+"wrong": {
+"1": "売る means to sell, the opposite.",
+"2": "散歩 is a walk.",
+"3": "働く means to work."
+},
+"why_en": "買い物に行く means going to buy things."
 },
 "usage": {
 "options": [
@@ -18024,7 +23003,20 @@
 "黒い"
 ],
 "answer": 1,
-"why": "「赤い」＝「赤色の」。"
+"why": "「赤い」＝「赤色の」。",
+"en": "I bought three red apples.",
+"opts_en": [
+"blue/green",
+"red-colored",
+"white",
+"black"
+],
+"wrong": {
+"0": "青い means blue or green.",
+"2": "白い means white.",
+"3": "黒い means black."
+},
+"why_en": "赤い means the same as 赤色の."
 },
 "usage": {
 "options": [
@@ -18071,7 +23063,20 @@
 "木の葉のような色の"
 ],
 "answer": 2,
-"why": "「白い」は雪のような色。"
+"why": "「白い」は雪のような色。",
+"en": "I went out wearing a white shirt.",
+"opts_en": [
+"sky-colored",
+"night-colored",
+"snow-colored",
+"leaf-colored"
+],
+"wrong": {
+"0": "That is blue.",
+"1": "That is black.",
+"3": "That is green."
+},
+"why_en": "白い is the color of snow."
 },
 "usage": {
 "options": [
@@ -18118,7 +23123,20 @@
 "チャンス"
 ],
 "answer": 3,
-"why": "「機会」＝「チャンス」。"
+"why": "「機会」＝「チャンス」。",
+"en": "I don't have many chances to talk with Japanese people.",
+"opts_en": [
+"reason",
+"place",
+"words",
+"chance"
+],
+"wrong": {
+"0": "理由 is a reason.",
+"1": "場所 is a place.",
+"2": "言葉 means words."
+},
+"why_en": "機会 means the same as チャンス."
 },
 "usage": {
 "options": [
