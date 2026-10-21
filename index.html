@@ -322,6 +322,7 @@ label.mini { display: grid; gap: 2px; font-size: 12px; color: var(--muted); } la
 .wrongs { width: 100%; display: grid; gap: 6px; font-size: 13px; color: var(--muted); line-height: 1.45; }
 .wrongs div { border-left: 3px solid var(--line); padding-left: 8px; }
 .wrongs div.picked { border-left-color: var(--again); color: var(--ink); }
+.wrongs .why-not { color: var(--ink); }
 .wrongs b { font-family: var(--font-body); color: var(--ink); margin-right: 4px; }
 .tr .small-btn { font-size: 12px; padding: 5px 10px; }
 .list { display: grid; gap: 6px; }
@@ -2037,8 +2038,8 @@ function buildMock(m) {
     const [o, a] = shuf([v.r, ...traps], 0); add('vocab', 'lk', '漢字読み · reading', `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">How is this read?</div>`, o, a, `${v.w} = ${v.r}: ${v.m}`); }
   for (const w of m.vocab.spell) { const v = BY_WORD[w]; if (!v || !(v.d || []).length) continue;
     const [o, a] = shuf([v.w, ...v.d], 0); add('vocab', 'lk', '表記 · spelling', `<div class="word-front kana" lang="ja">${esc(v.r)}</div><div class="prompt">${esc(v.m)}: which spelling?</div>`, o, a, `${v.r} is written ${v.w}`); }
-  for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${ctxHtml(q.s)}</div>`, sameScript(q.options, q.w), q.answer, q.en);
-  for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${paraHtml(q.s)}</div>`, q.options, q.answer, q.why);
+  for (const q of m.vocab.ctx) add('vocab', 'lk', '文脈規定 · which word fits', `<div class="g-q" lang="ja">${ctxHtml(q.s)}</div>`, sameScript(q.options, q.w), q.answer, q.en, { notes: q });
+  for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${paraHtml(q.s)}</div>`, q.options, q.answer, q.why + (q.why_en ? ' · ' + q.why_en : ''), { notes: q });
   for (const q of m.vocab.usage) add('vocab', 'lk', '用法 · correct usage', `<div class="word-front" lang="ja">${esc(q.w)}</div>`, q.options, q.answer, q.why + (q.why_en ? ' · ' + q.why_en : ''), { long: true, notes: q });
   for (const q of m.gram.fill) add('gr', 'lk', '文法形式 · grammar', `<div class="g-q" lang="ja">${ctxHtml(q.q)}</div>`, q.options, q.answer, q.why, { notes: q });
   for (const o of m.gram.order) { const [opts, a] = shuf(o.chunks, o.star);
@@ -2613,20 +2614,22 @@ const paraHtml = s => glossHtml(s).replace('【', '<u>').replace('】', '</u>');
 // (kanji above N3) show their written form too.
 function optionNotes(q, chosen) {
   if (!q) return '';
+  // The right answer gets a tick; a wrong one, why it doesn't fit this sentence (when the question has that note).
+  const tail = i => i === q.answer ? ' <span class="ok">✓</span>' : (q.wrong || {})[i] ? `<br><span class="why-not">${esc(q.wrong[i])}</span>` : '';
   const rows = q.options.map((o, i) => {
-    const v = BY_WORD[(q.w || [])[i] || o], cls = i === chosen && i !== q.answer ? 'picked' : '';
+    const v = BY_WORD[(q.w || [])[i] || o], cls = i === chosen && i !== q.answer ? 'picked' : i === q.answer && q.wrong ? 'right-note' : '';
     if (v) {
       const head = o === v.w ? `${kanjiLinks(v.w)} <span class="muted">${esc(v.r)}</span>` : `${esc(o)} <span class="muted">(written ${kanjiLinks(v.w)})</span>`;
-      return `<div class="${cls}"><b lang="ja">${head}</b> · ${esc(v.m)}${wordLink(v.w)}</div>`;
+      return `<div class="${cls}"><b lang="ja">${head}</b> · ${esc(v.m)}${wordLink(v.w)}${tail(i)}</div>`;
     }
     // Not a deck word (a conjugated form like 続けて, or a phrase): its words' readings and meanings.
     const gl = GL[o] || [];
-    if (!gl.length) return '';
     const rd = optReading(o);
     const parts = gl.map(([st, len, r, lemma, lr, m]) => `${gl.length > 1 ? `<span lang="ja">${esc(o.slice(st, st + len))}</span>: ` : ''}${esc(m || '')}${lemma !== o.slice(st, st + len) ? ` <span lang="ja">(${esc(lemma)})</span>` : ''}${wordLink(BY_WORD[lemma] ? lemma : o.slice(st, st + len))}`);
-    return `<div class="${cls}"><b lang="ja">${esc(o)}${rd && rd !== o ? ` <span class="muted">${esc(rd)}</span>` : ''}</b> · ${parts.join('; ')}</div>`;
+    if (!gl.length && !(q.opts_en || [])[i]) return '';
+    return `<div class="${cls}"><b lang="ja">${esc(o)}${rd && rd !== o ? ` <span class="muted">${esc(rd)}</span>` : ''}</b> · ${(q.opts_en || [])[i] ? esc(q.opts_en[i]) : parts.join('; ')}${tail(i)}</div>`;
   }).filter(Boolean);
-  return rows.length ? `<div class="wrongs">${rows.join('')}</div>` : '';
+  return rows.length ? `<div class="wrongs${q.wrong ? ' opt-notes' : ''}">${rows.join('')}</div>` : '';
 }
 
 function vocabScreen(it, tags) {
