@@ -1134,7 +1134,7 @@ function kanjiInfoHtml(k, used) {
 // any other part shows what it is made of, and each of those pieces can be tapped in turn.
 function showPart(btn) {
   // The same part name can stand for different glyphs ([head] is 頭, but 頁 inside 題): the card says which.
-  const ctx = BY_KANJI[(btn.closest('[data-in]') || {}).dataset?.in] || {}, inPop = !!btn.closest('#gl-pop');
+  const inK = (btn.closest('[data-in]') || {}).dataset?.in, ctx = BY_KANJI[inK] || BY_PART[inK] || {}, inPop = !!btn.closest('#gl-pop');
   const name = btn.dataset.part, own = (ctx.pg || {})[name], p = own ? { g: own } : PARTS[name] || {}, k = BY_KANJI[p.g];
   const pop = $('gl-pop'), pc = !k && BY_PART[p.g];
   if (pc) {

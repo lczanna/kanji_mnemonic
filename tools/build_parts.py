@@ -28,6 +28,9 @@ STROKES = {'one', 'slash', 'drop', 'walking stick', 'fishhook', 'barb'}
 OVERRIDES = {'computer': ['rice field', 'soil'], 'fortune-telling': ['magic wand', 'mouth'],
              'excuse': [], 'brush': [], 'adjusted': [], 'acorn': [], 'long robe': [], 'melancholy': [],
              'bushel basket': [], 'bamboo': [], 'axe': []}
+# A part name that the IDS breakdown can't place (it names a deck kanji the glyph doesn't contain): the glyph meant.
+# [wind] is 風 as a kanji but the small 几 inside 殳 and 恐; [house] is 家 but the roof 宀 in 穴 and 寅.
+PG_FIX = {('殳', 'wind'): '几', ('恐', 'wind'): '几', ('孝', 'old man'): '耂', ('穴', 'house'): '宀', ('寅', 'house'): '宀'}
 # Parts with no character of their own: the app describes where they are instead.
 SHAPES = {'stairs': 'the left half of 段'}
 
@@ -104,14 +107,20 @@ def main():
                 out |= {p} | (inside(p, depth + 1) if depth < 5 else set())
         return out
 
-    fixed = 0
-    for c in cards:
+    def glyphs_meant(c):
         within, pg = inside(c['kanji']), {}
         for n in dict.fromkeys(re.findall(r'\[([^\]]+)\]', c['story']) + (c.get('components') or [])):
             g = parts.get(n, {}).get('g')
             alt = [x for x in names.get(n, []) if x in within]
-            if g not in within and alt:
+            if (c['kanji'], n) in PG_FIX:
+                pg[n] = PG_FIX[(c['kanji'], n)]
+            elif g not in within and alt:
                 pg[n] = alt[0]
+        return pg
+
+    fixed = 0
+    for c in cards:
+        pg = glyphs_meant(c)
         if pg:
             c['pg'] = pg; fixed += len(pg)
         else:
@@ -157,8 +166,9 @@ def main():
         used = [c['kanji'] for c in order if any(((c.get('pg') or {}).get(n) or parts.get(n, {}).get('g')) == g
                                                  for n in re.findall(r'\[([^\]]+)\]', c['story']))]
         img = f'images/parts/{ord(g):x}.jpg'
-        part_cards.append(dict({'kanji': g, 'keyword': x['keyword'], 'components': x.get('components') or [], 'story': x['story'],
-                                'usedIn': used}, **({'image': img} if (ROOT / img).exists() else {})))
+        card = {'kanji': g, 'keyword': x['keyword'], 'components': x.get('components') or [], 'story': x['story'], 'usedIn': used}
+        pg = glyphs_meant(card)
+        part_cards.append(dict(card, **({'pg': pg} if pg else {}), **({'image': img} if (ROOT / img).exists() else {})))
     deck['partCards'] = sorted(part_cards, key=lambda p: min((i for i, c in enumerate(order) if c['kanji'] in p['usedIn']), default=9999))
     moved = sum(1 for a, b in zip(cards, order) if a is not b)
     deck['cards'] = order
