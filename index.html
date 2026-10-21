@@ -555,7 +555,9 @@ async function pullRemote() {
     if (names[i] === 'meta') remote.meta = body;
     else for (const [k, a] of Object.entries(body.cards || {})) remote.cards[k] = unpackCard(a);
   });
+  if (planDayUnsynced) { const m = remote.meta && remote.meta.planDay; appData.planDay = m && m.date === today() ? Object.assign({}, m) : null; planDayUnsynced = false; }
   mergeRemote(remote);
+  SYNC.pulled = true;
   earlyKnownChecks(appData);
   planCache = null;
   saveLocal();
@@ -809,6 +811,8 @@ function noteTime(kind, since) {
 }
 // The plan is fixed once per day (and when settings change), so finishing reviews early doesn't keep adding new cards.
 let planCache = null;
+// A day's plan made before the cloud copy arrived (this device's copy can be days old) is redone once it has.
+let planDayUnsynced = false;
 function planToday() {
   const key = today() + JSON.stringify(appData.settings) + appData.mocks.length;
   if (planCache && planCache.key === key) return planCache;
@@ -833,7 +837,7 @@ function planToday() {
   // Reviews and speed are taken once, the first time the plan is made each day: reviews done and cards learned
   // later in the day (they come back for a check) must not change the day's estimate.
   if (!appData.planDay || appData.planDay.date !== today())
-    { appData.planDay = { date: today(), due: TYPES.reduce((a, ty) => a + dueOf(ty).length, 0) + dueOf('part').length, t: timing() }; saveLocal(); }
+    { appData.planDay = { date: today(), due: TYPES.reduce((a, ty) => a + dueOf(ty).length, 0) + dueOf('part').length, t: timing() }; planDayUnsynced = !SYNC.pulled; saveLocal(); }
   const due = appData.planDay.due, t = appData.planDay.t || timing();
   // The day's goal is what keeps you on track. Words can only be learned once their kanji are, so their goal
   // stops at the words unlocked; the kanji that unlock more come first in the kanji queue.
