@@ -4526,7 +4526,8 @@
     "feature": "A squat closed box with just ONE line inside and nothing on top.",
     "label": "one bar",
     "hook": "Nietzsche locks the sun behind ONE window bar, nothing dripping on top, to end the DAY.",
-    "picture": "A glowing sun trapped in a squat square window frame with a single bar across its middle, a philosopher with a big moustache locking it, clear sky above."
+    "picture": "A glowing sun trapped in a squat square window frame with a single bar across its middle, a philosopher with a big moustache locking it, clear sky above.",
+    "img": "images/lookalikes/g111_65e5.jpg"
    },
    "月": {
     "feature": "The left side sweeps out down-left and the bottom stays open.",
@@ -4574,7 +4575,8 @@
     "feature": "A drop (丿) on top of a squat sun box with just ONE line inside (not the tall eye).",
     "label": "drop",
     "hook": "The Hacker drips one drop of bleach onto the squat sun and the whole sky turns WHITE.",
-    "picture": "A hacker in a hoodie leaning out of a window, dripping a single drop of bleach from a bottle onto a small square sun, the sky around it fading to blank white."
+    "picture": "A hacker in a hoodie leaning out of a window, dripping a single drop of bleach from a bottle onto a small square sun, the sky around it fading to blank white.",
+    "img": "images/lookalikes/g111_767d.jpg"
    }
   },
   "img": "images/lookalikes/g111.jpg"
@@ -4600,7 +4602,8 @@
     "feature": "No dot and no extra bar: just a bare figure spreading arms and legs.",
     "label": "bare",
     "hook": "The Dinosaur flings arms and legs wide, nothing on top and nothing dripping, just LARGE.",
-    "picture": "A muddy dinosaur doing a star jump under an open sky, arms and legs spread wide, a tiger fainting in front of it."
+    "picture": "A muddy dinosaur doing a star jump under an open sky, arms and legs spread wide, a tiger fainting in front of it.",
+    "img": "images/lookalikes/g112_5927.jpg"
    },
    "太": {
     "feature": "A dot BELOW, between the legs.",
@@ -4626,7 +4629,8 @@
     "feature": "An extra bar (一) across the top, above the outstretched arms.",
     "label": "top bar",
     "hook": "The Tennis player smashes the dog skyward until its head bonks the ceiling bar of the HEAVENS.",
-    "picture": "A tennis player swinging a racket, a St. Bernard flying upward with arms spread and bonking its head on a single long beam across the sky."
+    "picture": "A tennis player swinging a racket, a St. Bernard flying upward with arms spread and bonking its head on a single long beam across the sky.",
+    "img": "images/lookalikes/g112_5929.jpg"
    }
   },
   "img": "images/lookalikes/g112.jpg"
@@ -4687,7 +4691,8 @@
     "feature": "A moon (月: open-bottomed frame with two bars) under the crossed hand.",
     "label": "moon",
     "hook": "The crossed hand slams onto the moon below: 'I POSSESS you!', and the Unicorn stabs it with her horn.",
-    "picture": "A giant hand pinning a fallen crescent moon to the ground, a unicorn jabbing the hand with its horn."
+    "picture": "A giant hand pinning a fallen crescent moon to the ground, a unicorn jabbing the hand with its horn.",
+    "img": "images/lookalikes/g113_6709.jpg"
    }
   },
   "img": "images/lookalikes/g113.jpg"
@@ -4747,7 +4752,8 @@
     "feature": "Stairs on the left: a slanted stem with little step bars jutting out to the right.",
     "label": "stairs",
     "hook": "The Dandy blasts stairs into the cliff and climbs them one GRADE at a time, tipping his hat.",
-    "picture": "A mud-splattered gentleman in a top hat climbing a narrow staircase blasted into a cliff, a smoking missile on the right."
+    "picture": "A mud-splattered gentleman in a top hat climbing a narrow staircase blasted into a cliff, a smoking missile on the right.",
+    "img": "images/lookalikes/g114_6bb5.jpg"
    }
   },
   "img": "images/lookalikes/g114.jpg"
@@ -4773,7 +4779,8 @@
     "feature": "Power (力) on the right of heavy, and no person on the left.",
     "label": "power",
     "hook": "Raw power slams the heavy boulder from the right and it starts to MOVE; Dodo waddles out.",
-    "picture": "A glowing fist punching a heavy boulder from the right, the boulder sliding, a flattened dodo waddling out from under it."
+    "picture": "A glowing fist punching a heavy boulder from the right, the boulder sliding, a flattened dodo waddling out from under it.",
+    "img": "images/lookalikes/g115_52d5.jpg"
    },
    "勤": {
     "feature": "two little horns (grass) poking up on the left top",
@@ -4801,7 +4808,8 @@
     "feature": "Heavy stands bare: no power (力) on the right, no person on the left.",
     "label": "bare",
     "hook": "With no help on either side, the Jewel thief tries to lift the bare HEAVY pile alone and his back snaps.",
-    "picture": "A jewel thief straining alone to lift a pile of bricks stacked on a computer, his back bending, nobody nearby to help."
+    "picture": "A jewel thief straining alone to lift a pile of bricks stacked on a computer, his back bending, nobody nearby to help.",
+    "img": "images/lookalikes/g115_91cd.jpg"
    }
   },
   "img": "images/lookalikes/g115.jpg"
@@ -4835,13 +4843,15 @@
     "feature": "A person (亻) on the left of grow late: a box with a line inside, nothing poking above.",
     "label": "person",
     "hook": "A person stands beside the late-night shop window for your CONVENIENCE, selling a Bento box at 3 a.m.",
-    "picture": "A shopkeeper standing beside a glowing late-night shop window with one shelf across it, holding out a bento box."
+    "picture": "A shopkeeper standing beside a glowing late-night shop window with one shelf across it, holding out a bento box.",
+    "img": "images/lookalikes/g116_4fbf.jpg"
    },
    "更": {
     "feature": "No person on the left: just the top line over a box with a line inside and crossed sticks below.",
     "label": "no person",
     "hook": "Coach stands alone jamming crossed sticks through the clock box, and the night GROWS LATE forever.",
-    "picture": "A coach with a megaphone jamming two crossed sticks through a boxy clock under a ceiling beam, a dark night sky outside, no one else around."
+    "picture": "A coach with a megaphone jamming two crossed sticks through a boxy clock under a ceiling beam, a dark night sky outside, no one else around.",
+    "img": "images/lookalikes/g116_66f4.jpg"
    }
   },
   "img": "images/lookalikes/g116.jpg"
@@ -4865,7 +4875,8 @@
     "feature": "A small hooked top (⺈) over the broom, with the hooked spear running down through it.",
     "label": "hook top",
     "hook": "The Soldier wriggles out of the little hook on top and jams a spear down through the broom, ready to CONTEND.",
-    "picture": "A soldier wriggling out of a small curled hook, thrusting a hooked spear down through a broom in a fighting stance."
+    "picture": "A soldier wriggling out of a small curled hook, thrusting a hooked spear down through a broom in a fighting stance.",
+    "img": "images/lookalikes/g117_4e89.jpg"
    },
    "急": {
     "feature": "A heart (心) at the bottom instead of a stem.",
@@ -4884,7 +4895,8 @@
     "feature": "A line and a mouth box (一 over 口) on top, with the hooked spear running down through them and the broom.",
     "label": "mouth",
     "hook": "The Jeep rams the barbed broom down through the gossip's mouth on top: that's what poking into every MATTER gets you.",
-    "picture": "A muddy jeep ramming a broom with a barbed tip down through a gossip's open mouth, pinned under a wooden beam."
+    "picture": "A muddy jeep ramming a broom with a barbed tip down through a gossip's open mouth, pinned under a wooden beam.",
+    "img": "images/lookalikes/g117_4e8b.jpg"
    }
   },
   "img": "images/lookalikes/g117.jpg"
@@ -4908,7 +4920,8 @@
     "feature": "The schoolhouse roof: three little sparks (⺍) over a flat lid (冖), with a child under it.",
     "label": "sparks",
     "hook": "Three sparks crackle on the schoolhouse roof while the child below is forced to STUDY, splattered by Guacamole.",
-    "picture": "A small child at a desk under a school roof with three sparks crackling on top, a green guacamole monster splattering dip on him."
+    "picture": "A small child at a desk under a school roof with three sparks crackling on top, a green guacamole monster splattering dip on him.",
+    "img": "images/lookalikes/g118_5b66.jpg"
    },
    "覚": {
     "feature": "Under the schoolhouse roof: see 見, a tall eye on legs.",
@@ -4930,7 +4943,8 @@
     "feature": "A house roof (宀: one dot on a lid with hooked ends) over the child, no sparks.",
     "label": "house",
     "hook": "Under a plain house roof with one chimney dot, the child scratches CHARACTERs on the walls; the Jeep crashes in to read them.",
-    "picture": "A child scratching glowing symbols onto the walls under a tiny house roof with a single chimney, a muddy jeep bursting through the door with headlights on."
+    "picture": "A child scratching glowing symbols onto the walls under a tiny house roof with a single chimney, a muddy jeep bursting through the door with headlights on.",
+    "img": "images/lookalikes/g118_5b57.jpg"
    }
   },
   "img": "images/lookalikes/g118.jpg"
@@ -4952,13 +4966,15 @@
     "feature": "Nothing on the left: just bones (歹) and a saber (刂).",
     "label": "no person",
     "hook": "The saber herds the bones into a single FILE, nobody beside them; the Lettuce trembles at the end of the line.",
-    "picture": "A skeleton army queueing in a perfect single line beside a tall saber, a trembling lettuce last in the queue."
+    "picture": "A skeleton army queueing in a perfect single line beside a tall saber, a trembling lettuce last in the queue.",
+    "img": "images/lookalikes/g119_5217.jpg"
    },
    "例": {
     "feature": "A person (亻) standing on the left of file.",
     "label": "person",
     "hook": "One person steps up beside the file and marches so well he becomes the EXAMPLE; a Raven copies his steps.",
-    "picture": "A soldier marching in front of a line of skeletons, a drill sergeant pointing at him, a raven perched on his helmet."
+    "picture": "A soldier marching in front of a line of skeletons, a drill sergeant pointing at him, a raven perched on his helmet.",
+    "img": "images/lookalikes/g119_4f8b.jpg"
    }
   },
   "img": "images/lookalikes/g119.jpg"
@@ -4982,19 +4998,22 @@
     "feature": "Both: a cross (十) on top AND a plank with two legs (一 + 八) below the eye.",
     "label": "cross + legs",
     "hook": "The Shinto priest confesses before the eye under the cross on its spindly legs; only what's TRUE shows.",
-    "picture": "A Shinto priest kneeling before a giant eye topped by a cross, standing on a plank with two thin legs, the eye glowing."
+    "picture": "A Shinto priest kneeling before a giant eye topped by a cross, standing on a plank with two thin legs, the eye glowing.",
+    "img": "images/lookalikes/g120_771f.jpg"
    },
    "直": {
     "feature": "A cross (十) on top and an L-shaped hook wrapping the eye's left side and bottom; no legs.",
     "label": "fishhook",
     "hook": "Through crosshairs the eye stares STRAIGHTAWAY at you from its fishhook cradle, and the Chocolate bar melts.",
-    "picture": "A giant eye with crosshairs above it, cradled in a huge L-shaped fishhook, a chocolate bar melting under its stare."
+    "picture": "A giant eye with crosshairs above it, cradled in a huge L-shaped fishhook, a chocolate bar melting under its stare.",
+    "img": "images/lookalikes/g120_76f4.jpg"
    },
    "具": {
     "feature": "No cross on top: the eye sits bare on a plank with two legs (一 + 八).",
     "label": "no cross",
     "hook": "The Gourmet's TOOL monster wears no cross: just an eye on a cutting board with whisk legs.",
-    "picture": "A kitchen monster made of a giant eye on a cutting board with two whisk legs scuttling off with dinner, a muddy gourmet chasing it."
+    "picture": "A kitchen monster made of a giant eye on a cutting board with two whisk legs scuttling off with dinner, a muddy gourmet chasing it.",
+    "img": "images/lookalikes/g120_5177.jpg"
    }
   },
   "img": "images/lookalikes/g120.jpg"
@@ -5018,19 +5037,22 @@
     "feature": "A woman (女) on the left of the pedestal.",
     "label": "woman",
     "hook": "A woman leaps onto the pedestal and fires the pistol to COMMENCE the race; Sheep bolt from the line.",
-    "picture": "A woman jumping onto a pedestal firing a starting pistol, a flock of sheep bolting off a starting line."
+    "picture": "A woman jumping onto a pedestal firing a starting pistol, a flock of sheep bolting off a starting line.",
+    "img": "images/lookalikes/g121_59cb.jpg"
    },
    "治": {
     "feature": "Water (氵: three drops) on the left of the pedestal.",
     "label": "water",
     "hook": "The queen REIGNS from her pedestal over the water flooding in; the Jeep ferries her ministers through.",
-    "picture": "A queen on a pedestal with water flooding in from the left, a muddy jeep splashing through carrying ministers."
+    "picture": "A queen on a pedestal with water flooding in from the left, a muddy jeep splashing through carrying ministers.",
+    "img": "images/lookalikes/g121_6cbb.jpg"
    },
    "台": {
     "feature": "Nothing on the left: just an elbow (ム) over a mouth (口).",
     "label": "alone",
     "hook": "The bare elbow on the mouth makes a PEDESTAL; the Dinosaur climbs on it to reach the shelf.",
-    "picture": "A giant elbow resting on a screaming mouth like a stand, a dinosaur standing on top reaching for a kitchen shelf."
+    "picture": "A giant elbow resting on a screaming mouth like a stand, a dinosaur standing on top reaching for a kitchen shelf.",
+    "img": "images/lookalikes/g121_53f0.jpg"
    }
   },
   "img": "images/lookalikes/g121.jpg"
@@ -5054,19 +5076,22 @@
     "feature": "Nothing on the left: just a tree (木) with a short line above the longer one.",
     "label": "alone",
     "hook": "Mickey Mouse marks a short line on the bare tree each morning and sighs: NOT YET.",
-    "picture": "Mickey Mouse measuring a small tree against a short line marked high on its trunk, sighing."
+    "picture": "Mickey Mouse measuring a small tree against a short line marked high on its trunk, sighing.",
+    "img": "images/lookalikes/g122_672a.jpg"
    },
    "味": {
     "feature": "A mouth (口) on the left of not yet.",
     "label": "mouth",
     "hook": "Mickey Mouse stuffs unripe fruit into your mouth: a FLAVOR so sour your face caves in.",
-    "picture": "Mickey Mouse stuffing a hard green fruit into a wide open mouth, the face puckering from sourness."
+    "picture": "Mickey Mouse stuffing a hard green fruit into a wide open mouth, the face puckering from sourness.",
+    "img": "images/lookalikes/g122_5473.jpg"
    },
    "妹": {
     "feature": "A woman (女) on the left of not yet.",
     "label": "woman",
     "hook": "The not-yet-grown little woman is your YOUNGER SISTER; the Mime copies her every pout.",
-    "picture": "A small pouting girl next to a mime silently copying her pout, her eyes welling with tears."
+    "picture": "A small pouting girl next to a mime silently copying her pout, her eyes welling with tears.",
+    "img": "images/lookalikes/g122_59b9.jpg"
    }
   },
   "img": "images/lookalikes/g122.jpg"
@@ -5088,13 +5113,15 @@
     "feature": "Nothing on the left: just the arrow (弋) frame with craft (工) under it.",
     "label": "alone",
     "hook": "The Sheikh's arrow lands quivering on the bare craft bench: pure STYLE.",
-    "picture": "A sheikh on a camel bowing as his arrow quivers upright on a small I-beam workbench."
+    "picture": "A sheikh on a camel bowing as his arrow quivers upright on a small I-beam workbench.",
+    "img": "images/lookalikes/g123_5f0f.jpg"
    },
    "試": {
     "feature": "Words (言: say) on the left of style.",
     "label": "say",
     "hook": "Sheep say every answer aloud beside the bench to TEST the judges; wrong ones get sheared.",
-    "picture": "A row of sheep bleating answers at a panel of judges, one sheep being sheared bald on stage."
+    "picture": "A row of sheep bleating answers at a panel of judges, one sheep being sheared bald on stage.",
+    "img": "images/lookalikes/g123_8a66.jpg"
    }
   },
   "img": "images/lookalikes/g123.jpg"
@@ -5118,19 +5145,22 @@
     "feature": "Part (分: two slashes flaring out over a sword 刀) on top of the shells.",
     "label": "part",
     "hook": "The tax collector's sword parts the beggar from his shells: POVERTY, and a muddy Bin for a home.",
-    "picture": "A sword slicing a small pile of shells away from a beggar, who sits in a muddy trash bin."
+    "picture": "A sword slicing a small pile of shells away from a beggar, who sits in a muddy trash bin.",
+    "img": "images/lookalikes/g124_8ca7.jpg"
    },
    "貸": {
     "feature": "Substitute (代: a person beside an arrow) on top of the shells.",
     "label": "substitute",
     "hook": "A substitute teacher perched on my shells begs me to LEND him some; the Tiger pounces to collect.",
-    "picture": "A substitute teacher with an arrow-shaped pointer perched on a pile of shells, a tiger leaping at him."
+    "picture": "A substitute teacher with an arrow-shaped pointer perched on a pile of shells, a tiger leaping at him.",
+    "img": "images/lookalikes/g124_8cb8.jpg"
    },
    "資": {
     "feature": "Next (次: two little drops beside a yawning mouth 欠) on top of the shells.",
     "label": "next",
     "hook": "The Sheep banker on top yawns 'Next!' as customers pour their ASSETS into the shells below.",
-    "picture": "A yawning sheep in a banker's tie sitting atop a heap of shells, customers pouring more shells around her."
+    "picture": "A yawning sheep in a banker's tie sitting atop a heap of shells, customers pouring more shells around her.",
+    "img": "images/lookalikes/g124_8cc7.jpg"
    }
   },
   "img": "images/lookalikes/g124.jpg"
@@ -5152,13 +5182,15 @@
     "feature": "A brush (聿: many stacked bars with a stem through them) sitting right on the sun (日), no ground line.",
     "label": "brush",
     "hook": "The Shopkeeper dips his giant brush into the sun and WRITEs prices in fire across his window.",
-    "picture": "A cackling shopkeeper dipping a giant brush into a glowing sun and writing flames across a shop window."
+    "picture": "A cackling shopkeeper dipping a giant brush into a glowing sun and writing flames across a shop window.",
+    "img": "images/lookalikes/g125_66f8.jpg"
    },
    "昼": {
     "feature": "A flute (尺: a flag shape with a sweeping leg) over a sun standing on a ground line (旦).",
     "label": "flute",
     "hook": "Chewbacca blasts his flute so loud the sun leaps off the horizon into full DAYTIME.",
-    "picture": "Chewbacca blowing a long bamboo flute, a sun leaping up off a flat horizon line into a bright sky."
+    "picture": "Chewbacca blowing a long bamboo flute, a sun leaping up off a flat horizon line into a bright sky.",
+    "img": "images/lookalikes/g125_663c.jpg"
    }
   },
   "img": "images/lookalikes/g125.jpg"
@@ -5180,13 +5212,15 @@
     "feature": "An open-topped bucket (凵) holding a rice field (田), under one line.",
     "label": "bucket",
     "hook": "The Cactus drags one line over a rice field in an open bucket on the Garage door: each BRUSH STROKE screeches.",
-    "picture": "A cactus with paint-dipped spines painting a rice field inside an open bucket on a garage door, one line across the top."
+    "picture": "A cactus with paint-dipped spines painting a rice field inside an open bucket on a garage door, one line across the top.",
+    "img": "images/lookalikes/g126_753b.jpg"
    },
    "面": {
     "feature": "A closed box all round, a bar with a short slash on top (丆) and a long nose ridge inside.",
     "label": "closed box",
     "hook": "Your Mentor slams a closed boxy MASK onto your face, its nose ridge running down the middle.",
-    "picture": "An old mentor pressing a boxy mask with a brow bar, long nose ridge and square eyeholes onto a student's face."
+    "picture": "An old mentor pressing a boxy mask with a brow bar, long nose ridge and square eyeholes onto a student's face.",
+    "img": "images/lookalikes/g126_9762.jpg"
    }
   },
   "img": "images/lookalikes/g126.jpg"
@@ -5208,15 +5242,18 @@
     "feature": "Compare (比: two figures facing the same way) over white (白: a drop on a sun).",
     "label": "same way",
     "hook": "Two people facing the same way compare smiles, then ALL the crowd flashes white teeth at once.",
-    "picture": "Two people side by side facing the same direction grinning, a whole crowd below flashing blinding white teeth."
+    "picture": "Two people side by side facing the same direction grinning, a whole crowd below flashing blinding white teeth.",
+    "img": "images/lookalikes/g127_7686.jpg"
    },
    "背": {
     "feature": "North (北: two figures back to back) over flesh (月).",
     "label": "back to back",
     "hook": "The Hyena shoves two kids back to back and cackles at whoever loses in STATURE.",
-    "picture": "A cackling hyena pushing two kids back to back against a wall, measuring their heights."
+    "picture": "A cackling hyena pushing two kids back to back against a wall, measuring their heights.",
+    "img": "images/lookalikes/g127_80cc.jpg"
    }
-  }
+  },
+  "img": "images/lookalikes/g127.jpg"
  },
  {
   "id": "g128",
@@ -5235,13 +5272,15 @@
     "feature": "A heart (心: three dots and a curve) under the rice field.",
     "label": "heart",
     "hook": "Sheep hooves thud from the field down into your heart: you can't THINK of anything but sheep.",
-    "picture": "Sheep grazing a tiny rice field on top of a person's head, a red heart thudding in his chest."
+    "picture": "Sheep grazing a tiny rice field on top of a person's head, a red heart thudding in his chest.",
+    "img": "images/lookalikes/g128_601d.jpg"
    },
    "男": {
     "feature": "Power (力: a hooked arm) under the rice field.",
     "label": "power",
     "hook": "The Dandy drags the rice field with raw power to prove he's a real MAN.",
-    "picture": "A muddy gentleman in a top hat and monocle dragging a whole rice field with a flexed arm."
+    "picture": "A muddy gentleman in a top hat and monocle dragging a whole rice field with a flexed arm.",
+    "img": "images/lookalikes/g128_7537.jpg"
    }
   },
   "img": "images/lookalikes/g128.jpg"
@@ -5263,13 +5302,15 @@
     "feature": "A dart (矢) on the left: a short slash over two bars, legs spread wide.",
     "label": "dart",
     "hook": "The Chimpanzee throws a dart into the liar's mouth and now you KNOW everything.",
-    "picture": "A shrieking chimpanzee throwing a dart into a liar's open mouth, the truth spilling out."
+    "picture": "A shrieking chimpanzee throwing a dart into a liar's open mouth, the truth spilling out.",
+    "img": "images/lookalikes/g129_77e5.jpg"
    },
    "和": {
     "feature": "Wheat (禾) on the left: a drooping ear over a tree with a stem down the middle.",
     "label": "wheat",
     "hook": "Ripe wheat feeds the hungry mouth and the village sighs in HARMONY; the Walrus conducts.",
-    "picture": "A drooping wheat stalk feeding a smiling mouth, a walrus conducting a village choir."
+    "picture": "A drooping wheat stalk feeding a smiling mouth, a walrus conducting a village choir.",
+    "img": "images/lookalikes/g129_548c.jpg"
    }
   },
   "img": "images/lookalikes/g129.jpg"
@@ -5291,13 +5332,15 @@
     "feature": "Delicious (旨): a spoon (匕) over a sun box with a line inside (日).",
     "label": "spoon",
     "hook": "Your fingers dip a spoon into the delicious dish and you suck each FINGER loudly.",
-    "picture": "A person sucking their fingers next to a spoon dipped in a glowing dish, a restaurant crowd staring."
+    "picture": "A person sucking their fingers next to a spoon dipped in a glowing dish, a restaurant crowd staring.",
+    "img": "images/lookalikes/g130_6307.jpg"
    },
    "招": {
     "feature": "Seduce (召): a sword (刀) over an empty mouth box (口).",
     "label": "sword",
     "hook": "The Showman's manicured fingers curl over a sword and a mouth, BECKONING you into his tent.",
-    "picture": "A showman with glittering nails curling a finger to beckon, a small sword over an open mouth at his tent entrance."
+    "picture": "A showman with glittering nails curling a finger to beckon, a small sword over an open mouth at his tent entrance.",
+    "img": "images/lookalikes/g130_62db.jpg"
    }
   },
   "img": "images/lookalikes/g130.jpg"
@@ -5319,13 +5362,15 @@
     "feature": "Soil (土: a cross on a long base) over glue (寸): a temple.",
     "label": "soil",
     "hook": "You WAIT at the temple gate on its mound of soil while the Tiger leans closer.",
-    "picture": "A person waiting at a temple gate on a small mound of earth, a tiger beside them licking its lips."
+    "picture": "A person waiting at a temple gate on a small mound of earth, a tiger beside them licking its lips.",
+    "img": "images/lookalikes/g131_5f85.jpg"
    },
    "得": {
     "feature": "A sun on a line (旦: sunrise) over glue (寸).",
     "label": "sunrise",
     "hook": "Setting off at sunrise with coins glued to your boots, you GAIN a fortune; the Talk-show host begs for the story.",
-    "picture": "A traveller walking at sunrise with gold coins glued to his boots, a talk-show host chasing him with a microphone."
+    "picture": "A traveller walking at sunrise with gold coins glued to his boots, a talk-show host chasing him with a microphone.",
+    "img": "images/lookalikes/g131_5f97.jpg"
    }
   },
   "img": "images/lookalikes/g131.jpg"
@@ -5349,19 +5394,22 @@
     "feature": "Nothing beside it: just an umbrella (人 roof) over a tree with spread feet.",
     "label": "alone",
     "hook": "Yogurt pours onto the lone umbrella over the tree: TOO MUCH, it overflows.",
-    "picture": "A tiny umbrella over a small tree, yogurt pouring from the sky and overflowing it."
+    "picture": "A tiny umbrella over a small tree, yogurt pouring from the sky and overflowing it.",
+    "img": "images/lookalikes/g132_4f59.jpg"
    },
    "除": {
     "feature": "A pinnacle (阝: a hooked ear shape) on the left.",
     "label": "pinnacle",
     "hook": "Too much luggage on the pinnacle, so you EXCLUDE the extra: the muddy Jockey gets thrown off first.",
-    "picture": "A muddy jockey being tossed off a rocky peak piled with luggage."
+    "picture": "A muddy jockey being tossed off a rocky peak piled with luggage.",
+    "img": "images/lookalikes/g132_9664.jpg"
    },
    "途": {
     "feature": "A road (辶) curving underneath and around the bottom.",
     "label": "road",
     "hook": "The road underneath is jammed, so the Toddler waddles off on a secret ROUTE between the cars.",
-    "picture": "A toddler waddling between jammed cars on a road that curves underneath, sitting down bawling halfway."
+    "picture": "A toddler waddling between jammed cars on a road that curves underneath, sitting down bawling halfway.",
+    "img": "images/lookalikes/g132_9014.jpg"
    }
   },
   "img": "images/lookalikes/g132.jpg"
