@@ -11,7 +11,8 @@ Exam practice for the app → exam.json.
   three decoys of the same shape (same okurigana, or the same number of kanji) and similar usefulness fill the options.
   Options are printed the way the exam prints them: words whose kanji are above N3 (f "mixed") in kana. "w" keeps
   the words behind the options, for the notes shown after answering. Every sentence gets tap-to-read glosses.
-  data/ctx_notes.json says why each decoy doesn't fit ("wrong"); a note is used only while its options are unchanged.
+  data/ctx_notes.json holds the checked options for each sentence (decoys that also fitted swapped out) and why each
+  decoy doesn't fit ("wrong"); it replaces the generated options while the answer word is the same.
 
   python3 tools/build_exam.py JMdict_e.gz
 """
@@ -157,9 +158,10 @@ def main():
         words[w] = {k: q[k] for k in ('ctx', 'para', 'usage') if q.get(k)}
         for c in words[w].get('ctx', []):
             c['gl'] = gloss_all([c['s']], jm, fixes)
-            note = ctx_notes.get(c['s'])   # why each wrong option doesn't fit, written for these exact options
-            if note and note['options'] == c['options']:
-                c['wrong'] = note['wrong']
+            # Checked by hand: the options (decoys that also fitted were swapped out) and why each wrong one doesn't fit.
+            note = ctx_notes.get(c['s'])
+            if note and note['w'][note['answer']] == c['w'][c['answer']]:
+                c.update(options=note['options'], w=note['w'], answer=note['answer'], wrong=note['wrong'])
         if 'para' in words[w]:
             words[w]['para']['gl'] = gloss_all([words[w]['para']['s'], *words[w]['para']['options']], jm, fixes)
         if 'usage' in words[w]:
