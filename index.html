@@ -2158,12 +2158,17 @@ function quizItem(type, x) {
     // Kanji words rotate three exam tasks: pick the reading (traps on long vowels, っ, ゛), pick the spelling, say it.
     // From the second review, every fourth check uses one of the exam's other word questions when there is one:
     // 文脈規定 (which word fits the sentence), 言い換え (closest meaning), 用法 (which sentence uses it right).
+    // Only questions you can mostly read: at most 2 words you haven't studied (a few unknowns are fine, you guess
+    // from context as in the exam; a sentence full of them is just guessing). The easiest sentence is picked.
     const ex = EXAM.vocab[x.w];
     if (ex && reps >= 2 && reps % 4 === 3) {
-      const kinds = ['ctx', 'para', 'usage'].filter(k => ex[k]);
-      const kind = kinds[Math.floor(reps / 4) % kinds.length];
-      const q = kind === 'ctx' ? ex.ctx[Math.floor(Math.random() * ex.ctx.length)] : ex[kind];
-      if (q) return { type, x, mode: 'quiz', task: kind, q, opts: q.options, answerText: q.options[q.answer] };
+      const texts = (k, q) => k === 'ctx' ? [q.s] : k === 'para' ? [q.s, ...q.options] : q.options;
+      const cands = ['ctx', 'para', 'usage'].flatMap(k => (k === 'ctx' ? ex.ctx || [] : ex[k] ? [ex[k]] : [])
+        .map(q => ({ k, q, n: texts(k, q).reduce((a, t) => a + unknownWords(t, x.w), 0) }))).filter(c => c.n <= 2);
+      const kinds = [...new Set(cands.map(c => c.k))];
+      const kind = kinds[Math.floor(reps / 4) % Math.max(1, kinds.length)];
+      const pick = cands.filter(c => c.k === kind).sort((a, b) => a.n - b.n || Math.random() - .5)[0];
+      if (pick) return { type, x, mode: 'quiz', task: kind, q: pick.q, opts: pick.q.options, answerText: pick.q.options[pick.q.answer] };
     }
     if (vform(x) !== 'kanji') return { type, x, mode: 'quiz', task: 'meaning' };
     const traps = readingTraps(x.r);
@@ -2682,6 +2687,18 @@ function vocabScreen(it, tags) {
     bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
 }
 
+// Words in a sentence you couldn't read: a deck word you haven't started, or a word with a kanji you haven't learned.
+// Kana words count as known (mostly grammar), and so does the word being tested.
+function unknownWords(text, tested) {
+  let n = 0;
+  for (const [, , , lemma] of GL[text] || []) {
+    if (!HAS_KANJI.test(lemma) || lemma === tested) continue;
+    const v = BY_WORD[lemma];
+    if (v ? appData.cards['v:' + lemma] || (v.k || []).every(ch => appData.cards[ch]) : [...lemma].filter(ch => BY_KANJI[ch]).every(ch => appData.cards[ch]) && [...lemma].every(ch => !HAS_KANJI.test(ch) || BY_KANJI[ch])) continue;
+    n++;
+  }
+  return n;
+}
 // Ordering task: readings and meanings of the words in a chunk, shown only when asked for.
 function chunkGl(o, i, links) {
   const words = (o.cgl || [])[i] || [];
