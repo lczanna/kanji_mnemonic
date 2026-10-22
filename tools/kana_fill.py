@@ -46,8 +46,11 @@ def tidy_once(m):
         head = m[:e]
         if head.count('(') == head.count(')'):
             return head
-    head = m.split('(')[0].strip()
-    return (head or m.rstrip(' ,;') + '…)') if m.count('(') > m.count(')') else m
+    if m.count('(') > m.count(')'):
+        head = m.split('(')[0].strip()
+        return head or m.rstrip(' ,;') + '…)'
+    # One long sense cut mid-word ("indicates that the ac"): end at the last whole word.
+    return m[:m.rstrip().rfind(' ')].rstrip(' ,;') + '…' if ' ' in m.strip() and not m.endswith('…') else m
 
 
 def tidy_all(o, cgl=False):
