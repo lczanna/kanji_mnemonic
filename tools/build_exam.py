@@ -124,6 +124,32 @@ def build_mocks(spec, qr, dlg, read, words, vocab, jm, fixes):
     return mocks, mock_listen
 
 
+KANA_TAIL = re.compile(r'[ぁ-ゖ]+$')
+
+
+def fix_ctx_gloss(c, fixes):
+    """Hand-checked meanings for this sentence (data/ctx_gloss_fixes.json): the sense the word has here, and the
+    right dictionary form or reading where the tokenizer got them wrong. Entries are found by where the word starts."""
+    gl = (c.get('gl') or {}).get(c['s']) or []
+    for at, f in (fixes.get(c['s']) or {}).items():
+        for g in gl:
+            if g[0] != int(at):
+                continue
+            g[5] = f['meaning']
+            if f.get('lemma'):
+                g[3] = f['lemma']
+            if f.get('reading') and f['reading'] != g[4]:
+                text = c['s'][g[0]:g[0] + g[1]]
+                head = re.match(r'[^ぁ-ゖ]*', text).group(0)   # the kanji part as written
+                if not head:   # written in kana: it reads as written
+                    g[2] = text
+                else:          # the reading's stem for the kanji, then the kana as written (言いなさ → いいなさ)
+                    tail = KANA_TAIL.search(g[3])
+                    stem = f['reading'][:len(f['reading']) - len(tail.group(0))] if tail else f['reading']
+                    g[2] = stem + text[len(head):] if text != g[3] else f['reading']
+                g[4] = f['reading']
+
+
 def gloss_all(texts, jm, fixes):
     gl = {}
     for t in texts:
@@ -150,6 +176,9 @@ def main():
     examples = json.loads((ROOT / 'examples.json').read_text(encoding='utf8'))
     ctx = ctx_questions(vocab, examples, random.Random(7))
     ctx_notes = data('ctx_notes.json') or {}
+    cg = data('ctx_gloss_fixes.json') or {}
+    # Sentences found broken by hand (a typo, or English that doesn't match): not used.
+    ctx = {w: [c for c in cs if c['s'] not in (cg.get('bad') or {})] for w, cs in ctx.items()}
     words = {}
     for w in set(ctx) | {w for w, q in vx.items() if q}:
         q = dict(vx.get(w) or {})
@@ -158,6 +187,7 @@ def main():
         words[w] = {k: q[k] for k in ('ctx', 'para', 'usage') if q.get(k)}
         for c in words[w].get('ctx', []):
             c['gl'] = gloss_all([c['s']], jm, fixes)
+            fix_ctx_gloss(c, cg.get('fix') or {})
             # Checked by hand: the options (decoys that also fitted were swapped out) and why each wrong one doesn't fit.
             note = ctx_notes.get(c['s'])
             if note and note['w'][note['answer']] == c['w'][c['answer']]:
