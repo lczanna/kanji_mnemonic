@@ -2263,7 +2263,8 @@ function withParts(fresh) {
 }
 // Parts of kanji you started before part cards existed: a few a day until they're all learned.
 function pendingParts(limit = 3) {
-  return PART_DECK.filter(p => !appData.cards['c:' + p.kanji] && (p.usedIn || []).some(k => appData.cards[k]))
+  const inLearned = new Set(PART_DECK.filter(p => appData.cards['c:' + p.kanji]).flatMap(p => partDeps(p).parts.map(d => d.kanji)));
+  return PART_DECK.filter(p => !appData.cards['c:' + p.kanji] && ((p.usedIn || []).some(k => appData.cards[k]) || inLearned.has(p.kanji)))
     .slice(0, limit).map(x => ({ type: 'part', x, mode: 'learn' }));
 }
 const duePartItems = () => dueOf('part').map(x => quizItem('part', x));
