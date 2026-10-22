@@ -896,6 +896,11 @@ function newLeftToday(type) {
   if (finalWeek()) return 0;
   return Math.max(0, dailyLimit(type) - (appData.newByDay[dayKey(type)] || 0));
 }
+// Deck kanji written in a grammar pattern (通 in 〜を通じて), so you can read and say it before the grammar card.
+// Labels in brackets (〜そうだ（伝聞）) only name the pattern and don't count.
+function grammarKanji(g) {
+  return [...new Set([...(g.pattern || '').replace(/（[^）]*）|\([^)]*\)/g, '')].filter(ch => BY_KANJI[ch]))].map(ch => BY_KANJI[ch]);
+}
 // Deck kanji a kanji's story uses as parts, directly or inside another part ([how many] is 幾 in 機).
 const DECK_PARTS = {};
 function deckParts(k) {
@@ -922,6 +927,8 @@ function newQueueOf(type, extra) {
     }
     // A kanji you've learned whose part you haven't (you met 機 before 幾): that part comes first of all.
     for (const k of DECK) if (appData.cards[k.kanji]) for (const d of deckParts(k)) if (!appData.cards[d.kanji]) need[d.kanji] = 1000;
+    // The same for a grammar card you've started whose pattern has a kanji you haven't (通 in 〜を通じて).
+    for (const g of GRAMMAR) if (appData.cards['g:' + g.id]) for (const k of grammarKanji(g)) if (!appData.cards[k.kanji]) need[k.kanji] = Math.max(need[k.kanji] || 0, 900);
     pool = pool.map((x, i) => [x, i]).sort((a, b) => (need[b[0].kanji] || 0) - (need[a[0].kanji] || 0) || a[1] - b[1]).map(([x]) => x);
     // A kanji moved up still comes after the deck kanji its story is built from (幾 before 機), so its parts are known.
     const out = [], seen = new Set();
@@ -2452,7 +2459,7 @@ const ROUND = 50;
 // whatever built the session (an older saved session, extras, repair).
 function partsFirst() {
   const it = session && session.queue[session.i];
-  if (!it || !['kanji', 'part'].includes(it.type) || it.mode !== 'learn' || appData.cards[keyOf(it.type, it.x)]) return;
+  if (!it || !['kanji', 'part', 'grammar'].includes(it.type) || it.mode !== 'learn' || appData.cards[keyOf(it.type, it.x)]) return;
   const need = [], seen = new Set();
   const add = k => {
     if (seen.has(k.kanji)) return;
@@ -2461,7 +2468,7 @@ function partsFirst() {
     if (k !== it.x) need.push({ type: 'kanji', x: k, mode: 'learn', extra: it.extra });
   };
   if (it.type === 'kanji') add(it.x);
-  else for (const k of partDeps(it.x).kanji) if (!appData.cards[k.kanji]) add(k);
+  else for (const k of it.type === 'grammar' ? grammarKanji(it.x) : partDeps(it.x).kanji) if (!appData.cards[k.kanji]) add(k);
   const ahead = withParts([...need, it]).filter(f => f !== it && !(f.type === 'part' && appData.cards['c:' + f.x.kanji]));
   if (!ahead.length) return;
   // Drop later copies of the same cards, then teach them here.
