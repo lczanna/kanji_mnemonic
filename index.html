@@ -441,6 +441,7 @@ function loadData() {
   // The old default of 25 words a day becomes the time-based plan, unless it was set by hand.
   if (!d.settingsAt && d.settings.vocabPerDay === '25') d.settings.vocabPerDay = 'auto';
   earlyKnownChecks(d);
+  easyFirstChecks(d);
   d.version = 3;
   return d;
 }
@@ -559,6 +560,7 @@ async function pullRemote() {
   mergeRemote(remote);
   SYNC.pulled = true;
   earlyKnownChecks(appData);
+  easyFirstChecks(appData);
   planCache = null;
   saveLocal();
 }
@@ -618,6 +620,9 @@ function schedule(key, grade) {
   const t = today();
   let c = appData.cards[key];
   const ret = retention();
+  // The quiz right after the lesson only tests short-term memory, so "Easy" there counts as "Good".
+  const justLearned = c && !c.reps;
+  if (justLearned && grade === 4) grade = 3;
   if (!c || !c.reps) {   // new, or learned but not yet quizzed
     c = { stability: FSRS.initS(grade), difficulty: FSRS.initD(grade), reps: 1, lapses: grade === 1 ? 1 : 0, lastReview: t };
   } else {
@@ -669,6 +674,16 @@ function markKnown(key) {
 // The same spread on every device, so a synced card gets the same date everywhere.
 function knownGap(key) { let h = 7; for (const ch of key) h = (h * 31 + ch.codePointAt(0)) | 0; return 2 + Math.abs(h) % 6; }
 // Cards marked known before this rule had their first check up to 4 weeks out: bring it into the first week.
+// Cards answered "Easy" in the quiz right after their lesson used to jump two weeks ahead after one look:
+// they come back for a check now (from the 2nd day after the lesson), counted as "Good". Same result on every device.
+function easyFirstChecks(d) {
+  for (const c of Object.values(d.cards)) {
+    if (c.triaged || c.reps !== 1 || Math.abs((c.stability || 0) - FSRS.initS(4)) > 0.01 || !c.lastReview) continue;
+    c.stability = FSRS.initS(3); c.difficulty = FSRS.initD(3);
+    const by = addDays(c.lastReview, 2);
+    if (!c.due || c.due > by) c.due = by;
+  }
+}
 function earlyKnownChecks(d) {
   for (const [key, c] of Object.entries(d.cards)) {
     if (!c.triaged || (c.reps || 0) !== 1 || !c.lastReview || !c.due) continue;
