@@ -2237,12 +2237,26 @@ function startStudy(type, extra) {
   return runQueue(items, fresh, type);
 }
 // A new kanji brings the part cards it needs that you haven't learned yet, right before it.
+// What a part card's story is built from: other part cards (氏 inside 昏 "dusk") and deck kanji (日).
+const PART_DEPS = {};
+function partDeps(p) {
+  if (PART_DEPS[p.kanji]) return PART_DEPS[p.kanji];
+  const names = new Set([...(p.story || '').matchAll(/\[([^\]]+)\]/g)].map(m => m[1]).concat(p.components || []));
+  const gs = [...names].map(n => (p.pg || {})[n] || (PARTS[n] || {}).g).filter(g => g && g !== p.kanji);
+  return (PART_DEPS[p.kanji] = { parts: [...new Set(gs.filter(g => BY_PART[g]))].map(g => BY_PART[g]), kanji: [...new Set(gs.filter(g => BY_KANJI[g]))].map(g => BY_KANJI[g]) });
+}
+// New kanji and part cards come after the part cards they're built from, however deep (婚 → 昏 → 氏).
 function withParts(fresh) {
   const out = [], seen = new Set(fresh.filter(f => f.type === 'part').map(f => f.x.kanji));
+  const addPart = (p, extra) => {
+    if (appData.cards['c:' + p.kanji] || seen.has(p.kanji)) return;
+    seen.add(p.kanji);
+    for (const d of partDeps(p).parts) addPart(d, extra);
+    out.push({ type: 'part', x: p, mode: 'learn', extra });
+  };
   for (const f of fresh) {
-    if (f.type === 'kanji' && f.mode === 'learn')
-      for (const p of PARTS_OF[f.x.kanji] || [])
-        if (!appData.cards['c:' + p.kanji] && !seen.has(p.kanji)) { seen.add(p.kanji); out.push({ type: 'part', x: p, mode: 'learn', extra: f.extra }); }
+    if (f.mode === 'learn' && f.type === 'kanji') for (const p of PARTS_OF[f.x.kanji] || []) addPart(p, f.extra);
+    if (f.mode === 'learn' && f.type === 'part') for (const d of partDeps(f.x).parts) addPart(d, f.extra);
     out.push(f);
   }
   return out;
@@ -2422,7 +2436,7 @@ const ROUND = 50;
 // whatever built the session (an older saved session, extras, repair).
 function partsFirst() {
   const it = session && session.queue[session.i];
-  if (!it || it.type !== 'kanji' || it.mode !== 'learn' || appData.cards[it.x.kanji]) return;
+  if (!it || !['kanji', 'part'].includes(it.type) || it.mode !== 'learn' || appData.cards[keyOf(it.type, it.x)]) return;
   const need = [], seen = new Set();
   const add = k => {
     if (seen.has(k.kanji)) return;
@@ -2430,7 +2444,8 @@ function partsFirst() {
     for (const d of deckParts(k)) if (!appData.cards[d.kanji]) add(d);
     if (k !== it.x) need.push({ type: 'kanji', x: k, mode: 'learn', extra: it.extra });
   };
-  add(it.x);
+  if (it.type === 'kanji') add(it.x);
+  else for (const k of partDeps(it.x).kanji) if (!appData.cards[k.kanji]) add(k);
   const ahead = withParts([...need, it]).filter(f => f !== it && !(f.type === 'part' && appData.cards['c:' + f.x.kanji]));
   if (!ahead.length) return;
   // Drop later copies of the same cards, then teach them here.
