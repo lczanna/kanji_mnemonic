@@ -16,6 +16,14 @@ ROOT = Path(__file__).resolve().parent.parent
 KANJI = re.compile(r'[㐀-鿿々]')
 # Joined forms that are usually two words in a sentence: そう言った is "said so" far more often than "like that".
 SKIP = {'そう言った', 'そう言う'}
+# Joined even though JMdict doesn't mark them common: idioms whose parts mislead (通り is "street", もう "already")
+# and words whose reading changes when joined (一日中 いちにちじゅう, 三十分 さんじゅっぷん). Checked by hand.
+ALWAYS = {'一日中', '今日中', '日本中', '三十分', '何曜日', '一番目', 'どちら様', 'もう少し', 'もう一回', 'もう一方', 'もう直',
+          '予定どおり', '予定通り', '期待通り', 'いつも通り', '子供向け', '外国人向け', '人それぞれ', '知る限り', '十中八九',
+          '良い子', '住み良い', 'ひと財産', '四つ折り', '早寝早起き', '人間嫌い', '一身上の都合', '一段上', '半時間',
+          'お腹いっぱい', '飛ばし読み', 'あたり一帯', 'あたり一面', '大目に見る', '習い性となる', '真っ赤なうそ',
+          '滅多に無い', '欠くべからざる', '男盛り', '貸し借り無し', '年越しそば', '天然パーマ', '偶然の一致', '入場お断り',
+          '気の毒に思う', '一晩中'}
 
 
 def load(path):
@@ -23,7 +31,8 @@ def load(path):
     out = {}
     for ent in re.finditer(r'<entry>(.*?)</entry>', x, re.S):
         e = ent.group(1)
-        if '_pri>' not in e:
+        common = '_pri>' in e
+        if not common and not any(k in ALWAYS for k in re.findall(r'<keb>([^<]+)</keb>', e)):
             continue
         senses = [re.findall(r'<gloss>([^<]+)</gloss>', s) for s in re.findall(r'<sense>(.*?)</sense>', e, re.S)]
         if not senses or not senses[0]:
@@ -48,7 +57,7 @@ def merge(text, gl, jm):
                 continue
             rebs, meaning = jm[word]
             joined = ''.join(p[2] for p in part)
-            r = joined if joined in rebs else rebs[0] if len(rebs) == 1 else None
+            r = joined if joined in rebs else rebs[0] if len(rebs) == 1 or word in ALWAYS else None
             if not r:
                 continue
             out.append([part[0][0], len(word), r, word, r, meaning])
