@@ -1157,6 +1157,29 @@ function kanjiInfoHtml(k, used) {
 }
 // Story parts: tapping one shows what it is. A deck kanji shows its readings and a link to its card;
 // any other part shows what it is made of, and each of those pieces can be tapped in turn.
+// Parts that look almost the same: tapping one (or opening its part card) names the other and the difference.
+const PART_TWINS = {
+  '夂': ['攵', 'taskmaster', 'walking legs 夂 has 3 strokes and sits on top or under (後, 冬, 各); taskmaster 攵 has 4, with a short extra stroke at the top left, and sits on the right (教, 数, 放)'],
+  '攵': ['夂', 'walking legs', 'taskmaster 攵 has 4 strokes, with a short extra stroke at the top left, and sits on the right (教, 数, 放); walking legs 夂 has 3 and sits on top or under (後, 冬, 各)'],
+  '冖': ['宀', 'house', 'crown 冖 is a lid with no dot; house 宀 has a dot (chimney) on top'],
+  '宀': ['冖', 'crown', 'house 宀 has a dot (chimney) on top; crown 冖 has none'],
+  '冫': ['氵', 'water', 'ice 冫 is two drops; water 氵 is three'],
+  '氵': ['冫', 'ice', 'water 氵 is three drops; ice 冫 is two'],
+  '衤': ['礻', 'altar', 'cloak 衤 has one more short stroke at the bottom right (5 strokes); altar 礻 has 4'],
+  '礻': ['衤', 'cloak', 'altar 礻 has 4 strokes; cloak 衤 has one more short stroke at the bottom right'],
+  '土': ['士', 'soldier', 'soil 土 has the longer line at the bottom (ground); soldier 士 has it on top (shoulders)'],
+  '士': ['土', 'soil', 'soldier 士 has the longer line on top (shoulders); soil 土 has it at the bottom (ground)'],
+  '己': ['已', 'snake', 'self 己 is open at the top left; snake 已 is half closed'],
+  '已': ['己', 'self', 'snake 已 is half closed at the top left; self 己 is open'],
+  '刀': ['力', 'power', 'sword 刀 stays inside its hook; power 力 pokes through the top'],
+  '力': ['刀', 'sword', 'power 力 pokes through the top; sword 刀 stays inside its hook'],
+  '匕': ['七', 'seven', 'spoon 匕 is two strokes bending right; seven 七 has a cross bar through it'],
+  '七': ['匕', 'spoon', 'seven 七 has a bar crossing it; spoon 匕 has none'],
+};
+function twinHtml(g) {
+  const t = PART_TWINS[g];
+  return t ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(t[0])}</span> ${esc(t[1])}: ${esc(t[2])}.</div>` : '';
+}
 function showPart(btn) {
   // The same part name can stand for different glyphs ([head] is 頭, but 頁 inside 題): the card says which.
   const inK = (btn.closest('[data-in]') || {}).dataset?.in, ctx = BY_KANJI[inK] || BY_PART[inK] || {}, inPop = !!btn.closest('#gl-pop');
@@ -1166,7 +1189,7 @@ function showPart(btn) {
     pop.innerHTML = `<div class="gl-word" lang="ja">${esc(pc.kanji)} <span>${esc(name)}</span></div>
       ${pc.image ? `<img class="card-img" src="${esc(pc.image)}" data-kanji="${esc('c:' + pc.kanji)}" alt="" onload="fitPop()" onerror="imgFallback(this)">` : ''}
       <div class="story gl-story" data-in="${esc(pc.kanji)}">${storyHtml(pc.story || '')}</div>
-      <div class="gl-lemma">${appData.cards['c:' + pc.kanji] ? 'One of your part cards.' : 'A part card: it comes up before the first kanji that uses it.'}</div>`;
+      <div class="gl-lemma">${appData.cards['c:' + pc.kanji] ? 'One of your part cards.' : 'A part card: it comes up before the first kanji that uses it.'}</div>${twinHtml(pc.kanji)}`;
   } else if (k) {
     const started = !!appData.cards[k.kanji];
     pop.innerHTML = `${kanjiInfoHtml(k)}<div class="gl-lemma">Part name: ${esc(name)}${started ? '' : ' · not studied yet'}</div>
@@ -1174,7 +1197,7 @@ function showPart(btn) {
   } else {
     pop.innerHTML = `<div class="gl-word" lang="ja">${esc(p.g || '')} <span>${esc(name)}</span></div>
       ${p.of && p.of.length ? `<div class="part-of">Made of ${p.of.map(n => `<button class="chip" data-part="${esc(n)}">${esc((PARTS[n] || {}).g || '')} ${esc(n)}</button>`).join('+')}</div>`
-        : `<div class="gl-lemma">${own ? `The part used in ${esc(ctx.kanji)}; it isn't a card of its own.` : p.d ? `No character of its own: it's ${esc(p.d)}.` : 'A basic part, not split further in this deck.'}</div>`}`;
+        : `<div class="gl-lemma">${own ? `The part used in ${esc(ctx.kanji)}; it isn't a card of its own.` : p.d ? `No character of its own: it's ${esc(p.d)}.` : 'A basic part, not split further in this deck.'}</div>`}${twinHtml(p.g)}`;
   }
   // Tapping a piece inside the box keeps the box where it is (moved up only if it would run off the screen).
   if (!inPop) placePop(pop, btn); else fitPop();
@@ -2555,7 +2578,7 @@ function partBackHtml(p) {
     <div class="headline"><div class="k-small" lang="ja">${esc(p.kanji)}</div>
       <div><div class="keyword">${esc(p.keyword)}</div><div class="meaning">a part, not a kanji you're tested on</div>
         ${(p.components || []).length ? `<div class="chips" style="margin-top:6px">${p.components.map(c => `<button class="chip" data-part="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}</div></div>
-    ${img}<div class="story">${storyHtml(p.story || '')}</div>
+    ${img}<div class="story">${storyHtml(p.story || '')}</div>${twinHtml(p.kanji)}
     ${used.length ? `<div><div class="section-label">You'll find it in</div><div class="chips">${used.map(k => `<button class="chip" data-kt="${esc(k.kanji)}"><span lang="ja">${esc(k.kanji)}</span> ${esc(k.keyword)}</button>`).join('')}</div></div>` : ''}
   </div>`;
 }
