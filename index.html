@@ -428,7 +428,7 @@ const STORAGE_KEY = 'kanji_srs_data';
 function emptyData() {
   return { version: 3, cards: {}, triaged: {}, newByDay: {}, history: {},
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
-           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {}, calib: {}, calibK: null, timeLog: { review: [], learn: [] }, planDay: null, studySec: {},
+           lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {}, calib: {}, calibK: null, timeLog: { review: [], learn: [] }, planDay: null, studySec: {}, hookSeen: {},
            settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
                        minWeekday: 30, minWeekend: 60 } };
 }
@@ -473,7 +473,7 @@ function syncBodies() {
     planStart: d.planStart || null, timing: d.timing || null,
     lookSeen: d.lookSeen || {}, confusions: d.confusions || {}, sprintBest: d.sprintBest || 0,
     practice: d.practice || {}, mocks: d.mocks || [], historyOk: d.historyOk || {}, calib: d.calib || {}, calibK: d.calibK || null,
-    timeLog: d.timeLog || null, planDay: d.planDay || null, studySec: d.studySec || {} } };
+    timeLog: d.timeLog || null, planDay: d.planDay || null, studySec: d.studySec || {}, hookSeen: d.hookSeen || {} } };
   shards.forEach((cards, i) => { bodies['cards' + i] = { cards }; });
   return bodies;
 }
@@ -541,6 +541,7 @@ function mergeRemote(remote) {
   for (const [day, n] of Object.entries(m.studySec || {})) d.studySec[day] = Math.max(d.studySec[day] || 0, n);
   if (m.planDay && (!d.planDay || m.planDay.date > d.planDay.date)) d.planDay = Object.assign({}, m.planDay);
   for (const [g, day] of Object.entries(m.lookSeen || {})) if (!d.lookSeen[g]) d.lookSeen[g] = day;
+  for (const [g, day] of Object.entries(m.hookSeen || {})) if (!d.hookSeen[g]) d.hookSeen[g] = day;
   for (const [pair, c] of Object.entries(m.confusions || {})) if (!d.confusions[pair]) d.confusions[pair] = Object.assign({}, c);
   d.sprintBest = Math.max(d.sprintBest || 0, m.sprintBest || 0);
   for (const [id, r] of Object.entries(m.practice || {})) if (!d.practice[id] || (r.d || '') > (d.practice[id].d || '')) d.practice[id] = Object.assign({}, r);
@@ -1760,6 +1761,13 @@ function lookPanelHtml(k) {
   return gs.length ? `<div class="look"><div class="section-label">Don't confuse with · coloured strokes are the difference</div>${gs.map(g => lookGroupHtml(g, k.kanji)).join('')}</div>` : '';
 }
 // Groups where you've started two kanji and haven't had the side-by-side lesson yet.
+// Grammar you studied before it had a memory hook: a one-time card showing the hook and picture, a few per session,
+// the ones you miss most first. Practice only: no schedule changes. New grammar shows its hook while you learn it.
+function pendingHookLessons(limit = 5) {
+  return GRAMMAR.filter(g => g.mn && appData.cards['g:' + g.id] && !appData.hookSeen[g.id])
+    .sort((a, b) => (appData.cards['g:' + b.id].lapses || 0) - (appData.cards['g:' + a.id].lapses || 0))
+    .slice(0, limit).map(g => ({ type: 'grammar', x: g, mode: 'hook' }));
+}
 function pendingLookLessons(limit = 3) {
   return LOOK.filter(g => !appData.lookSeen[g.id] && g.kanji.filter(started).length >= 2).slice(0, limit)
     .map(g => ({ type: 'kanji', x: BY_KANJI[g.kanji.find(started)], mode: 'look', group: g.id }));
@@ -2256,12 +2264,12 @@ function spreadIn(items, extras, every = 10) {
 function startStudy(type, extra) {
   if (type === 'all') {
     const items = [...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()];
-    const fresh = [...pendingLookLessons(), ...pendingParts(), ...interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))))];
+    const fresh = [...pendingLookLessons(), ...pendingHookLessons(), ...pendingParts(), ...interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))))];
     // Exam practice (listening and reading) is spread through the session, so it gets done even on a short day.
     return runQueue(spreadIn(items, practiceItems()), fresh, 'all');
   }
   const items = [...dueOf(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? [...duePartItems(), ...duePairItems(), ...drillItems()] : [])];
-  const fresh = [...(type === 'kanji' ? [...pendingLookLessons(), ...pendingParts()] : []), ...(extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }))];
+  const fresh = [...(type === 'kanji' ? [...pendingLookLessons(), ...pendingParts()] : type === 'grammar' ? pendingHookLessons() : []), ...(extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }))];
   return runQueue(items, fresh, type);
 }
 // A new kanji brings the part cards it needs that you haven't learned yet, right before it.
@@ -2308,6 +2316,11 @@ function runQueue(items, fresh, type, tail) {
   }
   while (ri < items.length) queue.push(items[ri++]);
   queue.push(...(tail || []));
+  // A memory-hook card goes right before that grammar point's review, so the hook is fresh when you answer.
+  for (const h of queue.filter(f => f.mode === 'hook')) {
+    const at = queue.indexOf(h), q = queue.findIndex(f => f.type === 'grammar' && f.mode === 'quiz' && f.x === h.x);
+    if (q >= 0 && q < at) { queue.splice(at, 1); queue.splice(q, 0, h); }
+  }
   if (!queue.length) return;
   session = { queue, i: 0, revealed: false, done: 0, kind: 'study', type };
   openSheet();
@@ -2770,6 +2783,10 @@ function grammarScreen(it, tags) {
   const g = it.x;
   tags.push('<span class="tag">GRAMMAR</span>');
   if (it.mode === 'learn') return { inner: { front: '', back: grammarBackHtml(g) }, bar: learnBar };
+  if (it.mode === 'hook') {
+    tags.push('<span class="tag">NEW MEMORY HOOK</span>');
+    return { inner: { front: '', back: grammarBackHtml(g) }, bar: `<div class="row one"><button class="ans next" id="a-hook">Got it</button></div>` };
+  }
   const answered = session.revealed;
   const cont = `<div class="row one"><button class="ans ${it.correct ? 'good' : 'again'}" id="a-continue">${it.correct ? 'Correct · continue' : it.hinted ? 'Translation used · it will come back' : 'Missed · it will come back'}</button></div>`;
   if (it.task === 'fill') {
@@ -3042,6 +3059,11 @@ document.addEventListener('click', e => {
       });
       return next();
     }
+    case 'a-hook': {
+      const it = session.queue[session.i];
+      appData.hookSeen[it.x.id] = today(); saveData();
+      return next();
+    }
     case 'go-sprint': return startSprint();
     case 'e-next': session.done++; return next();
     case 'm-next': return mockStep(1);
@@ -3056,6 +3078,7 @@ document.addEventListener('click', e => {
         if (!appData.lookSeen[g.id] && g.kanji.filter(c => c === it.x.kanji || started(c)).length >= 2 && !session.queue.some(q => q.group === g.id))
           session.queue.splice(session.i + 1, 0, { type: 'kanji', x: it.x, mode: 'look', group: g.id });
       noteTime('learn', session.shownAt);
+      if (it.type === 'grammar' && it.x.mn) appData.hookSeen[it.x.id] = today();
       // Extras are on top of today's plan, so they don't use up its new cards (tomorrow's plan counts them).
       const dk = it.extra ? today() + '|extra' : dayKey(it.type);
       appData.newByDay[dk] = (appData.newByDay[dk] || 0) + 1;
