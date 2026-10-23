@@ -1175,6 +1175,8 @@ const PART_TWINS = {
   '力': ['刀', 'sword', 'power 力 pokes through the top; sword 刀 stays inside its hook'],
   '匕': ['七', 'seven', 'spoon 匕 is two strokes bending right; seven 七 has a cross bar through it'],
   '七': ['匕', 'spoon', 'seven 七 has a bar crossing it; spoon 匕 has none'],
+  '昜': ['易', 'easy', 'piggy bank 昜 has a line under the sun (旦, dawn) before the pennant; easy 易 has the sun straight on the pennant'],
+  '易': ['昜', 'piggy bank (inside 場, 陽, 湯)', 'easy 易 has the sun straight on the pennant; the piggy bank 昜 has one more line under the sun (旦, dawn)'],
 };
 function twinHtml(g) {
   const t = PART_TWINS[g];
@@ -1206,7 +1208,7 @@ function showKanjiPop(btn) {
   const k = BY_KANJI[btn.dataset.kt]; if (!k) return;
   const c = appData.cards[k.kanji];
   const html = kanjiInfoHtml(k, btn.dataset.w ? readingIn(btn.dataset.w, k.kanji) : null)
-    + (c ? '' : '<div class="gl-lemma"><b>Not studied yet</b> · it comes up in your plan</div>');
+    + (c ? '' : '<div class="gl-lemma"><b>Not studied yet</b> · it comes up in your plan</div>') + twinHtml(k.kanji);
   // On a word prompt the hint sits under the word, so it never covers the answer options.
   const front = btn.closest('.word-front');
   if (front) {
@@ -1307,7 +1309,7 @@ function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
   // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
   const img = k.image ? `<img class="card-img${mode === 'quiz' ? ' small' : ''}" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="imgFallback(this)">` : '';
-  const story = `<div class="story">${storyHtml(k.story || '')}</div>`;
+  const story = `<div class="story">${storyHtml(k.story || '')}</div>${twinHtml(k.kanji)}`;
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}${castSibling(x.r)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `

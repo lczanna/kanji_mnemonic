@@ -2141,13 +2141,13 @@
    "陽"
   ],
   "tips": {
-   "易": "easy: a sun directly over the pennant (勿), no line between",
-   "場": "location: soil on the left; a line between the sun and the pennant",
-   "陽": "sunshine: pinnacle (阝) on the left; a line between the sun and the pennant"
+   "易": "easy: sun (日) straight on a pennant (勿); no line in between, nothing on the left",
+   "場": "location: soil (土) on the left + piggy bank 昜 (sun on a line 旦, over a pennant)",
+   "陽": "sunshine: pinnacle (阝) on the left + piggy bank 昜 (sun on a line 旦, over a pennant)"
   },
   "scene": "A pennant hangs easy under the sun, a piggy bank is buried in the soil to mark the location, and another basks in the sunshine on a pinnacle.",
   "img": "images/lookalikes/g055.jpg",
-  "contrast": "Easy stands alone with nothing beside it · location has soil on the left · sunshine has a pinnacle on the left",
+  "contrast": "Easy: the sun sits right on the pennant (no line) · location: soil on the left, then the piggy bank (sun on a line, 旦, over the pennant) · sunshine: pinnacle on the left, then the same piggy bank",
   "mn": {
    "易": {
     "feature": "Stands alone: no left-hand side at all, and the sun sits right on the pennant with no bar between.",
