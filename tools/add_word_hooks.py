@@ -26,7 +26,7 @@ def main():
         else:
             v.pop('mn', None)
     twins = json.loads((ROOT / 'data' / 'word_twins.json').read_text(encoding='utf8')) if (ROOT / 'data' / 'word_twins.json').exists() else {}
-    assert all(w in words and t['other'] in words for w, t in twins.items()), 'twins for words not in the deck'
+    assert all(w in words and all(o in words for o in t['other'].split('・')) for w, t in twins.items()), 'twins for words not in the deck'
     for v in vocab:
         if v['w'] in twins:
             v['nc'] = twins[v['w']]
