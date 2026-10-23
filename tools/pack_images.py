@@ -27,6 +27,8 @@ def main():
     cards = [(c['kanji'], c['image']) for c in json.loads((ROOT / 'kanji.json').read_text(encoding='utf8'))['cards'] if c.get('image')]
     words = sorted((v for v in json.loads((ROOT / 'vocab.json').read_text(encoding='utf8')) if v.get('img')), key=lambda v: v.get('p', 9999))
     cards += [(v['id'], v['img']) for v in words]
+    gram = ROOT / 'grammar.json'   # grammar memory-hook pictures, keyed g:<id>
+    cards += [('g:' + g['id'], g['img']) for g in json.loads(gram.read_text(encoding='utf8')) if g.get('img')] if gram.exists() else []
     deck = json.loads((ROOT / 'kanji.json').read_text(encoding='utf8'))
     cards += [('c:' + p['kanji'], p['image']) for p in deck.get('partCards', []) if p.get('image')]   # part cards, keyed c:<glyph>
     looks = ROOT / 'lookalikes.json'

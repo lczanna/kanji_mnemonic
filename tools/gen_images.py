@@ -23,6 +23,10 @@ Group pictures go to images/lookalikes/<group id>.jpg; rerun tools/build_lookali
   python3 tools/gen_images.py --parts                # part cards without a picture (data/part_cards.json "picture")
 
 Part pictures go to images/parts/<code>.jpg; rerun tools/build_parts.py afterwards.
+
+  python3 tools/gen_images.py --grammar              # grammar points with a hook but no picture (grammar.json "mn")
+
+Grammar pictures go to images/grammar/<id>.jpg and grammar.json gets "img".
 """
 import argparse, base64, io, json, os, re, sys, time, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
@@ -37,6 +41,8 @@ GROUPS = ROOT / 'data' / 'lookalike_groups.json'
 GOUT = ROOT / 'images' / 'lookalikes'
 WOUT = ROOT / 'images' / 'words'
 POUT = ROOT / 'images' / 'parts'
+GRAMMAR = ROOT / 'grammar.json'
+GROUT = ROOT / 'images' / 'grammar'
 API = 'https://api.openai.com/v1'
 # Newest first; the first one this key can use is picked.
 MODELS = ['gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2', 'gpt-image-1.5', 'gpt-image-1']
@@ -215,7 +221,9 @@ def feature_prompt(f):
 
 
 def generate(card, model, quality, suffix=''):
-    if card.get('partcard'):   # a part card
+    if card.get('grammar'):   # a grammar point's memory hook
+        name, out, text, key = f"{card['id']}.jpg", GROUT, f"{STYLE}\n\nScene: {depict(card['mn']['picture'])}\nThe idea to convey is '{card['meaning'].split(';')[0]}'.", card['id']
+    elif card.get('partcard'):   # a part card
         name, out, text, key = f"{ord(card['kanji']):x}.jpg", POUT, f"{STYLE}\n\nScene: {depict(card['picture'])}\nThe idea to convey is '{card['keyword']}'.", card['kanji']
     elif 'feature' in card:   # one kanji of a look-alike group
         name, out, text, key = f"{card['gid']}_{ord(card['kanji']):04x}.jpg", GOUT, feature_prompt(card), (card['gid'], card['kanji'])
@@ -255,6 +263,7 @@ def main():
     g.add_argument('--words', action='store_true', help='every word with a memory hook but no picture yet')
     g.add_argument('--word', help='specific words, comma-separated, e.g. 賃貸,桜')
     g.add_argument('--parts', action='store_true', help='part cards without a picture')
+    g.add_argument('--grammar', action='store_true', help='grammar points with a memory hook but no picture')
     g.add_argument('--leeches', metavar='PROGRESS_JSON', help='cards missed 3+ times, from a progress download')
     ap.add_argument('--quality', default='medium', choices=['low', 'medium', 'high'])
     ap.add_argument('--workers', type=int, default=4)
@@ -276,7 +285,12 @@ def main():
     GOUT.mkdir(parents=True, exist_ok=True)
 
     kw = {c['kanji']: c['keyword'] for c in cards}
-    if a.parts:
+    grammar = json.loads(GRAMMAR.read_text(encoding='utf8')) if a.grammar else []
+    by_gid = {g['id']: g for g in grammar}
+    if a.grammar:
+        GROUT.mkdir(parents=True, exist_ok=True)
+        jobs = [(dict(g, grammar=True), a.quality, '') for g in grammar if (g.get('mn') or {}).get('picture') and not g.get('img')]
+    elif a.parts:
         POUT.mkdir(parents=True, exist_ok=True)
         pc = json.loads((ROOT / 'data' / 'part_cards.json').read_text(encoding='utf8'))
         jobs = [(dict(x, kanji=g, partcard=True), a.quality, '') for g, x in pc.items()
@@ -312,7 +326,9 @@ def main():
                 failed.append((k, err)); print('FAIL', k, err)
             else:
                 done += 1
-                if a.parts:
+                if a.grammar:
+                    by_gid[k]['img'] = rel
+                elif a.parts:
                     pass   # build_parts.py picks up images/parts/<code>.jpg
                 elif a.features:
                     by_group[k[0]]['mn'][k[1]]['img'] = rel
@@ -326,7 +342,9 @@ def main():
                     by[k]['image'] = rel
                 print(f'{done}/{len(jobs)}', k, rel)
 
-    if a.parts:
+    if a.grammar:
+        GRAMMAR.write_text(json.dumps(grammar, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
+    elif a.parts:
         pass
     elif a.groups or a.features:
         GROUPS.write_text(json.dumps(groups, ensure_ascii=False, indent=1), encoding='utf8')
