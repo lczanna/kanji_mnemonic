@@ -1,0 +1,42 @@
+{
+ "黙る": {
+  "other": "騙す",
+  "note": "だまる: る = the monk's RULE of silence → to be silent. だます: す = SWINDLE → to trick."
+ },
+ "騙す": {
+  "other": "黙る",
+  "note": "だます: す = SWINDLE → to trick. だまる: る = the monk's RULE of silence → to be silent."
+ },
+ "叫ぶ": {
+  "other": "避ける",
+  "note": "さけぶ: ぶ = \"BOO!\" → to shout. さける: dodging the SACKER → to avoid."
+ },
+ "避ける": {
+  "other": "叫ぶ",
+  "note": "さける: dodging the SACKER → to avoid. さけぶ: ぶ = \"BOO!\" → to shout."
+ },
+ "悲しい": {
+  "other": "かなり",
+  "note": "かなしい: a can with \"nashi\" (no pear) → sad. かなり: the loud CANARY → considerably."
+ },
+ "かなり": {
+  "other": "悲しい",
+  "note": "かなり: the loud CANARY → considerably, quite. かなしい: a can with \"nashi\" → sad."
+ },
+ "三日": {
+  "other": "三つ",
+  "note": "みっか: か = the day the MITTENS dry → three days / the 3rd. みっつ: MEAT-SUshi → three things."
+ },
+ "三つ": {
+  "other": "三日",
+  "note": "みっつ: MEAT-SUshi → three things. みっか: か = the day the MITTENS dry → three days / the 3rd."
+ },
+ "肩": {
+  "other": "硬い",
+  "note": "かた: a KARATE chop to the shoulder → shoulder. かたい: the CAT's EYE on a frozen fish → hard."
+ },
+ "硬い": {
+  "other": "肩",
+  "note": "かたい: the CAT's EYE (い) on a frozen fish → hard. かた: a KARATE chop → shoulder."
+ }
+}

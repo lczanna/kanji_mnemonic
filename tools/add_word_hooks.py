@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Copy the memory hooks in data/word_mnemonics.json into vocab.json (field "mn"), shown on word cards.
+Copy the memory hooks in data/word_mnemonics.json into vocab.json (field "mn"), shown on word cards, and the
+"don't confuse" notes in data/word_twins.json (field "nc": {other, note}) for words that sound almost the same.
 Edit the hooks there and rerun; a word without a hook simply shows none.
 
   python3 tools/add_word_hooks.py
@@ -24,6 +25,13 @@ def main():
             v['mn'] = hooks[v['w']]; n += 1
         else:
             v.pop('mn', None)
+    twins = json.loads((ROOT / 'data' / 'word_twins.json').read_text(encoding='utf8')) if (ROOT / 'data' / 'word_twins.json').exists() else {}
+    assert all(w in words and t['other'] in words for w, t in twins.items()), 'twins for words not in the deck'
+    for v in vocab:
+        if v['w'] in twins:
+            v['nc'] = twins[v['w']]
+        else:
+            v.pop('nc', None)
     path.write_text(json.dumps(vocab, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
     print(f'{n} words have a memory hook')
 
