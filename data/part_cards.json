@@ -154,7 +154,7 @@
    "banner top",
    "St. Bernard dog"
   ],
-  "story": "A [banner top] flag flutters on the tail of a {dart} that a [St. Bernard dog] fetches in its jaws, wagging proudly, tail thumping the floor.",
+  "story": "A [banner top] flutters on the tail of a {dart} that a [St. Bernard dog] fetches in its jaws, wagging proudly, tail thumping the floor.",
   "picture": "A St. Bernard dog proudly carrying a dart with a little flag fluttering on its tail in its mouth."
  },
  "虫": {
@@ -471,7 +471,7 @@
    "arrow",
    "slash"
   ],
-  "story": "An [arrow] planted in the ground with a party streamer [slash]ing across it: a spear decked out for the {fiesta}.",
+  "story": "An [arrow] planted in the ground with a party ribbon [slash]ing across it: a spear decked out for the {fiesta}.",
   "picture": "A smiling dancer at a colorful street parade waves a tall pole topped with a little flag and long ribbons."
  },
  "衣": {
@@ -700,8 +700,10 @@
  },
  "憂": {
   "keyword": "melancholy",
-  "components": [],
-  "story": "A tall stack of a heavy drooping head, a hidden heart and dragging feet: a figure bowed under {melancholy}, shuffling slowly.",
+  "components": [
+   "heart"
+  ],
+  "story": "A tall stack of a heavy drooping head, a hidden [heart] and dragging feet: a figure bowed under {melancholy}, shuffling slowly.",
   "picture": "A sad figure with a drooping head, shoulders slumped, shuffling slowly in the rain."
  },
  "酉": {
@@ -768,8 +770,11 @@
  },
  "畐": {
   "keyword": "wealth",
-  "components": [],
-  "story": "A lid on top, a mouth-shaped jar, and below it a rice field full to the brim: a stocked granary, all the {wealth} a family could pray for.",
+  "components": [
+   "mouth",
+   "rice field"
+  ],
+  "story": "A lid on top, a [mouth]-shaped jar, and below it a [rice field] full to the brim: a stocked granary, all the {wealth} a family could pray for.",
   "picture": "A lidded jar sitting on top of a square rice field overflowing with golden grain and coins."
  },
  "罙": {
@@ -999,7 +1004,7 @@
    "one",
    "stamp"
   ],
-  "story": "A [banner top] flag over [one] counter, and a [stamp] slammed on the right onto every sack: rice sold {wholesale}, by the truckload.",
+  "story": "A [banner top] over [one] counter, and a [stamp] slammed on the right onto every sack: rice sold {wholesale}, by the truckload.",
   "picture": "A warehouse counter with a small flag, a worker stamping huge rice sacks piled high."
  },
  "垔": {
