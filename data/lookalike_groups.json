@@ -5,17 +5,19 @@
    "午",
    "牛",
    "生",
-   "年"
+   "年",
+   "矢"
   ],
   "tips": {
    "午": "noon: a slanted tick on top; the stem starts at the upper line, nothing pokes through it",
    "牛": "cow: the stem pokes up through the top line like a horn and runs past the bottom line",
    "生": "life: three lines, the longest at the bottom as ground; a sprout stem pokes up through them",
-   "年": "year: like noon but three lines, with a short stub on the left joining the lower two"
+   "年": "year: like noon but three lines, with a short stub on the left joining the lower two",
+   "矢": "dart (a part, in 知 and 族): the same slanted tick and bars, but the bottom splits into two spread legs, no straight stem"
   },
   "scene": "At noon the sun sits flat overhead while a cow with one horn poking up grazes beside a sprout of new life rising from a long ground line, and a stepped fence marks the turn of the year.",
   "img": "images/lookalikes/g001.jpg",
-  "contrast": "Cow's horn pokes through · noon's stem stops flat at the roof · life grows from long ground · each year adds a notch on the left",
+  "contrast": "Cow's horn pokes through · noon's stem stops flat at the roof · life grows from long ground · each year adds a notch on the left · the dart has no stem: it stands on two legs",
   "mn": {
    "午": {
     "feature": "The stem starts at the upper line: nothing pokes above it, a flat roof with one slanted sun ray on top.",
@@ -57,6 +59,17 @@
     "hook": "Each YEAR the Neanderthal hacks one short notch on the left side of his cow's hide.",
     "picture": "A friendly caveman carves one short notch on the left side of a wooden calendar post, next to a calm cow grazing; a big sun overhead.",
     "img": "images/lookalikes/g001_5e74.jpg"
+   },
+   "矢": {
+    "feature": "Two legs spread at the bottom instead of a straight stem.",
+    "label": "legs",
+    "strokes": [
+     3,
+     4
+    ],
+    "hook": "The dart lands and stands on two spread legs, like the St. Bernard that fetches it.",
+    "picture": "A dart with a little flag on its tail standing upright on two spread legs, a St. Bernard dog sitting beside it.",
+    "img": "images/lookalikes/g001_77e2.jpg"
    }
   }
  },
@@ -5551,54 +5564,5 @@
    }
   },
   "img": "images/lookalikes/g133.jpg"
- },
- {
-  "id": "g134",
-  "kanji": [
-   "矢",
-   "午",
-   "牛"
-  ],
-  "tips": {
-   "矢": "dart (a part, in 知 and 族): the bottom splits into two spread legs",
-   "午": "noon: one straight stem that stops flat at the top bar",
-   "牛": "cow: one straight stem that pokes up through the top, the horn"
-  },
-  "scene": "A dart standing upright on two spread little legs, a straight laundry pole at noon with its top flat under a crossbar, and a cow whose single horn pokes up through a fence rail.",
-  "contrast": "All three: a slanted stroke over two bars. Dart: splits into two legs below · noon: one straight stem, flat on top · cow: the stem pokes up through the top as a horn",
-  "mn": {
-   "矢": {
-    "feature": "Two legs spread at the bottom instead of a straight stem.",
-    "label": "legs",
-    "strokes": [
-     3,
-     4
-    ],
-    "hook": "The dart lands and stands on two spread legs, like the St. Bernard that fetches it.",
-    "picture": "A dart with a little flag on its tail standing upright on two spread legs, a St. Bernard dog sitting beside it.",
-    "img": "images/lookalikes/g134_77e2.jpg"
-   },
-   "午": {
-    "feature": "One straight stem that stops flat at the top bar.",
-    "label": "flat top",
-    "strokes": [
-     3
-    ],
-    "hook": "At noon the laundry pole stands straight up and stops flat under the top bar.",
-    "picture": "A muddy goblin hanging laundry on a straight wooden pole at noon, the sun right overhead, the pole ending flat under a crossbar.",
-    "img": "images/lookalikes/g134_5348.jpg"
-   },
-   "牛": {
-    "feature": "The straight stem pokes up through the top bar: the horn.",
-    "label": "horn",
-    "strokes": [
-     3
-    ],
-    "hook": "The cow's single horn pokes up through the top.",
-    "picture": "A cow with one horn poking up through the top of its head, spinning on an ice rink.",
-    "img": "images/lookalikes/g134_725b.jpg"
-   }
-  },
-  "img": "images/lookalikes/g134.jpg"
  }
 ]

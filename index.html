@@ -1015,29 +1015,72 @@ function storyHtml(s) {
     .replace(/~([^~]+)~/g, '<span class="snd">$1</span>');
 }
 // A word's memory hook names its kanji by their keywords ("a clockwork mechanism" in 機会): those words become
-// links to the kanji cards. Only outside ~sound~ and {meaning} marks, first mention of each kanji.
-function hookHtml(mn, w) {
-  const ks = [...new Set([...w].filter(ch => BY_KANJI[ch]))];
-  let out = '';
-  for (const part of String(mn).split(/(~[^~]*~|\{[^}]*\})/)) {
-    if (/^[~{]/.test(part)) { out += storyHtml(part); continue; }
-    let h = esc(part);
-    for (const ch of ks) {
-      const kw = BY_KANJI[ch].keyword;
-      if (!kw || kw.length < 3) continue;
-      const re = new RegExp(`\\b(${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:s|es|ed|ing)?)\\b`, 'i');
-      // only in the text between links already made
-      let done = false;
-      h = h.split(/(<button[^>]*>[^<]*<\/button>)/).map(t => done || t.startsWith('<button') || !re.test(t) ? t
-        : (done = true, t.replace(re, `<button class="kl" data-kt="${esc(ch)}" data-w="${esc(w)}">$1</button>`))).join('');
-    }
-    out += h;
-  }
-  return out;
+// links to the kanji cards, first mention of each kanji. Forms count too (study → studies, person → people), and so
+// does the {meaning} in a word of two or more kanji ("foreign {country}"); never inside a ~sound~ mark.
+const IRREG = { person: 'people', child: 'children', man: 'men', woman: 'women', foot: 'feet', tooth: 'teeth', mouse: 'mice',
+  leaf: 'leaves', write: 'wrote|written', take: 'took|taken', see: 'saw|seen', make: 'made', bring: 'brought', draw: 'drew|drawn',
+  grow: 'grew|grown', send: 'sent', lie: 'lay|lies|lying', song: 'sing|sings|singing|sang', go: 'went|gone' };
+// Keywords written short or as a prefix, and the words a story uses for them.
+const KW_SAY = { 'inst.': 'institute|institution|hospital', 'bldg.': 'building', 'esq.': 'esq|gentleman|sama', 'road-way': 'road|way', 'year-end': 'year-end|year end' };
+// The forms of one English word a story may use: studies, deliberates (deliberation), diligently (diligence), wrote (write)…
+function wordForms(k) {
+  const f = new Set(), add = (...xs) => xs.forEach(x => x.length >= 3 && f.add(x));
+  add(k, k + 's', k + 'es', k + 'ed', k + 'd', k + 'ing', k + 'ly', k + 'y', k + 'ful');
+  if (k.endsWith('y')) add(k.slice(0, -1) + 'ies', k.slice(0, -1) + 'ied', k.slice(0, -1) + 'ily');
+  if (k.endsWith('e')) add(k.slice(0, -1) + 'ing', k.slice(0, -1) + 'ed');
+  if (/[^aeiou][aeiou][bdgmnprt]$/.test(k)) add(k + k.slice(-1) + 'ing', k + k.slice(-1) + 'er', k + k.slice(-1) + 'ed', k + 'er');
+  if (k.endsWith('s') && !k.endsWith('ss')) add(k.slice(0, -1));
+  const stem = (suf, ...ends) => { if (k.endsWith(suf) && k.length > suf.length + 2) ends.forEach(e => add(k.slice(0, -suf.length) + e)); };
+  stem('ification', 'ify', 'ifies', 'ified', 'ifying');
+  stem('ation', 'ate', 'ates', 'ated', 'ating');
+  stem('ion', '', 's', 'ed', 'ing', 'e', 'es', 'ious');
+  stem('ance', '', 's', 'ed', 'e', 'es', 'ing');
+  stem('ence', 'ent', 'ently', '');
+  stem('ment', 'e', 'es', 'ed', 'ing');
+  stem('iness', 'y', 'ier', 'ily');
+  stem('ness', '', 'ly');
+  stem('ing', '', 's', 'e', 'es', 'ed');
+  stem('ed', '', 's', 'es', 'ing', 'e');
+  (IRREG[k] || '').split('|').forEach(x => add(x));
+  return [...f];
 }
-// The deck kanji of a word as chips under its heading, each opening the kanji (studied or not).
-function wordKanjiChips(w) {
-  const ks = [...new Set([...w].filter(ch => BY_KANJI[ch]))];
+function keywordRe(kw) {
+  const e = x => esc(x).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), forms = [];   // stories are matched as escaped HTML
+  const said = KW_SAY[kw.toLowerCase()];
+  for (const k of (said || kw.toLowerCase()).split(/[\/|]/).map(x => x.trim().replace(/\.$/, '')).filter(x => x.length >= 3 && !/^-|-$/.test(x))) {
+    const [first, ...rest] = k.split(' ');   // "bring up": brings up, bringing up; "brush stroke": brush strokes
+    forms.push(k);
+    if (rest.length) for (const l of wordForms(rest[rest.length - 1])) forms.push([first, ...rest.slice(0, -1), l].join(' '));
+    for (const f of wordForms(first)) forms.push([f, ...rest].join(' '));
+  }
+  if (!forms.length) return /(?!)/;
+  return new RegExp(`\\b(${forms.map(e).sort((a, b) => b.length - a.length).join('|')})\\b`, 'i');
+}
+function hookHtml(mn, w) {
+  const all = [...new Set([...w].filter(ch => BY_KANJI[ch]))], left = all.slice();
+  const parts = String(mn).split(/(~[^~]*~|\{[^}]*\})/).map(t => ({ t, h: /^[~{]/.test(t) ? null : esc(t) }));
+  const link = (h, ch, re) => {
+    let done = false;
+    const out = h.split(/(<button[^>]*>[^<]*<\/button>)/).map(t => done || t.startsWith('<button') || !re.test(t) ? t
+      : (done = true, t.replace(re, `<button class="kl" data-kt="${esc(ch)}" data-w="${esc(w)}">$1</button>`))).join('');
+    return done ? out : null;
+  };
+  for (const ch of all) {
+    const kw = BY_KANJI[ch].keyword;
+    if (!kw || kw.length < 3) continue;
+    const re = keywordRe(kw);
+    // the story first, then the {meaning} ("{to write}" names 書)
+    for (const x of [...parts.filter(x => x.h !== null && !x.kw), ...parts.filter(x => x.h === null ? x.t.startsWith('{') : x.kw)]) {
+      if (x.h === null && !x.t.startsWith('{')) continue;
+      if (x.h === null) x.h = esc(x.t.slice(1, -1)), x.kw = true;
+      const r = link(x.h, ch, re);
+      if (r !== null) { x.h = r; left.splice(left.indexOf(ch), 1); break; }
+    }
+  }
+  return { html: parts.map(x => x.h === null ? storyHtml(x.t) : x.kw ? `<span class="kw">${x.h}</span>` : x.h).join(''), left };
+}
+// The deck kanji a word's hook doesn't name, as chips under the heading, each opening the kanji.
+function wordKanjiChips(w, ks) {
   return ks.length ? `<div class="chips">${ks.map(ch => `<button class="chip" data-kt="${esc(ch)}" data-w="${esc(w)}"><span lang="ja">${esc(ch)}</span> ${esc(BY_KANJI[ch].keyword)}${appData.cards[ch] ? '' : ' <small class="muted">· not studied yet</small>'}</button>`).join('')}</div>` : '';
 }
 function kata2hira(s) { return s.replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60)); }
@@ -1424,7 +1467,7 @@ function backHtml(k, mode) {
   </div>`;
 }
 function vocabBackHtml(v, mode) {
-  const f = vform(v);
+  const f = vform(v), hook = v.mn ? hookHtml(v.mn, v.w) : null;
   const img = v.img ? `<img class="card-img${mode === 'learn' ? '' : ' small'}" src="${esc(v.img)}" data-kanji="${esc(v.id)}" alt="Picture for the memory hook" loading="lazy" onerror="imgFallback(this)">` : '';
   const head = f === 'kanji'
     ? `<span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span>`
@@ -1432,14 +1475,14 @@ function vocabBackHtml(v, mode) {
   return `<div class="back">
     <div class="word-head">${head}</div>
     <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
-    ${f === 'kanji' ? wordKanjiChips(v.w) : ''}
+    ${f === 'kanji' ? wordKanjiChips(v.w, v.mn ? hook.left : [...new Set([...v.w].filter(ch => BY_KANJI[ch]))]) : ''}
     ${soundTwins(v).length ? `<div class="muted">Same sound: ${soundTwins(v).map(o => `<span lang="ja">${kanjiLinks(o.w)}</span> ${esc(o.m.split(/[;,]/)[0])}`).join(' · ')}</div>` : ''}
     ${f === 'mixed' ? (() => {
       // Name the kanji: which are above N3 (why the exam prints it in kana) and which are in your deck (tappable).
       const above = [...new Set([...v.w].filter(ch => isKanji(ch) && ch !== '々' && !BY_KANJI[ch]))], mine = [...new Set([...v.w].filter(ch => BY_KANJI[ch]))];
       return `<p class="g-note">Written <span lang="ja" class="kform">${kanjiLinks(v.w)}</span>. <span lang="ja">${esc(above.join('、'))}</span> ${above.length > 1 ? 'are' : 'is'} above N3, so the exam normally prints this word in kana: know the sound and the meaning.${mine.length ? ` In your deck: ${mine.map(ch => `<span lang="ja">${esc(ch)}</span> (${esc(BY_KANJI[ch].keyword)}) ${appData.cards[ch] ? '<span class="ok">✓ studied</span>' : '<span class="muted">not studied yet</span>'}`).join(' · ')}. Tap ${mine.length > 1 ? 'them' : 'it'} for the story.` : ''}</p>`;
     })() : ''}
-    ${v.mn ? `<div><div class="section-label">Memory hook</div>${img}<div class="story">${hookHtml(v.mn, v.w)}</div>${v.nc ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${kanjiLinks(v.nc.other)}</span> · <span lang="ja">${esc(v.nc.note)}</span></div>` : ''}</div>` : ''}
+    ${v.mn ? `<div><div class="section-label">Memory hook</div>${img}<div class="story">${hook.html}</div>${v.nc ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${kanjiLinks(v.nc.other)}</span> · <span lang="ja">${esc(v.nc.note)}</span></div>` : ''}</div>` : ''}
     ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en, , here]) => `
       <div class="ex"><div class="ja" lang="ja">${glossHtml(ja)} ${sayBtn(ja)}</div><div class="en">${esc(en)}</div>${here ? `<div class="sense"><span lang="ja">${esc(vform(v) === 'kanji' ? v.w : v.r)}</span> here: ${esc(here)}</div>` : ''}</div>`).join('')}</div></div>` : ''}
     ${v.k.length ? `<div><div class="section-label">${f === 'kanji' ? 'Built from' : 'Contains'}</div><div class="parts">${v.k.map(ch => { const k = BY_KANJI[ch];
@@ -1458,7 +1501,7 @@ function grammarBackHtml(g, compact) {
     <div class="keyword" style="font-size:17px">${esc(g.meaning)}</div>
     ${g.mn ? `<div><div class="section-label">Memory hook</div>
       ${g.img ? `<img class="card-img${compact ? ' small' : ''}" src="${esc(g.img)}" data-kanji="${esc('g:' + g.id)}" alt="Picture for the memory hook" loading="lazy" onerror="imgFallback(this)">` : ''}
-      <div class="story" lang="ja">${hookHtml(g.mn.hook, g.pattern)}</div>
+      <div class="story" lang="ja">${hookHtml(g.mn.hook, g.pattern).html}</div>
       ${g.mn.contrast ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(g.mn.contrast)}</span></div>` : ''}
       ${g.mn.family ? `<div class="g-family"><div class="section-label">The yo-yo family · the yo-yo is よう, what's with it tells them apart</div>${g.mn.family.map(([id, pic, m]) => { const o = GRAMMAR.find(x => x.id === id); return o ? `<div class="${id === g.id ? 'here' : ''}"><b lang="ja">${esc(o.pattern)}</b> ${esc(pic)} → <i>${esc(m)}</i></div>` : ''; }).join('')}</div>` : ''}</div>` : ''}
     <dl class="readings"><dt>FORM</dt><dd lang="ja">${kanjiLinks(g.formation)}</dd></dl>
