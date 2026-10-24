@@ -7,16 +7,17 @@
  "youni-naru": {
   "hook": "〜ようになる: day by day a NARWHAL (なる) learns to spin a YO-YO (よう) on its tusk — at last it can: 'come to (be able to) do', a gradual change that just happens.",
   "picture": "A narwhal in the sea spinning a yo-yo on its long tusk, earlier clumsy attempts shown as faint splashes behind it.",
-  "contrast": "Not ようにする (YO-YO + 'SURE!': I make an effort) — ようになる is the NARWHAL: it gradually comes to be so."
+  "contrast": "Not ようにする (the SURFER who practises every day: my own effort) — ようになる is the NARWHAL: it gradually comes to be so, by itself. Same as る/す verbs: なる happens, する is done."
  },
  "youni-suru": {
-  "hook": "〜ようにする: every morning I say 'SURE!' (する) and practise the YO-YO (よう) — I make sure to do it: 'make an effort to / make a habit of'.",
-  "picture": "A determined person at sunrise practising a yo-yo, a calendar on the wall full of tick marks.",
-  "contrast": "Not ようになる (NARWHAL: it came to be) — ようにする is 'SURE!': I deliberately try to."
+  "hook": "〜ようにする: a SURFER (する) practises the YO-YO (よう) on his board every single morning — he makes sure he does it: 'make an effort to / make a habit of'. His own effort, unlike the narwhal (ようになる), who just comes to be able.",
+  "picture": "A surfer standing on a surfboard at sunrise doing yo-yo tricks, a waterproof calendar stuck to the board covered in tick marks.",
+  "contrast": "Not ようになる (the NARWHAL: it gradually comes to be so, by itself) — ようにする is the SURFER: I deliberately keep doing it. Same as る/す verbs: なる happens, する is done."
  },
  "youni-iu": {
-  "hook": "〜ように言う／頼む: the YO-YO (よう) coach points and TELLS the kid to keep the string short: 'tell / ask someone to do' (a reported instruction).",
-  "picture": "A coach pointing and instructing a child who holds a yo-yo, the child nodding."
+  "hook": "〜ように言う／頼む: the coach shouts through a MEGAPHONE: 'Keep your YO-YO (よう) string short!' — he TELLS (言う) the kid to: 'tell / ask someone to do' (a reported instruction).",
+  "picture": "A coach shouting through a big megaphone at a child holding a yo-yo, the child nodding.",
+  "contrast": "Not ように alone (the string on the KNEE: so that) — ように言う adds the MEGAPHONE: someone is told to do it."
  },
  "koto-ni-suru": {
   "hook": "〜ことにする: I look at the COAT (こと) rack and say 'SURE!' (する) — this one: 'I decide to do' (my own decision).",
@@ -104,8 +105,8 @@
   "contrast": "Same as ようだ (YO-YO) but casual, and goes straight onto nouns (雨みたい)."
  },
  "you-da": {
-  "hook": "〜ようだ: from far away a spinning YO-YO (よう) looks like a little moon — judging from what I see myself, 'it seems / it looks like'.",
-  "picture": "A glowing spinning yo-yo seen from a distance at dusk, looking like a tiny moon hanging in the air.",
+  "hook": "〜ようだ: in the DArk (だ), a glowing YO-YO (よう) far away looks like a little moon — I can't be sure, but from what I see myself: 'it seems / it looks like'.",
+  "picture": "A glowing spinning yo-yo seen far away in the pitch-dark night, looking like a tiny moon, a person squinting at it from a window.",
   "contrast": "Not そうだ hearsay (SOAP opera: I heard), not そうだ looks (SEW: seam about to burst, from a stem), not らしい (RASH: rumor going round), not みたい (MEAT EYE: casual ようだ) — ようだ is the YO-YO I see myself: it seems."
  },
  "souda-hearsay": {
@@ -549,5 +550,47 @@
   "hook": "〜たら〜た: when I opened the box, there was a TARANTULA (たら) inside — 'when I did ~, I found ~' (a discovery).",
   "picture": "A person peering into an open cardboard box, a big hairy tarantula looking back.",
   "contrast": "Not たとたん (TA-DAH: the very instant, sudden event) — たら〜た is TARANTULA: I did it and found something."
+ },
+ "_families": {
+  "よう": [
+   [
+    "youni-purpose",
+    "the string on her KNEE",
+    "so that"
+   ],
+   [
+    "youni-naru",
+    "the NARWHAL finally can",
+    "come to (by itself)"
+   ],
+   [
+    "youni-suru",
+    "the SURFER practises daily",
+    "make a habit / make sure"
+   ],
+   [
+    "youni-iu",
+    "the coach's MEGAPHONE",
+    "tell someone to"
+   ],
+   [
+    "you-to-suru",
+    "the TOSS, the string snaps",
+    "try to / be about to"
+   ],
+   [
+    "you-da",
+    "glowing in the DArk like a moon",
+    "it seems"
+   ]
+  ]
+ },
+ "_rev": {
+  "youni-purpose": "2026-10-24r",
+  "youni-naru": "2026-10-24r",
+  "youni-suru": "2026-10-24r",
+  "youni-iu": "2026-10-24r",
+  "you-to-suru": "2026-10-24r",
+  "you-da": "2026-10-24r"
  }
 }

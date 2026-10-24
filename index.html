@@ -325,6 +325,9 @@ label.mini { display: grid; gap: 2px; font-size: 12px; color: var(--muted); } la
 .wrongs .why-not { color: var(--ink); }
 .g-contrast { margin-top: 8px; font-size: 14px; color: var(--muted); line-height: 1.5; }
 .g-contrast .tag { font-size: 11px; margin-right: 4px; }
+.g-family { margin-top: 10px; font-size: 14px; line-height: 1.6; }
+.g-family > div:not(.section-label) { padding: 1px 6px; border-left: 3px solid transparent; }
+.g-family .here { border-left-color: var(--ai); background: var(--ai-soft); }
 .wrongs b { font-family: var(--font-body); color: var(--ink); margin-right: 4px; }
 .tr .small-btn { font-size: 12px; padding: 5px 10px; }
 .list { display: grid; gap: 6px; }
@@ -541,7 +544,7 @@ function mergeRemote(remote) {
   for (const [day, n] of Object.entries(m.studySec || {})) d.studySec[day] = Math.max(d.studySec[day] || 0, n);
   if (m.planDay && (!d.planDay || m.planDay.date > d.planDay.date)) d.planDay = Object.assign({}, m.planDay);
   for (const [g, day] of Object.entries(m.lookSeen || {})) if (!d.lookSeen[g]) d.lookSeen[g] = day;
-  for (const [g, day] of Object.entries(m.hookSeen || {})) if (!d.hookSeen[g]) d.hookSeen[g] = day;
+  for (const [g, day] of Object.entries(m.hookSeen || {})) if (!d.hookSeen[g] || d.hookSeen[g] < day) d.hookSeen[g] = day;
   for (const [pair, c] of Object.entries(m.confusions || {})) if (!d.confusions[pair]) d.confusions[pair] = Object.assign({}, c);
   d.sprintBest = Math.max(d.sprintBest || 0, m.sprintBest || 0);
   for (const [id, r] of Object.entries(m.practice || {})) if (!d.practice[id] || (r.d || '') > (d.practice[id].d || '')) d.practice[id] = Object.assign({}, r);
@@ -1379,7 +1382,8 @@ function grammarBackHtml(g, compact) {
     ${g.mn ? `<div><div class="section-label">Memory hook</div>
       ${g.img ? `<img class="card-img${compact ? ' small' : ''}" src="${esc(g.img)}" data-kanji="${esc('g:' + g.id)}" alt="Picture for the memory hook" loading="lazy" onerror="imgFallback(this)">` : ''}
       <div class="story" lang="ja">${esc(g.mn.hook)}</div>
-      ${g.mn.contrast ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(g.mn.contrast)}</span></div>` : ''}</div>` : ''}
+      ${g.mn.contrast ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(g.mn.contrast)}</span></div>` : ''}
+      ${g.mn.family ? `<div class="g-family"><div class="section-label">The yo-yo family · the yo-yo is よう, what's with it tells them apart</div>${g.mn.family.map(([id, pic, m]) => { const o = GRAMMAR.find(x => x.id === id); return o ? `<div class="${id === g.id ? 'here' : ''}"><b lang="ja">${esc(o.pattern)}</b> ${esc(pic)} → <i>${esc(m)}</i></div>` : ''; }).join('')}</div>` : ''}</div>` : ''}
     <dl class="readings"><dt>FORM</dt><dd lang="ja">${kanjiLinks(g.formation)}</dd></dl>
     ${compact ? '' : `<p class="g-note">${esc(g.note)}</p>`}
     <div><div class="section-label">Examples</div><div class="examples">${g.examples.map(x => `
@@ -1799,8 +1803,11 @@ function lookPanelHtml(k) {
 // Groups where you've started two kanji and haven't had the side-by-side lesson yet.
 // Grammar you studied before it had a memory hook: a one-time card showing the hook and picture, a few per session,
 // the ones you miss most first. Practice only: no schedule changes. New grammar shows its hook while you learn it.
+// hookSeen holds the day you saw a hook, or the hook's revision ("2026-10-24r") when that is later, so a hook
+// rewritten after you saw it comes back once.
+const hookSeenMark = g => [today(), (g.mn || {}).rev || ''].sort().pop();
 function pendingHookLessons(limit = 5) {
-  return GRAMMAR.filter(g => g.mn && appData.cards['g:' + g.id] && !appData.hookSeen[g.id])
+  return GRAMMAR.filter(g => g.mn && appData.cards['g:' + g.id] && (!appData.hookSeen[g.id] || appData.hookSeen[g.id] < (g.mn.rev || '')))
     .sort((a, b) => (appData.cards['g:' + b.id].lapses || 0) - (appData.cards['g:' + a.id].lapses || 0))
     .slice(0, limit).map(g => ({ type: 'grammar', x: g, mode: 'hook' }));
 }
@@ -3098,7 +3105,7 @@ document.addEventListener('click', e => {
     }
     case 'a-hook': {
       const it = session.queue[session.i];
-      appData.hookSeen[it.x.id] = today(); saveData();
+      appData.hookSeen[it.x.id] = hookSeenMark(it.x); saveData();
       return next();
     }
     case 'go-sprint': return startSprint();
@@ -3115,7 +3122,7 @@ document.addEventListener('click', e => {
         if (!appData.lookSeen[g.id] && g.kanji.filter(c => c === it.x.kanji || started(c)).length >= 2 && !session.queue.some(q => q.group === g.id))
           session.queue.splice(session.i + 1, 0, { type: 'kanji', x: it.x, mode: 'look', group: g.id });
       noteTime('learn', session.shownAt);
-      if (it.type === 'grammar' && it.x.mn) appData.hookSeen[it.x.id] = today();
+      if (it.type === 'grammar' && it.x.mn) appData.hookSeen[it.x.id] = hookSeenMark(it.x);
       // Extras are on top of today's plan, so they don't use up its new cards (tomorrow's plan counts them).
       const dk = it.extra ? today() + '|extra' : dayKey(it.type);
       appData.newByDay[dk] = (appData.newByDay[dk] || 0) + 1;
