@@ -41,3 +41,10 @@ The Claude link holds at most 512 files, so it gets the pictures as packs, not o
 run `python3 tools/pack_images.py <scratch dir>` and publish `images/packs/*` (built, not committed)
 together with `index.html`, `kanji.json`, `vocab.json`, `grammar.json` and `examples.json`. Don't publish `images/n3/`.
 The app tries `images/n3/` first and falls back to the packs, so GitHub Pages needs nothing extra.
+
+## Listening audio
+
+`tools/gen_audio.py` records the listening items with clearly male and clearly female voices and checks each line's
+pitch. For the Claude link, read the published `audio/packs/index.json` and run
+`python3 tools/pack_audio.py <scratch dir> --keep <that index>`: clips stay in their published packs, so only the packs
+holding re-recorded clips need publishing.
