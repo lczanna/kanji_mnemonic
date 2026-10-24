@@ -5505,5 +5505,42 @@
    }
   },
   "img": "images/lookalikes/g132.jpg"
+ },
+ {
+  "id": "g133",
+  "kanji": [
+   "示",
+   "余"
+  ],
+  "tips": {
+   "示": "show: two bars over a little hooked stem with a dot each side, nothing on top",
+   "余": "too much: the same shape with an umbrella (人 roof) over it"
+  },
+  "scene": "An open-air stone altar with a glowing relic shown off under jeep headlights; beside it, the same altar under a tiny umbrella overflowing with yogurt.",
+  "contrast": "show: the altar stands in the open · too much: an umbrella sits on top and yogurt overflows",
+  "mn": {
+   "示": {
+    "feature": "Nothing on top: the short top bar is the top of the kanji.",
+    "label": "open air",
+    "strokes": [
+     0
+    ],
+    "hook": "The altar stands in the open air so the Jeep can SHOW everyone the relic.",
+    "picture": "An open-air stone altar of two slabs on three legs, a jeep shining its headlights on a glowing relic on top.",
+    "img": "images/lookalikes/g133_793a.jpg"
+   },
+   "余": {
+    "feature": "An umbrella (人 roof, two strokes) sits over the altar shape.",
+    "label": "umbrella",
+    "strokes": [
+     0,
+     1
+    ],
+    "hook": "Put an umbrella over the altar and Yogurt pours on it: TOO MUCH, it overflows.",
+    "picture": "A small stone altar under a tiny umbrella, yogurt pouring from the sky and overflowing it.",
+    "img": "images/lookalikes/g133_4f59.jpg"
+   }
+  },
+  "img": "images/lookalikes/g133.jpg"
  }
 ]
