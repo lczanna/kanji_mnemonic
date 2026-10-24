@@ -461,7 +461,8 @@ function saveData() { saveLocal(); scheduleSync(); }
 // On the claude.ai link, progress is also saved to the viewer's private database, so it survives
 // cleared browser data and follows them across devices. Elsewhere this stays off and the app is local-only.
 // Cards are packed and split across 4 documents to stay well under the 256 KB document limit.
-const SYNC = { db: null, uid: null, state: 'local', at: null, pushed: {}, timer: null, busy: false, again: false };
+const SYNC = { db: null, uid: null, state: 'local', at: null, pushed: {}, timer: null, busy: false, again: false,
+  waiting: false, failed: false, anyway: false, listening: false };
 const SHARDS = 4;
 function shardOf(key) { let h = 0; for (const ch of key) h = (h * 31 + ch.codePointAt(0)) | 0; return Math.abs(h) % SHARDS; }
 const r3 = x => Math.round((x || 0) * 1000) / 1000;
@@ -513,9 +514,10 @@ async function flushSync() {
   }
 }
 function newerCard(a, b) {
-  // A card's most recent review wins; on the same day, the one with more reviews.
-  const la = a.lastReview || '', lb = b.lastReview || '';
-  return la !== lb ? la > lb : (a.reps || 0) > (b.reps || 0);
+  // The copy with more reviews wins, then the most recent review. Reviews only ever add up, so a card taught again
+  // on a device that hadn't loaded your progress (1 review, today) never replaces the card's real history.
+  const ra = a.reps || 0, rb = b.reps || 0;
+  return ra !== rb ? ra > rb : (a.lastReview || '') > (b.lastReview || '');
 }
 function mergeRemote(remote) {
   const d = appData;
@@ -570,30 +572,72 @@ async function pullRemote() {
   planCache = null;
   saveLocal();
 }
+// On the Claude link your progress lives in your account. Until it has loaded, no study starts (progressGate):
+// a phone with an empty or old copy would teach again cards you already know.
 async function initSync() {
   if (!window.claude || typeof window.claude.use !== 'function') return;
+  SYNC.waiting = true; SYNC.failed = false; SYNC.state = 'syncing'; updateSyncBadge();
   try {
     const [db, user] = await Promise.all([window.claude.use('db'), window.claude.use('user')]);
-    if (!db || !user) return;
+    if (!db || !user) { SYNC.state = 'local'; return; }
     const uid = await user.id();
-    if (!uid) return;
-    SYNC.db = db; SYNC.uid = uid; SYNC.state = 'syncing'; updateSyncBadge();
+    if (!uid) { SYNC.state = 'local'; return; }
+    SYNC.db = db; SYNC.uid = uid;
     await pullRemote();
+    SYNC.waiting = false;
     takeSnapshot();   // a device with no local progress still gets today's copy, from the cloud
-    if (!session) render();
+    afterPull();
     await flushSync();
-    document.addEventListener('visibilitychange', () => {
-      // Coming back to the app (e.g. after studying on another device): pick up the other device's progress.
-      if (document.visibilityState === 'visible' && SYNC.db && !session) pullRemote().then(() => { render(); scheduleSync(); }).catch(() => {});
-    });
+    if (!SYNC.listening) {
+      SYNC.listening = true;
+      document.addEventListener('visibilitychange', () => {
+        // Coming back to the app (e.g. after studying on another device): pick up the other device's progress.
+        if (document.visibilityState === 'visible' && SYNC.db && !session) pullRemote().then(() => { render(); scheduleSync(); }).catch(() => {});
+      });
+    }
   } catch (e) {
-    SYNC.db = null; SYNC.state = 'local'; updateSyncBadge();
+    SYNC.db = null; SYNC.failed = true; SYNC.state = 'pullfail';
+  } finally {
+    SYNC.waiting = false; updateSyncBadge();
+    if (!$('modal').hidden && $('modal').dataset.gate) gateModal();
+    if (!session) render();
   }
+}
+// Lessons queued before your progress loaded, for cards you turn out to have already: dropped from the session.
+function dropKnownLessons(s) {
+  if (!s) return 0;
+  const n = s.queue.length;
+  s.queue = s.queue.filter((it, i) => i < s.i || !['learn', 'triage'].includes(it.mode) || !it.x || !appData.cards[keyOf(it.type, it.x)]);
+  return n - s.queue.length;
+}
+function afterPull() {
+  dropKnownLessons(parked);
+  if (parked && parked.i >= parked.queue.length) parked = null;
+  if (session && dropKnownLessons(session)) {
+    if (session.i >= session.queue.length) { session = null; closeSheet(); } else { session.revealed = false; renderSession(); }
+  }
+}
+// Shown instead of starting a session while your progress is loading or couldn't be loaded.
+function progressGate() {
+  if (SYNC.anyway || !(SYNC.waiting || SYNC.failed)) return false;
+  gateModal();
+  return true;
+}
+function gateModal() {
+  const m = $('modal');
+  if (!SYNC.waiting && !SYNC.failed) { m.hidden = true; delete m.dataset.gate; return; }
+  m.dataset.gate = '1';
+  $('modal-body').innerHTML = `<div class="stack"><div class="card stack">${SYNC.waiting
+    ? '<b>Loading your progress…</b><span>Your cards are on their way from your Claude account. Studying starts once they are here, so nothing you know is taught again.</span><div class="row-wrap"><button class="small-btn" id="modal-close">Close</button></div>'
+    : `<b>Couldn't load your progress</b><span>Your Claude account didn't answer, so this device only has its own copy (${Object.keys(appData.cards).length} cards). Studying now could teach again cards you already know. Your saved progress is safe.</span>
+       <div class="row-wrap"><button class="btn primary" id="sync-retry">Try again</button><button class="small-btn" id="sync-anyway">Study with this device's copy</button></div>`}</div></div>`;
+  m.hidden = false;
 }
 function syncText() {
   if (SYNC.state === 'synced') return `Saved to your Claude account${SYNC.at ? ' · ' + SYNC.at.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''}`;
   if (SYNC.state === 'syncing') return 'Syncing with your Claude account…';
   if (SYNC.state === 'error') return 'Could not reach your Claude account. Progress is safe on this device and will sync on the next answer.';
+  if (SYNC.state === 'pullfail') return "Couldn't load your progress from your Claude account. Reload, or tap a study button to try again.";
   if (SYNC.state === 'full') return 'Your Claude storage for this app is full. Download a backup from More.';
   return 'Saved on this device only. Open the Claude link to sync across devices.';
 }
@@ -674,6 +718,8 @@ function calibFactor() {
 function markKnown(key) {
   // "Already know it": skip the lesson, but check it within the week (2–7 days, spread so they don't arrive
   // together). Passing it grows the gaps as usual; missing it puts the card into normal learning.
+  // A card that already has reviews keeps them: it was only offered again by mistake.
+  if ((appData.cards[key] || {}).reps) return;
   const t = today();
   appData.cards[key] = { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: t, due: addDays(t, knownGap(key)), triaged: true };
 }
@@ -2469,11 +2515,13 @@ function restoreSession() {
   s.history = (s.history || []).map(unpackItem).filter(Boolean);
   if (cur && !s.queue[s.i]) s.revealed = false;
   if (s.i >= s.queue.length) return;
-  if (saved.parked) { parked = s; render(); }
+  if (saved.parked || SYNC.waiting) { parked = s; render(); }
   else { session = s; openSheet(); }
 }
 function resumeSession() { if (parked) { session = parked; parked = null; openSheet(); } }
-function openSheet() { if (parked !== session) parked = null; session.shownAt = Date.now();
+function openSheet() {
+  if (session && session.kind !== 'mock' && progressGate()) { parked = session; session = null; render(); return; }
+  if (parked !== session) parked = null; session.shownAt = Date.now();
   if (session.kind === 'mock') {
     if (session.pausedAt) { const away = Date.now() - session.pausedAt; for (const k of Object.keys(session.secEnds)) session.secEnds[k] += away; delete session.pausedAt; }
     mockClock();
@@ -3132,9 +3180,10 @@ document.addEventListener('click', e => {
       appData.newByDay[dk] = (appData.newByDay[dk] || 0) + 1;
       // Saved as learned straight away (due today), so closing the app before its quiz doesn't lose it.
       const key = keyOf(it.type, it.x);
+      const had = (appData.cards[key] || {}).reps;
       if (!appData.cards[key]) appData.cards[key] = { stability: 0, difficulty: 0, reps: 0, lapses: 0, lastReview: today(), due: today() };
       saveData();
-      insertLater(quizItem(it.type, it.x), 3);
+      if (!had) insertLater(quizItem(it.type, it.x), 3);
       return next();
     }
     case 'a-known': {
@@ -3147,7 +3196,9 @@ document.addEventListener('click', e => {
     case 't-no': return triageAnswer(false);
     case 't-peek': session.revealed = true; return renderSession();
     case 't-undo': return triageUndo();
-    case 'modal-close': $('modal').hidden = true; return;
+    case 'modal-close': $('modal').hidden = true; delete $('modal').dataset.gate; return;
+    case 'sync-retry': gateModal(); return initSync();
+    case 'sync-anyway': SYNC.anyway = true; $('modal').hidden = true; delete $('modal').dataset.gate; return render();
     case 'b-copy': return copyBackup();
     case 'b-restore': return restore($('backup').value);
     case 'r-ask': confirmingReset = true; return render();
@@ -3292,8 +3343,8 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   GRAMMAR = gd; BY_GID = Object.fromEntries(GRAMMAR.map(g => [g.id, g]));
   for (const g of GRAMMAR) Object.assign(GL, g.gl || {});
   render();
+  initSync();        // first, so a session restored below waits for your progress
   restoreSession();
-  initSync();
   getJson('speech/index.json', true).then(x => { if (x && !Array.isArray(x)) REC = x; });
   // Exam practice (listening, reading, extra word questions) loads in the background.
   getJson('exam.json', true).then(ex => {

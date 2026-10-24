@@ -17,6 +17,9 @@ Progress must survive every app update. Before changing `index.html` or the deck
   If a format change is unavoidable, migrate in `loadData` and bump `version`.
 - **Test on old data** before publishing: load an existing backup (More → Download progress) and check the
   card count is unchanged.
+- **Run `node tests/regression.mjs`** before every publish: loading progress from the account on an empty device,
+  waiting for it before studying, the merge rule (more reviews wins), never overwriting a reviewed card, old data.
+  Add a test for every progress bug found.
 
 The app keeps the last 3 daily snapshots on each device (More → Back up progress) as a fallback.
 
