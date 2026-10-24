@@ -495,16 +495,18 @@
   "kanji": [
    "天",
    "夫",
-   "失"
+   "失",
+   "矢"
   ],
   "tips": {
    "天": "heavens: two lines; the body hangs from the lower one, nothing pokes above the top line",
    "夫": "husband: the head pokes up through the top line like a hairpin",
-   "失": "lose: husband plus a slanted stroke at top left, as if something slips off"
+   "失": "lose: husband plus a slanted stroke at top left, as if something slips off",
+   "矢": "dart (a part, in 知 and 族): a slanted flag on top, a short top bar, the middle stroke stops at it"
   },
   "scene": "Under the open heavens a husband with a hairpin poking up through his hat stands on a hill, as a gust tilts a second hat off his head and he loses it.",
   "img": "images/lookalikes/g014.jpg",
-  "contrast": "Heavens: head stays under the ceiling · husband's head pokes through · lose: a slash slips off the top left · (the part dart 矢, in 知 and 族: a slanted flag on top, and the middle stroke stops at its short bar; 失 has the flag and pokes through)",
+  "contrast": "Heavens: head stays under the ceiling · husband's head pokes through · lose: a slash slips off the top left and the head pokes through · dart: the slash on top, but nothing pokes through",
   "mn": {
    "天": {
     "feature": "The head stays under the top line: nothing pokes above the ceiling.",
@@ -535,6 +537,13 @@
     "hook": "A slash at the top left knocks the pin askew: the husband LOSES his ring.",
     "picture": "A sword slash knocking a hairpin crooked at the top left, a wedding ring falling into a drain, a sheet ghost giggling.",
     "img": "images/lookalikes/g014_5931.jpg"
+   },
+   "矢": {
+    "feature": "A slanted flag on the top left, and the middle stroke stops at the short top bar.",
+    "label": "flag, no poke",
+    "hook": "The dart has the flag of lose (失), but its head never pokes through the bar.",
+    "picture": "A dart with a little flag on its tail lying flat under a ceiling beam, nothing poking through.",
+    "img": "images/lookalikes/g014_77e2.jpg"
    }
   }
  },
@@ -5542,5 +5551,54 @@
    }
   },
   "img": "images/lookalikes/g133.jpg"
+ },
+ {
+  "id": "g134",
+  "kanji": [
+   "矢",
+   "午",
+   "牛"
+  ],
+  "tips": {
+   "矢": "dart (a part, in 知 and 族): the bottom splits into two spread legs",
+   "午": "noon: one straight stem that stops flat at the top bar",
+   "牛": "cow: one straight stem that pokes up through the top, the horn"
+  },
+  "scene": "A dart standing upright on two spread little legs, a straight laundry pole at noon with its top flat under a crossbar, and a cow whose single horn pokes up through a fence rail.",
+  "contrast": "All three: a slanted stroke over two bars. Dart: splits into two legs below · noon: one straight stem, flat on top · cow: the stem pokes up through the top as a horn",
+  "mn": {
+   "矢": {
+    "feature": "Two legs spread at the bottom instead of a straight stem.",
+    "label": "legs",
+    "strokes": [
+     3,
+     4
+    ],
+    "hook": "The dart lands and stands on two spread legs, like the St. Bernard that fetches it.",
+    "picture": "A dart with a little flag on its tail standing upright on two spread legs, a St. Bernard dog sitting beside it.",
+    "img": "images/lookalikes/g134_77e2.jpg"
+   },
+   "午": {
+    "feature": "One straight stem that stops flat at the top bar.",
+    "label": "flat top",
+    "strokes": [
+     3
+    ],
+    "hook": "At noon the laundry pole stands straight up and stops flat under the top bar.",
+    "picture": "A muddy goblin hanging laundry on a straight wooden pole at noon, the sun right overhead, the pole ending flat under a crossbar.",
+    "img": "images/lookalikes/g134_5348.jpg"
+   },
+   "牛": {
+    "feature": "The straight stem pokes up through the top bar: the horn.",
+    "label": "horn",
+    "strokes": [
+     3
+    ],
+    "hook": "The cow's single horn pokes up through the top.",
+    "picture": "A cow with one horn poking up through the top of its head, spinning on an ice rink.",
+    "img": "images/lookalikes/g134_725b.jpg"
+   }
+  },
+  "img": "images/lookalikes/g134.jpg"
  }
 ]

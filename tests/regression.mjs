@@ -154,6 +154,21 @@ await test('every card key the app uses still exists in the decks (no orphaned p
   eq(missing.length, 0, 'keys without a card: ' + missing.slice(0, 5).join(' '));
 });
 
+await test('look-alike groups with a part card (矢): shown on cards, never quizzed or turned into a lesson card', async () => {
+  const p = await page({ cloud: false });
+  await p.waitForFunction(() => LOOK.length > 0);
+  const r = await p.evaluate(() => {
+    const C = { stability: 5, difficulty: 5, reps: 3, lapses: 0, lastReview: today(), due: '2099-01-01' };
+    for (const c of ['午', '牛', '天', '夫', '失', 'c:矢']) appData.cards[c] = Object.assign({}, C);
+    const quizzed = new Set([...peersOf('牛'), ...peersOf('失'), ...whichItem(BY_KANJI['午']).opts, ...whichItem(BY_KANJI['失']).opts]);
+    return { inGroups: groupsOf('矢').length, quizzedPart: quizzed.has('矢'), lessons: pendingLookLessons(20).every(i => i.x && BY_KANJI[i.x.kanji]),
+      panel: /Don't confuse/.test(partBackHtml(BY_PART['矢'])) };
+  });
+  yes(r.inGroups >= 1, 'dart not in any group'); eq(r.quizzedPart, false, 'part offered as a quiz answer');
+  eq(r.lessons, true, 'lesson card for a part'); eq(r.panel, true, 'part card shows its look-alikes');
+  eq(p.errors.length, 0, 'page errors: ' + p.errors.join('; '));
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);
