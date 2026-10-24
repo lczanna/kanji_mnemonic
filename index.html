@@ -1115,6 +1115,14 @@ function wordLink(w) {
   if (!v) return '';
   return ` <button class="chip word-link" data-v="${esc(v.w)}">${appData.cards['v:' + v.w] ? 'your word card ›' : 'word card · not studied yet ›'}</button>`;
 }
+// Other deck words that sound exactly like v and mean something else: a kana-only question names them
+// (きく: "not 聞く") so you know which one is asked. Only words you've studied or common ones, at most 3.
+function soundTwins(v) {
+  wordLink('');
+  const first = m => m.split(/[;,]/)[0].replace(/\(.*?\)/g, '').trim().toLowerCase();
+  return (BY_READING[v.r] || []).filter(o => o !== v && first(o.m) !== first(v.m) && (appData.cards['v:' + o.w] || (o.p || 9999) <= 1500))
+    .sort((a, b) => !!appData.cards['v:' + b.w] - !!appData.cards['v:' + a.w] || (a.p || 9999) - (b.p || 9999)).slice(0, 3);
+}
 function showGloss(btn) {
   const [w, r, lemma, lr, m] = JSON.parse(btn.dataset.gl);
   const pop = $('gl-pop');
@@ -1345,6 +1353,7 @@ function vocabBackHtml(v, mode) {
   return `<div class="back">
     <div class="word-head">${head}</div>
     <div class="keyword" style="font-size:18px">${esc(v.m)}</div>
+    ${soundTwins(v).length ? `<div class="muted">Same sound: ${soundTwins(v).map(o => `<span lang="ja">${kanjiLinks(o.w)}</span> ${esc(o.m.split(/[;,]/)[0])}`).join(' · ')}</div>` : ''}
     ${f === 'mixed' ? (() => {
       // Name the kanji: which are above N3 (why the exam prints it in kana) and which are in your deck (tappable).
       const above = [...new Set([...v.w].filter(ch => isKanji(ch) && ch !== '々' && !BY_KANJI[ch]))], mine = [...new Set([...v.w].filter(ch => BY_KANJI[ch]))];
@@ -2654,7 +2663,8 @@ function sameScript(opts, words) {
   const k = opts.map(o => HAS_KANJI.test(o));
   if (k.every(Boolean) || !k.some(Boolean)) return opts;
   const kana = opts.map((o, i) => k[i] ? kanaOf(o, (words || [])[i]) : o);
-  return kana.every(Boolean) ? kana : opts;
+  // Kana would make sound-alike options identical (効く and 聞く are both きく): keep them as written then.
+  return kana.every(Boolean) && new Set(kana).size === kana.length ? kana : opts;
 }
 function mcOptions(it, kana, kanji, q) {
   const answered = session.revealed;
@@ -2760,7 +2770,7 @@ function vocabScreen(it, tags) {
   if (it.task === 'meaning') {
     tags.push('<span class="tag">意味 · WHAT DOES IT MEAN?</span>');
     if (session.revealed) speak(sayText(v.w, v.r));
-    const front = session.revealed ? '' : `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">Say what it means, then tap to check. ${sayBtn(sayText(v.w, v.r), 'Play ' + v.r)}</div>`;
+    const front = session.revealed ? '' : `<div class="word-front kana" lang="ja" style="${kanaSize(v.r)}">${esc(v.r)}</div><div class="prompt">Say what it means, then tap to check. ${sayBtn(sayText(v.w, v.r), 'Play ' + v.r)}</div>${soundTwins(v).length ? `<div class="prompt muted" lang="ja">not ${soundTwins(v).map(o => esc(o.w)).join(' · ')}</div>` : ''}`;
     return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' },
       bar: session.revealed ? gradeBar(it) : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>` };
   }
