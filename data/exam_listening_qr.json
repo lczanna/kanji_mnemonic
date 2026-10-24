@@ -1,0 +1,2162 @@
+[
+ {
+  "id": "qr001",
+  "s": "M",
+  "line": "お先に失礼します。",
+  "options": [
+   "お疲れさまでした。",
+   "いいえ、どういたしまして。",
+   "はい、お先に失礼します。"
+  ],
+  "answer": 0,
+  "en": "I'll be leaving before you.",
+  "opts_en": [
+   "Good work today.",
+   "No, you're welcome.",
+   "Yes, I'll be leaving before you."
+  ],
+  "why": "お疲れさまでした is the set reply to a colleague leaving first; repeating お先に失礼します is wrong because the listener is staying."
+ },
+ {
+  "id": "qr002",
+  "s": "F",
+  "line": "熱があるので、今日は早く帰ります。",
+  "options": [
+   "それはよかったですね。",
+   "おかげさまで。",
+   "どうぞお大事に。"
+  ],
+  "answer": 2,
+  "en": "I have a fever, so I'm going home early today.",
+  "opts_en": [
+   "That's good news.",
+   "Thanks to you (I'm fine).",
+   "Please take care of yourself."
+  ],
+  "why": "どうぞお大事に is said to someone who is ill; おかげさまで is what the sick person says when they recover."
+ },
+ {
+  "id": "qr003",
+  "s": "M",
+  "line": "この本、もう読み終わったから、貸してあげようか。",
+  "options": [
+   "うん、貸してあげるよ。",
+   "え、いいの？ありがとう。",
+   "じゃ、借りてあげるね。"
+  ],
+  "answer": 1,
+  "en": "I've finished this book, so shall I lend it to you?",
+  "opts_en": [
+   "Yeah, I'll lend it to you.",
+   "Oh, really? Thanks.",
+   "Then I'll borrow it for you."
+  ],
+  "why": "The speaker is offering to lend, so the listener thanks him; the traps reverse who lends (貸す) and who borrows (借りる)."
+ },
+ {
+  "id": "qr004",
+  "s": "F",
+  "line": "すみません、ちょっとペンを貸してもらえませんか。",
+  "options": [
+   "はい、借りてもいいですよ。",
+   "ええ、どうぞ。",
+   "いいえ、貸してもらいません。"
+  ],
+  "answer": 1,
+  "en": "Excuse me, could you lend me a pen?",
+  "opts_en": [
+   "Yes, it is fine to borrow it.",
+   "Sure, here you go.",
+   "No, I won't have it lent to me."
+  ],
+  "why": "ええ、どうぞ hands the pen over; the other replies mix up 貸す/借りる and もらう direction."
+ },
+ {
+  "id": "qr005",
+  "s": "M",
+  "line": "昨日の会議、どうでしたか。",
+  "options": [
+   "思ったより早く終わりました。",
+   "明日の午後三時からです。",
+   "会議に出てもいいですか。"
+  ],
+  "answer": 0,
+  "en": "How was yesterday's meeting?",
+  "opts_en": [
+   "It ended earlier than I expected.",
+   "It's from 3 p.m. tomorrow.",
+   "May I attend the meeting?"
+  ],
+  "why": "The question asks about a past meeting, so a past-tense impression fits; 明日の午後三時から answers 'when' for a future meeting."
+ },
+ {
+  "id": "qr006",
+  "s": "F",
+  "line": "部長、明日お休みをいただいてもよろしいでしょうか。",
+  "options": [
+   "うん、休んでいただくよ。",
+   "ええ、いただきます。",
+   "ああ、いいよ。ゆっくり休んで。"
+  ],
+  "answer": 2,
+  "en": "Sir, may I take tomorrow off?",
+  "opts_en": [
+   "Yes, I'll humbly have you rest.",
+   "Yes, I'll receive it.",
+   "Sure. Get some good rest."
+  ],
+  "why": "The boss grants permission plainly; いただく is the employee's humble word, so the boss using it about himself is wrong."
+ },
+ {
+  "id": "qr007",
+  "s": "M",
+  "line": "遅れてすみません。電車が止まってしまって。",
+  "options": [
+   "じゃ、電車で来たらどうですか。",
+   "いいえ、どういたしまして。",
+   "大変でしたね。まだ始まっていないからだいじょうぶですよ。"
+  ],
+  "answer": 2,
+  "en": "Sorry I'm late. The train stopped.",
+  "opts_en": [
+   "Then why don't you come by train?",
+   "No, you're welcome.",
+   "That was rough. We haven't started yet, so it's fine."
+  ],
+  "why": "Sympathy plus reassurance answers an apology; どういたしまして answers thanks, not an apology."
+ },
+ {
+  "id": "qr008",
+  "s": "F",
+  "line": "その服、よく似合っていますね。",
+  "options": [
+   "ええ、よく似合いそうですね。",
+   "そうですか。ありがとうございます。",
+   "じゃ、着てみてください。"
+  ],
+  "answer": 1,
+  "en": "That outfit really suits you.",
+  "opts_en": [
+   "Yes, it looks like it would suit (you).",
+   "Really? Thank you.",
+   "Then please try it on."
+  ],
+  "why": "A compliment is answered with thanks; the traps talk as if someone else were wearing it or hadn't put it on yet."
+ },
+ {
+  "id": "qr009",
+  "s": "M",
+  "line": "いらっしゃいませ。何名様ですか。",
+  "options": [
+   "二人です。",
+   "二人目です。",
+   "二時からです。"
+  ],
+  "answer": 0,
+  "en": "Welcome. How many people?",
+  "opts_en": [
+   "Two.",
+   "I'm the second person.",
+   "From two o'clock."
+  ],
+  "why": "何名様 asks the number in your party; 二人目 means 'the second person' and 二時 is a time."
+ },
+ {
+  "id": "qr010",
+  "s": "F",
+  "line": "お茶とコーヒー、どちらがいいですか。",
+  "options": [
+   "じゃ、お茶をお願いします。",
+   "はい、そうです。",
+   "お茶をいれましょうか。"
+  ],
+  "answer": 0,
+  "en": "Which would you like, tea or coffee?",
+  "opts_en": [
+   "Tea, please.",
+   "Yes, that's right.",
+   "Shall I make some tea?"
+  ],
+  "why": "A choice question needs a choice; お茶をいれましょうか is what the host would say, not the guest."
+ },
+ {
+  "id": "qr011",
+  "s": "M",
+  "line": "来週の土曜日、みんなで山に行くんだけど、一緒にどう？",
+  "options": [
+   "うん、みんなで行ってきたよ。",
+   "どうも、おかげさまで。",
+   "いいね。ぜひ行きたい。"
+  ],
+  "answer": 2,
+  "en": "We're all going to the mountains next Saturday. Want to come?",
+  "opts_en": [
+   "Yeah, we all went.",
+   "Thanks, I'm fine thanks to you.",
+   "Sounds good. I'd love to go."
+  ],
+  "why": "The invitation is for a future trip, so accepting fits; 行ってきた is past tense and doesn't answer the invitation."
+ },
+ {
+  "id": "qr012",
+  "s": "F",
+  "line": "このにもつ、重そうですね。持ちましょうか。",
+  "options": [
+   "ええ、持ってあげましょう。",
+   "すみません、じゃ、お願いします。",
+   "はい、持ってもらいましょうか。"
+  ],
+  "answer": 1,
+  "en": "That bag looks heavy. Shall I carry it?",
+  "opts_en": [
+   "Yes, I'll carry it for you.",
+   "Thanks, then please do.",
+   "Yes, shall I have it carried?"
+  ],
+  "why": "The listener accepts the offer; 持ってあげましょう would be the helper's line, not the person being helped."
+ },
+ {
+  "id": "qr013",
+  "s": "M",
+  "line": "今日は私がごちそうしますよ。",
+  "options": [
+   "はい、ごちそうしてあげます。",
+   "いいんですか。じゃ、お言葉にあまえて。",
+   "おいしそうに食べましたね。"
+  ],
+  "answer": 1,
+  "en": "Today it's my treat.",
+  "opts_en": [
+   "Yes, I'll treat you.",
+   "Are you sure? Then I'll gladly accept.",
+   "You ate it so happily."
+  ],
+  "why": "お言葉にあまえて accepts a kind offer; ごちそうしてあげます wrongly makes the listener the one paying."
+ },
+ {
+  "id": "qr014",
+  "s": "F",
+  "line": "すみません、駅へはどう行けばいいですか。",
+  "options": [
+   "この道をまっすぐ行って、二つ目のかどを右です。",
+   "駅までは歩いて行きました。",
+   "はい、駅に行ってもいいですよ。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, how do I get to the station?",
+  "opts_en": [
+   "Go straight along this road and turn right at the second corner.",
+   "I walked to the station.",
+   "Yes, you may go to the station."
+  ],
+  "why": "The question asks for directions; the traps give a past personal action or permission instead."
+ },
+ {
+  "id": "qr015",
+  "s": "M",
+  "line": "すみません、部長はいらっしゃいますか。",
+  "options": [
+   "はい、部長でいらっしゃいます。",
+   "はい、いらっしゃってください。",
+   "申しわけありません。ただ今、席を外しております。"
+  ],
+  "answer": 2,
+  "en": "Excuse me, is the department manager in?",
+  "opts_en": [
+   "Yes, he is the manager.",
+   "Yes, please come.",
+   "I'm sorry, he's away from his desk right now."
+  ],
+  "why": "席を外しております is the set phrase for 'not at his desk'; いらっしゃる here means 'is present', not 'come'."
+ },
+ {
+  "id": "qr016",
+  "s": "F",
+  "line": "宿題、もう出した？",
+  "options": [
+   "うん、これから出すよ。",
+   "ええ、宿題を出してください。",
+   "ううん、まだ。今日中に出すつもり。"
+  ],
+  "answer": 2,
+  "en": "Did you hand in the homework already?",
+  "opts_en": [
+   "Yeah, I'll hand it in now.",
+   "Yes, please hand in the homework.",
+   "No, not yet. I plan to hand it in today."
+  ],
+  "why": "まだ correctly answers もう～た; うん followed by これから contradicts itself, and the last is a teacher's request."
+ },
+ {
+  "id": "qr017",
+  "s": "M",
+  "line": "窓を開けてもいいですか。",
+  "options": [
+   "ええ、開けてもらいました。",
+   "ええ、どうぞ。",
+   "はい、開けてもいいですか。"
+  ],
+  "answer": 1,
+  "en": "May I open the window?",
+  "opts_en": [
+   "Yes, I had it opened.",
+   "Sure, go ahead.",
+   "Yes, may I open it?"
+  ],
+  "why": "ええ、どうぞ grants permission; repeating the question or using past もらいました does not."
+ },
+ {
+  "id": "qr018",
+  "s": "F",
+  "line": "今日、雨が降るらしいよ。",
+  "options": [
+   "じゃ、かさを持っていこう。",
+   "へえ、雨が降ってよかったね。",
+   "うん、昨日は晴れたよ。"
+  ],
+  "answer": 0,
+  "en": "Apparently it's going to rain today.",
+  "opts_en": [
+   "Then I'll take an umbrella.",
+   "Oh, good thing it rained.",
+   "Yeah, it was sunny yesterday."
+  ],
+  "why": "The rain is expected, so preparing for it fits; 降ってよかった treats it as already happened."
+ },
+ {
+  "id": "qr019",
+  "s": "M",
+  "line": "どうしましたか。",
+  "options": [
+   "昨日からのどが痛くて。",
+   "はい、お大事に。",
+   "薬を出しておきます。"
+  ],
+  "answer": 0,
+  "en": "What seems to be the problem?",
+  "opts_en": [
+   "My throat has hurt since yesterday.",
+   "Yes, take care.",
+   "I'll prescribe some medicine."
+  ],
+  "why": "The doctor asks the patient's problem, so the patient describes symptoms; お大事に and 薬を出しておきます are the doctor's lines."
+ },
+ {
+  "id": "qr020",
+  "s": "F",
+  "line": "明日の会議、何時からでしたっけ。",
+  "options": [
+   "二時間ぐらいかかりましたよ。",
+   "会議室でやります。",
+   "十時からですよ。"
+  ],
+  "answer": 2,
+  "en": "What time does tomorrow's meeting start again?",
+  "opts_en": [
+   "It took about two hours.",
+   "We'll hold it in the meeting room.",
+   "From ten."
+  ],
+  "why": "何時から asks the start time; the traps give a past length of time or a place."
+ },
+ {
+  "id": "qr021",
+  "s": "M",
+  "line": "おひさしぶりです。お元気でしたか。",
+  "options": [
+   "はい、元気を出してください。",
+   "ええ、おかげさまで。",
+   "いいえ、はじめまして。"
+  ],
+  "answer": 1,
+  "en": "Long time no see. Have you been well?",
+  "opts_en": [
+   "Yes, please cheer up.",
+   "Yes, I'm well, thanks.",
+   "No, nice to meet you."
+  ],
+  "why": "おかげさまで is the set reply when asked about your health; 元気を出して means 'cheer up' to someone else."
+ },
+ {
+  "id": "qr022",
+  "s": "F",
+  "line": "このケーキ、作ったんですけど、よかったら食べてください。",
+  "options": [
+   "じゃ、作ってあげます。",
+   "わあ、おいしそう。いただきます。",
+   "はい、ごちそうさまでした。"
+  ],
+  "answer": 1,
+  "en": "I made this cake. Please have some if you'd like.",
+  "opts_en": [
+   "Then I'll make it for you.",
+   "Wow, it looks delicious. Thank you, I'll have some.",
+   "Yes, thank you for the meal."
+  ],
+  "why": "いただきます is said before eating; ごちそうさまでした is said after, so the tense is wrong."
+ },
+ {
+  "id": "qr023",
+  "s": "M",
+  "line": "すみません、これ、もう少し安くなりませんか。",
+  "options": [
+   "申しわけありません、これ以上はちょっと…。",
+   "ええ、もう少し高いですよ。",
+   "はい、安くしてもらいます。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, can't you make this a little cheaper?",
+  "opts_en": [
+   "I'm sorry, we can't go any lower...",
+   "Yes, it's a little more expensive.",
+   "Yes, I'll have it made cheaper."
+  ],
+  "why": "The shop staff politely refuses a discount; 安くしてもらう would be the customer's side."
+ },
+ {
+  "id": "qr024",
+  "s": "F",
+  "line": "来月、けっこんすることになりました。",
+  "options": [
+   "それは残念でしたね。",
+   "どうぞお大事に。",
+   "それはおめでとうございます。"
+  ],
+  "answer": 2,
+  "en": "I'm getting married next month.",
+  "opts_en": [
+   "That's too bad.",
+   "Please take care of yourself.",
+   "Congratulations!"
+  ],
+  "why": "Good news calls for おめでとうございます; 残念 and お大事に are for bad news or illness."
+ },
+ {
+  "id": "qr025",
+  "s": "M",
+  "line": "日本語、上手ですね。",
+  "options": [
+   "ええ、上手になりたいですね。",
+   "日本語を教えてもらえませんか。",
+   "いえ、まだまだです。"
+  ],
+  "answer": 2,
+  "en": "Your Japanese is very good.",
+  "opts_en": [
+   "Yes, I'd like to get good at it.",
+   "Could you teach me Japanese?",
+   "Oh no, I still have a long way to go."
+  ],
+  "why": "Modestly declining a compliment is the natural reply; the other two don't respond to being praised."
+ },
+ {
+  "id": "qr026",
+  "s": "F",
+  "line": "ここ、座ってもいいですか。",
+  "options": [
+   "はい、座ってもいいですか。",
+   "あ、すみません。そこは友だちが来るんです。",
+   "ええ、座っていただきました。"
+  ],
+  "answer": 1,
+  "en": "May I sit here?",
+  "opts_en": [
+   "Yes, may I sit?",
+   "Oh, sorry. My friend is coming to sit there.",
+   "Yes, I had you sit."
+  ],
+  "why": "A polite refusal with a reason answers the request; the traps repeat the question or use past いただきました."
+ },
+ {
+  "id": "qr027",
+  "s": "M",
+  "line": "今度の日曜日、ひま？",
+  "options": [
+   "うん、特に予定はないけど、どうして？",
+   "日曜日はひまだったよ。",
+   "うん、ひまにしてね。"
+  ],
+  "answer": 0,
+  "en": "Are you free this Sunday?",
+  "opts_en": [
+   "Yeah, I have no particular plans. Why?",
+   "I was free on Sunday.",
+   "Yeah, make yourself free."
+  ],
+  "why": "The question is about a coming Sunday, so present/future fits; ひまだった is past tense."
+ },
+ {
+  "id": "qr028",
+  "s": "F",
+  "line": "先生、この漢字の読み方を教えていただけませんか。",
+  "options": [
+   "ああ、これは「かいぎ」と読むんですよ。",
+   "はい、教えていただきます。",
+   "ええ、読んであげてください。"
+  ],
+  "answer": 0,
+  "en": "Professor, could you tell me how to read this kanji?",
+  "opts_en": [
+   "Ah, this is read 'kaigi'.",
+   "Yes, I'll humbly be taught.",
+   "Yes, please read it for them."
+  ],
+  "why": "The teacher simply answers; 教えていただきます is the student's humble form, wrong in the teacher's mouth."
+ },
+ {
+  "id": "qr029",
+  "s": "M",
+  "line": "すみません、ちょっと手伝ってもらえる？",
+  "options": [
+   "うん、手伝ってもらうね。",
+   "ありがとう、助かったよ。",
+   "いいよ。何をすればいい？"
+  ],
+  "answer": 2,
+  "en": "Sorry, could you help me a bit?",
+  "opts_en": [
+   "Yeah, I'll get help from you.",
+   "Thanks, that was a big help.",
+   "Sure. What should I do?"
+  ],
+  "why": "The listener agrees to help; 手伝ってもらう reverses who helps, and 助かった is said by the person helped, afterwards."
+ },
+ {
+  "id": "qr030",
+  "s": "F",
+  "line": "お茶が入りましたよ。",
+  "options": [
+   "はい、入れてください。",
+   "ありがとうございます。いただきます。",
+   "じゃ、お茶を入れてあげます。"
+  ],
+  "answer": 1,
+  "en": "The tea is ready.",
+  "opts_en": [
+   "Yes, please make it.",
+   "Thank you. I'll have some.",
+   "Then I'll make tea for you."
+  ],
+  "why": "お茶が入りました means the tea has been made, so thanking and drinking fits; the traps act as if it isn't ready."
+ },
+ {
+  "id": "qr031",
+  "s": "M",
+  "line": "このコピー、十部ずつお願いできますか。",
+  "options": [
+   "ええ、十部ずつもらいました。",
+   "はい、十部ですね。すぐやります。",
+   "はい、お願いします。"
+  ],
+  "answer": 1,
+  "en": "Could you make ten copies of each of these?",
+  "opts_en": [
+   "Yes, I received ten of each.",
+   "Sure, ten copies. I'll do it right away.",
+   "Yes, please do."
+  ],
+  "why": "The listener accepts the task; はい、お願いします would be the requester's line."
+ },
+ {
+  "id": "qr032",
+  "s": "F",
+  "line": "昨日はごちそうさまでした。",
+  "options": [
+   "いえいえ、また行きましょう。",
+   "どうぞ、めしあがってください。",
+   "いただきます。"
+  ],
+  "answer": 0,
+  "en": "Thank you for the meal yesterday.",
+  "opts_en": [
+   "Not at all. Let's go again.",
+   "Please, help yourself.",
+   "Let's eat."
+  ],
+  "why": "Thanks for an earlier treat is answered modestly; めしあがって and いただきます are said before a meal."
+ },
+ {
+  "id": "qr033",
+  "s": "M",
+  "line": "道に迷ってしまったんですが…。",
+  "options": [
+   "道に迷ってよかったですね。",
+   "はい、私も行ったことがあります。",
+   "どちらに行きたいんですか。"
+  ],
+  "answer": 2,
+  "en": "I seem to have gotten lost...",
+  "opts_en": [
+   "Good thing you got lost.",
+   "Yes, I've been there too.",
+   "Where are you trying to go?"
+  ],
+  "why": "Offering help by asking the destination fits; よかった makes no sense for a problem."
+ },
+ {
+  "id": "qr034",
+  "s": "F",
+  "line": "明日の朝、七時に起こしていただけますか。",
+  "options": [
+   "はい、七時に起きていただきます。",
+   "では、七時にお休みください。",
+   "かしこまりました。七時でございますね。"
+  ],
+  "answer": 2,
+  "en": "Could you give me a wake-up call at seven tomorrow?",
+  "opts_en": [
+   "Yes, I'll humbly have you get up at seven.",
+   "Then please go to sleep at seven.",
+   "Certainly. Seven o'clock."
+  ],
+  "why": "Hotel staff confirm with かしこまりました; 起こす (wake someone) is confused with 起きる (get up) in the trap."
+ },
+ {
+  "id": "qr035",
+  "s": "M",
+  "line": "新しい仕事、もう慣れた？",
+  "options": [
+   "もう少しで始まるよ。",
+   "うん、だいぶ慣れてきたよ。",
+   "じゃ、慣れてね。"
+  ],
+  "answer": 1,
+  "en": "Have you gotten used to the new job yet?",
+  "opts_en": [
+   "It starts soon.",
+   "Yeah, I'm getting pretty used to it.",
+   "Then get used to it."
+  ],
+  "why": "The job has started, so a progress report fits; もう少しで始まる treats it as not yet begun."
+ },
+ {
+  "id": "qr036",
+  "s": "F",
+  "line": "来週の飲み会、来られそう？",
+  "options": [
+   "ごめん、その日はちょっと用事があって。",
+   "うん、来てもらうよ。",
+   "飲み会なら、もう終わったよ。"
+  ],
+  "answer": 0,
+  "en": "Do you think you can come to next week's party?",
+  "opts_en": [
+   "Sorry, I have something on that day.",
+   "Yeah, I'll have you come.",
+   "That party's already over."
+  ],
+  "why": "A polite refusal with a reason fits; 来てもらう reverses who comes, and the party is next week, not over."
+ },
+ {
+  "id": "qr037",
+  "s": "M",
+  "line": "お子さんは何歳ですか。",
+  "options": [
+   "上が六歳で、下が三歳です。",
+   "何歳でもいいですよ。",
+   "はい、子どもが好きです。"
+  ],
+  "answer": 0,
+  "en": "How old are your children?",
+  "opts_en": [
+   "The older one is six and the younger is three.",
+   "Any age is fine.",
+   "Yes, I like children."
+  ],
+  "why": "何歳 asks for ages, and 上/下 give the older and younger child's age."
+ },
+ {
+  "id": "qr038",
+  "s": "F",
+  "line": "すみません、これ、プレゼント用につつんでもらえますか。",
+  "options": [
+   "ええ、つつんであげてください。",
+   "プレゼントをもらいました。",
+   "はい、少々お待ちください。"
+  ],
+  "answer": 2,
+  "en": "Excuse me, could you gift-wrap this?",
+  "opts_en": [
+   "Yes, please wrap it for them.",
+   "I received a present.",
+   "Certainly, one moment please."
+  ],
+  "why": "The clerk accepts the request; the traps ask someone else to wrap it or talk about receiving a gift."
+ },
+ {
+  "id": "qr039",
+  "s": "M",
+  "line": "先週は休んでしまって、すみませんでした。",
+  "options": [
+   "はい、休んでもかまいません。",
+   "いえ、もう体の具合はいいんですか。",
+   "じゃ、来週休みましょう。"
+  ],
+  "answer": 1,
+  "en": "Sorry for being absent last week.",
+  "opts_en": [
+   "Yes, you may be absent.",
+   "That's fine. Are you feeling better now?",
+   "Then let's take next week off."
+  ],
+  "why": "Brushing off the apology and asking about health fits; giving permission for an absence already taken is wrong."
+ },
+ {
+  "id": "qr040",
+  "s": "F",
+  "line": "電気、消してもいい？",
+  "options": [
+   "うん、消してもらったよ。",
+   "あ、ちょっと待って。まだ本を読んでるから。",
+   "電気がついてよかったね。"
+  ],
+  "answer": 1,
+  "en": "Can I turn off the light?",
+  "opts_en": [
+   "Yeah, I had it turned off.",
+   "Oh, wait a moment. I'm still reading.",
+   "Good thing the light came on."
+  ],
+  "why": "Asking her to wait is a natural refusal; 消してもらった is past and from the wrong side."
+ },
+ {
+  "id": "qr041",
+  "s": "M",
+  "line": "この部屋、ちょっと寒くない？",
+  "options": [
+   "そうだね。窓を閉めようか。",
+   "うん、寒くなかったね。",
+   "そうだね、あついね。"
+  ],
+  "answer": 0,
+  "en": "Isn't this room a bit cold?",
+  "opts_en": [
+   "True. Shall I close the window?",
+   "Yeah, it wasn't cold.",
+   "True, it's hot."
+  ],
+  "why": "Agreeing and offering to close the window fits; the traps contradict 'cold' or use the past."
+ },
+ {
+  "id": "qr042",
+  "s": "F",
+  "line": "どうぞ、上がってください。",
+  "options": [
+   "おかえりなさい。",
+   "いってきます。",
+   "おじゃまします。"
+  ],
+  "answer": 2,
+  "en": "Please, come in.",
+  "opts_en": [
+   "Welcome home.",
+   "I'm off.",
+   "Excuse me for intruding."
+  ],
+  "why": "おじゃまします is the set phrase when entering someone's home; the others are for family leaving or returning."
+ },
+ {
+  "id": "qr043",
+  "s": "M",
+  "line": "いってきます。",
+  "options": [
+   "おかえり。",
+   "ただいま。",
+   "いってらっしゃい。気をつけてね。"
+  ],
+  "answer": 2,
+  "en": "I'm off.",
+  "opts_en": [
+   "Welcome back.",
+   "I'm home.",
+   "See you. Take care."
+  ],
+  "why": "いってらっしゃい answers いってきます; おかえり and ただいま are for coming home."
+ },
+ {
+  "id": "qr044",
+  "s": "F",
+  "line": "ただいま。",
+  "options": [
+   "いってらっしゃい。",
+   "おかえり。今日は早かったね。",
+   "おじゃましました。"
+  ],
+  "answer": 1,
+  "en": "I'm home.",
+  "opts_en": [
+   "See you later.",
+   "Welcome back. You're early today.",
+   "Thanks for having me."
+  ],
+  "why": "おかえり answers ただいま; いってらっしゃい is for someone leaving."
+ },
+ {
+  "id": "qr045",
+  "s": "M",
+  "line": "このレポート、いつまでに出せばいいですか。",
+  "options": [
+   "金曜日までにお願いします。",
+   "先週の金曜日に出しました。",
+   "三日ぐらいかかりました。"
+  ],
+  "answer": 0,
+  "en": "By when should I hand in this report?",
+  "opts_en": [
+   "By Friday, please.",
+   "I handed it in last Friday.",
+   "It took about three days."
+  ],
+  "why": "いつまでに asks for a deadline; the traps give a past date or a length of time."
+ },
+ {
+  "id": "qr046",
+  "s": "F",
+  "line": "試験、どうだった？",
+  "options": [
+   "思ったより難しかったよ。",
+   "来週の月曜日だよ。",
+   "がんばってね。"
+  ],
+  "answer": 0,
+  "en": "How did the exam go?",
+  "opts_en": [
+   "It was harder than I expected.",
+   "It's next Monday.",
+   "Good luck."
+  ],
+  "why": "どうだった asks for an impression of a finished exam; the traps treat it as still to come."
+ },
+ {
+  "id": "qr047",
+  "s": "M",
+  "line": "来年、留学することにしたんです。",
+  "options": [
+   "そうですか。留学してよかったですね。",
+   "じゃ、来年、留学させてください。",
+   "へえ、どこに行くんですか。"
+  ],
+  "answer": 2,
+  "en": "I've decided to study abroad next year.",
+  "opts_en": [
+   "I see. Good thing you studied abroad.",
+   "Then please let me study abroad next year.",
+   "Oh, where are you going?"
+  ],
+  "why": "Asking where shows interest in a future plan; してよかった treats it as already done."
+ },
+ {
+  "id": "qr048",
+  "s": "F",
+  "line": "こちらでめしあがりますか、お持ち帰りですか。",
+  "options": [
+   "はい、めしあがります。",
+   "持ち帰りでお願いします。",
+   "ええ、帰ってもいいです。"
+  ],
+  "answer": 1,
+  "en": "Will you eat here, or take it out?",
+  "opts_en": [
+   "Yes, I will (honorably) eat.",
+   "To go, please.",
+   "Yes, you may go home."
+  ],
+  "why": "The customer chooses take-out; めしあがる is honorific and cannot be used for one's own eating."
+ },
+ {
+  "id": "qr049",
+  "s": "M",
+  "line": "申しわけありませんが、この席は予約が入っておりまして…。",
+  "options": [
+   "じゃ、予約してあげます。",
+   "そうですか。じゃ、ほかの席でいいです。",
+   "はい、予約していただきました。"
+  ],
+  "answer": 1,
+  "en": "I'm sorry, but this table is reserved...",
+  "opts_en": [
+   "Then I'll reserve it for you.",
+   "I see. Another table is fine then.",
+   "Yes, you made a reservation for me."
+  ],
+  "why": "The customer accepts another table; the traps confuse who reserves for whom."
+ },
+ {
+  "id": "qr050",
+  "s": "F",
+  "line": "写真、とっていただけますか。",
+  "options": [
+   "いいですよ。どのボタンを押せばいいですか。",
+   "はい、とっていただきます。",
+   "ええ、とってもらいましょう。"
+  ],
+  "answer": 0,
+  "en": "Could you take our picture?",
+  "opts_en": [
+   "Sure. Which button do I press?",
+   "Yes, I'll humbly have it taken.",
+   "Yes, let's have someone take it."
+  ],
+  "why": "Agreeing and asking which button fits; the traps use いただく/もらう as if the listener were being helped."
+ },
+ {
+  "id": "qr051",
+  "s": "M",
+  "line": "よかったら、このかさ、使ってください。",
+  "options": [
+   "じゃ、貸してあげます。",
+   "いいえ、使ってください。",
+   "すみません。お借りします。"
+  ],
+  "answer": 2,
+  "en": "Please use this umbrella if you like.",
+  "opts_en": [
+   "Then I'll lend it to you.",
+   "No, please use it.",
+   "Thank you. I'll borrow it."
+  ],
+  "why": "The listener is the one borrowing, so お借りします fits; 貸してあげます reverses the roles."
+ },
+ {
+  "id": "qr052",
+  "s": "F",
+  "line": "部長、この書類、見ていただけましたか。",
+  "options": [
+   "うん、見てもらったよ。",
+   "いや、見せてあげたよ。",
+   "ああ、まだなんだ。午後見ておくよ。"
+  ],
+  "answer": 2,
+  "en": "Sir, did you have a chance to look at this document?",
+  "opts_en": [
+   "Yeah, I had it looked at.",
+   "No, I showed it to you.",
+   "Ah, not yet. I'll look at it this afternoon."
+  ],
+  "why": "The boss admits he hasn't and promises to; the traps reverse who looks and who shows."
+ },
+ {
+  "id": "qr053",
+  "s": "M",
+  "line": "今、ちょっといいですか。",
+  "options": [
+   "はい、ちょっとだけよかったです。",
+   "ええ、何でしょう。",
+   "いいえ、ちょっと前に来ました。"
+  ],
+  "answer": 1,
+  "en": "Do you have a moment now?",
+  "opts_en": [
+   "Yes, it was only a little good.",
+   "Sure, what is it?",
+   "No, I came a little while ago."
+  ],
+  "why": "ちょっといいですか asks for a moment of your time; ええ、何でしょう is the set reply."
+ },
+ {
+  "id": "qr054",
+  "s": "F",
+  "line": "すみません、この電車、空港に行きますか。",
+  "options": [
+   "いえ、これは行きません。次の電車ですよ。",
+   "はい、空港から来ました。",
+   "空港までは三十分でした。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, does this train go to the airport?",
+  "opts_en": [
+   "No, this one doesn't. It's the next train.",
+   "Yes, I came from the airport.",
+   "It took thirty minutes to the airport."
+  ],
+  "why": "A yes/no answer about the train fits; the traps talk about the speaker's own past trip."
+ },
+ {
+  "id": "qr055",
+  "s": "M",
+  "line": "いつもお世話になっております。",
+  "options": [
+   "こちらこそ、お世話になっております。",
+   "いいえ、どういたしまして。",
+   "はい、お世話をします。"
+  ],
+  "answer": 0,
+  "en": "Thank you for your continued support.",
+  "opts_en": [
+   "Likewise, thank you for yours.",
+   "No, you're welcome.",
+   "Yes, I'll take care of you."
+  ],
+  "why": "The business greeting is returned with こちらこそ; お世話をします literally means looking after someone."
+ },
+ {
+  "id": "qr056",
+  "s": "F",
+  "line": "遅くまで、お疲れさま。",
+  "options": [
+   "どうぞお大事に。",
+   "いってらっしゃい。",
+   "ありがとうございます。お先に失礼します。"
+  ],
+  "answer": 2,
+  "en": "Thanks for staying so late.",
+  "opts_en": [
+   "Please take care of yourself.",
+   "See you later.",
+   "Thank you. I'll be going now."
+  ],
+  "why": "After お疲れさま to someone leaving work, thanks and お先に失礼します fits; the others are for illness or someone going out."
+ },
+ {
+  "id": "qr057",
+  "s": "M",
+  "line": "今日の晩ご飯、何にする？",
+  "options": [
+   "晩ご飯はもう食べたいね。",
+   "カレーなんかどう？",
+   "何でも作ってもらったよ。"
+  ],
+  "answer": 1,
+  "en": "What shall we have for dinner tonight?",
+  "opts_en": [
+   "I already want to eat dinner.",
+   "How about curry?",
+   "I had someone make anything."
+  ],
+  "why": "A suggestion answers 何にする; the traps misuse もう and もらう with past tense."
+ },
+ {
+  "id": "qr058",
+  "s": "F",
+  "line": "明日、もし雨だったら、どうする？",
+  "options": [
+   "雨だったら、行ってきたよ。",
+   "そのときは、家で映画でも見ようか。",
+   "明日は晴れだったね。"
+  ],
+  "answer": 1,
+  "en": "If it rains tomorrow, what will we do?",
+  "opts_en": [
+   "If it rained, I went.",
+   "In that case, shall we watch a movie at home?",
+   "Tomorrow was sunny."
+  ],
+  "why": "A hypothetical future question needs a plan; the traps use past tense for tomorrow."
+ },
+ {
+  "id": "qr059",
+  "s": "M",
+  "line": "すみません、お手洗いはどこですか。",
+  "options": [
+   "あちらのエレベーターの横です。",
+   "はい、お手洗いに行ってきます。",
+   "手を洗ってください。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, where is the restroom?",
+  "opts_en": [
+   "It's next to the elevator over there.",
+   "Yes, I'll go to the restroom.",
+   "Please wash your hands."
+  ],
+  "why": "どこ asks for a place, answered with a location; the traps misread お手洗い."
+ },
+ {
+  "id": "qr060",
+  "s": "F",
+  "line": "先生、レポートを出すのが一日遅れてもかまいませんか。",
+  "options": [
+   "はい、遅れていただきます。",
+   "ええ、昨日遅れました。",
+   "今回だけですよ。次は気をつけてください。"
+  ],
+  "answer": 2,
+  "en": "Professor, would it be all right if my report were one day late?",
+  "opts_en": [
+   "Yes, I'll humbly have you be late.",
+   "Yes, I was late yesterday.",
+   "Just this once. Be careful next time."
+  ],
+  "why": "The teacher grants permission with a warning; the traps misuse いただく or answer in the past."
+ },
+ {
+  "id": "qr061",
+  "s": "M",
+  "line": "このパソコン、使い方がよくわからないんだけど。",
+  "options": [
+   "じゃ、教えてくれるよ。",
+   "じゃ、教えてもらうよ。",
+   "じゃ、教えてあげるよ。"
+  ],
+  "answer": 2,
+  "en": "I don't really know how to use this computer.",
+  "opts_en": [
+   "Then (someone) will show me.",
+   "Then I'll get taught.",
+   "Then I'll show you."
+  ],
+  "why": "The listener offers to teach, so あげる fits; くれる and もらう would make the listener the one being taught."
+ },
+ {
+  "id": "qr062",
+  "s": "F",
+  "line": "これ、旅行のおみやげです。どうぞ。",
+  "options": [
+   "どうぞ、めしあがってください。",
+   "わあ、ありがとうございます。",
+   "じゃ、おみやげを買ってきます。"
+  ],
+  "answer": 1,
+  "en": "This is a souvenir from my trip. Here you are.",
+  "opts_en": [
+   "Please, help yourself.",
+   "Oh, thank you very much.",
+   "Then I'll go buy a souvenir."
+  ],
+  "why": "The receiver thanks the giver; めしあがってください would be the giver's line."
+ },
+ {
+  "id": "qr063",
+  "s": "M",
+  "line": "引っ越しの手伝い、来てくれて助かったよ。",
+  "options": [
+   "いえいえ、また何かあったら言ってね。",
+   "じゃ、手伝ってもらうね。",
+   "うん、来てもらってよかった。"
+  ],
+  "answer": 0,
+  "en": "Thanks for coming to help with the move; it was a big help.",
+  "opts_en": [
+   "No problem. Let me know if there's anything else.",
+   "Then I'll get your help.",
+   "Yeah, I'm glad I had you come."
+  ],
+  "why": "The helper modestly replies to thanks; もらう in the traps reverses who helped whom."
+ },
+ {
+  "id": "qr064",
+  "s": "F",
+  "line": "お母様によろしくお伝えください。",
+  "options": [
+   "はい、伝えておきます。",
+   "はい、お伝えいただきます。",
+   "はい、母から聞いてください。"
+  ],
+  "answer": 0,
+  "en": "Please give my regards to your mother.",
+  "opts_en": [
+   "Yes, I'll pass that on.",
+   "Yes, I'll humbly have you convey it.",
+   "Yes, please hear it from my mother."
+  ],
+  "why": "The listener promises to pass the message on; いただきます wrongly puts the speaker as the one conveying."
+ },
+ {
+  "id": "qr065",
+  "s": "M",
+  "line": "その仕事、私がやりましょうか。",
+  "options": [
+   "はい、私がやりましょう。",
+   "じゃ、やってあげてください。",
+   "いいんですか。じゃ、お願いします。"
+  ],
+  "answer": 2,
+  "en": "Shall I do that job?",
+  "opts_en": [
+   "Yes, I'll do it.",
+   "Then please do it for them.",
+   "Are you sure? Then please do."
+  ],
+  "why": "Accepting the offer fits; 私がやりましょう repeats the offer as if the listener would do it."
+ },
+ {
+  "id": "qr066",
+  "s": "F",
+  "line": "今朝、駅でさいふを落としちゃって…。",
+  "options": [
+   "へえ、よかったね。",
+   "えっ、大変！見つかったの？",
+   "じゃ、ひろってあげたら？"
+  ],
+  "answer": 1,
+  "en": "I dropped my wallet at the station this morning...",
+  "opts_en": [
+   "Oh, that's good.",
+   "Oh no! Did you find it?",
+   "Then why don't you pick it up for them?"
+  ],
+  "why": "Losing a wallet is bad news, so concern fits; よかったね is the wrong reaction."
+ },
+ {
+  "id": "qr067",
+  "s": "M",
+  "line": "このかばん、いくらですか。",
+  "options": [
+   "三つあります。",
+   "八千円です。",
+   "黒いのです。"
+  ],
+  "answer": 1,
+  "en": "How much is this bag?",
+  "opts_en": [
+   "There are three.",
+   "It's 8,000 yen.",
+   "It's the black one."
+  ],
+  "why": "いくら asks the price; the traps give a quantity or a color."
+ },
+ {
+  "id": "qr068",
+  "s": "F",
+  "line": "すみません、次の電車は何時ですか。",
+  "options": [
+   "十時五分です。",
+   "五分ぐらい遅れました。",
+   "次の駅で降ります。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, what time is the next train?",
+  "opts_en": [
+   "10:05.",
+   "It was about five minutes late.",
+   "I get off at the next station."
+  ],
+  "why": "何時 asks for a time, answered with a departure time; the traps describe a delay or where to get off."
+ },
+ {
+  "id": "qr069",
+  "s": "M",
+  "line": "明日、試験だから、今日は遊べないんだ。",
+  "options": [
+   "じゃ、一緒に遊ぼうよ。",
+   "試験、よくできたね。",
+   "そっか。がんばってね。"
+  ],
+  "answer": 2,
+  "en": "I have an exam tomorrow, so I can't hang out today.",
+  "opts_en": [
+   "Then let's hang out together.",
+   "You did well on the exam.",
+   "I see. Good luck."
+  ],
+  "why": "Wishing luck for a coming exam fits; the traps ignore the refusal or praise a result not yet known."
+ },
+ {
+  "id": "qr070",
+  "s": "F",
+  "line": "部長がお呼びですよ。",
+  "options": [
+   "はい、呼んでください。",
+   "じゃ、お呼びしましょうか。",
+   "あ、はい。すぐ行きます。"
+  ],
+  "answer": 2,
+  "en": "The manager is asking for you.",
+  "opts_en": [
+   "Yes, please call them.",
+   "Then shall I call him?",
+   "Oh, okay. I'll go right away."
+  ],
+  "why": "お呼びです means the boss is calling the listener, so going at once fits."
+ },
+ {
+  "id": "qr071",
+  "s": "M",
+  "line": "お飲み物は何になさいますか。",
+  "options": [
+   "はい、何でもなさいます。",
+   "じゃ、オレンジジュースをください。",
+   "飲み物はもう飲みました。"
+  ],
+  "answer": 1,
+  "en": "What would you like to drink?",
+  "opts_en": [
+   "Yes, (I) will honorably do anything.",
+   "Orange juice, please.",
+   "I already drank my drink."
+  ],
+  "why": "The customer picks a drink; なさる is honorific and cannot describe one's own action."
+ },
+ {
+  "id": "qr072",
+  "s": "F",
+  "line": "子どもが熱を出したので、今日は休ませていただけませんか。",
+  "options": [
+   "わかりました。お大事に。",
+   "いいえ、休ませていただきます。",
+   "それはよかったですね。"
+  ],
+  "answer": 0,
+  "en": "My child has a fever; could I take today off?",
+  "opts_en": [
+   "Understood. I hope they get better.",
+   "No, I'll humbly take the day off.",
+   "That's good news."
+  ],
+  "why": "The boss grants leave and says お大事に; 休ませていただきます is the employee's own phrase."
+ },
+ {
+  "id": "qr073",
+  "s": "M",
+  "line": "昨日、電話したんだけど、出なかったね。",
+  "options": [
+   "ごめん、寝ちゃってたんだ。",
+   "うん、電話してあげるね。",
+   "じゃ、明日出かけるよ。"
+  ],
+  "answer": 0,
+  "en": "I called you yesterday but you didn't answer.",
+  "opts_en": [
+   "Sorry, I was asleep.",
+   "Yeah, I'll call you.",
+   "Then I'll go out tomorrow."
+  ],
+  "why": "Apologizing with a reason fits; 出る here means 'answer the phone', not 'go out'."
+ },
+ {
+  "id": "qr074",
+  "s": "F",
+  "line": "これ、つまらないものですが…。",
+  "options": [
+   "そうですか。じゃ、いりません。",
+   "いいえ、つまらなくないですよ。",
+   "わざわざすみません。ありがとうございます。"
+  ],
+  "answer": 2,
+  "en": "This is just a small thing, but...",
+  "opts_en": [
+   "I see. Then I don't need it.",
+   "No, it's not boring.",
+   "You shouldn't have. Thank you."
+  ],
+  "why": "つまらないものですが is a set modest phrase when giving a gift; you thank the giver, not take つまらない literally."
+ },
+ {
+  "id": "qr075",
+  "s": "M",
+  "line": "今度、うちに遊びに来ませんか。",
+  "options": [
+   "はい、遊びに来てください。",
+   "ありがとうございます。ぜひうかがいます。",
+   "はい、遊びに来ました。"
+  ],
+  "answer": 1,
+  "en": "Would you like to come over to my place sometime?",
+  "opts_en": [
+   "Yes, please come over.",
+   "Thank you. I'd love to visit.",
+   "Yes, I came to visit."
+  ],
+  "why": "うかがいます humbly accepts the invitation; the traps invite back or use the past."
+ },
+ {
+  "id": "qr076",
+  "s": "F",
+  "line": "熱、まだある？",
+  "options": [
+   "うん、熱が出るといいね。",
+   "ううん、もう下がったよ。",
+   "熱いお茶を飲んだよ。"
+  ],
+  "answer": 1,
+  "en": "Do you still have a fever?",
+  "opts_en": [
+   "Yeah, I hope I get a fever.",
+   "No, it's gone down already.",
+   "I drank hot tea."
+  ],
+  "why": "まだ is answered with もう: the fever has gone down; the traps confuse 熱 'fever' and 熱い 'hot'."
+ },
+ {
+  "id": "qr077",
+  "s": "M",
+  "line": "すみません、もう一度言っていただけますか。",
+  "options": [
+   "はい、来週の水曜日の午後三時です。",
+   "はい、もう一度言っていただきます。",
+   "ええ、一度だけ言いました。"
+  ],
+  "answer": 0,
+  "en": "Sorry, could you say that once more?",
+  "opts_en": [
+   "Sure: 3 p.m. next Wednesday.",
+   "Yes, I'll humbly have you say it again.",
+   "Yes, I said it only once."
+  ],
+  "why": "The listener repeats the information; いただきます wrongly makes the listener the one being helped."
+ },
+ {
+  "id": "qr078",
+  "s": "F",
+  "line": "今日の会議、出なくてもいいですか。",
+  "options": [
+   "はい、出なくてよかったです。",
+   "ええ、出てもいいですか。",
+   "今日は大事な話があるから、出てください。"
+  ],
+  "answer": 2,
+  "en": "Is it all right if I skip today's meeting?",
+  "opts_en": [
+   "Yes, it was good not to attend.",
+   "Yes, may I attend?",
+   "There's something important today, so please attend."
+  ],
+  "why": "Refusing with a reason answers the request; the traps use past tense or repeat a question."
+ },
+ {
+  "id": "qr079",
+  "s": "M",
+  "line": "そのおかし、一つもらってもいい？",
+  "options": [
+   "うん、もらってあげるよ。",
+   "ありがとう、いただきます。",
+   "どうぞ、好きなのを取って。"
+  ],
+  "answer": 2,
+  "en": "Can I have one of those snacks?",
+  "opts_en": [
+   "Yeah, I'll take it for you.",
+   "Thanks, I'll have one.",
+   "Go ahead, take whichever you like."
+  ],
+  "why": "The owner offers the snacks; いただきます would be said by the person asking, not the owner."
+ },
+ {
+  "id": "qr080",
+  "s": "F",
+  "line": "母の日に何をあげるか、もう決めた？",
+  "options": [
+   "うん、母からもらったよ。",
+   "花にしようと思ってる。",
+   "母の日は五月だったね。"
+  ],
+  "answer": 1,
+  "en": "Have you decided what to give for Mother's Day?",
+  "opts_en": [
+   "Yeah, I got it from my mom.",
+   "I'm thinking of flowers.",
+   "Mother's Day was in May."
+  ],
+  "why": "～にしよう answers what to give; もらった reverses the direction of the gift."
+ },
+ {
+  "id": "qr081",
+  "s": "M",
+  "line": "失礼ですが、どちら様でしょうか。",
+  "options": [
+   "駅前の本屋の者ですが…。",
+   "はい、私でございます。",
+   "失礼しました。またどうぞ。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, but who are you?",
+  "opts_en": [
+   "I'm from the bookshop in front of the station.",
+   "Yes, it's me.",
+   "Excuse me. Please come again."
+  ],
+  "why": "どちら様 politely asks who you are, answered with ～の者です."
+ },
+ {
+  "id": "qr082",
+  "s": "F",
+  "line": "何か手伝うことある？",
+  "options": [
+   "じゃ、このおさらを運んでくれる？",
+   "うん、手伝ってもらったよ。",
+   "ありがとう、手伝ってあげるね。"
+  ],
+  "answer": 0,
+  "en": "Is there anything I can help with?",
+  "opts_en": [
+   "Then could you carry these plates?",
+   "Yeah, I got help.",
+   "Thanks, I'll help you."
+  ],
+  "why": "The listener gives a task with ～てくれる; the traps reverse who helps."
+ },
+ {
+  "id": "qr083",
+  "s": "M",
+  "line": "来月、会社をやめることになりました。",
+  "options": [
+   "じゃ、いつから働くんですか。",
+   "どうぞお大事に。",
+   "そうですか。さびしくなりますね。"
+  ],
+  "answer": 2,
+  "en": "I'll be leaving the company next month.",
+  "opts_en": [
+   "Then when do you start working?",
+   "Please take care of yourself.",
+   "I see. We'll miss you."
+  ],
+  "why": "さびしくなりますね is the natural reaction to a colleague leaving; お大事に is for illness."
+ },
+ {
+  "id": "qr084",
+  "s": "F",
+  "line": "すみません、ここでたばこはちょっと…。",
+  "options": [
+   "はい、吸ってもいいですよ。",
+   "あ、すみません。外で吸います。",
+   "たばこはやめてください。"
+  ],
+  "answer": 1,
+  "en": "Excuse me, smoking here is not really...",
+  "opts_en": [
+   "Yes, you may smoke.",
+   "Oh, sorry. I'll smoke outside.",
+   "Please stop smoking."
+  ],
+  "why": "～はちょっと… is a soft 'please don't', so the smoker apologizes; the traps reverse the roles."
+ },
+ {
+  "id": "qr085",
+  "s": "M",
+  "line": "ほかにご注文はございますか。",
+  "options": [
+   "はい、ございません。",
+   "いえ、以上でお願いします。",
+   "ええ、注文してもらいます。"
+  ],
+  "answer": 1,
+  "en": "Would you like to order anything else?",
+  "opts_en": [
+   "Yes, there isn't.",
+   "No, that's all.",
+   "Yes, I'll have it ordered."
+  ],
+  "why": "いえ、以上で is the set way to finish ordering; はい、ございません mixes yes/no and uses the staff's keigo."
+ },
+ {
+  "id": "qr086",
+  "s": "F",
+  "line": "新しいアパート、どう？",
+  "options": [
+   "駅から近くて、便利だよ。",
+   "うん、新しいほうがいいね。",
+   "アパートを探しているよ。"
+  ],
+  "answer": 0,
+  "en": "How's the new apartment?",
+  "opts_en": [
+   "It's close to the station and convenient.",
+   "Yeah, newer is better.",
+   "I'm looking for an apartment."
+  ],
+  "why": "どう asks for an impression of where she lives now; the traps don't describe the apartment."
+ },
+ {
+  "id": "qr087",
+  "s": "M",
+  "line": "朝ご飯、食べてきた？",
+  "options": [
+   "うん、これから食べてきた。",
+   "じゃ、食べてこよう。",
+   "ううん、時間がなくて。"
+  ],
+  "answer": 2,
+  "en": "Did you eat breakfast before coming?",
+  "opts_en": [
+   "Yeah, I ate it from now.",
+   "Then I'll go eat.",
+   "No, I didn't have time."
+  ],
+  "why": "A no with a reason fits; これから with past 食べてきた is contradictory."
+ },
+ {
+  "id": "qr088",
+  "s": "F",
+  "line": "来週、国へ帰るんです。",
+  "options": [
+   "おかえりなさい。",
+   "いつ帰ってきたんですか。",
+   "そうですか。気をつけて。"
+  ],
+  "answer": 2,
+  "en": "I'm going back to my country next week.",
+  "opts_en": [
+   "Welcome back.",
+   "When did you get back?",
+   "I see. Have a safe trip."
+  ],
+  "why": "The trip is in the future, so 気をつけて fits; おかえりなさい and 帰ってきた treat it as done."
+ },
+ {
+  "id": "qr089",
+  "s": "M",
+  "line": "その本、読み終わったら、貸してくれない？",
+  "options": [
+   "うん、借りてくれる？",
+   "いいよ。来週には読み終わると思う。",
+   "ありがとう、貸してもらうね。"
+  ],
+  "answer": 1,
+  "en": "When you finish that book, could you lend it to me?",
+  "opts_en": [
+   "Yeah, will you borrow it?",
+   "Sure. I think I'll finish it by next week.",
+   "Thanks, I'll have it lent to me."
+  ],
+  "why": "The book's owner agrees to lend; the traps reverse 貸す/借りる and who receives."
+ },
+ {
+  "id": "qr090",
+  "s": "F",
+  "line": "すみません、注文したものがまだ来ないんですが…。",
+  "options": [
+   "申しわけありません。すぐ確認します。",
+   "はい、ご注文ありがとうございました。",
+   "では、注文してください。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, my order still hasn't come...",
+  "opts_en": [
+   "I'm very sorry. I'll check right away.",
+   "Yes, thank you for your order.",
+   "Then please order."
+  ],
+  "why": "Staff apologize and check; the other lines ignore the complaint."
+ },
+ {
+  "id": "qr091",
+  "s": "M",
+  "line": "チェックアウトは何時までですか。",
+  "options": [
+   "十一時まででございます。",
+   "一時間ほどでございます。",
+   "十一時に入りました。"
+  ],
+  "answer": 0,
+  "en": "Until what time is checkout?",
+  "opts_en": [
+   "Until eleven o'clock.",
+   "About one hour.",
+   "I came in at eleven."
+  ],
+  "why": "何時まで asks for a time limit; the traps give a length of time or a past action."
+ },
+ {
+  "id": "qr092",
+  "s": "F",
+  "line": "その仕事、今日中に終わりそう？",
+  "options": [
+   "うん、昨日終わりそうだったよ。",
+   "今日中に終わらせてください。",
+   "うーん、ちょっと難しいかも。"
+  ],
+  "answer": 2,
+  "en": "Do you think you'll finish that job today?",
+  "opts_en": [
+   "Yeah, it looked like it would end yesterday.",
+   "Please finish it today.",
+   "Hmm, it might be a bit hard."
+  ],
+  "why": "The listener judges whether he can finish today; the last is the requester's line."
+ },
+ {
+  "id": "qr093",
+  "s": "M",
+  "line": "お先にどうぞ。",
+  "options": [
+   "いってらっしゃい。",
+   "すみません、じゃ、お先に。",
+   "お先に失礼しました。"
+  ],
+  "answer": 1,
+  "en": "After you.",
+  "opts_en": [
+   "See you later.",
+   "Thanks, then I'll go first.",
+   "Excuse me for leaving first (past)."
+  ],
+  "why": "When someone says お先にどうぞ, you thank them and go first; the traps are greetings for other situations."
+ },
+ {
+  "id": "qr094",
+  "s": "F",
+  "line": "母が入院したんです。",
+  "options": [
+   "それはよかったですね。",
+   "それは心配ですね。お大事になさってください。",
+   "心配してもらいました。"
+  ],
+  "answer": 1,
+  "en": "My mother has been hospitalized.",
+  "opts_en": [
+   "That's good news.",
+   "That must be worrying. I hope she gets well.",
+   "I had (someone) worry."
+  ],
+  "why": "Concern and お大事に fit bad news; よかった is wrong."
+ },
+ {
+  "id": "qr095",
+  "s": "M",
+  "line": "社長はもうお帰りになりましたか。",
+  "options": [
+   "はい、さっきお帰りになりました。",
+   "はい、さっきお帰りしました。",
+   "いいえ、もう帰りました。"
+  ],
+  "answer": 0,
+  "en": "Has the president gone home already?",
+  "opts_en": [
+   "Yes, he left a little while ago.",
+   "Yes, he (humbly) went home a while ago.",
+   "No, he went home already."
+  ],
+  "why": "お帰りになる is respectful for the president; お帰りする is a humble form, wrong for a superior, and いいえ contradicts もう帰りました."
+ },
+ {
+  "id": "qr096",
+  "s": "F",
+  "line": "何か飲み物でもいかがですか。",
+  "options": [
+   "はい、いかがでした。",
+   "ええ、飲んでもらいましょう。",
+   "ありがとうございます。じゃ、お水をお願いします。"
+  ],
+  "answer": 2,
+  "en": "Would you like something to drink?",
+  "opts_en": [
+   "Yes, how was it.",
+   "Yes, let's have someone drink it.",
+   "Thank you. Water, please."
+  ],
+  "why": "Accepting with a choice fits; the traps misuse いかが and もらう."
+ },
+ {
+  "id": "qr097",
+  "s": "M",
+  "line": "昨日の試合、勝った？",
+  "options": [
+   "うん、明日勝つよ。",
+   "試合は来週だね。",
+   "ううん、二対三で負けちゃった。"
+  ],
+  "answer": 2,
+  "en": "Did you win yesterday's game?",
+  "opts_en": [
+   "Yeah, we'll win tomorrow.",
+   "The game is next week.",
+   "No, we lost 2-3."
+  ],
+  "why": "The question is about a past game, so reporting the result fits; the traps talk about the future."
+ },
+ {
+  "id": "qr098",
+  "s": "F",
+  "line": "このペン、だれの？",
+  "options": [
+   "ペンはそこにあるよ。",
+   "あ、ぼくの。ありがとう。",
+   "だれでもいいよ。"
+  ],
+  "answer": 1,
+  "en": "Whose pen is this?",
+  "opts_en": [
+   "The pen is over there.",
+   "Oh, it's mine. Thanks.",
+   "Anyone is fine."
+  ],
+  "why": "だれの asks the owner; the traps answer 'where' or misread だれ."
+ },
+ {
+  "id": "qr099",
+  "s": "M",
+  "line": "図書館、何時まで開いてるか知ってる？",
+  "options": [
+   "たしか八時までだったと思う。",
+   "うん、八時に開けたよ。",
+   "図書館で勉強したよ。"
+  ],
+  "answer": 0,
+  "en": "Do you know until what time the library is open?",
+  "opts_en": [
+   "I think it's until eight.",
+   "Yeah, I opened it at eight.",
+   "I studied at the library."
+  ],
+  "why": "何時まで asks for closing time; 開けた confuses 開いている (is open) with opening it."
+ },
+ {
+  "id": "qr100",
+  "s": "F",
+  "line": "すみません、ちょっと通してください。",
+  "options": [
+   "あ、すみません。どうぞ。",
+   "はい、通ってもいいですか。",
+   "ええ、通してあげてください。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, could you let me through?",
+  "opts_en": [
+   "Oh, sorry. Go ahead.",
+   "Yes, may I pass?",
+   "Yes, please let them through."
+  ],
+  "why": "Making way with an apology fits; the traps mix up 通す (let pass) and 通る (pass)."
+ },
+ {
+  "id": "qr101",
+  "s": "M",
+  "line": "毎日、何時間ぐらい勉強してるの？",
+  "options": [
+   "二時ごろからだよ。",
+   "毎日はしていなかったよ。",
+   "二時間ぐらいかな。"
+  ],
+  "answer": 2,
+  "en": "About how many hours do you study each day?",
+  "opts_en": [
+   "From around two o'clock.",
+   "I wasn't doing it every day.",
+   "About two hours, I guess."
+  ],
+  "why": "何時間 asks a length of time, not a clock time (何時)."
+ },
+ {
+  "id": "qr102",
+  "s": "F",
+  "line": "よかったら、駅まで車で送りましょうか。",
+  "options": [
+   "はい、送ってあげます。",
+   "ありがとうございます。助かります。",
+   "じゃ、むかえに行きます。"
+  ],
+  "answer": 1,
+  "en": "If you like, shall I drive you to the station?",
+  "opts_en": [
+   "Yes, I'll take you.",
+   "Thank you. That helps a lot.",
+   "Then I'll come pick you up."
+  ],
+  "why": "The listener accepts the ride with thanks; 送ってあげます would be the driver's line."
+ },
+ {
+  "id": "qr103",
+  "s": "M",
+  "line": "このシャツ、ほかの色はありますか。",
+  "options": [
+   "ほかの店にあります。",
+   "はい、白と青がございます。",
+   "はい、白い色が好きです。"
+  ],
+  "answer": 1,
+  "en": "Does this shirt come in other colors?",
+  "opts_en": [
+   "It's at another store.",
+   "Yes, we have white and blue.",
+   "Yes, I like white."
+  ],
+  "why": "The clerk lists the colors in stock; the traps don't answer about this shirt."
+ },
+ {
+  "id": "qr104",
+  "s": "F",
+  "line": "子どもが生まれました。",
+  "options": [
+   "それはおめでとうございます。",
+   "どうぞお大事に。",
+   "それは残念でしたね。"
+  ],
+  "answer": 0,
+  "en": "Our baby was born.",
+  "opts_en": [
+   "Congratulations!",
+   "Please take care of yourself.",
+   "That's too bad."
+  ],
+  "why": "A birth is good news, so おめでとうございます fits."
+ },
+ {
+  "id": "qr105",
+  "s": "M",
+  "line": "明日の朝、何時に来ればいいですか。",
+  "options": [
+   "九時に来ました。",
+   "九時間ぐらいです。",
+   "九時に来てください。"
+  ],
+  "answer": 2,
+  "en": "What time should I come tomorrow morning?",
+  "opts_en": [
+   "I came at nine.",
+   "About nine hours.",
+   "Please come at nine."
+  ],
+  "why": "The question asks for a future time; 来ました is past and 九時間 is a length of time."
+ },
+ {
+  "id": "qr106",
+  "s": "F",
+  "line": "すみません、うちの犬がうるさくて。",
+  "options": [
+   "はい、うるさくしてください。",
+   "犬が好きなんですね。",
+   "いえいえ、気にしないでください。"
+  ],
+  "answer": 2,
+  "en": "Sorry, my dog is so noisy.",
+  "opts_en": [
+   "Yes, please be noisy.",
+   "You like dogs, huh.",
+   "Not at all, please don't worry about it."
+  ],
+  "why": "気にしないでください kindly accepts an apology."
+ },
+ {
+  "id": "qr107",
+  "s": "M",
+  "line": "銀行に寄ってから行くから、先に行ってて。",
+  "options": [
+   "うん、先に寄ってきたよ。",
+   "わかった。じゃ、駅で待ってるね。",
+   "じゃ、一緒に行こうね。"
+  ],
+  "answer": 1,
+  "en": "I'll stop by the bank first, so go on ahead.",
+  "opts_en": [
+   "Yeah, I stopped by first.",
+   "Okay. I'll wait at the station.",
+   "Then let's go together."
+  ],
+  "why": "The listener agrees to go ahead and wait; the traps use the past or ignore the request."
+ },
+ {
+  "id": "qr108",
+  "s": "F",
+  "line": "このスープ、ちょっと味がうすくない？",
+  "options": [
+   "そう？ちょうどいいと思うけど。",
+   "うん、味がこくておいしいね。",
+   "スープはもう食べたよ。"
+  ],
+  "answer": 0,
+  "en": "Isn't this soup a bit bland?",
+  "opts_en": [
+   "Really? I think it's just right.",
+   "Yeah, it's rich and tasty.",
+   "I already had the soup."
+  ],
+  "why": "A mild disagreement fits; agreeing (うん) while saying こい 'strong' contradicts itself."
+ },
+ {
+  "id": "qr109",
+  "s": "M",
+  "line": "部長、お茶をおいれしましょうか。",
+  "options": [
+   "ああ、ありがとう。お願いするよ。",
+   "いや、いれてあげるよ。",
+   "うん、おいれするよ。"
+  ],
+  "answer": 0,
+  "en": "Sir, shall I make you some tea?",
+  "opts_en": [
+   "Ah, thanks. Please do.",
+   "No, I'll make it for you.",
+   "Yeah, I'll humbly make it."
+  ],
+  "why": "The boss accepts the offer; おいれする is humble, so the boss can't use it about himself."
+ },
+ {
+  "id": "qr110",
+  "s": "F",
+  "line": "このバス、駅前を通りますか。",
+  "options": [
+   "いいえ、駅前で待っています。",
+   "ええ、バスで来ました。",
+   "ええ、通りますよ。三つ目です。"
+  ],
+  "answer": 2,
+  "en": "Does this bus go past the station?",
+  "opts_en": [
+   "No, I'm waiting in front of the station.",
+   "Yes, I came by bus.",
+   "Yes, it does. It's the third stop."
+  ],
+  "why": "A yes/no about the bus route with the stop number fits; the traps talk about the speaker."
+ },
+ {
+  "id": "qr111",
+  "s": "M",
+  "line": "来週から夏休みですね。",
+  "options": [
+   "夏休みはどうでしたか。",
+   "ええ、何か予定はありますか。",
+   "夏休みは来週まででした。"
+  ],
+  "answer": 1,
+  "en": "Summer vacation starts next week, doesn't it?",
+  "opts_en": [
+   "How was your summer vacation?",
+   "Yes. Do you have any plans?",
+   "Summer vacation was until next week."
+  ],
+  "why": "The holiday hasn't started, so asking about plans fits; どうでしたか treats it as over."
+ },
+ {
+  "id": "qr112",
+  "s": "F",
+  "line": "すみません、借りていた本、まだ返していなくて…。",
+  "options": [
+   "じゃ、貸してくれる？",
+   "いいよ、急がないから。",
+   "うん、返してもらったよ。"
+  ],
+  "answer": 1,
+  "en": "Sorry, I still haven't returned the book I borrowed...",
+  "opts_en": [
+   "Then will you lend it to me?",
+   "That's fine, there's no rush.",
+   "Yeah, I got it back."
+  ],
+  "why": "The lender reassures her; 返してもらった contradicts まだ返していない."
+ },
+ {
+  "id": "qr113",
+  "s": "M",
+  "line": "手紙、出しておいてくれた？",
+  "options": [
+   "あ、ごめん。忘れてた。すぐ出してくるね。",
+   "うん、出してもらったよ。",
+   "じゃ、出しておいてね。"
+  ],
+  "answer": 0,
+  "en": "Did you mail the letter for me?",
+  "opts_en": [
+   "Oh, sorry. I forgot. I'll go mail it now.",
+   "Yeah, I had it mailed.",
+   "Then mail it, okay?"
+  ],
+  "why": "The listener was asked to mail it, so apologizing and doing it fits; the traps reverse the roles."
+ },
+ {
+  "id": "qr114",
+  "s": "F",
+  "line": "先生、お体の具合はいかがですか。",
+  "options": [
+   "ええ、お大事にしてください。",
+   "いかがですか、どうぞ。",
+   "ありがとう。もうだいぶよくなりましたよ。"
+  ],
+  "answer": 2,
+  "en": "Professor, how are you feeling?",
+  "opts_en": [
+   "Yes, please take care.",
+   "How about it, go ahead.",
+   "Thank you. I'm much better now."
+  ],
+  "why": "The teacher reports on his health; お大事に is said to the sick person, not by him."
+ },
+ {
+  "id": "qr115",
+  "s": "M",
+  "line": "今日は道がこんでいますね。",
+  "options": [
+   "ええ、道に迷いましたね。",
+   "ええ、こんでいてよかったです。",
+   "ええ、休みの日だからでしょうね。"
+  ],
+  "answer": 2,
+  "en": "The roads are crowded today, aren't they?",
+  "opts_en": [
+   "Yes, we got lost.",
+   "Yes, good thing it's crowded.",
+   "Yes, probably because it's a holiday."
+  ],
+  "why": "Agreeing with a likely reason fits; こんでいてよかった is an odd reaction to traffic."
+ },
+ {
+  "id": "qr116",
+  "s": "F",
+  "line": "この服、着てみてもいいですか。",
+  "options": [
+   "はい、着てみてもらいます。",
+   "はい、試着室はあちらです。",
+   "お似合いでしたよ。"
+  ],
+  "answer": 1,
+  "en": "May I try this on?",
+  "opts_en": [
+   "Yes, I'll have it tried on.",
+   "Yes, the fitting room is over there.",
+   "It suited you."
+  ],
+  "why": "The clerk shows the fitting room; お似合いでした is past, before she has tried it."
+ },
+ {
+  "id": "qr117",
+  "s": "M",
+  "line": "すみません、ここに名前を書いていただけますか。",
+  "options": [
+   "はい、ここですね。",
+   "ええ、書いていただきます。",
+   "はい、名前を書いてください。"
+  ],
+  "answer": 0,
+  "en": "Excuse me, could you write your name here?",
+  "opts_en": [
+   "Sure, here?",
+   "Yes, I'll humbly have you write it.",
+   "Yes, please write your name."
+  ],
+  "why": "The listener complies and checks the spot; the traps reverse who writes."
+ },
+ {
+  "id": "qr118",
+  "s": "F",
+  "line": "大事な会議の資料、家に忘れてきちゃった！",
+  "options": [
+   "えっ、今から取りに帰れる？",
+   "忘れてよかったね。",
+   "家まで送ってもらったの？"
+  ],
+  "answer": 0,
+  "en": "I left the materials for the important meeting at home!",
+  "opts_en": [
+   "What? Can you go back home and get them now?",
+   "Good thing you forgot.",
+   "Did someone drive you home?"
+  ],
+  "why": "Suggesting a fix to the problem fits; よかった is the wrong reaction."
+ },
+ {
+  "id": "qr119",
+  "s": "M",
+  "line": "このエアコン、こわれているみたいですね。",
+  "options": [
+   "ええ、新しくてよかったです。",
+   "ええ、こわしてもいいですよ。",
+   "じゃ、すぐ人を呼んで、見てもらいましょう。"
+  ],
+  "answer": 2,
+  "en": "This air conditioner seems to be broken.",
+  "opts_en": [
+   "Yes, good thing it's new.",
+   "Yes, you may break it.",
+   "Then let's call someone right away to look at it."
+  ],
+  "why": "Getting someone to check it (見てもらう) fits; こわす 'break it' confuses with こわれる 'be broken'."
+ },
+ {
+  "id": "qr120",
+  "s": "F",
+  "line": "お茶でも飲んでいかない？",
+  "options": [
+   "うん、飲んでいったよ。",
+   "ありがとう。でも今日は急いでいるから、また今度。",
+   "じゃ、お茶をいれてあげて。"
+  ],
+  "answer": 1,
+  "en": "Why don't you stay for some tea?",
+  "opts_en": [
+   "Yeah, I had some and left.",
+   "Thanks, but I'm in a hurry today. Next time.",
+   "Then make tea for them."
+  ],
+  "why": "Politely declining with また今度 fits; the traps use the past or ask someone else to make tea."
+ }
+]

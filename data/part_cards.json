@@ -1,0 +1,1058 @@
+{
+ "_about": "Part cards: complex parts learned before the first kanji that uses them. glyph -> keyword (the part name used in stories), components (its named pieces), story, picture (scene for tools/gen_images.py --parts). tools/build_parts.py copies them into kanji.json \"partCards\" with the kanji that use each one.",
+ "寺": {
+  "keyword": "Buddhist temple",
+  "components": [
+   "soil",
+   "glue"
+  ],
+  "story": "Monks heap [soil] into a mound and [glue] every brick on top of it, raising a {Buddhist temple} with a giant sundial in its courtyard.",
+  "picture": "Monks in robes heaping soil and gluing bricks into a small temple with a large sundial in the courtyard."
+ },
+ "⺼": {
+  "keyword": "flesh",
+  "components": [
+   "hood",
+   "ice"
+  ],
+  "story": "Under a butcher's [hood] of wax paper, two chips of [ice] keep a dripping red slab of {flesh} cold, ready to dangle in front of a bull.",
+  "picture": "A slab of raw red meat lying under a waxed paper hood with two chips of ice on it, a curious bull peering in."
+ },
+ "聿": {
+  "keyword": "brush",
+  "components": [],
+  "story": "A fist grips a tall stick, and stacked strokes of bristles fan out across it: a giant calligraphy {brush}, dripping ink and ready to write.",
+  "picture": "A hand gripping a tall calligraphy brush with thick bristles, dripping black ink onto a shop counter."
+ },
+ "舌": {
+  "keyword": "tongue",
+  "components": [
+   "thousand",
+   "mouth"
+  ],
+  "story": "A [thousand] taste buds bristle as a [mouth] below gapes open and a long, wet {tongue} flops out, wriggling and drooling.",
+  "picture": "A wide-open cartoon mouth with a huge floppy tongue covered in countless tiny taste buds, drool dripping."
+ },
+ "玉": {
+  "keyword": "jewel",
+  "components": [
+   "king",
+   "drop"
+  ],
+  "story": "A [king] lets a single sparkling [drop] fall beside his royal chest: it hardens into his crown {jewel}, which a squawking bird guards day and night.",
+  "picture": "A cartoon king watching a sparkling drop turn into a big gemstone by his side, guarded by a white cockatoo."
+ },
+ "門": {
+  "keyword": "gate",
+  "components": [],
+  "story": "Two swinging saloon doors, each with its little window, flap back and forth on their hinges: the {gate}, slamming shut every few seconds.",
+  "picture": "Two swinging wooden saloon doors with small windows, flapping open with sunlight streaming through the gap."
+ },
+ "艮": {
+  "keyword": "root",
+  "components": [],
+  "story": "A gnarled stump with a hooked top and tendrils kicking out at the bottom: a dried {root} yanked from the earth, still clinging to clumps of dirt.",
+  "picture": "A dried, gnarled root just pulled from the ground, with clumps of dirt clinging to its tendrils."
+ },
+ "廿": {
+  "keyword": "twenty",
+  "components": [],
+  "story": "Two tens welded together at the bottom like a little crib with a crossbar: just room for {twenty} babies lined up side by side.",
+  "picture": "A long wooden crib with two upright posts and a crossbar, twenty babies lined up neatly inside."
+ },
+ "貝": {
+  "keyword": "shells",
+  "components": [
+   "eye",
+   "eight"
+  ],
+  "story": "A giant [eye] peeks out of a clam that scuttles on [eight] tiny legs: {shells}, the old money, watching to make sure you spend them wisely.",
+  "picture": "A big clam shell with one giant eye peeking out, walking on eight tiny legs across a pile of coins."
+ },
+ "豕": {
+  "keyword": "sow",
+  "components": [],
+  "story": "A flat back on top, a belly sagging down, stubby legs and a curly tail kicking out to the right: a fat, muddy {sow} plopped on the ground.",
+  "picture": "A fat muddy pig with a curly tail lying contentedly on the ground."
+ },
+ "里": {
+  "keyword": "computer",
+  "components": [
+   "rice field",
+   "soil"
+  ],
+  "story": "A [rice field] grid for a screen, perched on a mound of [soil]: the farmer's homemade {computer}, its wires buried in the dirt.",
+  "picture": "A crude computer whose screen is a tiny green rice paddy grid, sitting on a mound of dirt with wires running into the soil."
+ },
+ "辶": {
+  "keyword": "road",
+  "components": [],
+  "story": "A dot of a traveler sets off down a zigzag path that sweeps into one long flat stretch: the open {road}, stretching off toward the horizon.",
+  "picture": "A small traveler walking along a zigzagging dirt road that straightens into a long flat stretch toward the horizon."
+ },
+ "頁": {
+  "keyword": "head",
+  "components": [],
+  "story": "A tall boxy face with two eye lines, perched on two little legs: a giraffe's giant {head} swooping down from the treetops to stare at you.",
+  "picture": "A giraffe's huge head bending down from the treetops to stare curiously at a small zookeeper."
+ },
+ "豆": {
+  "keyword": "beans",
+  "components": [],
+  "story": "A lidded bowl on a tall pedestal stand, its lid lifted off to show a steaming heap of {beans} ready for someone's face.",
+  "picture": "A tall pedestal bowl with its lid raised, full of steaming beans."
+ },
+ "是": {
+  "keyword": "just so",
+  "components": [
+   "sun",
+   "one",
+   "stop"
+  ],
+  "story": "The [sun] sits on a [one]-plank shelf bolted to a [stop] sign; a fussy dinosaur nudges the sign left, then right, until it all stands {just so}: perfectly straight, perfectly centered.",
+  "picture": "A fussy green dinosaur carefully straightening a red octagonal stop sign whose post holds a small wooden shelf with a glowing miniature sun on it, checking it with a spirit level."
+ },
+ "昜": {
+  "keyword": "piggy bank",
+  "components": [
+   "nightbreak",
+   "pennant"
+  ],
+  "story": "At [nightbreak] the sun peeks over the horizon, and a [pennant] flutters below it, stuck into a fat {piggy bank} to mark where the savings are buried.",
+  "picture": "A fat piggy bank half buried in the ground with a small pennant flag stuck in it, the sun rising behind."
+ },
+ "云": {
+  "keyword": "rising cloud",
+  "components": [
+   "two",
+   "elbow"
+  ],
+  "story": "[two] streaks of smoke hover over a bent [elbow] as a man puffs his pipe, sending a {rising cloud} up to the ceiling.",
+  "picture": "A man with a bent elbow puffing a pipe, two streaks of smoke forming a big billowing cloud rising above him."
+ },
+ "礻": {
+  "keyword": "altar",
+  "components": [],
+  "story": "A little stand with a dot of incense smoking on top and a post leaning to one side: a roadside {altar} where people stop to bow.",
+  "picture": "A small wooden roadside altar with a stick of incense smoking on top and a bowl of offerings."
+ },
+ "斤": {
+  "keyword": "axe",
+  "components": [],
+  "story": "A long handle on the right with a heavy blade hanging off to the left: an {axe} dragged along the ground, its edge scraping sparks.",
+  "picture": "A heavy axe being dragged along a stone road, its blade scraping up sparks."
+ },
+ "乍": {
+  "keyword": "saw",
+  "components": [],
+  "story": "A slanted handle on top and a row of jagged teeth jutting to the right: a carpenter's {saw}, mid-stroke and screeching.",
+  "picture": "A carpenter's hand saw mid-stroke through a plank, sawdust flying."
+ },
+ "矢": {
+  "keyword": "dart",
+  "components": [
+   "banner top",
+   "St. Bernard dog"
+  ],
+  "story": "A [banner top] flutters on the tail of a {dart} that a [St. Bernard dog] fetches in its jaws, wagging proudly, tail thumping the floor.",
+  "picture": "A St. Bernard dog proudly carrying a dart with a little flag fluttering on its tail in its mouth."
+ },
+ "虫": {
+  "keyword": "insect",
+  "components": [],
+  "story": "A fat body speared on an upright stalk, one tiny leg kicking out at the bottom right: a beetle-like {insect} perched on a twig, antennae twitching.",
+  "picture": "A plump beetle perched upright on a twig, antennae twitching."
+ },
+ "耂": {
+  "keyword": "old man",
+  "components": [],
+  "story": "A crooked cane slanting out from a little mound of earth: an {old man} sits hunched on the hill, lost in thought.",
+  "picture": "An old man with a long beard sitting hunched on a small grassy mound, leaning on a crooked cane, deep in thought."
+ },
+ "孝": {
+  "keyword": "filial piety",
+  "components": [
+   "old man",
+   "child"
+  ],
+  "story": "An [old man] rides piggyback on his [child], who carries him uphill without a word of complaint: {filial piety} at its most backbreaking.",
+  "picture": "A young child carrying a smiling old man piggyback up a steep hill path."
+ },
+ "攵": {
+  "keyword": "taskmaster",
+  "components": [],
+  "story": "A bent figure with a whip raised over one shoulder, legs striding wide apart: a stern {taskmaster} cracking the whip at his trembling pupils.",
+  "picture": "A stern man in an old-fashioned outfit raising a whip over his shoulder while nervous students bow before him."
+ },
+ "甬": {
+  "keyword": "chop-seal",
+  "components": [
+   "elbow",
+   "utilize"
+  ],
+  "story": "With a bent [elbow], a clerk raises the stamp he loves to [utilize] on everything: the giant red {chop-seal} thunks down again and again.",
+  "picture": "A clerk with a bent elbow slamming a huge red stamp onto a stack of papers, red ink splattering."
+ },
+ "癶": {
+  "keyword": "teepee",
+  "components": [],
+  "story": "Two pairs of poles splay outward, crossing at the top with flaps hanging down either side: a {teepee}, its door flaps open and smoke curling out.",
+  "picture": "A canvas teepee with crossed poles sticking out the top and its door flaps open, smoke curling from the top."
+ },
+ "羊": {
+  "keyword": "sheep",
+  "components": [
+   "horned lid",
+   "two",
+   "walking stick"
+  ],
+  "story": "A [horned lid] of curly horns sits on [two] thick rolls of wool, and a shepherd's [walking stick] pokes straight down through them: a fluffy {sheep}.",
+  "picture": "A fluffy sheep with curly horns and thick rolls of wool, a shepherd's staff standing beside it."
+ },
+ "軍": {
+  "keyword": "army",
+  "components": [
+   "crown",
+   "car"
+  ],
+  "story": "A [crown]-shaped canopy stretched over a [car]: the general's armored jeep rolls ahead of the whole marching {army}.",
+  "picture": "An armored jeep with a canvas canopy on top leading long columns of marching toy soldiers down a road."
+ },
+ "隹": {
+  "keyword": "turkey",
+  "components": [],
+  "story": "A plump bird with a little head, a fat upright body and rows of feathers stacked like shelves: a {turkey}, puffed up and ready to gobble.",
+  "picture": "A plump turkey with rows of fanned feathers stacked neatly, puffed up proudly on a branch."
+ },
+ "占": {
+  "keyword": "fortune-telling",
+  "components": [
+   "magic wand",
+   "mouth"
+  ],
+  "story": "A [magic wand] taps a [mouth] below, and it starts murmuring prophecies: {fortune-telling} sold one by one across a tiny booth's counter.",
+  "picture": "A magic wand tapping a large mouth on a small shop counter, which whispers glowing prophecies."
+ },
+ "歹": {
+  "keyword": "bones",
+  "components": [
+   "one",
+   "evening"
+  ],
+  "story": "[one] bone laid across the top of a heap, and by [evening] the wolves have picked the rest clean: a pile of bleached {bones}.",
+  "picture": "A pile of bleached bones at evening under a dusky sky, one long bone lying across the top."
+ },
+ "禾": {
+  "keyword": "wheat",
+  "components": [
+   "slash",
+   "tree"
+  ],
+  "story": "A [slash] of a drooping ear bends over the top of a [tree]-like stalk: ripe {wheat}, so heavy with grain it bows its head.",
+  "picture": "A tall stalk of wheat shaped like a little tree, its heavy ear of grain drooping over the top."
+ },
+ "竹": {
+  "keyword": "bamboo",
+  "components": [],
+  "story": "Two stalks standing side by side, each sprouting a pair of little leaves at the top: twin {bamboo} canes swaying in the breeze.",
+  "picture": "Two green bamboo stalks side by side, each with small leaves at the top, swaying in a breeze."
+ },
+ "吏": {
+  "keyword": "officer",
+  "components": [
+   "one",
+   "history"
+  ],
+  "story": "With [one] stripe on his cap, a clerk memorizes the empire's whole [history] to become an {officer}, ready to obey any order.",
+  "picture": "A uniformed official with one stripe on his cap reading a thick old history book, standing at attention."
+ },
+ "勿": {
+  "keyword": "pennant",
+  "components": [
+   "bound up",
+   "slash",
+   "slash"
+  ],
+  "story": "A pole [bound up] in cloth, with one [slash] and another [slash] streaming from it in the wind: a {pennant}, planted to claim what's yours.",
+  "picture": "A cow planting a pole with a long forked pennant streaming in the wind next to a pile of its belongings."
+ },
+ "斗": {
+  "keyword": "Big Dipper",
+  "components": [],
+  "story": "Two star dots spill into a long ladle whose handle is crossed by a bar: the {Big Dipper} scooping rice out of the night sky.",
+  "picture": "A ladle made of stars in the night sky scooping up a pile of white rice."
+ },
+ "㫃": {
+  "keyword": "banner",
+  "components": [
+   "direction",
+   "person"
+  ],
+  "story": "A signpost pointing the [direction] on the left, a [person] on the right hoisting a fluttering {banner} so the whole tribe knows where to march.",
+  "picture": "A signpost pointing one way and a person beside it raising a big fluttering banner on a tall pole."
+ },
+ "帚": {
+  "keyword": "broom",
+  "components": [],
+  "story": "A handle on top, a cloth wrapped round its middle and a shaggy fringe of bristles hanging below: a {broom}, leaning by the door for spring cleaning.",
+  "picture": "A tall straw broom with a cloth tied around its middle, leaning against a dusty doorway."
+ },
+ "穴": {
+  "keyword": "hole",
+  "components": [
+   "house",
+   "eight"
+  ],
+  "story": "Under a [house] roof, [eight] claw marks rake straight down: some beast has torn a {hole} right through the ceiling, letting in the sky.",
+  "picture": "A roof with a ragged hole clawed through it, deep claw marks around the edge and blue sky showing through."
+ },
+ "糸": {
+  "keyword": "thread",
+  "components": [
+   "cocoon",
+   "little"
+  ],
+  "story": "A silkworm [cocoon] unravels into [little] dangling strands below: fine silk {thread}, ready to be knotted or snapped.",
+  "picture": "A silkworm cocoon hanging from a twig, unraveling into thin silk threads dangling below."
+ },
+ "疒": {
+  "keyword": "sickness",
+  "components": [],
+  "story": "A slanted roof over a sickbed, with two drops of fever sweat dripping down the left side: {sickness}, the gloomy hospital ward where everyone moans.",
+  "picture": "A gloomy hospital ward under a slanted roof, with a feverish patient in bed and sweat drops falling."
+ },
+ "央": {
+  "keyword": "center",
+  "components": [],
+  "story": "A big man spreads his arms and legs, his chest locked inside a square frame: he is pinned dead {center}, like the bullseye of a target.",
+  "picture": "A person standing spread-eagle at the exact center of a square target painted on a green lawn."
+ },
+ "㑒": {
+  "keyword": "awl",
+  "components": [
+   "meeting roof",
+   "mouth",
+   "person"
+  ],
+  "story": "Under a [meeting roof], a cobbler with a [mouth] full of nails hunches over a [person]'s boot, jabbing holes with his sharp {awl}.",
+  "picture": "A cobbler under a peaked roof with nails between his lips, punching holes in a leather boot with a pointed awl."
+ },
+ "关": {
+  "keyword": "horned heavens",
+  "components": [
+   "horns",
+   "heavens"
+  ],
+  "story": "Two [horns] poke up through the [heavens], as if a huge bull were rising behind the clouds: the {horned heavens}, glowering over the road below.",
+  "picture": "Two giant bull horns poking up through a cloudy sky above a long road."
+ },
+ "灬": {
+  "keyword": "oven fire",
+  "components": [],
+  "story": "Four little flames flicker in a row along the bottom: the {oven fire}, licking up beneath a roasting tray.",
+  "picture": "Four small flames in a row flickering under a roasting tray inside an oven."
+ },
+ "周": {
+  "keyword": "circumference",
+  "components": [
+   "hood",
+   "soil",
+   "mouth"
+  ],
+  "story": "A [hood]-shaped fence encloses a patch of [soil] with a [mouth]-shaped pond in the middle; you jog the {circumference} of that fence every morning.",
+  "picture": "A runner jogging around a fenced patch of dirt with a small square pond in the middle."
+ },
+ "哥": {
+  "keyword": "big brother",
+  "components": [
+   "can",
+   "can"
+  ],
+  "story": "My {big brother} stacks a [can] on top of another [can] to stand taller than me, then shouts through them like a megaphone.",
+  "picture": "An older boy standing on two stacked tin cans, shouting through a cone, towering over his little sibling."
+ },
+ "羽": {
+  "keyword": "feathers",
+  "components": [
+   "ice",
+   "ice"
+  ],
+  "story": "Two wings side by side, each a hooked frame holding two chips of [ice] like a pair of frozen [ice] feathers: a chick flaps them and its {feathers} crackle.",
+  "picture": "A small chick spreading two stiff wings, each wing a hooked frame with two shiny ice crystals inside, its frozen feathers crackling."
+ },
+ "至": {
+  "keyword": "climax",
+  "components": [
+   "one",
+   "elbow",
+   "soil"
+  ],
+  "story": "[one] last shove of an [elbow] and the dancer lands on the [soil] floor: the party hits its {climax}, everyone screaming.",
+  "picture": "A crowded party where a dancer lands on a dirt floor after a big move, everyone cheering wildly."
+ },
+ "罒": {
+  "keyword": "net",
+  "components": [],
+  "story": "A flat box crisscrossed with cords, its square holes dripping water: a fishing {net}, held up to scoop whatever swims or shines below.",
+  "picture": "A rectangular fishing net with square mesh held up dripping water above a beach full of seashells."
+ },
+ "尺": {
+  "keyword": "shakuhachi flute",
+  "components": [],
+  "story": "A bent hood on top with a long body sweeping down and kicking out to the right: a {shakuhachi flute} held at an angle, blasting sound from its end.",
+  "picture": "A long bamboo flute held at an angle, with sound waves bursting from its end over a sleeping town."
+ },
+ "旦": {
+  "keyword": "nightbreak",
+  "components": [
+   "sun",
+   "one"
+  ],
+  "story": "The [sun] peeks up over [one] flat horizon line: {nightbreak}, the dark finally cracking open.",
+  "picture": "The sun just rising above a flat horizon line, the night sky breaking into light."
+ },
+ "飠": {
+  "keyword": "eat",
+  "components": [],
+  "story": "A little roof over a bowl heaped with rice and a spoon tucked at its side: time to {eat}, and fast, before someone steals your share.",
+  "picture": "A small covered rice bowl heaped with rice, with a spoon beside it on a table."
+ },
+ "亦": {
+  "keyword": "apple",
+  "components": [],
+  "story": "A stem on top, then a round fruit split open with juice dripping down both sides: a ripe {apple} cracked in half.",
+  "picture": "A ripe red apple split in half, juice dripping down both sides onto the soil."
+ },
+ "亜": {
+  "keyword": "Asia",
+  "components": [],
+  "story": "A squat pagoda with a flat roof above, a flat floor below and two posts between, stamped across the map: the symbol for {Asia}.",
+  "picture": "A map of a continent with a squat pagoda symbol stamped across it."
+ },
+ "氏": {
+  "keyword": "family name",
+  "components": [],
+  "story": "A crooked family-tree branch ends in a hook with a nameplate swinging from it: your {family name}, dangling there for every relative to read.",
+  "picture": "A crooked tree branch with a hook at the end and a blank wooden nameplate swinging from it."
+ },
+ "免": {
+  "keyword": "excuse",
+  "components": [],
+  "story": "A hooded figure hunches over long legs and drags a tail behind him: a lazy kid mumbling an {excuse} to dodge his chores.",
+  "picture": "A slouching hooded kid shrugging and making excuses while a pile of chores waits behind him."
+ },
+ "戊": {
+  "keyword": "parade",
+  "components": [],
+  "story": "A tall ceremonial halberd with a long ribbon swooping down its left side, carried high at the front of the {parade}.",
+  "picture": "A tall ceremonial halberd with a ribbon streaming down its side, held high at the head of a festive parade with floats."
+ },
+ "義": {
+  "keyword": "righteousness",
+  "components": [
+   "sheep (tailless)",
+   "ego"
+  ],
+  "story": "A [sheep (tailless)] stands proudly on top of my [ego], bleating about {righteousness} while I hold it up and nod along.",
+  "picture": "A sheep without a tail standing on top of a puffed-up man's head, bleating sternly with a raised hoof."
+ },
+ "旨": {
+  "keyword": "delicious",
+  "components": [
+   "spoon",
+   "sun"
+  ],
+  "story": "A [spoon] dips into a bowl glowing like the [sun] below: one taste and it is so {delicious} you lick the spoon clean.",
+  "picture": "A spoon dipping into a golden glowing bowl of food, a person happily licking their fingers."
+ },
+ "戈": {
+  "keyword": "fiesta",
+  "components": [
+   "arrow",
+   "slash"
+  ],
+  "story": "An [arrow] planted in the ground with a party ribbon [slash]ing across it: a spear decked out for the {fiesta}.",
+  "picture": "A smiling dancer at a colorful street parade waves a tall pole topped with a little flag and long ribbons."
+ },
+ "衣": {
+  "keyword": "garment",
+  "components": [],
+  "story": "A collar on top, two sleeves spreading out and a hem flaring at the bottom: a {garment} hanging on a hook, waiting for someone to wear it.",
+  "picture": "A loose robe hanging on a hook, with a wide collar, spread sleeves and a flaring hem."
+ },
+ "产": {
+  "keyword": "vase on a cliff",
+  "components": [
+   "top hat",
+   "horns",
+   "cliff"
+  ],
+  "story": "Under a [top hat] lid, [horns] stick out like handles; perched on the edge of a [cliff], it's a wobbly {vase on a cliff} about to tip.",
+  "picture": "A vase with horn-shaped handles and a small hat for a lid, teetering on the edge of a cliff."
+ },
+ "斉": {
+  "keyword": "adjusted",
+  "components": [],
+  "story": "A tuning fork balanced on two even stilts, its crossbar perfectly level: everything {adjusted} so each note rings true.",
+  "picture": "A tuning fork balanced on two straight stilts with a level crossbar, beside a row of water glasses."
+ },
+ "其": {
+  "keyword": "bushel basket",
+  "components": [],
+  "story": "Two handles stick up over a woven box with crossbars, standing on two little legs: a {bushel basket}, ready to catch anything that falls.",
+  "picture": "A woven bushel basket with two upright handles, standing on two little legs under a night sky."
+ },
+ "咅": {
+  "keyword": "muzzle",
+  "components": [
+   "vase",
+   "mouth"
+  ],
+  "story": "A [vase] is strapped over the guard dog's [mouth] below: a clumsy {muzzle} that stops it barking at the city gate.",
+  "picture": "A guard dog wearing a vase strapped over its snout like a muzzle, standing by a city wall."
+ },
+ "各": {
+  "keyword": "each",
+  "components": [
+   "walking legs",
+   "mouth"
+  ],
+  "story": "[walking legs] stride from door to door, stopping at every [mouth]-shaped mailbox to hand {each} member a name card.",
+  "picture": "A pair of striding legs going door to door, dropping a card into each square mailbox."
+ },
+ "炎": {
+  "keyword": "inflammation",
+  "components": [
+   "fire",
+   "fire"
+  ],
+  "story": "[fire] piled on top of [fire]: the wound burns so hot it blazes twice over, a throbbing {inflammation} that sizzles at the slightest touch.",
+  "picture": "A cartoon swollen red bump on an arm with two stacked flames rising from it."
+ },
+ "曽": {
+  "keyword": "formerly",
+  "components": [
+   "horns",
+   "rice field",
+   "sun"
+  ],
+  "story": "Scarecrow [horns] poke up over a [rice field] above the setting [sun]: this weedy lot was {formerly} a farm, and the scarecrow still guards it.",
+  "picture": "A horned scarecrow standing in an overgrown, abandoned rice field at sunset."
+ },
+ "隺": {
+  "keyword": "crane",
+  "components": [
+   "crown",
+   "turkey"
+  ],
+  "story": "A [crown] of red feathers sits on what looks like a long-legged [turkey]: really a {crane}, hammering with its beak.",
+  "picture": "A tall crane with a red feather crown pecking hard at a cactus on a stone."
+ },
+ "忍": {
+  "keyword": "endure",
+  "components": [
+   "blade",
+   "heart"
+  ],
+  "story": "A [blade] presses right against your [heart], and you just grit your teeth and {endure} it without flinching, like a true ninja.",
+  "picture": "A calm ninja standing very still as a sword point rests against the heart drawn on his chest."
+ },
+ "咸": {
+  "keyword": "battle cry",
+  "components": [
+   "sign of the dog",
+   "mouth"
+  ],
+  "story": "A halberd from the [sign of the dog] swings over a wide-open [mouth]: soldiers roar a {battle cry} that shakes your chest as they charge.",
+  "picture": "Soldiers with halberds charging forward, mouths wide open in a roaring cry."
+ },
+ "殳": {
+  "keyword": "missile",
+  "components": [
+   "wind",
+   "crotch"
+  ],
+  "story": "A daredevil clamps a {missile} between his legs at the [crotch] and rides it up into a howling [wind], screaming all the way toward the neighbor's window.",
+  "picture": "A daredevil in goggles riding a small finned missile like a horse, the missile clamped between his legs, streaking up through howling swirls of wind toward a house window."
+ },
+ "㐬": {
+  "keyword": "infant flood",
+  "components": [
+   "infant",
+   "human legs",
+   "walking stick"
+  ],
+  "story": "An upside-down [infant] tumbles head first, [human legs] kicking, past a lifeguard's [walking stick] poking up from the water: an {infant flood} of giggling babies.",
+  "picture": "A stream of giggling babies floating head first down a river past a lifeguard's tall pole."
+ },
+ "谷": {
+  "keyword": "valley",
+  "components": [],
+  "story": "Two pairs of slopes fan out from a peak and open onto a round basin below: a deep {valley} with a lake and cows at the bottom.",
+  "picture": "A deep green valley between sloping hills, a lake and grazing cows at the bottom."
+ },
+ "戠": {
+  "keyword": "sound fiesta",
+  "components": [
+   "sound",
+   "fiesta"
+  ],
+  "story": "Thumping [sound] booms out of a [fiesta] tent on the right: a {sound fiesta} so loud the walls throb.",
+  "picture": "A party tent with sound waves blasting out, the nearby wall visibly shaking."
+ },
+ "則": {
+  "keyword": "rule",
+  "components": [
+   "shells",
+   "saber"
+  ],
+  "story": "Pay your [shells] or meet the [saber]: that's the {rule}, carved above the toll gate, and the guard means every word.",
+  "picture": "A toll gate guard holding a saber next to a bowl of seashells paid by travelers."
+ },
+ "戸": {
+  "keyword": "door",
+  "components": [
+   "one",
+   "flag"
+  ],
+  "story": "A [one] lintel caps a [flag] hanging beneath it like a curtain: a simple {door} that swings open on its pole.",
+  "picture": "A simple wooden door hanging from a beam like a curtain on a pole, swinging open."
+ },
+ "咼": {
+  "keyword": "skeleton",
+  "components": [
+   "hood",
+   "hood",
+   "mouth"
+  ],
+  "story": "A skull [hood] with a little crossbar inside sits on a wider [hood] of ribs, over a gaping [mouth] of hip bones: a rattling {skeleton}, ready to race.",
+  "picture": "A friendly cartoon skeleton in running shoes at a starting line, its skull, ribcage and hip bones clearly visible."
+ },
+ "祭": {
+  "keyword": "ritual",
+  "components": [
+   "flesh",
+   "crotch",
+   "altar"
+  ],
+  "story": "Both hands busy with torches, a villager carries a slab of [flesh] wedged at his [crotch] and waddles it onto the [altar] as everyone chants: the yearly {ritual}, lit by a roaring bonfire.",
+  "picture": "A villager holding a torch in each hand, waddling with a slab of meat wedged between his legs toward a stone altar, a chanting crowd around a roaring bonfire at a village festival."
+ },
+ "系": {
+  "keyword": "lineage",
+  "components": [
+   "slash",
+   "thread"
+  ],
+  "story": "A [slash] at the top starts a single [thread] that runs down through the generations: the family {lineage}, tied knot by knot on a scroll.",
+  "picture": "A long scroll with a single thread running down it, knotted at intervals to mark each generation of a family tree."
+ },
+ "且": {
+  "keyword": "shelf",
+  "components": [],
+  "story": "A tall frame with two crossboards inside and a wide base: an empty {shelf}, waiting to be wrapped in thread.",
+  "picture": "A tall empty wooden shelf with two boards, strands of yarn starting to wrap around it."
+ },
+ "角": {
+  "keyword": "horn",
+  "components": [],
+  "story": "A curved tip on top, a hollow body ringed with ridges: a bull's {horn}, so long and hooked that kites and ropes keep snagging on it.",
+  "picture": "A long curved ridged bull horn with a kite string snagged on its hooked tip."
+ },
+ "侖": {
+  "keyword": "theory",
+  "components": [
+   "meeting roof",
+   "hood",
+   "twenty"
+  ],
+  "story": "Under a [meeting roof], professors hang a [hood] over a stack of [twenty] scrolls: their prized {theory}, guarded from rivals.",
+  "picture": "Professors under a peaked roof covering a stack of scrolls with a cloth hood."
+ },
+ "寅": {
+  "keyword": "sign of the tiger",
+  "components": [
+   "house",
+   "one",
+   "wherefore",
+   "eight"
+  ],
+  "story": "Under the circus [house] roof, [one] ringmaster asks '[wherefore]?' as a tiger bounds through [eight] flaming hoops: the {sign of the tiger} blazes overhead.",
+  "picture": "A circus tent interior where a tiger leaps through a series of flaming hoops while a ringmaster watches."
+ },
+ "敬": {
+  "keyword": "awe",
+  "components": [
+   "young grass",
+   "taskmaster"
+  ],
+  "story": "Tiny [young grass] sprouts stand up straight as the [taskmaster] walks by with his whip, trembling in {awe} of him.",
+  "picture": "Tiny grass sprouts standing stiffly at attention as a stern figure with a whip strides past."
+ },
+ "兑": {
+  "keyword": "horned brother",
+  "components": [
+   "horns",
+   "elder brother"
+  ],
+  "story": "Two [horns] sprout from your [elder brother]'s head: meet your {horned brother}, who explains them to anyone who'll listen.",
+  "picture": "A young man with two small horns on his head pointing at them and talking eagerly."
+ },
+ "憂": {
+  "keyword": "melancholy",
+  "components": [
+   "heart"
+  ],
+  "story": "A tall stack of a heavy drooping head, a hidden [heart] and dragging feet: a figure bowed under {melancholy}, shuffling slowly.",
+  "picture": "A sad figure with a drooping head, shoulders slumped, shuffling slowly in the rain."
+ },
+ "酉": {
+  "keyword": "whiskey bottle",
+  "components": [],
+  "story": "A square bottle with a lid, a narrow neck, and a line of liquid sloshing inside: a {whiskey bottle}, half drunk.",
+  "picture": "A square glass whiskey bottle with a cork, half full of amber liquid."
+ },
+ "韋": {
+  "keyword": "locket",
+  "components": [],
+  "story": "Two clasping halves above and below a round middle with a little chain loop: a heart-shaped {locket}, snapped shut over a photo.",
+  "picture": "A closed golden heart-shaped locket on a chain lying on a road."
+ },
+ "冓": {
+  "keyword": "lattice",
+  "components": [
+   "well",
+   "one",
+   "hood"
+  ],
+  "story": "Beams crossed like a [well] frame sit on [one] long crossbar over a [hood]-shaped frame crossed by more beams: a sturdy wooden {lattice}, rigid enough to strap a back straight.",
+  "picture": "A sturdy wooden lattice frame of crossed beams, stacked in layers, leaning against a barn wall."
+ },
+ "釆": {
+  "keyword": "valentine",
+  "components": [
+   "slash",
+   "rice"
+  ],
+  "story": "A [slash] of red ink tops a scatter of [rice] grains arranged into a heart: a homemade {valentine} handed to a sweetheart.",
+  "picture": "A card with a heart made of rice grains and a red ink stroke above, held out by a smiling person."
+ },
+ "吅": {
+  "keyword": "two mouths",
+  "components": [
+   "mouth",
+   "mouth"
+  ],
+  "story": "A [mouth] on the left and a [mouth] on the right squawk at once from one bird: {two mouths}, never quiet.",
+  "picture": "A bird with two beaks side by side, both squawking at once."
+ },
+ "袁": {
+  "keyword": "long robe",
+  "components": [],
+  "story": "A small head on top, a round collar, then yards of cloth trailing below: a giant's {long robe}, sweeping the ground wherever he goes.",
+  "picture": "A giant wearing a very long robe that trails far behind him across a grassy field."
+ },
+ "皮": {
+  "keyword": "pelt",
+  "components": [],
+  "story": "A hook and a hand stretch a hide taut across a frame: a hunter's {pelt}, pulled as tight as the skin of a drum.",
+  "picture": "An animal hide stretched tightly over a wooden frame like a drum skin."
+ },
+ "坐": {
+  "keyword": "sit on the ground",
+  "components": [
+   "soil",
+   "person",
+   "person"
+  ],
+  "story": "A [person] and a [person] plop down side by side on the bare [soil]: they {sit on the ground}, finally resting.",
+  "picture": "Two friendly travelers sit cross-legged on the bare earth facing each other, sharing tea on a little patch of soil under a tree."
+ },
+ "畐": {
+  "keyword": "wealth",
+  "components": [
+   "mouth",
+   "rice field"
+  ],
+  "story": "A lid on top, a [mouth]-shaped jar, and below it a [rice field] full to the brim: a stocked granary, all the {wealth} a family could pray for.",
+  "picture": "A lidded jar sitting on top of a square rice field overflowing with golden grain and coins."
+ },
+ "罙": {
+  "keyword": "deep hole",
+  "components": [
+   "crown",
+   "human legs",
+   "tree"
+  ],
+  "story": "A [crown] lid covers a pit where [human legs] dangle above a [tree] growing far at the bottom: a {deep hole} with no end in sight.",
+  "picture": "Legs dangling over the edge of a very deep pit with a tiny tree far below at the bottom."
+ },
+ "令": {
+  "keyword": "orders",
+  "components": [
+   "meeting roof",
+   "walking stick"
+  ],
+  "story": "Under a [meeting roof], the mayor bangs his [walking stick] on the floor and barks out his {orders}.",
+  "picture": "A mayor under a peaked roof banging his walking stick on the floor, shouting commands."
+ },
+ "辛": {
+  "keyword": "spicy",
+  "components": [
+   "vase",
+   "ten"
+  ],
+  "story": "A [vase] of chili oil balanced on a [ten]-pointed cross of peppers: so {spicy} that just looking at it makes your tongue burn.",
+  "picture": "A vase full of red chili oil balanced on a cross of red hot peppers, steam rising."
+ },
+ "黄": {
+  "keyword": "yellow",
+  "components": [
+   "salad",
+   "wherefore",
+   "eight"
+  ],
+  "story": "A [salad] spills over a box stamped '[wherefore]?' that rolls on [eight] little legs: a bright {yellow} taxi delivering lunch.",
+  "picture": "A bright yellow taxi carrying a huge salad bowl on its roof."
+ },
+ "甫": {
+  "keyword": "dog tag",
+  "components": [
+   "ten",
+   "moon",
+   "drop"
+  ],
+  "story": "[ten] scratches on a [moon]-shaped tin disc and a [drop] of red paint: the runaway mutt's jingling {dog tag}.",
+  "picture": "A crescent-shaped metal dog tag with scratches and a dot of red paint, hanging from a running dog's collar."
+ },
+ "奇": {
+  "keyword": "strange",
+  "components": [
+   "St. Bernard dog",
+   "can"
+  ],
+  "story": "A [St. Bernard dog] balances on top of a [can], wobbling there and staring at you without blinking: something very {strange} is going on.",
+  "picture": "A St. Bernard dog balancing on top of a tin can, staring with wide unblinking eyes."
+ },
+ "啇": {
+  "keyword": "antique",
+  "components": [
+   "top hat",
+   "horns",
+   "hood",
+   "old"
+  ],
+  "story": "Under a [top hat] with [horns], a [hood] covers something [old]: a dusty {antique} on display, priceless and fragile.",
+  "picture": "A dusty old object under a cloth cover on a shop shelf, topped with a horned hat."
+ },
+ "杂": {
+  "keyword": "nine trees",
+  "components": [
+   "nine",
+   "tree"
+  ],
+  "story": "[nine] scrawny saplings crowd on top of one big [tree]: a thicket of {nine trees}, perfect for hiding junk.",
+  "picture": "A dense cluster of nine trees with junk like socks and spoons peeking out between them."
+ },
+ "廷": {
+  "keyword": "courts",
+  "components": [
+   "stretch",
+   "porter"
+  ],
+  "story": "Red carpet is [stretch]ed out long to a [porter] hauling the judge's bench into place: the {courts} are now in session.",
+  "picture": "A long red carpet leading to a porter carrying a heavy judge's bench in a grand hall."
+ },
+ "孚": {
+  "keyword": "brood",
+  "components": [
+   "vulture",
+   "child"
+  ],
+  "story": "A mother [vulture] spreads her claws over a [child] in the nest below, sheltering her {brood} of fluffy chicks.",
+  "picture": "A large bird spreading its wings over a nest full of fluffy chicks."
+ },
+ "奴": {
+  "keyword": "guy",
+  "components": [
+   "woman",
+   "crotch"
+  ],
+  "story": "A [woman] on the left drags a lazy fellow by the [crotch] of his overalls: 'Get to work, {guy}!'",
+  "picture": "A woman tugging a lazy man in overalls toward a big boulder, pointing at it."
+ },
+ "壴": {
+  "keyword": "drum",
+  "components": [
+   "ten",
+   "beans"
+  ],
+  "story": "[ten] drumsticks rattle down onto a pot of [beans] stretched with hide: a {drum} that booms and makes the beans jump inside.",
+  "picture": "A pot covered with stretched hide used as a drum, with many drumsticks striking it and beans bouncing."
+ },
+ "埶": {
+  "keyword": "planting",
+  "components": [
+   "soil",
+   "human legs",
+   "soil",
+   "round"
+  ],
+  "story": "A gardener pats down [soil], kneels on [human legs], heaps more [soil], then drops in a [round] seed: the {planting} is done.",
+  "picture": "A gardener kneeling in a garden bed, heaping soil and dropping a round seed into it."
+ },
+ "亥": {
+  "keyword": "acorn",
+  "components": [],
+  "story": "A little cap on top and a fat, lopsided body with crooked cracks running down it: a giant {acorn}, ready to be carved.",
+  "picture": "A giant acorn with a cap and cracked shell, standing on the ground."
+ },
+ "彦": {
+  "keyword": "lad",
+  "components": [
+   "vase on a cliff",
+   "three hairs"
+  ],
+  "story": "A [vase on a cliff] teeters as a breeze blows [three hairs] loose on the head of a dashing {lad} posing beside it.",
+  "picture": "A dashing young man posing next to a vase on a cliff edge, his hair blowing in the wind."
+ },
+ "舛": {
+  "keyword": "sunglasses",
+  "components": [],
+  "story": "Two curved lenses face each other with a little bridge between them: a pair of {sunglasses} on a wriggling dancer.",
+  "picture": "A cheerful worm wearing sunglasses dancing alone on an empty stage."
+ },
+ "昏": {
+  "keyword": "dusk",
+  "components": [
+   "family name",
+   "sun"
+  ],
+  "story": "The [family name] carved on a gate stands above the [sun] sinking beneath it: {dusk}, when the wedding begins.",
+  "picture": "A wooden gate silhouetted against a sun sinking low in an orange evening sky."
+ },
+ "舟": {
+  "keyword": "boat",
+  "components": [],
+  "story": "A narrow hull with two passengers sitting inside and a mast sticking up from the middle: a little rowing {boat}, bobbing in the water.",
+  "picture": "A small narrow wooden rowing boat with two passengers and a short mast, bobbing on water."
+ },
+ "㕣": {
+  "keyword": "gully",
+  "components": [
+   "eight",
+   "mouth"
+  ],
+  "story": "Water from [eight] streams pours down into a narrow [mouth] below: a steep {gully} where passing boats get wedged.",
+  "picture": "Streams pouring down rocky slopes into a narrow gully with a small boat wedged inside."
+ },
+ "莫": {
+  "keyword": "graveyard",
+  "components": [
+   "flowers",
+   "sun",
+   "St. Bernard dog"
+  ],
+  "story": "[flowers] laid on top, the [sun] setting in the middle, a [St. Bernard dog] keeping watch below: the quiet {graveyard} at closing time.",
+  "picture": "A graveyard at sunset with flowers on the headstones and a St. Bernard dog sitting watch."
+ },
+ "兆": {
+  "keyword": "omen",
+  "components": [],
+  "story": "Cracks split out to both sides of a center line, each with a dot of soot: a tortoise shell cracked by fire, reading a dark {omen}.",
+  "picture": "A tortoise shell cracked into two sides by fire, with a dark cloud forming in the sky above."
+ },
+ "复": {
+  "keyword": "repeat",
+  "components": [
+   "banner top",
+   "sun",
+   "walking legs"
+  ],
+  "story": "A [banner top] flaps over the [sun] as [walking legs] march beneath it, around and around: the parade plays on {repeat}.",
+  "picture": "A small parade marching in a circle under a flag and the sun, the same marchers passing again and again."
+ },
+ "貫": {
+  "keyword": "pierce",
+  "components": [],
+  "story": "A string of square-holed coins on top, a shell below, and one long rod driven straight through both: it can {pierce} anything.",
+  "picture": "A long metal rod pushed through a stack of square-holed coins and a seashell."
+ },
+ "卦": {
+  "keyword": "divination",
+  "components": [
+   "ivy",
+   "magic wand"
+  ],
+  "story": "Sprigs of [ivy] are tapped with a [magic wand], and their leaves rearrange into a reading: {divination} that tells your fortune.",
+  "picture": "A fortune teller tapping a pile of ivy sprigs with a magic wand, the leaves glowing and shifting."
+ },
+ "斿": {
+  "keyword": "streamer",
+  "components": [
+   "direction",
+   "banner top",
+   "child"
+  ],
+  "story": "A signpost points the [direction], a [banner top] flutters beside it, and a [child] below runs holding a long {streamer}, rainbow ribbons trailing.",
+  "picture": "A child running past a signpost holding a long rainbow streamer, a flag fluttering nearby."
+ },
+ "卸": {
+  "keyword": "wholesale",
+  "components": [
+   "banner top",
+   "one",
+   "stamp"
+  ],
+  "story": "A [banner top] over [one] counter, and a [stamp] slammed on the right onto every sack: rice sold {wholesale}, by the truckload.",
+  "picture": "A warehouse counter with a small flag, a worker stamping huge rice sacks piled high."
+ },
+ "垔": {
+  "keyword": "smokestack",
+  "components": [
+   "west",
+   "soil"
+  ],
+  "story": "Out in the Wild [west], a chimney rises from the [soil]: a tall black {smokestack}, puffing clouds over the frontier town.",
+  "picture": "A tall black smokestack rising from dusty ground in a Wild West town, puffing smoke clouds."
+ },
+ "呉": {
+  "keyword": "shouting giant",
+  "components": [
+   "mouth",
+   "heavens"
+  ],
+  "story": "A huge [mouth] gapes on top of a giant whose body reaches the [heavens]: a {shouting giant} booming so loudly the clouds shake.",
+  "picture": "A gentle giant towering into the clouds, mouth wide open as he shouts, the clouds trembling around his head."
+ },
+ "苗": {
+  "keyword": "seedling",
+  "components": [
+   "flowers",
+   "rice field"
+  ],
+  "story": "Tiny [flowers] sprout on top of a muddy [rice field]: each green {seedling} standing in neat rows.",
+  "picture": "Neat rows of tiny green seedlings with little flowers growing in a muddy rice paddy."
+ },
+ "革": {
+  "keyword": "leather",
+  "components": [],
+  "story": "Horns at the top, a hide stretched wide across a frame, a tail hanging down the middle: raw {leather}, drying in the sun before it becomes shoes.",
+  "picture": "A cowhide stretched on a wooden frame to dry in the sun, with horns at the top and a tail hanging down."
+ },
+ "髟": {
+  "keyword": "shaggy hair",
+  "components": [
+   "long",
+   "three hairs"
+  ],
+  "story": "On the left, [long] hair streams down to the floor; on the right, [three hairs] swoop outward: a wild mop of {shaggy hair} begging for a barber.",
+  "picture": "A cheerful person with extremely long hair streaming to the floor and three big swooping strands sticking out to the side, sitting in a barber's chair."
+ },
+ "禺": {
+  "keyword": "monkey",
+  "components": [],
+  "story": "A big round face with grid-like eyes over a long tail curling underneath: a cheeky {monkey} dangling in everyone's way.",
+  "picture": "A cheeky monkey with a big round face hanging by its curled tail from a branch."
+ }
+}
