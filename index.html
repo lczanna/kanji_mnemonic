@@ -8,7 +8,7 @@
 <title>N3 Kanji Sprint</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <style>
 /* Layout: one thumb-reach column, fixed bottom tabs; study runs as a full-screen sheet.
    Kanji are set in Mincho because that is the typeface the JLPT paper prints them in. */
@@ -26,6 +26,9 @@
   --easy: #2a68aa;
   --grid: #e3a49a;        /* genkō yōshi practice-grid red */
   --font-kanji: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  /* Textbook (教科書体) style for the card's big kanji: drawn as written, like the stroke drawings (令 ends in マ).
+     Print fonts draw some parts differently (令 with 卩), so the print form is shown small beside it. */
+  --font-hand: "Klee One", "UD Digi Kyokasho N-R", "YuKyokasho", var(--font-kanji);
   --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
   --radius: 14px;
 }
@@ -149,7 +152,9 @@ ruby rt { font-size: 0.5em; color: var(--muted); font-weight: 400; letter-spacin
 
 .back { display: grid; gap: 14px; }
 .headline { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; }
-.headline .k-small { font-family: var(--font-kanji); font-weight: 800; font-size: 64px; line-height: 1; }
+.headline .k-small { font-family: var(--font-hand); font-weight: 600; font-size: 64px; line-height: 1; }
+.headline .k-print { font-family: var(--font-kanji); font-weight: 600; font-size: 20px; line-height: 1.2; color: var(--muted); text-align: center; margin-top: 4px; }
+.headline .k-print small { font-family: var(--font-body); font-size: 10px; letter-spacing: .04em; margin-left: 3px; }
 .keyword { font-size: 22px; font-weight: 700; line-height: 1.2; }
 .meaning { font-size: 13px; color: var(--muted); }
 /* Reviews show the whole picture, just smaller (cropping it cut off heads and hands). */
@@ -1502,7 +1507,7 @@ function backHtml(k, mode) {
   return `
   <div class="back" data-in="${esc(k.kanji)}">
     <div class="headline">
-      <div class="k-small" lang="ja">${esc(k.kanji)}</div>
+      <div><div class="k-small" lang="ja">${esc(k.kanji)}</div><div class="k-print" lang="ja">${esc(k.kanji)}<small>print</small></div></div>
       <div>
         <div class="keyword">${esc(k.keyword)}</div>
         ${k.meaning && k.meaning.toLowerCase() !== k.keyword.toLowerCase() ? `<div class="meaning">usually means: ${esc(k.meaning)}</div>` : ''}
