@@ -15,7 +15,7 @@
   "contrast": "Not ようになる (the NARWHAL: it gradually comes to be so, by itself) — ようにする is the SURFER: I deliberately keep doing it. Same as る/す verbs: なる happens, する is done."
  },
  "youni-iu": {
-  "hook": "〜ように言う／頼む: the coach shouts through a MEGAPHONE: 'Keep your YO-YO (よう) string short!' — he TELLS (言う) the kid to: 'tell / ask someone to do' (a reported instruction).",
+  "hook": "〜ように言う／頼む: the coach shouts through a MEGAPHONE: 'Keep your YO-YO (よう) string short!' — he SAYS (言う) the kid must, or asks (頼む) someone he trusts to: 'tell / ask someone to do' (a reported instruction).",
   "picture": "A coach shouting through a big megaphone at a child holding a yo-yo, the child nodding.",
   "contrast": "Not ように alone (the string on the KNEE: so that) — ように言う adds the MEGAPHONE: someone is told to do it."
  },
@@ -150,7 +150,7 @@
   "contrast": "Not に関して (CAN microphone: the formal 'regarding') and not に対して (TUG-of-war TIE: toward) — について is the SWEET TEA chat: about."
  },
  "ni-taishite": {
-  "hook": "〜に対して: two teams face each other in a tug-of-war TIE (たい): attitude TOWARD / AGAINST the other side, or 'in contrast to'.",
+  "hook": "〜に対して: 対 means VIS-A-VIS, face to face (反対, 対話). Two teams stand face to face in a tug-of-war TIE (たい): your attitude TOWARD / AGAINST the other side, or 'in contrast to'.",
   "picture": "Two teams pulling a rope in a tug-of-war, facing each other across a line.",
   "contrast": "Not について (SWEET TEA: about) and not にとって (TOTE: for me) — に対して is the tug-of-war TIE: aimed at / against."
  },
@@ -185,12 +185,12 @@
   "contrast": "Not によって (YACHT: depends on) or に対して (TIE: in contrast to two sides) — に比べて is the CRABs: compared with."
  },
  "ni-kanshite": {
-  "hook": "〜に関して／に関する: at a press conference the speaker taps a microphone made of a tin CAN (かん): formal 'regarding / concerning'.",
-  "picture": "An official at a podium speaking into a microphone made from a tin can, reporters taking notes.",
+  "hook": "〜に関して／に関する: 関 means CONNECTION (関係). At a press conference a KANGAROO (かん) is tied by a rope to the topic board: everything it says is connected to that topic — formal 'regarding / concerning' (the formal cousin of について).",
+  "picture": "A kangaroo at a press-conference podium, tied by a rope to a big topic board behind it, speaking into microphones.",
   "contrast": "Same meaning as について (SWEET TEA chat), but formal — に関して is the CAN microphone at an official briefing."
  },
  "wo-chuushin-ni": {
-  "hook": "〜を中心に: a dog CHEWs a SHIN bone (ちゅうしん) in the CENTER of the yard, toys all around it: 'centering on / mainly'.",
+  "hook": "〜を中心に: 中心 is the in-heart, the center. A dog CHEWs a SHIN bone (ちゅうしん) right at the heart of the yard, its toys all around it: 'centering on / mainly'.",
   "picture": "A dog lying in the middle of a yard chewing a large bone, toys scattered in a circle around it."
  },
  "wo-hajime": {
@@ -198,7 +198,7 @@
   "picture": "A cheerful hedgehog in a mayor's sash leading a parade of townspeople and animals."
  },
  "wo-tooshite": {
-  "hook": "〜を通して／を通じて: TOOTHPASTE (とおして) squeezes THROUGH the tube: 'through / via (a go-between)', or 'throughout' a period.",
+  "hook": "〜を通して／を通じて: 通 is TRAFFIC passing through (通る). TOOTHPASTE (とおして) traffic squeezes THROUGH the tube: 'through / via (a go-between)', or 'throughout' a period.",
   "picture": "A hand squeezing toothpaste through a long tube onto a toothbrush.",
   "contrast": "Not として (TOAST: as a role) — を通して is TOOTHPASTE: through / via."
  },
@@ -223,12 +223,12 @@
   "contrast": "Not うちに (OOH CHEESY: while it's still hot) — ないうちに is before the bad change happens."
  },
  "aida-aidani": {
-  "hook": "〜間／間に: on the long IDAHO (あいだ) drive I sang the whole way (間), and at one point during it (間に) a deer crossed the road.",
+  "hook": "〜間／間に: 間 is the INTERVAL between two points. On the long IDAHO (あいだ) drive I sang for the whole interval (間), and at one point inside it (間に) a deer crossed the road.",
   "picture": "A car on a long empty highway through fields, a deer stepping onto the road ahead.",
   "contrast": "Not うちに (OOH CHEESY: while it lasts, before it changes) and not 最中に (SIGH-CHEW: right in the middle) — 間 is the whole IDAHO trip; 間に is one moment during it."
  },
  "saichuu-ni": {
-  "hook": "〜最中に: right in the middle of a big CHEW (ちゅう) of steak, the phone rings — SIGH (さい): 'right in the middle of (doing)'.",
+  "hook": "〜最中に: 最中 is the utmost middle. Right at the utmost middle of a big CHEW (ちゅう) of steak, SIGH (さい), the phone rings: 'right in the middle of (doing)'.",
   "picture": "A man with his mouth full of steak sighing as his phone buzzes on the table.",
   "contrast": "Not 間に (IDAHO: some point during) — 最中に is SIGH-CHEW: interrupted right in the middle."
  },
@@ -268,7 +268,7 @@
   "contrast": "Not 気味 (GIMME: slightly, right now) and not っぽい (POTTY: -ish) — がち is GOTCHA: it tends to happen often."
  },
  "gimi": {
-  "hook": "〜気味: 'GIMME (ぎみ) a tissue — I've got a touch of a cold': 'a bit / slightly'.",
+  "hook": "〜気味: 気 spirit + 味 flavor: just a flavor of something in your spirit. 'GIMME (ぎみ) a tissue, I've got a touch of a cold': 'a bit / slightly' (usually something unwelcome).",
   "picture": "A person with a slightly red nose reaching for a tissue box.",
   "contrast": "Not がち (GOTCHA: happens often) — 気味 is GIMME a tissue: a slight touch, right now."
  },
@@ -326,7 +326,7 @@
   "contrast": "Close to にかわって (on behalf of, formal) — かわりに also does trade-offs: cheap, but ... ."
  },
  "ippou-de": {
-  "hook": "〜一方で: a HIPPO (いっぽう) on one bank, a crocodile on the other: 'while / on the other hand'.",
+  "hook": "〜一方で: 一方 is one direction. A HIPPO (いっぽう) faces one direction on one bank, a crocodile faces the other way: 'while / on the other hand'.",
   "picture": "A wide river with a hippo on one shore and a crocodile on the opposite shore."
  },
  "toka-hearsay": {
@@ -390,17 +390,17 @@
   "contrast": "Not ないことはない (NIGHT COAT: I could, sort of) — ことはない is 'no COAT needed': no need to."
  },
  "ni-chigainai": {
-  "hook": "〜に違いない: cards are falling out of his sleeve — he must be the CHEAT GUY (ちがい): 'must be / surely' (strong conviction).",
+  "hook": "〜に違いない: 違い is difference; 違いない, no difference from the truth. Cards fall out of his sleeve: no difference, he's the CHEAT GUY (ちがい): 'must be / surely' (strong conviction).",
   "picture": "A card player at a table with playing cards slipping out of his sleeve, others staring.",
   "contrast": "Not に決まっている (KEY under the MAT: obviously, casual) and not はずだ (HAZELNUT: logical expectation) — に違いない is the CHEAT GUY: I'm convinced by intuition."
  },
  "towa-kagiranai": {
-  "hook": "〜とは限らない: a car in the GARAGE (かぎら) doesn't always mean someone's home: 'not necessarily / not always'.",
+  "hook": "〜とは限らない: 限る is to limit. A car in the GARAGE (かぎら) doesn't limit it to someone being home: 'not necessarily / not always'.",
   "picture": "A suburban house with a car parked in an open garage but all the windows dark.",
   "contrast": "Close to わけではない (WAKE without a boat: doesn't mean) — とは限らない is the GARAGE: not always true."
  },
  "ni-kimatte-iru": {
-  "hook": "〜に決まっている: where's the key? Under the MAT (きまって), obviously! — 'certainly / bound to' (very assertive, casual).",
+  "hook": "〜に決まっている: 決まる is to be decided. Where's the key? Under the MAT (きまって): it's already decided — 'certainly / bound to' (very assertive, casual).",
   "picture": "A person lifting a doormat with a grin to reveal a house key.",
   "contrast": "Not に違いない (CHEAT GUY: must be, conviction) — に決まっている is the KEY MAT: of course, no doubt."
  },
@@ -476,12 +476,12 @@
   "picture": "A girl sealing an envelope as a comet-like trail of small hearts streams from it."
  },
  "muke-muki": {
-  "hook": "〜向け／〜向き: the factory makes feed especially for cows — MOO-KAY (向け): 'made for'; the meadow just happens to suit cows — MOO-KEY (向き): 'suitable for'.",
+  "hook": "〜向け／〜向き: 向 is yonder, facing toward. The factory makes feed facing the cows — MOO-KAY (向け): 'made for'; the meadow faces the cows' taste — MOO-KEY (向き): 'suitable for'.",
   "picture": "A cow in a sunny meadow next to a feed sack with a cow face picture on it.",
   "contrast": "向け (MOO-KAY) is designed for a target group; 向き (MOO-KEY) just suits them."
  },
  "teki": {
-  "hook": "〜的: a TECHY (てき) gadget turns a noun into an adjective: '-ic / -al' (経済的な, 個人的に).",
+  "hook": "〜的: 的 is a BULL'S EYE, a target. A TECHY (てき) gadget aims at a noun's bull's eye and turns it into an adjective: '-ic / -al' (経済的な, 個人的に).",
   "picture": "A shiny robotic machine stamping words that come out as glowing ribbons."
  },
  "tagaru": {
@@ -589,8 +589,21 @@
   "youni-purpose": "2026-10-24r",
   "youni-naru": "2026-10-24r",
   "youni-suru": "2026-10-24r",
-  "youni-iu": "2026-10-24r",
+  "youni-iu": "2026-10-26r",
   "you-to-suru": "2026-10-24r",
-  "you-da": "2026-10-24r"
+  "you-da": "2026-10-24r",
+  "ni-kanshite": "2026-10-26r",
+  "ni-taishite": "2026-10-26r",
+  "wo-chuushin-ni": "2026-10-26r",
+  "wo-tooshite": "2026-10-26r",
+  "aida-aidani": "2026-10-26r",
+  "saichuu-ni": "2026-10-26r",
+  "gimi": "2026-10-26r",
+  "ippou-de": "2026-10-26r",
+  "ni-chigainai": "2026-10-26r",
+  "towa-kagiranai": "2026-10-26r",
+  "ni-kimatte-iru": "2026-10-26r",
+  "muke-muki": "2026-10-26r",
+  "teki": "2026-10-26r"
  }
 }
