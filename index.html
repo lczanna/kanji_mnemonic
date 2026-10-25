@@ -1359,6 +1359,13 @@ function twinHtml(g) {
   const t = PART_TWINS[g];
   return t ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(t[0])}</span> ${esc(t[1])}: ${esc(t[2])}.</div>` : '';
 }
+// A part name used for a short form ([broom] is 彐 in 当, the full broom 帚 is a card): say which full form it
+// stands for and link to it, so the two glyphs never look like two different brooms.
+function shortFormNote(name, g, inK) {
+  const full = DECK.find(k => k.keyword === name && k.kanji !== g) || PART_DECK.find(x => x.keyword === name && x.kanji !== g);
+  return full ? `Here <b>${esc(name)}</b> is written <span lang="ja">${esc(g)}</span>: a short form of <span lang="ja">${esc(full.kanji)}</span> ${esc(name)}, which is ${full.part ? 'a part card' : 'a kanji'} of its own. <button class="small-btn" data-open-k="${esc(full.kanji)}">See <span lang="ja">${esc(full.kanji)}</span></button>`
+    : `The part used in ${esc(inK)}; it isn't a card of its own.`;
+}
 function showPart(btn) {
   // The same part name can stand for different glyphs ([head] is 頭, but 頁 inside 題): the card says which.
   const inK = (btn.closest('[data-in]') || {}).dataset?.in, ctx = BY_KANJI[inK] || BY_PART[inK] || {}, inPop = !!btn.closest('#gl-pop');
@@ -1376,7 +1383,7 @@ function showPart(btn) {
   } else {
     pop.innerHTML = `<div class="gl-word" lang="ja">${esc(p.g || '')} <span>${esc(name)}</span></div>
       ${p.of && p.of.length ? `<div class="part-of">Made of ${p.of.map(n => `<button class="chip" data-part="${esc(n)}">${esc((PARTS[n] || {}).g || '')} ${esc(n)}</button>`).join('+')}</div>`
-        : `<div class="gl-lemma">${own ? `The part used in ${esc(ctx.kanji)}; it isn't a card of its own.` : p.d ? `No character of its own: it's ${esc(p.d)}.` : 'A basic part, not split further in this deck.'}</div>`}${twinHtml(p.g)}`;
+        : `<div class="gl-lemma">${own ? shortFormNote(name, own, ctx.kanji) : p.d ? `No character of its own: it's ${esc(p.d)}.` : 'A basic part, not split further in this deck.'}</div>`}${twinHtml(p.g)}`;
   }
   // Tapping a piece inside the box keeps the box where it is (moved up only if it would run off the screen).
   if (!inPop) placePop(pop, btn); else fitPop();
@@ -1967,7 +1974,7 @@ function lookMnHtml(g, me, big) {
 }
 function lookPanelHtml(k) {
   const gs = groupsOf(k.kanji);
-  return gs.length ? `<div class="look"><div class="section-label">Don't confuse with · coloured strokes are the difference</div>${gs.map(g => lookGroupHtml(g, k.kanji)).join('')}</div>` : '';
+  return gs.length ? `<div class="look"><div class="section-label">Don't confuse with · coloured strokes are the difference</div><div class="muted" style="font-size:12px">Drawn as handwritten, so a few parts differ from the print font: 令 ends in マ, not 卩.</div>${gs.map(g => lookGroupHtml(g, k.kanji)).join('')}</div>` : '';
 }
 // Groups where you've started two kanji and haven't had the side-by-side lesson yet.
 // Grammar you studied before it had a memory hook: a one-time card showing the hook and picture, a few per session,
