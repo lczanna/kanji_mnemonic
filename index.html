@@ -848,6 +848,9 @@ function weightedDaysLeft() {
 // or until you ask for extras.
 const FOCUS_WORDS = 1200;
 const coreWord = v => (v.p || 9999) <= FOCUS_WORDS;
+// Core words added to the deck after your plan began (src "n4"): not a shortfall. Their own share is spread over
+// the days left, so adding words never shows as being behind.
+const addedLeft = () => unseenOf('vocab').filter(v => coreWord(v) && v.src && v.src !== 'card').length;
 function planLeft() {
   const coreLeft = unseenOf('vocab').filter(coreWord).length;
   return { kanji: unseenOf('kanji').length, vocab: coreLeft || unseenOf('vocab').length, grammar: unseenOf('grammar').length, coreLeft };
@@ -896,7 +899,7 @@ function planToday() {
   let w5 = 0; for (let i = 0; i < 5; i++) w5 += dayWeight(addDays(today(), i));
   const pace = {}, catchUp = {};
   for (const ty of TYPES) {
-    pace[ty] = Math.ceil((ps.left[ty] || 0) * w / Math.max(0.001, wAll));
+    pace[ty] = Math.ceil((ps.left[ty] || 0) * w / Math.max(0.001, wAll)) + (ty === 'vocab' ? Math.ceil(addedLeft() * w / Math.max(0.001, W)) : 0);
     catchUp[ty] = bh[ty] ? Math.ceil(bh[ty] * w / Math.max(0.001, Math.min(W, w5))) : 0;
     target[ty] = left[ty] ? Math.min(left[ty], pace[ty] + catchUp[ty]) : 0;
   }
@@ -914,7 +917,7 @@ function planToday() {
   const minutes = Math.round((due * t.review + TYPES.reduce((a, ty) => a + limit[ty], 0) * t.fresh) / 60) + practiceMin;
   // The plan's share for a plain weekday (no catch-up), for the minutes a weekday and a weekend day need.
   const perWeekday = {};
-  for (const ty of TYPES) perWeekday[ty] = left[ty] ? (ps.left[ty] || 0) / Math.max(0.001, wAll) : 0;
+  for (const ty of TYPES) perWeekday[ty] = left[ty] ? (ps.left[ty] || 0) / Math.max(0.001, wAll) + (ty === 'vocab' ? addedLeft() / Math.max(0.001, W) : 0) : 0;
   planCache = { key, target, limit, due, t, minutes, practiceMin, weekend: isWeekend(today()), pace, catchUp, perWeekday, waiting: target.vocab - limit.vocab };
   return planCache;
 }
@@ -928,7 +931,7 @@ function planStatus() {
   const frac = Math.min(1, Math.max(0, weight(ps.date, today()) / Math.max(0.001, weight(ps.date, finishNewBy()))));
   const out = {};
   for (const ty of TYPES) {
-    const start = ps.left[ty] || 0, done = start - left[ty], should = Math.round(start * frac);
+    const start = ps.left[ty] || 0, done = start - (left[ty] - (ty === 'vocab' ? addedLeft() : 0)), should = Math.round(start * frac);
     // For display, count the same way as the Progress bars: every card started, including ones marked as known.
     const total = ty === 'vocab' ? VOCAB.filter(coreWord).length : deckOf(ty).length;
     const have = total - (ty === 'vocab' ? left.coreLeft : left[ty]);
@@ -1592,6 +1595,7 @@ function todayHtml() {
   <div class="stack">
     ${parked ? `<button class="btn primary" id="go-resume"><span class="label"><b>Resume where you left off</b><small class="muted">Back to the same card</small></span><span class="count num">${parked.queue.length - parked.i}</span></button>` : ''}
     ${triageFirst ? triageBtn('btn primary', 'Start here: mark kanji you already know', 'One quick pass through the kanji. Each one you know is skipped, and its words unlock.') : ''}
+    ${!triageFirst && wordsToSort().length ? `<button class="btn primary" id="go-wtriage"><span class="label"><b>New: sort ${wordsToSort().length} N4 words</b><small class="muted">The deck was missing them (将来, 地震, 比べる…). Tap Know it or Not yet, about a second each: only the ones you don't know become cards.</small></span><span class="count num">${wordsToSort().length}</span></button>` : ''}
     ${needBackup ? `<div class="notice stack" style="gap:8px"><b>Back up your progress</b><span>${appData.lastBackup ? `Last backup ${esc(appData.lastBackup)}.` : 'No backup yet.'} Progress lives only in this browser.</span>
       <div class="row-wrap"><button class="small-btn" id="quick-backup">Copy backup</button></div></div>` : '<div id="backup-note" class="muted" style="font-size:13px" aria-live="polite"></div>'}
     ${homeTip ? `<div class="notice stack" style="gap:8px"><b>Add this to your Home Screen</b><span>In Safari tap Share → Add to Home Screen, and open it from there. Safari can erase a site's data after 7 days without a visit; Home Screen apps are much safer.</span>
@@ -2530,6 +2534,14 @@ function listenScreen(it, tags) {
     : `<div class="row one"><button class="ans reveal" id="a-reveal">Show answer</button></div>`;
   return { inner: { front }, bar };
 }
+// Words added after you started (src "n4": N4 words the deck was missing) that you haven't met or sorted yet.
+const wordsToSort = () => VOCAB.filter(v => v.src && v.src !== 'card' && !appData.cards['v:' + v.w] && !appData.triaged['v:' + v.w]).sort((a, b) => a.p - b.p);
+function startWordTriage() {
+  const queue = wordsToSort().map(x => ({ type: 'vocab', x, mode: 'triage' }));
+  if (!queue.length) return;
+  session = { queue, i: 0, revealed: false, done: 0, kind: 'triage', undo: [] };
+  openSheet();
+}
 function startTriage() {
   const queue = unseen().filter(k => !appData.triaged[k.kanji]).map(x => ({ type: 'kanji', x, mode: 'triage' }));
   if (!queue.length) return;
@@ -2871,6 +2883,16 @@ function optionNotes(q, chosen) {
 function vocabScreen(it, tags) {
   const v = it.x;
   tags.push('<span class="tag">WORD</span>');
+  if (it.mode === 'triage') {
+    // The quick sort of words added later (N4 words the deck was missing): the word as the exam prints it.
+    tags.push(`<span class="tag">${esc((v.src || '').toUpperCase())} · DO YOU KNOW IT?</span>`);
+    const shown = vform(v) === 'kanji' ? v.w : v.r;
+    const front = session.revealed ? '' : `<div class="word-front${vform(v) === 'kanji' ? '' : ' kana'}" lang="ja" style="${kanaSize(shown)}">${esc(shown)}</div><div class="prompt">Know what it means${vform(v) === 'kanji' ? ' and how to read it' : ''}?</div>`;
+    const btns = [session.undo.length ? `<button class="ans skip" id="t-undo">Undo</button>` : '',
+      session.revealed ? '' : `<button class="ans skip" id="t-peek">Peek</button>`,
+      `<button class="ans again" id="t-no">Not yet</button>`, `<button class="ans good" id="t-yes">Know it</button>`].filter(Boolean);
+    return { inner: { front, back: session.revealed ? vocabBackHtml(v) : '' }, bar: `<div class="row" style="grid-template-columns:repeat(${btns.length}, 1fr)">${btns.join('')}</div>` };
+  }
   if (['ctx', 'para', 'usage'].includes(it.task)) {
     const q = it.q, answered = session.revealed;
     tags.push(`<span class="tag" lang="ja">${{ ctx: '文脈規定 · WHICH WORD FITS?', para: '言い換え · CLOSEST MEANING', usage: '用法 · WHICH IS USED RIGHT?' }[it.task]}</span>`);
@@ -3070,7 +3092,7 @@ function renderSessionEnd() {
   $('sheet').innerHTML = `<div class="sheet-inner"><div class="card" style="text-align:center;padding:32px 18px">
     <div class="cell" style="margin:0 auto"><span class="k" lang="ja">${triage ? '済' : '終'}</span></div>
     <h2 style="margin-top:14px">${triage ? 'Triage done' : 'Session done'}</h2>
-    <p class="muted">${triage ? `Unseen kanji left to learn: ${unseen().length}. The daily plan now uses that number.`
+    <p class="muted">${triage && (session.queue[0] || {}).type === 'vocab' ? `Words sorted. The ones you know come back for a quick check within the week; ${session.queue.filter(q => !appData.cards['v:' + q.x.w]).length} to learn join your daily plan.` : triage ? `Unseen kanji left to learn: ${unseen().length}. The daily plan now uses that number.`
       : `${session.done} cards answered. ${remainingToday().length ? 'Still to do today: ' + remainingToday().map(x => `${TYPE_LABEL[x.t]} ${x.n}`).join(' · ') + '.' : "That's everything for today."}`}</p>
   </div></div>`;
   $('answer-bar').innerHTML = `<div class="row one"><button class="ans next" id="s-finish">Back to today</button></div>`;
@@ -3141,7 +3163,7 @@ function showHistory(idx) {
 
 function triageAnswer(known) {
   const it = session.queue[session.i];
-  const k = it.x.kanji;
+  const k = keyOf(it.type, it.x);
   session.undo.push({ k, prevCard: appData.cards[k], prevTri: appData.triaged[k] });
   appData.triaged[k] = known ? 'known' : 'unknown';
   if (known) markKnown(k);
@@ -3191,6 +3213,7 @@ document.addEventListener('click', e => {
   if (t.dataset.slot !== undefined) return unpickSlot(+t.dataset.slot);
   switch (id) {
     case 'go-triage': return startTriage();
+    case 'go-wtriage': return startWordTriage();
     case 'go-all': {
       if (dueOf('vocab').length + dueOf('kanji').length + dueOf('grammar').length + newQueueOf('kanji').length + newQueueOf('vocab').length + newQueueOf('grammar').length
         + practiceItems().length + duePairItems().length + drillItems().length + pendingLookLessons().length + dueOf('part').length + pendingParts().length) return startStudy('all');

@@ -169,6 +169,24 @@ await test('look-alike groups with a part card (矢): shown on cards, never quiz
   eq(p.errors.length, 0, 'page errors: ' + p.errors.join('; '));
 });
 
+await test('sorting added N4 words: Know it makes a light card, Not yet leaves it to learn, Undo restores, reviewed cards untouched', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    const ws = wordsToSort(); if (ws.length < 3) return { n: ws.length };
+    appData.cards['v:' + ws[2].w] = { stability: 9, difficulty: 5, reps: 4, lapses: 0, lastReview: today(), due: '2099-01-01' };
+    startWordTriage();
+    const a = session.queue[0].x.w, b = session.queue[1].x.w;
+    triageAnswer(true); triageAnswer(false); triageUndo(); triageAnswer(false);
+    return { n: ws.length, a: appData.cards['v:' + a], triA: appData.triaged['v:' + a], b: appData.cards['v:' + b] || null, triB: appData.triaged['v:' + b],
+      third: appData.cards['v:' + ws[2].w].reps, inQueue: session.queue.some(q => q.x.w === ws[2].w) };
+  });
+  yes(r.n >= 3, 'no words to sort');
+  eq(r.triA, 'known', 'first word marked'); eq(r.a.reps, 1, 'known word gets a light card'); eq(!!r.a.triaged, true, 'known card is triaged');
+  eq(r.b, null, '"Not yet" makes no card'); eq(r.triB, 'unknown', 'second word marked unknown');
+  eq(r.inQueue, false, 'a word you already have offered for sorting'); eq(r.third, 4, 'reviewed card kept');
+  eq(p.errors.length, 0, 'page errors: ' + p.errors.join('; '));
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);
