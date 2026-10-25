@@ -86,6 +86,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 
 .cta { display: grid; gap: 10px; }
 .opt-notes .right-note { border-left-color: var(--good); color: var(--ink); }
+ruby rt { font-size: 0.5em; color: var(--muted); font-weight: 400; letter-spacing: 0; }
 .kl { font: inherit; color: inherit; background: none; border: 0; padding: 0; border-bottom: 1px dotted color-mix(in srgb, var(--ai) 60%, transparent); cursor: pointer; }
 .word-link { font-size: 12px; padding: 2px 8px; margin-left: 6px; }
 .missed-words { display: grid; gap: 4px; font-size: 14px; }
@@ -1210,6 +1211,32 @@ function sayText(w, r) {
   return r;
 }
 // Sentences keep their kanji; tapping a word shows its reading and meaning.
+// Furigana over kanji you haven't studied (as the exam prints it over kanji above the level), so a sentence with an
+// unknown kanji is read, not guessed. Kanji you've studied stay bare.
+const kanjiKnown = ch => !!appData.cards[ch];
+const hasUnknownKanji = t => [...t].some(c => c !== '々' && isKanji(c) && !kanjiKnown(c));
+const rubyHtml = (k, r) => `<ruby>${esc(k)}<rt>${esc(r)}</rt></ruby>`;
+// Runs of kanji in a text with their readings ([[start, length, reading]], tools/order_ruby.py).
+function rubyRuns(text, runs) {
+  let html = '', pos = 0;
+  for (const [st, len, r] of runs || []) {
+    if (st < pos) continue;
+    const k = text.slice(st, st + len);
+    html += esc(text.slice(pos, st)) + (hasUnknownKanji(k) && r ? rubyHtml(k, r) : esc(k));
+    pos = st + len;
+  }
+  return html + esc(text.slice(pos));
+}
+// One word and its reading in the sentence: the reading is split over its kanji runs past the kana around them
+// (話し合った はなしあった → 話 はな, 合 あ).
+function furiHtml(w, r) {
+  if (!r || !hasUnknownKanji(w)) return esc(w);
+  const parts = w.split(/([\u3400-\u9fff々]+)/).filter(Boolean), kan = p => /[\u3400-\u9fff々]/.test(p);
+  const m = kata2hira(r).match(new RegExp('^' + parts.map(p => kan(p) ? '(.+?)' : kata2hira(p).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('') + '$'));
+  if (!m) return rubyHtml(w, r);
+  let g = 0;
+  return parts.map(p => kan(p) ? (g++, hasUnknownKanji(p) ? rubyHtml(p, m[g]) : esc(p)) : esc(p)).join('');
+}
 function glossHtml(text) {
   const words = GL[text];
   if (!words || !words.length) return esc(text);
@@ -1218,7 +1245,7 @@ function glossHtml(text) {
     if (start < pos) continue;
     html += esc(text.slice(pos, start));
     const w = text.slice(start, start + len);
-    html += `<button class="gl" data-gl="${esc(JSON.stringify([w, r, lemma, lr, m]))}">${esc(w)}</button>`;
+    html += `<button class="gl" data-gl="${esc(JSON.stringify([w, r, lemma, lr, m]))}">${furiHtml(w, r)}</button>`;
     pos = start + len;
   }
   return html + esc(text.slice(pos));
@@ -1595,7 +1622,7 @@ function todayHtml() {
   <div class="stack">
     ${parked ? `<button class="btn primary" id="go-resume"><span class="label"><b>Resume where you left off</b><small class="muted">Back to the same card</small></span><span class="count num">${parked.queue.length - parked.i}</span></button>` : ''}
     ${triageFirst ? triageBtn('btn primary', 'Start here: mark kanji you already know', 'One quick pass through the kanji. Each one you know is skipped, and its words unlock.') : ''}
-    ${!triageFirst && wordsToSort().length ? `<button class="btn primary" id="go-wtriage"><span class="label"><b>New: sort ${wordsToSort().length} N4 words</b><small class="muted">The deck was missing them (将来, 地震, 比べる…). Tap Know it or Not yet, about a second each: only the ones you don't know become cards.</small></span><span class="count num">${wordsToSort().length}</span></button>` : ''}
+    ${!triageFirst && wordsToSort().length ? `<button class="btn primary" id="go-wtriage"><span class="label"><b>New: sort ${wordsToSort().length} N4 and N5 words</b><small class="muted">The deck was missing them (将来, 地震, 傘, 暑い…). Tap Know it or Not yet, about a second each: only the ones you don't know become cards.</small></span><span class="count num">${wordsToSort().length}</span></button>` : ''}
     ${needBackup ? `<div class="notice stack" style="gap:8px"><b>Back up your progress</b><span>${appData.lastBackup ? `Last backup ${esc(appData.lastBackup)}.` : 'No backup yet.'} Progress lives only in this browser.</span>
       <div class="row-wrap"><button class="small-btn" id="quick-backup">Copy backup</button></div></div>` : '<div id="backup-note" class="muted" style="font-size:13px" aria-live="polite"></div>'}
     ${homeTip ? `<div class="notice stack" style="gap:8px"><b>Add this to your Home Screen</b><span>In Safari tap Share → Add to Home Screen, and open it from there. Safari can erase a site's data after 7 days without a visit; Home Screen apps are much safer.</span>
@@ -2252,9 +2279,10 @@ function buildMock(m) {
   for (const q of m.vocab.para) add('vocab', 'lk', '言い換え · closest meaning', `<div class="g-q" lang="ja">${paraHtml(q.s)}</div>`, q.options, q.answer, q.why + (q.why_en ? ' · ' + q.why_en : ''), { notes: q });
   for (const q of m.vocab.usage) add('vocab', 'lk', '用法 · correct usage', `<div class="word-front" lang="ja">${esc(q.w)}</div>`, q.options, q.answer, q.why + (q.why_en ? ' · ' + q.why_en : ''), { long: true, notes: q });
   for (const q of m.gram.fill) add('gr', 'lk', '文法形式 · grammar', `<div class="g-q" lang="ja">${ctxHtml(q.q)}</div>`, q.options, q.answer, q.why, { notes: q });
-  for (const o of m.gram.order) { const [opts, a] = shuf(o.chunks, o.star);
+  for (const o of m.gram.order) { const [opts, a] = shuf(o.chunks, o.star), rb = o.rb || {};
     const slots = [0, 1, 2, 3].map(i => `<span class="slot">${i === o.star ? '★' : '＿＿'}</span>`).join('');
-    add('gr', 'lk', '文の組み立て · ★ which part', `<div class="g-q order" lang="ja"><span>${esc(o.before)}</span>${slots}<span>${esc(o.after)}</span></div>`, opts, a, `${o.before}${o.chunks.join('')}${o.after} · ${o.why || ''}`); }
+    const runsOf = Object.fromEntries(o.chunks.map((c, i) => [c, (rb.chunks || [])[i]]));
+    add('gr', 'lk', '文の組み立て · ★ which part', `<div class="g-q order" lang="ja"><span>${rubyRuns(o.before, rb.before)}</span>${slots}<span>${rubyRuns(o.after, rb.after)}</span></div>`, opts, a, `${o.before}${o.chunks.join('')}${o.after} · ${o.why || ''}`, { optRuns: opts.map(c => runsOf[c]) }); }
   const tg = m.gram.textgram;
   if (tg) tg.blanks.forEach((b, i) => add('gr', 'lk', '文章の文法 · grammar in a text', `<div class="passage" lang="ja">${tg.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div><div class="prompt">Which fits blank （${i + 1}）?</div>`, b.options, b.answer, b.why, { notes: b }));
   for (const p of m.read) p.questions.forEach(q => add('gr', 'rd', `読解 · ${p.kind === 'info' ? 'find the information' : p.kind === 'long' ? 'long passage' : p.kind === 'medium' ? 'passage' : 'short text'}`,
@@ -2300,7 +2328,7 @@ function mockScreen(it) {
     <div class="prompt">${esc(it.part)}</div>
     ${it.play ? `<button class="big-play" data-mplay="${esc(it.play)}" ${played ? 'disabled' : ''} aria-label="Play">${played ? '✓' : '▶'}</button><div class="prompt">${played ? 'Played (the exam plays each item once)' : 'Tap to play. It plays once, as in the exam.'}</div>` : ''}
     ${it.prompt}
-    <div class="opts g${it.long || it.opts.some(o => o.length > 6) ? ' long' : ''}">${it.opts.map((o, i) => `<button class="opt${chosen === i ? ' picked' : ''}" data-mopt="${i}" lang="ja"><span class="num">${i + 1}</span>${esc(o)}</button>`).join('')}</div>`;
+    <div class="opts g${it.long || it.opts.some(o => o.length > 6) ? ' long' : ''}">${it.opts.map((o, i) => `<button class="opt${chosen === i ? ' picked' : ''}" data-mopt="${i}" lang="ja"><span class="num">${i + 1}</span>${it.optRuns ? rubyRuns(o, it.optRuns[i]) : esc(o)}</button>`).join('')}</div>`;
   const back = it.sec !== 'listen' && n > 1 ? '<button class="ans skip" id="m-back">‹ Back</button>' : '';
   return { inner: { front }, bar: `<div class="row two">${back || '<span></span>'}<button class="ans next" id="m-next">${n === inSec.length ? 'Finish section' : chosen != null ? 'Next' : 'Skip'}</button></div>` };
 }
@@ -3003,15 +3031,17 @@ function grammarScreen(it, tags) {
     const p = st.picked[i];
     const star = i === o.star ? '<span class="star">★</span>' : '';
     const correctChunk = answered ? o.chunks[i] : null;
-    return `<button class="slot${p ? ' filled' : ''}${answered ? (st.picked[i] && st.picked[i].i === i ? ' right' : ' wrong') : ''}" data-slot="${i}" ${answered ? 'disabled' : ''} lang="ja">${star}${answered ? esc(correctChunk) : p ? esc(p.c) : '＿＿'}</button>`;
+    const rb = (o.rb || {}).chunks || [];
+    return `<button class="slot${p ? ' filled' : ''}${answered ? (st.picked[i] && st.picked[i].i === i ? ' right' : ' wrong') : ''}" data-slot="${i}" ${answered ? 'disabled' : ''} lang="ja">${star}${answered ? rubyRuns(correctChunk, rb[i]) : p ? rubyRuns(p.c, rb[p.i]) : '＿＿'}</button>`;
   }).join('');
-  const front = `<div class="g-q order" lang="ja"><span>${glossHtml(o.before)}</span>${slots}<span>${glossHtml(o.after)}</span></div>
+  const edge = (t, runs) => GL[t] ? glossHtml(t) : rubyRuns(t, runs);
+  const front = `<div class="g-q order" lang="ja"><span>${edge(o.before, (o.rb || {}).before)}</span>${slots}<span>${edge(o.after, (o.rb || {}).after)}</span></div>
     ${answered ? '' : trHtml(it, o.en, false)}
     ${answered ? `<div class="why">${esc(o.en)} ${sayBtn(o.before + o.chunks.join('') + o.after)}</div>${partsHtml(o)}` :
       `<div class="opts chunks">${st.pool.map((p, j) => {
         // Readings and meanings only on request ("Show readings & meanings"): no help unless you ask for it.
         const gl = it.showGl && chunkGl(o, p.i);
-        return `<button class="opt${gl ? ' with-gl' : ''}" data-chunk="${j}" lang="ja">${esc(p.c)}${gl || ''}</button>`; }).join('')}</div>
+        return `<button class="opt${gl ? ' with-gl' : ''}" data-chunk="${j}" lang="ja">${rubyRuns(p.c, ((o.rb || {}).chunks || [])[p.i])}${gl || ''}</button>`; }).join('')}</div>
        <div class="prompt">Tap the parts in order. Tap a filled slot to take it back.</div>
        ${(o.cgl || []).some(x => x.length) && !it.showGl ? '<div class="tr"><button class="small-btn" id="g-cgl">Show readings &amp; meanings</button></div>' : ''}`}`;
   return { inner: { front, back: answered ? grammarBackHtml(g, true) : '' }, bar: answered ? cont : '<div class="row one"><span class="muted" style="text-align:center;font-size:13px">Fill all four slots</span></div>' };

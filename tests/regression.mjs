@@ -187,6 +187,17 @@ await test('sorting added N4 words: Know it makes a light card, Not yet leaves i
   eq(p.errors.length, 0, 'page errors: ' + p.errors.join('; '));
 });
 
+await test('furigana only over kanji you haven\'t studied, in sentences and ordering parts', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    for (const c of ['話', '仕', '事']) appData.cards[c] = { stability: 5, difficulty: 5, reps: 3, lapses: 0, lastReview: today(), due: '2099-01-01' };
+    const o = BY_GID['ni-tsuite'].order;
+    return { split: furiHtml('話し合った', 'はなしあった'), known: furiHtml('仕事', 'しごと'), chunk: rubyRuns(o.chunks[2], o.rb.chunks[2]), hasRb: GRAMMAR.filter(g => g.order).every(g => g.order.rb) };
+  });
+  eq(r.split, '話し<ruby>合<rt>あ</rt></ruby>った', 'reading split over the kanji'); eq(r.known, '仕事', 'studied kanji stay bare');
+  yes(/<ruby>両親<rt>りょうしん<\/rt><\/ruby>/.test(r.chunk), 'ordering part without its reading: ' + r.chunk); eq(r.hasRb, true, 'ordering items without readings');
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);
