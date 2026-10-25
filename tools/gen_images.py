@@ -129,6 +129,8 @@ DEPICT = {
 }
 # Words whose hook the image filter refuses as written: a plainer scene for the picture only (the app shows the hook).
 PICTURE = {
+    '与える': 'A queen on a throne hands a small golden squirrel-tail ornament to a delighted squirrel, giving it as a gift.',
+    '転ぶ': 'A cartoon cowboy tumbling head over heels into a wooden corral after slipping on a banana peel, his hat flying off.',
     '用': 'A tiny old hermit with a walking stick carries a small shopping basket through a village market, ticking one item off a short list.',
     '緑': 'A small blue fish swimming through a lush forest of bright green seaweed.',
     '踊り': 'A small blue fish wiggling happily on a tiny underwater stage while seahorses clap.',
