@@ -5564,5 +5564,57 @@
    }
   },
   "img": "images/lookalikes/g133.jpg"
+ },
+ {
+  "id": "g135",
+  "kanji": [
+   "以",
+   "代",
+   "似"
+  ],
+  "tips": {
+   "以": "by means of: no person radical; a hooked stick with a drop on the left, a full person (人) standing on the right",
+   "代": "substitute: person radical 亻 on the left, an arrow (a stake with a dot at the top right) on the right",
+   "似": "similar: person radical 亻 on the left, then the whole of 以 copied beside him"
+  },
+  "scene": "On the left a person flies off holding a hooked stick with an eagle stuck to it; in the middle an actor is hit by an arrow while a dinosaur substitute squeezes in; on the right a man copies his neighbour in a mirror until they look the same.",
+  "contrast": "by means of: the person stands on the RIGHT, a hooked stick on the left · substitute: 亻 on the left, an arrow on the right · similar: 亻 on the left of a whole 以",
+  "mn": {
+   "以": {
+    "feature": "No person radical on the left: a hooked stick and a drop, with the person standing on the right.",
+    "label": "person on the right",
+    "hook": "The person on the right flies off by means of the eagle stuck to his hooked stick.",
+    "picture": "A person on the right grabbing a hooked stick with an angry eagle stuck to its sticky tip, being lifted into the sky.",
+    "img": "images/lookalikes/g135_4ee5.jpg",
+    "strokes": [
+     3,
+     4
+    ]
+   },
+   "代": {
+    "feature": "Person radical 亻 on the left, an arrow with a dot at its top right on the right.",
+    "label": "arrow",
+    "hook": "The actor on the left takes an arrow to the chest, so a substitute steps in.",
+    "picture": "A stage actor clutching an arrow stuck in his chest while a dinosaur in a torn costume steps onto the stage as his substitute.",
+    "img": "images/lookalikes/g135_4ee3.jpg",
+    "strokes": [
+     2,
+     3,
+     4
+    ]
+   },
+   "似": {
+    "feature": "Person radical 亻 on the left of a whole 以.",
+    "label": "亻 + 以",
+    "hook": "A person stands beside 以 and copies it until they look similar.",
+    "picture": "A man on the left copying his neighbour in a mirror with a tattoo pen until both have the same unibrow.",
+    "img": "images/lookalikes/g135_4f3c.jpg",
+    "strokes": [
+     0,
+     1
+    ]
+   }
+  },
+  "img": "images/lookalikes/g135.jpg"
  }
 ]
