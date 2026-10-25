@@ -92,6 +92,8 @@ def pick_model():
 DEPICT = {
     'Kyoto maiko': 'a small, young apprentice geisha in a bright flowered kimono with dangling hair ornaments',
     'Mickey Mouse': 'a cheerful little mouse',
+    'Gandhi': 'a gentle bald old man in round glasses and a white shawl, walking with a staff',
+    'Dory': 'a forgetful little blue tropical fish',
     'Han Solo': 'a cocky pilot in a leather jacket',
     'Chewbacca': 'a tall shaggy brown furry beast',
     'Yoda': 'a tiny ancient hermit with green skin and a walking stick',
@@ -127,6 +129,9 @@ DEPICT = {
 }
 # Words whose hook the image filter refuses as written: a plainer scene for the picture only (the app shows the hook).
 PICTURE = {
+    '用': 'A tiny old hermit with a walking stick carries a small shopping basket through a village market, ticking one item off a short list.',
+    '緑': 'A small blue fish swimming through a lush forest of bright green seaweed.',
+    '踊り': 'A small blue fish wiggling happily on a tiny underwater stage while seahorses clap.',
     '免許': 'A wise grey-bearded old man in a tweed jacket (the mentor) hands a small, young apprentice geisha in a bright flowered kimono a shiny new driving license; she beams. A small car waits behind them.',
     "合う": "A tiny mouse happily slides its paw into a little shoe that fits perfectly, in a cozy mouse house.",
     "日曜日": "a small old hermit with big ears, a brown robe and a walking stick relaxes in a hammock under a bright sun on a lazy, sunny day off.",

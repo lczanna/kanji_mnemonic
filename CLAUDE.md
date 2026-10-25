@@ -41,7 +41,8 @@ kana words from `data/kana_meanings.json` (checked word by word; null marks toke
 `tools/gen_images.py` draws pictures from the stories. Never print or commit the OpenAI key.
 
 The Claude link holds at most 512 files, so it gets the pictures as packs, not one file per card:
-run `python3 tools/pack_images.py <scratch dir>` and publish `images/packs/*` (built, not committed)
+run `python3 tools/pack_images.py <scratch dir> --keep <published images/packs/index.json>` (read it from the link first)
+and publish the packs that changed (built, not committed): pictures stay in their published packs and new ones go in new packs
 together with `index.html`, `kanji.json`, `vocab.json`, `grammar.json` and `examples.json`. Don't publish `images/n3/`.
 The app tries `images/n3/` first and falls back to the packs, so GitHub Pages needs nothing extra.
 
