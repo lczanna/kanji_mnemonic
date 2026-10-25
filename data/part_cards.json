@@ -791,10 +791,10 @@
   "keyword": "orders",
   "components": [
    "meeting roof",
-   "walking stick"
+   "stamp"
   ],
-  "story": "Under a [meeting roof], the mayor bangs his [walking stick] on the floor and barks out his {orders}.",
-  "picture": "A mayor under a peaked roof banging his walking stick on the floor, shouting commands."
+  "story": "Under a [meeting roof], the mayor slams his official [stamp] down on a decree and barks out his {orders}.",
+  "picture": "A mayor under a peaked meeting-hall roof slamming a big official rubber stamp onto a decree, shouting orders."
  },
  "辛": {
   "keyword": "spicy",
