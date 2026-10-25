@@ -198,6 +198,21 @@ await test('furigana only over kanji you haven\'t studied, in sentences and orde
   yes(/<ruby>両親<rt>りょうしん<\/rt><\/ruby>/.test(r.chunk), 'ordering part without its reading: ' + r.chunk); eq(r.hasRb, true, 'ordering items without readings');
 });
 
+await test('a removed duplicate word (いくら next to 幾ら) moves its progress to the word that stays, from load and from the account', async () => {
+  const local = { version: 3, cards: { 'v:お皿': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3), triaged: true },
+      'v:いくら': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-5), triaged: true },
+      'v:幾ら': { stability: 6, difficulty: 5, reps: 2, lapses: 0, lastReview: daysAgo(2), due: daysAgo(-4) } },
+    stats: {}, settings: {}, history: {}, newByDay: {}, triaged: { 'v:お皿': 'known' } };
+  const p = await page({ cloud: false }, local);
+  const r = await p.evaluate(() => {
+    const a = { plate: !!appData.cards['v:皿'], plateOld: !!appData.cards['v:お皿'], ikura: appData.cards['v:幾ら'].reps, kana: !!appData.cards['v:いくら'], tri: appData.triaged['v:皿'] };
+    mergeRemote({ cards: { 'v:お弁当': { stability: 10, difficulty: 3, reps: 1, lastReview: today(), due: today(), triaged: true } }, meta: null }); moveKeys(appData);
+    return Object.assign(a, { bento: !!appData.cards['v:弁当'], bentoOld: !!appData.cards['v:お弁当'], gone: ['いただく', 'いくら', 'お皿', 'お菓子', 'お弁当'].filter(w => BY_WORD[w]) });
+  });
+  eq(r.plate, true, 'お皿 progress on 皿'); eq(r.plateOld, false, 'old key left'); eq(r.ikura, 2, '幾ら keeps its own card'); eq(r.kana, false, 'いくら key left');
+  eq(r.tri, 'known', 'sort answer moved'); eq(r.bento, true, 'pulled お弁当 moved to 弁当'); eq(r.bentoOld, false, 'pulled old key left'); eq(r.gone.length, 0, 'duplicates still in the deck: ' + r.gone);
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);

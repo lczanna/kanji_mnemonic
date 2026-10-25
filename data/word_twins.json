@@ -190,5 +190,37 @@
  "初めて": {
   "other": "始める",
   "note": "はじめて: 初 = clothes 衤 + knife 刀, the first cut → for the first time. はじめる (verb): 始 → to begin something."
+ },
+ "泣く": {
+  "other": "鳴く",
+  "note": "Same sound なく. 泣く has 氵 (water: tears) → a person cries. 鳴く has 鳥 (bird) / 口 → an animal cries, a bird sings."
+ },
+ "鳴く": {
+  "other": "泣く",
+  "note": "Same sound なく. 鳴く has 口 + 鳥 (bird) → an animal's cry, birdsong. 泣く has 氵 (tears) → a person cries."
+ },
+ "暑い": {
+  "other": "熱い",
+  "note": "Same sound あつい. 暑い has 日 (sun) → hot weather. 熱い has 灬 (fire) → hot to the touch (tea, a stove)."
+ },
+ "熱い": {
+  "other": "暑い",
+  "note": "Same sound あつい. 熱い has 灬 (fire) → hot to the touch. 暑い has 日 (sun) → hot weather."
+ },
+ "撮る": {
+  "other": "取る",
+  "note": "Same sound とる. 撮る → take a photo or film only. 取る → take in general (pick up, get, take away)."
+ },
+ "取る": {
+  "other": "撮る",
+  "note": "Same sound とる. 取る → take in general. For photos it's 撮る (写真を撮る)."
+ },
+ "沸く": {
+  "other": "湧く",
+  "note": "Same sound わく. 沸く has 氵 + 弗 → water boils (お湯が沸く). 湧く → springs up, wells up (water from the ground, feelings)."
+ },
+ "湧く": {
+  "other": "沸く",
+  "note": "Same sound わく. 湧く → wells up (a spring, courage). 沸く → water boils (お湯が沸く)."
  }
 }

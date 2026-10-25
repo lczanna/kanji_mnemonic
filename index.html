@@ -446,6 +446,7 @@ function loadData() {
   d.stats = Object.assign(base.stats, d.stats || {});
   // The old default of 25 words a day becomes the time-based plan, unless it was set by hand.
   if (!d.settingsAt && d.settings.vocabPerDay === '25') d.settings.vocabPerDay = 'auto';
+  moveKeys(d);
   earlyKnownChecks(d);
   easyFirstChecks(d);
   d.version = 3;
@@ -568,6 +569,7 @@ async function pullRemote() {
   if (planDayUnsynced) { const m = remote.meta && remote.meta.planDay; appData.planDay = m && m.date === today() ? Object.assign({}, m) : null; planDayUnsynced = false; }
   mergeRemote(remote);
   SYNC.pulled = true;
+  moveKeys(appData);
   earlyKnownChecks(appData);
   easyFirstChecks(appData);
   planCache = null;
@@ -735,6 +737,19 @@ function easyFirstChecks(d) {
     c.stability = FSRS.initS(3); c.difficulty = FSRS.initD(3);
     const by = addDays(c.lastReview, 2);
     if (!c.due || c.due > by) c.due = by;
+  }
+}
+// Cards whose word was removed as a duplicate of another deck word (いくら added next to 幾ら): the progress moves to
+// the word that stays, unless that one already has its own card, which then wins. Runs on load and after each pull,
+// so a copy from another device or the account is moved the same way.
+// (The list is inside the function: loadData runs before the rest of the script has been read.)
+function moveKeys(d) {
+  const KEY_MOVES = { 'v:いただく': 'v:頂く', 'v:いくら': 'v:幾ら', 'v:お金持ち': 'v:金持ち', 'v:堅': 'v:堅い', 'v:お皿': 'v:皿', 'v:お祭り': 'v:祭', 'v:お祝い': 'v:祝い',
+    'v:お菓子': 'v:菓子', 'v:お弁当': 'v:弁当' };
+  for (const [from, to] of Object.entries(KEY_MOVES)) {
+    if (d.cards[from] && !d.cards[to]) d.cards[to] = d.cards[from];
+    delete d.cards[from];
+    if (d.triaged[from] && !d.triaged[to]) d.triaged[to] = d.triaged[from];
   }
 }
 function earlyKnownChecks(d) {

@@ -20,6 +20,16 @@ KANJI = re.compile(r'[一-鿿々]')
 KATA = re.compile(r'^[ァ-ヺー・]+$')
 
 
+STOP = {'the', 'and', 'for', 'with', 'from', 'that', 'thing', 'things'}
+# Duplicates found by hand (another form of a deck word); tools/regression checks keep their progress moved.
+SKIP = {'いただく', 'いくら', 'お金持ち', '堅', 'お皿', 'お祭り', 'お祝い', 'お菓子', 'お弁当'}
+
+
+def stems(m):
+    """Word stems of an English meaning (box lunch ~ a boxed lunch), to tell another form of a word from a homophone."""
+    return {x[:4] for x in re.findall(r'[a-z]+', re.sub(r'\(.*?\)|--.*?--', '', m.lower())) if len(x) > 2 and x not in STOP}
+
+
 def main():
     src, examples, jmdict, level = sys.argv[1:5]
     count = collections.Counter()
@@ -29,7 +39,7 @@ def main():
                 m = HEAD.match(tok)
                 if m:
                     count[m.group(1)] += 1
-    common, kanji_of, entry_of = set(), collections.defaultdict(set), collections.defaultdict(set)
+    common, kanji_of, entry_of, rebs_of = set(), collections.defaultdict(set), collections.defaultdict(set), collections.defaultdict(set)
     for n, e in enumerate(re.finditer(r'<entry>(.*?)</entry>', gzip.open(jmdict).read().decode(), re.S)):
         e = e.group(1)
         kebs, rebs = re.findall(r'<keb>([^<]+)<', e), re.findall(r'<reb>([^<]+)<', e)
@@ -37,6 +47,8 @@ def main():
             common.update(kebs + rebs)
         for r in rebs:
             kanji_of[r].update(kebs)
+        for k in kebs:
+            rebs_of[k].update(rebs)
         for x in kebs + (rebs if not kebs else []):
             entry_of[x].add(n)
 
@@ -59,11 +71,19 @@ def main():
         w, r = row['expression'].split(';')[0].strip(), row['reading'].split(';')[0].strip()
         if r.endswith('する') and not w.endswith('する'):   # 入学 is listed as にゅうがくする
             r = r[:-2]
+        if KANJI.search(r) and not KANJI.search(w):   # columns swapped (いただく listed with reading 頂く)
+            w, r = w, w
         if '～' in w or '〜' in w or KATA.match(w) or w in have or not (entry_of.get(w) or entry_of.get(r)):
             continue
         if entry_of.get(w, set()) & have_entries:   # another spelling of a deck word
             continue
         meaning = ', '.join(s.strip() for s in row['meaning'].split(',')[:3])
+        # Also the same word in another form: polite お (お皿 / 皿), kana for a kanji word (いくら / 幾ら), a cut-off
+        # adjective (堅 / 堅い).
+        same = lambda v: bool(stems(meaning) & stems(v['m']))   # the same word, not a homophone (うん yes / 運 luck)
+        if w in SKIP or any(same(v) for v in vocab if (w.startswith('お') and v['w'] in (w[1:], re.sub(r'[ぁ-ゖ]+$', '', w[1:])))
+                            or (v['w'] == w + 'い' and v['r'] == r) or (not KANJI.search(w) and v['r'] == w and w in rebs_of.get(v['w'], ()))):
+            continue
         ks = [c for c in dict.fromkeys(w) if c in deck]
         f = 'kana' if not KANJI.search(w) else 'kanji' if all(c in deck for c in w if KANJI.match(c)) else 'mixed'
         v = {'w': w, 'r': r, 'm': meaning, 'k': ks, 'f': f, 'd': [], 'id': f'v{next_id}', 'src': level.lower()}
