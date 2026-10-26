@@ -307,6 +307,7 @@ input[type="number"], input[type="date"] { border: 1px solid var(--line); backgr
 .lk-item { display: grid; gap: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
 .lk-item:first-of-type { border-top: 0; }
 .lk-item.me .lk-say { color: var(--ink); }
+.lk-mix { justify-self: start; font-size: 12px; padding: 2px 10px; margin-top: 4px; }
 .lk-line { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; }
 .lk-say { font-size: 14px; line-height: 1.5; color: var(--muted); display: grid; gap: 2px; }
 .lk-label { justify-self: start; font-size: 12px; font-weight: 700; color: #fff; background: var(--again); border-radius: 999px; padding: 1px 8px; }
@@ -1379,6 +1380,8 @@ const PART_TWINS = {
   '羊': ['关', 'horned heavens (in 送, 関)', 'both wear horns on top. Then look down the middle: sheep 羊 has THREE bars with the walking stick running straight down through them to the ground (洋, 着, 差); horned heavens 关 has TWO bars and then splits into two spread legs, the heavens 天 under the horns (送, 関). 美 beauty is the sheep\'s top (three bars, stick cut short) on big 大\'s legs'],
   '关': ['羊', 'sheep', 'both wear horns on top. Then look down the middle: horned heavens 关 has TWO bars and then splits into two spread legs, the heavens 天 under the horns (送, 関); sheep 羊 has THREE bars with the walking stick running straight down through them (洋, 着, 差). 美 beauty is the sheep\'s top on big 大\'s legs'],
   '美': ['羊・关', 'sheep · horned heavens', 'beauty 美 is the sheep\'s top (horns and THREE bars, the stick cut short) standing on big 大\'s spread legs; sheep 羊 runs its stick straight to the ground; horned heavens 关 has only TWO bars before the legs (送, 関)'],
+  '以': ['代', 'substitute', 'first question: does it start with the person radical 亻 on the left? by means of 以 does NOT: a hooked stick with a drop on the left, and the person stands on the RIGHT (人), as in 以上, 以外, 以内; substitute 代 starts with 亻 and has an arrow 弋 (a stake with a dot at its top right) on the right, as in 時代, 代わり'],
+  '代': ['以', 'by means of (以上)', 'first question: does it start with the person radical 亻 on the left? substitute 代 does, then an arrow 弋 (a stake with a dot at its top right), as in 時代, 代わり; by means of 以 does NOT: a hooked stick with a drop on the left and the person on the RIGHT, as in 以上, 以外'],
   '易': ['昜', 'piggy bank (inside 場, 陽, 湯)', 'easy 易 has the sun straight on the pennant; the piggy bank 昜 has one more line under the sun (旦, dawn)'],
 };
 function twinHtml(g) {
@@ -1975,13 +1978,16 @@ function strokeSvg(g, ch) {
 }
 // With hand-written mnemonics (g.mn): per kanji its feature picture, the drawing with that feature coloured and
 // labelled, and a hook; the group's contrast line on top. Otherwise the older layout below.
+// "I mix these up": makes the pair a "which one?" card from tomorrow, for mix-ups no quiz caught (recalling a kanji).
+const mixBtn = (me, c) => BY_KANJI[me] && BY_KANJI[c] && c !== me && started(me) && started(c)
+  ? (appData.cards['p:' + pairKey(me, c)] ? '<small class="muted">Pair card ✓</small>' : `<button class="chip lk-mix" data-mix="${esc(pairKey(me, c))}">I mix these up</button>`) : '';
 function lookGroupHtml(g, me, big) {
   if (g.mn) return lookMnHtml(g, me, big);
   const img = g.img ? `<img class="card-img small" src="${esc(g.img)}" data-kanji="${esc('l:' + g.id)}" alt="Picture of the look-alikes" loading="lazy" onerror="imgFallback(this)">` : '';
   return `<div class="lk-group${big ? ' big' : ''}">
     <div class="lk-row">${g.kanji.map(c => { const k = lookCard(c);
       return `<button class="lk-k${c === me ? ' me' : ''}" data-open-k="${esc(c)}">${strokeSvg(g, c)}<span class="kw">${esc(k ? k.keyword : '')}</span>${started(c) ? '' : '<small>not learned yet</small>'}</button>`; }).join('')}</div>
-    <div class="lk-tips">${g.kanji.map(c => `<div class="${c === me ? 'me' : ''}"><b lang="ja">${esc(c)}</b>${esc((g.tips || {})[c] || '')}</div>`).join('')}</div>
+    <div class="lk-tips">${g.kanji.map(c => `<div class="${c === me ? 'me' : ''}"><b lang="ja">${esc(c)}</b>${esc((g.tips || {})[c] || '')} ${mixBtn(me, c)}</div>`).join('')}</div>
     ${img}</div>`;
 }
 function lookMnHtml(g, me, big) {
@@ -1994,7 +2000,7 @@ function lookMnHtml(g, me, big) {
         : m.img ? `<img class="card-img" src="${esc(m.img)}" data-kanji="${esc(`l:${g.id}:${c}`)}" alt="" loading="lazy" onerror="imgFallback(this)">` : '';
       return `<div class="lk-item${c === me ? ' me' : ''}">${pic}${big && k && k.story ? `<div class="story lk-story" data-in="${esc(c)}">${storyHtml(k.story)}</div>` : ''}
         <div class="lk-line"><button class="lk-k${c === me ? ' me' : ''}" data-open-k="${esc(c)}">${strokeSvg(g, c)}<span class="kw">${esc(k ? k.keyword : '')}</span>${started(c) ? '' : '<small>not learned yet</small>'}</button>
-          <div class="lk-say">${m.label ? `<span class="lk-label">${big ? 'Tell it apart · ' : ''}${esc(m.label)}</span>` : ''}<div>${esc(m.hook || (g.tips || {})[c] || '')}</div></div></div>
+          <div class="lk-say">${m.label ? `<span class="lk-label">${big ? 'Tell it apart · ' : ''}${esc(m.label)}</span>` : ''}<div>${esc(m.hook || (g.tips || {})[c] || '')}</div>${mixBtn(me, c)}</div></div>
       </div>`; }).join('')}
   </div>`;
 }
@@ -2027,9 +2033,10 @@ function whichItem(x, extra) {
 // Mix-ups: pair "a|b" -> { due, ok, n }: due the next day until answered right twice; n counts the mix-ups.
 // The second mix-up of a pair makes it a card (key "p:a|b"), and the card takes over from the drill.
 const pairKey = (a, b) => [a, b].sort().join('|');
-function noteConfusion(a, b) {
+function noteConfusion(a, b, n) {
   if (!a || !b || a === b) return;
-  const key = pairKey(a, b), n = ((appData.confusions[key] || {}).n || 0) + 1;
+  const key = pairKey(a, b);
+  n = Math.max(n || 0, ((appData.confusions[key] || {}).n || 0) + 1);
   appData.confusions[key] = { due: addDays(today(), 1), ok: 0, n };
   if (n >= 2 && !appData.cards['p:' + key]) {
     const t = today();
@@ -3267,6 +3274,7 @@ document.addEventListener('click', e => {
   if (t.dataset.gl) { e.stopPropagation(); return showGloss(t); }
   if (t.dataset.kt && t.closest('.sheet, #modal, #gl-pop')) { e.stopPropagation(); return showKanjiPop(t); }
   if (t.dataset.part) { e.stopPropagation(); return showPart(t); }
+  if (t.dataset.mix) { const [a, b] = t.dataset.mix.split('|'); noteConfusion(a, b, 2); saveData(); t.outerHTML = '<small class="muted">Pair card ✓ · from tomorrow</small>'; return; }
   if (t.dataset.openK) { $('gl-pop').hidden = true; return showDetail(t.dataset.openK); }
   if (t.dataset.hist !== undefined) return showHistory(+t.dataset.hist);
   if (t.id === 's-prev') return showHistory((session.history || []).length - 1);

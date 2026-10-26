@@ -219,6 +219,20 @@ await test('a word a text spells in kana shows in kanji once you\'ve studied it,
   yes(r.swaps > 20, 'few words swapped: ' + r.swaps); eq(r.bad.length, 0, 'odd swaps: ' + r.bad);
 });
 
+await test('"I mix these up" on a look-alike makes a pair card and leaves both kanji cards untouched', async () => {
+  const p = await page({ cloud: false });
+  await p.waitForFunction(() => LOOK.length && groupsOf('以').length);
+  const r = await p.evaluate(() => {
+    for (const c of ['以', '代']) appData.cards[c] = { stability: 9, difficulty: 5, reps: 4, lapses: 0, lastReview: today(), due: '2099-01-01' };
+    const before = JSON.stringify([appData.cards['以'], appData.cards['代']]);
+    document.body.insertAdjacentHTML('beforeend', `<div id="t-lk">${lookPanelHtml(BY_KANJI['以'])}</div>`);
+    const b = document.querySelector('#t-lk [data-mix="代|以"]');
+    if (b) b.click();
+    return { btn: !!b, card: !!appData.cards['p:代|以'], same: JSON.stringify([appData.cards['以'], appData.cards['代']]) === before, again: !document.querySelector('#t-lk [data-mix="代|以"]') };
+  });
+  eq(r.btn, true, 'button shown'); eq(r.card, true, 'pair card made'); eq(r.same, true, 'kanji cards changed'); eq(r.again, true, 'button still there');
+});
+
 await test('a removed duplicate word (いくら next to 幾ら) moves its progress to the word that stays, from load and from the account', async () => {
   const local = { version: 3, cards: { 'v:お皿': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3), triaged: true },
       'v:いくら': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-5), triaged: true },
