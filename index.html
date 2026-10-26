@@ -1257,14 +1257,31 @@ function furiHtml(w, r) {
   let g = 0;
   return parts.map(p => kan(p) ? (g++, hasUnknownKanji(p) ? rubyHtml(p, m[g]) : esc(p)) : esc(p)).join('');
 }
-function glossHtml(text) {
+// A word a text spells in kana (かいだん) is shown in kanji (階段) once you've studied its word card or all its kanji,
+// as the exam prints it. Only when the gloss names that word, so a homophone (きく) is never swapped.
+const KANA_STAY = new Set(['幾ら', 'お喋り', '更に', '椅子', '繋ぐ']);   // the exam spells these in kana
+function kanaToKanji(w, lemma, m) {
+  if (/[㐀-鿿々ァ-ヶ]/.test(w)) return w;
+  const named = (m || '').match(/\(([^()]*[㐀-鿿][^()]*)\)\s*$/), v = BY_WORD[named ? named[1] : lemma];
+  if (!v || KANA_STAY.has(v.w) || !/[㐀-鿿]/.test(v.w) || v.w === lemma && !named && (BY_READING[v.r] || []).length > 1) return w;
+  if (!appData.cards['v:' + v.w] && hasUnknownKanji(v.w)) return w;
+  const ok = v.w.match(/[ぁ-ゖ]*$/)[0], r = kata2hira(v.r);
+  if (!r.endsWith(ok)) return w;
+  const stemR = r.slice(0, r.length - ok.length), stemK = v.w.slice(0, v.w.length - ok.length);
+  return stemR && w.startsWith(stemR) && (w === r || ok) ? stemK + w.slice(stemR.length) : w;
+}
+// kanji: swap kana words you've studied (reading passages only; never in a question that asks for the kanji).
+function glossHtml(text, kanji) {
   const words = GL[text];
   if (!words || !words.length) return esc(text);
+  wordLink('');
   let html = '', pos = 0;
-  for (const [start, len, r, lemma, lr, m] of words) {
+  for (let [start, len, r, lemma, lr, m] of words) {
     if (start < pos) continue;
     html += esc(text.slice(pos, start));
-    const w = text.slice(start, start + len);
+    let w = text.slice(start, start + len);
+    const k = kanji ? kanaToKanji(w, lemma, m) : w;
+    if (k !== w) { r = w; w = k; }
     html += `<button class="gl" data-gl="${esc(JSON.stringify([w, r, lemma, lr, m]))}">${furiHtml(w, r)}</button>`;
     pos = start + len;
   }
@@ -2158,8 +2175,8 @@ function examScreen(it, tags) {
     return { inner: { front }, bar: done ? examBar(it) : pickHint('The exam plays it once; here you can replay with ▶') };
   }
   tags.push(`<span class="tag" lang="ja">読解 · ${x.kind === 'info' ? '情報検索 FIND THE INFO' : x.kind === 'medium' ? '中文 PASSAGE' : '短文 SHORT TEXT'}</span>`);
-  const front = `<div class="passage" lang="ja">${x.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div>
-    ${x.questions.map((q, qi) => `<div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q)}</div>${optBtns(qi, q.options, false)}
+  const front = `<div class="passage" lang="ja">${x.text.split('\n').map(l => `<p>${glossHtml(l, true) || '&nbsp;'}</p>`).join('')}</div>
+    ${x.questions.map((q, qi) => `<div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q, true)}</div>${optBtns(qi, q.options, false)}
       ${it.answers[qi] != null ? `<div class="why">${esc(q.why || '')}</div>${optNotesHtml(q, it.answers[qi])}` : ''}`).join('')}
     ${done ? `<details><summary>English translation</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details>` : ''}`;
   return { inner: { front }, bar: done ? examBar(it) : pickHint('Tap any word for its reading and meaning') };
@@ -2312,9 +2329,9 @@ function buildMock(m) {
     const runsOf = Object.fromEntries(o.chunks.map((c, i) => [c, (rb.chunks || [])[i]]));
     add('gr', 'lk', '文の組み立て · ★ which part', `<div class="g-q order" lang="ja"><span>${rubyRuns(o.before, rb.before)}</span>${slots}<span>${rubyRuns(o.after, rb.after)}</span></div>`, opts, a, `${o.before}${o.chunks.join('')}${o.after} · ${o.why || ''}`, { optRuns: opts.map(c => runsOf[c]) }); }
   const tg = m.gram.textgram;
-  if (tg) tg.blanks.forEach((b, i) => add('gr', 'lk', '文章の文法 · grammar in a text', `<div class="passage" lang="ja">${tg.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div><div class="prompt">Which fits blank （${i + 1}）?</div>`, b.options, b.answer, b.why, { notes: b }));
+  if (tg) tg.blanks.forEach((b, i) => add('gr', 'lk', '文章の文法 · grammar in a text', `<div class="passage" lang="ja">${tg.text.split('\n').map(l => `<p>${glossHtml(l, true) || '&nbsp;'}</p>`).join('')}</div><div class="prompt">Which fits blank （${i + 1}）?</div>`, b.options, b.answer, b.why, { notes: b }));
   for (const p of m.read) p.questions.forEach(q => add('gr', 'rd', `読解 · ${p.kind === 'info' ? 'find the information' : p.kind === 'long' ? 'long passage' : p.kind === 'medium' ? 'passage' : 'short text'}`,
-    `<div class="passage" lang="ja">${p.text.split('\n').map(l => `<p>${glossHtml(l) || '&nbsp;'}</p>`).join('')}</div><div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q)}</div>`, q.options, q.answer, q.why, { notes: q }));
+    `<div class="passage" lang="ja">${p.text.split('\n').map(l => `<p>${glossHtml(l, true) || '&nbsp;'}</p>`).join('')}</div><div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q, true)}</div>`, q.options, q.answer, q.why, { notes: q }));
   for (const id of m.listen) { const x = examById(id) || mockListenById(id); if (!x) continue;
     if (id.startsWith('dl')) add('listen', 'ls', '聴解 · 会話', `<div class="prompt" lang="ja">${glossHtml(x.question)}</div>`, x.options, x.answer, x.why, { play: id, notes: x });
     else if (id.startsWith('mg')) add('listen', 'ls', '聴解 · 概要理解 (the question and options are spoken)', '', x.options.map(() => ''), x.answer, x.why, { play: id, notes: x });

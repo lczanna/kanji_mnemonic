@@ -198,6 +198,27 @@ await test('furigana only over kanji you haven\'t studied, in sentences and orde
   yes(/<ruby>両親<rt>りょうしん<\/rt><\/ruby>/.test(r.chunk), 'ordering part without its reading: ' + r.chunk); eq(r.hasRb, true, 'ordering items without readings');
 });
 
+await test('a word a text spells in kana shows in kanji once you\'ve studied it, never a homophone', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    const t = Object.keys(GL).find(s => s.includes('かいだんを使ってください'));
+    const before = glossHtml(t, true), plain = glossHtml(t);
+    appData.cards['v:階段'] = { stability: 5, difficulty: 5, reps: 2, lapses: 0, lastReview: today(), due: '2099-01-01' };
+    const after = glossHtml(t, true), after2 = glossHtml(t);
+    let swaps = 0, bad = [];
+    for (const [s, ws] of Object.entries(GL)) for (const [st, len, , lemma, , m] of ws) {
+      const w = s.slice(st, st + len), v = BY_WORD[(m || '').match(/\(([^()]*)\)\s*$/)?.[1] || lemma];
+      if (!v) continue;
+      appData.cards['v:' + v.w] = appData.cards['v:' + v.w] || { reps: 1 };
+      const k = kanaToKanji(w, lemma, m);
+      if (k !== w) { swaps++; if (kata2hira(v.r).slice(0, 1) !== w.slice(0, 1) || k.length > w.length) bad.push(w + '→' + k); }
+    }
+    return { plain: after2 === plain, before: !/>かいだん<\/button>/.test(before), after: /<ruby>階段<rt>かいだん<\/rt><\/ruby>/.test(after), swaps, bad: bad.slice(0, 10) };
+  });
+  eq(r.before, false, 'kana until studied'); eq(r.plain, true, 'swapped outside reading passages'); eq(r.after, true, '階段 with furigana over the kanji not studied');
+  yes(r.swaps > 20, 'few words swapped: ' + r.swaps); eq(r.bad.length, 0, 'odd swaps: ' + r.bad);
+});
+
 await test('a removed duplicate word (いくら next to 幾ら) moves its progress to the word that stays, from load and from the account', async () => {
   const local = { version: 3, cards: { 'v:お皿': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3), triaged: true },
       'v:いくら': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-5), triaged: true },
