@@ -248,14 +248,15 @@
   "contrast": "Not まま (MAMA: state unchanged, neutral) — っぱなし is the BANANA peel left out: should have been dealt with."
  },
  "kiru-kirenai": {
-  "hook": "〜きる／きれない: eat until you KEEL (きる) over — the whole pizza gone: 'do completely'; きれない: a mountain of pizza you can't finish before you keel: 'can't do it all'.",
-  "picture": "A person happily keeling over backwards next to an empty pizza box, a second huge untouched stack beside them.",
-  "contrast": "Opposite of かける (CAKE half-eaten: started, not finished) — きる is KEEL over: all the way."
+  "hook": "〜きる／きれない: it's 切る, CUT (the kanji you know). Cut all the way through to the end: 食べきる, the knife goes through the whole pizza and every slice is eaten: 'do completely'. きれない: the knife jams halfway into a giant pizza; you can't get through it all: 'can't do it all'.",
+  "picture": "Two pizzas side by side: on the left a knife has cut cleanly all the way through and the plate is empty except crumbs; on the right a knife is stuck halfway into an enormous, towering pizza.",
+  "contrast": "Opposite of かける (the CAKE with one slice eaten: started, not finished): きる is 切る, cut all the way through.",
+  "_rev": "2026-10-26r"
  },
  "kakeru-kakeno": {
   "hook": "〜かける／かけの: a CAKE (かけ) with one slice eaten, left on the table: 'half-done / start to (but not finish)'.",
   "picture": "A round cake on a table with one slice missing and a fork resting beside it.",
-  "contrast": "Opposite of きる (KEEL over: done completely) — かける is the half-eaten CAKE."
+  "contrast": "Opposite of きる (切る: cut all the way through, done completely): かける is the half-eaten CAKE."
  },
  "darake": {
   "hook": "〜だらけ: the garden DIRT RAKE (だらけ) is caked with mud all over: 'full of / covered with (something unpleasant)'.",
