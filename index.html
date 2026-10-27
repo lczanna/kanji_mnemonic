@@ -1134,18 +1134,38 @@ function trapEdits(r) {
   }
   return out;
 }
-function readingTraps(r) {
+// Wrong readings for 漢字読み. With the word (w), a trap only changes the reading of its kanji: the kana you can see
+// (代わり: わり) stay as written, or the right answer would stand out. When small edits (long vowel, small っ, ゛) run
+// out, a kanji's other reading fills in (代わり → だいわり), as the exam does.
+function readingTraps(r, w) {
   if ([...r].length < 2) return null;
-  const ok = x => x && x !== r && x[0] !== 'っ' && [...x].length >= 2;
+  const kan = c => /[\u3400-\u9fff々]/.test(c);
+  const skel = w && /[ぁ-んァ-ヶ]/.test(w) && [...w].some(kan)
+    ? new RegExp('^' + w.split(/([\u3400-\u9fff々]+)/).filter(Boolean).map(p => kan(p[0]) ? '.+' : kata2hira(p).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('') + '$') : null;
+  const ok = x => x && x !== r && x[0] !== 'っ' && [...x].length >= 2 && (!skel || skel.test(x));
   const pools = Object.values(trapEdits(r)).map(p => [...new Set(p)]
     .filter(ok).sort(() => Math.random() - .5));
   const pick = [];
   for (let round = 0; pick.length < 3 && round < 8; round++)
     for (const p of pools) { const x = p[round]; if (x && !pick.includes(x) && pick.length < 3) pick.push(x); }
+  if (pick.length < 3 && w) for (const x of shuffle(otherReadings(r, w))) if (pick.length < 3 && ok(x) && !pick.includes(x)) pick.push(x);
   // Short readings: combine two edits (しぜん → じせん).
   if (pick.length < 3) for (const a of [...pick]) for (const p of Object.values(trapEdits(a))) for (const x of p)
     if (pick.length < 3 && ok(x) && !pick.includes(x)) pick.push(x);
   return pick.length === 3 ? pick : null;
+}
+// The word read with one kanji swapped for another of its readings (on'yomi, or the kun stem before the dot).
+function otherReadings(r, w) {
+  const v = BY_WORD[w], kr = (v && v.kr) || {}, segs = [...w].map(c => isKanji(c) && c !== '々' ? [c, kata2hira(kr[c] || '')] : [null, kata2hira(c)]);
+  if (segs.some(([c, x]) => c && !x) || segs.map(s => s[1]).join('') !== kata2hira(r)) return [];
+  const out = [];
+  segs.forEach(([c, x], i) => {
+    const k = c && BY_KANJI[c];
+    if (!k) return;
+    const alts = [...(k.on || []).map(kata2hira), ...(k.kun || []).map(y => y.replace(/^-|-$/g, '').split('.')[0])];
+    for (const a of new Set(alts)) if (a && a !== x) out.push(segs.map((s, j) => j === i ? a : s[1]).join(''));
+  });
+  return out;
 }
 
 function daysToExam() { return daysBetween(today(), appData.settings.examDate); }
@@ -2326,7 +2346,7 @@ const mockListenById = id => (EXAM.mock_listen || []).find(x => x.id === id);
 function buildMock(m) {
   const Q = [], add = (sec, score, part, prompt, opts, answer, why, extra) => Q.push(Object.assign({ type: 'mock', sec, score, part, prompt, opts, answer, why: why || '' }, extra || {}));
   const shuf = (opts, answer) => { const o = opts.map((t, i) => [t, i === answer]); shuffle(o); return [o.map(x => x[0]), o.findIndex(x => x[1])]; };
-  for (const w of m.vocab.read) { const v = BY_WORD[w]; const traps = v && readingTraps(v.r); if (!traps) continue;
+  for (const w of m.vocab.read) { const v = BY_WORD[w]; const traps = v && readingTraps(v.r, v.w); if (!traps) continue;
     const [o, a] = shuf([v.r, ...traps], 0); add('vocab', 'lk', '漢字読み · reading', `<div class="word-front" lang="ja">${esc(v.w)}</div><div class="prompt">How is this read?</div>`, o, a, `${v.w} = ${v.r}: ${v.m}`); }
   for (const w of m.vocab.spell) { const v = BY_WORD[w]; if (!v || !(v.d || []).length) continue;
     const [o, a] = shuf([v.w, ...v.d], 0); add('vocab', 'lk', '表記 · spelling', `<div class="word-front kana" lang="ja">${esc(v.r)}</div><div class="prompt">${esc(v.m)}: which spelling?</div>`, o, a, `${v.r} is written ${v.w}`); }
@@ -2439,7 +2459,7 @@ function quizItem(type, x) {
     const words = (x.vocab || []).filter(v => v.w.length > 1 && [...v.w].every(ch => !isKanji(ch) || ch === '々' || ch === x.kanji || appData.cards[ch]));
     const useWord = reps >= 2 && words.length && reps % 2 === 0;
     const word = useWord ? words[reps % words.length] : null;
-    const traps = word ? readingTraps(word.r) : null;
+    const traps = word ? readingTraps(word.r, word.w) : null;
     return { type, x, mode: 'quiz', word, task: traps ? 'readmc' : null, opts: traps ? shuffle([word.r, ...traps]) : null, answerText: word ? word.r : null };
   }
   if (type === 'vocab') {
@@ -2460,7 +2480,7 @@ function quizItem(type, x) {
       if (pick) return { type, x, mode: 'quiz', task: kind, q: pick.q, opts: pick.q.options, answerText: pick.q.options[pick.q.answer] };
     }
     if (vform(x) !== 'kanji') return { type, x, mode: 'quiz', task: 'meaning' };
-    const traps = readingTraps(x.r);
+    const traps = readingTraps(x.r, x.w);
     const cycle = reps % 3;
     if (cycle === 1 && x.d && x.d.length === 3) return { type, x, mode: 'quiz', task: 'spell', opts: shuffle([x.w, ...x.d]), answerText: x.w };
     if (cycle !== 2 && traps) return { type, x, mode: 'quiz', task: 'readmc', opts: shuffle([x.r, ...traps]), answerText: x.r };

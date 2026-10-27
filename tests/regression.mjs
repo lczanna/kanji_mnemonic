@@ -233,6 +233,22 @@ await test('"I mix these up" on a look-alike makes a pair card and leaves both k
   eq(r.btn, true, 'button shown'); eq(r.card, true, 'pair card made'); eq(r.same, true, 'kanji cards changed'); eq(r.again, true, 'button still there');
 });
 
+await test('reading traps keep the kana you can see (代わり: only the 代 part changes)', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    const mixed = VOCAB.filter(v => vform(v) === 'kanji' && /[ぁ-ん]/.test(v.w) && /[一-鿿]/.test(v.w));
+    let withQ = 0; const bad = [];
+    for (const v of mixed) {
+      const t = readingTraps(v.r, v.w); if (!t) continue; withQ++;
+      const tail = v.w.match(/[ぁ-ん]+$/), head = v.w.match(/^[ぁ-ん]+/);
+      for (const x of t) if ((tail && !x.endsWith(tail[0])) || (head && !x.startsWith(head[0]))) bad.push(v.w + ':' + x);
+    }
+    return { n: mixed.length, withQ, bad: bad.slice(0, 8), kawari: readingTraps('かわり', '代わり') };
+  });
+  eq(r.bad.length, 0, 'traps change visible kana: ' + r.bad); yes(r.withQ > r.n * 0.7, `only ${r.withQ}/${r.n} words get the question`);
+  yes(r.kawari && r.kawari.every(x => x.endsWith('わり')), '代わり traps: ' + r.kawari);
+});
+
 await test('a removed duplicate word (いくら next to 幾ら) moves its progress to the word that stays, from load and from the account', async () => {
   const local = { version: 3, cards: { 'v:お皿': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3), triaged: true },
       'v:いくら': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-5), triaged: true },
