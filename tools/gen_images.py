@@ -129,6 +129,10 @@ DEPICT = {
 }
 # Words whose hook the image filter refuses as written: a plainer scene for the picture only (the app shows the hook).
 PICTURE = {
+    '断つ': 'A cheerful tattoo artist in a studio snips a long red thread in two with big scissors.',
+    '冷やす': 'A smiling man hands a woman named Sue a frosty glass of lemonade full of ice cubes on a hot day.',
+    '寄せる': 'A friendly street vendor waves passers-by closer to his fruit stall, people gathering around it.',
+    '交ぜる': 'A hedge maze seen from above where many winding paths cross and mingle together.',
     '与える': 'A queen on a throne hands a small golden squirrel-tail ornament to a delighted squirrel, giving it as a gift.',
     '転ぶ': 'A cartoon cowboy tumbling head over heels into a wooden corral after slipping on a banana peel, his hat flying off.',
     '用': 'A tiny old hermit with a walking stick carries a small shopping basket through a village market, ticking one item off a short list.',
