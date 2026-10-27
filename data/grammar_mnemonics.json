@@ -1,0 +1,610 @@
+{
+ "youni-purpose": {
+  "hook": "〜ように: a kid ties a YO-YO (よう) string round a KNEE (に) so that she won't forget her keys: 'so that / in order that' (for things you can't just will, like 忘れない or できる).",
+  "picture": "A girl tying a bright yo-yo string around her knee as a reminder, house keys dangling from the string.",
+  "contrast": "Not ために (TAME lion: in order to, with a deliberate action) — ように is the YO-YO on the knee: so that something (can / won't) happen."
+ },
+ "youni-naru": {
+  "hook": "〜ようになる: day by day a NARWHAL (なる) learns to spin a YO-YO (よう) on its tusk — at last it can: 'come to (be able to) do', a gradual change that just happens.",
+  "picture": "A narwhal in the sea spinning a yo-yo on its long tusk, earlier clumsy attempts shown as faint splashes behind it.",
+  "contrast": "Not ようにする (the SURFER who practises every day: my own effort) — ようになる is the NARWHAL: it gradually comes to be so, by itself. Same as る/す verbs: なる happens, する is done."
+ },
+ "youni-suru": {
+  "hook": "〜ようにする: a SURFER (する) practises the YO-YO (よう) on his board every single morning — he makes sure he does it: 'make an effort to / make a habit of'. His own effort, unlike the narwhal (ようになる), who just comes to be able.",
+  "picture": "A surfer standing on a surfboard at sunrise doing yo-yo tricks, a waterproof calendar stuck to the board covered in tick marks.",
+  "contrast": "Not ようになる (the NARWHAL: it gradually comes to be so, by itself) — ようにする is the SURFER: I deliberately keep doing it. Same as る/す verbs: なる happens, する is done."
+ },
+ "youni-iu": {
+  "hook": "〜ように言う／頼む: the coach shouts through a MEGAPHONE: 'Keep your YO-YO (よう) string short!' — he SAYS (言う) the kid must, or asks (頼む) someone he trusts to: 'tell / ask someone to do' (a reported instruction).",
+  "picture": "A coach shouting through a big megaphone at a child holding a yo-yo, the child nodding.",
+  "contrast": "Not ように alone (the string on the KNEE: so that) — ように言う adds the MEGAPHONE: someone is told to do it."
+ },
+ "koto-ni-suru": {
+  "hook": "〜ことにする: I look at the COAT (こと) rack and say 'SURE!' (する) — this one: 'I decide to do' (my own decision).",
+  "picture": "A person happily picking one coat from a rack and putting it on.",
+  "contrast": "Not ことになる (COAT + NARWHAL: decided for me) — ことにする is 'SURE!': I decide myself."
+ },
+ "koto-ni-naru": {
+  "hook": "〜ことになる: a NARWHAL (なる) swims up and hands me a uniform COAT (こと) — I didn't choose it: 'it has been decided (by others) / it turns out that'.",
+  "picture": "A narwhal poking its head out of the water, holding out a company uniform coat to a surprised person on a pier.",
+  "contrast": "Not ことにする ('SURE!': I decided) — ことになる is the NARWHAL: it was decided for me."
+ },
+ "koto-ni-shiteiru": {
+  "hook": "〜ことにしている: every single day I say 'SURE!' and grab the same COAT (こと) for my walk — my own rule: 'make it a rule to / always'.",
+  "picture": "A row of identical coats on hooks and a person taking one at the same time each day, a clock showing the same hour.",
+  "contrast": "Not ことになっている (the NARWHAL's rule, set by others) — ことにしている is my own 'SURE!' habit."
+ },
+ "koto-ni-natteiru": {
+  "hook": "〜ことになっている: at the NARWHAL's (なる) school, every pupil must wear the blue COAT (こと) — rules set by others: 'be supposed to / it is the rule that'.",
+  "picture": "A line of children all in identical blue coats, a narwhal in a pool acting as headmaster.",
+  "contrast": "Not ことにしている (my own 'SURE!' habit) — ことになっている is the NARWHAL's rule: supposed to."
+ },
+ "bakari": {
+  "hook": "〜ばかり: the kid's plate has nothing but BROCCOLI (ばかり) — all day, broccoli again: 'nothing but / only (too much)'.",
+  "picture": "A child glumly looking at a plate piled only with broccoli.",
+  "contrast": "Not たばかり (BROCCOLI just picked: have just done) — plain ばかり is the plate of nothing but broccoli."
+ },
+ "ta-bakari": {
+  "hook": "〜たばかり: the BROCCOLI (ばかり) was just picked — still steaming with dew: 'have just done' (it feels very recent).",
+  "picture": "Fresh broccoli just cut from the garden, still dripping with dew, a farmer holding the knife.",
+  "contrast": "Not ばかり (nothing but broccoli), not たところ (TACO just bitten: the action just finished, a moment ago) — たばかり is the just-picked broccoli: recently, as I feel it."
+ },
+ "bakari-de-naku": {
+  "hook": "〜ばかりでなく: not only BROCCOLI (ばかり) but also carrots pile into the basket: 'not only … but also' (usually with も).",
+  "picture": "A shopping basket overflowing with broccoli and carrots together.",
+  "contrast": "Same as だけでなく (DUCK: not only the duck, the geese too) — ばかりでなく is a little more written."
+ },
+ "wake-da": {
+  "hook": "〜わけだ: you see a long WAKE (わけ) on the lake — so THAT's why the ducks are bobbing, a speedboat passed: 'no wonder / that means'.",
+  "picture": "A calm lake with a long V-shaped boat wake and ducks bobbing on the waves.",
+  "contrast": "Not はずだ (HAZELNUT: should be, a guess before) — わけだ is the WAKE: no wonder, the reason found after."
+ },
+ "wake-dewa-nai": {
+  "hook": "〜わけではない: a WAKE (わけ) on the water doesn't necessarily mean a boat — it could be a swan: 'it doesn't mean that / not necessarily'.",
+  "picture": "A wake on a pond made by a single swan, no boat in sight.",
+  "contrast": "Not わけがない (no WAKE in a bathtub: impossible) — わけではない is 'not necessarily'. Also close to とは限らない (GARAGE: not always)."
+ },
+ "wake-ga-nai": {
+  "hook": "〜わけがない: a speedboat WAKE (わけ) in a bathtub? No way: 'there's no way that / impossible'.",
+  "picture": "A tiny bathtub with a rubber duck, completely still water, a person laughing at the idea of a boat in it.",
+  "contrast": "Not わけではない (not necessarily) — わけがない is 'no way!'. Same as はずがない (no HAZELNUT tree: can't be), but more subjective."
+ },
+ "wake-niwa-ikanai": {
+  "hook": "〜わけにはいかない: you can't race your boat and leave a big WAKE (わけ) through the swans' wedding — it just isn't done: 'can't (for social or moral reasons)'.",
+  "picture": "A speedboat stopped at the edge of a pond where swans hold a quiet ceremony, the driver holding back.",
+  "contrast": "Not できない (can't physically) — わけにはいかない is the WAKE you must not make: duty stops you."
+ },
+ "hazu-da": {
+  "hook": "〜はずだ: there's a HAZELNUT (はず) tree in the yard, so there should be nuts on the ground: 'should be / is expected to' (a confident guess).",
+  "picture": "A hazelnut tree in a yard with a person confidently heading to pick nuts up from the grass beneath.",
+  "contrast": "Not べき (BECKON: you ought to, duty) and not わけだ (WAKE: no wonder) — はず is the HAZELNUT: it should be so, logically."
+ },
+ "hazu-ga-nai": {
+  "hook": "〜はずがない: there's no HAZELNUT (はず) tree anywhere, so there can't be hazelnuts on the ground: 'can't be / there's no way that'.",
+  "picture": "A bare concrete yard with no trees, someone puzzled by a claim that nuts fell there.",
+  "contrast": "Close to わけがない (no WAKE in a bathtub) — はずがない is reasoned from facts: no tree, no nuts."
+ },
+ "beki-da": {
+  "hook": "〜べきだ／べきではない: a stern teacher's finger BECKONS (べき) — come here, you SHOULD apologise: 'should / ought to' (what is right); べきではない: you shouldn't.",
+  "picture": "A strict teacher in a doorway beckoning with one finger to a child.",
+  "contrast": "Not はず (HAZELNUT: it should be true, a guess) — べき is the BECKONING finger: what you ought to do."
+ },
+ "rashii": {
+  "hook": "〜らしい: everyone in town says there's a RASH (らしい) going round — 'apparently / it seems' (from what I hear); N + らしい: a real man-ly man.",
+  "picture": "A small town square where neighbours whisper while a child scratches a red rash on his arm.",
+  "contrast": "Not ようだ (YO-YO: I see it myself) and not そうだ hearsay (SOAP: straight report) — らしい is the RASH rumour: apparently."
+ },
+ "ppoi": {
+  "hook": "〜っぽい: a grown man on a kid's POTTY (っぽい) looks childish: '-ish / kind of like' (casual).",
+  "picture": "A tall man in a suit sitting awkwardly on a tiny child's potty, looking sheepish.",
+  "contrast": "Not みたい (MEAT EYE: looks like / seems) — っぽい is the POTTY: -ish, has that flavour."
+ },
+ "mitai": {
+  "hook": "〜みたい: this MEATball looks just like an EYE (みたい) — casual 'looks like / seems'.",
+  "picture": "A plate of spaghetti with a meatball decorated with an olive so it looks like a funny eyeball.",
+  "contrast": "Same as ようだ (YO-YO) but casual, and goes straight onto nouns (雨みたい)."
+ },
+ "you-da": {
+  "hook": "〜ようだ: in the DArk (だ), a glowing YO-YO (よう) far away looks like a little moon — I can't be sure, but from what I see myself: 'it seems / it looks like'.",
+  "picture": "A glowing spinning yo-yo seen far away in the pitch-dark night, looking like a tiny moon, a person squinting at it from a window.",
+  "contrast": "Not そうだ hearsay (SOAP opera: I heard), not そうだ looks (SEW: seam about to burst, from a stem), not らしい (RASH: rumor going round), not みたい (MEAT EYE: casual ようだ) — ようだ is the YO-YO I see myself: it seems."
+ },
+ "souda-hearsay": {
+  "hook": "〜そうだ（伝聞）: the SOAP (そう) opera characters say it'll snow tomorrow — full sentence + そうだ: 'I hear that / they say'.",
+  "picture": "An old TV in a living room showing a dramatic soap-opera scene, a viewer leaning in to listen.",
+  "contrast": "Not そうだ looks (SEW: stem + そう, a seam I can see bursting) — hearsay is the SOAP opera: full form (降るそうだ), something I heard."
+ },
+ "souda-appearance": {
+  "hook": "〜そうだ（様態）／〜そうもない: I SEW (そう) a seam and it looks about to burst — stem + そう (降りそう, おいしそう): 'looks like / seems about to'.",
+  "picture": "A tight seam on a stuffed pillow with stitches stretched, about to split open.",
+  "contrast": "Not そうだ hearsay (SOAP opera: full form, I heard) — SEW is what I see right now, on a chopped stem (降り-そう)."
+ },
+ "sei-de": {
+  "hook": "〜せいで／せいだ: because of the rain it's a SAD DAY (せいで) — the match is called off: 'because of' (bad result, blame).",
+  "picture": "Soaked football players walking off a flooded pitch under heavy grey rain.",
+  "contrast": "Not おかげで (A CAGE: thanks to, good result) — せいで is the SAD DAY: blame for a bad result."
+ },
+ "okage-de": {
+  "hook": "〜おかげで: thanks to A CAGE (おかげ), the little bird stayed safe from the cat: 'thanks to' (good result).",
+  "picture": "A small bird safe inside a cage while a frustrated cat paws at the bars.",
+  "contrast": "Not せいで (SAD DAY: because of, bad result) — おかげで is A CAGE: thanks to."
+ },
+ "tame-ni": {
+  "hook": "〜ために: I TAME (ため) a lion in order to ride it in the circus — purpose with my own action; also 'because of'.",
+  "picture": "A circus trainer gently taming a lion, a saddle waiting nearby.",
+  "contrast": "Not ように (YO-YO on the knee: so that, non-volitional like 忘れない / できる) — ために is TAME: a deliberate goal, same subject."
+ },
+ "ni-yotte": {
+  "hook": "〜によって／による: a YACHT (よって) only moves BY the wind — where it goes DEPENDS ON the wind: 'depending on / by (agent) / due to'.",
+  "picture": "A sailing yacht on open water, its sails full, leaning with the wind.",
+  "contrast": "Not にとって (TOTE bag: for me) or によると (YOGURT label: according to) — によって is the YACHT: by / depends on."
+ },
+ "ni-yoru-to": {
+  "hook": "〜によると: according to the YOGURT (よると) label, it's good till Friday: 'according to' (a source; often ends in そうだ).",
+  "picture": "A person in a kitchen reading the label on a yogurt pot with great attention.",
+  "contrast": "Not によって (YACHT: depends on / by) — によると is the YOGURT label: according to."
+ },
+ "ni-tsuite": {
+  "hook": "〜について: over SWEET TEA (ついて), friends chat ABOUT Japanese history: 'about / concerning'.",
+  "picture": "Two friends at a table with glasses of sweet iced tea, chatting with a history book open between them.",
+  "contrast": "Not に関して (CAN microphone: the formal 'regarding') and not に対して (TUG-of-war TIE: toward) — について is the SWEET TEA chat: about."
+ },
+ "ni-taishite": {
+  "hook": "〜に対して: 対 means VIS-A-VIS, face to face (反対, 対話). Two teams stand face to face in a tug-of-war TIE (たい): your attitude TOWARD / AGAINST the other side, or 'in contrast to'.",
+  "picture": "Two teams pulling a rope in a tug-of-war, facing each other across a line.",
+  "contrast": "Not について (SWEET TEA: about) and not にとって (TOTE: for me) — に対して is the tug-of-war TIE: aimed at / against."
+ },
+ "ni-totte": {
+  "hook": "〜にとって: this battered TOTE bag (とって) is precious TO ME: 'for (someone) / from the point of view of'.",
+  "picture": "A person hugging a worn old tote bag like a treasure.",
+  "contrast": "Not によって (YACHT: depends on / by) and not に対して (TUG-of-war TIE: toward / against) — にとって is the TOTE: for me, in my eyes."
+ },
+ "to-shite": {
+  "hook": "〜として: at the wedding I raise a TOAST (として) AS the best man: 'as (a role / status / category)'.",
+  "picture": "A man in a suit at a wedding raising a glass in a toast, the couple beside him.",
+  "contrast": "Not を通して (TOOTHPASTE through the tube: through / via) and not としても (lawn MOWER: even if) — として is the TOAST: in the role of."
+ },
+ "to-tomo-ni": {
+  "hook": "〜とともに: TOM and me (とも) ride a tandem bike together, growing older as we go: 'together with / as one changes, so does the other'.",
+  "picture": "Two friends riding a tandem bicycle down a long road, trees changing season along the way.",
+  "contrast": "Close to につれて (STRETCH) and にしたがって (SHE TAUGHT) for changes — とともに is TOM and me side by side: together."
+ },
+ "ni-tsurete": {
+  "hook": "〜につれて: as you STRETCH (つれて) the rubber band further, it gets thinner and thinner: 'as … (gradually), so …'.",
+  "picture": "Two hands slowly stretching a thick rubber band that thins as it lengthens.",
+  "contrast": "Close to にしたがって (SHE TAUGHT: as / following rules) and とともに (TOM and me: together) — につれて is the STRETCH: gradual, proportional change only."
+ },
+ "ni-shitagatte": {
+  "hook": "〜にしたがって: SHE TAUGHT (したがって) the dance steps and the class follows exactly; the faster she goes, the faster they go: 'in accordance with / as …'.",
+  "picture": "A dance teacher at the front of a studio, students copying her moves in rows behind her.",
+  "contrast": "Like につれて (STRETCH: gradual change) but also 'following rules or instructions' — にしたがって is SHE TAUGHT: follow her."
+ },
+ "ni-kurabete": {
+  "hook": "〜に比べて: two CRABs (くらべ) side by side, claws held up to see whose is bigger: 'compared with'.",
+  "picture": "Two crabs on a beach raising their claws next to each other as if measuring them.",
+  "contrast": "Not によって (YACHT: depends on) or に対して (TIE: in contrast to two sides) — に比べて is the CRABs: compared with."
+ },
+ "ni-kanshite": {
+  "hook": "〜に関して／に関する: 関 means CONNECTION (関係). At a press conference a KANGAROO (かん) is tied by a rope to the topic board: everything it says is connected to that topic — formal 'regarding / concerning' (the formal cousin of について).",
+  "picture": "A kangaroo at a press-conference podium, tied by a rope to a big topic board behind it, speaking into microphones.",
+  "contrast": "Same meaning as について (SWEET TEA chat), but formal — に関して is the CAN microphone at an official briefing."
+ },
+ "wo-chuushin-ni": {
+  "hook": "〜を中心に: 中心 is the in-heart, the center. A dog CHEWs a SHIN bone (ちゅうしん) right at the heart of the yard, its toys all around it: 'centering on / mainly'.",
+  "picture": "A dog lying in the middle of a yard chewing a large bone, toys scattered in a circle around it."
+ },
+ "wo-hajime": {
+  "hook": "〜をはじめ: the parade starts with the HEDGEHOG MAYor (はじめ) up front, then the whole town follows: 'starting with / including'.",
+  "picture": "A cheerful hedgehog in a mayor's sash leading a parade of townspeople and animals."
+ },
+ "wo-tooshite": {
+  "hook": "〜を通して／を通じて: 通 is TRAFFIC passing through (通る). TOOTHPASTE (とおして) traffic squeezes THROUGH the tube: 'through / via (a go-between)', or 'throughout' a period.",
+  "picture": "A hand squeezing toothpaste through a long tube onto a toothbrush.",
+  "contrast": "Not として (TOAST: as a role) — を通して is TOOTHPASTE: through / via."
+ },
+ "ta-totan": {
+  "hook": "〜たとたん(に): TA-DAH (たとたん)! The moment the magician opens the box, a rabbit leaps out: 'just as / the moment (something unexpected)'.",
+  "picture": "A magician lifting the lid of a box as a startled rabbit leaps out.",
+  "contrast": "Not たら〜た (TARANTULA: when I did it, I found) and not たびに (TABBY: every time) — たとたん is TA-DAH: the instant after, a surprise."
+ },
+ "tabi-ni": {
+  "hook": "〜たびに: every time the can opener whirs, the TABBY (たび) cat comes running: 'every time / whenever'.",
+  "picture": "A tabby cat racing into a kitchen as someone opens a can.",
+  "contrast": "Not たとたん (TA-DAH: once, the moment) — たびに is the TABBY: every time, again and again."
+ },
+ "uchi-ni": {
+  "hook": "〜うちに: 'OOH, CHEESY!' (うち) — eat the pizza while it's still hot: 'while (still) / before it changes'.",
+  "picture": "A steaming pizza with stretchy melted cheese being lifted by a happy person.",
+  "contrast": "Not 間に (IDAHO road trip: at some point during a set period) — うちに is OOH CHEESY: do it while the state lasts."
+ },
+ "nai-uchi-ni": {
+  "hook": "〜ないうちに: grab the CHEESY (うち) pizza before NIGHT (ない) falls and the raccoons come: 'before (something happens)'.",
+  "picture": "A person hurrying to bring a pizza indoors at dusk while raccoons peek from the bushes.",
+  "contrast": "Not うちに (OOH CHEESY: while it's still hot) — ないうちに is before the bad change happens."
+ },
+ "aida-aidani": {
+  "hook": "〜間／間に: 間 is the INTERVAL between two points. On the long IDAHO (あいだ) drive I sang for the whole interval (間), and at one point inside it (間に) a deer crossed the road.",
+  "picture": "A car on a long empty highway through fields, a deer stepping onto the road ahead.",
+  "contrast": "Not うちに (OOH CHEESY: while it lasts, before it changes) and not 最中に (SIGH-CHEW: right in the middle) — 間 is the whole IDAHO trip; 間に is one moment during it."
+ },
+ "saichuu-ni": {
+  "hook": "〜最中に: 最中 is the utmost middle. Right at the utmost middle of a big CHEW (ちゅう) of steak, SIGH (さい), the phone rings: 'right in the middle of (doing)'.",
+  "picture": "A man with his mouth full of steak sighing as his phone buzzes on the table.",
+  "contrast": "Not 間に (IDAHO: some point during) — 最中に is SIGH-CHEW: interrupted right in the middle."
+ },
+ "tokoro-da": {
+  "hook": "〜ところだ／ているところだ／たところだ: a TACO (ところ) in three stages — about to bite (V-る), mid-bite (ている), just bitten (た): the verb form tells which moment.",
+  "picture": "Three panels of the same person with a taco: mouth open before biting, chewing mid-bite, and the taco with a bite missing.",
+  "contrast": "Not たばかり (BROCCOLI: feels recent, maybe days ago) — たところ is the TACO just bitten: literally a moment ago."
+ },
+ "mama": {
+  "hook": "〜まま: MAMA (まま) left the baby asleep in its shoes, just as it was: 'as it is / with ~ unchanged'.",
+  "picture": "A mother tiptoeing away from a baby asleep on a sofa still wearing tiny shoes.",
+  "contrast": "Not っぱなし (BANANA peel left lying: careless, should be finished) — まま is MAMA: just unchanged."
+ },
+ "ppanashi": {
+  "hook": "〜っぱなし: a BANANA (っぱなし) peel left on the floor all week, the tap left running too: 'leave as is / keep on (carelessly)'.",
+  "picture": "A messy kitchen with a banana peel on the floor and a tap left running.",
+  "contrast": "Not まま (MAMA: state unchanged, neutral) — っぱなし is the BANANA peel left out: should have been dealt with."
+ },
+ "kiru-kirenai": {
+  "hook": "〜きる／きれない: it's 切る, CUT (the kanji you know). Cut all the way through to the end: 食べきる, the knife goes through the whole pizza and every slice is eaten: 'do completely'. きれない: the knife jams halfway into a giant pizza; you can't get through it all: 'can't do it all'.",
+  "picture": "Two pizzas side by side: on the left a knife has cut cleanly all the way through and the plate is empty except crumbs; on the right a knife is stuck halfway into an enormous, towering pizza.",
+  "contrast": "Opposite of かける (the CAKE with one slice eaten: started, not finished): きる is 切る, cut all the way through.",
+  "_rev": "2026-10-26r"
+ },
+ "kakeru-kakeno": {
+  "hook": "〜かける／かけの: a CAKE (かけ) with one slice eaten, left on the table: 'half-done / start to (but not finish)'.",
+  "picture": "A round cake on a table with one slice missing and a fork resting beside it.",
+  "contrast": "Opposite of きる (切る: cut all the way through, done completely): かける is the half-eaten CAKE."
+ },
+ "darake": {
+  "hook": "〜だらけ: the garden DIRT RAKE (だらけ) is caked with mud all over: 'full of / covered with (something unpleasant)'.",
+  "picture": "An old garden rake completely caked with mud, lying in a muddy yard.",
+  "contrast": "Not がち (GOTCHA: tends to happen) and not 気味 (GIMME: a touch of) — だらけ is the DIRT RAKE: covered all over."
+ },
+ "gachi": {
+  "hook": "〜がち: 'GOTCHA (がち) again!' — he keeps falling into the same trap: 'tend to / be prone to' (usually bad).",
+  "picture": "A cartoon-like man stepping into the same puddle trap again, friends laughing.",
+  "contrast": "Not 気味 (GIMME: slightly, right now) and not っぽい (POTTY: -ish) — がち is GOTCHA: it tends to happen often."
+ },
+ "gimi": {
+  "hook": "〜気味: 気 spirit + 味 flavor: just a flavor of something in your spirit. 'GIMME (ぎみ) a tissue, I've got a touch of a cold': 'a bit / slightly' (usually something unwelcome).",
+  "picture": "A person with a slightly red nose reaching for a tissue box.",
+  "contrast": "Not がち (GOTCHA: happens often) — 気味 is GIMME a tissue: a slight touch, right now."
+ },
+ "hodo-extent": {
+  "hook": "〜ほど: this HOT DOG (ほど) is so spicy I could die — 'to the extent that / so … that'.",
+  "picture": "A person sweating with steam coming from their ears, holding a very spicy hot dog.",
+  "contrast": "Close to くらい (CRY: same degree idea, casual; also 'at least') — ほど is the HOT DOG: a more extreme degree."
+ },
+ "hodo-nai": {
+  "hook": "〜ほど〜ない: today's HOT DOG (ほど) isn't as hot as last year's: 'not as … as'.",
+  "picture": "Two hot dogs side by side, one steaming fiercely and the other only lukewarm.",
+  "contrast": "Not に比べて (CRABs: compared with) — ほど〜ない always ends in a negative: not as … as."
+ },
+ "ba-hodo": {
+  "hook": "〜ば〜ほど: the more HOT DOGS (ほど) you eat, the more you want: 'the more …, the more …'.",
+  "picture": "A growing tower of hot dogs at a contest, an eater reaching for yet another."
+ },
+ "kurai-extent": {
+  "hook": "〜くらい／ぐらい: it hurt so much I could CRY (くらい) — 'to the extent that'; or 'at least': at least CRY a little.",
+  "picture": "A child on the ground holding a scraped knee, tears welling up.",
+  "contrast": "Close to ほど (HOT DOG: extreme degree) — くらい is CRY: casual degree, and also 'at least'."
+ },
+ "sae": {
+  "hook": "〜さえ: thieves took even the bank SAFE (さえ) — even the most extreme thing: 'even'.",
+  "picture": "An empty bank vault with a big square gap on the floor where the safe used to be.",
+  "contrast": "Not こそ (COZY: THIS very one) — さえ is the SAFE stolen: even (so of course the rest)."
+ },
+ "sae-ba": {
+  "hook": "〜さえ〜ば: as long as the SAFE (さえ) is locked, all is well: 'if only / as long as'.",
+  "picture": "A shopkeeper giving a satisfied pat to a firmly locked safe.",
+  "contrast": "Not さえ alone (even) — with ば it means 'as long as (just this one thing)'."
+ },
+ "koso": {
+  "hook": "〜こそ: THIS blanket is the COZY (こそ) one — it's exactly this that matters: '(this) very one'.",
+  "picture": "A person wrapped in one special fluffy blanket while other blankets lie ignored.",
+  "contrast": "Not さえ (SAFE: even) — こそ is COZY: singling out THIS one."
+ },
+ "dake-de-naku": {
+  "hook": "〜だけでなく: not only the DUCK (だけ) but the geese too jump in the pond: 'not only … but also' (with も).",
+  "picture": "A pond where a duck and several geese splash in together.",
+  "contrast": "Same as ばかりでなく (BROCCOLI + carrots), more conversational."
+ },
+ "dokoroka": {
+  "hook": "〜どころか: far from baked, the loaf's DOUGH CORE (どころ) is raw: 'far from / let alone / quite the opposite'.",
+  "picture": "A loaf of bread cut open to show a raw, gooey dough center.",
+  "contrast": "Not だけでなく (DUCK: plus more) — どころか is the DOUGH CORE: the opposite of what you thought."
+ },
+ "tsuide-ni": {
+  "hook": "〜ついでに: while buying a TWEED (ついで) jacket, I also grab a tie — 'while doing A, also do B'.",
+  "picture": "A shopper holding a tweed jacket and casually adding a tie from the counter."
+ },
+ "kawari-ni": {
+  "hook": "〜かわりに: the kid does the CAR WASH (かわり) instead of mum — and in exchange gets pocket money: 'instead of / in exchange for'.",
+  "picture": "A child washing a car while a mother hands over a few coins.",
+  "contrast": "Close to にかわって (on behalf of, formal) — かわりに also does trade-offs: cheap, but ... ."
+ },
+ "ippou-de": {
+  "hook": "〜一方で: 一方 is one direction. A HIPPO (いっぽう) faces one direction on one bank, a crocodile faces the other way: 'while / on the other hand'.",
+  "picture": "A wide river with a hippo on one shore and a crocodile on the opposite shore."
+ },
+ "toka-hearsay": {
+  "hook": "〜とか: a TALKative parrot (とか) squawks: 'Tanaka's getting married!' — vague hearsay: 'I heard that / apparently'.",
+  "picture": "A colorful parrot on a branch leaning toward a curious person, beak open mid-gossip.",
+  "contrast": "Softer than そうだ hearsay (SOAP opera) — とか is the gossipy parrot: vaguely heard."
+ },
+ "tte": {
+  "hook": "〜って: a kid TATTLES (って): 'Yamada says he's not coming!' — casual quote: 'they say / said', also 'as for' and 'called'.",
+  "picture": "A small child whispering into a teacher's ear behind a cupped hand."
+ },
+ "kke": {
+  "hook": "〜っけ: 'Did I put KETCHUP (っけ) on this already… was it?' — checking something you forgot: 'was it…?'.",
+  "picture": "A person holding a ketchup bottle over a burger, scratching their head, trying to remember."
+ },
+ "nante-nanka": {
+  "hook": "〜なんて／なんか: 'NAAN (なん) for breakfast?! Something like THAT?' — treating a thing lightly with surprise or disdain: 'things like / such a thing as'.",
+  "picture": "A person at a breakfast table staring in disbelief at a big piece of naan bread on their plate."
+ },
+ "te-hoshii": {
+  "hook": "〜てほしい／てもらいたい: 'I want HER to use the HOE (ほし)', grandpa says, handing the hoe to his granddaughter: 'want someone (else) to do'.",
+  "picture": "An old man holding out a garden hoe to a young girl in a vegetable patch.",
+  "contrast": "Not たがる (TAG-ALONG: someone else wants to do it themselves) — てほしい is the HOE handed over: I want YOU to do it."
+ },
+ "sasete-kudasai": {
+  "hook": "〜させてください／させていただく: the SASSY (させ) kid puts up a hand: 'Please let ME do it!' — 'please let me / humbly, I will'.",
+  "picture": "A confident child raising a hand high in a classroom, eager to go first.",
+  "contrast": "Not させられる (the SASSY kid RAILROADED: made to, against their will) and close to させてもらう (gets the permission slip) — させてください is asking: please let me."
+ },
+ "saserareru": {
+  "hook": "〜(さ)せられる: the SASSY (させ) kid is RAILROADED (られる) — dragged by the ear to eat spinach: 'be made to do (against one's will)'.",
+  "picture": "A pouting child being led to the table by the ear, a plate of spinach waiting.",
+  "contrast": "Not させてください (SASSY kid asking: let me) — させられる is RAILROADED: forced."
+ },
+ "zu-ni": {
+  "hook": "〜ず(に): I walked through the whole ZOO (ず) without seeing one animal: 'without doing' (written form of ないで).",
+  "picture": "A visitor walking past empty zoo enclosures, looking around in vain."
+ },
+ "nai-koto-wa-nai": {
+  "hook": "〜ないことはない: 'It's NOT that I CAN'T wear a COAT (こと) at NIGHT (ない)…' — he shrugs: double 'not', a weak yes: 'I can, though not easily'.",
+  "picture": "A man at night shrugging and half-heartedly holding a scratchy wool coat.",
+  "contrast": "Not ことはない (no need) and not わけではない (WAKE: it doesn't mean) — ないことはない is the shrug: it's possible, sort of."
+ },
+ "naito-nakucha-nakya": {
+  "hook": "〜ないと／〜なくちゃ／〜なきゃ: mum KNOCKs (なきゃ) on the door: 'You GOTTA get up!' — casual 'have to / must'.",
+  "picture": "A mother knocking loudly on a bedroom door while a sleepy teen pulls the blanket over their head."
+ },
+ "monoda": {
+  "hook": "〜ものだ: grandpa adjusts his MONOCLE (もの): 'We USED TO swim in this river… and children SHOULD respect elders': nostalgia / what is proper.",
+  "picture": "An old man with a monocle on a riverbank, pointing at the water and reminiscing.",
+  "contrast": "Not もの／もん (MOANing kid: because!) — ものだ is the MONOCLE grandpa: used to / that's how it should be."
+ },
+ "mono-mon": {
+  "hook": "〜もの／〜もん: the kid MOANs (もん): 'I'm not eating it, because it's yucky!' — 'because' (a personal excuse).",
+  "picture": "A pouting child pushing away a plate with crossed arms.",
+  "contrast": "Not ものだ (MONOCLE grandpa: used to / should) — もん is the MOAN: because (excuse)."
+ },
+ "koto-wa-nai": {
+  "hook": "〜ことはない: it's warm, NO (ない) COAT (こと) needed — mum smiles and puts it back: 'there's no need to'.",
+  "picture": "A mother on a sunny doorstep putting a heavy coat back on the hook while her child skips outside.",
+  "contrast": "Not ないことはない (NIGHT COAT: I could, sort of) — ことはない is 'no COAT needed': no need to."
+ },
+ "ni-chigainai": {
+  "hook": "〜に違いない: 違い is difference; 違いない, no difference from the truth. Cards fall out of his sleeve: no difference, he's the CHEAT GUY (ちがい): 'must be / surely' (strong conviction).",
+  "picture": "A card player at a table with playing cards slipping out of his sleeve, others staring.",
+  "contrast": "Not に決まっている (KEY under the MAT: obviously, casual) and not はずだ (HAZELNUT: logical expectation) — に違いない is the CHEAT GUY: I'm convinced by intuition."
+ },
+ "towa-kagiranai": {
+  "hook": "〜とは限らない: 限る is to limit. A car in the GARAGE (かぎら) doesn't limit it to someone being home: 'not necessarily / not always'.",
+  "picture": "A suburban house with a car parked in an open garage but all the windows dark.",
+  "contrast": "Close to わけではない (WAKE without a boat: doesn't mean) — とは限らない is the GARAGE: not always true."
+ },
+ "ni-kimatte-iru": {
+  "hook": "〜に決まっている: 決まる is to be decided. Where's the key? Under the MAT (きまって): it's already decided — 'certainly / bound to' (very assertive, casual).",
+  "picture": "A person lifting a doormat with a grin to reveal a house key.",
+  "contrast": "Not に違いない (CHEAT GUY: must be, conviction) — に決まっている is the KEY MAT: of course, no doubt."
+ },
+ "osore-ga-aru": {
+  "hook": "〜おそれがある: 'OH, SORE (おそれ)!' — the warning sign shows falling rocks: 'there is a risk that (something bad)' (formal).",
+  "picture": "A mountain road with rocks tumbling down a slope and a hiker clutching his sore foot nearby."
+ },
+ "you-to-suru": {
+  "hook": "〜ようとする: just as I'm about to TOSS (とする) my YO-YO (よう), the string snaps: 'try to do / be about to do'.",
+  "picture": "A person mid-throw with a yo-yo, the string snapping just as they try to toss it.",
+  "contrast": "Not つもり (SUMO: intended, a plan in the head) — ようとする is the YO-YO TOSS: actually trying / on the brink of acting."
+ },
+ "tsumori-de-datta": {
+  "hook": "〜つもりで／〜つもりだった: the SUMO (つもり) wrestler meant to diet, but there he is with a third bowl: 'intended to / meant to (but didn't)'.",
+  "picture": "A sumo wrestler guiltily eating a third big bowl of rice, a diet plan pinned on the wall behind him.",
+  "contrast": "Not ようとする (YO-YO TOSS: actually trying) and not ふり (FREEZE: pretend) — つもり is the SUMO's plan in his head."
+ },
+ "furi-wo-suru": {
+  "hook": "〜ふりをする: the kid FREEZEs (ふり) like a statue, pretending to be asleep when mum calls: 'pretend to'.",
+  "picture": "A child frozen stiff on a bed with eyes squeezed shut, peeking with one eye at the door.",
+  "contrast": "Not つもり (SUMO: what I intended) — ふり is FREEZE: acting as if."
+ },
+ "toori-doori": {
+  "hook": "〜とおり(に)／〜どおり(に): squeeze the TOOTHPASTE (とおり) exactly as the dentist showed, along the line: 'as / exactly as' (N + どおり).",
+  "picture": "A dentist demonstrating how to squeeze toothpaste onto a brush while a child copies exactly."
+ },
+ "ba-yokatta": {
+  "hook": "〜ばよかった: 'BAH (ば)! I should have brought my umbrella' — soaked at the bus stop: 'should have / I wish I had' (regret).",
+  "picture": "A drenched person at a bus stop in the rain, shaking a fist at the sky.",
+  "contrast": "Not べき (BECKON: should, duty now) — ばよかった is BAH!: regret about the past."
+ },
+ "noni": {
+  "hook": "〜のに: I stretched every day — 'NO! KNEE (のに)!' it still gave out: 'even though' (frustrated surprise).",
+  "picture": "A runner on a track clutching his knee in frustration, a stretching mat nearby.",
+  "contrast": "Not くせに (CUSS: even though, with contempt for someone), ながらも (NIAGARA: although, written), わりに (WARRIOR: considering) — のに is 'NO, KNEE!': frustrated even though."
+ },
+ "kuseni": {
+  "hook": "〜くせに: he can't even play, yet he CUSSes (くせ) at the coach: 'even though (with contempt)'.",
+  "picture": "A clumsy beginner shouting rudely at a calm coach while tangled in a net.",
+  "contrast": "Not のに (NO, KNEE!: my own frustration) — くせに is CUSS: criticising someone."
+ },
+ "nagara-gyakusetsu": {
+  "hook": "〜ながら(も): although the boat is tiny, it goes over NIAGARA (ながら) and survives: 'although / while (contrast)'.",
+  "picture": "A tiny wooden boat bravely tipping over the edge of a huge waterfall, rainbow in the mist.",
+  "contrast": "Not のに (NO, KNEE!) — ながらも is NIAGARA: written-style 'although', as in 残念ながら."
+ },
+ "toshitemo": {
+  "hook": "〜としても: suppose the lawn MOWER (も) breaks — even if it does, I'll still cut the grass with scissors: 'even if (supposing)'.",
+  "picture": "A broken lawn mower sitting in the grass while someone determinedly trims the lawn with scissors.",
+  "contrast": "Not として (TOAST: as a role) — としても ends in the MOWER: even if, supposing."
+ },
+ "tatoe-temo": {
+  "hook": "たとえ〜ても: even if it hurts, I'm getting the TATTOO (たとえ): 'even if / no matter (strong)'.",
+  "picture": "A determined person gritting their teeth in a tattoo parlor chair.",
+  "contrast": "Close to としても (MOWER: supposing) — たとえ〜ても is the TATTOO: even if, no matter what."
+ },
+ "kara-to-itte": {
+  "hook": "〜からといって: just because he eats CARROTs (からと) doesn't mean he can see in the dark: 'just because … (doesn't mean)'.",
+  "picture": "A man munching a carrot and bumping into furniture in a dark room.",
+  "contrast": "Close to とは限らない (GARAGE: not always), often used together — からといって is the CARROT: just because."
+ },
+ "nara": {
+  "hook": "〜(の)なら: the NARRATOR (なら) steps in: 'IF you're going to Kyoto, go in autumn': 'if (that's the case) / if you're going to'.",
+  "picture": "A storyteller with a book pointing toward a picture of autumn maple trees and a temple."
+ },
+ "ni-kuwaete": {
+  "hook": "〜に加えて: in addition to the captain, a whole CREW (くわ) climbs aboard: 'in addition to'.",
+  "picture": "A captain on a dock as a line of sailors climbs aboard behind him.",
+  "contrast": "Same idea as だけでなく (DUCK: not only), but formal and in written style — に加えて adds the CREW."
+ },
+ "wo-komete": {
+  "hook": "〜をこめて: she seals the card with a COMET (こめて) trail of tiny hearts: 'with (feelings) / filled with'.",
+  "picture": "A girl sealing an envelope as a comet-like trail of small hearts streams from it."
+ },
+ "muke-muki": {
+  "hook": "〜向け／〜向き: 向 is yonder, facing toward. The factory makes feed facing the cows — MOO-KAY (向け): 'made for'; the meadow faces the cows' taste — MOO-KEY (向き): 'suitable for'.",
+  "picture": "A cow in a sunny meadow next to a feed sack with a cow face picture on it.",
+  "contrast": "向け (MOO-KAY) is designed for a target group; 向き (MOO-KEY) just suits them."
+ },
+ "teki": {
+  "hook": "〜的: 的 is a BULL'S EYE, a target. A TECHY (てき) gadget aims at a noun's bull's eye and turns it into an adjective: '-ic / -al' (経済的な, 個人的に).",
+  "picture": "A shiny robotic machine stamping words that come out as glowing ribbons."
+ },
+ "tagaru": {
+  "hook": "〜たがる: the little brother TAGs ALONG (たがる), tugging your sleeve — you can see he wants to come: '(someone else) wants to'.",
+  "picture": "A small boy tugging at an older sibling's sleeve as they leave the house.",
+  "contrast": "Not てほしい (HOE: I want someone to do it) — たがる is TAG-ALONG: a third person shows they want to."
+ },
+ "te-tamaranai": {
+  "hook": "〜てたまらない: my face turns TOMATO (たま) red — it's so hot I can't stand it: 'unbearably ~'.",
+  "picture": "A person with a bright red tomato-like face fanning themselves in blazing sun.",
+  "contrast": "Close to てしょうがない (SHOGUN can't help yawning) — てたまらない is the TOMATO face: unbearable, often physical."
+ },
+ "te-shouganai": {
+  "hook": "〜てしょうがない／〜てしかたがない: the bored SHOGUN (しょうが) can't help yawning: 'extremely ~ / can't help feeling ~'.",
+  "picture": "A shogun in armor on a throne, yawning hugely.",
+  "contrast": "Close to てたまらない (TOMATO face: unbearable) — てしょうがない is the SHOGUN: can't help it."
+ },
+ "wari-ni": {
+  "hook": "〜わりに(は): for such a tiny WARRIOR (わり), he lifts a huge boulder: 'considering / for (unexpectedly)'.",
+  "picture": "A very small warrior in armor lifting a giant boulder over his head.",
+  "contrast": "Not のに (NO, KNEE!: disappointed) — わりに is the tiny WARRIOR: more (or less) than you'd expect."
+ },
+ "ni-kawatte": {
+  "hook": "〜にかわって: Dad is away, so his son runs the CAR WASH (かわ) on his behalf: 'instead of / on behalf of'.",
+  "picture": "A teenage boy in his father's oversized apron washing a car with a big sponge.",
+  "contrast": "Close to かわりに (CAR WASH done instead, or as a trade) — にかわって is more formal: someone takes another's place."
+ },
+ "koto-ni-kanjou": {
+  "hook": "〜ことに: 'Sadly… (残念なことに)' — I wrap my feeling round the news like a COAT (こと) before I say it: '(to my) surprise / joy / regret'.",
+  "picture": "A person wrapping a coat around a small gift box, their face showing strong emotion."
+ },
+ "toiu-nowa-towa": {
+  "hook": "〜というのは／〜とは: the dictionary page: 'TOFU (という) is … bean curd' — '~ means / ~ is (definition)'.",
+  "picture": "An open dictionary next to a block of tofu, a finger pointing at the tofu."
+ },
+ "toiu-yori": {
+  "hook": "〜というより: it's not really TOFU (という) — rather, it's cheese: 'rather than (more accurately)'.",
+  "picture": "A person poking a white block on a plate, surprised to find it is cheese, not tofu.",
+  "contrast": "Not どころか (DOUGH CORE: quite the opposite) — というより just corrects to a better word."
+ },
+ "toiu-kotoda": {
+  "hook": "〜ということだ: the TOFU (という) shop's bulletin board: 'snow tomorrow' — 'I hear that' (formal), or 'that means' (conclusion).",
+  "picture": "A neighborhood tofu shop with a cork board and a shopkeeper pointing to it for a customer.",
+  "contrast": "Like そうだ hearsay (SOAP opera) but more formal; also used for 'so that means'."
+ },
+ "te-kuru-te-iku": {
+  "hook": "〜てくる／〜ていく: a KANGAROO (くる) hops toward me — change up to now; an EAGLE (いく) flies off into the distance — change going on from now.",
+  "picture": "A kangaroo hopping toward the viewer while an eagle flies away toward the horizon."
+ },
+ "o-ni-naru": {
+  "hook": "お〜になる／ご〜になる: the royal NARWHAL (なる) king glides past — 'His Majesty is reading': honorific, raises the respected person's action.",
+  "picture": "A narwhal wearing a tiny crown floating regally while other fish bow.",
+  "contrast": "Not お〜する ('SURE!': humble, my own action) — お〜になる is the NARWHAL king: the other person does it (honorific)."
+ },
+ "o-suru": {
+  "hook": "お〜する／ご〜する: the bowing servant says 'SURE (する), let me carry that for you': humble, my own action for a respected person.",
+  "picture": "A bowing porter lifting a heavy suitcase for an elderly guest.",
+  "contrast": "Not お〜になる (royal NARWHAL: honorific, they do it) — お〜する is 'SURE!': humble, I do it."
+ },
+ "sasete-morau": {
+  "hook": "〜(さ)せてもらう／〜(さ)せていただく: the SASSY (させ) kid receives a permission slip — 'MORE, OH!' (もらう): 'be allowed to / let me (humbly)'.",
+  "picture": "A delighted child receiving a signed permission slip from a parent.",
+  "contrast": "Not させられる (RAILROADED: forced) — させてもらう is the permission slip received: allowed to (grateful)."
+ },
+ "tara-ta-hakken": {
+  "hook": "〜たら〜た: when I opened the box, there was a TARANTULA (たら) inside — 'when I did ~, I found ~' (a discovery).",
+  "picture": "A person peering into an open cardboard box, a big hairy tarantula looking back.",
+  "contrast": "Not たとたん (TA-DAH: the very instant, sudden event) — たら〜た is TARANTULA: I did it and found something."
+ },
+ "_families": {
+  "よう": [
+   [
+    "youni-purpose",
+    "the string on her KNEE",
+    "so that"
+   ],
+   [
+    "youni-naru",
+    "the NARWHAL finally can",
+    "come to (by itself)"
+   ],
+   [
+    "youni-suru",
+    "the SURFER practises daily",
+    "make a habit / make sure"
+   ],
+   [
+    "youni-iu",
+    "the coach's MEGAPHONE",
+    "tell someone to"
+   ],
+   [
+    "you-to-suru",
+    "the TOSS, the string snaps",
+    "try to / be about to"
+   ],
+   [
+    "you-da",
+    "glowing in the DArk like a moon",
+    "it seems"
+   ]
+  ]
+ },
+ "_rev": {
+  "youni-purpose": "2026-10-24r",
+  "youni-naru": "2026-10-24r",
+  "youni-suru": "2026-10-24r",
+  "youni-iu": "2026-10-26r",
+  "you-to-suru": "2026-10-24r",
+  "you-da": "2026-10-24r",
+  "ni-kanshite": "2026-10-26r",
+  "ni-taishite": "2026-10-26r",
+  "wo-chuushin-ni": "2026-10-26r",
+  "wo-tooshite": "2026-10-26r",
+  "aida-aidani": "2026-10-26r",
+  "saichuu-ni": "2026-10-26r",
+  "gimi": "2026-10-26r",
+  "ippou-de": "2026-10-26r",
+  "ni-chigainai": "2026-10-26r",
+  "towa-kagiranai": "2026-10-26r",
+  "ni-kimatte-iru": "2026-10-26r",
+  "muke-muki": "2026-10-26r",
+  "teki": "2026-10-26r"
+ }
+}

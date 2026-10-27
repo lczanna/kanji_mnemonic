@@ -1,0 +1,226 @@
+{
+ "黙る": {
+  "other": "騙す",
+  "note": "だまる: る = the monk's RULE of silence → to be silent. だます: す = SWINDLE → to trick."
+ },
+ "騙す": {
+  "other": "黙る",
+  "note": "だます: す = SWINDLE → to trick. だまる: る = the monk's RULE of silence → to be silent."
+ },
+ "叫ぶ": {
+  "other": "避ける",
+  "note": "さけぶ: ぶ = \"BOO!\" → to shout. さける: dodging the SACKER → to avoid."
+ },
+ "避ける": {
+  "other": "叫ぶ",
+  "note": "さける: dodging the SACKER → to avoid. さけぶ: ぶ = \"BOO!\" → to shout."
+ },
+ "悲しい": {
+  "other": "かなり",
+  "note": "かなしい: a can with \"nashi\" (no pear) → sad. かなり: the loud CANARY → considerably."
+ },
+ "かなり": {
+  "other": "悲しい",
+  "note": "かなり: the loud CANARY → considerably, quite. かなしい: a can with \"nashi\" → sad."
+ },
+ "三日": {
+  "other": "三つ",
+  "note": "みっか: か = the day the MITTENS dry → three days / the 3rd. みっつ: MEAT-SUshi → three things."
+ },
+ "三つ": {
+  "other": "三日",
+  "note": "みっつ: MEAT-SUshi → three things. みっか: か = the day the MITTENS dry → three days / the 3rd."
+ },
+ "肩": {
+  "other": "硬い",
+  "note": "かた: a KARATE chop to the shoulder → shoulder. かたい: the CAT's EYE on a frozen fish → hard."
+ },
+ "硬い": {
+  "other": "肩",
+  "note": "かたい: the CAT's EYE (い) on a frozen fish → hard. かた: a KARATE chop → shoulder."
+ },
+ "丈夫": {
+  "other": "上手・上司",
+  "note": "じょうぶ: the Joker's BOOKworm (ぶ) → sturdy. じょうず: the Joker JUggles (ず) → skillful. じょうし: the Joker bosses the SHeep (し) → your boss."
+ },
+ "上手": {
+  "other": "丈夫・上司",
+  "note": "じょうず: the Joker JUggles (ず) → skillful. じょうぶ: the Joker's BOOKworm (ぶ) → sturdy. じょうし: the Joker bosses the SHeep (し) → your boss."
+ },
+ "上司": {
+  "other": "丈夫・上手",
+  "note": "じょうし: the Joker bosses the SHeep (し) → your boss. じょうぶ: the Joker's BOOKworm (ぶ) → sturdy. じょうず: the Joker JUggles (ず) → skillful."
+ },
+ "感謝": {
+  "other": "患者",
+  "note": "かんしゃ: the clean shark bows → thanks. かんじゃ: the MUDDY shark (゛ = mud: しゃ→じゃ) waits at the clinic → patient. 患 has 心: a heart that suffers."
+ },
+ "患者": {
+  "other": "感謝",
+  "note": "かんじゃ: the MUDDY shark (゛ = mud: しゃ→じゃ) at the clinic → patient. かんしゃ: the clean shark bows → thanks."
+ },
+ "性格": {
+  "other": "正確",
+  "note": "Same sound せいかく. 性格 has 忄 (heart) → your character. 正確 has 正 (correct) → accurate."
+ },
+ "正確": {
+  "other": "性格",
+  "note": "Same sound せいかく. 正確 starts with 正 (correct) → accurate. 性格 has 忄 (heart) → personality."
+ },
+ "起こる": {
+  "other": "怒る",
+  "note": "Same sound おこる. 起こる has 走 (run): things start running → to happen. 怒る has 心 (heart) → to get angry."
+ },
+ "怒る": {
+  "other": "起こる",
+  "note": "Same sound おこる. 怒る has 心 (heart) → to get angry. 起こる has 走 (run) → to happen."
+ },
+ "起こす": {
+  "other": "起こる",
+  "note": "おこす wakes or causes something; おこる just happens. る = it happens by itself; す = someone does it to something."
+ },
+ "残る": {
+  "other": "残す",
+  "note": "残る = to remain (る: by itself); 残す = to leave behind (す: you do it). る = it happens by itself; す = someone does it to something."
+ },
+ "残す": {
+  "other": "残る",
+  "note": "残す = to leave behind (す: you do it); 残る = to remain (る: by itself). る = it happens by itself; す = someone does it to something."
+ },
+ "渡る": {
+  "other": "渡す",
+  "note": "渡る = to cross (る: by itself); 渡す = to hand over (す: you do it). る = it happens by itself; す = someone does it to something."
+ },
+ "渡す": {
+  "other": "渡る",
+  "note": "渡す = to hand over (す: you do it); 渡る = to cross (る: by itself). る = it happens by itself; す = someone does it to something."
+ },
+ "通る": {
+  "other": "通す",
+  "note": "通る = to pass (る: by itself); 通す = to let pass (す: you do it). る = it happens by itself; す = someone does it to something."
+ },
+ "通す": {
+  "other": "通る",
+  "note": "通す = to let pass (す: you do it); 通る = to pass (る: by itself). る = it happens by itself; す = someone does it to something."
+ },
+ "治る": {
+  "other": "直す",
+  "note": "なおる: the body gets well by itself (る). なおす: you fix a thing (す). 治 has water: healing; 直 = straight: set it right. る = it happens by itself; す = someone does it to something."
+ },
+ "直す": {
+  "other": "治る",
+  "note": "なおす: you fix or correct a thing (す). なおる: you get well by yourself (る). 直 = straight: set it right; 治 has water: healing."
+ },
+ "帰る": {
+  "other": "返す",
+  "note": "かえる: YOU go home (帰 has the broom of home). かえす: you return a THING (返 = turn back). る = it happens by itself; す = someone does it to something."
+ },
+ "返す": {
+  "other": "帰る",
+  "note": "かえす: you give a thing back (返 = turn back). かえる: you yourself go home (帰)."
+ },
+ "興奮": {
+  "other": "幸福",
+  "note": "こうふん: the Coach finds a FUNgus (ん) → excitement. こうふく: the Coach dances with captain HOOK (く) → happiness."
+ },
+ "幸福": {
+  "other": "興奮",
+  "note": "こうふく: the Coach dances with captain HOOK (く) → happiness. こうふん: the Coach finds a FUNgus (ん) → excitement."
+ },
+ "遂に": {
+  "other": "常に",
+  "note": "ついに: TWEEty finally lands → at last. つねに: the cat at the same window every hour → always (常 = usual)."
+ },
+ "常に": {
+  "other": "遂に",
+  "note": "つねに: same window, every hour → always (常 = usual). ついに: TWEEty finally lands → at last."
+ },
+ "異なる": {
+  "other": "断る",
+  "note": "ことなる: every coat in NARnia (なる) → to differ. ことわる: the cat pushes the bowl aWAY (わる) → to refuse."
+ },
+ "断る": {
+  "other": "異なる",
+  "note": "ことわる: the cat pushes the bowl aWAY (わる) → to refuse. ことなる: every coat in NARnia (なる) → to differ."
+ },
+ "思う": {
+  "other": "重い",
+  "note": "おもう (verb, う) → to think. おもい (adjective, い) → heavy. 重 is the anvil; 思 has 心 (heart)."
+ },
+ "重い": {
+  "other": "思う",
+  "note": "おもい (adjective, い) → heavy: the anvil 重. おもう (verb) → to think: 思 has 心 (heart)."
+ },
+ "結構": {
+  "other": "健康",
+  "note": "けっこう: KETchup on your coat (small っ) → fine / no thanks. けんこう: KEN doll jogs (ん) → health."
+ },
+ "健康": {
+  "other": "結構",
+  "note": "けんこう: KEN doll jogs (ん) → health. けっこう: KETchup on your coat (small っ) → fine / no thanks."
+ },
+ "財布": {
+  "other": "政府",
+  "note": "さいふ: the CYclops steals it → wallet. せいふ: the SAIlor and the Footballer run the country → government."
+ },
+ "政府": {
+  "other": "財布",
+  "note": "せいふ: the SAIlor and the Footballer → government. さいふ: the CYclops steals the wallet."
+ },
+ "尊敬": {
+  "other": "存在",
+  "note": "そんけい: Sonic bows to a CAKE (けい) → respect. そんざい: Sonic taps a XYlophone (ざい) → existence."
+ },
+ "存在": {
+  "other": "尊敬",
+  "note": "そんざい: Sonic taps a XYlophone (ざい) → existence. そんけい: Sonic bows to a CAKE (けい) → respect."
+ },
+ "掴む": {
+  "other": "使う",
+  "note": "つかむ: TWO CAMeras (む) → to grab. つかう: the raccoon tries each tool (う) → to use."
+ },
+ "使う": {
+  "other": "掴む",
+  "note": "つかう: the raccoon tries each tool → to use. つかむ: TWO CAMeras at once (む) → to grab."
+ },
+ "始める": {
+  "other": "初めて",
+  "note": "はじめる (verb): 始 has 女+台, the conductor starts → to begin. はじめて (adverb, て): 初 = clothes + knife, the first cut → for the first time."
+ },
+ "初めて": {
+  "other": "始める",
+  "note": "はじめて: 初 = clothes 衤 + knife 刀, the first cut → for the first time. はじめる (verb): 始 → to begin something."
+ },
+ "泣く": {
+  "other": "鳴く",
+  "note": "Same sound なく. 泣く has 氵 (water: tears) → a person cries. 鳴く has 鳥 (bird) / 口 → an animal cries, a bird sings."
+ },
+ "鳴く": {
+  "other": "泣く",
+  "note": "Same sound なく. 鳴く has 口 + 鳥 (bird) → an animal's cry, birdsong. 泣く has 氵 (tears) → a person cries."
+ },
+ "暑い": {
+  "other": "熱い",
+  "note": "Same sound あつい. 暑い has 日 (sun) → hot weather. 熱い has 灬 (fire) → hot to the touch (tea, a stove)."
+ },
+ "熱い": {
+  "other": "暑い",
+  "note": "Same sound あつい. 熱い has 灬 (fire) → hot to the touch. 暑い has 日 (sun) → hot weather."
+ },
+ "撮る": {
+  "other": "取る",
+  "note": "Same sound とる. 撮る → take a photo or film only. 取る → take in general (pick up, get, take away)."
+ },
+ "取る": {
+  "other": "撮る",
+  "note": "Same sound とる. 取る → take in general. For photos it's 撮る (写真を撮る)."
+ },
+ "沸く": {
+  "other": "湧く",
+  "note": "Same sound わく. 沸く has 氵 + 弗 → water boils (お湯が沸く). 湧く → springs up, wells up (water from the ground, feelings)."
+ },
+ "湧く": {
+  "other": "沸く",
+  "note": "Same sound わく. 湧く → wells up (a spring, courage). 沸く → water boils (お湯が沸く)."
+ }
+}
