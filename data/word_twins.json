@@ -222,5 +222,13 @@
  "湧く": {
   "other": "沸く",
   "note": "Same sound わく. 湧く → wells up (a spring, courage). 沸く → water boils (お湯が沸く)."
+ },
+ "嵐": {
+  "other": "激しい",
+  "note": "あらし is a noun: the STORM itself. Its kanji is 山 mountain over 風 wind, a wind howling off the mountain ('Ara! She's gone!'). はげしい is an い-adjective: how strong anything is (激しい雨, 激しい痛み, 激しい競争), the bald coach's intense yelling."
+ },
+ "激しい": {
+  "other": "嵐",
+  "note": "はげしい is an い-adjective (it ends in しい): how strong anything is, rain, pain, competition, like the bald coach's intense yelling. あらし is a noun: the STORM itself, 山 mountain over 風 wind ('Ara! She's gone!')."
  }
 }
