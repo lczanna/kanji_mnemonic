@@ -249,6 +249,31 @@ await test('reading traps keep the kana you can see (代わり: only the 代 par
   yes(r.kawari && r.kawari.every(x => x.endsWith('わり')), '代わり traps: ' + r.kawari);
 });
 
+await test('a backlog fits the day\'s minutes: most-forgotten reviews first, the rest wait untouched, no new cards', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    const t = today(), ago = n => addDays(t, -n);
+    DECK.slice(0, 300).forEach((k, i) => { appData.cards[k.kanji] = { stability: 2 + i % 40, difficulty: 5, reps: 3, lapses: 0, lastReview: ago(5 + i % 10), due: ago(1 + i % 3) }; });
+    Object.assign(appData.settings, { budgetWeekday: '30', budgetWeekend: '30' }); appData.planDay = null; appData.studySec = {}; planCache = null;
+    const before = JSON.stringify(appData.cards);
+    const p = planToday(), rev = appData.planDay.rev, cap = Math.max(20, Math.floor((30 - p.practiceMin) * 60 / p.t.review));
+    const shown = dueToday('kanji').length, allDue = dueOf('kanji').length;
+    const untouched = JSON.stringify(appData.cards) === before;
+    const worstIn = Math.max(...rev.map(k => recall(appData.cards[k]))), bestOut = Math.min(...dueOf('kanji').map(x => x.kanji).filter(k => !rev.includes(k)).map(k => recall(appData.cards[k])));
+    // An old day plan (no review list) from earlier today is refitted, minus the minutes already studied.
+    appData.planDay = { date: t, due: 300, t: timing() }; appData.studySec = { [t]: 600 }; planCache = null; planToday();
+    const refit = appData.planDay.rev.length;
+    // A light day: everything due fits, nothing waits, and new cards come back.
+    for (const k of DECK.slice(20, 300)) delete appData.cards[k.kanji];
+    appData.planDay = null; appData.studySec = {}; planCache = null; const light = planToday();
+    return { cap, revN: rev.length, shown, allDue, untouched, firstOk: worstIn <= bestOut,
+      newToday: TYPES.reduce((a, ty) => a + p.limit[ty], 0), refit, lightRev: appData.planDay.rev, lightNew: TYPES.reduce((a, ty) => a + light.limit[ty], 0) };
+  });
+  eq(r.revN, r.cap, 'reviews fitted to the budget'); eq(r.shown, r.cap, 'today shows only the fitted reviews'); yes(r.allDue > r.cap, 'backlog stays due');
+  eq(r.firstOk, true, 'most-forgotten first'); eq(r.untouched, true, 'waiting cards changed'); eq(r.newToday, 0, 'new cards while the backlog fills the day');
+  yes(r.refit < r.cap, `old plan refitted minus minutes studied: ${r.refit} vs ${r.cap}`); eq(r.lightRev, null, 'light day: nothing waits'); yes(r.lightNew > 0, 'light day: new cards');
+});
+
 await test('a removed duplicate word (いくら next to 幾ら) moves its progress to the word that stays, from load and from the account', async () => {
   const local = { version: 3, cards: { 'v:お皿': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3), triaged: true },
       'v:いくら': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-5), triaged: true },

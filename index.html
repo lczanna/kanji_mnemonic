@@ -440,7 +440,7 @@ function emptyData() {
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
            lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {}, calib: {}, calibK: null, timeLog: { review: [], learn: [] }, planDay: null, studySec: {}, hookSeen: {},
            settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
-                       minWeekday: 30, minWeekend: 60 } };
+                       minWeekday: 30, minWeekend: 60, budgetWeekday: '', budgetWeekend: '' } };
 }
 function loadData() {
   let d = null;
@@ -832,12 +832,31 @@ function studiedMinutes(weekend) {
   const mid = xs.length % 2 ? xs[(xs.length - 1) / 2] : (xs[xs.length / 2 - 1] + xs[xs.length / 2]) / 2;
   return { min: Math.round(mid), days: xs.length };
 }
-// Minutes a weekday or weekend day needs to keep pace: its share of new cards, the reviews of a usual day
-// (average of the last 7 days) and exam practice.
-function minutesNeeded(weekend) {
-  const p = planToday(), t = p.t, w = weekend ? weekendRatio() : 1;
-  const fresh = TYPES.reduce((a, ty) => a + Math.ceil(p.perWeekday[ty] * w), 0);
-  // A day's review count includes the quiz and next-day check of new cards, which their cost already covers.
+// ============ TIME BUDGET ============
+// Each day fits the minutes you have: your own (More → Settings) or, left empty, what you've studied lately.
+// Reviews come first, most-forgotten first; what doesn't fit waits for the next day (FSRS copes with a late review
+// far better than you cope with a 4-hour day). New cards fill the time that's left, grammar first.
+function budgetMin(d = today()) {
+  const st = appData.settings, we = isWeekend(d), set = parseInt(we ? st.budgetWeekend : st.budgetWeekday, 10);
+  return set > 0 ? set : budgetAuto(we);
+}
+// The minutes used when none are set: what you've measured lately.
+function budgetAuto(weekend) { const m = studiedMinutes(weekend), st = appData.settings; return m ? Math.max(20, m.min) : (+(weekend ? st.minWeekend : st.minWeekday) || (weekend ? 60 : 30)); }
+// Every card due, most likely forgotten first.
+const dueAllSorted = () => [...TYPES, 'part'].flatMap(ty => dueOf(ty).map(x => keyOf(ty, x)))
+  .sort((a, b) => recall(appData.cards[a]) - recall(appData.cards[b]));
+// Today's reviews: fixed once a day (planDay.rev, null when everything due fits), so they don't grow as you go.
+let REV_SET = { key: null, s: null };
+function dueToday(type) {
+  planToday();
+  const r = appData.planDay && appData.planDay.rev;
+  if (!r) return dueOf(type);
+  if (REV_SET.key !== r) REV_SET = { key: r, s: new Set(r) };
+  return dueOf(type).filter(x => REV_SET.s.has(keyOf(type, x)));
+}
+// Reviews on a usual day (average of the last 7 days). A day's count includes the quiz and next-day check of new
+// cards, which their cost already covers.
+function typicalReviews(p) {
   let rev = 0, n = 0;
   for (let i = 1; i <= 7; i++) {
     const d = addDays(today(), -i), h = appData.history[d];
@@ -845,8 +864,31 @@ function minutesNeeded(weekend) {
     const learned = Object.entries(appData.newByDay).reduce((a, [k, v]) => a + (k.slice(0, 10) === d ? v : 0), 0);
     rev += Math.max(0, h - 2 * learned); n++;
   }
-  const reviews = n ? rev / n : p.due;
-  return Math.round((reviews * t.review + fresh * t.fresh) / 60) + PRACTICE_MIN(practiceQuota(nextDayOf(weekend)));
+  return n ? rev / n : p.due;
+}
+// How many new cards fit in a day's minutes after its reviews and exam practice.
+const newFit = (sec, reviews, t) => Math.max(0, Math.floor((sec - reviews * t.review) / t.fresh));
+// What the days left until "all new cards done" cover at this pace: grammar first, then words and kanji in step.
+// Day by day: reviews waiting today carry over, and each new card adds about 0.15 reviews a day (its checks over
+// the first weeks), so the reviews grow as you learn.
+function forecast() {
+  const p = planToday(), left = planLeft(), base = typicalReviews(p);
+  let cap = p.newCap, debt = [...TYPES, 'part'].reduce((a, ty) => a + dueOf(ty).length - dueToday(ty).length, 0);
+  for (let d = addDays(today(), 1); d < finishNewBy(); d = addDays(d, 1)) {
+    const sec = (budgetMin(d) - PRACTICE_MIN(practiceQuota(d))) * 60, need = base + 0.15 * cap + debt, fit = Math.floor(sec / p.t.review);
+    debt = Math.max(0, need - fit);
+    cap += newFit(sec, Math.min(need, fit), p.t);
+  }
+  const g = Math.min(left.grammar, cap), rest = cap - g, kv = left.kanji + left.vocab;
+  const v = kv ? Math.min(left.vocab, Math.round(rest * left.vocab / kv)) : 0;
+  return { all: cap >= left.grammar + left.vocab + left.kanji, g, v, k: Math.min(left.kanji, rest - v), left };
+}
+// Minutes a weekday or weekend day needs to finish every new card on time: its share of new cards, the reviews of a
+// usual day and exam practice.
+function minutesNeeded(weekend) {
+  const p = planToday(), t = p.t, w = weekend ? weekendRatio() : 1;
+  const fresh = TYPES.reduce((a, ty) => a + Math.ceil(p.perWeekday[ty] * w), 0);
+  return Math.round((typicalReviews(p) * t.review + fresh * t.fresh) / 60) + PRACTICE_MIN(practiceQuota(nextDayOf(weekend)));
 }
 function nextDayOf(weekend) { let d = today(); while (isWeekend(d) !== weekend) d = addDays(d, 1); return d; }
 function studyTimeNote() {
@@ -910,37 +952,44 @@ function planToday() {
   if (planCache && planCache.key === key) return planCache;
   const left = planLeft(), W = weightedDaysLeft(), w = dayWeight(today());
   const target = {};
-  // Each day asks for its share of the plan as set on day one (a weekend day counting as a few weekdays), plus a share
-  // of any shortfall. Being ahead doesn't shrink the next days: the lead is kept for a busy day, and if it lasts
-  // you simply finish early.
-  // The shortfall is counted as of this morning, so learning during the day doesn't move today's target.
-  const ps = appData.planStart || { date: today(), left }, st = planStatus(), bh = {};
-  for (const ty of TYPES) bh[ty] = st[ty] && st[ty].start ? Math.max(0, -(st[ty].diff - (appData.newByDay[dayKey(ty)] || 0))) : 0;
-  // A shortfall is made up over the next 5 days (or what's left, if less), not spread thin to the finish date.
+  // Each day asks for its share of the plan as set on day one (a weekend day counting as a few weekdays), cut to
+  // what fits in the day's minutes (below). Being ahead doesn't shrink the next days.
+  const ps = appData.planStart || { date: today(), left };
+  planStatus();   // sets planStart on the first day
   let wAll = 0; for (let d = ps.date; d < finishNewBy(); d = addDays(d, 1)) wAll += dayWeight(d);
-  let w5 = 0; for (let i = 0; i < 5; i++) w5 += dayWeight(addDays(today(), i));
   const pace = {}, catchUp = {};
   for (const ty of TYPES) {
     pace[ty] = Math.ceil((ps.left[ty] || 0) * w / Math.max(0.001, wAll)) + (ty === 'vocab' ? Math.ceil(addedLeft() * w / Math.max(0.001, W)) : 0);
-    catchUp[ty] = bh[ty] ? Math.ceil(bh[ty] * w / Math.max(0.001, Math.min(W, w5))) : 0;
+    catchUp[ty] = 0;   // the day fits your minutes now: being short of the full plan isn't made up by bigger days
     target[ty] = left[ty] ? Math.min(left[ty], pace[ty] + catchUp[ty]) : 0;
   }
-  if (target.kanji) target.kanji = Math.max(3, target.kanji);
   // Reviews and speed are taken once, the first time the plan is made each day: reviews done and cards learned
   // later in the day (they come back for a check) must not change the day's estimate.
   if (!appData.planDay || appData.planDay.date !== today())
-    { appData.planDay = { date: today(), due: TYPES.reduce((a, ty) => a + dueOf(ty).length, 0) + dueOf('part').length, t: timing() }; planDayUnsynced = !SYNC.pulled; saveLocal(); }
+    { appData.planDay = { date: today(), t: timing() }; planDayUnsynced = !SYNC.pulled; }
+  const practiceMin = PRACTICE_MIN(practiceQuota()), budget = budgetMin();
+  if (!('rev' in appData.planDay)) {
+    // The day's reviews: as many as fit in the minutes left today (less any already studied), most-forgotten first.
+    const all = dueAllSorted(), t0 = appData.planDay.t || timing(), spent = (appData.studySec || {})[today()] || 0;
+    const cap = Math.max(20, Math.floor(((budget - practiceMin) * 60 - spent) / t0.review));
+    Object.assign(appData.planDay, { due: Math.min(all.length, cap), rev: all.length > cap ? all.slice(0, cap) : null, spent });
+    saveLocal();
+  }
   const due = appData.planDay.due, t = appData.planDay.t || timing();
+  // New cards fill what's left of the day, grammar first (a whole exam section, and quick), then words and kanji in
+  // step with the plan.
+  const newCap = newFit((budget - practiceMin) * 60 - (appData.planDay.spent || 0), due, t);
+  const kv = target.kanji + target.vocab, gFit = Math.min(target.grammar, newCap), vFit = kv ? Math.min(target.vocab, Math.round((newCap - gFit) * target.vocab / kv)) : 0;
+  Object.assign(target, { grammar: gFit, vocab: vFit, kanji: Math.min(target.kanji, newCap - gFit - vFit) });
   // The day's goal is what keeps you on track. Words can only be learned once their kanji are, so their goal
   // stops at the words unlocked; the kanji that unlock more come first in the kanji queue.
   const wordsReady = unseenOf('vocab').filter(v => (coreWord(v) || !left.coreLeft) && unlocked('vocab', v)).length;
   const limit = Object.assign({}, target, { vocab: Math.min(target.vocab, wordsReady + (appData.newByDay[dayKey('vocab')] || 0)) });
-  const practiceMin = PRACTICE_MIN(practiceQuota());
   const minutes = Math.round((due * t.review + TYPES.reduce((a, ty) => a + limit[ty], 0) * t.fresh) / 60) + practiceMin;
   // The plan's share for a plain weekday (no catch-up), for the minutes a weekday and a weekend day need.
   const perWeekday = {};
   for (const ty of TYPES) perWeekday[ty] = left[ty] ? (ps.left[ty] || 0) / Math.max(0.001, wAll) + (ty === 'vocab' ? addedLeft() / Math.max(0.001, W) : 0) : 0;
-  planCache = { key, target, limit, due, t, minutes, practiceMin, weekend: isWeekend(today()), pace, catchUp, perWeekday, waiting: target.vocab - limit.vocab };
+  planCache = { key, target, limit, due, t, minutes, practiceMin, budget, newCap, weekend: isWeekend(today()), pace, catchUp, perWeekday, waiting: target.vocab - limit.vocab };
   return planCache;
 }
 // On track? Compare cards started with a straight line from the day the plan began to "all new cards done".
@@ -1635,7 +1684,7 @@ function todayHtml() {
   const triageFirst = triageLeft > 0 && startedKanji < 100 && Object.keys(appData.triaged).length < 50;
   const triageBtn = (cls, title, sub) => `<button class="${cls}" id="go-triage"><span class="label"><b>${title}</b><small class="muted">${sub}</small></span><span class="count num">${triageLeft}</span></button>`;
   const rows = TYPES.filter(t => deckOf(t).length).map(t => {
-    const due = dueOf(t).length, nNew = newQueueOf(t).length;
+    const due = dueToday(t).length, nNew = newQueueOf(t).length;
     const waiting = t === 'vocab' ? unseenOf('vocab').filter(v => !unlocked('vocab', v)).length : 0;
     const sub = `${due} reviews · ${nNew} new` + (t === 'vocab' && waiting ? ` · ${waiting} waiting on kanji` : '');
     return { t, due, nNew, sub };
@@ -1651,7 +1700,7 @@ function todayHtml() {
   const behindText = TYPES.filter(t => bh[t]).map(t => `${bh[t]} ${t === 'kanji' ? 'kanji' : t === 'vocab' ? (bh[t] > 1 ? 'words' : 'word') : 'grammar'}`).join(' · ');
   const drillN = drillItems().length, lessonN = pendingLookLessons().length, pairN = duePairItems().length;
   const practiceN = finalWeek() && daysToExam() < 0 ? 0 : practiceItems().length;
-  const partN = dueOf('part').length + pendingParts().length;
+  const partN = dueToday('part').length + pendingParts().length;
   const total = rows.reduce((a, r) => a + r.due + r.nNew, 0) + drillN + lessonN + pairN + practiceN + partN;
   const E = appData.settings.examDate;
   const marks = [[-28, 'Practice test 1 · full, timed'], [-bufferDays(), 'All new cards done · review-only from here'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test'], [0, 'JLPT N3']]
@@ -1780,24 +1829,26 @@ function mockBtn() {
   return `<button class="btn" id="go-mock" data-set="${esc(next.id)}"><span class="label"><b><span lang="ja">模擬試験</span> Practice exam ${esc(next.id)}</b><small class="muted">${mockDue() ? "It's practice test week: " : ''}full timed N3 mock, 30 + 70 + 40 minutes, scored like the real test${done.size ? ` · done: ${[...done].join(', ')}` : ''}. Leave and resume any time.</small></span><span class="count num">2h20</span></button>`;
 }
 function planCardHtml() {
-  const p = planToday(), st = planStatus(), lim = p.limit;
+  const p = planToday(), lim = p.limit, left = planLeft(), f = forecast();
   const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('en', { month: 'short', day: 'numeric' });
-  // Per deck: today's target and how much of it is done, then where you stand against the whole plan.
+  // Per deck: today's target and how much of it is done, then how many are left to start.
   const row = (label, ty) => {
-    const s = st[ty];
-    if (!s || !s.start) return '';
+    if (!deckOf(ty).length) return '';
     const done = appData.newByDay[dayKey(ty)] || 0, goal = lim[ty];
-    const overall = s.diff > 0 ? `<span class="ok">${s.diff} ahead</span>` : s.diff < 0 ? `<span class="behind">${-s.diff} behind</span>` : '<span class="ok">on pace</span>';
-    const extra = Math.max(0, Math.min(p.catchUp[ty], goal - p.pace[ty]));
-    const why = extra ? ` <small class="muted">(incl. +${extra} to catch up)</small>` : ty === 'vocab' && p.waiting > 0 ? ` <small class="muted">(${p.waiting} more wait for their kanji)</small>` : '';
-    return `<span>${label}</span><span class="num ${goal && done >= goal ? 'ok' : ''}">${done}/${goal}${why}</span><span class="num">${overall}</span>`;
+    const why = ty === 'vocab' && p.waiting > 0 ? ` <small class="muted">(${p.waiting} more wait for their kanji)</small>` : '';
+    return `<span>${label}</span><span class="num ${goal && done >= goal ? 'ok' : ''}">${done}/${goal}${why}</span><span class="num muted">${left[ty]} left</span>`;
   };
+  const waiting = [...TYPES, 'part'].reduce((a, ty) => a + dueOf(ty).length - dueToday(ty).length, 0);
+  const st = appData.settings, set = parseInt(p.weekend ? st.budgetWeekend : st.budgetWeekday, 10) > 0;
+  const cover = f.all ? `every new card by ${fmt(finishNewBy())} ✓`
+    : `by ${fmt(finishNewBy())}: ${f.g >= f.left.grammar ? `all ${f.left.grammar} grammar` : `${f.g} of ${f.left.grammar} grammar`} · ~${f.v} of ${f.left.vocab} words · ~${f.k} of ${f.left.kanji} kanji`;
   return `<div class="panel stack plan-card">
     <div class="plan-top"><b>Today · ${p.weekend ? 'weekend' : 'weekday'}</b><span class="muted num">${(appData.studySec || {})[today()] >= 60 ? `${Math.round(appData.studySec[today()] / 60)} min done · ` : ''}≈ ${p.minutes} min today</span></div>
-    <div class="pace"><span class="muted">New</span><span class="muted">today</span><span class="muted">overall</span>
+    <div class="pace"><span class="muted">New</span><span class="muted">today</span><span class="muted">to start</span>
       ${row('Kanji', 'kanji')}${row('Words', 'vocab')}${row('Grammar', 'grammar')}</div>
-    <div class="plan-line muted">Plus ${p.due} reviews${p.practiceMin ? ` · ≈${p.practiceMin} min exam practice` : ''} · all new cards by ${fmt(finishNewBy())}</div>
-    <div class="plan-line muted">Staying on track takes ≈${minutesNeeded(false)} min on weekdays and ≈${minutesNeeded(true)} min on weekend days.</div>
+    <div class="plan-line muted">Plus ${p.due} reviews${waiting ? ` (${waiting} more wait: the most-forgotten come first)` : ''}${p.practiceMin ? ` · ≈${p.practiceMin} min exam practice` : ''}</div>
+    <div class="plan-line muted">The day fits your ${p.budget} min (${set ? 'set in More' : 'what you study lately; change it in More'}). At this pace, ${cover}.</div>
+    ${f.all ? '' : `<div class="plan-line muted">Every new card by then would take ≈${minutesNeeded(false)} min on weekdays and ≈${minutesNeeded(true)} min on weekend days.</div>`}
   </div>`;
 }
 
@@ -1912,6 +1963,10 @@ function moreHtml() {
       <div class="field"><label for="set-new">New kanji per day</label>
         <div class="row-wrap"><input type="number" id="set-new" min="0" max="60" placeholder="auto" value="${st.newPerDay === 'auto' ? '' : esc(st.newPerDay)}" style="width:110px">
         <span class="muted" style="font-size:13px">Leave empty for automatic (now ${dailyLimit('kanji')}/day).</span></div></div>
+      <div class="field"><label for="set-bw">Minutes a day</label>
+        <div class="row-wrap"><span class="muted" style="font-size:13px">Weekdays</span><input type="number" id="set-bw" min="10" max="480" placeholder="${budgetAuto(false)}" value="${esc(st.budgetWeekday || '')}" style="width:80px">
+        <span class="muted" style="font-size:13px">Weekends</span><input type="number" id="set-be" min="10" max="480" placeholder="${budgetAuto(true)}" value="${esc(st.budgetWeekend || '')}" style="width:80px"></div>
+        <span class="muted" style="font-size:13px">Each day fits this: reviews first (the most-forgotten), then new cards in the time left. Leave empty to use what you study lately (now ${budgetAuto(false)} and ${budgetAuto(true)} min).</span></div>
       <div class="field"><label for="set-ratio">A weekend day holds how many weekdays of new cards?</label>
         <div class="row-wrap"><input type="number" id="set-ratio" min="1" max="4" step="0.25" value="${weekendRatio()}" style="width:110px">
         <span class="muted" style="font-size:13px">The plan spreads new cards so you finish on time; this only moves work between weekdays and weekends. Needed now: ≈${minutesNeeded(false)} min on weekdays, ≈${minutesNeeded(true)} min on weekend days.${studyTimeNote()}</span></div></div>
@@ -2520,9 +2575,9 @@ function extraMix(n = 5) {
     g.slice(0, take.grammar).map(item('grammar'))]);
 }
 // How many cards each deck is behind the plan's straight line to "all new cards done" (0 when on track).
+// With the day fitted to your minutes, nothing counts as behind: the forecast says what the time covers instead.
 function behindBy() {
-  const st = planStatus();
-  return Object.fromEntries(TYPES.map(t => [t, st[t] && st[t].start ? Math.max(0, -st[t].diff) : 0]));
+  return Object.fromEntries(TYPES.map(t => [t, 0]));
 }
 function extraLabel(mix) {
   const c = t => mix.filter(m => m.type === t).length;
@@ -2536,12 +2591,12 @@ function spreadIn(items, extras, every = 10) {
 }
 function startStudy(type, extra) {
   if (type === 'all') {
-    const items = [...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()];
+    const items = [...interleave(TYPES.map(t => dueToday(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()];
     const fresh = [...pendingLookLessons(), ...pendingHookLessons(), ...pendingParts(), ...interleave(TYPES.map(t => newQueueOf(t).map(x => ({ type: t, x, mode: 'learn' }))))];
     // Exam practice (listening and reading) is spread through the session, so it gets done even on a short day.
     return runQueue(spreadIn(items, practiceItems()), fresh, 'all');
   }
-  const items = [...dueOf(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? [...duePartItems(), ...duePairItems(), ...drillItems()] : [])];
+  const items = [...dueToday(type).map(x => quizItem(type, x)), ...(type === 'kanji' ? [...duePartItems(), ...duePairItems(), ...drillItems()] : [])];
   const fresh = [...(type === 'kanji' ? [...pendingLookLessons(), ...pendingParts()] : type === 'grammar' ? pendingHookLessons() : []), ...(extra ? newQueueOf(type, extra) : newQueueOf(type)).map(x => ({ type, x, mode: 'learn' }))];
   return runQueue(items, fresh, type);
 }
@@ -2576,7 +2631,7 @@ function pendingParts(limit = 3) {
   return PART_DECK.filter(p => !appData.cards['c:' + p.kanji] && ((p.usedIn || []).some(k => appData.cards[k]) || inLearned.has(p.kanji)))
     .slice(0, limit).map(x => ({ type: 'part', x, mode: 'learn' }));
 }
-const duePartItems = () => dueOf('part').map(x => quizItem('part', x));
+const duePartItems = () => dueToday('part').map(x => quizItem('part', x));
 function runQueue(items, fresh, type, tail) {
   fresh = withParts(fresh);
   warmPacks(fresh.slice(0, 12).map(f => f.type === 'vocab' ? f.x.img && f.x.id : f.type === 'grammar' ? f.x.img && keyOf(f.type, f.x) : keyOf(f.type, f.x)).filter(Boolean));
@@ -3166,7 +3221,7 @@ function renderRoundBreak() {
   $('answer-bar').innerHTML = `<div class="row two"><button class="ans skip" id="s-finish">Stop for now</button><button class="ans next" id="r-more">Keep going</button></div>`;
 }
 function remainingToday() {
-  return TYPES.map(t => ({ t, n: dueOf(t).length + newQueueOf(t).length })).filter(x => x.n);
+  return TYPES.map(t => ({ t, n: dueToday(t).length + newQueueOf(t).length })).filter(x => x.n);
 }
 function renderSessionEnd() {
   const triage = session.kind === 'triage';
@@ -3321,8 +3376,8 @@ document.addEventListener('click', e => {
     case 'go-triage': return startTriage();
     case 'go-wtriage': return startWordTriage();
     case 'go-all': {
-      if (dueOf('vocab').length + dueOf('kanji').length + dueOf('grammar').length + newQueueOf('kanji').length + newQueueOf('vocab').length + newQueueOf('grammar').length
-        + practiceItems().length + duePairItems().length + drillItems().length + pendingLookLessons().length + dueOf('part').length + pendingParts().length) return startStudy('all');
+      if (dueToday('vocab').length + dueToday('kanji').length + dueToday('grammar').length + newQueueOf('kanji').length + newQueueOf('vocab').length + newQueueOf('grammar').length
+        + practiceItems().length + duePairItems().length + drillItems().length + pendingLookLessons().length + dueToday('part').length + pendingParts().length) return startStudy('all');
       const b = bonusPick(); if (b) b.run(); return;   // plan done: catch up, or the best use of spare minutes
     }
     case 'a-repair': {
@@ -3330,7 +3385,7 @@ document.addEventListener('click', e => {
       appData.repaired[keyOf(it.type, it.x)] = today(); saveData();
       return next();
     }
-    case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueOf(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()], pendingLookLessons(), 'all');
+    case 'go-reviews': return runQueue([...interleave(TYPES.map(t => dueToday(t).map(x => quizItem(t, x))).concat([duePartItems()])), ...duePairItems(), ...drillItems()], pendingLookLessons(), 'all');
     case 'go-weak': return startWeak();
     case 'go-listen': return startListen();
     case 'l-yes': session.heard++; session.done++; return next();
@@ -3440,6 +3495,12 @@ document.addEventListener('change', e => {
   if (e.target.id === 'set-vocab') { const v = e.target.value.trim(); st.vocabPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
   if (e.target.id === 'set-ratio') { st.weekendRatio = Math.min(4, Math.max(1, Math.round((parseFloat(e.target.value) || 2) * 4) / 4)); saveData(); render(); }
   if (e.target.id === 'set-grammar') { const v = e.target.value.trim(); st.grammarPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
+  if (e.target.id === 'set-bw' || e.target.id === 'set-be') {
+    const v = parseInt(e.target.value, 10);
+    st[e.target.id === 'set-bw' ? 'budgetWeekday' : 'budgetWeekend'] = v > 0 ? String(Math.min(480, Math.max(10, v))) : '';
+    if (appData.planDay && appData.planDay.date === today()) delete appData.planDay.rev;   // refit today's reviews
+    saveData(); render();
+  }
   if (e.target.id === 'set-buffer') { st.bufferDays = Math.min(30, Math.max(0, parseInt(e.target.value, 10) || 0)); saveData(); render(); }
   if (e.target.id === 'b-file' && e.target.files[0]) { const r = new FileReader(); r.onload = () => restore(r.result); r.readAsText(e.target.files[0]); }
 });
