@@ -118,7 +118,7 @@ ruby rt { font-size: 0.5em; color: var(--muted); font-weight: 400; letter-spacin
 .plan-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .plan-top b { font-size: 16px; }
 .pace { display: grid; grid-template-columns: auto 1fr auto; gap: 2px 10px; font-size: 13px; align-items: baseline; }
-.pace .ok { color: var(--good); } .pace .behind { color: var(--again); }
+.pace .ok { color: var(--good); }
 
 /* ---------- study sheet ---------- */
 .sheet { position: fixed; inset: 0; z-index: 20; background: var(--paper); overflow-y: auto; }
@@ -805,19 +805,15 @@ function dueOf(type) {
   return deckOf(type).filter(x => { const c = appData.cards[keyOf(type, x)]; return c && c.due <= t; })
     .sort((a, b) => recall(appData.cards[keyOf(type, a)]) - recall(appData.cards[keyOf(type, b)]));
 }
-function dueReviews() { return dueOf('kanji'); }
-function studyDaysLeft() { return Math.max(1, daysBetween(today(), finishNewBy())); }
-function suggestedNew() { return planToday().target.kanji; }
 
 // ============ DAILY PLAN ============
-// The plan is in cards: what's left of each deck is spread over the days until "all new cards done", a weekend day
-// counting as a few weekdays (More → Settings), plus a share of any shortfall. The minutes follow from that: the
-// Today card shows how long the day takes, and how long weekdays and weekends need to stay on track.
+// Each day fits your minutes (TIME BUDGET below): reviews first, then new cards in the time left, up to the day's
+// share of each deck (what was left on day one, spread over the days until "all new cards done", a weekend day
+// counting as a few weekdays). The Today card shows the day and what the time covers by the exam.
 function isWeekend(d) { const w = new Date(d + 'T12:00:00').getDay(); return w === 0 || w === 6; }
-// How many weekdays' worth of work a weekend day holds. Until it's set, it comes from the old minutes settings.
+// How many weekdays' worth of new cards a weekend day holds: its minutes over a weekday's (More → Minutes a day).
 function weekendRatio() {
-  const st = appData.settings;
-  return Math.min(4, Math.max(1, +st.weekendRatio || Math.round((+st.minWeekend || 60) / (+st.minWeekday || 30) * 4) / 4 || 2));
+  return Math.min(4, Math.max(1, Math.round(budgetMinOf(true) / budgetMinOf(false) * 4) / 4));
 }
 function dayWeight(d) { return isWeekend(d) ? weekendRatio() : 1; }
 // Study time is measured as you go (studySec): the median of your study days of each kind in the last 3 weeks.
@@ -836,10 +832,11 @@ function studiedMinutes(weekend) {
 // Each day fits the minutes you have: your own (More → Settings) or, left empty, what you've studied lately.
 // Reviews come first, most-forgotten first; what doesn't fit waits for the next day (FSRS copes with a late review
 // far better than you cope with a 4-hour day). New cards fill the time that's left, grammar first.
-function budgetMin(d = today()) {
-  const st = appData.settings, we = isWeekend(d), set = parseInt(we ? st.budgetWeekend : st.budgetWeekday, 10);
-  return set > 0 ? set : budgetAuto(we);
+function budgetMinOf(weekend) {
+  const st = appData.settings, set = parseInt(weekend ? st.budgetWeekend : st.budgetWeekday, 10);
+  return set > 0 ? set : budgetAuto(weekend);
 }
+const budgetMin = (d = today()) => budgetMinOf(isWeekend(d));
 // The minutes used when none are set: what you've measured lately.
 function budgetAuto(weekend) { const m = studiedMinutes(weekend), st = appData.settings; return m ? Math.max(20, m.min) : (+(weekend ? st.minWeekend : st.minWeekday) || (weekend ? 60 : 30)); }
 // Every card due, most likely forgotten first.
@@ -883,19 +880,6 @@ function forecast() {
   const v = kv ? Math.min(left.vocab, Math.round(rest * left.vocab / kv)) : 0;
   return { all: cap >= left.grammar + left.vocab + left.kanji, g, v, k: Math.min(left.kanji, rest - v), left };
 }
-// Minutes a weekday or weekend day needs to finish every new card on time: its share of new cards, the reviews of a
-// usual day and exam practice.
-function minutesNeeded(weekend) {
-  const p = planToday(), t = p.t, w = weekend ? weekendRatio() : 1;
-  const fresh = TYPES.reduce((a, ty) => a + Math.ceil(p.perWeekday[ty] * w), 0);
-  return Math.round((typicalReviews(p) * t.review + fresh * t.fresh) / 60) + PRACTICE_MIN(practiceQuota(nextDayOf(weekend)));
-}
-function nextDayOf(weekend) { let d = today(); while (isWeekend(d) !== weekend) d = addDays(d, 1); return d; }
-function studyTimeNote() {
-  const f = (w, label) => { const m = studiedMinutes(w); return m ? `${label} ≈${m.min} min (${m.days} days)` : ''; };
-  const parts = [f(false, 'weekdays'), f(true, 'weekends')].filter(Boolean);
-  return parts.length ? ` Measured lately: ${parts.join(', ')}.` : '';
-}
 // Time spent on each card or question, counted for the day (a pause longer than 90 s counts as 90 s).
 function noteStudy(since) {
   if (!since) return;
@@ -912,8 +896,7 @@ function weightedDaysLeft() {
 // or until you ask for extras.
 const FOCUS_WORDS = 1200;
 const coreWord = v => (v.p || 9999) <= FOCUS_WORDS;
-// Core words added to the deck after your plan began (src "n4"): not a shortfall. Their own share is spread over
-// the days left, so adding words never shows as being behind.
+// Core words added to the deck after your plan began (src "n4"): their own share is spread over the days left.
 const addedLeft = () => unseenOf('vocab').filter(v => coreWord(v) && v.src && v.src !== 'card').length;
 function planLeft() {
   const coreLeft = unseenOf('vocab').filter(coreWord).length;
@@ -957,11 +940,10 @@ function planToday() {
   const ps = appData.planStart || { date: today(), left };
   planStatus();   // sets planStart on the first day
   let wAll = 0; for (let d = ps.date; d < finishNewBy(); d = addDays(d, 1)) wAll += dayWeight(d);
-  const pace = {}, catchUp = {};
+  const pace = {};
   for (const ty of TYPES) {
     pace[ty] = Math.ceil((ps.left[ty] || 0) * w / Math.max(0.001, wAll)) + (ty === 'vocab' ? Math.ceil(addedLeft() * w / Math.max(0.001, W)) : 0);
-    catchUp[ty] = 0;   // the day fits your minutes now: being short of the full plan isn't made up by bigger days
-    target[ty] = left[ty] ? Math.min(left[ty], pace[ty] + catchUp[ty]) : 0;
+    target[ty] = left[ty] ? Math.min(left[ty], pace[ty]) : 0;
   }
   // Reviews and speed are taken once, the first time the plan is made each day: reviews done and cards learned
   // later in the day (they come back for a check) must not change the day's estimate.
@@ -987,27 +969,18 @@ function planToday() {
   const limit = Object.assign({}, target, { vocab: Math.min(target.vocab, wordsReady + (appData.newByDay[dayKey('vocab')] || 0)) });
   const minutes = Math.round((due * t.review + TYPES.reduce((a, ty) => a + limit[ty], 0) * t.fresh) / 60) + practiceMin;
   // The plan's share for a plain weekday (no catch-up), for the minutes a weekday and a weekend day need.
-  const perWeekday = {};
-  for (const ty of TYPES) perWeekday[ty] = left[ty] ? (ps.left[ty] || 0) / Math.max(0.001, wAll) + (ty === 'vocab' ? addedLeft() / Math.max(0.001, W) : 0) : 0;
-  planCache = { key, target, limit, due, t, minutes, practiceMin, budget, newCap, weekend: isWeekend(today()), pace, catchUp, perWeekday, waiting: target.vocab - limit.vocab };
+  planCache = { key, target, limit, due, t, minutes, practiceMin, budget, newCap, weekend: isWeekend(today()), waiting: target.vocab - limit.vocab };
   return planCache;
 }
-// On track? Compare cards started with a straight line from the day the plan began to "all new cards done".
+// Cards started of each deck, counted like the Progress bars (cards marked as known included). The first call sets
+// planStart, the day-one size of each deck that the plan's daily share comes from.
 function planStatus() {
   const left = planLeft();
   if (!appData.planStart) { appData.planStart = { date: today(), left }; saveData(); }
-  // The line is weighted like the plan: weekend days carry more of the work (their extra minutes), so finishing a
-  // weekday's plan never shows as "behind" just because the weekend is still to come.
-  const ps = appData.planStart, weight = (a, b) => { let w = 0; for (let d = a; d < b; d = addDays(d, 1)) w += dayWeight(d); return w; };
-  const frac = Math.min(1, Math.max(0, weight(ps.date, today()) / Math.max(0.001, weight(ps.date, finishNewBy()))));
   const out = {};
   for (const ty of TYPES) {
-    const start = ps.left[ty] || 0, done = start - (left[ty] - (ty === 'vocab' ? addedLeft() : 0)), should = Math.round(start * frac);
-    // For display, count the same way as the Progress bars: every card started, including ones marked as known.
     const total = ty === 'vocab' ? VOCAB.filter(coreWord).length : deckOf(ty).length;
-    const have = total - (ty === 'vocab' ? left.coreLeft : left[ty]);
-    const known = ty === 'kanji' ? DECK.filter(k => (appData.cards[k.kanji] || {}).triaged).length : 0;
-    out[ty] = { done, should, diff: done - should, start, total, have, known };
+    out[ty] = { total, have: total - (ty === 'vocab' ? left.coreLeft : left[ty]) };
   }
   return out;
 }
@@ -1341,6 +1314,8 @@ function kanaToKanji(w, lemma, m) {
   return stemR && w.startsWith(stemR) && (w === r || ok) ? stemK + w.slice(stemR.length) : w;
 }
 // kanji: swap kana words you've studied (reading passages only; never in a question that asks for the kanji).
+// A reading passage, line by line, with tap meanings and studied words in kanji.
+const passageHtml = text => text.split('\n').map(l => `<p>${glossHtml(l, true) || '&nbsp;'}</p>`).join('');
 function glossHtml(text, kanji) {
   const words = GL[text];
   if (!words || !words.length) return esc(text);
@@ -1676,6 +1651,14 @@ function render() {
   if (view === 'more') app.innerHTML = moreHtml();
 }
 
+// What the Study button holds today (startStudy('all') runs exactly these).
+function studyCounts() {
+  const c = { cards: TYPES.reduce((a, t) => a + dueToday(t).length + newQueueOf(t).length, 0), drillN: drillItems().length,
+    lessonN: pendingLookLessons().length, pairN: duePairItems().length, hookN: pendingHookLessons().length,
+    practiceN: finalWeek() && daysToExam() < 0 ? 0 : practiceItems().length, partN: dueToday('part').length + pendingParts().length };
+  c.total = c.cards + c.drillN + c.lessonN + c.pairN + c.hookN + c.practiceN + c.partN;
+  return c;
+}
 function todayHtml() {
   const days = daysBetween(today(), appData.settings.examDate);
   const triageLeft = unseen().filter(k => !appData.triaged[k.kanji]).length;
@@ -1696,12 +1679,7 @@ function todayHtml() {
         <span class="count num">${r.due + r.nNew}</span>
       </button>`).join('');
   const extra = finalWeek() ? [] : extraMix();
-  const bh = finalWeek() ? {} : behindBy();
-  const behindText = TYPES.filter(t => bh[t]).map(t => `${bh[t]} ${t === 'kanji' ? 'kanji' : t === 'vocab' ? (bh[t] > 1 ? 'words' : 'word') : 'grammar'}`).join(' · ');
-  const drillN = drillItems().length, lessonN = pendingLookLessons().length, pairN = duePairItems().length;
-  const practiceN = finalWeek() && daysToExam() < 0 ? 0 : practiceItems().length;
-  const partN = dueToday('part').length + pendingParts().length;
-  const total = rows.reduce((a, r) => a + r.due + r.nNew, 0) + drillN + lessonN + pairN + practiceN + partN;
+  const { drillN, lessonN, pairN, practiceN, partN, hookN, total } = studyCounts();
   const E = appData.settings.examDate;
   const marks = [[-28, 'Practice test 1 · full, timed'], [-bufferDays(), 'All new cards done · review-only from here'], [-14, 'Practice test 2 · full, timed'], [-7, 'Last practice test'], [0, 'JLPT N3']]
     .filter((m, i, a) => a.findIndex(x => x[0] === m[0]) === i).sort((a, b) => a[0] - b[0])
@@ -1751,14 +1729,13 @@ function todayHtml() {
     <div class="cta">
       ${(() => {
         // One main button: everything due, today's new cards, look-alikes and exam practice. When today's plan is
-        // done but you're behind it, the same button catches up 5 at a time; only fully on track does it rest.
-        const catchUp = !total && behindText && extra.length, bonus = !total && !catchUp && bonusPick();
-        const title = total ? 'Study' : catchUp ? 'Catch up' : 'All done for today ✓';
-        const sub = total ? [...rows.filter(r => r.due + r.nNew).map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`), ...(partN ? [`Parts ${partN}`] : []), ...(lessonN ? [`Look-alikes ${lessonN}`] : []), ...(pairN + drillN ? [`Look-alike checks ${pairN + drillN}`] : []), ...(practiceN ? [`Exam practice ${practiceN}`] : [])].join(' · ')
-          : catchUp ? `Today's plan is done, but you're ${behindText} behind. Tap to catch up 5 at a time (${extraLabel(extra)}).`
+        // done, it offers the best use of 10 spare minutes.
+        const bonus = !total && bonusPick();
+        const title = total ? 'Study' : 'All done for today ✓';
+        const sub = total ? [...rows.filter(r => r.due + r.nNew).map(r => `${TYPE_LABEL[r.t]} ${r.due + r.nNew}`), ...(partN ? [`Parts ${partN}`] : []), ...(lessonN ? [`Look-alikes ${lessonN}`] : []), ...(pairN + drillN ? [`Look-alike checks ${pairN + drillN}`] : []), ...(hookN ? [`New hooks ${hookN}`] : []), ...(practiceN ? [`Exam practice ${practiceN}`] : [])].join(' · ')
           : bonus ? `Have 10 more minutes? Tap for the best use of them: ${bonus.label}.` : "You're on track. Come back tomorrow, or play a sprint.";
-        return `<button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total || catchUp || bonus ? '' : 'disabled'}>
-          <span class="label"><b>${title}</b><small class="muted">${sub}</small></span><span class="count num">${total || (catchUp ? '+' + extra.length : bonus ? '+' : '')}</span></button>`;
+        return `<button class="btn ${triageFirst || parked ? '' : 'primary'}" id="go-all" ${total || bonus ? '' : 'disabled'}>
+          <span class="label"><b>${title}</b><small class="muted">${sub}</small></span><span class="count num">${total || (bonus ? '+' : '')}</span></button>`;
       })()}
       ${weakOn ? `<button class="btn" id="go-weak"><span class="label"><b>Weak spots</b><small class="muted">The 40 cards you're most likely to forget, due or not</small></span><span class="count num">40</span></button>` : ''}
       ${mockDue() && (EXAM.mocks || []).length ? mockBtn() : ''}
@@ -1769,7 +1746,7 @@ function todayHtml() {
         ${EXAM.qr.length ? `<button class="btn" id="go-practice"><span class="label"><b><span lang="ja">試験練習</span> Extra exam practice</b><small class="muted">${practiceN ? `Today's ${practiceN} item${practiceN > 1 ? 's are' : ' is'} already in Study` : "Today's share is done"} · tap for more listening &amp; reading</small></span><span class="count num">+4</span></button>` : ''}
         ${listenN >= 5 ? `<button class="btn" id="go-listen"><span class="label"><b><span lang="ja">聴解</span> Listening drill</b><small class="muted">20 words and sentences you've studied, by ear only</small></span><span class="count num">▶</span></button>` : ''}
         ${!mockDue() && (EXAM.mocks || []).length ? mockBtn() : ''}
-        ${extra.length && !(!total && behindText) ? `<button class="btn" id="go-extra"><span class="label"><b>${behindText ? 'Catch up 5' : 'Learn 5 more'}</b><small class="muted">${extraLabel(extra)}${behindText ? ", where you're behind" : ', most useful first'}. Tomorrow's plan counts them.</small></span><span class="count num">+${extra.length}</span></button>` : ''}
+        ${extra.length ? `<button class="btn" id="go-extra"><span class="label"><b>Learn 5 more</b><small class="muted">${extraLabel(extra)}, most useful first. Tomorrow's plan counts them.</small></span><span class="count num">+${extra.length}</span></button>` : ''}
         ${triageLeft && !triageFirst ? triageBtn('btn', 'Mark kanji you already know', 'One quick pass. Known kanji also unlock their words.') : ''}
       </div></details>
     </div>
@@ -1787,7 +1764,7 @@ function todayHtml() {
 
 // ============ BONUS: THE BEST USE OF 10 SPARE MINUTES ============
 // When today's plan is done, the main button picks one thing, in order of exam value per minute:
-// catch up if you're truly behind; repair cards you keep missing (hook and picture first, then a check that
+// repair cards you keep missing (hook and picture first, then a check that
 // doesn't move their schedule); exam practice if it's light or weak; new cards only while accuracy is healthy.
 // Reviewing healthy cards early is never picked: it gains almost nothing per minute.
 const LEECH_LAPSES = 3;
@@ -1813,8 +1790,7 @@ function practiceThisWeek() {
   return Object.values(appData.practice).filter(r => r.d >= from).length;
 }
 function bonusPick() {
-  const extra = extraMix(), bh = behindBy();
-  if (TYPES.some(t => bh[t]) && extra.length) return { label: `catch up ${extraLabel(extra)}`, run: () => runQueue([], extra, 'all') };
+  const extra = extraMix();
   const leeches = leechKeys();
   if (leeches.length) return { label: `repair ${leeches.length} card${leeches.length > 1 ? 's' : ''} you keep missing (story and picture first)`, run: startRepair };
   const acc = appData.stats.totalReviews >= 50 ? appData.stats.correctReviews / appData.stats.totalReviews : 1;
@@ -1848,7 +1824,6 @@ function planCardHtml() {
       ${row('Kanji', 'kanji')}${row('Words', 'vocab')}${row('Grammar', 'grammar')}</div>
     <div class="plan-line muted">Plus ${p.due} reviews${waiting ? ` (${waiting} more wait: the most-forgotten come first)` : ''}${p.practiceMin ? ` · ≈${p.practiceMin} min exam practice` : ''}</div>
     <div class="plan-line muted">The day fits your ${p.budget} min (${set ? 'set in More' : 'what you study lately; change it in More'}). At this pace, ${cover}.</div>
-    ${f.all ? '' : `<div class="plan-line muted">Every new card by then would take ≈${minutesNeeded(false)} min on weekdays and ≈${minutesNeeded(true)} min on weekend days.</div>`}
   </div>`;
 }
 
@@ -1967,9 +1942,6 @@ function moreHtml() {
         <div class="row-wrap"><span class="muted" style="font-size:13px">Weekdays</span><input type="number" id="set-bw" min="10" max="480" placeholder="${budgetAuto(false)}" value="${esc(st.budgetWeekday || '')}" style="width:80px">
         <span class="muted" style="font-size:13px">Weekends</span><input type="number" id="set-be" min="10" max="480" placeholder="${budgetAuto(true)}" value="${esc(st.budgetWeekend || '')}" style="width:80px"></div>
         <span class="muted" style="font-size:13px">Each day fits this: reviews first (the most-forgotten), then new cards in the time left. Leave empty to use what you study lately (now ${budgetAuto(false)} and ${budgetAuto(true)} min).</span></div>
-      <div class="field"><label for="set-ratio">A weekend day holds how many weekdays of new cards?</label>
-        <div class="row-wrap"><input type="number" id="set-ratio" min="1" max="4" step="0.25" value="${weekendRatio()}" style="width:110px">
-        <span class="muted" style="font-size:13px">The plan spreads new cards so you finish on time; this only moves work between weekdays and weekends. Needed now: ≈${minutesNeeded(false)} min on weekdays, ≈${minutesNeeded(true)} min on weekend days.${studyTimeNote()}</span></div></div>
       <div class="field"><label for="set-vocab">New words per day</label>
         <div class="row-wrap"><input type="number" id="set-vocab" min="0" max="80" placeholder="auto" value="${st.vocabPerDay === 'auto' ? '' : esc(st.vocabPerDay)}" style="width:110px">
         <span class="muted" style="font-size:13px">Leave empty for automatic (now ${dailyLimit('vocab')}/day, most useful words first).</span></div></div>
@@ -2260,7 +2232,7 @@ function examScreen(it, tags) {
     return { inner: { front }, bar: done ? examBar(it) : pickHint('The exam plays it once; here you can replay with ▶') };
   }
   tags.push(`<span class="tag" lang="ja">読解 · ${x.kind === 'info' ? '情報検索 FIND THE INFO' : x.kind === 'medium' ? '中文 PASSAGE' : '短文 SHORT TEXT'}</span>`);
-  const front = `<div class="passage" lang="ja">${x.text.split('\n').map(l => `<p>${glossHtml(l, true) || '&nbsp;'}</p>`).join('')}</div>
+  const front = `<div class="passage" lang="ja">${passageHtml(x.text)}</div>
     ${x.questions.map((q, qi) => `<div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q, true)}</div>${optBtns(qi, q.options, false)}
       ${it.answers[qi] != null ? `<div class="why">${esc(q.why || '')}</div>${optNotesHtml(q, it.answers[qi])}` : ''}`).join('')}
     ${done ? `<details><summary>English translation</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details>` : ''}`;
@@ -2414,9 +2386,9 @@ function buildMock(m) {
     const runsOf = Object.fromEntries(o.chunks.map((c, i) => [c, (rb.chunks || [])[i]]));
     add('gr', 'lk', '文の組み立て · ★ which part', `<div class="g-q order" lang="ja"><span>${rubyRuns(o.before, rb.before)}</span>${slots}<span>${rubyRuns(o.after, rb.after)}</span></div>`, opts, a, `${o.before}${o.chunks.join('')}${o.after} · ${o.why || ''}`, { optRuns: opts.map(c => runsOf[c]) }); }
   const tg = m.gram.textgram;
-  if (tg) tg.blanks.forEach((b, i) => add('gr', 'lk', '文章の文法 · grammar in a text', `<div class="passage" lang="ja">${tg.text.split('\n').map(l => `<p>${glossHtml(l, true) || '&nbsp;'}</p>`).join('')}</div><div class="prompt">Which fits blank （${i + 1}）?</div>`, b.options, b.answer, b.why, { notes: b }));
+  if (tg) tg.blanks.forEach((b, i) => add('gr', 'lk', '文章の文法 · grammar in a text', `<div class="passage" lang="ja">${passageHtml(tg.text)}</div><div class="prompt">Which fits blank （${i + 1}）?</div>`, b.options, b.answer, b.why, { notes: b }));
   for (const p of m.read) p.questions.forEach(q => add('gr', 'rd', `読解 · ${p.kind === 'info' ? 'find the information' : p.kind === 'long' ? 'long passage' : p.kind === 'medium' ? 'passage' : 'short text'}`,
-    `<div class="passage" lang="ja">${p.text.split('\n').map(l => `<p>${glossHtml(l, true) || '&nbsp;'}</p>`).join('')}</div><div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q, true)}</div>`, q.options, q.answer, q.why, { notes: q }));
+    `<div class="passage" lang="ja">${passageHtml(p.text)}</div><div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q, true)}</div>`, q.options, q.answer, q.why, { notes: q }));
   for (const id of m.listen) { const x = examById(id) || mockListenById(id); if (!x) continue;
     if (id.startsWith('dl')) add('listen', 'ls', '聴解 · 会話', `<div class="prompt" lang="ja">${glossHtml(x.question)}</div>`, x.options, x.answer, x.why, { play: id, notes: x });
     else if (id.startsWith('mg')) add('listen', 'ls', '聴解 · 概要理解 (the question and options are spoken)', '', x.options.map(() => ''), x.answer, x.why, { play: id, notes: x });
@@ -2564,20 +2536,12 @@ function extraMix(n = 5) {
   const pool = { kanji: k, vocab: w, grammar: g }, take = { kanji: 0, vocab: 0, grammar: 0 };
   const room = t => take[t] < pool[t].length;
   let left = n;
-  // Behind on the plan: extras go there first, one at a time to whichever type is furthest behind.
-  const need = behindBy();
-  for (let t; left && (t = TYPES.filter(t => need[t] > take[t] && room(t)).sort((a, b) => (need[b] - take[b]) - (need[a] - take[a]))[0]); left--) take[t]++;
-  // Otherwise (or once caught up) the usual mix: a grammar point, two words, the rest kanji, then more words.
+  // A grammar point, two words, the rest kanji, then more words.
   for (const [t, cap] of [['grammar', 1], ['vocab', 2], ['kanji', n], ['vocab', n]])
     while (left && take[t] < cap && room(t)) { take[t]++; left--; }
   const item = type => x => ({ type, x, mode: 'learn', extra: true });
   return interleave([k.slice(0, take.kanji).map(item('kanji')), w.slice(0, take.vocab).map(item('vocab')),
     g.slice(0, take.grammar).map(item('grammar'))]);
-}
-// How many cards each deck is behind the plan's straight line to "all new cards done" (0 when on track).
-// With the day fitted to your minutes, nothing counts as behind: the forecast says what the time covers instead.
-function behindBy() {
-  return Object.fromEntries(TYPES.map(t => [t, 0]));
 }
 function extraLabel(mix) {
   const c = t => mix.filter(m => m.type === t).length;
@@ -3376,8 +3340,7 @@ document.addEventListener('click', e => {
     case 'go-triage': return startTriage();
     case 'go-wtriage': return startWordTriage();
     case 'go-all': {
-      if (dueToday('vocab').length + dueToday('kanji').length + dueToday('grammar').length + newQueueOf('kanji').length + newQueueOf('vocab').length + newQueueOf('grammar').length
-        + practiceItems().length + duePairItems().length + drillItems().length + pendingLookLessons().length + dueToday('part').length + pendingParts().length) return startStudy('all');
+      if (studyCounts().total) return startStudy('all');
       const b = bonusPick(); if (b) b.run(); return;   // plan done: catch up, or the best use of spare minutes
     }
     case 'a-repair': {
@@ -3493,7 +3456,6 @@ document.addEventListener('change', e => {
   if (e.target.id === 'set-exam' && e.target.value) { st.examDate = e.target.value; saveData(); }
   if (e.target.id === 'set-new') { const v = e.target.value.trim(); st.newPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
   if (e.target.id === 'set-vocab') { const v = e.target.value.trim(); st.vocabPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
-  if (e.target.id === 'set-ratio') { st.weekendRatio = Math.min(4, Math.max(1, Math.round((parseFloat(e.target.value) || 2) * 4) / 4)); saveData(); render(); }
   if (e.target.id === 'set-grammar') { const v = e.target.value.trim(); st.grammarPerDay = v === '' ? 'auto' : num(v); saveData(); render(); }
   if (e.target.id === 'set-bw' || e.target.id === 'set-be') {
     const v = parseInt(e.target.value, 10);

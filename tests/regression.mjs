@@ -274,6 +274,28 @@ await test('a backlog fits the day\'s minutes: most-forgotten reviews first, the
   yes(r.refit < r.cap, `old plan refitted minus minutes studied: ${r.refit} vs ${r.cap}`); eq(r.lightRev, null, 'light day: nothing waits'); yes(r.lightNew > 0, 'light day: new cards');
 });
 
+await test('a full study session runs: every screen opens and 80 cards of all kinds answer without an error', async () => {
+  const p = await page();
+  await p.waitForFunction(() => SYNC.pulled && LOOK.length && Object.keys(EXAMPLES).length);
+  const r = await p.evaluate(() => {
+    for (const v of ['today', 'deck', 'stats', 'more', 'today']) { view = v; render(); }
+    document.getElementById('go-all').click();
+    const kinds = new Set();
+    for (let i = 0; i < 80; i++) {
+      const it = session && session.queue[session.i];
+      if (!it) break;
+      kinds.add(it.type + ':' + (it.task || it.mode));
+      let el = null;
+      for (const q of ['#a-reveal', '#a-hook', '#a-continue', '.ans.good', '.ans.next', '#r-more', '.ans', 'button']) { el = document.querySelector('#answer-bar ' + q); if (el) break; }
+      if (!el || el.disabled) el = document.querySelector('#sheet .opts button:not([disabled])') || el;
+      if (!el) return { stuck: [...kinds] };
+      el.click();
+    }
+    return { kinds: [...kinds] };
+  });
+  eq(p.errors.length, 0, 'errors: ' + p.errors); eq(r.stuck, undefined, 'session stuck after ' + r.stuck); yes(r.kinds.length >= 5, 'kinds: ' + r.kinds);
+});
+
 await test('a removed duplicate word (いくら next to 幾ら) moves its progress to the word that stays, from load and from the account', async () => {
   const local = { version: 3, cards: { 'v:お皿': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3), triaged: true },
       'v:いくら': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-5), triaged: true },
