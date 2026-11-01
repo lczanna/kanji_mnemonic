@@ -35,7 +35,9 @@ read inside each word) and `python3 tools/gloss_fixes.py` (checked meanings and 
 After rebuilding examples, grammar glosses or exam.json, run `python3 tools/gloss_merge.py JMdict_e.gz` (joins words the
 tokenizer split, like 不意 + 打ち; run it after gloss_fixes.py, whose fixes count tokens) and then `python3 tools/kana_fill.py`: it adds tap meanings for
 kana words from `data/kana_meanings.json` (checked word by word; null marks tokenizer slips). Last, `python3 tools/na_glosses.py`: な-adjectives before に/な get their adverb or adjective meaning
-(自由に: freely, not 'freedom'; `data/na_glosses.json`).
+(自由に: freely, not 'freedom'; `data/na_glosses.json`). Then `python3 tools/gloss_audit.py`: the hand-checked fixes from the
+sentence audit (`data/gloss_audit.json`: wrong senses and readings, keyed by word, reading and old meaning, plus a few
+one-sentence fixes).
 
 ## Images
 
