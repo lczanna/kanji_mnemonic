@@ -129,6 +129,7 @@ DEPICT = {
 }
 # Words whose hook the image filter refuses as written: a plainer scene for the picture only (the app shows the hook).
 PICTURE = {
+    '嵐': 'A boy band of five young cartoon men in matching suits performing on an outdoor stage in a violent thunderstorm, rain and wind lashing, lightning across the sky, still singing.',
     '断つ': 'A cheerful tattoo artist in a studio snips a long red thread in two with big scissors.',
     '冷やす': 'A smiling man hands a woman named Sue a frosty glass of lemonade full of ice cubes on a hot day.',
     '寄せる': 'A friendly street vendor waves passers-by closer to his fruit stall, people gathering around it.',

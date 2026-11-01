@@ -1653,7 +1653,7 @@ function grammarBackHtml(g, compact) {
       ${g.img ? `<img class="card-img${compact ? ' small' : ''}" src="${esc(g.img)}" data-kanji="${esc('g:' + g.id)}" alt="Picture for the memory hook" loading="lazy" onerror="imgFallback(this)">` : ''}
       <div class="story" lang="ja">${hookHtml(g.mn.hook, g.pattern).html}</div>
       ${g.mn.contrast ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(g.mn.contrast)}</span></div>` : ''}
-      ${g.mn.family ? `<div class="g-family"><div class="section-label">The yo-yo family · the yo-yo is よう, what's with it tells them apart</div>${g.mn.family.map(([id, pic, m]) => { const o = GRAMMAR.find(x => x.id === id); return o ? `<div class="${id === g.id ? 'here' : ''}"><b lang="ja">${esc(o.pattern)}</b> ${esc(pic)} → <i>${esc(m)}</i></div>` : ''; }).join('')}</div>` : ''}</div>` : ''}
+      ${(g.mn.families || (g.mn.family ? [{ title: "The yo-yo family · the yo-yo is よう, what's with it tells them apart", rows: g.mn.family }] : [])).map(f => `<div class="g-family"><div class="section-label">${esc(f.title)}</div>${f.rows.map(([id, pic, m]) => { const o = GRAMMAR.find(x => x.id === id); return o ? `<div class="${id === g.id ? 'here' : ''}"><b lang="ja">${esc(o.pattern)}</b> ${esc(pic)} → <i>${esc(m)}</i></div>` : ''; }).join('')}</div>`).join('')}</div>` : ''}
     <dl class="readings"><dt>FORM</dt><dd lang="ja">${kanjiLinks(g.formation)}</dd></dl>
     ${compact ? '' : `<p class="g-note">${esc(g.note)}</p>`}
     <div><div class="section-label">Examples</div><div class="examples">${g.examples.map(x => `

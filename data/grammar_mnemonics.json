@@ -90,7 +90,7 @@
   "contrast": "Not はず (HAZELNUT: it should be true, a guess) — べき is the BECKONING finger: what you ought to do."
  },
  "rashii": {
-  "hook": "〜らしい: everyone in town says there's a RASH (らしい) going round — 'apparently / it seems' (from what I hear); N + らしい: a real man-ly man.",
+  "hook": "〜らしい: everyone in town gossips about a RASH (らしい) going round. You haven't seen it, you only HEARD the rumour: 'apparently / it seems'. N + らしい: 男らしい, a real man-ly man.",
   "picture": "A small town square where neighbours whisper while a child scratches a red rash on his arm.",
   "contrast": "Not ようだ (YO-YO: I see it myself) and not そうだ hearsay (SOAP: straight report) — らしい is the RASH rumour: apparently."
  },
@@ -100,7 +100,7 @@
   "contrast": "Not みたい (MEAT EYE: looks like / seems) — っぽい is the POTTY: -ish, has that flavour."
  },
  "mitai": {
-  "hook": "〜みたい: this MEATball looks just like an EYE (みたい) — casual 'looks like / seems'.",
+  "hook": "〜みたい: this MEATball looks just like an EYE (みたい): the casual way to say ようだ, 'looks like / seems', and 'like' (猫みたい, like a cat).",
   "picture": "A plate of spaghetti with a meatball decorated with an olive so it looks like a funny eyeball.",
   "contrast": "Same as ようだ (YO-YO) but casual, and goes straight onto nouns (雨みたい)."
  },
@@ -110,12 +110,12 @@
   "contrast": "Not そうだ hearsay (SOAP opera: I heard), not そうだ looks (SEW: seam about to burst, from a stem), not らしい (RASH: rumor going round), not みたい (MEAT EYE: casual ようだ) — ようだ is the YO-YO I see myself: it seems."
  },
  "souda-hearsay": {
-  "hook": "〜そうだ（伝聞）: the SOAP (そう) opera characters say it'll snow tomorrow — full sentence + そうだ: 'I hear that / they say'.",
+  "hook": "〜そうだ（伝聞）: the SOAP (そう) opera characters TELL me it'll snow tomorrow: plain form + そうだ (降るそうだ) = 'I hear that'. My ears, not my eyes.",
   "picture": "An old TV in a living room showing a dramatic soap-opera scene, a viewer leaning in to listen.",
   "contrast": "Not そうだ looks (SEW: stem + そう, a seam I can see bursting) — hearsay is the SOAP opera: full form (降るそうだ), something I heard."
  },
  "souda-appearance": {
-  "hook": "〜そうだ（様態）／〜そうもない: I SEW (そう) a seam and it looks about to burst — stem + そう (降りそう, おいしそう): 'looks like / seems about to'.",
+  "hook": "〜そうだ（様態）／〜そうもない: I SEW (そう) a seam and SEE with my own eyes it's about to burst: stem + そう (降りそう, おいしそう) = 'looks like / about to', from what I see right now.",
   "picture": "A tight seam on a stuffed pillow with stitches stretched, about to split open.",
   "contrast": "Not そうだ hearsay (SOAP opera: full form, I heard) — SEW is what I see right now, on a chopped stem (降り-そう)."
  },
@@ -250,8 +250,7 @@
  "kiru-kirenai": {
   "hook": "〜きる／きれない: it's 切る, CUT (the kanji you know). Cut all the way through to the end: 食べきる, the knife goes through the whole pizza and every slice is eaten: 'do completely'. きれない: the knife jams halfway into a giant pizza; you can't get through it all: 'can't do it all'.",
   "picture": "Two pizzas side by side: on the left a knife has cut cleanly all the way through and the plate is empty except crumbs; on the right a knife is stuck halfway into an enormous, towering pizza.",
-  "contrast": "Opposite of かける (the CAKE with one slice eaten: started, not finished): きる is 切る, cut all the way through.",
-  "_rev": "2026-10-26r"
+  "contrast": "Opposite of かける (the CAKE with one slice eaten: started, not finished): きる is 切る, cut all the way through."
  },
  "kakeru-kakeno": {
   "hook": "〜かける／かけの: a CAKE (かけ) with one slice eaten, left on the table: 'half-done / start to (but not finish)'.",
@@ -584,6 +583,121 @@
     "glowing in the DArk like a moon",
     "it seems"
    ]
+  ],
+  "seems": [
+   [
+    "souda-appearance",
+    "SEW: I SEE the seam about to burst (stem + そう)",
+    "looks like: my eyes, right now"
+   ],
+   [
+    "souda-hearsay",
+    "SOAP opera: someone TOLD me (plain + そうだ)",
+    "I hear that: my ears"
+   ],
+   [
+    "rashii",
+    "RASH rumour going round town",
+    "apparently: gossip · N + らしい = typical of"
+   ],
+   [
+    "you-da",
+    "glowing YO-YO in the dark: my reasoning from clues",
+    "it seems: my judgment"
+   ],
+   [
+    "mitai",
+    "MEATball EYE: ようだ in casual talk",
+    "seems / like (casual)"
+   ],
+   [
+    "ppoi",
+    "grown man on a POTTY",
+    "-ish, kind of (casual impression)"
+   ]
+  ],
+  "ni-te": [
+   [
+    "ni-tsuite",
+    "chatting over SWEET TEA",
+    "about (everyday)"
+   ],
+   [
+    "ni-kanshite",
+    "KANGAROO tied to the topic board",
+    "about (formal, written)"
+   ],
+   [
+    "ni-taishite",
+    "tug-of-war TIE, face to face",
+    "toward / against / in contrast"
+   ],
+   [
+    "ni-totte",
+    "my TOTE bag, precious TO ME",
+    "for someone: + a judgment (大切, 難しい)"
+   ],
+   [
+    "ni-yotte",
+    "the YACHT goes where the wind takes it",
+    "depends on / by (who did it) / due to"
+   ],
+   [
+    "ni-yoru-to",
+    "the YOGURT label says",
+    "according to (a source)"
+   ]
+  ],
+  "should": [
+   [
+    "hazu-da",
+    "HAZELNUT tree, so nuts should be there",
+    "should be: I expect it (a fact)"
+   ],
+   [
+    "hazu-ga-nai",
+    "no HAZELNUT tree anywhere",
+    "can't be: no way"
+   ],
+   [
+    "beki-da",
+    "the teacher BECKONS: apologise!",
+    "ought to: a duty (what's right)"
+   ]
+  ],
+  "because": [
+   [
+    "okage-de",
+    "A CAGE kept the bird safe",
+    "thanks to: a good result"
+   ],
+   [
+    "sei-de",
+    "SAD DAY, the rain's fault",
+    "because of: a bad result, blame"
+   ],
+   [
+    "tame-ni",
+    "I TAME a lion",
+    "because of (neutral, formal) / in order to"
+   ]
+  ],
+  "bakari": [
+   [
+    "bakari",
+    "a plate of nothing but BROCCOLI",
+    "nothing but (too much)"
+   ],
+   [
+    "ta-bakari",
+    "BROCCOLI just picked, still steaming (た + ばかり)",
+    "have just done"
+   ],
+   [
+    "bakari-de-naku",
+    "not only BROCCOLI but carrots too (…でなく…も)",
+    "not only … but also"
+   ]
   ]
  },
  "_rev": {
@@ -593,8 +707,8 @@
   "youni-iu": "2026-10-26r",
   "you-to-suru": "2026-10-24r",
   "you-da": "2026-10-24r",
-  "ni-kanshite": "2026-10-26r",
-  "ni-taishite": "2026-10-26r",
+  "ni-kanshite": "2026-11-01r",
+  "ni-taishite": "2026-11-01r",
   "wo-chuushin-ni": "2026-10-26r",
   "wo-tooshite": "2026-10-26r",
   "aida-aidani": "2026-10-26r",
@@ -605,6 +719,25 @@
   "towa-kagiranai": "2026-10-26r",
   "ni-kimatte-iru": "2026-10-26r",
   "muke-muki": "2026-10-26r",
-  "teki": "2026-10-26r"
+  "teki": "2026-10-26r",
+  "rashii": "2026-11-01r",
+  "souda-appearance": "2026-11-01r",
+  "souda-hearsay": "2026-11-01r",
+  "mitai": "2026-11-01r",
+  "kiru-kirenai": "2026-11-01r",
+  "ni-yotte": "2026-11-01r",
+  "ni-totte": "2026-11-01r",
+  "hazu-da": "2026-11-01r",
+  "beki-da": "2026-11-01r",
+  "sei-de": "2026-11-01r",
+  "bakari": "2026-11-01r"
+ },
+ "_familyTitles": {
+  "よう": "The yo-yo family · the yo-yo is よう, what's with it tells them apart",
+  "seems": "The 'it seems' family · ask: how do you know?",
+  "ni-te": "The に〜て family · ask: what's the link? (とって = TO ME, よって = depends on)",
+  "should": "Should · ask: a guess about facts, or a duty?",
+  "because": "Because of · ask: a good, bad or neutral result?",
+  "bakari": "The BROCCOLI family · ばかり is broccoli, what's around it tells them apart"
  }
 }
