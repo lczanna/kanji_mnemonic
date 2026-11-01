@@ -34,7 +34,8 @@ After adding words or changing a reading in `vocab.json`, run `python3 tools/kan
 read inside each word) and `python3 tools/gloss_fixes.py` (checked meanings and readings in the sentences).
 After rebuilding examples, grammar glosses or exam.json, run `python3 tools/gloss_merge.py JMdict_e.gz` (joins words the
 tokenizer split, like 不意 + 打ち; run it after gloss_fixes.py, whose fixes count tokens) and then `python3 tools/kana_fill.py`: it adds tap meanings for
-kana words from `data/kana_meanings.json` (checked word by word; null marks tokenizer slips).
+kana words from `data/kana_meanings.json` (checked word by word; null marks tokenizer slips). Last, `python3 tools/na_glosses.py`: な-adjectives before に/な get their adverb or adjective meaning
+(自由に: freely, not 'freedom'; `data/na_glosses.json`).
 
 ## Images
 
