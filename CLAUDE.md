@@ -37,7 +37,8 @@ tokenizer split, like 不意 + 打ち; run it after gloss_fixes.py, whose fixes 
 kana words from `data/kana_meanings.json` (checked word by word; null marks tokenizer slips). Last, `python3 tools/na_glosses.py`: な-adjectives before に/な get their adverb or adjective meaning
 (自由に: freely, not 'freedom'; `data/na_glosses.json`). Then `python3 tools/gloss_audit.py`: the hand-checked fixes from the
 sentence audit (`data/gloss_audit.json`: wrong senses and readings, keyed by word, reading and old meaning, plus a few
-one-sentence fixes).
+one-sentence fixes). Finally `python3 tools/kana_split.py JMdict_e.gz`: words the texts spell in kana that the
+tokenizer cut up (かいさつ → かい "floor" + さつ) become one tappable word (改札); its SKIP list holds grammar endings that look like nouns.
 
 ## Images
 
