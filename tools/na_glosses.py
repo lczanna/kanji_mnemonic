@@ -2,7 +2,7 @@
 """
 Tap meanings for な-adjectives by what follows them (data/na_glosses.json): before な the adjective, before に the
 adverb (自由に: freely), not the dictionary's first sense, which is often the noun (自由: freedom). Only words written
-in their dictionary form match, so an inflected or longer word is left alone.
+in their dictionary form match, so an inflected or longer word is left alone. Also 下さい: "please", not "to give".
 
   python3 tools/na_glosses.py      # apply to grammar.json, examples.json and exam.json in place; run after the other gloss tools
 """
@@ -11,6 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FILES = ['grammar.json', 'examples.json', 'exam.json']
+# Words whose dictionary sense misleads in their everyday request form: 下さい after a verb is "please", not "give".
+REQUEST = {'下さい': '(〜て下さい／お〜下さい) please (do …); (Nを下さい) please give me N',
+           'ください': '(〜てください／お〜ください) please (do …); (Nをください) please give me N'}
 
 
 def fix(gl, fixes):
@@ -19,7 +22,9 @@ def fix(gl, fixes):
         for g in words:
             st, ln, lemma = g[0], g[1], g[3]
             m = fixes.get(f'{lemma}|{text[st + ln:st + ln + 1]}')
-            if m and text[st:st + ln] == lemma and g[5] != m:
+            if not (m and text[st:st + ln] == lemma):
+                m = REQUEST.get(text[st:st + ln]) if lemma in ('下さる', 'くださる') else None
+            if m and g[5] != m:
                 g[5] = m; n += 1
     return n
 
