@@ -1164,7 +1164,9 @@ function readingTraps(r, w) {
   const kan = c => /[\u3400-\u9fff々]/.test(c);
   const skel = w && /[ぁ-んァ-ヶ]/.test(w) && [...w].some(kan)
     ? new RegExp('^' + w.split(/([\u3400-\u9fff々]+)/).filter(Boolean).map(p => kan(p[0]) ? '.+' : kata2hira(p).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('') + '$') : null;
-  const ok = x => x && x !== r && x[0] !== 'っ' && [...x].length >= 2 && (!skel || skel.test(x));
+  // Never another reading the word really has (空: から and そら, vocab.json "ar", tools/alt_readings.py).
+  const valid = new Set(((w && BY_WORD[w]) || {}).ar || []);
+  const ok = x => x && x !== r && !valid.has(x) && x[0] !== 'っ' && [...x].length >= 2 && (!skel || skel.test(x));
   const pools = Object.values(trapEdits(r)).map(p => [...new Set(p)]
     .filter(ok).sort(() => Math.random() - .5));
   const pick = [];

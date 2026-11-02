@@ -31,7 +31,8 @@ and moves parts ahead of the kanji that use them. Progress is keyed by kanji, so
 ## Word data
 
 After adding words or changing a reading in `vocab.json`, run `python3 tools/kanji_readings.py` (how each kanji is
-read inside each word) and `python3 tools/gloss_fixes.py` (checked meanings and readings in the sentences).
+read inside each word) and `python3 tools/gloss_fixes.py` (checked meanings and readings in the sentences). Also `python3 tools/alt_readings.py JMdict_e.gz`:
+the other readings each spelling has (空: から and そら), which the reading quiz never offers as wrong answers.
 After rebuilding examples, grammar glosses or exam.json, run `python3 tools/gloss_merge.py JMdict_e.gz` (joins words the
 tokenizer split, like 不意 + 打ち; run it after gloss_fixes.py, whose fixes count tokens) and then `python3 tools/kana_fill.py`: it adds tap meanings for
 kana words from `data/kana_meanings.json` (checked word by word; null marks tokenizer slips). Last, `python3 tools/na_glosses.py`: な-adjectives before に/な get their adverb or adjective meaning

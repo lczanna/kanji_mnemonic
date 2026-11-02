@@ -296,6 +296,19 @@ await test('a full study session runs: every screen opens and 80 cards of all ki
   eq(p.errors.length, 0, 'errors: ' + p.errors); eq(r.stuck, undefined, 'session stuck after ' + r.stuck); yes(r.kinds.length >= 5, 'kinds: ' + r.kinds);
 });
 
+await test('a reading quiz never offers another real reading of the word as wrong (空: そら and から)', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    const bad = [];
+    for (let k = 0; k < 3; k++) for (const v of VOCAB) {   // traps are random: three rounds
+      const t = readingTraps(v.r, v.w);
+      for (const x of t || []) if ((v.ar || []).includes(x)) bad.push(v.w + ':' + x);
+    }
+    return { bad: [...new Set(bad)].slice(0, 10), sora: BY_WORD['空'].ar };
+  });
+  eq(r.bad.length, 0, 'real readings offered as wrong: ' + r.bad); yes((r.sora || []).includes('そら'), '空 lists そら');
+});
+
 await test('a removed duplicate word (いくら next to 幾ら) moves its progress to the word that stays, from load and from the account', async () => {
   const local = { version: 3, cards: { 'v:お皿': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3), triaged: true },
       'v:いくら': { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-5), triaged: true },
