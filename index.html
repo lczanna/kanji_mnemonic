@@ -1430,6 +1430,20 @@ const PART_TWINS = {
   '代': ['以', 'by means of (以上)', 'first question: does it start with the person radical 亻 on the left? substitute 代 does, then an arrow 弋 (a stake with a dot at its top right), as in 時代, 代わり; by means of 以 does NOT: a hooked stick with a drop on the left and the person on the RIGHT, as in 以上, 以外'],
   '易': ['昜', 'piggy bank (inside 場, 陽, 湯)', 'easy 易 has the sun straight on the pennant; the piggy bank 昜 has one more line under the sun (旦, dawn)'],
 };
+// Part names that differ from the kanji's own keyword (欠 is "lack" as a kanji, "yawn" as a part): say why.
+const PART_NAME_WHY = {
+  'yawn': '欠 is drawn as a person with a wide-open mouth: a yawn, its original meaning. As a kanji it came to mean lack (a yawn is an empty, gaping mouth); inside 歌, 次, 欲 picture the yawn',
+  'sun': '日 is a picture of the sun; the sun makes the day, so as a kanji it means day. Inside other kanji (明, 時, 春) picture the sun',
+  'moon': '月 is a picture of the moon; the moon measures the month, so as a kanji it means month. Inside other kanji (明, 期) picture the moon',
+  'St. Bernard dog': '大 is a person with arms and legs spread wide: large. Inside other kanji the stories make it a big St. Bernard dog, so it can act',
+  'vase': '立 looks like a vase standing on the ground line; as a kanji it means stand up (the vase stands up). Inside other kanji (音, 意, 部) picture the vase',
+  'altar': '示 is an altar, where offerings are shown to the gods; as a kanji it means show. Inside other kanji (票, 禁) picture the altar',
+  'boulevard': '行 is a crossroads seen from above: a boulevard, where people are going. As a kanji it means going',
+};
+function partNameWhy(g) {
+  const why = Object.entries(PARTS).filter(([n, p]) => p.g === g && PART_NAME_WHY[n]).map(([n]) => `<b>${esc(n)}</b>: ${esc(PART_NAME_WHY[n])}.`);
+  return why.length ? `<div class="g-contrast"><span class="tag">AS A PART</span> ${why.join(' ')}</div>` : '';
+}
 function twinHtml(g) {
   const t = PART_TWINS[g];
   return t ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(t[0])}</span> ${esc(t[1])}: ${esc(t[2])}.</div>` : '';
@@ -1453,7 +1467,7 @@ function showPart(btn) {
       <div class="gl-lemma">${appData.cards['c:' + pc.kanji] ? 'One of your part cards.' : 'A part card: it comes up before the first kanji that uses it.'}</div>${twinHtml(pc.kanji)}`;
   } else if (k) {
     const started = !!appData.cards[k.kanji];
-    pop.innerHTML = `${kanjiInfoHtml(k)}<div class="gl-lemma">Part name: ${esc(name)}${started ? '' : ' · not studied yet'}</div>
+    pop.innerHTML = `${kanjiInfoHtml(k)}<div class="gl-lemma">Part name: ${esc(name)}${started ? '' : ' · not studied yet'}</div>${PART_NAME_WHY[name] ? `<div class="gl-lemma">${esc(PART_NAME_WHY[name])}.</div>` : ''}
       <div><button class="small-btn" data-open-k="${esc(k.kanji)}">See its card</button></div>`;
   } else {
     pop.innerHTML = `<div class="gl-word" lang="ja">${esc(p.g || '')} <span>${esc(name)}</span></div>
@@ -1568,7 +1582,7 @@ function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
   // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
   const img = k.image ? `<img class="card-img${mode === 'quiz' ? ' small' : ''}" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="imgFallback(this)">` : '';
-  const story = `<div class="story">${storyHtml(k.story || '')}</div>${twinHtml(k.kanji)}`;
+  const story = `<div class="story">${storyHtml(k.story || '')}</div>${twinHtml(k.kanji)}${partNameWhy(k.kanji)}`;
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}${castSibling(x.r)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
