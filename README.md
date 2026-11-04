@@ -10,6 +10,11 @@ A spaced-repetition app for JLPT N3 with three decks:
 
 **Public copy (saves in the browser only):** https://lczanna.github.io/kanji_mnemonic/
 
+**Copied this repo?** The two links above are the original owner's. Ask Claude Code to publish `index.html` as a new
+artifact (it follows `CLAUDE.md`), then put your own link above; Claude publishes every update to it. For the public
+copy, turn on GitHub Pages in your fork (Settings → Pages) and use `https://<your-username>.github.io/kanji_mnemonic/`.
+Progress isn't in the repo: a copy starts from zero, with its own progress in your own account.
+
 ## How it works
 
 - **Deck order:** N5 → N4 → N3. Within each level, the most frequent kanji come first, in groups of about 60. Any deck kanji used as a part (directly, or inside another part such as 土 inside 寺 "Buddhist temple") is moved forward so it is always learned before the kanji built from it.

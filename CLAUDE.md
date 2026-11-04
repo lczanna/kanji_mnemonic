@@ -4,9 +4,10 @@
 
 Progress must survive every app update. Before changing `index.html` or the decks:
 
-- **Publish to the same Claude link.** Cloud progress lives in that artifact's database
-  (`data/users/<uid>/meta`, `cards0`–`cards3`). Update https://claude.ai/artifact/4zcASpfem692NjoQduRPuD
-  in place; publishing a new artifact starts from zero.
+- **Publish to the same Claude link:** the one after "Use it here" in `README.md`. Cloud progress lives in that
+  artifact's database (`data/users/<uid>/meta`, `cards0`–`cards3`). Update it in place; publishing a new artifact
+  starts from zero. In a copy of this repo, that link is still the original owner's (you can't publish to it):
+  publish once as a new artifact, with the files listed under Images, put its link in `README.md`, and use it from then on.
 - **Keep the storage keys:** `localStorage` `kanji_srs_data` and `kanji_srs_snapshots`, and the database paths above.
   `kanji_srs_session` holds the session in progress (resumed after a reload or from Today); cards in it are
   stored by key, so keep `unpackItem` able to read old entries.
