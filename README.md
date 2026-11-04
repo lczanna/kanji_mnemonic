@@ -10,6 +10,14 @@ A spaced-repetition app for JLPT N3 with three decks:
 
 **Public copy (saves in the browser only):** https://lczanna.github.io/kanji_mnemonic/
 
+## Build your own with Claude
+
+This repo is made to be handed to Claude. Fork it, open your fork in [Claude Code](https://claude.ai/code), and ask
+for what you want: "publish this as my own app", "add N2 kanji", "write stories in Spanish", "make the hooks
+about football". `CLAUDE.md` tells Claude the rules that keep your progress safe through every change (same link,
+same card keys, only add fields, run `node tests/regression.mjs` first), and the tools in `tools/` rebuild the
+word data after each change.
+
 **Copied this repo?** The two links above are the original owner's. Ask Claude Code to publish `index.html` as a new
 artifact (it follows `CLAUDE.md`), then put your own link above; Claude publishes every update to it. For the public
 copy, turn on GitHub Pages in your fork (Settings → Pages) and use `https://<your-username>.github.io/kanji_mnemonic/`.
@@ -79,4 +87,11 @@ Run locally: `python3 -m http.server`, then open http://localhost:8000. Opening 
 
 ## Sources
 
-Kanji levels, frequency and WaniKani parts come from [kanji-data](https://github.com/davidluzgouveia/kanji-data). Heisig keywords come from [kanjiapi.dev](https://kanjiapi.dev). RTK frame numbers come from [KANJIDIC2](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project). JLPT vocabulary comes from [open-anki-jlpt-decks](https://github.com/jamsinclair/open-anki-jlpt-decks). Readings were checked against [JMdict](https://www.edrdg.org/jmdict/j_jmdict.html). Stories were written for this deck.
+Kanji levels, frequency and WaniKani parts come from [kanji-data](https://github.com/davidluzgouveia/kanji-data). Heisig keywords come from [kanjiapi.dev](https://kanjiapi.dev). RTK frame numbers come from [KANJIDIC2](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project). JLPT vocabulary comes from [open-anki-jlpt-decks](https://github.com/jamsinclair/open-anki-jlpt-decks). Readings were checked against [JMdict](https://www.edrdg.org/jmdict/j_jmdict.html). Stories were written for this deck. Example sentences come from the [Tanaka Corpus](https://tatoeba.org) (Tatoeba, CC BY). Look-alike stroke drawings come from [KanjiVG](https://kanjivg.tagaini.net) (© Ulrich Apel, CC BY-SA 3.0).
+
+## License and credit
+
+Built by [lczanna](https://github.com/lczanna). Code: MIT (`LICENSE`). Decks, stories, pictures and audio:
+CC BY-SA 4.0 (`LICENSE-DATA.md`): copy and change them freely, credit this project, and share changes the same way.
+
+<!-- Tip link: add a GitHub Sponsors or Ko-fi link here, e.g. "If this helped you, you can buy me a coffee: <link>" -->
