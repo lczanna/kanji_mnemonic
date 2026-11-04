@@ -1,0 +1,107 @@
+{
+ "_about": "Hand-checked tap meanings from the sentence audit (2026-11). 'pair': '<dictionary form>|<reading>|<old meaning>' -> new meaning, or {lr: reading, m: meaning} when the reading was wrong too; fixes that word wherever it appears with that meaning. 'sent': {sentence: {token index: meaning}} for one sentence. Applied by tools/gloss_audit.py.",
+ "pair": {
+  "本|ぽん|origin; source; basis": "counter for long, thin things (bottles, pens, trains…)",
+  "時|とき|o'clock; hour": {
+   "lr": "じ",
+   "m": "o'clock; hour"
+  },
+  "方|かた|direction; way; person": "(polite) person; (verb stem + 方) way of doing",
+  "方|ほう|direction; way; side (of an argument, etc.)": "direction; side; (〜の方が) the one that is more …",
+  "全く|まったく|really; truly; indeed": "completely; (全く〜ない) not at all; really",
+  "良く|よく|often; frequently": "well; often",
+  "もう|もう|already": "already; (もう一度, もう少し) more, another; (もう〜ない) no longer",
+  "先|さき|point; tip; head (of a line)": "ahead; earlier, first; tip; (〜先) destination",
+  "台|だい|stand; rest; setting (of a gem)": "counter for cars and machines (一台); stand",
+  "山本|やまもと|foot of a mountain; base of a mountain; mine": "Yamamoto (family name); foot of a mountain",
+  "山下|やました|foot of a mountain; base of a mountain": "Yamashita (family name); foot of a mountain",
+  "物|もの|nothing; things": "thing(s)",
+  "作り方|つくりかた|style of building; construction; recipe": "way of making; recipe",
+  "余り|あまり|too much; excessively": "(あまり〜ない) not very, not much; too much",
+  "辛い|つらい|spicy; hot": {
+   "lr": "からい",
+   "m": "spicy; hot (taste)"
+  },
+  "何|なに|how many (with counter)": {
+   "lr": "なん",
+   "m": "how many (with a counter: 何文字, 何人); what"
+  },
+  "柄|がら|handle": "pattern; (〜柄) nature, character",
+  "風|ふう|wind (one of the five elements)": {
+   "lr": "かぜ",
+   "m": "wind"
+  },
+  "所為|せい|consequence; outcome": "fault; because of (something bad)",
+  "行く|いく|to have an orgasm; to come": "to go; (〜ていく) to keep …ing, go on …ing",
+  "臭い|くさい|smell (noun)": {
+   "lr": "におい",
+   "m": "smell (noun)"
+  },
+  "二度|ふたたび|twice; two times": {
+   "lr": "にど",
+   "m": "twice; two times"
+  },
+  "帰す|きす|to send home": {
+   "lr": "かえす",
+   "m": "to send home; to send back"
+  },
+  "百合|ゆり|yuri": "lily (flower); Yuri (name)",
+  "なあ|しち|I wonder (sentence-ending)": {
+   "lr": "なあ",
+   "m": "I wonder; (sentence end) …, isn't it"
+  },
+  "時|とき|o'clock": {
+   "lr": "じ",
+   "m": "o'clock"
+  },
+  "公平|こうへい|chopped burdock root (and sometimes carrot) cooked in sugar and soy…": "fair; impartial",
+  "黒人|くろうと|black person": {
+   "lr": "こくじん",
+   "m": "black person"
+  },
+  "接ぐ|はぐ|to set (a bone)": {
+   "lr": "つぐ",
+   "m": "to set (a bone)"
+  },
+  "接ぐ|はぐ|to graft": {
+   "lr": "つぐ",
+   "m": "to graft"
+  },
+  "たい|たい|other intention; hidden purpose": "want to (〜たい)",
+  "一日|ついたち|one day": {
+   "lr": "いちにち",
+   "m": "one day; (一日で) in a day"
+  },
+  "上手|かみて|upper part; upper stream": {
+   "lr": "じょうず",
+   "m": "skillful; good at"
+  },
+  "中|なか|red-light district": "in; inside",
+  "何|なに|to receive; to get": "what",
+  "入る|いる|to enter; to go in": {
+   "lr": "はいる",
+   "m": "to enter; to go in"
+  },
+  "其れ|それ|you": "that",
+  "取り|とり|taking; taker": "(取りに行く／来る) to go / come to get, pick up",
+  "大変|たいへん|very; greatly; immense": "very; (大変だ／大変な) hard, tough, terrible",
+  "度|ど|degree (angle, temperature, scale, etc.)": "degree(s) (temperature, angle); (〜度) times",
+  "掛ける|かける|to hang up (e.g. a coat, a picture on the wall)": "to hang (up); (電話を〜) to call; (眼鏡を〜) to put on; to sit",
+  "直|ちょく|soon": {
+   "lr": "じき",
+   "m": "(直に) soon"
+  },
+  "適う|あたう|to conform to; to accord with": {
+   "lr": "かなう",
+   "m": "to accord with; (〜にかなわない) to go against; can't match"
+  }
+ },
+ "sent": {
+  "私はよく物を忘れる。買い物に行っても、必要な物を買わずに帰ってくることがある。そこで、出かける前に、買う物を紙に書くことにした。": {
+   "10": "(〜ことがある) sometimes, there are times when"
+  },
+  "朝からとんでもないことになった。": {
+   "2": "thing; matter (大変なことになった: things got serious)"
+  }
+ }
+}

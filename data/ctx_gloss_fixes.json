@@ -1,0 +1,4119 @@
+{
+"fix": {
+"あなたの（　）はお出になりません。": {
+"9": {
+"meaning": "(電話に出る) to answer (the phone)"
+}
+},
+"金持ちが必ずしも（　）とは限らない。": {
+"4": {
+"meaning": "(必ずしも〜ない) not necessarily"
+},
+"13": {
+"meaning": "(〜とは限らない) not necessarily"
+}
+},
+"どこへ行けばヨーロッパの（　）が手に入りますか。": {
+"16": {
+"meaning": "(手に入る) to obtain, get hold of"
+},
+"18": {
+"meaning": "(手に入る) to be obtained"
+}
+},
+"この男は（　）年をとっています。": {
+"7": {
+"meaning": "age; years",
+"reading": "とし"
+},
+"9": {
+"meaning": "(年をとる) to grow old",
+"lemma": "取る"
+}
+},
+"君の（　）に対する好みは感心しない。": {
+"6": {
+"meaning": "(〜に対する) toward, regarding"
+}
+},
+"神は、この世を６日間で（　）した。": {
+"8": {
+"meaning": "(counter) ... days",
+"reading": "にちかん"
+}
+},
+"一生のうちで（　）なんて一度しかない。": {
+"3": {
+"meaning": "(〜のうちで) within, during"
+}
+},
+"実際のところ、これは（　）支配の有力な手段なのである。": {
+"3": {
+"meaning": "(実際のところ) actually, in fact"
+}
+},
+"じっくり彼に耳を貸す（　）はいない。": {
+"13": {
+"meaning": "(は + いない) there is no one (いる: to be)",
+"lemma": "いる",
+"reading": "いる"
+}
+},
+"彼は私にとって父親のような（　）だ。": {
+"10": {
+"meaning": "(〜のような) like, similar to"
+}
+},
+"ヘレンの（　）はせいぜい４０キロだ。": {
+"14": {
+"meaning": "kilogram(s)"
+}
+},
+"その猫の一方は黒で、もう一方は（　）だ。": {
+"10": {
+"meaning": "(もう一方) the other (one)"
+}
+},
+"彼がうちに来るときは必ず子供に（　）を持ってくる。": {
+"2": {
+"meaning": "home; our house (家)"
+}
+},
+"列車でならここからたった（　）分だ。": {
+"15": {
+"meaning": "minute(s)",
+"reading": "ふん"
+}
+},
+"（　）は常に天気について不満を言う。": {
+"4": {
+"meaning": "(常に) always"
+}
+},
+"ヘレン・ケラーは（　）と耳と口が不自由だった。": {
+"16": {
+"meaning": "impaired, disabled (of body parts)"
+}
+},
+"（　）の方はどなたですか。": {
+"4": {
+"meaning": "person (polite)",
+"reading": "かた"
+}
+},
+"すみませんが（　）をとって下さいませんか。": {
+"10": {
+"meaning": "to take; to pass (something to someone)",
+"lemma": "取る"
+}
+},
+"それは２通りに（　）できる。": {
+"4": {
+"meaning": "(〜通り) ways, kinds"
+}
+},
+"君はこの機会を（　）する方がよい。": {
+"12": {
+"meaning": "(〜方がいい) had better, should"
+}
+},
+"土（　）月の午前１０時半から午後４時まで開館。": {
+"4": {
+"meaning": "Monday (月曜)",
+"reading": "げつ"
+}
+},
+"彼は多分よい（　）であるかも知れない。": {
+"14": {
+"meaning": "(かもしれない) might, may"
+}
+},
+"この（　）はなんの役にもたたない。": {
+"12": {
+"meaning": "(役に立つ) to be useful",
+"lemma": "立つ"
+}
+},
+"彼は生死の（　）をさ迷った。": {
+"9": {
+"meaning": "to wander; to hover (between)"
+}
+},
+"彼には（　）の他に少し収入がある。": {
+"7": {
+"meaning": "(〜の他に) besides, in addition to"
+}
+},
+"彼女の親切な助力に対して彼は（　）を述べた。": {
+"9": {
+"meaning": "(〜に対して) for, toward"
+}
+},
+"私は美術に非常な（　）を抱いています。": {
+"5": {
+"meaning": "(非常な) great, extreme"
+},
+"12": {
+"meaning": "(関心を抱く) to have, harbor (a feeling)"
+}
+},
+"私たちは（　）で昼食をとった。": {
+"11": {
+"meaning": "(昼食をとる) to have (a meal)",
+"lemma": "取る"
+}
+},
+"その二つの考えの（　）は非常に際立っている。": {
+"12": {
+"meaning": "(非常に) very, extremely"
+}
+},
+"こちらに来るように手で（　）した。": {
+"0": {
+"meaning": "this way; here"
+}
+},
+"クラスの女生徒の男生徒に対する（　）は３対２だ。": {
+"12": {
+"meaning": "(〜に対する) relative to, to"
+}
+},
+"ぼくはこの点を特に（　）したい。": {
+"5": {
+"meaning": "point (matter, issue)"
+}
+},
+"死亡により人口は（　）しつつある。": {
+"3": {
+"meaning": "(〜により) due to, because of"
+}
+},
+"こんな（　）の目にあったことはないわ！": {
+"7": {
+"meaning": "(〜目にあう) to go through (a bad experience)"
+}
+},
+"親に対して（　）を表さなければいけない。": {
+"2": {
+"meaning": "(〜に対して) toward"
+}
+},
+"相次ぐ不祥事にも関わらず、警察はオメオメ（　）切符を切っている。": {
+"8": {
+"meaning": "(にも関わらず) despite"
+},
+"23": {
+"meaning": "ticket; (traffic) citation"
+},
+"26": {
+"meaning": "(切符を切る) to issue (a ticket)"
+}
+},
+"（　）が川に浮かんで夢のような光景だ。": {
+"12": {
+"meaning": "(〜のような) like"
+}
+},
+"この（　）に対する答は間違っている。": {
+"6": {
+"meaning": "(〜に対する) to, for"
+}
+},
+"なんと不思議な偶然の（　）だろう。": {
+"0": {
+"meaning": "(なんと〜だろう) what a ...!"
+}
+},
+"彼にはユーモア（　）が全然ないようだ。": {
+"15": {
+"meaning": "(〜ようだ) seems, appears"
+}
+},
+"ゴチャゴチャ（　）を言いなさんな。": {
+"10": {
+"meaning": "(言いなさんな) don't say",
+"lemma": "言う",
+"reading": "いう"
+}
+},
+"彼は口座から（　）ドル下ろした。": {
+"11": {
+"meaning": "(お金を下ろす) to withdraw (money)"
+}
+},
+"このうち大事なのは（　）の方です。": {
+"2": {
+"meaning": "(このうち) of these, among these"
+}
+},
+"私は馬をレース用に（　）している。": {
+"7": {
+"meaning": "(〜用) for (use in)"
+}
+},
+"彼が私のところの（　）です。": {
+"4": {
+"meaning": "(私のところ) my place (where I work)"
+}
+},
+"君はどれくらいよく（　）に行きますか。": {
+"7": {
+"meaning": "often"
+}
+},
+"この（　）はあれよりずっと面白い。": {
+"10": {
+"meaning": "(ずっと + comparison) much, by far"
+}
+},
+"ところで、（　）彼に会いましたか。": {
+"0": {
+"meaning": "(ところで) by the way"
+}
+},
+"クリスマスプレゼント用に（　）してください。": {
+"10": {
+"meaning": "(〜用) for (use as)"
+}
+},
+"試験を無事に終えたら（　）の休みをとります。": {
+"17": {
+"meaning": "(休みをとる) to take (time off)",
+"lemma": "取る"
+}
+},
+"もうすぐ夜が（　）。": {
+"0": {
+"meaning": "(もうすぐ) soon, any moment"
+}
+},
+"公民権運動はある夢に（　）。": {
+"3": {
+"meaning": "movement, campaign"
+}
+},
+"私の知る限りでは、これが最新（　）です。": {
+"4": {
+"meaning": "(知る限りでは) as far as (I know)"
+}
+},
+"その（　）はアメリカ人に強いようですね。": {
+"14": {
+"meaning": "(〜ようだ) seems, appears"
+}
+},
+"私は（　）を割って前進した。": {
+"6": {
+"meaning": "(〜を割って) to push through (a crowd)"
+}
+},
+"会社は何とか（　）せずにすんだ。": {
+"3": {
+"meaning": "(何とか) somehow, managed to"
+},
+"12": {
+"meaning": "(〜ずにすむ) to get by without",
+"lemma": "済む"
+}
+},
+"彼は何も（　）を頼んでいなかった。": {
+"2": {
+"meaning": "(何も + neg) nothing, not any"
+}
+},
+"人生における難しさは（　）である。": {
+"3": {
+"meaning": "(〜における) in, at",
+"lemma": "おける",
+"reading": "おける"
+}
+},
+"１度や２度の（　）はだれにでもある。": {
+"4": {
+"meaning": "(counter) times"
+}
+},
+"完全な（　）にはもう見えないのである。": {
+"8": {
+"meaning": "(もう + neg) no longer"
+}
+},
+"砂から金を分離（　）する方法をお見せしましょう。": {
+"3": {
+"meaning": "gold",
+"reading": "きん"
+}
+},
+"実際に飛行機を（　）したのですか。": {
+"0": {
+"meaning": "(実際に) actually, really"
+}
+},
+"その山火事は（　）の不始末から出た。": {
+"15": {
+"meaning": "(火が出る) to break out (fire)"
+}
+},
+"彼はシェークスピアから一行（　）した。": {
+"11": {
+"meaning": "one line (of text)",
+"reading": "いちぎょう"
+}
+},
+"君の色に対する好みは（　）しない。": {
+"4": {
+"meaning": "(〜に対する) toward, regarding"
+}
+},
+"私はよく（　）にラジオを聞いたものだ。": {
+"2": {
+"meaning": "often"
+},
+"15": {
+"meaning": "(〜たものだ) used to"
+}
+},
+"この（　）に手を貸してください。": {
+"6": {
+"meaning": "(手を貸す) help"
+},
+"8": {
+"meaning": "(手を貸す) to lend a hand"
+}
+},
+"相当の（　）がないと家を買うのは無理だ。": {
+"0": {
+"meaning": "(相当の) considerable, substantial"
+}
+},
+"シンジのシンクロ（　）は申し分なかった。": {
+"12": {
+"meaning": "(申し分ない) perfect, flawless"
+}
+},
+"二人の（　）がガチッと切りあった。": {
+"11": {
+"meaning": "(切り合う) to cross swords, clash"
+}
+},
+"ギャンブルで味を（　）となかなか止められない。": {
+"6": {
+"meaning": "(味をしめる) taste (for something, after success)"
+}
+},
+"富は（　）をもたらすとは限らない。": {
+"12": {
+"meaning": "(〜とは限らない) not necessarily"
+}
+},
+"その（　）には実がたわわになっていた。": {
+"7": {
+"meaning": "fruit; (実がなる) to bear fruit",
+"reading": "み"
+}
+},
+"この辞書は学生に（　）役に立つ。": {
+"11": {
+"meaning": "(役に立つ) use; usefulness"
+},
+"13": {
+"meaning": "(役に立つ) to be useful"
+}
+},
+"彼は（　）の家に身を寄せている。": {
+"8": {
+"meaning": "(身を寄せる) oneself"
+},
+"10": {
+"meaning": "(身を寄せる) to stay with (someone)"
+}
+},
+"まもなく彼は誤りに、（　）だろう。": {
+"0": {
+"meaning": "(まもなく) soon; before long",
+"lemma": "まもなく",
+"reading": "まもなく"
+}
+},
+"（　）するくらいなら死んだほうが増しだ。": {
+"13": {
+"meaning": "(〜たほうがましだ) would rather"
+}
+},
+"その女優は舞台に３度（　）した。": {
+"9": {
+"meaning": "counter for times (３度: three times)"
+}
+},
+"いつ（　）のサインを消すのでしょうね。": {
+"6": {
+"meaning": "sign (notice)"
+},
+"10": {
+"meaning": "to turn off (a light, sign)"
+}
+},
+"この箱にはリンゴが（　）入っている。": {
+"2": {
+"meaning": "box; case",
+"reading": "はこ"
+}
+},
+"昔彼らはのろしで（　）していた。": {
+"1": {
+"meaning": "(彼ら) they"
+}
+},
+"この本は五（　）から出来ている。": {
+"10": {
+"meaning": "(〜からできている) to be made up of"
+}
+},
+"株価上昇を（　）に新工場建設の話が持ち上がった。": {
+"17": {
+"meaning": "(話が持ち上がる) to come up; to arise"
+}
+},
+"彼は（　）の人に対して丁重である。": {
+"8": {
+"meaning": "(〜に対して) toward; to"
+}
+},
+"種の上に少し（　）をかぶせなさい。": {
+"0": {
+"meaning": "seed",
+"reading": "たね"
+}
+},
+"彼は（　）よりいなかの方が好きだ。": {
+"11": {
+"meaning": "(〜より〜の方が) the one (in comparisons)"
+}
+},
+"今日から（　）１日お願いします。": {
+"7": {
+"meaning": "one day (まる１日: a whole day)"
+}
+},
+"彼が言う事にも一面の（　）がある。": {
+"7": {
+"meaning": "one side; one aspect"
+}
+},
+"この文はもう一つの（　）ができる。": {
+"4": {
+"meaning": "(もう一つ) another; one more"
+}
+},
+"ほんの２、３（　）前に彼女に会った。": {
+"9": {
+"meaning": "ago; before"
+}
+},
+"少女は音楽的な（　）に欠けていた。": {
+"11": {
+"meaning": "to lack; to be lacking (in)"
+}
+},
+"下手な職人は（　）にけちをつける。": {
+"10": {
+"meaning": "(けちをつける) to find fault with"
+}
+},
+"台所をきれいに（　）のを忘れないように。": {
+"3": {
+"meaning": "clean; neat"
+}
+},
+"その国は２国と（　）を接している。": {
+"11": {
+"meaning": "(境を接する) to border (on)"
+}
+},
+"その事件には何となく（　）の悪いところがあった。": {
+"6": {
+"meaning": "(何となく) somehow; vaguely",
+"lemma": "何となく",
+"reading": "なんとなく"
+},
+"16": {
+"meaning": "point; aspect (悪いところ: something off)"
+}
+},
+"（　）品がだぶついている。": {
+"3": {
+"meaning": "goods; products (衣料品: clothing)",
+"reading": "ひん"
+}
+},
+"（　）達は本来、親の考えに対して反発するものだ。": {
+"13": {
+"meaning": "(〜に対して) against; toward"
+},
+"20": {
+"meaning": "(〜ものだ) it's natural that"
+}
+},
+"（　）の音の他は何一つ聞こえなかった。": {
+"6": {
+"meaning": "(〜の他は) except for; other than"
+},
+"8": {
+"meaning": "(何一つ〜ない) not a single thing"
+}
+},
+"この（　）は値段の割に品質が良い。": {
+"9": {
+"meaning": "(〜の割に) for; considering"
+}
+},
+"あなたは何と（　）生徒なのでしょう。": {
+"4": {
+"meaning": "(何と〜！) what a ...!"
+}
+},
+"そのしぐさで（　）は笑い出した。": {
+"12": {
+"meaning": "(笑い出す) to start (laughing)"
+}
+},
+"彼は２０年前、大学を卒業するとすぐに（　）になった。": {
+"5": {
+"meaning": "ago"
+}
+},
+"法のもとではすべての人は（　）だ。": {
+"2": {
+"meaning": "(〜のもとで) under"
+}
+},
+"（　）はプロペラ機よりもずっと速い。": {
+"8": {
+"meaning": "(〜機) aircraft; plane"
+},
+"12": {
+"meaning": "(+ comparison) much; far"
+}
+},
+"あなたのお名前はどのように（　）するのですか。": {
+"10": {
+"meaning": "(どのように) how; in what way"
+}
+},
+"ご（　）でお越しください。": {
+"6": {
+"meaning": "(お越しください) please come (honorific)"
+}
+},
+"これを（　）にお出しください。": {
+"8": {
+"meaning": "to hand in; to submit"
+}
+},
+"（　）に対して反対の声を上げろ。": {
+"4": {
+"meaning": "(〜に対して) against"
+}
+},
+"非（　）は50ドル増しとなります。": {
+"0": {
+"meaning": "non-; un- (prefix)"
+},
+"9": {
+"meaning": "(〜増し) extra; additional"
+}
+},
+"彼は（　）を表して私の言う事を聞いてくれた。": {
+"6": {
+"meaning": "to express; to show"
+}
+},
+"彼は問題を（　）するといっている。": {
+"11": {
+"meaning": "to say"
+}
+},
+"彼はその問題を解くのに（　）した。": {
+"7": {
+"meaning": "to solve"
+}
+},
+"この（　）には以下のアプローチがとられた。": {
+"7": {
+"meaning": "the following"
+},
+"16": {
+"meaning": "to take; to adopt (an approach)",
+"lemma": "とる",
+"reading": "とる"
+}
+},
+"習慣は（　）身についてしまうと、断ち切るのがとても難しい。": {
+"6": {
+"meaning": "(身につく) oneself"
+},
+"8": {
+"meaning": "(身につく) to become ingrained; to acquire",
+"lemma": "つく",
+"reading": "つく"
+}
+},
+"お茶を一杯飲んで彼は（　）が出た。": {
+"14": {
+"meaning": "(元気が出る) to perk up; to come out"
+}
+},
+"それは悪夢のような（　）だった。": {
+"6": {
+"meaning": "(〜のような) like; as if"
+}
+},
+"目が疲れたので（　）をさした。": {
+"11": {
+"meaning": "(目薬をさす) to put in (eye drops)"
+}
+},
+"暑かった。その上（　）が高かった。": {
+"7": {
+"meaning": "(その上) besides; moreover"
+}
+},
+"アスピリンはどんな（　）から成っていますか。": {
+"14": {
+"meaning": "(〜から成る) to consist of"
+}
+},
+"ケンは自分の犬に、そこで待つように（　）した。": {
+"14": {
+"meaning": "(〜ように命令する) (order someone) to ..."
+}
+},
+"その（　）は彼女のためになった。": {
+"9": {
+"meaning": "(〜のためになる) to do (someone) good"
+}
+},
+"５歳（　）の小人は、入場料は要りません。": {
+"6": {
+"meaning": "child (for fares and fees)",
+"reading": "しょうにん"
+}
+},
+"何か（　）飲み物をもらえますか。": {
+"0": {
+"meaning": "(何か) something",
+"lemma": "何か",
+"reading": "なにか"
+}
+},
+"ジムは１日中（　）がおかしかった。": {
+"5": {
+"meaning": "(１日中) throughout; all (day)",
+"reading": "じゅう"
+}
+},
+"彼のスイングは実に（　）だ。": {
+"7": {
+"meaning": "(実に) truly; really"
+}
+},
+"（　）として彼は次のように言った。": {
+"10": {
+"meaning": "(次のように) as follows"
+}
+},
+"（　）をお知らせください。": {
+"5": {
+"meaning": "to inform; to let know",
+"lemma": "知らせる",
+"reading": "しらせる"
+}
+},
+"昨夜の雨で川の水の流れが非常に（　）。": {
+"12": {
+"meaning": "(非常に) very; extremely"
+}
+},
+"彼はその（　）と何か関係があるのか。": {
+"8": {
+"meaning": "(何か) something; anything"
+}
+},
+"昨年彼は期末の２（　）を落とした。": {
+"12": {
+"meaning": "to fail (a subject)"
+}
+},
+"子供は放っておいても（　）ものだ。": {
+"3": {
+"meaning": "(放っておく) to leave alone"
+},
+"13": {
+"meaning": "(〜ものだ) it's natural that"
+}
+},
+"好きなだけ（　）していただいて結構です。": {
+"0": {
+"meaning": "(好きなだけ) as much as you like"
+},
+"15": {
+"meaning": "(〜て結構です) fine; all right"
+}
+},
+"すぐに（　）した方がいいですよ。": {
+"8": {
+"meaning": "(〜た方がいい) had better"
+}
+},
+"実はその（　）、彼は寝坊したのです。": {
+"0": {
+"meaning": "(実は) actually; in fact"
+}
+},
+"ドイツ語はやさしい（　）ではありません。": {
+"5": {
+"meaning": "easy; simple"
+}
+},
+"（　）の不自由な人は手話で会話が出きる。": {
+"4": {
+"meaning": "(耳の不自由な) impaired (hearing)"
+}
+},
+"わからなかったら（　）の人に聞いた方がいいよ。": {
+"17": {
+"meaning": "(〜た方がいい) had better"
+}
+},
+"３（　）目はレベルが一段上でした。": {
+"4": {
+"meaning": "(〜目) -th (ordinal)"
+},
+"12": {
+"meaning": "above; higher (level)",
+"reading": "うえ"
+}
+},
+"この事業は金を（　）。": {
+"5": {
+"meaning": "money",
+"reading": "かね"
+}
+},
+"道路を（　）する時は気を付けなさい。": {
+"10": {
+"meaning": "(気を付ける) care; attention"
+},
+"12": {
+"meaning": "(気を付ける) to be careful"
+}
+},
+"（　）より後者の方がいい。": {
+"8": {
+"meaning": "(〜より〜の方が) the one (in comparisons)"
+}
+},
+"その法案には（　）の議論がたくさんあった。": {
+"2": {
+"meaning": "(法案) bill (proposed law)"
+},
+"3": {
+"meaning": "(法案) bill (proposed law)"
+}
+},
+"（　）の背を倒してもいいですか。": {
+"6": {
+"meaning": "to recline; to tilt back"
+}
+},
+"実はその朝、彼は（　）したのです。": {
+"0": {
+"meaning": "(実は) actually; in fact"
+}
+},
+"ヤング（　）は、私が突然訪ねても気にしないでしょう。": {
+"16": {
+"meaning": "(気にする) to mind; to worry"
+}
+},
+"ぼくはジョーンズ（　）に作文を直してもらった。": {
+"15": {
+"meaning": "to correct"
+}
+},
+"もう少し前へ（　）気がする。": {
+"9": {
+"meaning": "(気がする) feeling; sense"
+}
+},
+"水泳は大変役に立つ（　）である。": {
+"5": {
+"meaning": "(役に立つ) use; usefulness"
+},
+"7": {
+"meaning": "(役に立つ) to be useful"
+}
+},
+"あなたは（　）朝食をとるべきです。": {
+"10": {
+"meaning": "to have (a meal); to take"
+}
+},
+"この様にして、彼は（　）したのだ。": {
+"2": {
+"meaning": "(この様に) in this way"
+}
+},
+"その（　）は悪臭を放つ。": {
+"9": {
+"meaning": "to give off; to emit"
+}
+},
+"その男は知識の（　）ともいうべき人だった。": {
+"12": {
+"meaning": "(〜ともいうべき) what one might call"
+}
+},
+"こちらの（　）に合わせてください。": {
+"0": {
+"meaning": "this side; me (polite)"
+}
+},
+"美術商はその絵を本物だと（　）した。": {
+"2": {
+"meaning": "(美術商) dealer; merchant"
+}
+},
+"私のところの（　）は自由にお使い下さい。": {
+"2": {
+"meaning": "(私のところ) my place"
+}
+},
+"私は彼の卒業（　）に電報を打った。": {
+"13": {
+"meaning": "(電報を打つ) to send (a telegram)"
+}
+},
+"カメラを（　）に出さねばならない。": {
+"8": {
+"meaning": "(修理に出す) to send (for repair)"
+}
+},
+"その夫婦には（　）人もの子供がいる。": {
+"9": {
+"meaning": "counter for people",
+"reading": "にん"
+}
+},
+"美しいものは必ずしも（　）ではない。": {
+"6": {
+"meaning": "(必ずしも〜ない) not necessarily"
+}
+},
+"私はもう彼を（　）しない。": {
+"2": {
+"meaning": "(もう〜ない) no longer; not any more"
+}
+},
+"それ以来、彼からは何の（　）もありません。": {
+"9": {
+"meaning": "(何の〜もない) not any"
+}
+},
+"彼は昔、（　）の中には珍しい生き物が住んでいると彼女に嘘をついたのでした。": {
+"29": {
+"meaning": "(嘘をつく) to tell (a lie)"
+}
+},
+"そのような（　）と行動の分離に比べれば、破局的結果の方がまだましである。": {
+"2": {
+"meaning": "(そのような) such, like that"
+},
+"26": {
+"meaning": "(〜の方が) the one (that is better)"
+}
+},
+"月は地球のただ一つの（　）である。": {
+"5": {
+"meaning": "only, just"
+}
+},
+"「（　）ですが」とアンが話に割って入った。": {
+"14": {
+"meaning": "(話に割って入る) to cut in, interrupt"
+}
+},
+"おぼれかけた人は（　）を吹き返した。": {
+"12": {
+"meaning": "(息を吹き返す) to revive, start breathing again"
+}
+},
+"あいにく（　）金の持ち合わせが無い。": {
+"7": {
+"meaning": "money",
+"reading": "かね"
+}
+},
+"彼の両親は彼に（　）し過ぎている。": {
+"11": {
+"meaning": "(〜し過ぎる) to do too much, over-"
+}
+},
+"（　）はアメリカ人には容易に手に入る。": {
+"16": {
+"meaning": "(手に入る) to be obtained, get hold of"
+}
+},
+"ボブはスケートではきみといい（　）だ。": {
+"12": {
+"meaning": "(いい勝負) good (a close match)",
+"lemma": "いい",
+"reading": "いい"
+}
+},
+"あの（　）は食べ物に難しい。": {
+"10": {
+"meaning": "(食べ物に難しい) fussy, hard to please"
+}
+},
+"彼女は危うく（　）ところだった。": {
+"3": {
+"meaning": "(危うく) nearly, almost"
+}
+},
+"もうひと（　）の観光客が到着した。": {
+"0": {
+"meaning": "(もうひと〜) another, one more"
+}
+},
+"白ワインは出す前に（　）方がいいよ。": {
+"12": {
+"meaning": "(〜方がいい) it's better to",
+"reading": "ほう"
+}
+},
+"アンは（　）よくテニスをします。": {
+"6": {
+"meaning": "often"
+}
+},
+"今は（　）の宿題をする気がしない。": {
+"11": {
+"meaning": "(〜する気がしない) don't feel like doing"
+}
+},
+"あなたの（　）がみんな実現されますように。": {
+"17": {
+"meaning": "(〜ますように) may ..., I hope (a wish)"
+}
+},
+"彼女の母はケネディ家の（　）だった。": {
+"9": {
+"meaning": "(ケネディ家) family, house of",
+"reading": "け"
+}
+},
+"人間は（　）自然のなすがままである。": {
+"12": {
+"meaning": "(なすがまま) at the mercy of"
+}
+},
+"その（　）は気をつけて渡りなさい。": {
+"6": {
+"meaning": "(気をつける) to be careful"
+}
+},
+"速い（　）を投げるのが得意だ。": {
+"11": {
+"meaning": "(〜が得意) good at, one's strong point"
+}
+},
+"その情報は（　）役に立たなかった。": {
+"10": {
+"meaning": "(役に立つ) to be useful"
+}
+},
+"１週間（　）にいてすっかり元気になったような気がする。": {
+"19": {
+"meaning": "(〜ような) like, as if"
+},
+"22": {
+"meaning": "(〜気がする) to feel (that)"
+}
+},
+"彼の取れるのはよくて千（　）でしょう。": {
+"2": {
+"meaning": "to get, obtain (can get)"
+}
+},
+"彼女には（　）が欠けている。": {
+"8": {
+"meaning": "(〜が欠けている) to be lacking"
+}
+},
+"その問題を解いたとはボブは（　）。": {
+"5": {
+"meaning": "to solve (a problem)"
+}
+},
+"いとこは私を町中（　）してくれた。": {
+"6": {
+"meaning": "all over town",
+"reading": "まちじゅう"
+}
+},
+"あなたは２本の（　）を持っています。": {
+"5": {
+"meaning": "counter for long objects (flowers, pens)"
+}
+},
+"彼はその水を三杯（　）に飲んだ。": {
+"7": {
+"meaning": "counter for cups/glasses"
+}
+},
+"彼の（　）告知が新聞に出た。": {
+"11": {
+"meaning": "(新聞に出る) to appear (in the paper)"
+}
+},
+"今朝は（　）が降りた。": {
+"7": {
+"meaning": "(露が降りる) to form, settle (dew)"
+}
+},
+"この問題は私に（　）程やさしい。": {
+"11": {
+"meaning": "easy, simple (易しい)"
+}
+},
+"戦争は人類に対する（　）だ。": {
+"6": {
+"meaning": "(〜に対する) against, toward"
+}
+},
+"ロイヤル・シアターの夜の部の（　）が終わり、観客たちは帰って行った。": {
+"12": {
+"meaning": "(夜の部) part, session (of a show)"
+}
+},
+"あなたの（　）を彼の訳と比べてみなさい。": {
+"10": {
+"meaning": "translation",
+"reading": "やく"
+}
+},
+"春になると（　）をほりかえして種をまきます。": {
+"15": {
+"meaning": "seed",
+"reading": "たね"
+},
+"17": {
+"meaning": "to sow (seeds) (蒔く)"
+}
+},
+"日本の（　）は非常に強力だった。": {
+"7": {
+"meaning": "(非常に) very, extremely"
+}
+},
+"彼らはじゅうぶんな（　）を手に入れられなかった。": {
+"15": {
+"meaning": "(手に入れる) to obtain, get"
+}
+},
+"あなたの（　）は役に立ちましたか。": {
+"10": {
+"meaning": "(役に立つ) to be useful"
+}
+},
+"彼にもう一杯いかがかと（　）。": {
+"2": {
+"meaning": "(もう一杯) another, one more"
+}
+},
+"リンカーンと言えば自由を（　）する。": {
+"6": {
+"meaning": "(〜と言えば) speaking of"
+}
+},
+"１８歳（　）の方は入場できません。": {
+"7": {
+"meaning": "person (polite)",
+"reading": "かた"
+}
+},
+"（　）が国中からなだれ込んだ。": {
+"5": {
+"meaning": "(国中) all over, throughout",
+"reading": "じゅう"
+}
+},
+"今朝は（　）がたくさん降りた。": {
+"11": {
+"meaning": "(霜が降りる) to form, settle (frost)"
+}
+},
+"そのオーロラは実に（　）だった。": {
+"7": {
+"meaning": "(実に) truly, really"
+}
+},
+"箱の（　）は何ですか。": {
+"0": {
+"meaning": "box",
+"reading": "はこ"
+}
+},
+"人は知識が（　）ほど、自分の無知に気がつくものである。": {
+"17": {
+"meaning": "(気がつく) to notice, realize"
+},
+"21": {
+"meaning": "(〜ものだ) it is natural that, tends to"
+}
+},
+"何が彼を（　）する気にさせたのか。": {
+"9": {
+"meaning": "(〜する気になる) to feel like doing"
+}
+},
+"彼はなかなか（　）な人だ。": {
+"2": {
+"meaning": "quite, very"
+}
+},
+"向こうの（　）で聞いてください。": {
+"8": {
+"meaning": "to ask"
+}
+},
+"ウサギの（　）はキツネの耳より長い。": {
+"12": {
+"meaning": "ear (耳 + より: than)",
+"lemma": "耳",
+"reading": "みみ"
+}
+},
+"このロボットは多くの人手を（　）。": {
+"10": {
+"meaning": "workers, hands, manpower"
+}
+},
+"１年のこの（　）は天候がよく変わる。": {
+"12": {
+"meaning": "often"
+}
+},
+"彼には（　）の種なんか一つもない。": {
+"7": {
+"meaning": "(不平の種) cause, source",
+"reading": "たね"
+}
+},
+"彼らは（　）の上に横になっていた。": {
+"9": {
+"meaning": "(横になる) to lie down"
+}
+},
+"あなたはどのようにしてその（　）を解いたのですか。": {
+"6": {
+"meaning": "(どのように) how, in what way"
+},
+"17": {
+"meaning": "to solve (a problem)"
+}
+},
+"親の期待に（　）のは大変だ。": {
+"10": {
+"meaning": "hard, tough"
+}
+},
+"その（　）は夏中はもたないだろう。": {
+"7": {
+"meaning": "(夏中) throughout, all (summer)",
+"reading": "じゅう"
+},
+"9": {
+"meaning": "to last, hold out"
+}
+},
+"おまえらの（　）なんか見たくもない。": {
+"8": {
+"meaning": "(〜なんか) the likes of (dismissive)",
+"lemma": "なんか",
+"reading": "なんか"
+}
+},
+"彼女の（　）は雪のように白い。": {
+"9": {
+"meaning": "(〜のように) like, as"
+}
+},
+"（　）になるような本を読みなさい。": {
+"6": {
+"meaning": "(〜になるような) such as, that (would)"
+}
+},
+"彼は昨日（　）いくつを１足買った。": {
+"7": {
+"meaning": "shoes (黒い+くつ; い ends 黒い)",
+"lemma": "靴",
+"reading": "くつ"
+}
+},
+"教会の（　）は３時に鳴ったものです。": {
+"13": {
+"meaning": "(〜たものだ) used to"
+}
+},
+"それは実際君の（　）である。": {
+"5": {
+"meaning": "you",
+"reading": "きみ"
+}
+},
+"彼女は気の利く女の子である（　）を強く受けた。": {
+"5": {
+"meaning": "(気が利く) tactful, attentive"
+}
+},
+"ここ数日、（　）日が続くでしょう。": {
+"8": {
+"meaning": "day",
+"reading": "ひ"
+}
+},
+"どういっても（　）時までにいかないと。": {
+"2": {
+"meaning": "(どう行っても) however we go",
+"lemma": "行く",
+"reading": "いく"
+}
+},
+"タクシーが（　）で一列になっていた。": {
+"9": {
+"meaning": "(a) row; line",
+"reading": "いちれつ"
+}
+},
+"お名前と（　）番号をお願いします。": {
+"11": {
+"meaning": "(お願いします) please"
+}
+},
+"僕的にはもっと（　）ってか渋い服が欲しいんですけどね。": {
+"13": {
+"meaning": "tasteful, subdued (in style)"
+}
+},
+"彼女はまもなく（　）するでしょう。": {
+"3": {
+"meaning": "(まもなく) soon, shortly",
+"lemma": "まもなく",
+"reading": "まもなく"
+}
+},
+"私たちは夕食のために（　）についた。": {
+"14": {
+"meaning": "(食卓につく) to take one's seat at",
+"lemma": "着く",
+"reading": "つく"
+}
+},
+"私は何が起こっても君の（　）だ。": {
+"2": {
+"meaning": "what",
+"reading": "なに"
+}
+},
+"彼らは（　）がぴたりと合っている。": {
+"11": {
+"meaning": "(息が合う) to be in sync"
+}
+},
+"私の（　）に対する愛情は浅からぬものがあった。": {
+"6": {
+"meaning": "(〜に対する) toward, for"
+}
+},
+"（　）が出たら、もう一本もらえる。": {
+"4": {
+"meaning": "to come out, turn up"
+},
+"8": {
+"meaning": "(もう一〜) one more"
+},
+"11": {
+"meaning": "counter for long thin objects",
+"reading": "ぽん"
+}
+},
+"彼女の手は（　）のように冷たかった。": {
+"9": {
+"meaning": "(〜ように/〜ような) like, as"
+}
+},
+"旅行中に（　）を出すのは好きではない。": {
+"8": {
+"meaning": "(手紙を出す) to send, mail"
+}
+},
+"このネクタイはこのような（　）にふさわしくありません。": {
+"9": {
+"meaning": "(〜ように/〜ような) like, as"
+}
+},
+"あまり（　）を頼ってはいけません。": {
+"0": {
+"meaning": "too much"
+}
+},
+"（　）、君のためにあけとくから。": {
+"9": {
+"meaning": "to keep (time) free (空ける)",
+"lemma": "あける",
+"reading": "あける"
+}
+},
+"気をつけろ、その男は（　）を持っている。": {
+"0": {
+"meaning": "(気をつける) to be careful"
+}
+},
+"戦争中は私たちは多くの（　）思いをした。": {
+"14": {
+"meaning": "(〜思いをする) to go through (an experience)"
+}
+},
+"私の妹は足が（　）のをひどく気にしている。": {
+"14": {
+"meaning": "(気にする) to worry about, be bothered by"
+}
+},
+"もうちょっとで（　）ところだった。": {
+"0": {
+"meaning": "(もうちょっとで〜ところだった) almost"
+}
+},
+"私は（　）の５分の１を税金で取られてしまう。": {
+"7": {
+"meaning": "(〜分の〜) fraction: 5分の1 = one fifth"
+}
+},
+"（　）がいいところで休もう。": {
+"6": {
+"meaning": "point, place"
+}
+},
+"コーヒーは（　）でお願いします。": {
+"10": {
+"meaning": "(お願いします) please"
+}
+},
+"あれはなんて大きい（　）なんだろう。": {
+"12": {
+"meaning": "(〜なんだろう) isn't it! (exclamation)"
+}
+},
+"その（　）には、全く説得力がない。": {
+"8": {
+"meaning": "(+neg) not at all"
+}
+},
+"あの（　）はこっちへくるようです。": {
+"12": {
+"meaning": "(〜ようだ) seems, appears"
+}
+},
+"当局は自国の（　）を何とか安定させた。": {
+"10": {
+"meaning": "(何とか) somehow, one way or another"
+}
+},
+"ジョージは（　）として身を立てた。": {
+"11": {
+"meaning": "(身を立てる) to establish oneself (in a career)"
+},
+"13": {
+"meaning": "(身を立てる) to establish oneself (in a career)"
+}
+},
+"いつでも死ぬ（　）ができている。": {
+"0": {
+"meaning": "(いつでも) always, any time"
+}
+},
+"命がある限りあなたのご（　）は忘れません。": {
+"4": {
+"meaning": "(〜限り) as long as"
+}
+},
+"このひっきりなしの（　）は頭にくる。": {
+"13": {
+"meaning": "(頭にくる) to make one mad"
+}
+},
+"私の（　）はよく当たる。": {
+"8": {
+"meaning": "(勘が当たる) to be right, prove correct"
+},
+"6": {
+"meaning": "often"
+}
+},
+"こういう場合には経験が（　）を言う。": {
+"2": {
+"meaning": "(こういう) this kind of"
+},
+"15": {
+"meaning": "(物を言う) to count, make a difference"
+}
+},
+"（　）類は歯に悪いとよく言われる。": {
+"10": {
+"meaning": "often"
+}
+},
+"その知らせは（　）寝耳に水だった。": {
+"9": {
+"meaning": "(寝耳に水) a bolt from the blue"
+},
+"12": {
+"meaning": "(寝耳に水) a bolt from the blue"
+}
+},
+"私はこのＣＤプレイヤーの（　）のしかたが分からない。": {
+"16": {
+"meaning": "(〜のしかた) way of doing",
+"lemma": "仕方",
+"reading": "しかた"
+}
+},
+"こちらのパンフレットは（　）です。": {
+"0": {
+"meaning": "this (one) (polite)"
+}
+},
+"（　）を飲むといつでも頭痛がする。": {
+"7": {
+"meaning": "(いつでも) always, any time"
+}
+},
+"たまにまる一日ぼけっとしていても（　）悪い事じゃない。": {
+"5": {
+"meaning": "(まる一日) a whole day",
+"reading": "いちにち"
+}
+},
+"母が見ないように私は通知（　）をひきだしにしまった。": {
+"16": {
+"meaning": "drawer (引き出し)",
+"lemma": "ひきだし"
+}
+},
+"メアリーには（　）が欠けている。": {
+"10": {
+"meaning": "to lack, be missing"
+}
+},
+"その箱は（　）であることがわかった。": {
+"2": {
+"meaning": "box; case",
+"reading": "はこ"
+}
+},
+"ホーマーも時には（　）をする。": {
+"5": {
+"meaning": "(時には) sometimes"
+}
+},
+"ご存知のように、東京は世界の（　）の中心地だ。": {
+"4": {
+"meaning": "(〜ように/〜ような) like, as"
+}
+},
+"祖父は（　）のことをよく話した。": {
+"10": {
+"meaning": "often"
+}
+},
+"何でもこなす者は（　）にはなれない。": {
+"0": {
+"meaning": "(何でも) anything, everything"
+}
+},
+"何が起こるか（　）することはできない。": {
+"0": {
+"meaning": "what",
+"reading": "なに"
+}
+},
+"何か（　）をいただけますか。": {
+"0": {
+"meaning": "(何か) something",
+"reading": "なに"
+}
+},
+"この（　）のお金じゃ長くは持たないだろう。": {
+"13": {
+"meaning": "(持つ) to last"
+}
+},
+"（　）はどのように過ごしましたか。": {
+"4": {
+"meaning": "(どのように) how"
+},
+"6": {
+"meaning": "(どのように) how"
+}
+},
+"彼はスピーチの（　）に気を失った。": {
+"11": {
+"meaning": "(気を失う) to faint, lose consciousness"
+}
+},
+"オリーブの実から（　）が取れます。": {
+"5": {
+"meaning": "fruit; nut",
+"reading": "み"
+},
+"12": {
+"meaning": "to be obtained, be produced"
+}
+},
+"その（　）からはすっかり足を洗った。": {
+"12": {
+"meaning": "(足を洗う) to quit (a line of work)"
+},
+"14": {
+"meaning": "(足を洗う) to quit (a line of work)"
+}
+},
+"なんとおいしい（　）でしょう。": {
+"0": {
+"meaning": "(なんと〜) how ...! (exclamation)"
+}
+},
+"（　）に反して何かを無理にさせる事はできない。": {
+"7": {
+"meaning": "(何か) something",
+"reading": "なに"
+}
+},
+"（　）知事は黒い金に手をつけました。": {
+"6": {
+"meaning": "(黒い金) dirty, illicit (money)"
+},
+"10": {
+"meaning": "(〜に手をつける) to dip into, misuse"
+}
+},
+"名詞を（　）するものは、形容詞または形容詞相当語句です。": {
+"15": {
+"meaning": "(または) or"
+}
+},
+"いくつになっても（　）ことはある。": {
+"0": {
+"meaning": "(いくつになっても) however old one gets"
+}
+},
+"たとえ太陽が西から（　）ようなことがあっても、私の考えは変わりません。": {
+"12": {
+"meaning": "(〜ように/〜ような) like, as"
+}
+},
+"（　）する車に気をつけなさい。": {
+"7": {
+"meaning": "(気をつける) to be careful"
+}
+},
+"そのバスは十分（　）で到着した。": {
+"5": {
+"meaning": "ten minutes",
+"reading": "じゅっぷん"
+}
+},
+"この安楽いすは非常に（　）だ。": {
+"7": {
+"meaning": "(非常に) very, extremely"
+}
+},
+"小さな火花はしばしば大きな（　）を起こす。": {
+"17": {
+"meaning": "to cause, start (a fire)"
+}
+},
+"（　）が出てこなかった。": {
+"4": {
+"meaning": "(出てくる) to come out"
+}
+},
+"私の子供達はもうすぐ（　）です。": {
+"6": {
+"meaning": "(もうすぐ) soon"
+}
+},
+"どこか（　）が悪いに違いない。": {
+"10": {
+"meaning": "(〜に違いない) must be, surely"
+}
+},
+"（　）に短し、襷に長し。": {
+"4": {
+"meaning": "(帯に短し) too short (old form of 短い)",
+"lemma": "短し",
+"reading": "みじかし"
+}
+},
+"飛行機から見ると、小さな（　）は平地のように見える。": {
+"19": {
+"meaning": "(〜ように/〜ような) like, as"
+}
+},
+"彼は（　）で頭がどうかなっている。": {
+"10": {
+"meaning": "(頭がどうかなる) to go crazy",
+"lemma": "なる",
+"reading": "なる"
+}
+},
+"こういう（　）には経験が物を言う。": {
+"2": {
+"meaning": "(こういう) this kind of"
+},
+"12": {
+"meaning": "(物を言う) to count, make a difference"
+},
+"14": {
+"meaning": "(物を言う) to count, make a difference"
+}
+},
+"彼はクラスを代表して（　）に出た。": {
+"14": {
+"meaning": "(〜に出る) to attend, take part in"
+}
+},
+"君の論文から不必要な語を（　）した方がよろしい。": {
+"17": {
+"meaning": "(〜方がいい) had better"
+}
+},
+"先に行って。すぐ（　）から。": {
+"0": {
+"meaning": "(先に) ahead, first"
+}
+},
+"（　）の折れる仕事をしてくたくただ。": {
+"4": {
+"meaning": "(骨が折れる) to be hard work"
+}
+},
+"このような（　）があるなんて知らなかった。": {
+"2": {
+"meaning": "(〜ように/〜ような) like, as"
+}
+},
+"私はよく（　）する。": {
+"2": {
+"meaning": "often"
+}
+},
+"いつでも彼の（　）を求められます。": {
+"0": {
+"meaning": "(いつでも) always, any time"
+}
+},
+"君は彼を（　）した方がよいと思う。": {
+"9": {
+"meaning": "(〜方がいい) had better"
+}
+},
+"機会は常に最大限に（　）すべきだ。": {
+"3": {
+"meaning": "(常に) always"
+}
+},
+"同情が（　）に変わるのをよく見かける。": {
+"12": {
+"meaning": "often"
+}
+},
+"後は（　）となれ山となれ。": {
+"0": {
+"meaning": "(後は) the rest, what comes after"
+}
+},
+"私の好みはどちらかというと（　）ですね。": {
+"5": {
+"meaning": "(どちらかというと) if anything, rather"
+}
+},
+"私の犬はよく（　）の上で横になる。": {
+"4": {
+"meaning": "often"
+},
+"12": {
+"meaning": "(横になる) to lie down"
+}
+},
+"そうすればやがて（　）が開けるでしょう。": {
+"12": {
+"meaning": "(運が開ける) to improve, open up",
+"reading": "ひらける"
+}
+},
+"天気予報によれば、まもなく（　）に入るそうだ。": {
+"9": {
+"meaning": "(まもなく) soon, shortly",
+"lemma": "まもなく",
+"reading": "まもなく"
+}
+},
+"トムはその申込み用紙に（　）した。": {
+"8": {
+"meaning": "(用紙) form, blank sheet"
+},
+"9": {
+"meaning": "(用紙) form, blank sheet"
+}
+},
+"警察によれば、（　）のうだるような暑さがその暴動に火をつけたということだ。": {
+"14": {
+"meaning": "(〜ように/〜ような) like, as"
+}
+},
+"あの飛行船はなんて（　）なんだろう。": {
+"12": {
+"meaning": "(〜なんだろう) isn't it! (exclamation)"
+}
+},
+"その機械は（　）に出来ているので、すぐ壊れる。": {
+"9": {
+"meaning": "(〜に出来ている) to be made, built"
+}
+},
+"先ずは、（　）から入らないとね。": {
+"9": {
+"meaning": "(〜から入る) to start with"
+}
+},
+"食事は（　）正しくとりなさい。": {
+"9": {
+"meaning": "to take (a meal)",
+"lemma": "取る",
+"reading": "とる"
+}
+},
+"その貸付金は、８分の（　）を生む。": {
+"8": {
+"meaning": "one percent (rate of interest)",
+"reading": "ぶ"
+}
+},
+"彼女はその皿の（　）が気に入っている。": {
+"11": {
+"meaning": "(気に入る) to like, be pleased with"
+},
+"13": {
+"meaning": "(気に入る) to like, be pleased with"
+}
+},
+"ほかに（　）ところはありますか。": {
+"6": {
+"meaning": "place, spot"
+}
+},
+"彼女は彼に間違った（　）を抱いた。": {
+"13": {
+"meaning": "to have, harbor (a feeling)"
+}
+},
+"空の（　）は一番音を立てる。": {
+"0": {
+"meaning": "empty",
+"reading": "から"
+},
+"10": {
+"meaning": "(音を立てる) to make a noise"
+}
+},
+"母の（　）は少しもよくなっていなかった。むしろ悪くなっているようだった。": {
+"30": {
+"meaning": "(〜ようだ) seems, appears"
+}
+},
+"彼の事務所は駅のすぐ近くで（　）だ。": {
+"8": {
+"meaning": "just, right (near)"
+}
+},
+"その町はロンドンのすぐ（　）にある。": {
+"9": {
+"meaning": "just, right (near)"
+}
+},
+"すぐにこちらから（　）し直します。": {
+"3": {
+"meaning": "this side; we (here)"
+},
+"12": {
+"meaning": "(〜し直す) to do again; redo"
+}
+},
+"いつ何時雨が（　）かもしれないよ。": {
+"0": {
+"meaning": "(いつ何時) at any moment"
+},
+"2": {
+"meaning": "(いつ何時) at any moment",
+"reading": "なん"
+},
+"3": {
+"meaning": "(いつ何時) at any moment",
+"lemma": "時",
+"reading": "どき"
+}
+},
+"これはなんと（　）木なのでしょう。": {
+"3": {
+"meaning": "(なんと〜) what a ...!"
+}
+},
+"彼は（　）をあきなっているようだ。": {
+"13": {
+"meaning": "(〜ようだ) seems; appears"
+}
+},
+"それは一日（　）でできるでしょう。": {
+"3": {
+"meaning": "one day",
+"reading": "いちにち"
+}
+},
+"この（　）は何もかもカバーする。": {
+"6": {
+"meaning": "(何もかも) everything"
+}
+},
+"聞くは一時の（　）、聞かぬは一生の恥。": {
+"3": {
+"meaning": "a moment; a short time",
+"reading": "いっとき"
+}
+},
+"ジムは試験に通ったのを（　）する。": {
+"6": {
+"meaning": "to pass (an exam)",
+"lemma": "通る",
+"reading": "とおる"
+}
+},
+"運転者は（　）を出し続けた。": {
+"8": {
+"meaning": "(速度を出す) to go at (a speed)"
+}
+},
+"雨の日、（　）の下で休んだ。": {
+"8": {
+"meaning": "under; below",
+"reading": "した"
+}
+},
+"彼は（　）の代表に立てられた。": {
+"9": {
+"meaning": "(〜に立てる) to put forward as; appoint"
+}
+},
+"ジョンのことが（　）に出ていた。": {
+"11": {
+"meaning": "(〜に出る) to appear (in)"
+}
+},
+"一連の犯罪は（　）犯によるものだと考えられた。": {
+"11": {
+"meaning": "(〜による) by; caused by"
+}
+},
+"彼は口が（　）から、話しても安心だ。": {
+"2": {
+"meaning": "(口がかたい) tight-lipped; keeps secrets"
+}
+},
+"強い人以外はその（　）には向かない。": {
+"13": {
+"meaning": "(〜に向く) to be suited (for)"
+}
+},
+"くたくたに（　）。": {
+"0": {
+"meaning": "(くたくたに煮る) until soft and mushy"
+}
+},
+"あなたの意見は（　）考えのようだ。": {
+"13": {
+"meaning": "(〜ようだ) seems; appears"
+}
+},
+"どうしてこんな（　）のぶどう酒を今まで取って置いたのか。": {
+"0": {
+"meaning": "(どうして) why"
+},
+"19": {
+"meaning": "(取って置く) to keep; save"
+},
+"22": {
+"meaning": "(取って置く) to keep; save"
+}
+},
+"富は一生の（　）、知は万代の宝。": {
+"11": {
+"meaning": "thousands of years; eternity",
+"reading": "ばんだい"
+}
+},
+"中絶問題で（　）が二分しています。": {
+"9": {
+"meaning": "(二分する) to split in two",
+"lemma": "二分",
+"reading": "にぶん"
+},
+"10": {
+"meaning": "(二分する) to split in two",
+"lemma": "二分",
+"reading": "にぶん"
+}
+},
+"こちらに来るように（　）で合図した。": {
+"0": {
+"meaning": "this way; here"
+}
+},
+"彼女は私に（　）電報を打ってきた。": {
+"11": {
+"meaning": "(電報を打つ) to send (a telegram)"
+}
+},
+"私はよく日曜日に（　）をしたものだった。": {
+"2": {
+"meaning": "often; frequently"
+},
+"14": {
+"meaning": "(〜たものだ) used to"
+}
+},
+"何が起こっても、（　）は出来ている。": {
+"12": {
+"meaning": "(出来ている) to be ready"
+}
+},
+"万一（　）がおりから出てきたらどうしますか。": {
+"0": {
+"meaning": "if by any chance"
+},
+"6": {
+"meaning": "cage",
+"lemma": "檻",
+"reading": "おり"
+}
+},
+"これ以上求められないのは（　）だ。": {
+"2": {
+"meaning": "(これ以上) any more; further"
+}
+},
+"彼は（　）を辞めざるを得なかった。": {
+"11": {
+"meaning": "(〜ざるを得ない) have no choice but to"
+}
+},
+"この問題は私に解ける（　）やさしい。": {
+"13": {
+"meaning": "easy; simple",
+"lemma": "易しい"
+}
+},
+"今日はサラエボにおける（　）の日だったわ。": {
+"8": {
+"meaning": "(〜における) in; at",
+"lemma": "おける",
+"reading": "おける"
+}
+},
+"彼はその間じゅう（　）をしていた。": {
+"4": {
+"meaning": "(その間じゅう) the whole time",
+"reading": "あいだ"
+}
+},
+"あいつはのらりくらりの仕事にお（　）事だ。": {
+"18": {
+"meaning": "(お〜ことだ) how (ironic exclamation)"
+}
+},
+"習い（　）となる。": {
+"0": {
+"meaning": "habit; custom",
+"lemma": "習い",
+"reading": "ならい"
+}
+},
+"このところほのかな（　）感がある。": {
+"2": {
+"meaning": "(このところ) lately; recently"
+}
+},
+"やっと（　）が取れました。": {
+"7": {
+"meaning": "(免許が取れる) to get; obtain"
+}
+},
+"どんな男にもそれ相当の（　）のきてがあるもの。": {
+"8": {
+"meaning": "(それ相当の) suitable; befitting"
+},
+"20": {
+"meaning": "(〜ものだ) that's how things are"
+}
+},
+"こちらの（　）は単品となります。": {
+"0": {
+"meaning": "these (polite)"
+}
+},
+"その（　）には全く危険はありません。": {
+"7": {
+"meaning": "(+neg) not at all"
+}
+},
+"世界はまだ（　）を見出していない。": {
+"9": {
+"meaning": "to find; to discover",
+"reading": "みいだす"
+}
+},
+"私の車で（　）まで送らせましょう。": {
+"9": {
+"meaning": "to take (someone) home; drive"
+}
+},
+"その問題はいろいろな（　）を呼んだ。": {
+"14": {
+"meaning": "(〜を呼ぶ) to cause; stir up"
+}
+},
+"こういう（　）で私は仕事を辞めた。": {
+"0": {
+"meaning": "(こういう) this kind of; like this"
+},
+"2": {
+"meaning": "(こういう) this kind of; like this"
+}
+},
+"彼は、オペラはもちろんのこと、（　）すら歌えない。": {
+"12": {
+"meaning": "(〜はもちろんのこと) not to mention"
+}
+},
+"（　）がいっぱいで言葉が出なかった。": {
+"12": {
+"meaning": "to come out (words)"
+}
+},
+"このエンジンが一番（　）を食う。": {
+"13": {
+"meaning": "(〜を食う) to consume; use up"
+}
+},
+"公園の都市におけるのは（　）の動物におけるようなものである。": {
+"6": {
+"meaning": "(〜における) in; at",
+"lemma": "おける",
+"reading": "おける"
+},
+"18": {
+"meaning": "(〜における) in; at",
+"lemma": "おける",
+"reading": "おける"
+},
+"21": {
+"meaning": "(〜ようなもの) like; similar to"
+}
+},
+"彼は私の（　）に全く注意を払わなかった。": {
+"8": {
+"meaning": "(+neg) not at all"
+}
+},
+"いつもは７時に（　）をとるんです。": {
+"11": {
+"meaning": "to have (a meal); take"
+}
+},
+"（　）が突然かんしゃくを起こした。": {
+"12": {
+"meaning": "(かんしゃくを起こす) to lose one's temper"
+}
+},
+"（　）はまもなく下がるはずだ。": {
+"4": {
+"meaning": "(まもなく) soon; shortly",
+"lemma": "まもなく",
+"reading": "まもなく"
+}
+},
+"ぼくは（　）君に腹が立っているんだ。": {
+"6": {
+"meaning": "you",
+"reading": "きみ"
+},
+"8": {
+"meaning": "(腹が立つ) to get angry"
+},
+"10": {
+"meaning": "(腹が立つ) to get angry"
+}
+},
+"友人の好意で職に（　）ことができた。": {
+"11": {
+"meaning": "(〜ことができる) can; be able to"
+}
+},
+"（　）はレジでお願いします。": {
+"8": {
+"meaning": "(お願いします) please"
+}
+},
+"われわれの彼に対する感情は（　）だ。": {
+"7": {
+"meaning": "(〜に対する) toward; regarding"
+}
+},
+"（　）以上の生活をしてはいけない。": {
+"3": {
+"meaning": "(〜以上) beyond; more than"
+}
+},
+"彼女は私達の期待通りに（　）した。": {
+"8": {
+"meaning": "(〜通り) as; just as",
+"reading": "どおり"
+}
+},
+"まもなく（　）だ。": {
+"0": {
+"meaning": "(まもなく) soon; shortly",
+"lemma": "まもなく",
+"reading": "まもなく"
+}
+},
+"（　）だけは遅刻を大目に見てやろう。": {
+"9": {
+"meaning": "(大目に見る) to overlook; let pass"
+},
+"12": {
+"meaning": "(大目に見る) to overlook; let pass"
+}
+},
+"君の色に対する（　）は感心しない。": {
+"4": {
+"meaning": "(〜に対する) toward; regarding"
+}
+},
+"あなたの夢がみんな（　）されますように。": {
+"16": {
+"meaning": "(〜ますように) may ...; I hope"
+}
+},
+"この仕事では（　）がものを言う。": {
+"10": {
+"meaning": "(ものを言う) to count; matter"
+},
+"13": {
+"meaning": "(ものを言う) to count; matter"
+}
+},
+"私達は幾つか（　）中の計画がある。": {
+"3": {
+"meaning": "(幾つか) some; several"
+}
+},
+"今日は（　）だ。これで一日中仕事が出来る。": {
+"11": {
+"meaning": "(一日中) all day"
+},
+"12": {
+"meaning": "(一日中) all day"
+},
+"13": {
+"meaning": "(一日中) all day; throughout",
+"reading": "じゅう"
+}
+},
+"いつから（　）が降っているんですか。": {
+"0": {
+"meaning": "(いつから) since when"
+}
+},
+"彼の（　）を当てにしてはならない。": {
+"6": {
+"meaning": "(当てにする) to count on; rely on"
+}
+},
+"この木は毎年たくさん実が（　）。": {
+"10": {
+"meaning": "fruit; nut",
+"reading": "み"
+}
+},
+"金の切れ目が（　）の切れ目。": {
+"0": {
+"meaning": "money",
+"reading": "かね"
+},
+"2": {
+"meaning": "end; break (of a tie)"
+},
+"10": {
+"meaning": "end; break (of a tie)"
+}
+},
+"彼の話はいろいろなところへ（　）。": {
+"9": {
+"meaning": "place; (here) topic"
+}
+},
+"９時（　）に電話した方が安いですか。": {
+"10": {
+"meaning": "(〜た方が) doing ... is more ..."
+}
+},
+"その光景を見て私は（　）を感じた。": {
+"13": {
+"meaning": "to feel; to sense",
+"lemma": "感じる",
+"reading": "かんじる"
+}
+},
+"窓のうち（　）に男の顔が見えていた。": {
+"2": {
+"meaning": "(内側) inside",
+"lemma": "内",
+"reading": "うち"
+}
+},
+"（　）はもうたくさんだ。": {
+"4": {
+"meaning": "(もうたくさん) enough already"
+},
+"6": {
+"meaning": "(もうたくさん) enough; had enough"
+}
+},
+"その金は体育館の（　）に当てられた。": {
+"2": {
+"meaning": "money",
+"reading": "かね"
+},
+"12": {
+"meaning": "(〜に当てる) to allot to; use for"
+}
+},
+"いつの間にかボブは（　）へ出ていた。": {
+"0": {
+"meaning": "(いつの間にか) before one knew it"
+},
+"3": {
+"meaning": "(いつの間にか) before one knew it",
+"reading": "ま"
+}
+},
+"あの島は（　）性気候です。": {
+"7": {
+"meaning": "(〜性) -type; of the nature of"
+}
+},
+"ピン１本でさえ盗むのは（　）である。": {
+"3": {
+"meaning": "counter for long thin objects",
+"reading": "ぽん"
+}
+},
+"彼は懲役十年で、女房には三年の（　）が下った。": {
+"19": {
+"meaning": "(刑が下る) to be handed down (sentence)"
+}
+},
+"飛ばし（　）をしてはいけません。": {
+"0": {
+"meaning": "(飛ばし読み) skipping parts when reading",
+"lemma": "飛ばす"
+}
+},
+"（　）はもはや何の意味もない。": {
+"7": {
+"meaning": "(何の〜もない) no ... at all"
+}
+},
+"和服（　）の男性は東京ではもうあまり見かけない。": {
+"13": {
+"meaning": "(もう〜ない) no longer"
+}
+},
+"彼はそれを気取った（　）でいった。": {
+"13": {
+"meaning": "to say",
+"lemma": "言う"
+}
+},
+"ロンドンはもはや（　）の都ではない。": {
+"12": {
+"meaning": "capital; city",
+"reading": "みやこ"
+}
+},
+"これまでのところすべて（　）だ。": {
+"5": {
+"meaning": "(これまでのところ) so far"
+}
+},
+"彼は今男（　）だ。": {
+"2": {
+"meaning": "(今 + 男盛り) now ... in the prime of manhood",
+"lemma": "今 / 男",
+"reading": "いま / おとこ"
+}
+},
+"日本の軍隊は非常に（　）だった。": {
+"6": {
+"meaning": "(非常に) very; extremely"
+}
+},
+"この鳥は町でもよく（　）。": {
+"7": {
+"meaning": "often; frequently"
+}
+},
+"何かが足に（　）のを感じた。": {
+"0": {
+"meaning": "(何か) something"
+},
+"10": {
+"meaning": "to feel; to sense",
+"lemma": "感じる",
+"reading": "かんじる"
+}
+},
+"（　）のしみはたいてい落ちない。": {
+"11": {
+"meaning": "(しみが落ちる) to come out (of a stain)"
+}
+},
+"（　）は私たちの心を鍛練するといわれる。": {
+"10": {
+"meaning": "training; discipline (of mind/body)"
+},
+"15": {
+"meaning": "(〜といわれる) it is said that"
+}
+},
+"（　）新聞がその事件を大きく取り上げた。": {
+"14": {
+"meaning": "(大きく取り上げる) to feature prominently"
+}
+},
+"（　）は猫の手も借りたいほど忙しくなる。": {
+"8": {
+"meaning": "(猫の手も借りたい) so busy you'd take any help"
+}
+},
+"用紙は（　）に番号が打ってある。": {
+"10": {
+"meaning": "(番号を打つ) to stamp/print (a number)"
+}
+},
+"彼に会う事などは（　）思いもよらない。": {
+"14": {
+"meaning": "(思いもよらない) unthinkable; never imagine",
+"lemma": "よる",
+"reading": "よる"
+}
+},
+"彼らは君の悪い（　）に腹をたてている。": {
+"11": {
+"meaning": "(腹をたてる) anger (lit. belly)"
+}
+},
+"この試験は辞書持ち込み（　）です。": {
+"7": {
+"meaning": "(持ち込み可) bringing in (allowed)"
+}
+},
+"コンピューター業界は（　）がいい。": {
+"7": {
+"meaning": "(業界) industry"
+},
+"8": {
+"meaning": "(業界) industry"
+}
+},
+"（　）を消すのを忘れないで。": {
+"4": {
+"meaning": "to turn off (a light)"
+}
+},
+"あいつにケチをつけると後が（　）。": {
+"11": {
+"meaning": "afterwards; later (consequences)"
+}
+},
+"市の（　）だったらよくやっていることだよ。": {
+"9": {
+"meaning": "often"
+}
+},
+"彼は私に対して（　）にふるまった。": {
+"4": {
+"meaning": "(〜に対して) toward; to"
+}
+},
+"その（　）見学は非常にためになった。": {
+"8": {
+"meaning": "(非常に) very; extremely"
+},
+"11": {
+"meaning": "(ためになる) useful; educational"
+}
+},
+"うちの（　）には有名な人がいく人かいる。": {
+"0": {
+"meaning": "(うちの) our (family); home"
+}
+},
+"君が（　）に加われないのは残念だ。": {
+"6": {
+"meaning": "can join; can take part",
+"lemma": "加わる",
+"reading": "くわわる"
+}
+},
+"あの（　）はくるに値する。": {
+"9": {
+"meaning": "(〜に値する) to be worth (doing)"
+}
+},
+"（　）、価格は変更することがあります。": {
+"11": {
+"meaning": "(〜ことがある) may (sometimes)"
+}
+},
+"（　）でも好きなだけ上げましょう。": {
+"10": {
+"meaning": "to give"
+}
+},
+"子に過ぎたる（　）なし。": {
+"2": {
+"meaning": "(過ぎたる) surpassing; better than"
+}
+},
+"ジェーンはお金を引き出しに（　）へ行った。": {
+"8": {
+"meaning": "to withdraw (money)",
+"lemma": "引き出す",
+"reading": "ひきだす"
+}
+},
+"気をつけて。警察の（　）がかぎ回ってる。": {
+"0": {
+"meaning": "(気をつける) to be careful"
+}
+},
+"友人を選ぶ（　）には気を付けるべきだ。": {
+"10": {
+"meaning": "(気を付ける) to be careful"
+},
+"12": {
+"meaning": "(気を付ける) to be careful"
+}
+},
+"（　）人の人が集まった。": {
+"3": {
+"meaning": "counter for people",
+"reading": "にん"
+}
+},
+"彼は口も利けない（　）腹を立てていた。": {
+"4": {
+"meaning": "(口が利ける) to be able to speak",
+"lemma": "利く",
+"reading": "きく"
+},
+"11": {
+"meaning": "(腹を立てる) anger (lit. belly)"
+},
+"13": {
+"meaning": "(腹を立てる) to get angry"
+}
+},
+"ここから先は（　）の道です。": {
+"4": {
+"meaning": "(ここから先) from here on; ahead"
+}
+},
+"（　）に気をつけなければならない。": {
+"4": {
+"meaning": "(気をつける) to be careful"
+}
+},
+"私の前の（　）はポルトガル育ちでした。": {
+"2": {
+"meaning": "former; ex-"
+}
+},
+"彼は私に少なくとも５（　）くれた。": {
+"4": {
+"meaning": "(少なくとも) at least"
+}
+},
+"（　）を頂いてご親切にどうも。": {
+"11": {
+"meaning": "(どうも) thank you (very much)"
+}
+},
+"その女性は非常に（　）的である。": {
+"5": {
+"meaning": "(非常に) very; extremely"
+}
+},
+"彼は（　）試験を三度落ちた。": {
+"9": {
+"meaning": "times (counter)"
+}
+},
+"（　）は月曜ごとに立つ。": {
+"9": {
+"meaning": "(市が立つ) to be held (of a market)"
+}
+},
+"水が足りないのは（　）のためです。": {
+"12": {
+"meaning": "(〜のため) because of; due to"
+}
+},
+"貴殿（　）の水道水は硬水過ぎます。軟水を使用しましょう。": {
+"12": {
+"meaning": "(〜すぎる) too (much)"
+}
+},
+"その報道は（　）に行き渡った。": {
+"9": {
+"meaning": "(行き渡る) to spread throughout",
+"lemma": "行き渡る",
+"reading": "いきわたる"
+},
+"11": {
+"meaning": "(行き渡る) to spread throughout",
+"lemma": "行き渡る",
+"reading": "いきわたる"
+}
+},
+"私は彼とは訪問し合う（　）だ。": {
+"8": {
+"meaning": "(〜合う) each other; mutually"
+}
+},
+"何としても（　）をひと目みたいものだ。": {
+"0": {
+"meaning": "(何としても) no matter what; at any cost"
+},
+"12": {
+"meaning": "(みたい) want to see",
+"lemma": "見る",
+"reading": "みる"
+},
+"15": {
+"meaning": "(〜たいものだ) I really want to"
+}
+},
+"彼はベンについて（　）知識を得た。": {
+"14": {
+"meaning": "to get; to acquire",
+"reading": "える"
+}
+},
+"彼女は進んで母親の（　）をした。": {
+"3": {
+"meaning": "(進んで) willingly; of one's own accord"
+}
+},
+"その（　）は、私の神経にさわります。": {
+"12": {
+"meaning": "(神経にさわる) to get on one's nerves"
+}
+},
+"私は（　）でビールを一本買った。": {
+"11": {
+"meaning": "counter for long objects (bottles)",
+"reading": "ぽん"
+}
+},
+"母親は（　）してもらえないことがよくある。": {
+"16": {
+"meaning": "often"
+}
+},
+"この（　）はうちでは病気が多かった。": {
+"6": {
+"meaning": "(うちでは) at our home; in our family"
+}
+},
+"ゴキブリを捕まえると（　）そうだ。": {
+"13": {
+"meaning": "(〜そうだ) looks (like); seems"
+}
+},
+"水は、（　）と水素から成っている。": {
+"11": {
+"meaning": "(〜から成る) to consist of"
+}
+},
+"こういう場合には（　）が物を言う。": {
+"12": {
+"meaning": "(物を言う) to count; to matter"
+},
+"14": {
+"meaning": "(物を言う) to count; to matter"
+}
+},
+"彼は（　）に行くことはまずない。": {
+"11": {
+"meaning": "(まず〜ない) hardly ever"
+}
+},
+"十中八九、彼が（　）に勝つでしょう。": {
+"1": {
+"meaning": "(十中八九) nine times out of ten"
+}
+},
+"これ以上（　）をかけないでほしい。": {
+"2": {
+"meaning": "(これ以上) any more"
+}
+},
+"彼女はこぎれいな（　）をしている。": {
+"3": {
+"meaning": "neat; tidy",
+"lemma": "こぎれい",
+"reading": "こぎれい"
+}
+},
+"私は一度に２（　）駆け上がった。": {
+"2": {
+"meaning": "(一度に) at a time; at once"
+}
+},
+"１０時（　）に朝食は出されないだろう。": {
+"10": {
+"meaning": "to serve (food)"
+}
+},
+"（　）はその任務に対して責任がある。": {
+"9": {
+"meaning": "(〜に対して) for; toward"
+}
+},
+"こちらには大きなハスの（　）があります。": {
+"0": {
+"meaning": "here; this place (polite)"
+}
+},
+"（　）はいつの世でも金になる。": {
+"10": {
+"meaning": "money",
+"reading": "かね"
+}
+},
+"友人を（　）に行ってきた所です。": {
+"12": {
+"meaning": "(〜たところ) have just (done)"
+}
+},
+"しげみちゃんを（　）に迎えに行けないの。": {
+"14": {
+"meaning": "can go",
+"lemma": "行く",
+"reading": "いく"
+}
+},
+"トムはその（　）達に腹を立てた。": {
+"10": {
+"meaning": "(腹を立てる) anger (lit. belly)"
+},
+"12": {
+"meaning": "(腹を立てる) to get angry"
+}
+},
+"天候のためレースの（　）は遅れるだろう。": {
+"3": {
+"meaning": "(〜のため) because of; due to"
+}
+},
+"彼の一生は（　）の下積みで終わった。": {
+"9": {
+"meaning": "lowly position; obscurity"
+}
+},
+"今年のスカートは（　）上数センチだ。": {
+"11": {
+"meaning": "above",
+"reading": "うえ"
+}
+},
+"彼の考えは（　）の先を行っていた。": {
+"9": {
+"meaning": "(〜の先を行く) ahead (of)"
+},
+"11": {
+"meaning": "(先を行く) to go ahead of",
+"lemma": "行く",
+"reading": "いく"
+}
+},
+"彼の病気の（　）名はＡＬＳである。": {
+"8": {
+"meaning": "name",
+"reading": "めい"
+}
+},
+"この歌は１９７０年代に（　）した。": {
+"8": {
+"meaning": "(年代) decade; era (e.g. the 1970s)"
+},
+"9": {
+"meaning": "(年代) decade; era (e.g. the 1970s)",
+"reading": "だい"
+}
+},
+"彼の野望は（　）を手に入れることだ。": {
+"9": {
+"meaning": "(手に入れる) to obtain; to get"
+},
+"11": {
+"meaning": "(手に入れる) to obtain; to get"
+}
+},
+"かけごとのために彼は（　）した。": {
+"5": {
+"meaning": "(〜のために) because of; due to"
+}
+},
+"私の時計は１日に５（　）進みます。": {
+"12": {
+"meaning": "(時計が進む) to run fast; to gain"
+}
+},
+"（　）は２日間続いた。": {
+"5": {
+"meaning": "(〜日間) for (two) days",
+"reading": "にちかん"
+}
+},
+"このニュースを聞いて非常に（　）した。": {
+"10": {
+"meaning": "(非常に) very; extremely"
+}
+},
+"まもなく木々は（　）になるだろう。": {
+"0": {
+"meaning": "(まもなく) soon; before long",
+"lemma": "まもなく",
+"reading": "まもなく"
+}
+},
+"このビンはどの位（　）が入りますか。": {
+"5": {
+"meaning": "how much"
+}
+},
+"彼の（　）を取るのは難しい。": {
+"6": {
+"meaning": "(機嫌を取る) to please; to humor"
+}
+},
+"彼はいまを（　）にと言う時に倒れた。": {
+"10": {
+"meaning": "(〜と言う時に) just when"
+}
+},
+"私達がよく野球をして遊んだ（　）は今すっかり家が建て込んでしまった。": {
+"3": {
+"meaning": "often"
+}
+},
+"いま引き返せっていっても（　）だ。": {
+"8": {
+"meaning": "to say; to tell (someone to)",
+"lemma": "いう"
+}
+},
+"（　）分は減らしたほうがいいですね。": {
+"3": {
+"meaning": "(脂肪分) content (fat content)"
+}
+},
+"（　）が去ったと言うことではない。": {
+"8": {
+"meaning": "(〜ということではない) it doesn't mean that"
+}
+},
+"（　）に飛びかかられて彼は怖がった。": {
+"13": {
+"meaning": "to be scared",
+"lemma": "怖がる",
+"reading": "こわがる"
+}
+},
+"新聞は（　）の動向を左右する。": {
+"10": {
+"meaning": "(〜を左右する) to influence; to control"
+}
+},
+"お腹が一杯になると（　）が痛みます。": {
+"3": {
+"meaning": "(お腹が一杯) full (stomach)"
+}
+},
+"メアリーは日本で一生（　）で通した。": {
+"14": {
+"meaning": "(〜で通す) to remain (single) throughout"
+}
+},
+"その紙を（　）折りにしなさい。": {
+"7": {
+"meaning": "(四つ折り) folded (in four)"
+}
+},
+"君は（　）方にいきますよ。": {
+"5": {
+"meaning": "direction; way",
+"reading": "ほう"
+}
+},
+"（　）〇年代にはいろんな事件が起こった。": {
+"5": {
+"meaning": "(〜年代) decade; the ...'s"
+}
+},
+"（　）彼がこちらへきたらすぐ知らせます。": {
+"5": {
+"meaning": "here; this place"
+},
+"14": {
+"meaning": "to notify; to let know",
+"lemma": "知らせる",
+"reading": "しらせる"
+}
+},
+"そのような（　）は時代遅れである。": {
+"2": {
+"meaning": "(そのような) such; like that"
+}
+},
+"その語に（　）するようなフランス語を知っていますか。": {
+"9": {
+"meaning": "(〜するような) such as; like"
+}
+},
+"その（　）は全く役に立たなかった。": {
+"8": {
+"meaning": "(役に立つ) use; usefulness"
+},
+"10": {
+"meaning": "(役に立つ) to be useful"
+}
+},
+"彼女はピアノで高い（　）を出した。": {
+"13": {
+"meaning": "(音を出す) to produce (a sound)"
+}
+},
+"数学は何とか（　）を取った。": {
+"3": {
+"meaning": "(何とか) somehow",
+"reading": "なん"
+}
+},
+"彼はその選挙で対立（　）を破った。": {
+"13": {
+"meaning": "to defeat; to beat"
+}
+},
+"私は一か八か彼の（　）を受けてみた。": {
+"2": {
+"meaning": "(一か八か) all or nothing; taking a chance"
+},
+"4": {
+"meaning": "(一か八か) all or nothing; taking a chance"
+}
+},
+"（　）はあるがままに受け入れよ。": {
+"7": {
+"meaning": "(あるがまま) as it is"
+}
+},
+"（　）は合計２０万円になった。": {
+"6": {
+"meaning": "200,000",
+"reading": "にじゅうまん"
+}
+},
+"（　）の顔も三度。": {
+"7": {
+"meaning": "(三度) times; occurrences"
+}
+},
+"職員の（　）に関する規則を次のように定める。": {
+"15": {
+"meaning": "(次のように) as follows"
+}
+},
+"（　）のため、列車は10分遅れた。": {
+"4": {
+"meaning": "(〜のため) because of; due to"
+}
+},
+"彼には（　）観念が欠けている。": {
+"9": {
+"meaning": "to lack; to be missing"
+}
+},
+"うちの（　）は口をきくようになってきました。": {
+"0": {
+"meaning": "(うちの) our; my family's"
+}
+},
+"その仕事のために彼は（　）を失った。": {
+"5": {
+"meaning": "(〜のため) because of; due to"
+}
+},
+"以前は、人々は歩いて（　）をしたものだった。": {
+"16": {
+"meaning": "(〜たものだ) used to (do)"
+}
+},
+"病気を（　）することはできますか。": {
+"8": {
+"meaning": "(〜ことができる) can; be able to"
+}
+},
+"私の知る限りでは彼女は（　）行方不明です。": {
+"4": {
+"meaning": "(知る限り) as far as (I know)"
+}
+},
+"彼は（　）情報を得ましたか。": {
+"8": {
+"meaning": "to get; to obtain",
+"reading": "える"
+}
+},
+"このレストランは良い（　）を出す。": {
+"14": {
+"meaning": "to serve (food)"
+}
+},
+"母親は（　）にやかましく言って聞かせた。": {
+"15": {
+"meaning": "(言って聞かせる) to tell; to make understand",
+"lemma": "聞かせる",
+"reading": "きかせる"
+}
+},
+"わたしは足の（　）のために歩けない。": {
+"10": {
+"meaning": "(〜のため) because of; due to"
+}
+},
+"この（　）にはおよそ４ガロン入る。": {
+"14": {
+"meaning": "to hold; to fit (in)"
+}
+},
+"ジョンの（　）が二人のうちで背が高い。": {
+"11": {
+"meaning": "(〜のうちで) of; among"
+}
+},
+"もう（　）に駅に着きますよ。": {
+"0": {
+"meaning": "(もう直に) soon; any moment now"
+}
+},
+"いつだって読書の（　）は見つけられる。": {
+"0": {
+"meaning": "(いつだって) always; any time"
+}
+},
+"彼は（　）が好きだし得意だ。": {
+"10": {
+"meaning": "good at; one's strong point"
+}
+},
+"それを今論議するのはまだ（　）。": {
+"3": {
+"meaning": "now",
+"reading": "いま"
+}
+},
+"トムは病気のため（　）がなかった。": {
+"6": {
+"meaning": "(〜のため) because of; due to"
+}
+},
+"彼は（　）を鼻にかけている。": {
+"6": {
+"meaning": "(〜を鼻にかける) to boast about"
+}
+},
+"今年は米の（　）が早い。": {
+"3": {
+"meaning": "rice",
+"reading": "こめ"
+}
+},
+"学生たちが（　）反対運動の先頭に立った。": {
+"10": {
+"meaning": "campaign; movement"
+},
+"16": {
+"meaning": "(先頭に立つ) to take the lead"
+}
+},
+"（　）を打つことが一番の気晴らしだ。": {
+"4": {
+"meaning": "(碁を打つ) to play (go)"
+}
+},
+"（　）のスイングは実に見事だ。": {
+"9": {
+"meaning": "(実に) truly; really"
+}
+},
+"今度の事務員の方が前の事務員よりタイプを（　）のが速い。": {
+"7": {
+"meaning": "(〜の方が) the one (that is more ...)"
+},
+"9": {
+"meaning": "previous; former"
+}
+},
+"ロケットの（　）は予定通り行なわれた。": {
+"11": {
+"meaning": "(予定通り) as (planned)",
+"reading": "どおり"
+}
+},
+"彼は私の（　）からその金を盗んだ。": {
+"11": {
+"meaning": "money",
+"reading": "かね"
+}
+},
+"その（　）はときを得ていなかった。": {
+"6": {
+"meaning": "(時を得る) the right time"
+},
+"9": {
+"meaning": "(時を得る) to be timely",
+"reading": "える"
+}
+},
+"東京行きは一日に何（　）ありますか。": {
+"5": {
+"meaning": "a day; per day",
+"reading": "いちにち"
+}
+},
+"京子は（　）の上に横になっています。": {
+"9": {
+"meaning": "(横になる) to lie down"
+}
+},
+"あと数週間は（　）するつもりだよ。": {
+"0": {
+"meaning": "(あと〜) another; more"
+}
+},
+"どちらか（　）が出て行くしかないな。": {
+"0": {
+"meaning": "(どちらか) one of the two"
+}
+},
+"彼の（　）は次のようにかかれている。": {
+"8": {
+"meaning": "(次のように) as follows"
+}
+},
+"（　）を運転する時はいくら注意してもしすぎることはない。": {
+"22": {
+"meaning": "(〜すぎることはない) can't be too ..."
+}
+},
+"人のいない部屋の（　）をこまめに消す。": {
+"16": {
+"meaning": "to turn off (lights)"
+}
+},
+"よくこういう（　）が起きますか。": {
+"0": {
+"meaning": "often"
+},
+"10": {
+"meaning": "to occur; to happen"
+}
+},
+"その風が（　）のろうそくを消した。": {
+"13": {
+"meaning": "to blow out; to put out (a flame)"
+}
+},
+"彼は非常に（　）がある。": {
+"2": {
+"meaning": "(非常に) very; extremely"
+}
+},
+"あの人は（　）と腹が反対だ。": {
+"8": {
+"meaning": "(口と腹) true intentions"
+},
+"10": {
+"meaning": "opposite; contrary"
+}
+},
+"さあ何もかも出発の（　）ができた。": {
+"2": {
+"meaning": "(何もかも) everything",
+"reading": "なに"
+}
+},
+"あなたの（　）が聞けてうれしいわ。": {
+"8": {
+"meaning": "to be able to hear"
+}
+},
+"（　）伝達は色々な形をとる。": {
+"11": {
+"meaning": "(形をとる) to take (a form)"
+}
+},
+"私の祖母ははたを（　）のが好きだ。": {
+"5": {
+"meaning": "(はたを織る) loom (機)"
+}
+},
+"それで余計に彼は（　）になった。": {
+"3": {
+"meaning": "(余計に) all the more; even more"
+}
+},
+"１８歳未満の方は（　）できません。": {
+"6": {
+"meaning": "person (polite)",
+"reading": "かた"
+}
+},
+"新（　）空港は実際成田を有名にした。": {
+"7": {
+"meaning": "really; in fact"
+}
+},
+"ビルが（　）に対し責めを負った。": {
+"7": {
+"meaning": "(〜に対し) for; regarding"
+}
+},
+"どうやってその（　）を手に入れたんですか。": {
+"11": {
+"meaning": "(手に入れる) to obtain; to get"
+},
+"13": {
+"meaning": "(手に入れる) to obtain; to get"
+}
+},
+"その急行は（　）六時三十分着だ。": {
+"13": {
+"meaning": "arrival; arriving (at)",
+"reading": "ちゃく"
+}
+},
+"あなたはどのようにして学生を（　）しますか。": {
+"6": {
+"meaning": "(どのように) how; in what way"
+}
+},
+"すごい（　）で飛ばしてるよ。": {
+"7": {
+"meaning": "to speed; to drive fast"
+}
+},
+"その小説を読んで深く（　）した。": {
+"8": {
+"meaning": "deeply",
+"reading": "ふかい"
+}
+},
+"年をとると共に、情熱は薄れるが、身についた習慣は（　）ものだ。": {
+"16": {
+"meaning": "(身につく) to become ingrained; to be acquired"
+},
+"27": {
+"meaning": "(〜ものだ) it is natural that; tends to"
+}
+},
+"二機のジェット機が（　）に離陸した。": {
+"1": {
+"meaning": "counter for aircraft"
+}
+},
+"メグは新しい（　）をたくさん得た。": {
+"14": {
+"meaning": "to get; to gain",
+"reading": "える"
+}
+},
+"どんな小さな（　）でも見ることができる。": {
+"13": {
+"meaning": "(〜ことができる) can; be able to"
+}
+},
+"箱の内容はラベルに（　）されている。": {
+"0": {
+"meaning": "box",
+"reading": "はこ"
+}
+},
+"（　）を修飾するものは、形容詞または形容詞相当語句です。": {
+"15": {
+"meaning": "(または) or"
+}
+},
+"犬はよく骨を地面に（　）。": {
+"2": {
+"meaning": "often"
+}
+},
+"二人の男のうち、背の高い方が（　）に出ていった。": {
+"5": {
+"meaning": "(〜のうち) of; among"
+},
+"12": {
+"meaning": "(〜方) the one (who is ...)"
+}
+},
+"与党は（　）非難のキャンペーンを展開しています。": {
+"16": {
+"meaning": "(キャンペーンを展開する) to run (a campaign)"
+}
+},
+"彼の話は（　）そのものだった。": {
+"9": {
+"meaning": "(そのもの) itself"
+}
+},
+"あの人は口と（　）が反対だ。": {
+"4": {
+"meaning": "(口と腹) words (vs. true feelings)"
+},
+"10": {
+"meaning": "opposite; contrary"
+}
+},
+"ジェーンとメアリーはいつも人の気を引こうと（　）している。": {
+"15": {
+"meaning": "(気を引く) attention; interest"
+}
+},
+"あいつは本当におめでたい（　）だ。": {
+"4": {
+"meaning": "(本当に) really; truly"
+}
+},
+"彼は学生運動（　）に浮かされている。": {
+"4": {
+"meaning": "movement; campaign"
+},
+"10": {
+"meaning": "(熱に浮かされる) to be carried away",
+"lemma": "浮かされる",
+"reading": "うかされる"
+}
+},
+"ここの（　）は私の体質に合わない。": {
+"12": {
+"meaning": "(体質に合う) to agree with; to suit"
+}
+},
+"（　）はどちらの側にも４人すわっていた。": {
+"4": {
+"meaning": "(どちらの〜にも) either; both"
+}
+},
+"この（　）から水が出てきます。": {
+"9": {
+"meaning": "to come out"
+}
+},
+"それにしても、（　）というところは、季節の行事にとても敏感です。": {
+"13": {
+"meaning": "(〜というところ) place (called ...)"
+}
+},
+"春にしては少し（　）日だった。": {
+"10": {
+"meaning": "day",
+"reading": "ひ"
+}
+},
+"あなたの（　）では何時ですか。": {
+"9": {
+"meaning": "what time",
+"reading": "なんじ"
+}
+},
+"ガルフポート中で（　）のお店です。": {
+"6": {
+"meaning": "(〜中) throughout; all over",
+"reading": "じゅう"
+}
+},
+"私の（　）は医者を見ただけで恐がった。": {
+"14": {
+"meaning": "to be afraid (of)",
+"lemma": "恐がる",
+"reading": "こわがる"
+}
+},
+"（　）のうちで春が一番好きだ。": {
+"4": {
+"meaning": "(〜のうちで) of; among"
+}
+},
+"例えば、『ねえ、ちょうど今青い（　）の紙を見たよ。』のようにだ。": {
+"27": {
+"meaning": "(〜のように) like; as in"
+}
+},
+"その（　）は何時に始まりますか。": {
+"6": {
+"meaning": "what time",
+"reading": "なんじ"
+}
+},
+"この業界では（　）がものをいうんだ。": {
+"10": {
+"meaning": "(ものをいう) to count; to be decisive"
+},
+"13": {
+"meaning": "(ものをいう) to count; to be decisive"
+}
+},
+"メイドは客を一人一人（　）でとりついた。": {
+"14": {
+"meaning": "to announce (a visitor); to pass on",
+"lemma": "取り次ぐ",
+"reading": "とりつぐ"
+}
+},
+"一晩彼を（　）ことができる。": {
+"0": {
+"meaning": "(一晩) one (night)",
+"reading": "ひと"
+},
+"7": {
+"meaning": "(〜ことができる) can; be able to"
+}
+},
+"そのような人が（　）で重要なのだ。": {
+"2": {
+"meaning": "(そのような) such; like that"
+}
+},
+"彼は（　）に出す牛を育てている。": {
+"6": {
+"meaning": "(市場に出す) to send (to market)"
+}
+},
+"あなたを（　）してしまってごめんなさい。": {
+"16": {
+"meaning": "(ごめんなさい) I'm sorry"
+}
+},
+"熱が出たのは疲れの（　）だろう。": {
+"2": {
+"meaning": "(熱が出る) to come on (fever)"
+}
+},
+"（　）はこちらの負けにおわりそうだ。": {
+"4": {
+"meaning": "this side; we (us)"
+}
+},
+"彼の借金は相当な（　）になっている。": {
+"5": {
+"meaning": "considerable; substantial"
+}
+},
+"どうも（　）のようです。": {
+"0": {
+"meaning": "(どうも) it seems; apparently"
+},
+"7": {
+"meaning": "(〜のようだ) seems (like)"
+}
+},
+"あなたはうちのクラスで（　）されています。": {
+"4": {
+"meaning": "(うちの) our"
+}
+},
+"法が常に（　）であるとは限らない。": {
+"2": {
+"meaning": "(常に) always"
+},
+"12": {
+"meaning": "(〜とは限らない) not necessarily"
+}
+},
+"羽子板で（　）羽の玉は「むくろじ」という大木の種です。": {
+"7": {
+"meaning": "(羽の玉) feathered; feather",
+"reading": "はね"
+}
+},
+"この上着はもう私の（　）に合わない。": {
+"5": {
+"meaning": "(もう〜ない) no longer; not anymore"
+}
+},
+"この組の生徒は（　）に出来がよい。": {
+"11": {
+"meaning": "(出来がよい) results; doing well"
+}
+},
+"彼は（　）をそこねている。": {
+"6": {
+"meaning": "(機嫌をそこねる) to spoil; to hurt (mood)"
+}
+},
+"（　）の老いた両親のことを考えて見るべきだ。": {
+"10": {
+"meaning": "(〜のこと) about; matters concerning"
+},
+"16": {
+"meaning": "(〜てみる) to try (doing)"
+}
+},
+"期待されたとおり彼は（　）を得た。": {
+"14": {
+"meaning": "to get; to win",
+"reading": "える"
+}
+},
+"子どものころ、よく（　）で遊んだ。": {
+"7": {
+"meaning": "often"
+}
+},
+"アメリカへの旅行はとても（　）だ。": {
+"9": {
+"meaning": "(とても無理) absolutely; utterly"
+}
+},
+"私達は息を殺して実験の（　）を待った。": {
+"5": {
+"meaning": "(息を殺す) to hold (one's breath)"
+}
+},
+"物を視覚的に覚える（　）は視床下部の下にある。": {
+"15": {
+"meaning": "(視床下部) hypothalamus"
+}
+},
+"イルカは非常に（　）の高い動物です。": {
+"4": {
+"meaning": "(非常に) very, extremely"
+}
+},
+"へー、キーボード見ないで（　）打てるんだ。スゴイわねー。": {
+"15": {
+"meaning": "(文字を打つ) can type"
+}
+},
+"彼は思いきって意見を（　）しない。": {
+"2": {
+"meaning": "(思いきって) boldly, daringly"
+}
+},
+"私がいない間も（　）を続けなさい。": {
+"5": {
+"meaning": "(〜間) while; during",
+"reading": "あいだ"
+}
+},
+"法律文書では難しい言葉や（　）がよく使用される。": {
+"16": {
+"meaning": "often"
+}
+},
+"それは可でもなく（　）でもなしというところだ。": {
+"18": {
+"meaning": "(〜というところだ) about, roughly that"
+}
+},
+"（　）引く六はいくつですか。": {
+"3": {
+"meaning": "(引く) minus, subtract"
+}
+},
+"困難に対してあくまでも（　）した。": {
+"3": {
+"meaning": "(〜に対して) against, toward"
+}
+},
+"満足の（　）が彼の顔に浮かんだ。": {
+"11": {
+"meaning": "(顔に浮かぶ) to appear (on one's face)"
+}
+},
+"電車はあと（　）で到着の予定です。": {
+"3": {
+"meaning": "(あと〜) in ... more; remaining"
+}
+},
+"この（　）はまとまりに欠けている。": {
+"11": {
+"meaning": "(〜に欠ける) to lack"
+}
+},
+"彼は（　）力に欠けていた。": {
+"7": {
+"meaning": "(〜に欠ける) to lack"
+}
+},
+"（　）は的に当たらなかった。": {
+"4": {
+"meaning": "target; mark",
+"reading": "まと"
+}
+},
+"彼女は子供の（　）に気をつけている。": {
+"10": {
+"meaning": "(気をつける) to be careful"
+}
+},
+"あるがままに（　）を見るようにしなさい。": {
+"3": {
+"meaning": "(あるがまま) as it is"
+}
+},
+"書類（　）に通って、うれしいです。": {
+"6": {
+"meaning": "(選考に通る) to pass (a screening)",
+"lemma": "通る",
+"reading": "とおる"
+}
+},
+"それは形式（　）の問題に過ぎない。": {
+"12": {
+"meaning": "(〜に過ぎない) merely, nothing but"
+}
+},
+"私は貧しい（　）に過ぎない。": {
+"9": {
+"meaning": "(〜に過ぎない) merely, nothing but"
+}
+},
+"その二人の少年は国中を（　）した。": {
+"9": {
+"meaning": "(国中) throughout the whole country",
+"reading": "じゅう"
+}
+},
+"彼が（　）に越してきた。": {
+"6": {
+"meaning": "(越してくる) to move (house) here"
+}
+},
+"手術は医院内で三十分以内に（　）します。": {
+"8": {
+"meaning": "(三十分) ten minutes, here thirty minutes",
+"reading": "じゅっぷん"
+}
+},
+"手術は（　）内で三十分以内に完了します。": {
+"9": {
+"meaning": "(三十分) ten minutes, here thirty minutes",
+"reading": "じゅっぷん"
+}
+},
+"昨年は有り余る程の米が（　）された。": {
+"9": {
+"meaning": "rice",
+"reading": "こめ"
+}
+},
+"この店は（　）の米を売っている。": {
+"8": {
+"meaning": "rice",
+"reading": "こめ"
+}
+},
+"その少年を入れて（　）人招かれた。": {
+"11": {
+"meaning": "(counter for people)",
+"reading": "にん"
+}
+},
+"このホールには人が二（　）人入れる。": {
+"13": {
+"meaning": "(counter for people)",
+"reading": "にん"
+}
+},
+"うちの娘と（　）時間はありますか。": {
+"0": {
+"meaning": "(うちの) our; my family's"
+}
+},
+"いきあたりばったりの（　）もいいね。": {
+"5": {
+"meaning": "(行き当たりばったり) haphazard, unplanned"
+}
+},
+"飲み物はヤシの実の（　）に入れてあった。": {
+"7": {
+"meaning": "(ヤシの実) coconut; fruit, nut",
+"reading": "み"
+}
+},
+"結婚は２人が（　）を理解し合えばすばらしいものとなりうる。": {
+"13": {
+"meaning": "(〜し合う) to do to each other"
+}
+},
+"こちらの（　）、どれかいかがですか？": {
+"0": {
+"meaning": "this; these (here)"
+}
+},
+"ビールをもう１（　）いただけますか。": {
+"4": {
+"meaning": "(もう１〜) one more"
+}
+},
+"あいつもアバウトな（　）だよな。": {
+"0": {
+"meaning": "(あいつ) that guy",
+"lemma": "あいつ",
+"reading": "あいつ"
+},
+"1": {
+"meaning": "(あいつも) that guy too (not いつも)",
+"lemma": "あいつ",
+"reading": "あいつ"
+}
+},
+"妻は（　）より長生きするものだ。": {
+"12": {
+"meaning": "(〜ものだ) it's natural that; usually"
+}
+},
+"人は溜まれば（　）ほど欲しくなるものだ。": {
+"16": {
+"meaning": "(〜ものだ) that's how it is; naturally"
+}
+},
+"この（　）を見ていてくれませんか。": {
+"6": {
+"meaning": "(見ている) to watch, keep an eye on"
+}
+},
+"のろいはのろい主に（　）。": {
+"7": {
+"meaning": "(のろい主) the one who cast the curse"
+}
+},
+"彼は（　）居直った。": {
+"5": {
+"meaning": "to change one's attitude (defiantly)"
+}
+},
+"彼女の親切な助言に対して彼は（　）を述べた。": {
+"9": {
+"meaning": "(〜に対して) in response to; toward"
+}
+},
+"もう少し物事に対して（　）になれ。": {
+"7": {
+"meaning": "(〜に対して) toward, regarding"
+}
+},
+"あなたの（　）は食事にうるさいのかな？": {
+"11": {
+"meaning": "(〜にうるさい) fussy, picky about"
+}
+},
+"彼はよく会合を（　）。": {
+"2": {
+"meaning": "often"
+}
+},
+"私の犬はよく寝た（　）をする。": {
+"4": {
+"meaning": "often"
+}
+},
+"（　）と水で地球の表面は出来ている。": {
+"12": {
+"meaning": "(〜で出来ている) to be made of"
+}
+},
+"その靴は（　）には向かないよ。": {
+"9": {
+"meaning": "(〜に向く) to be suited for"
+}
+},
+"その箱に（　）のテープをかけてください。": {
+"2": {
+"meaning": "box",
+"reading": "はこ"
+}
+},
+"彼は（　）に大きな箱を抱えていた。": {
+"9": {
+"meaning": "box",
+"reading": "はこ"
+}
+},
+"あの猫たちは（　）に好かれている。": {
+"10": {
+"meaning": "(好かれる) to be liked",
+"lemma": "好く",
+"reading": "すく"
+}
+},
+"この（　）が出たのは初めてですか。": {
+"6": {
+"meaning": "(症状が出る) to appear, show up"
+}
+},
+"彼の（　）は少しも当てにできない。": {
+"9": {
+"meaning": "(当てにする) to rely on, count on"
+}
+},
+"私はいつまでも（　）にこだわらないようにと心がけている。": {
+"2": {
+"meaning": "(いつまでも) forever, endlessly"
+}
+},
+"私はいつまでも彼の（　）を覚えている。": {
+"2": {
+"meaning": "(いつまでも) forever, always"
+}
+},
+"彼女は（　）に流されやすい。": {
+"7": {
+"meaning": "(〜に流される) to be swept along by"
+}
+},
+"やがて月が（　）上に現れた。": {
+"8": {
+"meaning": "(〜上) on, above"
+}
+},
+"受けるより（　）方が幸いである。": {
+"8": {
+"meaning": "(〜方が) rather; it's better to",
+"reading": "ほう"
+}
+},
+"（　）が一面すっぽり雪をかぶった。": {
+"4": {
+"meaning": "(一面) all over; the whole surface"
+}
+},
+"あのチームは、あるとしても、まず優勝の（　）はない。": {
+"14": {
+"meaning": "(まず〜ない) almost certainly not"
+}
+},
+"彼は（　）を５００万円と見積もった。": {
+"6": {
+"meaning": "five million",
+"reading": "ごひゃくまん"
+}
+},
+"彼女は高校時（　）ずっと変わった。": {
+"5": {
+"meaning": "(〜時) time of, days of"
+},
+"9": {
+"meaning": "(ずっと + change) much, a lot"
+}
+},
+"この（　）はあれよりもずっと良い。": {
+"11": {
+"meaning": "(ずっと + comparison) far, much"
+}
+},
+"（　）が私を今日の私にしてくれた。": {
+"6": {
+"meaning": "(今日の私) present day; who I am now",
+"reading": "こんにち"
+}
+},
+"もうあの音には（　）ができないよ。": {
+"0": {
+"meaning": "(もう + neg.) (not) any longer"
+}
+},
+"社会における変化は（　）から生じる。": {
+"3": {
+"meaning": "(〜における) in, at",
+"lemma": "おける",
+"reading": "おける"
+}
+},
+"あなたの（　）車は調子よく動いていますか。": {
+"9": {
+"meaning": "condition; (調子よく) smoothly, well"
+}
+},
+"これ以上（　）に進んで行けないのか。": {
+"2": {
+"meaning": "(これ以上) any more, any further"
+},
+"11": {
+"meaning": "(〜て行ける) can go (on)",
+"lemma": "行く",
+"reading": "いく"
+}
+},
+"彼は（　）を立てて私に怒鳴った。": {
+"6": {
+"meaning": "(腹を立てる) to get angry"
+}
+},
+"（　）あとが残るかもしれません。": {
+"3": {
+"meaning": "mark; scar",
+"lemma": "跡",
+"reading": "あと"
+}
+},
+"（　）、彼のうわさを耳にしていない。": {
+"10": {
+"meaning": "(耳にする) to hear"
+}
+},
+"国会は（　）のうちに散会した。": {
+"7": {
+"meaning": "(〜のうちに) amid, in (a state of)"
+}
+},
+"この金は君が（　）べきものだ。": {
+"2": {
+"meaning": "money",
+"reading": "かね"
+}
+},
+"「身分確認のためにあなたの運転免許証を見せていただけますか」とその（　）はいった。": {
+"37": {
+"meaning": "to say",
+"lemma": "言う"
+}
+},
+"彼らはまもなく（　）の駅に到着した。": {
+"3": {
+"meaning": "(まもなく) soon, shortly",
+"lemma": "まもなく",
+"reading": "まもなく"
+}
+},
+"その会社はまもなく（　）するだろう。": {
+"5": {
+"meaning": "(まもなく) soon, shortly",
+"lemma": "まもなく",
+"reading": "まもなく"
+}
+},
+"彼は（　）に不意打ちを食らわせた。": {
+"11": {
+"meaning": "(〜を食らわせる) to hit someone with"
+}
+},
+"その（　）は目も当てられなかった。": {
+"8": {
+"meaning": "(目も当てられない) too awful to look at"
+}
+},
+"その理論は広く（　）されている。": {
+"5": {
+"meaning": "(広く) widely"
+}
+},
+"ここでお目に掛かれるとは全然（　）しませんでした。": {
+"4": {
+"meaning": "(お目に掛かる) to meet (humble)"
+},
+"6": {
+"meaning": "(お目に掛かる) to meet (humble)",
+"lemma": "お目に掛かる",
+"reading": "おめにかかる"
+}
+},
+"私の先生の（　）はいつも要を得ている。": {
+"14": {
+"meaning": "(要を得る) to be to the point",
+"reading": "える"
+}
+},
+"そういう発言は（　）を招きやすい。": {
+"0": {
+"meaning": "(そういう) such, that kind of"
+}
+},
+"（　）のくせに大きな顔をするな。": {
+"10": {
+"meaning": "(大きな顔をする) to act big, be arrogant"
+}
+},
+"英語の発音の（　）がなかなか飲み込めない。": {
+"14": {
+"meaning": "(〜が飲み込めない) can't grasp"
+}
+},
+"今日は（　）をとる時間がない。": {
+"7": {
+"meaning": "(昼食をとる) to have (a meal)",
+"lemma": "取る",
+"reading": "とる"
+}
+},
+"その２つの（　）は相容れない。": {
+"9": {
+"meaning": "(相容れない) incompatible, mutually exclusive"
+},
+"10": {
+"meaning": "(相容れない) incompatible, mutually exclusive"
+}
+},
+"禎子の友人達は、彼女と原爆でなくなったすべての子供達の慰霊（　）を建てたいと思った。": {
+"14": {
+"meaning": "(亡くなる) to die, pass away"
+}
+},
+"（　）気をつけなくてはなりません。": {
+"3": {
+"meaning": "(気をつける) to be careful"
+}
+},
+"レンタカーの（　）もお願いします。": {
+"11": {
+"meaning": "(お願いします) please; I'd like"
+}
+},
+"この（　）では三局受信できます。": {
+"8": {
+"meaning": "(broadcasting) station"
+}
+},
+"彼は（　）を盗んだといわれている。": {
+"10": {
+"meaning": "(〜といわれている) it is said that"
+}
+},
+"thatには、主格、目的格の２つしかなく、（　）による形の変化はない。": {
+"25": {
+"meaning": "(〜による) depending on"
+}
+},
+"君はただ（　）を洗いさえすればいい。": {
+"8": {
+"meaning": "to wash",
+"lemma": "洗う",
+"reading": "あらう"
+}
+}
+},
+"bad": {
+"相次ぐ不祥事にも関わらず、警察はオメオメ（　）切符を切っている。": "English says 'make arrests'; Japanese says brazenly issue (traffic-violation) tickets",
+"このようのしてその（　）は起こった。": "typo: このようのして should be このようにして",
+"ショットはとても（　）ものもある。": "unnatural Japanese (ショットはとても速いものもある); English about people's serves doesn't match",
+"あの日本人（　）はどう思いますか。": "Japanese reads 'What do those Japanese writers think?'; English needs 〜については",
+"留学生も（　）のかしら。": "English mentions a club not in the Japanese",
+"彼女はテーブルの上に（　）を置いた。": "さら is a plate/dish, English says tray",
+"ゲイのクラブを（　）してください。": "Japanese asks to recommend a gay club; English 'Where can I find' is loose",
+"もらい（　）の馬の口の中をのぞくな。": "もらい者 is not a word; 'gift' is もらい物, so the answer 者 makes the proverb wrong",
+"この料理にソースはどんな（　）ですか。": "English 'What sauce do you use?' doesn't match; Japanese asks what the sauce tastes like",
+"その週間は（　）とは関係がなかった。": "その週間 is unnatural (should be その週); sentence is odd out of context",
+"あの（　）坊さんを見ろよ。": "English 'big shot' doesn't match; 偉い坊さん means a distinguished monk",
+"（　）の不自由な人は手話で会話が出きる。": "出きる is a misspelling of 出来る/できる",
+"（　）より後者の方がいい。": "English reversed: Japanese says the latter is better than the former",
+"もう少し前へ（　）気がする。": "English 'Move forward one step' doesn't match; Japanese means 'I feel I could move forward a bit more'",
+"彼は昨日（　）いくつを１足買った。": "Blank answer 黒 leaves い + kana くつ, which reads as いくつ 'how many'; should use 靴 or 黒い as answer.",
+"（　）を盛り上げたり、静めたりすることができない情熱があるだろうか。": "Answer 音声 means 'voice/sound', not music, and the blank is the object (を) while the English makes music the subject; the original has 音楽が.",
+"彼は日が暮れてからそこに（　）した。": "登場 means 'make an appearance (on stage)', not simply 'arrived'; the English expects 到着.",
+"彼はあそこの（　）の所有権がある。": "English doesn't match: the Japanese means 'He owns the land over there.'",
+"政治は国民生活に（　）関係がある。": "English doesn't match: 国民生活 is 'people's lives', not 'me' (Politics is closely tied to people's lives).",
+"この手紙を（　）にしてもらいたい。": "answer 書類 doesn't fit: 'registered letter' is 書留; この手紙を書類にする makes no sense",
+"（　）はどちらにいらしゃいましたか。": "typo いらしゃいました (should be いらっしゃいました)",
+"私はかならずも（　）を飲まされた。": "かならずも is wrong; should be 心ならずも (against one's will); かならず shown as 'certainly'",
+"黒い紙は、光を（　）する。": "English says 'cloth' but Japanese 紙 is paper",
+"あれと（　）難しくない仕事がある。": "Japanese (there is a job as not-difficult as that) doesn't match English 'no more difficult task than that'",
+"（　）はさいごにけんかになった。": "answer 議会 (parliament) doesn't fit 'The argument'; should be 議論",
+"食事は（　）正しくとりなさい。": "answer 規制 is wrong; 規則正しく (regularly) needs 規則",
+"われわれは（　）人あざ笑ってはいけない。": "missing を: should be 貧しい人をあざ笑って",
+"彼の頭がさっと怒りの（　）に変わるのを見た。": "頭 (head) can't change into an expression; should be 顔 (face)",
+"彼の好意は人から（　）を受けやすい。": "好意 (kindness) looks like a typo for 行為 (conduct); English says 'conduct'",
+"ここの数枚の（　）がある。": "ここの数枚の銅貨がある is ungrammatical; should be ここに数枚の銅貨がある",
+"ぎこちない（　）をした店員が答えた。": "English 'smirking' doesn't match ぎこちない笑い (an awkward smile)",
+"市の（　）だったらよくやっていることだよ。": "English 'have sticky fingers' (steal) is not in the Japanese ('it's something city councillors often do')",
+"多く学生が（　）を出しそこなった。": "'多く学生' is ungrammatical (should be 多くの学生)",
+"彼は１０年（　）に在学中だ。": "'１０年級' is not natural Japanese for 'tenth grade'",
+"（　）はどうしたらいいんでしょうか。": "English 'Where do we get the textbooks?' doesn't match ('What should we do about textbooks?')",
+"彼らは彼の（　）を警察にばらした。": "English 'turned him over to the police' doesn't match 正体をばらした ('revealed his true identity to the police')",
+"彼が（　）する可能性はありますか。": "Answer しゅうしょく means 'getting a job', but English says 'resigning'",
+"避難民は食料や水、薬などその他いろいろ不足を（　）ものだ。": "'不足をかぶる' is unnatural Japanese",
+"彼は（　）仕事をやり遂げました。": "English 'carried on at his work eventually' doesn't match ('he finally accomplished the job')",
+"（　）その単語にであったわけです。": "English 'came up with the word' doesn't match ('I happened to come across the word')",
+"少年老い易く（　）成り難し。": "English is a loose proverb equivalent; literally 'youth ages easily, learning is hard to attain'",
+"ぎこちない笑いをした（　）が答えた。": "English 'smirking' doesn't match ぎこちない笑い (an awkward smile)",
+"この問題に関しては（　）の問題がある。": "English 'three opinions' doesn't match 三つの問題 ('three problems')",
+"（　）に流されているんですよ。": "English 'carried along with the slide' is unclear; means 'swept along by momentum'",
+"少年（　）易く学成り難し。": "English is a loose proverb equivalent; literally 'youth ages easily, learning is hard to attain'",
+"彼は私にその問題をいかに（　）べきかについて教えてくれた。": "'問題を攻める' is unnatural; English 'attack the subject' is loose",
+"（　）はいつの世でも金になる。": "English is garbled ('Rebellion it always sells at a profit')",
+"新聞は（　）の動向を左右する。": "English 'current of time' doesn't match 世の動向 ('trends in society')",
+"彼は（　）情報を得ましたか。": "幾つ情報 is ungrammatical; needs 幾つの情報 / いくつ情報を",
+"メイドは客を一人一人（　）でとりついた。": "とりついた should be 取り次いだ (announced); as written it means 'was possessed'",
+"（　）の心を血で染めている。": "English omits 白紙 (blank/white) and the sentence is an unnatural fragment",
+"強風が（　）の方へ吹き始めた。": "English 'began to set in' omits 陸の方へ (toward the land)",
+"新しい切手が来週（　）される。": "Japanese says 来週 (next week) but English says next month",
+"彼の名前を（　）知っていませんか。": "偶然知っていませんか is unnatural for 'do you happen to know'",
+"アジアにはたくさんの（　）がいる。": "民族 means ethnic groups/peoples, not 'many people'",
+"私は私自身を（　）したい。": "私自身を修正したい is unnatural for 'improve myself'",
+"彼らは彼の正体を（　）にばらした。": "English 'turned him over to the police' doesn't match: Japanese says they revealed his true identity to the police",
+"一人の（　）がささやいた。": "English says 'colleagues' but the answer きょうじゅ means professor",
+"彼の辞職で（　）の席に空きができた。": "answer かんりょう (官僚, bureaucrats) doesn't match English 'cabinet' (閣僚 かくりょう)",
+"彼には思想の（　）がかけている。": "unnatural Japanese (思想の理想がかけている) and English 'empty of idea' is garbled",
+"あれと同様難しくない（　）がある。": "Japanese is unnatural and doesn't match English 'There is no more difficult task than that'",
+"その（　）はニンニク特有のものだ。": "answer くさい is an adjective and can't fill the noun slot after その (should be におい)",
+"その男は妻と（　）し始めた。": "unnatural: 'started dating his own wife'; English 'took up with his wife' is odd",
+"彼女はすべての（　）を利用する。": "English 'takes every circumstance into account' doesn't match 利用する (makes use of every circumstance)"
+}
+}

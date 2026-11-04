@@ -1,0 +1,5357 @@
+{
+"前": [
+[
+"駅の前で友達を待っています。",
+"I'm waiting for my friend in front of the station.",
+"in front of"
+],
+[
+"寝る前に歯をみがきます。",
+"I brush my teeth before going to bed.",
+"before"
+]
+],
+"妻": [
+[
+"妻は料理がとても上手です。",
+"My wife is very good at cooking.",
+"my wife"
+],
+[
+"週末は妻と買い物に行きました。",
+"I went shopping with my wife on the weekend.",
+"my wife"
+],
+[
+"妻のたんじょう日にケーキを買った。",
+"I bought a cake for my wife's birthday.",
+"my wife"
+]
+],
+"いけない": [
+[
+"ここでたばこを吸ってはいけない。",
+"You must not smoke here.",
+"must not"
+],
+[
+"夜おそくまで起きていてはいけないよ。",
+"You shouldn't stay up late at night.",
+"must not"
+],
+[
+"いけない、かさを忘れた！",
+"Oh no, I forgot my umbrella!",
+"oh no (bad)"
+]
+],
+"間": [
+[
+"彼は少し間をおいてから答えた。",
+"He paused a moment before answering.",
+"pause"
+],
+[
+"あっという間に一年が終わった。",
+"The year was over in no time.",
+"moment, time"
+]
+],
+"かもしれない": [
+[
+"明日は雨が降るかもしれない。",
+"It might rain tomorrow.",
+"might, maybe"
+],
+[
+"彼はもう家に帰ったかもしれない。",
+"He may have already gone home.",
+"may have"
+],
+[
+"その店は今日休みかもしれない。",
+"That shop might be closed today.",
+"might"
+]
+],
+"あんまり": [
+[
+"このカレーはあんまりからくない。",
+"This curry isn't very spicy.",
+"not very"
+],
+[
+"最近あんまりテレビを見ません。",
+"I don't watch much TV lately.",
+"not much"
+],
+[
+"あんまり食べると太るよ。",
+"If you eat too much, you'll gain weight.",
+"too much"
+]
+],
+"他": [
+[
+"他の色はありますか。",
+"Do you have any other colors?",
+"other"
+],
+[
+"他に質問がある人はいますか。",
+"Does anyone else have a question?",
+"else, other"
+]
+],
+"なにも": [
+[
+"朝からなにも食べていません。",
+"I haven't eaten anything since morning.",
+"nothing, anything"
+],
+[
+"かばんの中にはなにもなかった。",
+"There was nothing in the bag.",
+"nothing"
+],
+[
+"彼はなにも言わずに出て行った。",
+"He left without saying anything.",
+"nothing"
+]
+],
+"これら": [
+[
+"これらの本は全部図書館のです。",
+"These books all belong to the library.",
+"these"
+],
+[
+"これらの写真は旅行でとりました。",
+"I took these photos on a trip.",
+"these"
+],
+[
+"これらの問題は明日までにやってください。",
+"Please do these problems by tomorrow.",
+"these"
+]
+],
+"かなり": [
+[
+"今日はかなり寒いですね。",
+"It's quite cold today, isn't it?",
+"quite"
+],
+[
+"駅まではかなり遠いです。",
+"It's fairly far to the station.",
+"fairly"
+]
+],
+"ただ": [
+[
+"子どもは入場がただです。",
+"Admission is free for children.",
+"free of charge"
+],
+[
+"ただ見ているだけです。",
+"I'm just looking.",
+"just"
+],
+[
+"このお茶はただでもらった。",
+"I got this tea for free.",
+"free"
+]
+],
+"唯": [
+[
+"ただのかぜだから、心配しないで。",
+"It's just a cold, so don't worry.",
+"mere, just"
+],
+[
+"これはただの紙です。",
+"This is just plain paper.",
+"mere, plain"
+]
+],
+"あらゆる": [
+[
+"あらゆる方法をためしてみた。",
+"I tried every possible method.",
+"every"
+],
+[
+"この店にはあらゆる物があります。",
+"This store has everything.",
+"all kinds of"
+],
+[
+"あらゆる人がその歌を知っている。",
+"Everyone knows that song.",
+"all, every"
+]
+],
+"そして": [
+[
+"家に帰って、そして晩ご飯を食べた。",
+"I went home, and then ate dinner.",
+"and then"
+],
+[
+"彼はやさしい。そして頭もいい。",
+"He is kind. And he's smart too.",
+"and"
+]
+],
+"しばしば": [
+[
+"彼はしばしば会社におくれて来る。",
+"He is often late to the office.",
+"often"
+],
+[
+"この道ではしばしばじこが起きる。",
+"Accidents frequently happen on this road.",
+"frequently"
+],
+[
+"子どものころ、しばしば海へ行った。",
+"As a child, I often went to the sea.",
+"often"
+]
+],
+"まるで": [
+[
+"まるで夢のような一日だった。",
+"It was a day just like a dream.",
+"just like"
+],
+[
+"彼女の部屋はまるでホテルみたいだ。",
+"Her room is just like a hotel.",
+"just like"
+]
+],
+"どうしても": [
+[
+"どうしても日本に行きたい。",
+"I really want to go to Japan no matter what.",
+"no matter what"
+],
+[
+"このびんがどうしても開かない。",
+"This bottle just won't open no matter what I do.",
+"no matter how hard"
+]
+],
+"どこか": [
+[
+"週末どこかへ行きましょう。",
+"Let's go somewhere this weekend.",
+"somewhere"
+],
+[
+"かぎをどこかに落としたらしい。",
+"It seems I dropped my key somewhere.",
+"somewhere"
+],
+[
+"この人にどこかで会ったことがある。",
+"I've met this person somewhere before.",
+"somewhere"
+]
+],
+"しゃべる": [
+[
+"じゅぎょう中にしゃべってはいけません。",
+"You mustn't chat during class.",
+"to chat"
+],
+[
+"妹は電話でずっとしゃべっている。",
+"My little sister is talking on the phone all the time.",
+"to talk"
+],
+[
+"このことはだれにもしゃべらないで。",
+"Don't tell anyone about this.",
+"to tell, talk"
+]
+],
+"いつでも": [
+[
+"いつでも電話してください。",
+"Please call me anytime.",
+"anytime"
+],
+[
+"父はいつでも元気です。",
+"My father is always cheerful.",
+"always"
+],
+[
+"困ったらいつでも来てね。",
+"If you're in trouble, come anytime.",
+"anytime"
+]
+],
+"寧ろ": [
+[
+"夏より、むしろ冬のほうが好きです。",
+"I actually prefer winter to summer.",
+"rather"
+],
+[
+"バスより、むしろ歩いたほうが早い。",
+"It's actually faster to walk than to take the bus.",
+"rather"
+],
+[
+"彼は先生というより、むしろ友達だ。",
+"He's more a friend than a teacher.",
+"rather"
+]
+],
+"ますます": [
+[
+"雨がますます強くなってきた。",
+"The rain is getting stronger and stronger.",
+"increasingly"
+],
+[
+"日本語の勉強がますます楽しくなった。",
+"Studying Japanese has become more and more fun.",
+"more and more"
+],
+[
+"物の値段がますます高くなる。",
+"Prices keep getting higher and higher.",
+"more and more"
+]
+],
+"すてき": [
+[
+"すてきなドレスですね。",
+"What a lovely dress.",
+"lovely"
+],
+[
+"すてきなプレゼントをありがとう。",
+"Thank you for the wonderful present.",
+"wonderful"
+],
+[
+"あの店はとてもすてきです。",
+"That shop is really nice.",
+"nice, lovely"
+]
+],
+"まさに": [
+[
+"これはまさに私が探していた本だ。",
+"This is exactly the book I was looking for.",
+"exactly"
+],
+[
+"まさにその通りです。",
+"That's exactly right.",
+"exactly"
+],
+[
+"彼こそまさに本物の天才だ。",
+"He is truly a real genius.",
+"truly"
+]
+],
+"ありがとう": [
+[
+"手伝ってくれてありがとう。",
+"Thanks for helping me.",
+"thank you"
+],
+[
+"いつもありがとうございます。",
+"Thank you as always.",
+"thank you"
+],
+[
+"プレゼント、ありがとう！",
+"Thanks for the present!",
+"thank you"
+]
+],
+"十日": [
+[
+"テストは来月の十日です。",
+"The test is on the 10th of next month.",
+"the 10th"
+],
+[
+"この仕事は十日でできます。",
+"This job can be done in ten days.",
+"ten days"
+]
+],
+"すくなくとも": [
+[
+"すくなくとも一日に一回は運動したい。",
+"I want to exercise at least once a day.",
+"at least"
+],
+[
+"駅まですくなくとも三十分かかる。",
+"It takes at least thirty minutes to the station.",
+"at least"
+],
+[
+"すくなくとも五人は来ると思う。",
+"I think at least five people will come.",
+"at least"
+]
+],
+"いつか": [
+[
+"いつかふじ山に登りたい。",
+"I want to climb Mt. Fuji someday.",
+"someday"
+],
+[
+"いつかまた会いましょう。",
+"Let's meet again someday.",
+"someday"
+],
+[
+"その話はいつか聞いたことがある。",
+"I've heard that story at some point.",
+"at some time"
+]
+],
+"基": [
+[
+"この映画は本当の話を基にしている。",
+"This movie is based on a true story.",
+"basis"
+],
+[
+"調べたデータを基に計画を立てた。",
+"I made a plan based on the data I researched.",
+"basis"
+]
+],
+"抱く": [
+[
+"彼は大きな夢を抱いている。",
+"He holds a big dream.",
+"to harbor"
+],
+[
+"彼女は日本の文化にきょうみを抱いている。",
+"She has an interest in Japanese culture.",
+"to harbor"
+],
+[
+"その話を聞いて、不安を抱いた。",
+"Hearing that story, I felt uneasy.",
+"to harbor (a feeling)"
+]
+],
+"偶々": [
+[
+"駅で偶々先生に会った。",
+"I happened to meet my teacher at the station.",
+"by chance"
+],
+[
+"偶々通った店でこのかさを買った。",
+"I bought this umbrella at a shop I happened to pass.",
+"happened to"
+],
+[
+"その日は偶々家にいなかった。",
+"I just happened not to be home that day.",
+"by chance"
+]
+],
+"ヨーロッパ": [
+[
+"夏休みにヨーロッパへ行きます。",
+"I'm going to Europe during summer vacation.",
+"Europe"
+],
+[
+"ヨーロッパの町はとてもきれいだ。",
+"European towns are very beautiful.",
+"Europe"
+],
+[
+"兄はヨーロッパで働いています。",
+"My older brother works in Europe.",
+"Europe"
+]
+],
+"それとも": [
+[
+"コーヒーにしますか、それともこう茶にしますか。",
+"Will you have coffee, or tea?",
+"or"
+],
+[
+"バスで行く？それとも歩く？",
+"Shall we go by bus? Or walk?",
+"or"
+],
+[
+"今日来ますか、それとも明日ですか。",
+"Are you coming today, or tomorrow?",
+"or"
+]
+],
+"いわゆる": [
+[
+"彼はいわゆる天才だ。",
+"He's what you'd call a genius.",
+"so-called"
+],
+[
+"これがいわゆる日本の家です。",
+"This is what's called a Japanese house.",
+"so-called"
+],
+[
+"いわゆる「おたく」の友達がいる。",
+"I have a friend who's a so-called \"otaku.\"",
+"so-called"
+]
+],
+"それぞれ": [
+[
+"学生はそれぞれ自分の考えを話した。",
+"Each student talked about their own ideas.",
+"each"
+],
+[
+"人にはそれぞれ好きな物がある。",
+"Everyone has their own likes.",
+"each"
+],
+[
+"りんごとみかんをそれぞれ三つ買った。",
+"I bought three apples and three oranges each.",
+"respectively, each"
+]
+],
+"角": [
+[
+"部屋のすみにつくえを置いた。",
+"I put the desk in the corner of the room.",
+"corner"
+],
+[
+"ねこはいつも部屋のすみでねている。",
+"The cat always sleeps in the corner of the room.",
+"corner"
+],
+[
+"ノートのすみに名前を書いた。",
+"I wrote my name in the corner of the notebook.",
+"corner"
+]
+],
+"たしか": [
+[
+"たしか会議は三時からです。",
+"If I remember correctly, the meeting starts at three.",
+"if I remember correctly"
+],
+[
+"彼の話はたしかだと思う。",
+"I think what he says is reliable.",
+"certain"
+],
+[
+"たしか、ここにさいふを置いたはずだ。",
+"I'm pretty sure I put my wallet here.",
+"if I remember correctly"
+]
+],
+"やがて": [
+[
+"やがて雨がやんだ。",
+"Before long, the rain stopped.",
+"before long"
+],
+[
+"やがて春が来る。",
+"Spring will come soon.",
+"soon"
+],
+[
+"待っていると、やがてバスが来た。",
+"As I waited, the bus came before long.",
+"before long"
+]
+],
+"あちこち": [
+[
+"休みの日は町のあちこちを歩いた。",
+"On my day off I walked here and there around town.",
+"here and there"
+],
+[
+"かぎをあちこち探した。",
+"I searched here and there for the key.",
+"here and there"
+],
+[
+"体のあちこちが痛い。",
+"I hurt all over my body.",
+"here and there"
+]
+],
+"所為": [
+[
+"電車がおくれたせいで、遅刻した。",
+"I was late because the train was delayed.",
+"because of (fault)"
+],
+[
+"それは私のせいじゃない。",
+"That's not my fault.",
+"fault"
+]
+],
+"とにかく": [
+[
+"とにかくやってみよう。",
+"Anyway, let's give it a try.",
+"anyway"
+],
+[
+"とにかく早く家に帰りなさい。",
+"At any rate, go home quickly.",
+"at any rate"
+],
+[
+"今日はとにかくあつかった。",
+"Today was just so hot.",
+"anyhow, really"
+]
+],
+"つまり": [
+[
+"つまり、明日は休みということですか。",
+"So, you mean tomorrow is a day off?",
+"in other words"
+],
+[
+"彼は母の兄、つまり私のおじです。",
+"He's my mother's older brother; in other words, my uncle.",
+"namely"
+],
+[
+"つまり、お金が足りないんです。",
+"In short, we don't have enough money.",
+"in short"
+]
+],
+"それでも": [
+[
+"雨が強かった。それでも彼は来た。",
+"It was raining hard. Even so, he came.",
+"even so"
+],
+[
+"何度も失敗した。それでもあきらめない。",
+"I failed many times. Still, I won't give up.",
+"still, nevertheless"
+],
+[
+"高い。それでも買いたい。",
+"It's expensive. Even so, I want to buy it.",
+"even so"
+]
+],
+"精々": [
+[
+"休みは精々三日です。",
+"The vacation is three days at most.",
+"at most"
+],
+[
+"そのかばんは精々五千円だろう。",
+"That bag is probably 5,000 yen at most.",
+"at most"
+],
+[
+"参加者は精々十人ぐらいだろう。",
+"There will probably be ten participants at most.",
+"at most"
+]
+],
+"いらいら": [
+[
+"電車がなかなか来なくていらいらした。",
+"I got irritated because the train wouldn't come.",
+"irritated"
+],
+[
+"いらいらしないで、ゆっくり話して。",
+"Don't get irritated; speak slowly.",
+"irritated"
+]
+],
+"そのまま": [
+[
+"使った物をそのままにしないで。",
+"Don't leave things you've used lying around as they are.",
+"as it is"
+],
+[
+"そのままでいいですよ。",
+"It's fine as it is.",
+"as it is"
+],
+[
+"にもつはそのまま置いておいてください。",
+"Please leave the luggage as it is.",
+"as it is"
+]
+],
+"ペンキ": [
+[
+"かべを白いペンキでぬった。",
+"I painted the wall with white paint.",
+"paint"
+],
+[
+"ペンキぬりたて、さわらないで。",
+"Wet paint, do not touch.",
+"paint"
+],
+[
+"ふくにペンキがついてしまった。",
+"I got paint on my clothes.",
+"paint"
+]
+],
+"度": [
+[
+"この写真を見る度に、昔を思い出す。",
+"Every time I see this photo, I remember the old days.",
+"every time"
+],
+[
+"彼は会う度に背が高くなっている。",
+"He's taller every time I see him.",
+"every time"
+],
+[
+"あの店に行く度に、同じ物を買う。",
+"Every time I go to that store, I buy the same thing.",
+"every time"
+]
+],
+"したがって": [
+[
+"雨が降った。したがって、試合は中止だ。",
+"It rained. Therefore, the game is canceled.",
+"therefore"
+],
+[
+"彼は熱がある。したがって今日は休む。",
+"He has a fever. Therefore, he's off today.",
+"therefore"
+],
+[
+"この道はせまい。したがって車は通れない。",
+"This road is narrow. Consequently, cars can't pass.",
+"consequently"
+]
+],
+"否": [
+[
+"いや、それはちがいます。",
+"No, that's wrong.",
+"no"
+],
+[
+"いや、私は行かないよ。",
+"No, I'm not going.",
+"no"
+],
+[
+"いや、もうだいじょうぶです。",
+"No, I'm fine now.",
+"no"
+]
+],
+"尤も": [
+[
+"彼が怒るのはもっともだ。",
+"It's natural that he's angry.",
+"natural, reasonable"
+],
+[
+"あなたの意見はもっともです。",
+"Your opinion is quite reasonable.",
+"reasonable"
+],
+[
+"もっともな理由があって休んだ。",
+"I was absent for a good reason.",
+"valid, plausible"
+]
+],
+"ところで": [
+[
+"ところで、お昼はもう食べた？",
+"By the way, have you had lunch yet?",
+"by the way"
+],
+[
+"ところで、明日のパーティーに行く？",
+"By the way, are you going to tomorrow's party?",
+"by the way"
+],
+[
+"今から行ったところで、間に合わない。",
+"Even if we go now, we won't make it in time.",
+"even if"
+]
+],
+"悪口": [
+[
+"人の悪口を言ってはいけません。",
+"You shouldn't speak ill of others.",
+"bad-mouthing"
+],
+[
+"彼はいつも会社の悪口を言う。",
+"He's always complaining about his company.",
+"speaking ill"
+],
+[
+"友達の悪口を聞いて悲しくなった。",
+"I felt sad hearing people insult my friend.",
+"insults"
+]
+],
+"こぼれる": [
+[
+"コップから水がこぼれた。",
+"Water spilled from the glass.",
+"to spill"
+],
+[
+"彼女の目からなみだがこぼれた。",
+"Tears fell from her eyes.",
+"to spill over"
+],
+[
+"ふくろから米がこぼれている。",
+"Rice is spilling out of the bag.",
+"to spill"
+]
+],
+"なぜなら": [
+[
+"今日は休みます。なぜなら熱があるからです。",
+"I'm taking today off, because I have a fever.",
+"because"
+],
+[
+"彼が好きだ。なぜならやさしいからだ。",
+"I like him, because he's kind.",
+"because"
+],
+[
+"外に出られない。なぜなら雨だからだ。",
+"I can't go out, because it's raining.",
+"because"
+]
+],
+"一万円": [
+[
+"このくつは一万円でした。",
+"These shoes were 10,000 yen.",
+"10,000 yen"
+],
+[
+"一万円さつしかありません。",
+"I only have a 10,000-yen bill.",
+"10,000 yen"
+],
+[
+"一万円で足りますか。",
+"Is 10,000 yen enough?",
+"10,000 yen"
+]
+],
+"あいにく": [
+[
+"あいにく、父は今出かけています。",
+"Unfortunately, my father is out right now.",
+"unfortunately"
+],
+[
+"あいにく雨が降ってきた。",
+"Unfortunately, it started raining.",
+"unfortunately"
+],
+[
+"あいにく今日は売り切れです。",
+"I'm afraid it's sold out today.",
+"unfortunately"
+]
+],
+"たまらない": [
+[
+"あつくてたまらない。",
+"It's unbearably hot.",
+"unbearable"
+],
+[
+"家族に会いたくてたまらない。",
+"I'm dying to see my family.",
+"can't stand (wanting)"
+],
+[
+"歯が痛くてたまらない。",
+"My tooth hurts unbearably.",
+"unbearable"
+]
+],
+"撃つ": [
+[
+"その男はピストルを撃った。",
+"The man fired a pistol.",
+"to shoot"
+],
+[
+"鳥を撃ってはいけない。",
+"You must not shoot birds.",
+"to shoot"
+],
+[
+"映画でへいたいがじゅうを撃っていた。",
+"In the movie, soldiers were firing guns.",
+"to shoot"
+]
+],
+"塵": [
+[
+"ごみは月曜日に出してください。",
+"Please put out the garbage on Monday.",
+"garbage"
+],
+[
+"道にごみをすてないでください。",
+"Please don't throw litter on the street.",
+"litter"
+],
+[
+"ごみ箱がいっぱいになった。",
+"The trash can is full.",
+"garbage"
+]
+],
+"わざと": [
+[
+"わざとやったんじゃないよ。",
+"I didn't do it on purpose.",
+"on purpose"
+],
+[
+"弟はわざと大きな声を出した。",
+"My little brother raised his voice on purpose.",
+"on purpose"
+],
+[
+"彼女はわざとおくれて来た。",
+"She came late on purpose.",
+"on purpose"
+]
+],
+"いつまでも": [
+[
+"いつまでも元気でいてください。",
+"Please stay healthy forever.",
+"forever"
+],
+[
+"この日のことはいつまでも忘れない。",
+"I'll never forget this day.",
+"forever"
+],
+[
+"いつまでも待っています。",
+"I'll wait for you forever.",
+"forever"
+]
+],
+"直に": [
+[
+"作った人から直に話を聞いた。",
+"I heard about it directly from the person who made it.",
+"directly"
+],
+[
+"はだに直にぬらないでください。",
+"Please don't apply it directly to the skin.",
+"directly"
+]
+],
+"すっぱい": [
+[
+"このみかんはすっぱい。",
+"This mandarin orange is sour.",
+"sour"
+],
+[
+"すっぱい物が好きです。",
+"I like sour things.",
+"sour"
+],
+[
+"ぎゅうにゅうがすっぱくなっている。",
+"The milk has gone sour.",
+"sour"
+]
+],
+"こぼす": [
+[
+"子どもがジュースをこぼした。",
+"The child spilled the juice.",
+"to spill"
+],
+[
+"コーヒーをつくえにこぼしてしまった。",
+"I spilled coffee on the desk.",
+"to spill"
+],
+[
+"ご飯をこぼさないで食べなさい。",
+"Eat without spilling your rice.",
+"to spill"
+]
+],
+"ふと": [
+[
+"ふと空を見上げた。",
+"I happened to look up at the sky.",
+"suddenly, casually"
+],
+[
+"ふと母の言葉を思い出した。",
+"I suddenly remembered my mother's words.",
+"suddenly"
+],
+[
+"夜中にふと目が覚めた。",
+"I suddenly woke up in the middle of the night.",
+"suddenly"
+]
+],
+"なお": [
+[
+"薬を飲んだが、なお熱が下がらない。",
+"I took medicine, but my fever still hasn't gone down.",
+"still"
+],
+[
+"それならなおいい。",
+"Then that's even better.",
+"even more"
+],
+[
+"雨がやんでも、風はなお強い。",
+"Even though the rain stopped, the wind is still strong.",
+"still"
+]
+],
+"おめでとう": [
+[
+"おたんじょう日おめでとう！",
+"Happy birthday!",
+"congratulations"
+],
+[
+"ごけっこんおめでとうございます。",
+"Congratulations on your marriage.",
+"congratulations"
+],
+[
+"合格おめでとう。",
+"Congratulations on passing.",
+"congratulations"
+]
+],
+"吐く": [
+[
+"気分が悪くて吐いてしまった。",
+"I felt sick and threw up.",
+"to vomit"
+],
+[
+"車の中で子どもが吐いた。",
+"The child threw up in the car.",
+"to vomit"
+],
+[
+"食べすぎて吐きそうだ。",
+"I ate too much and feel like throwing up.",
+"to vomit"
+]
+],
+"極": [
+[
+"それはごくふつうのことです。",
+"That's quite an ordinary thing.",
+"very, quite"
+],
+[
+"ごく少しだけしおを入れてください。",
+"Please add just a very small amount of salt.",
+"very"
+],
+[
+"この町はごく静かです。",
+"This town is very quiet.",
+"very"
+]
+],
+"もしも": [
+[
+"もしも雨が降ったら、家にいます。",
+"If it rains, I'll stay home.",
+"if"
+],
+[
+"もしもお金があったら、何を買う？",
+"If you had money, what would you buy?",
+"if"
+],
+[
+"もしもの時は、この番号に電話して。",
+"In case of emergency, call this number.",
+"if (emergency)"
+]
+],
+"六日": [
+[
+"会議は六日の午後です。",
+"The meeting is on the afternoon of the 6th.",
+"the 6th"
+],
+[
+"京都に六日間いました。",
+"I was in Kyoto for six days.",
+"six days"
+],
+[
+"来月の六日に引っこします。",
+"I'm moving on the 6th of next month.",
+"the 6th"
+]
+],
+"可愛らしい": [
+[
+"可愛らしい赤ちゃんですね。",
+"What a sweet baby.",
+"sweet, lovely"
+],
+[
+"この店には可愛らしい服が多い。",
+"This shop has lots of cute clothes.",
+"cute"
+],
+[
+"庭に可愛らしい花がさいた。",
+"Lovely flowers bloomed in the garden.",
+"lovely"
+]
+],
+"さて": [
+[
+"さて、そろそろ始めましょう。",
+"Well, let's get started.",
+"well, now"
+],
+[
+"さて、次の問題です。",
+"Now, on to the next question.",
+"now"
+],
+[
+"さて、晩ご飯は何にしようか。",
+"Well, what shall we have for dinner?",
+"well"
+]
+],
+"すなわち": [
+[
+"一週間、すなわち七日間です。",
+"It's one week, that is, seven days.",
+"that is"
+],
+[
+"この町の中心、すなわち駅の近くに住んでいる。",
+"I live in the center of town, namely near the station.",
+"namely"
+],
+[
+"日本の首都、すなわち東京に行った。",
+"I went to Japan's capital, that is, Tokyo.",
+"that is"
+]
+],
+"四日": [
+[
+"来週の四日は休みです。",
+"The 4th next week is a holiday.",
+"the 4th"
+],
+[
+"かぜで四日も学校を休んだ。",
+"I missed four days of school because of a cold.",
+"four days"
+]
+],
+"わがまま": [
+[
+"わがままを言ってはいけません。",
+"You shouldn't be selfish.",
+"selfishness"
+],
+[
+"あの子はとてもわがままだ。",
+"That child is very selfish.",
+"selfish"
+],
+[
+"一つだけわがままを聞いてください。",
+"Please let me make just one selfish request.",
+"selfish request"
+]
+],
+"そのうち": [
+[
+"そのうち雨もやむでしょう。",
+"The rain will probably stop before long.",
+"before long"
+],
+[
+"そのうち遊びに行きます。",
+"I'll come visit sometime soon.",
+"sometime soon"
+],
+[
+"日本語もそのうち上手になるよ。",
+"Your Japanese will get better eventually.",
+"eventually"
+]
+],
+"軒": [
+[
+"雨の日、軒の下で休んだ。",
+"On a rainy day, I rested under the eaves.",
+"eaves"
+],
+[
+"軒から雨水が落ちている。",
+"Rainwater is dripping from the eaves.",
+"eaves"
+]
+],
+"七日": [
+[
+"七月七日は七夕です。",
+"July 7th is Tanabata.",
+"the 7th"
+],
+[
+"入院は七日間でした。",
+"I was in the hospital for seven days.",
+"seven days"
+]
+],
+"繋がる": [
+[
+"電話がやっとつながった。",
+"The phone call finally went through.",
+"to connect"
+],
+[
+"この道は駅につながっている。",
+"This road leads to the station.",
+"to be connected"
+]
+],
+"逆": [
+[
+"駅は逆の方向ですよ。",
+"The station is in the opposite direction.",
+"opposite"
+],
+[
+"シャツを前と後ろ逆に着ている。",
+"You're wearing your shirt backwards.",
+"reverse"
+],
+[
+"私の考えは彼と逆だ。",
+"My opinion is the opposite of his.",
+"opposite"
+]
+],
+"しきりに": [
+[
+"彼はしきりに時計を見ていた。",
+"He kept looking at his watch.",
+"repeatedly"
+],
+[
+"子どもがしきりに母を呼んでいる。",
+"The child keeps calling for his mother.",
+"repeatedly"
+],
+[
+"朝から雨がしきりに降っている。",
+"It has been raining constantly since morning.",
+"incessantly"
+]
+],
+"ちょうだい": [
+[
+"そのペン、ちょっとちょうだい。",
+"Give me that pen for a sec.",
+"give me"
+],
+[
+"お水をちょうだい。",
+"Give me some water, please.",
+"give me"
+],
+[
+"早く来てちょうだい。",
+"Please come quickly.",
+"please"
+]
+],
+"六つ": [
+[
+"りんごを六つください。",
+"Six apples, please.",
+"six"
+],
+[
+"箱の中にたまごが六つある。",
+"There are six eggs in the box.",
+"six"
+],
+[
+"弟は今年六つになります。",
+"My little brother turns six this year.",
+"six (years old)"
+]
+],
+"腰": [
+[
+"重い物を持って腰が痛くなった。",
+"My lower back started to hurt from carrying something heavy.",
+"lower back"
+],
+[
+"祖母は腰が悪い。",
+"My grandmother has a bad back.",
+"lower back"
+],
+[
+"いすに腰をかけてください。",
+"Please have a seat on the chair.",
+"hip (sit down)"
+]
+],
+"こんにちは": [
+[
+"こんにちは、お元気ですか。",
+"Hello, how are you?",
+"hello"
+],
+[
+"みなさん、こんにちは。",
+"Hello, everyone.",
+"hello"
+],
+[
+"近所の人に「こんにちは」と言った。",
+"I said \"hello\" to my neighbor.",
+"hello"
+]
+],
+"止す": [
+[
+"じょうだんはもう止してください。",
+"Please stop joking around.",
+"to stop"
+],
+[
+"その話は止しましょう。",
+"Let's drop that topic.",
+"to drop"
+],
+[
+"雨だから、出かけるのは止そう。",
+"It's raining, so let's not go out.",
+"to give up"
+]
+],
+"とんでもない": [
+[
+"朝からとんでもないことになった。",
+"Something terrible happened this morning.",
+"terrible"
+],
+[
+"「ありがとう」「いえ、とんでもないです。」",
+"\"Thank you.\" \"Oh, not at all.\"",
+"not at all"
+],
+[
+"夜中にとんでもない時間に電話が来た。",
+"I got a call at an outrageous hour in the night.",
+"outrageous"
+]
+],
+"ぶつける": [
+[
+"ドアに頭をぶつけてしまった。",
+"I bumped my head on the door.",
+"to bump"
+],
+[
+"父が車をかべにぶつけた。",
+"My father hit the car against a wall.",
+"to hit"
+],
+[
+"つくえに足をぶつけて痛い。",
+"I hit my foot on the desk and it hurts.",
+"to bang"
+]
+],
+"まとめる": [
+[
+"会議の内容をまとめてください。",
+"Please summarize what was said in the meeting.",
+"to summarize"
+],
+[
+"にもつを一つにまとめた。",
+"I put my luggage together into one bag.",
+"to gather together"
+],
+[
+"考えをまとめるのに時間がかかる。",
+"It takes time to organize my thoughts.",
+"to organize"
+]
+],
+"あるいは": [
+[
+"電話、あるいはメールでれんらくします。",
+"I'll contact you by phone or email.",
+"or"
+],
+[
+"あるいは彼が正しいかもしれない。",
+"Perhaps he is right.",
+"perhaps"
+],
+[
+"ペンあるいはえんぴつで書いてください。",
+"Please write with a pen or a pencil.",
+"or"
+]
+],
+"値": [
+[
+"この時計は値が高い。",
+"This watch is expensive.",
+"price"
+],
+[
+"やさいの値が上がった。",
+"Vegetable prices have gone up.",
+"price"
+]
+],
+"ごめんなさい": [
+[
+"遅れてごめんなさい。",
+"Sorry I'm late.",
+"sorry"
+],
+[
+"ごめんなさい、今日は行けません。",
+"I'm sorry, I can't go today.",
+"sorry"
+],
+[
+"ごめんなさい、もう一度言ってください。",
+"Excuse me, could you say that again?",
+"excuse me"
+]
+],
+"八つ": [
+[
+"箱にりんごが八つ入っている。",
+"There are eight apples in the box.",
+"eight"
+],
+[
+"ケーキを八つに切った。",
+"I cut the cake into eight pieces.",
+"eight"
+]
+],
+"そこで": [
+[
+"道が分からなかった。そこで駅員に聞いた。",
+"I didn't know the way, so I asked a station worker.",
+"so"
+],
+[
+"お金が足りない。そこで、アルバイトを始めた。",
+"I didn't have enough money, so I started a part-time job.",
+"so"
+],
+[
+"雨が降ってきた。そこで、家に帰った。",
+"It started to rain, so I went home.",
+"so"
+]
+],
+"捲る": [
+[
+"本のページをめくった。",
+"I turned the page of the book.",
+"to turn (a page)"
+],
+[
+"カレンダーをめくって予定を見た。",
+"I flipped through the calendar to check my plans.",
+"to flip"
+],
+[
+"ふとんをめくって起きた。",
+"I threw back the futon and got up.",
+"to turn back"
+]
+],
+"七つ": [
+[
+"テーブルにいすが七つある。",
+"There are seven chairs at the table.",
+"seven"
+],
+[
+"娘は来月七つになる。",
+"My daughter turns seven next month.",
+"seven (years old)"
+],
+[
+"にじには色が七つある。",
+"A rainbow has seven colors.",
+"seven"
+]
+],
+"九つ": [
+[
+"箱にみかんが九つある。",
+"There are nine mandarins in the box.",
+"nine"
+],
+[
+"九つの国から学生が来た。",
+"Students came from nine countries.",
+"nine"
+],
+[
+"その子は今年九つです。",
+"That child is nine this year.",
+"nine (years old)"
+]
+],
+"九日": [
+[
+"来月の九日に会いましょう。",
+"Let's meet on the 9th of next month.",
+"the 9th"
+],
+[
+"旅行は九日間の予定です。",
+"The trip is planned for nine days.",
+"nine days"
+],
+[
+"九日の朝に東京へ行きます。",
+"I'm going to Tokyo on the morning of the 9th.",
+"the 9th"
+]
+],
+"胡椒": [
+[
+"スープにこしょうを少し入れた。",
+"I put a little pepper in the soup.",
+"pepper"
+],
+[
+"しおとこしょうで味をつけます。",
+"Season it with salt and pepper.",
+"pepper"
+]
+],
+"やや": [
+[
+"今日はやや寒いですね。",
+"It's a bit cold today, isn't it?",
+"somewhat"
+],
+[
+"テストはやや難しかった。",
+"The test was a little difficult.",
+"a little"
+],
+[
+"父はやや疲れているようだ。",
+"My father seems somewhat tired.",
+"somewhat"
+]
+],
+"擦る": [
+[
+"マッチを擦って火をつけた。",
+"I struck a match and lit a fire.",
+"to strike"
+],
+[
+"寒いので手を擦った。",
+"It was cold, so I rubbed my hands.",
+"to rub"
+],
+[
+"目を擦らないでください。",
+"Please don't rub your eyes.",
+"to rub"
+]
+],
+"できれば": [
+[
+"できれば明日来てください。",
+"If possible, please come tomorrow.",
+"if possible"
+],
+[
+"できれば窓側の席がいいです。",
+"If possible, I'd like a window seat.",
+"if possible"
+],
+[
+"できれば、今日中に返事をください。",
+"If you can, please reply by today.",
+"if you can"
+]
+],
+"生る": [
+[
+"庭の木にりんごが生った。",
+"Apples grew on the tree in the garden.",
+"to bear fruit"
+],
+[
+"この木は毎年たくさん実が生る。",
+"This tree bears a lot of fruit every year.",
+"to bear (fruit)"
+],
+[
+"今年はかきがよく生った。",
+"The persimmons fruited well this year.",
+"to bear fruit"
+]
+],
+"かゆい": [
+[
+"むしにさされて足がかゆい。",
+"I got bitten by a bug and my leg itches.",
+"itchy"
+],
+[
+"背中がかゆいです。",
+"My back is itchy.",
+"itchy"
+],
+[
+"目がかゆくて困っている。",
+"My eyes are itchy and it's bothering me.",
+"itchy"
+]
+],
+"もったいない": [
+[
+"食べ物をすてるのはもったいない。",
+"It's wasteful to throw away food.",
+"wasteful"
+],
+[
+"まだ使えるのに、もったいない。",
+"It can still be used, what a waste.",
+"a waste"
+],
+[
+"私にはもったいないお言葉です。",
+"Those are kind words I don't deserve.",
+"more than one deserves"
+]
+],
+"揃う": [
+[
+"家族全員が揃った。",
+"The whole family has gathered.",
+"to be all together"
+],
+[
+"必要な書類が揃いました。",
+"All the necessary documents are ready.",
+"to be complete"
+]
+],
+"気味": [
+[
+"最近、少しかぜ気味です。",
+"Lately I've been feeling a bit like I have a cold.",
+"a touch of"
+],
+[
+"暗い部屋は気味が悪い。",
+"Dark rooms are creepy.",
+"feeling (creepy)"
+]
+],
+"いつのまにか": [
+[
+"いつのまにか寝てしまった。",
+"I fell asleep before I knew it.",
+"before one knows"
+],
+[
+"いつのまにか外が暗くなっていた。",
+"Before I knew it, it had gotten dark outside.",
+"before one knew it"
+],
+[
+"子どもはいつのまにか大きくなった。",
+"The kids grew up before I knew it.",
+"before one knew it"
+]
+],
+"新米": [
+[
+"私はまだ新米の先生です。",
+"I'm still a new teacher.",
+"newcomer"
+],
+[
+"秋の新米はとてもおいしい。",
+"Autumn's new rice is very tasty.",
+"new rice"
+]
+],
+"勝手": [
+[
+"人の物を勝手に使わないで。",
+"Don't use other people's things without asking.",
+"as one pleases"
+],
+[
+"勝手なことを言わないでください。",
+"Please don't say such selfish things.",
+"selfish"
+],
+[
+"行くかどうかは君の勝手だ。",
+"Whether you go or not is up to you.",
+"one's own choice"
+]
+],
+"大家": [
+[
+"大家さんにやちんを払った。",
+"I paid the rent to the landlord.",
+"landlord"
+],
+[
+"大家さんはとても親切な人です。",
+"The landlord is a very kind person.",
+"landlord"
+]
+],
+"アウト": [
+[
+"バッターはアウトになった。",
+"The batter was out.",
+"out"
+],
+[
+"今のボールはアウトですね。",
+"That ball was out, wasn't it?",
+"out"
+],
+[
+"三回遅れたらアウトだよ。",
+"If you're late three times, you're out.",
+"out"
+]
+],
+"ところが": [
+[
+"急いで駅に行った。ところが電車はもう出ていた。",
+"I hurried to the station. However, the train had already left.",
+"however"
+],
+[
+"天気予報は晴れだった。ところが、雨が降った。",
+"The forecast said sunny. But it rained.",
+"but"
+],
+[
+"すぐ終わると思った。ところが三時間もかかった。",
+"I thought it'd be done quickly, but it took three hours.",
+"but"
+]
+],
+"節": [
+[
+"この歌の節が好きだ。",
+"I like the melody of this song.",
+"melody"
+],
+[
+"このいたは木の節が多い。",
+"This board has a lot of knots in the wood.",
+"knot"
+],
+[
+"祖父は古い歌の節を覚えている。",
+"My grandfather remembers the tune of old songs.",
+"tune"
+]
+],
+"うなる": [
+[
+"犬がひくい声でうなった。",
+"The dog growled in a low voice.",
+"to growl"
+],
+[
+"痛くて思わずうなった。",
+"It hurt so much I groaned without thinking.",
+"to groan"
+],
+[
+"父は寝ながらうなっていた。",
+"My father was moaning in his sleep.",
+"to moan"
+]
+],
+"お洒落": [
+[
+"姉はとてもおしゃれです。",
+"My older sister is very fashionable.",
+"fashionable"
+],
+[
+"おしゃれな店で昼ご飯を食べた。",
+"I had lunch at a stylish restaurant.",
+"stylish"
+],
+[
+"今日はおしゃれして出かけます。",
+"I'm dressing up to go out today.",
+"dressing up"
+]
+],
+"まとまる": [
+[
+"クラスの意見がまとまった。",
+"The class came to an agreement.",
+"to be settled"
+],
+[
+"話がうまくまとまった。",
+"The discussion was settled nicely.",
+"to be settled"
+],
+[
+"考えがなかなかまとまらない。",
+"I just can't get my thoughts in order.",
+"to come together"
+]
+],
+"咥える": [
+[
+"犬がほねをくわえて走ってきた。",
+"The dog came running with a bone in its mouth.",
+"to hold in the mouth"
+],
+[
+"ねこが魚をくわえて逃げた。",
+"The cat ran off with a fish in its mouth.",
+"to hold in the mouth"
+],
+[
+"父はたばこをくわえていた。",
+"My father had a cigarette in his mouth.",
+"to hold in the mouth"
+]
+],
+"切り": [
+[
+"切りがいいところで休もう。",
+"Let's take a break at a good stopping point.",
+"stopping point"
+],
+[
+"もんくを言ったら切りがない。",
+"If I start complaining, there's no end to it.",
+"end, limit"
+],
+[
+"仕事に切りをつけて帰った。",
+"I wrapped up my work and went home.",
+"stopping point"
+]
+],
+"剥く": [
+[
+"じゃがいものかわをむくのは大変だ。",
+"Peeling potatoes is hard work.",
+"to peel"
+]
+],
+"例え": [
+[
+"先生の例えはいつも分かりやすい。",
+"The teacher's examples are always easy to understand.",
+"example"
+],
+[
+"例え雨でも、試合はあります。",
+"Even if it rains, the game will be held.",
+"even if"
+],
+[
+"例え失敗しても、もう一度やればいい。",
+"Even if you fail, you can just try again.",
+"even if"
+]
+],
+"粗": [
+[
+"人の粗を探すのはやめなさい。",
+"Stop looking for other people's faults.",
+"faults"
+],
+[
+"よく見ると、この作品は粗が多い。",
+"Looking closely, this work has many flaws.",
+"flaws"
+],
+[
+"新しい計画の粗が見えてきた。",
+"The flaws in the new plan are becoming clear.",
+"flaws"
+]
+],
+"三百": [
+[
+"このペンは三百円です。",
+"This pen is three hundred yen.",
+"three hundred"
+],
+[
+"会場には三百人が来た。",
+"Three hundred people came to the venue.",
+"three hundred"
+]
+],
+"南北": [
+[
+"この道は南北に走っている。",
+"This road runs north and south.",
+"north and south"
+],
+[
+"町を南北に流れる川がある。",
+"There is a river that flows north to south through the town.",
+"north and south"
+]
+],
+"ご主人": [
+[
+"ご主人はお元気ですか。",
+"How is your husband?",
+"your husband"
+],
+[
+"ご主人によろしくお伝えください。",
+"Please give my regards to your husband.",
+"your husband"
+]
+],
+"国立": [
+[
+"兄は国立大学に通っている。",
+"My older brother goes to a national university.",
+"national"
+],
+[
+"国立のはくぶつかんに行った。",
+"I went to the national museum.",
+"national"
+]
+],
+"送料": [
+[
+"この本の送料はいくらですか。",
+"How much is the shipping for this book?",
+"shipping fee"
+],
+[
+"三千円以上で送料は無料です。",
+"Shipping is free for orders over 3,000 yen.",
+"shipping fee"
+]
+],
+"金魚": [
+[
+"毎朝、金魚にえさをあげる。",
+"I feed the goldfish every morning.",
+"goldfish"
+],
+[
+"おまつりで金魚をもらった。",
+"I got a goldfish at the festival.",
+"goldfish"
+]
+],
+"賃貸": [
+[
+"賃貸マンションに住んでいます。",
+"I live in a rented apartment.",
+"rental"
+],
+[
+"駅の近くで賃貸の部屋を探している。",
+"I'm looking for a room to rent near the station.",
+"rental"
+]
+],
+"水族館": [
+[
+"週末、水族館に行きました。",
+"I went to the aquarium on the weekend.",
+"aquarium"
+],
+[
+"水族館でイルカを見た。",
+"I saw dolphins at the aquarium.",
+"aquarium"
+]
+],
+"銀色": [
+[
+"銀色の車を買った。",
+"I bought a silver car.",
+"silver"
+],
+[
+"銀色のペンで名前を書いた。",
+"I wrote my name with a silver pen.",
+"silver"
+]
+],
+"和室": [
+[
+"旅館の和室にとまった。",
+"I stayed in a Japanese-style room at an inn.",
+"Japanese-style room"
+],
+[
+"和室で寝るのが好きだ。",
+"I like sleeping in a Japanese-style room.",
+"Japanese-style room"
+]
+],
+"交通費": [
+[
+"交通費は会社が払います。",
+"The company pays for travel expenses.",
+"travel expenses"
+],
+[
+"毎月の交通費が高い。",
+"My monthly travel costs are high.",
+"transportation costs"
+],
+[
+"交通費はいくらかかりましたか。",
+"How much did the transportation cost?",
+"transportation cost"
+]
+],
+"勝敗": [
+[
+"勝敗は最後まで分からない。",
+"You can't know who will win until the end.",
+"outcome"
+],
+[
+"この試合で勝敗が決まる。",
+"This match will decide who wins.",
+"victory or defeat"
+]
+],
+"辞典": [
+[
+"辞典で言葉の意味を調べた。",
+"I looked up the word's meaning in a dictionary.",
+"dictionary"
+],
+[
+"この辞典は使いやすい。",
+"This dictionary is easy to use.",
+"dictionary"
+]
+],
+"選抜": [
+[
+"兄は選抜チームに選ばれた。",
+"My brother was chosen for the select team.",
+"selection"
+],
+[
+"選抜試験に合格した。",
+"I passed the selection exam.",
+"selection"
+]
+],
+"目薬": [
+[
+"目が疲れたので目薬をさした。",
+"My eyes were tired, so I put in eye drops.",
+"eye drops"
+],
+[
+"寝る前に目薬をさします。",
+"I use eye drops before going to bed.",
+"eye drops"
+]
+],
+"忘年会": [
+[
+"今年の忘年会はどこでしますか。",
+"Where is this year's year-end party?",
+"year-end party"
+],
+[
+"会社の忘年会で歌を歌った。",
+"I sang at the company year-end party.",
+"year-end party"
+]
+],
+"情緒": [
+[
+"京都は情緒のある町だ。",
+"Kyoto is a town with a lot of atmosphere.",
+"atmosphere"
+],
+[
+"最近、彼女は情緒が不安定だ。",
+"Lately she has been emotionally unstable.",
+"emotions"
+]
+],
+"絵本": [
+[
+"寝る前に子どもに絵本を読む。",
+"I read picture books to my child before bed.",
+"picture book"
+],
+[
+"図書館で絵本を借りた。",
+"I borrowed a picture book from the library.",
+"picture book"
+]
+],
+"お坊さん": [
+[
+"おてらでお坊さんの話を聞いた。",
+"I listened to a monk's talk at the temple.",
+"monk"
+],
+[
+"お坊さんがお経を読んでいる。",
+"A monk is chanting a sutra.",
+"monk"
+]
+],
+"まぶしい": [
+[
+"朝の光がまぶしい。",
+"The morning light is dazzling.",
+"dazzling"
+],
+[
+"まぶしくて目が開けられない。",
+"It's so bright I can't open my eyes.",
+"dazzling"
+],
+[
+"彼女の笑顔がまぶしかった。",
+"Her smile was radiant.",
+"radiant"
+]
+],
+"臨む": [
+[
+"海に臨むホテルにとまった。",
+"I stayed at a hotel overlooking the sea.",
+"to overlook"
+],
+[
+"全力で試合に臨みます。",
+"I'll face the match with everything I've got.",
+"to face"
+]
+],
+"蕎麦": [
+[
+"昼ご飯にそばを食べた。",
+"I had soba for lunch.",
+"soba"
+],
+[
+"大みそかに年越しそばを食べる。",
+"We eat year-end soba on New Year's Eve.",
+"soba"
+],
+[
+"この店のそばはおいしい。",
+"The soba at this shop is delicious.",
+"soba"
+]
+],
+"帰す": [
+[
+"遅くなったので子どもを家に帰した。",
+"It got late, so I sent the children home.",
+"to send home"
+],
+[
+"具合が悪い社員を家に帰した。",
+"We sent the sick employee home.",
+"to send home"
+]
+],
+"留める": [
+[
+"シャツのボタンを留めてください。",
+"Please button up your shirt.",
+"to fasten"
+],
+[
+"紙をクリップで留めた。",
+"I fastened the papers with a clip.",
+"to fasten"
+],
+[
+"ポスターをかべにピンで留める。",
+"I pin the poster to the wall.",
+"to fasten"
+]
+],
+"因る": [
+[
+"じこは運転手の不注意に因るものだった。",
+"The accident was due to the driver's carelessness.",
+"to be due to"
+],
+[
+"じしんに因るひがいは大きかった。",
+"The damage caused by the earthquake was great.",
+"caused by"
+],
+[
+"火事は古いストーブに因るものだった。",
+"The fire was caused by an old heater.",
+"to be caused by"
+]
+],
+"協調": [
+[
+"なかまと協調して働く。",
+"I work in cooperation with my colleagues.",
+"cooperation"
+],
+[
+"彼は協調性がある人だ。",
+"He is a cooperative person.",
+"cooperation"
+],
+[
+"かっこくが協調して問題に取り組む。",
+"Countries work together to tackle the problem.",
+"cooperation"
+]
+],
+"飯": [
+[
+"飯を食いに行こう。",
+"Let's go grab some food.",
+"food, a meal"
+],
+[
+"腹がへった、飯にしよう。",
+"I'm hungry, let's eat.",
+"a meal"
+]
+],
+"柄": [
+[
+"かさの柄が折れた。",
+"The handle of the umbrella broke.",
+"handle"
+],
+[
+"ほうちょうの柄をしっかり持つ。",
+"Hold the kitchen knife firmly by the handle.",
+"handle"
+],
+[
+"このほうきは柄が長い。",
+"This broom has a long handle.",
+"handle"
+]
+],
+"酸性": [
+[
+"レモンは酸性の食べ物だ。",
+"Lemons are an acidic food.",
+"acidic"
+],
+[
+"酸性の雨は木によくない。",
+"Acid rain is bad for trees.",
+"acid"
+]
+],
+"素": [
+[
+"だしの素でみそしるを作った。",
+"I made miso soup with dashi stock powder.",
+"base, mix"
+],
+[
+"カレーの素を買ってきた。",
+"I bought some curry mix.",
+"base, mix"
+],
+[
+"なべの素を入れるだけでかんたんだ。",
+"It's easy: you just add the hot-pot base.",
+"base"
+]
+],
+"焚く": [
+[
+"キャンプで火を焚いた。",
+"We built a fire at the campsite.",
+"to build (a fire)"
+],
+[
+"庭で落ち葉を焚いた。",
+"I burned fallen leaves in the garden.",
+"to burn"
+],
+[
+"寒いのでストーブを焚いた。",
+"It was cold, so we lit the stove.",
+"to light"
+]
+],
+"どうぞよろしく": [
+[
+"田中です。どうぞよろしく。",
+"I'm Tanaka. Pleased to meet you.",
+"pleased to meet you"
+],
+[
+"これからどうぞよろしくお願いします。",
+"I look forward to working with you.",
+"please treat me well"
+],
+[
+"新しいなかまです。どうぞよろしく。",
+"This is our new member. Please be nice to them.",
+"please be kind"
+]
+],
+"娘さん": [
+[
+"娘さんはおいくつですか。",
+"How old is your daughter?",
+"your daughter"
+],
+[
+"田中さんの娘さんは大学生です。",
+"Mr. Tanaka's daughter is a university student.",
+"his daughter"
+]
+],
+"核": [
+[
+"核のない世界を願う。",
+"I hope for a world without nuclear weapons.",
+"nuclear"
+],
+[
+"これが問題の核だ。",
+"This is the core of the problem.",
+"core"
+]
+],
+"酸化": [
+[
+"てつは酸化するとさびる。",
+"Iron rusts when it oxidizes.",
+"oxidation"
+],
+[
+"りんごは切ると酸化して茶色くなる。",
+"Apples oxidize and turn brown when cut.",
+"to oxidize"
+]
+],
+"脂": [
+[
+"この肉は脂が多い。",
+"This meat is very fatty.",
+"fat"
+],
+[
+"脂っこい料理は苦手だ。",
+"I don't like greasy food.",
+"grease"
+]
+],
+"粋": [
+[
+"彼はなかなか粋な人だ。",
+"He is quite a stylish person.",
+"stylish"
+],
+[
+"粋な着物を着ている。",
+"She's wearing a chic kimono.",
+"chic"
+]
+],
+"冷ます": [
+[
+"スープを冷ましてから飲む。",
+"I let the soup cool before drinking it.",
+"to let cool"
+],
+[
+"お茶が熱いので少し冷まそう。",
+"The tea is hot, so let's let it cool a bit.",
+"to let cool"
+]
+],
+"うがい": [
+[
+"帰ったら手を洗ってうがいをしよう。",
+"When you get home, wash your hands and gargle.",
+"gargling"
+],
+[
+"かぜをひかないようにうがいをする。",
+"I gargle so I won't catch a cold.",
+"gargling"
+],
+[
+"毎朝、水でうがいをします。",
+"I gargle with water every morning.",
+"gargling"
+]
+],
+"コード": [
+[
+"コードがみじかくてとどかない。",
+"The cord is too short to reach.",
+"cord"
+],
+[
+"パソコンのコードを抜いた。",
+"I unplugged the computer's cord.",
+"cord"
+]
+],
+"もしかすると": [
+[
+"もしかすると雨が降るかもしれない。",
+"It might possibly rain.",
+"perhaps"
+],
+[
+"もしかすると、彼は来ないかもしれない。",
+"Maybe he won't come.",
+"maybe"
+],
+[
+"もしかすると道を間違えたかな。",
+"Maybe I took the wrong road.",
+"maybe"
+]
+],
+"上る": [
+[
+"かいだんを上って二かいへ行った。",
+"I went up the stairs to the second floor.",
+"to go up"
+],
+[
+"さかを上ると駅が見える。",
+"When you go up the hill, you can see the station.",
+"to climb"
+]
+],
+"悔しい": [
+[
+"試合に負けて悔しい。",
+"I'm frustrated that we lost the game.",
+"frustrating"
+],
+[
+"悔しくてなみだが出た。",
+"I was so frustrated that I cried.",
+"frustrated"
+]
+],
+"特長": [
+[
+"この辞書の特長は例文が多いことだ。",
+"This dictionary's strength is its many example sentences.",
+"strong point"
+],
+[
+"この店の特長は安さです。",
+"This shop's merit is its low prices.",
+"merit"
+]
+],
+"接ぐ": [
+[
+"医者が折れたほねを接いだ。",
+"The doctor set the broken bone.",
+"to set (a bone)"
+],
+[
+"りんごの木にえだを接ぐ。",
+"Graft a branch onto the apple tree.",
+"to graft"
+]
+],
+"三千": [
+[
+"入場料は三千円です。",
+"Admission is three thousand yen.",
+"three thousand"
+],
+[
+"三千人の人が集まった。",
+"Three thousand people gathered.",
+"three thousand"
+],
+[
+"この山は三千メートル以上ある。",
+"This mountain is over three thousand meters high.",
+"three thousand"
+]
+],
+"入口": [
+[
+"入口はあちらです。",
+"The entrance is over there.",
+"entrance"
+],
+[
+"駅の入口で待っています。",
+"I'll wait at the station entrance.",
+"entrance"
+],
+[
+"入口で靴をぬいでください。",
+"Please take off your shoes at the entrance.",
+"entrance"
+]
+],
+"町長": [
+[
+"町長が新しい公園を作った。",
+"The mayor built a new park.",
+"town mayor"
+],
+[
+"町長に会って話をした。",
+"I met the town mayor and talked with him.",
+"town mayor"
+],
+[
+"町長の話は長かった。",
+"The mayor's speech was long.",
+"town mayor"
+]
+],
+"昼休み": [
+[
+"昼休みに友達と話した。",
+"I chatted with friends during lunch break.",
+"lunch break"
+],
+[
+"昼休みは一時までです。",
+"The lunch break is until one o'clock.",
+"lunch break"
+],
+[
+"昼休みに銀行へ行く。",
+"I go to the bank during my lunch break.",
+"lunch break"
+]
+],
+"漢方": [
+[
+"かぜのときは漢方を飲む。",
+"When I have a cold, I take Chinese herbal medicine.",
+"herbal medicine"
+],
+[
+"祖母は漢方の薬が好きだ。",
+"My grandmother likes Chinese herbal medicine.",
+"herbal medicine"
+],
+[
+"漢方は体にやさしいと言われる。",
+"Herbal medicine is said to be gentle on the body.",
+"herbal medicine"
+]
+],
+"目次": [
+[
+"まず本の目次を見てください。",
+"First, please look at the book's table of contents.",
+"table of contents"
+],
+[
+"目次を見れば、中身が分かる。",
+"Looking at the table of contents tells you what's inside.",
+"table of contents"
+],
+[
+"レポートに目次を付けました。",
+"I added a table of contents to the report.",
+"table of contents"
+]
+],
+"在る": [
+[
+"駅の近くに大きな公園が在る。",
+"There is a big park near the station.",
+"to be (located)"
+],
+[
+"学校は山の上に在ります。",
+"The school is on top of the mountain.",
+"to be (located)"
+],
+[
+"その店は今も同じ場所に在る。",
+"That shop is still in the same place.",
+"to exist"
+]
+],
+"落ち着く": [
+[
+"少し落ち着いてから話してください。",
+"Please calm down a little before you talk.",
+"to calm down"
+],
+[
+"お茶を飲むと気持ちが落ち着く。",
+"Drinking tea calms me down.",
+"to calm down"
+],
+[
+"新しい仕事にやっと落ち着きました。",
+"I've finally settled into my new job.",
+"to settle down"
+]
+],
+"田畑": [
+[
+"このあたりは田畑ばかりです。",
+"There's nothing but fields around here.",
+"fields"
+],
+[
+"祖父は毎日田畑で働いている。",
+"My grandfather works in the fields every day.",
+"farmland"
+],
+[
+"大雨で田畑が水につかった。",
+"The farmland was flooded by the heavy rain.",
+"farmland"
+]
+],
+"御飯": [
+[
+"御飯ができたよ。早く来て。",
+"Dinner's ready. Come quickly.",
+"meal"
+],
+[
+"一緒に御飯を食べに行きませんか。",
+"Would you like to go eat together?",
+"meal"
+],
+[
+"御飯をもう少しください。",
+"Please give me a little more rice.",
+"cooked rice"
+]
+],
+"朝御飯": [
+[
+"今日は朝御飯を食べなかった。",
+"I didn't eat breakfast today.",
+"breakfast"
+],
+[
+"朝御飯はパンとコーヒーです。",
+"Breakfast is bread and coffee.",
+"breakfast"
+],
+[
+"母が朝御飯を作ってくれた。",
+"My mother made breakfast for me.",
+"breakfast"
+]
+],
+"晩ご飯": [
+[
+"晩ご飯は何がいい？",
+"What do you want for dinner?",
+"dinner"
+],
+[
+"友達と晩ご飯を食べに行った。",
+"I went out for dinner with a friend.",
+"dinner"
+],
+[
+"晩ご飯の前に宿題をしなさい。",
+"Do your homework before dinner.",
+"dinner"
+]
+],
+"管": [
+[
+"この管から水が出てきます。",
+"Water comes out of this pipe.",
+"pipe"
+],
+[
+"長い管で水を外に出す。",
+"We drain the water outside through a long pipe.",
+"pipe"
+],
+[
+"台所の管がつまってしまった。",
+"The kitchen pipe got clogged.",
+"pipe"
+]
+],
+"選考": [
+[
+"書類選考に通って、うれしいです。",
+"I'm happy I passed the document screening.",
+"screening"
+],
+[
+"選考は来週まで続きます。",
+"The selection process continues until next week.",
+"selection"
+]
+],
+"直": [
+[
+"もう直に駅に着きますよ。",
+"We'll arrive at the station soon.",
+"soon"
+],
+[
+"新しい仕事にも直に慣れるよ。",
+"You'll soon get used to the new job.",
+"soon"
+],
+[
+"雨は直にやむでしょう。",
+"The rain will probably stop soon.",
+"soon"
+]
+],
+"経緯": [
+[
+"けんかの経緯を説明してください。",
+"Please explain how the fight happened.",
+"course of events"
+],
+[
+"今までの経緯を部長に話した。",
+"I told the manager what had happened so far.",
+"sequence of events"
+],
+[
+"その計画が決まった経緯は知らない。",
+"I don't know how that plan came to be decided.",
+"course of events"
+]
+],
+"大戦": [
+[
+"祖父は大戦のことをよく話した。",
+"My grandfather often talked about the great war.",
+"great war"
+],
+[
+"この町は大戦の後に作られた。",
+"This town was built after the great war.",
+"great war"
+]
+],
+"琴": [
+[
+"お正月に琴の音を聞きました。",
+"I heard the sound of the koto at New Year.",
+"koto (Japanese harp)"
+],
+[
+"姉は子どものころから琴を習っている。",
+"My older sister has learned the koto since childhood.",
+"koto (Japanese harp)"
+]
+],
+"先行": [
+[
+"チケットの先行発売は明日からです。",
+"Advance ticket sales start tomorrow.",
+"advance (going first)"
+],
+[
+"この映画は東京で先行して公開される。",
+"This movie will be released first in Tokyo.",
+"going first"
+]
+],
+"消防": [
+[
+"父は消防の仕事をしています。",
+"My father works as a firefighter.",
+"fire fighting"
+],
+[
+"火事を見たら、すぐ消防に電話して。",
+"If you see a fire, call the fire department right away.",
+"fire department"
+]
+],
+"有無": [
+[
+"アレルギーの有無を教えてください。",
+"Please tell us whether you have any allergies.",
+"presence or absence"
+],
+[
+"参加の有無を金曜日までに知らせて。",
+"Let me know by Friday whether you'll take part.",
+"yes or no"
+]
+],
+"同志": [
+[
+"私たちは同じ夢を持つ同志だ。",
+"We are comrades who share the same dream.",
+"comrade"
+],
+[
+"同志を集めて新しい会を作った。",
+"I gathered like-minded people and started a new club.",
+"kindred soul"
+]
+],
+"下り": [
+[
+"ここから先は下りの道です。",
+"From here on, the road goes downhill.",
+"descent"
+],
+[
+"下りの電車は何時に来ますか。",
+"What time does the down train come?",
+"down train"
+]
+],
+"攻める": [
+[
+"チームは後半に強く攻めた。",
+"The team attacked hard in the second half.",
+"to attack"
+],
+[
+"てきが東から攻めてきた。",
+"The enemy attacked from the east.",
+"to attack"
+]
+],
+"女史": [
+[
+"山田女史の話はとても面白かった。",
+"Ms. Yamada's talk was very interesting.",
+"Ms."
+],
+[
+"会の代表は田中女史です。",
+"The representative of the group is Ms. Tanaka.",
+"Ms."
+]
+],
+"碑": [
+[
+"公園に古い碑が立っている。",
+"An old stone monument stands in the park.",
+"stone monument"
+],
+[
+"碑に書かれた文字を読んでみた。",
+"I tried reading the words written on the monument.",
+"stone monument"
+]
+],
+"盾": [
+[
+"王は盾で体を守った。",
+"The king protected himself with a shield.",
+"shield"
+],
+[
+"この盾は木で作られている。",
+"This shield is made of wood.",
+"shield"
+]
+],
+"勘": [
+[
+"私の勘はよく当たる。",
+"My hunches are often right.",
+"intuition"
+],
+[
+"勘で答えを選んだら合っていた。",
+"I picked the answer by guessing, and it was right.",
+"intuition"
+]
+],
+"墨": [
+[
+"墨で名前を書いてください。",
+"Please write your name in ink.",
+"ink"
+],
+[
+"書道の時間に墨をすった。",
+"I ground ink in calligraphy class.",
+"ink stick"
+]
+],
+"老い": [
+[
+"最近、体の老いを感じる。",
+"Lately I feel my body aging.",
+"old age"
+],
+[
+"老いても元気な人が多い。",
+"Many people stay healthy even in old age.",
+"growing old"
+]
+],
+"酢": [
+[
+"サラダに少し酢をかけた。",
+"I put a little vinegar on the salad.",
+"vinegar"
+],
+[
+"この料理には酢を使います。",
+"This dish uses vinegar.",
+"vinegar"
+]
+],
+"丘陵": [
+[
+"町の西には丘陵が広がっている。",
+"Hills spread out to the west of the town.",
+"hills"
+],
+[
+"この丘陵は春に花でいっぱいになる。",
+"These hills fill with flowers in spring.",
+"hills"
+]
+],
+"賞品": [
+[
+"一等の賞品は自転車です。",
+"The first prize is a bicycle.",
+"prize"
+],
+[
+"ゲームに勝って賞品をもらった。",
+"I won the game and got a prize.",
+"prize"
+]
+],
+"禅": [
+[
+"京都で禅を体験した。",
+"I tried Zen in Kyoto.",
+"Zen"
+],
+[
+"禅を学ぶ外国人は多い。",
+"Many foreigners study Zen.",
+"Zen"
+]
+],
+"生長": [
+[
+"今年は米の生長が早い。",
+"The rice is growing fast this year.",
+"growth"
+],
+[
+"水が少ないと木の生長が止まる。",
+"Trees stop growing when there's little water.",
+"growth"
+]
+],
+"羽根": [
+[
+"道に白い鳥の羽根が落ちていた。",
+"There was a white bird feather on the road.",
+"feather"
+],
+[
+"この羽根はとてもきれいだ。",
+"This feather is very pretty.",
+"feather"
+],
+[
+"子どもたちが羽根をつけて遊んでいる。",
+"The children are playing with feather wings on.",
+"feather"
+]
+],
+"不可": [
+[
+"この部屋は飲食不可です。",
+"No eating or drinking in this room.",
+"not allowed"
+],
+[
+"その計画は実行不可だと分かった。",
+"It turned out that the plan was impossible to carry out.",
+"impossible"
+]
+],
+"格": [
+[
+"彼とはテニスの格が違う。",
+"He's in a different class from me at tennis.",
+"status, level"
+],
+[
+"このホテルは格が高い。",
+"This hotel is high-class.",
+"status"
+]
+],
+"計器": [
+[
+"飛行機には多くの計器がある。",
+"There are many gauges in an airplane.",
+"gauges"
+],
+[
+"計器が正しく動いているか調べた。",
+"I checked whether the meter was working properly.",
+"meter"
+]
+],
+"温まる": [
+[
+"スープを飲んで体が温まった。",
+"I warmed up by drinking soup.",
+"to get warm"
+],
+[
+"部屋が温まるまで少し待とう。",
+"Let's wait a bit until the room warms up.",
+"to get warm"
+]
+],
+"採集": [
+[
+"夏休みに山で石を採集した。",
+"I collected stones in the mountains over summer vacation.",
+"collecting"
+],
+[
+"海でかいがらを採集しました。",
+"I collected shells at the sea.",
+"collecting"
+]
+],
+"小": [
+[
+"コーヒーは小でお願いします。",
+"A small coffee, please.",
+"small (size)"
+],
+[
+"箱は大と小の二つがあります。",
+"There are two boxes, a large and a small one.",
+"small"
+]
+],
+"刷る": [
+[
+"会議の資料を三十部刷った。",
+"I printed thirty copies of the meeting materials.",
+"to print"
+],
+[
+"店のチラシを刷ってもらった。",
+"I had flyers for the shop printed.",
+"to print"
+]
+],
+"渇く": [
+[
+"走ったので、のどが渇いた。",
+"I ran, so I'm thirsty.",
+"to be thirsty"
+],
+[
+"のどが渇いたら水を飲んでね。",
+"Drink water when you get thirsty.",
+"to be thirsty"
+]
+],
+"注す": [
+[
+"父のグラスにお酒を注した。",
+"I poured sake into my father's glass.",
+"to pour"
+],
+[
+"お客さんにお茶を注してください。",
+"Please pour tea for the guests.",
+"to pour"
+]
+],
+"傷める": [
+[
+"スポーツで足を傷めた。",
+"I hurt my leg playing sports.",
+"to injure"
+],
+[
+"強い日光は髪を傷める。",
+"Strong sunlight damages your hair.",
+"to damage"
+]
+],
+"銅貨": [
+[
+"古い銅貨を見つけた。",
+"I found an old copper coin.",
+"copper coin"
+],
+[
+"銅貨は茶色っぽい色をしている。",
+"Copper coins are a brownish color.",
+"copper coin"
+]
+],
+"昇る": [
+[
+"朝日が東の空に昇った。",
+"The morning sun rose in the eastern sky.",
+"to rise"
+],
+[
+"山の上で日が昇るのを見た。",
+"I watched the sun rise from the mountaintop.",
+"to rise"
+]
+],
+"原": [
+[
+"子どものころ、よく原で遊んだ。",
+"As a child, I often played in the field.",
+"field"
+],
+[
+"家の前に広い原があった。",
+"There was a wide field in front of the house.",
+"field"
+]
+],
+"精算": [
+[
+"降りる駅で料金を精算した。",
+"I paid the fare difference at the station where I got off.",
+"fare adjustment"
+],
+[
+"使ったお金は後で精算します。",
+"I'll settle the money I spent later.",
+"settling (expenses)"
+]
+],
+"添う": [
+[
+"ご期待に添えなくて、すみません。",
+"I'm sorry I couldn't live up to your expectations.",
+"to meet (expectations)"
+],
+[
+"親の期待に添うのは大変だ。",
+"Living up to your parents' expectations is hard.",
+"to meet (expectations)"
+],
+[
+"二人は長年添ってきた夫婦だ。",
+"They are a couple who have been together for many years.",
+"to be together"
+]
+],
+"映える": [
+[
+"赤い花が白い雪に映える。",
+"The red flowers stand out against the white snow.",
+"to look attractive"
+],
+[
+"この服はあなたによく映えるね。",
+"These clothes look great on you.",
+"to look good"
+]
+],
+"対する": [
+[
+"先生に対する言葉に気をつけて。",
+"Be careful with your words toward the teacher.",
+"toward"
+],
+[
+"この問題に対する意見を聞かせて。",
+"Tell me your opinion on this problem.",
+"regarding"
+]
+],
+"椀": [
+[
+"椀にスープを入れてください。",
+"Please put the soup in the bowl.",
+"bowl"
+],
+[
+"この椀は木でできています。",
+"This bowl is made of wood.",
+"bowl"
+]
+],
+"卸す": [
+[
+"この会社は店にやさいを卸している。",
+"This company sells vegetables wholesale to shops.",
+"to sell wholesale"
+],
+[
+"だいこんを卸して、魚にのせた。",
+"I grated daikon and put it on the fish.",
+"to grate"
+],
+[
+"工場から店に商品を卸します。",
+"We wholesale products from the factory to shops.",
+"to sell wholesale"
+]
+],
+"私用": [
+[
+"今日は私用で早く帰ります。",
+"I'm leaving early today on personal business.",
+"personal business"
+],
+[
+"会社のパソコンを私用で使わないで。",
+"Don't use the company computer for personal use.",
+"personal use"
+]
+],
+"諮る": [
+[
+"この問題は会議に諮ります。",
+"We will refer this issue to the meeting.",
+"to consult"
+],
+[
+"計画を社員みんなに諮った。",
+"We consulted all the employees about the plan.",
+"to consult"
+],
+[
+"大切なことは皆に諮って決める。",
+"We decide important things after consulting everyone.",
+"to consult"
+]
+],
+"助詞": [
+[
+"日本語の助詞は難しいです。",
+"Japanese particles are difficult.",
+"particles"
+],
+[
+"この文は助詞が間違っている。",
+"The particle in this sentence is wrong.",
+"particle"
+],
+[
+"「は」と「が」は助詞です。",
+"'Wa' and 'ga' are particles.",
+"particles"
+]
+],
+"散らす": [
+[
+"風が花びらを散らした。",
+"The wind scattered the petals.",
+"to scatter"
+],
+[
+"子どもが部屋におもちゃを散らした。",
+"The child scattered toys around the room.",
+"to scatter"
+]
+],
+"挿す": [
+[
+"花びんに花を挿してください。",
+"Please put the flowers in the vase.",
+"to put in"
+],
+[
+"パソコンにＵＳＢを挿した。",
+"I plugged the USB into the computer.",
+"to insert"
+]
+],
+"密": [
+[
+"二人は密に話し合っている。",
+"The two are talking closely together.",
+"close"
+],
+[
+"この山は木が密に生えている。",
+"Trees grow thickly on this mountain.",
+"thick, dense"
+]
+],
+"宛てる": [
+[
+"母に宛てて手紙を書いた。",
+"I wrote a letter addressed to my mother.",
+"to address"
+],
+[
+"これは先生に宛てたメールです。",
+"This is an email addressed to the teacher.",
+"to address"
+],
+[
+"社長に宛てたメールを送った。",
+"I sent an email addressed to the president.",
+"to address"
+]
+],
+"只": [
+[
+"このコンサートは只で見られる。",
+"You can see this concert for free.",
+"free of charge"
+],
+[
+"子どもは只で入れます。",
+"Children can get in for free.",
+"free of charge"
+],
+[
+"それは只のうわさだよ。",
+"That's just a rumor.",
+"mere"
+]
+],
+"偶": [
+[
+"偶には外で食べよう。",
+"Let's eat out once in a while.",
+"occasionally"
+],
+[
+"偶の休みは家でゆっくりする。",
+"On my rare days off, I relax at home.",
+"occasional"
+],
+[
+"友達とは偶に会うだけです。",
+"I only see my friend once in a while.",
+"occasionally"
+]
+],
+"馴らす": [
+[
+"この犬を馴らすのは大変だった。",
+"It was hard to tame this dog.",
+"to tame"
+],
+[
+"新しい靴を少しずつ足に馴らす。",
+"I break in my new shoes little by little.",
+"to break in"
+]
+],
+"チャイム": [
+[
+"学校のチャイムが鳴りました。",
+"The school bell rang.",
+"chime"
+],
+[
+"チャイムを鳴らしたが、だれも出ない。",
+"I rang the doorbell, but no one answered.",
+"doorbell"
+]
+],
+"ことによると": [
+[
+"ことによると、明日は雪かもしれない。",
+"It might possibly snow tomorrow.",
+"possibly"
+],
+[
+"ことによると、彼は来ないかもしれない。",
+"Depending on things, he might not come.",
+"possibly"
+],
+[
+"ことによると、会議は来週になる。",
+"The meeting may possibly be next week.",
+"possibly"
+]
+],
+"花畑": [
+[
+"春の花畑はとてもきれいだ。",
+"The flower garden in spring is very beautiful.",
+"flower garden"
+],
+[
+"子どもたちが花畑で遊んでいる。",
+"The children are playing in the flower field.",
+"flower field"
+],
+[
+"山の上に大きな花畑がある。",
+"There's a big flower field on top of the mountain.",
+"flower field"
+]
+],
+"それと": [
+[
+"コーヒーを一つ。それと、ケーキも。",
+"One coffee. And a cake, too.",
+"and"
+],
+[
+"それと、明日は休みです。",
+"And also, tomorrow is a day off.",
+"and also"
+],
+[
+"お茶を買ってきて。それと、パンも。",
+"Buy some tea. And bread too.",
+"and"
+]
+],
+"繋げる": [
+[
+"二本のひもを繋げた。",
+"I tied the two strings together.",
+"to connect"
+],
+[
+"パソコンをテレビに繋げる。",
+"I connect the computer to the TV.",
+"to connect"
+],
+[
+"この経験を次の仕事に繋げたい。",
+"I want to connect this experience to my next job.",
+"to connect"
+]
+],
+"具体": [
+[
+"もっと具体的に説明してください。",
+"Please explain more concretely.",
+"concrete"
+],
+[
+"具体的な計画はまだない。",
+"There's no concrete plan yet.",
+"concrete"
+],
+[
+"具体例を一つ出してください。",
+"Please give one concrete example.",
+"concrete"
+]
+],
+"友好": [
+[
+"二つの国は友好を深めた。",
+"The two countries deepened their friendship.",
+"friendship"
+],
+[
+"この町は外国の町と友好関係にある。",
+"This town has friendly relations with a foreign town.",
+"friendship"
+],
+[
+"友好のしるしに花を送った。",
+"We sent flowers as a sign of friendship.",
+"friendship"
+]
+],
+"正": [
+[
+"三は正の数です。",
+"Three is a positive number.",
+"positive"
+],
+[
+"答えが正か間違いか、調べてみよう。",
+"Let's check whether the answer is true or false.",
+"true"
+],
+[
+"この式の答えは正になる。",
+"The answer to this equation is positive.",
+"positive"
+]
+],
+"球": [
+[
+"地球は大きな球の形をしている。",
+"The earth is shaped like a big sphere.",
+"sphere"
+],
+[
+"速い球を投げるのが得意だ。",
+"I'm good at throwing fast balls.",
+"ball"
+],
+[
+"この電球はもう古い。",
+"This light bulb is already old.",
+"bulb (sphere)"
+]
+],
+"曜日": [
+[
+"今日は何曜日ですか。",
+"What day of the week is it today?",
+"day of the week"
+],
+[
+"ゴミを出す曜日が決まっている。",
+"The days of the week for taking out trash are fixed.",
+"day of the week"
+],
+[
+"会議の曜日を変えましょう。",
+"Let's change the day of the meeting.",
+"day of the week"
+]
+],
+"松": [
+[
+"庭に古い松の木がある。",
+"There's an old pine tree in the garden.",
+"pine tree"
+],
+[
+"海の近くに松が多い。",
+"There are many pine trees near the sea.",
+"pine trees"
+],
+[
+"お正月に松をかざります。",
+"We decorate with pine at New Year.",
+"pine"
+]
+],
+"元": [
+[
+"彼は元先生です。",
+"He is a former teacher.",
+"former"
+],
+[
+"使ったら元の場所に戻してね。",
+"Put it back where it was after you use it.",
+"original"
+],
+[
+"元の生活に戻りたい。",
+"I want to go back to my old life.",
+"original, former"
+]
+],
+"暮れ": [
+[
+"暮れは仕事がとても忙しい。",
+"Work is very busy at the end of the year.",
+"year end"
+],
+[
+"暮れに家族と国に帰る。",
+"At year's end I go back home with my family.",
+"year end"
+],
+[
+"去年の暮れに引っ越しました。",
+"I moved at the end of last year.",
+"year end"
+]
+],
+"住": [
+[
+"衣食住は生活の中心だ。",
+"Clothing, food, and shelter are at the center of life.",
+"housing"
+],
+[
+"この町は住の心配が少ない。",
+"In this town there's little worry about housing.",
+"housing"
+],
+[
+"衣食住に困らない生活がしたい。",
+"I want a life without worries about food, clothes, or housing.",
+"shelter"
+]
+],
+"堀": [
+[
+"しろのまわりに深い堀がある。",
+"There's a deep moat around the castle.",
+"moat"
+],
+[
+"堀の水に魚がいる。",
+"There are fish in the moat's water.",
+"moat"
+],
+[
+"堀のそばを散歩した。",
+"I took a walk by the moat.",
+"moat"
+]
+],
+"有機": [
+[
+"有機のやさいは少し高い。",
+"Organic vegetables are a little expensive.",
+"organic"
+],
+[
+"この店は有機の米を売っている。",
+"This shop sells organic rice.",
+"organic"
+],
+[
+"有機のコーヒーが好きです。",
+"I like organic coffee.",
+"organic"
+]
+],
+"刊行": [
+[
+"その本は去年刊行された。",
+"That book was published last year.",
+"publication"
+],
+[
+"新しい本の刊行が決まった。",
+"The publication of a new book was decided.",
+"publication"
+],
+[
+"この会社は毎月本を刊行している。",
+"This company publishes books every month.",
+"publishing"
+]
+],
+"正規": [
+[
+"正規の値段で買いました。",
+"I bought it at the regular price.",
+"regular"
+],
+[
+"彼は正規の社員になった。",
+"He became a regular employee.",
+"regular"
+],
+[
+"正規の手続きをしてください。",
+"Please go through the proper procedure.",
+"proper, legitimate"
+]
+],
+"棟": [
+[
+"病院は三つの棟に分かれている。",
+"The hospital is divided into three buildings.",
+"building (wing)"
+],
+[
+"Ａ棟に教室があります。",
+"The classroom is in Building A.",
+"building"
+],
+[
+"新しい棟が来年できる。",
+"A new building will be finished next year.",
+"building"
+]
+],
+"河": [
+[
+"大きな河が町の中を流れている。",
+"A big river flows through the town.",
+"river"
+],
+[
+"河の向こうに山が見える。",
+"Mountains can be seen across the river.",
+"river"
+],
+[
+"船で河を下った。",
+"We went down the river by boat.",
+"river"
+]
+],
+"新興": [
+[
+"新興の会社が急に大きくなった。",
+"An up-and-coming company suddenly grew big.",
+"emerging"
+],
+[
+"新興国の経済が強くなっている。",
+"The economies of emerging countries are getting stronger.",
+"emerging"
+],
+[
+"ここは新しくできた新興住宅地だ。",
+"This is a newly developed residential area.",
+"newly developed"
+]
+],
+"異動": [
+[
+"来月、東京の店に異動します。",
+"Next month I'm being transferred to the Tokyo store.",
+"transfer"
+],
+[
+"春は人事異動が多い。",
+"There are many personnel transfers in spring.",
+"transfer"
+],
+[
+"部長が別の部に異動した。",
+"The manager was transferred to another department.",
+"transfer"
+]
+],
+"菌": [
+[
+"手を洗って菌を落とそう。",
+"Let's wash our hands to get rid of germs.",
+"germs"
+],
+[
+"この薬は菌を殺します。",
+"This medicine kills bacteria.",
+"bacteria"
+],
+[
+"夏は食べ物に菌が増えやすい。",
+"Bacteria grow easily on food in summer.",
+"bacteria"
+]
+],
+"難": [
+[
+"この部屋は駅から遠いのが難だ。",
+"The drawback of this room is that it's far from the station.",
+"drawback"
+],
+[
+"彼は運よく難を逃れた。",
+"He was lucky to escape disaster.",
+"disaster"
+],
+[
+"この車は少し高いのが難です。",
+"The only problem with this car is that it's a bit expensive.",
+"defect"
+]
+],
+"膜": [
+[
+"ホットミルクの上に膜ができた。",
+"A film formed on top of the hot milk.",
+"film"
+],
+[
+"水の上にうすい膜がある。",
+"There's a thin film on the water.",
+"film"
+],
+[
+"耳の中にうすい膜がある。",
+"There is a thin membrane inside the ear.",
+"membrane"
+]
+],
+"重体": [
+[
+"けがをした運転手は重体です。",
+"The injured driver is in critical condition.",
+"critical condition"
+],
+[
+"祖父は今も重体です。",
+"My grandfather is still in critical condition.",
+"critical condition"
+],
+[
+"けが人の一人は重体だそうだ。",
+"I heard one of the injured is in critical condition.",
+"critical condition"
+]
+],
+"経る": [
+[
+"長い年月を経て、町は変わった。",
+"After many years passed, the town changed.",
+"to pass"
+],
+[
+"京都を経て東京に着いた。",
+"I arrived in Tokyo by way of Kyoto.",
+"to go through"
+],
+[
+"多くの経験を経て、強くなった。",
+"Through many experiences, I became stronger.",
+"to go through"
+]
+],
+"歌謡": [
+[
+"祖父は昔の歌謡が好きです。",
+"My grandfather likes old popular songs.",
+"popular song"
+],
+[
+"この番組では歌謡曲を流しています。",
+"This program plays popular songs.",
+"popular song"
+],
+[
+"母は台所でよく歌謡曲を歌う。",
+"My mother often sings pop songs in the kitchen.",
+"popular song"
+]
+],
+"加味": [
+[
+"天気も加味して、予定を決めましょう。",
+"Let's decide the plan taking the weather into account.",
+"taking into account"
+],
+[
+"点数は出席も加味して決めます。",
+"Grades are decided with attendance also taken into account.",
+"taking into account"
+],
+[
+"皆さんの意見を加味して、計画を変えました。",
+"We changed the plan, taking everyone's opinions into account.",
+"taking into account"
+]
+],
+"渦": [
+[
+"川に小さな渦ができている。",
+"A small whirlpool has formed in the river.",
+"whirlpool"
+],
+[
+"おふろの水が渦をまいて流れていく。",
+"The bath water swirls as it drains away.",
+"swirl"
+],
+[
+"台風のくもが大きな渦を作っている。",
+"The typhoon's clouds are forming a huge swirl.",
+"swirl"
+]
+],
+"出合い": [
+[
+"この本との出合いが私の人生を変えた。",
+"Coming across this book changed my life.",
+"encounter"
+],
+[
+"旅は新しい味との出合いでもある。",
+"Travel is also an encounter with new flavors.",
+"encounter"
+],
+[
+"京都でいい店との出合いがあった。",
+"In Kyoto I came across a great shop.",
+"encounter"
+]
+],
+"独り": [
+[
+"兄はまだ独りです。",
+"My older brother is still single.",
+"single, unmarried"
+],
+[
+"独りで晩ご飯を食べるのはさびしい。",
+"Eating dinner alone is lonely.",
+"alone"
+],
+[
+"祖母はいなかで独りでくらしている。",
+"My grandmother lives alone in the countryside.",
+"alone"
+]
+],
+"膳": [
+[
+"旅館で夕食のお膳が運ばれてきた。",
+"At the inn, our dinner trays were brought in.",
+"meal tray"
+],
+[
+"お膳の上に料理をならべてください。",
+"Please set the dishes out on the tray.",
+"tray"
+],
+[
+"祖母がお膳をかたづけている。",
+"Grandma is clearing away the meal trays.",
+"meal tray"
+]
+],
+"衆": [
+[
+"祭りのじゅんびは若い衆に任せよう。",
+"Let's leave the festival preparations to the young folks.",
+"folks, group"
+],
+[
+"町の男衆が力を合わせて木を運んだ。",
+"The village men worked together to carry the logs.",
+"group of people"
+],
+[
+"女衆は台所で料理を作っていた。",
+"The women were cooking in the kitchen.",
+"group of people"
+]
+],
+"供": [
+[
+"社長のお供でおおさかへ行きました。",
+"I went to Osaka accompanying the company president.",
+"accompanying"
+],
+[
+"犬をお供に散歩に出かけた。",
+"I went out for a walk with my dog for company.",
+"companion"
+],
+[
+"コーヒーは読書のいいお供です。",
+"Coffee is a good companion for reading.",
+"companion"
+]
+],
+"訓": [
+[
+"この漢字の訓は何ですか。",
+"What is the kun reading of this kanji?",
+"kun reading"
+],
+[
+"「山」の訓は「やま」です。",
+"The kun reading of 山 is \"yama\".",
+"kun reading"
+],
+[
+"音と訓の両方を覚えましょう。",
+"Let's learn both the on and kun readings.",
+"kun reading"
+]
+],
+"申し訳": [
+[
+"遅れて申し訳ありません。",
+"I'm sorry for being late.",
+"apology"
+],
+[
+"待たせてしまって申し訳ない。",
+"Sorry to have kept you waiting.",
+"apology"
+],
+[
+"申し訳ございませんが、今日は休みです。",
+"I'm very sorry, but we're closed today.",
+"apology"
+]
+],
+"季刊": [
+[
+"このざっしは季刊です。",
+"This magazine is a quarterly.",
+"quarterly"
+],
+[
+"季刊のざっしを毎回買っている。",
+"I buy that quarterly magazine every issue.",
+"quarterly"
+],
+[
+"季刊ざっしなので、次は三か月後に出ます。",
+"It's a quarterly, so the next issue comes out in three months.",
+"quarterly"
+]
+],
+"蒸す": [
+[
+"じゃがいもを十分ほど蒸します。",
+"Steam the potatoes for about ten minutes.",
+"to steam"
+],
+[
+"今日は朝からずいぶん蒸しますね。",
+"It's been really muggy since this morning, hasn't it?",
+"to be muggy"
+],
+[
+"母が台所でまんじゅうを蒸している。",
+"Mom is steaming buns in the kitchen.",
+"to steam"
+]
+],
+"駆ける": [
+[
+"子どもたちが公園を駆けていく。",
+"The children are running through the park.",
+"to run"
+],
+[
+"犬がうれしそうに駆けてきた。",
+"The dog came running up happily.",
+"to run"
+],
+[
+"駅まで駆けて、電車に間に合った。",
+"I ran to the station and caught the train.",
+"to run"
+]
+],
+"測る": [
+[
+"毎朝、熱を測っています。",
+"I take my temperature every morning.",
+"to measure"
+],
+[
+"部屋の広さをメジャーで測った。",
+"I measured the room with a tape measure.",
+"to measure"
+],
+[
+"駅までの時間を測ってみよう。",
+"Let's time how long it takes to the station.",
+"to measure (time)"
+]
+],
+"代える": [
+[
+"体はお金に代えられない。",
+"Health can't be bought with money.",
+"to exchange"
+],
+[
+"命には代えられない。",
+"Nothing is worth more than a life.",
+"to exchange"
+],
+[
+"かんとくはピッチャーを代えた。",
+"The manager replaced the pitcher.",
+"to substitute"
+]
+],
+"支払": [
+[
+"支払方法を選んでください。",
+"Please choose a payment method.",
+"payment"
+],
+[
+"支払日は毎月二十五日です。",
+"Payment day is the 25th of every month.",
+"payment"
+],
+[
+"支払はレジでお願いします。",
+"Please pay at the register.",
+"payment"
+]
+],
+"身体": [
+[
+"身体を大切にしてください。",
+"Please take care of yourself.",
+"body"
+],
+[
+"毎朝、身体を動かすようにしている。",
+"I try to get some exercise every morning.",
+"body"
+],
+[
+"寒くて身体が冷えてしまった。",
+"It was cold and I got chilled.",
+"body"
+]
+],
+"明ける": [
+[
+"夜が明けるまで話していた。",
+"We talked until dawn.",
+"to dawn"
+],
+[
+"もうすぐ夜が明ける。",
+"Dawn will break soon.",
+"to dawn"
+],
+[
+"年が明けたら、国に帰ります。",
+"When the new year begins, I'll go back to my country.",
+"to begin (new year)"
+]
+],
+"或": [
+[
+"ある日、駅で先生に会った。",
+"One day I ran into my teacher at the station.",
+"a certain"
+],
+[
+"ある人から手紙が来た。",
+"A letter came from a certain person.",
+"a certain"
+],
+[
+"ある町に古い店がありました。",
+"In a certain town, there was an old shop.",
+"a certain"
+]
+],
+"いただきます": [
+[
+"「いただきます」と言ってから食べる。",
+"We say \"itadakimasu\" before we eat.",
+"said before eating"
+],
+[
+"子どもたちは手を合わせて「いただきます」と言った。",
+"The children put their hands together and said \"itadakimasu.\"",
+"said before eating"
+],
+[
+"おいしそうですね。いただきます。",
+"That looks delicious. Let's eat!",
+"said before eating"
+]
+],
+"追い付く": [
+[
+"走って前の人に追い付いた。",
+"I ran and caught up with the person ahead.",
+"to catch up"
+],
+[
+"勉強してクラスのみんなに追い付きたい。",
+"I want to study and catch up with everyone in my class.",
+"to catch up"
+],
+[
+"先に行って。すぐ追い付くから。",
+"Go on ahead. I'll catch up soon.",
+"to catch up"
+]
+],
+"納める": [
+[
+"毎年、ぜいきんをきちんと納めている。",
+"I pay my taxes properly every year.",
+"to pay"
+],
+[
+"学費は月末までに納めてください。",
+"Please pay the tuition by the end of the month.",
+"to pay"
+],
+[
+"注文の品を店に納めた。",
+"I delivered the ordered goods to the store.",
+"to supply, deliver"
+]
+],
+"思い付く": [
+[
+"いい考えを思い付いた。",
+"I came up with a good idea.",
+"to think of"
+],
+[
+"何も思い付かない。",
+"Nothing comes to mind.",
+"to think of"
+],
+[
+"急に思い付いて、海へ行った。",
+"On a sudden whim, I went to the sea.",
+"to think of"
+]
+],
+"換える": [
+[
+"円をドルに換えてください。",
+"Please exchange the yen for dollars.",
+"to exchange"
+],
+[
+"窓を開けて空気を換えよう。",
+"Let's open the window and let in fresh air.",
+"to change (air)"
+],
+[
+"新宿で電車を乗り換える。",
+"I change trains at Shinjuku.",
+"to change (trains)"
+]
+],
+"反る": [
+[
+"雨でいたが反ってしまった。",
+"The board warped in the rain.",
+"to warp"
+],
+[
+"古い本の表紙が反っている。",
+"The old book's cover is warped.",
+"to be warped"
+],
+[
+"日に当てると、木が反る。",
+"Wood warps if you leave it in the sun.",
+"to warp"
+]
+],
+"器械": [
+[
+"弟は器械たいそうを習っている。",
+"My younger brother is learning apparatus gymnastics.",
+"apparatus"
+],
+[
+"実験の器械をていねいに洗う。",
+"I carefully wash the lab instruments.",
+"instrument"
+],
+[
+"医者は小さな器械で耳を見た。",
+"The doctor looked in my ear with a small instrument.",
+"instrument"
+]
+],
+"グランド": [
+[
+"学校が終わってから、グランドでサッカーをした。",
+"After school, we played soccer on the field.",
+"sports ground"
+],
+[
+"雨でグランドが使えない。",
+"The field can't be used because of the rain.",
+"sports ground"
+],
+[
+"毎朝、グランドを三回走る。",
+"I run three laps around the field every morning.",
+"sports ground"
+]
+],
+"超える": [
+[
+"今日は三十五度を超えた。",
+"The temperature went over 35 degrees today.",
+"to exceed"
+],
+[
+"参加者は百人を超えている。",
+"There are over a hundred participants.",
+"to exceed"
+],
+[
+"かばんは十キロを超えないようにしてください。",
+"Please make sure your bag doesn't exceed ten kilos.",
+"to exceed"
+]
+],
+"当り": [
+[
+"このくじは当りだ！",
+"This lottery ticket is a winner!",
+"win, hit"
+],
+[
+"今度の映画は大当りだった。",
+"The new movie was a big hit.",
+"hit, success"
+],
+[
+"当りが出たら、もう一本もらえる。",
+"If you get a winning stick, you get another one free.",
+"win"
+]
+],
+"ソファー": [
+[
+"ソファーで少し寝てしまった。",
+"I dozed off on the sofa for a bit.",
+"sofa"
+],
+[
+"新しいソファーを買いました。",
+"I bought a new sofa.",
+"sofa"
+],
+[
+"猫がソファーの上で寝ている。",
+"The cat is sleeping on the couch.",
+"couch"
+]
+],
+"田": [
+[
+"田に水を入れる時期になった。",
+"It's the season for flooding the rice fields.",
+"rice field"
+],
+[
+"祖父は毎日、田で働いている。",
+"My grandfather works in the rice field every day.",
+"rice field"
+],
+[
+"家の前に田が広がっている。",
+"Rice fields stretch out in front of the house.",
+"rice field"
+]
+],
+"着ける": [
+[
+"マスクを着けて出かけた。",
+"I went out wearing a mask.",
+"to put on"
+],
+[
+"むねに名前のカードを着けてください。",
+"Please wear your name card on your chest.",
+"to put on"
+],
+[
+"車をげんかんに着けてください。",
+"Please bring the car up to the entrance.",
+"to draw up"
+]
+],
+"務め": [
+[
+"子どもを守るのは親の務めです。",
+"Protecting children is a parent's duty.",
+"duty"
+],
+[
+"自分の務めを果たした。",
+"I fulfilled my duty.",
+"duty"
+],
+[
+"客を迎えるのも私の務めだ。",
+"Greeting guests is also part of my job.",
+"duty"
+]
+],
+"溶く": [
+[
+"たまごを溶いてください。",
+"Please beat the eggs.",
+"to beat (eggs)"
+],
+[
+"絵の具を水で溶く。",
+"Dissolve the paint in water.",
+"to dissolve"
+],
+[
+"こむぎこを水で溶いておく。",
+"Mix the flour with water in advance.",
+"to mix (into liquid)"
+]
+],
+"延ばす": [
+[
+"出発を一日延ばした。",
+"We put off our departure by a day.",
+"to postpone"
+],
+[
+"会議の時間を延ばしましょう。",
+"Let's extend the meeting.",
+"to extend"
+],
+[
+"旅行を一週間延ばすことにした。",
+"I decided to extend my trip by a week.",
+"to extend"
+]
+],
+"バイオリン": [
+[
+"娘は毎日バイオリンをれんしゅうしている。",
+"My daughter practices the violin every day.",
+"violin"
+],
+[
+"バイオリンの音がきれいだ。",
+"The sound of the violin is beautiful.",
+"violin"
+],
+[
+"子どものころ、バイオリンを習っていた。",
+"I took violin lessons when I was a child.",
+"violin"
+]
+],
+"量る": [
+[
+"体重を量ったら、二キロ増えていた。",
+"When I weighed myself, I'd gained two kilos.",
+"to weigh"
+],
+[
+"こむぎこを百グラム量ってください。",
+"Please measure out 100 grams of flour.",
+"to measure"
+],
+[
+"にもつの重さを量ってもらった。",
+"I had my luggage weighed.",
+"to weigh"
+]
+],
+"放れる": [
+[
+"犬がひもから放れて走っていった。",
+"The dog got loose from its leash and ran off.",
+"to get free"
+],
+[
+"牛が小屋から放れてしまった。",
+"The cow got loose from the barn.",
+"to get free"
+],
+[
+"鳥がかごから放れて、空へ飛んだ。",
+"The bird got out of its cage and flew into the sky.",
+"to get free"
+]
+],
+"不": [
+[
+"この町は駅が遠くて不便だ。",
+"This town is inconvenient because the station is far.",
+"in- (inconvenient)"
+],
+[
+"明日の試験が不安です。",
+"I'm anxious about tomorrow's exam.",
+"un- (uneasy)"
+],
+[
+"最近、運動不足だ。",
+"I haven't been getting enough exercise lately.",
+"in- (insufficient)"
+]
+],
+"蒔く": [
+[
+"畑にやさいの種を蒔いた。",
+"I sowed vegetable seeds in the field.",
+"to sow"
+],
+[
+"春になったら花の種を蒔こう。",
+"Let's sow flower seeds when spring comes.",
+"to sow"
+],
+[
+"子どもと一緒に種を蒔きました。",
+"I sowed seeds together with my child.",
+"to sow"
+]
+],
+"交ざる": [
+[
+"大人の中に子どもが一人交ざっている。",
+"There's one child mixed in among the adults.",
+"to be mixed in"
+],
+[
+"米に小さな石が交ざっていた。",
+"There were small stones mixed in with the rice.",
+"to be mixed in"
+],
+[
+"白い花の中に赤い花が交ざっている。",
+"There are red flowers mixed in among the white ones.",
+"to be mixed in"
+]
+],
+"交じる": [
+[
+"子どもたちに交じって遊んだ。",
+"I joined in and played with the children.",
+"to mingle with"
+],
+[
+"雨に雪が交じってきた。",
+"Snow has started to mix in with the rain.",
+"to be mixed"
+],
+[
+"日本人の中に外国人が交じっている。",
+"There are some foreigners mixed in among the Japanese.",
+"to be mixed in"
+]
+],
+"祭": [
+[
+"今日は町のお祭りです。",
+"Today is the town festival.",
+"festival"
+],
+[
+"お祭りでゆかたを着ました。",
+"I wore a yukata at the festival.",
+"festival"
+],
+[
+"お祭りの日は、駅がとてもこむ。",
+"On festival days, the station gets very crowded.",
+"festival"
+]
+],
+"相": [
+[
+"父は手相を見るのが楽しみだ。",
+"My father's hobby is reading palms.",
+"lines (palm)"
+],
+[
+"人相の悪い男が立っている。",
+"A shady-looking man is standing there.",
+"looks, countenance"
+],
+[
+"この家は家相がいいそうだ。",
+"They say this house has a lucky layout.",
+"aspect"
+]
+],
+"並": [
+[
+"牛どんの並を一つください。",
+"One regular beef bowl, please.",
+"regular size"
+],
+[
+"並と大もり、どちらにしますか。",
+"Would you like regular or large?",
+"regular size"
+],
+[
+"うな重の並を注文した。",
+"I ordered the standard grade eel box.",
+"standard grade"
+]
+],
+"判": [
+[
+"この紙はA4判です。",
+"This paper is A4 size.",
+"size (paper)"
+],
+[
+"B5判のノートを買った。",
+"I bought a B5-size notebook.",
+"size (paper)"
+],
+[
+"この本はA5判で、持ちやすい。",
+"This book is A5 size, so it's easy to carry.",
+"size (book)"
+]
+],
+"保障": [
+[
+"社会保障について勉強している。",
+"I'm studying social security.",
+"security"
+],
+[
+"この仕事は生活が保障されている。",
+"This job guarantees a stable living.",
+"guarantee"
+],
+[
+"国は国民の安全を保障する。",
+"The state guarantees the people's safety.",
+"guarantee"
+]
+],
+"股": [
+[
+"股を大きく開いてストレッチする。",
+"Spread your legs wide and stretch.",
+"crotch, thighs"
+],
+[
+"ズボンの股が破れてしまった。",
+"The crotch of my pants ripped.",
+"crotch"
+],
+[
+"彼は世界を股にかけて働いている。",
+"He works all over the world.",
+"crotch (idiom)"
+]
+],
+"延びる": [
+[
+"会議が一時間延びた。",
+"The meeting ran an hour over.",
+"to be prolonged"
+],
+[
+"雨で試合が来週に延びた。",
+"The game was put off until next week because of rain.",
+"to be postponed"
+],
+[
+"地下てつがとなりの町まで延びた。",
+"The subway line was extended to the next town.",
+"to be extended"
+]
+],
+"水洗": [
+[
+"この家のトイレは水洗です。",
+"The toilet in this house is a flush toilet.",
+"flushing"
+],
+[
+"昔は水洗トイレが少なかった。",
+"In the old days, there weren't many flush toilets.",
+"flushing"
+],
+[
+"祖父の家のトイレも水洗になった。",
+"Even my grandfather's toilet is a flush toilet now.",
+"flushing"
+]
+],
+"堅い": [
+[
+"このつくえは堅い木でできている。",
+"This desk is made of hard wood.",
+"hard"
+],
+[
+"彼は口が堅いから、話しても安心だ。",
+"He can keep a secret, so it's fine.",
+"tight (lips)"
+],
+[
+"父は堅い仕事をしている。",
+"My father has a steady job.",
+"solid, steady"
+]
+],
+"超す": [
+[
+"夏は毎日、三十度を超した。",
+"Every day in summer it went over 30 degrees.",
+"to pass, exceed"
+],
+[
+"参加者は千人を超した。",
+"There were over a thousand participants.",
+"to pass, exceed"
+],
+[
+"体重が六十キロを超してしまった。",
+"My weight went over sixty kilos.",
+"to pass, exceed"
+]
+],
+"産む": [
+[
+"姉が先月、女の子を産んだ。",
+"My older sister gave birth to a girl last month.",
+"to give birth"
+],
+[
+"にわとりが毎日たまごを産む。",
+"The chickens lay eggs every day.",
+"to lay (eggs)"
+],
+[
+"猫が五ひきの子猫を産んだ。",
+"The cat had five kittens.",
+"to give birth"
+]
+],
+"磁器": [
+[
+"このさらは磁器です。",
+"This plate is porcelain.",
+"porcelain"
+],
+[
+"有田は磁器で有名な町です。",
+"Arita is a town famous for its porcelain.",
+"porcelain"
+],
+[
+"磁器のカップでお茶を飲む。",
+"I drink tea from a porcelain cup.",
+"porcelain"
+]
+],
+"字体": [
+[
+"この字体は読みやすい。",
+"This font is easy to read.",
+"font"
+],
+[
+"書類の字体を変えてください。",
+"Please change the font of the document.",
+"font"
+],
+[
+"古い本は昔の字体で書かれている。",
+"Old books are written in old-style characters.",
+"character form"
+]
+],
+"遭う": [
+[
+"帰り道で雨に遭った。",
+"I got caught in the rain on the way home.",
+"to run into"
+],
+[
+"旅行中にじこに遭った。",
+"I was in an accident while traveling.",
+"to meet with"
+],
+[
+"子どものころ、ひどい目に遭った。",
+"I had an awful experience as a child.",
+"to go through"
+]
+],
+"姓名": [
+[
+"ここに姓名を書いてください。",
+"Please write your full name here.",
+"full name"
+],
+[
+"書類には姓名をカタカナでも書く。",
+"On the form, you also write your full name in katakana.",
+"full name"
+],
+[
+"姓名判断で子どもの名前を決めた。",
+"We chose our child's name by name fortune-telling.",
+"full name"
+]
+],
+"足袋": [
+[
+"着物には白い足袋をはく。",
+"You wear white tabi with a kimono.",
+"tabi socks"
+],
+[
+"祖母は毎日足袋をはいている。",
+"My grandmother wears tabi every day.",
+"tabi socks"
+],
+[
+"足袋は親指が分かれている。",
+"Tabi have a separate big toe.",
+"tabi socks"
+]
+],
+"現れ": [
+[
+"これは彼の優しさの現れだ。",
+"This is a sign of his kindness.",
+"sign, expression"
+],
+[
+"熱が出たのは疲れの現れだろう。",
+"The fever is probably a sign of fatigue.",
+"sign"
+],
+[
+"笑顔は自信の現れです。",
+"A smile is a sign of confidence.",
+"expression, sign"
+]
+],
+"討つ": [
+[
+"彼は父のかたきを討った。",
+"He avenged his father.",
+"to avenge"
+],
+[
+"映画で主人公が悪人を討つ。",
+"In the movie, the hero defeats the villain.",
+"to attack, defeat"
+],
+[
+"さむらいは主人のかたきを討とうとした。",
+"The samurai tried to avenge his lord.",
+"to avenge"
+]
+],
+"現す": [
+[
+"彼はやっとすがたを現した。",
+"He finally showed up.",
+"to appear"
+],
+[
+"くもの間から月がすがたを現した。",
+"The moon appeared from between the clouds.",
+"to appear"
+],
+[
+"彼女は一年で才能を現した。",
+"She showed her talent within a year.",
+"to show, reveal"
+]
+],
+"交ぜる": [
+[
+"トランプをよく交ぜてから配る。",
+"Shuffle the cards well before dealing.",
+"to mix, shuffle"
+],
+[
+"先生はじょうだんを交ぜながら話す。",
+"The teacher talks, mixing in jokes.",
+"to mix in"
+],
+[
+"英語を交ぜて話す人が多い。",
+"Many people mix English into their speech.",
+"to mix in"
+]
+],
+"知合い": [
+[
+"東京に知合いがいます。",
+"I have an acquaintance in Tokyo.",
+"acquaintance"
+],
+[
+"知合いの店で食事をした。",
+"I ate at a restaurant run by someone I know.",
+"acquaintance"
+],
+[
+"彼とはただの知合いです。",
+"He's just an acquaintance.",
+"acquaintance"
+]
+],
+"清む": [
+[
+"秋は空気が清んでいる。",
+"The air is clear in autumn.",
+"to be clear"
+],
+[
+"山の川の水は清んでいてきれいだ。",
+"The water in mountain streams is clear and clean.",
+"to be clear"
+],
+[
+"彼女は清んだ声で歌った。",
+"She sang in a clear voice.",
+"to be clear"
+]
+],
+"押える": [
+[
+"ドアを押えていてください。",
+"Please hold the door open.",
+"to hold down"
+],
+[
+"痛いところを手で押えた。",
+"I pressed my hand on the spot that hurt.",
+"to press"
+],
+[
+"旅行の費用をできるだけ押えたい。",
+"I want to keep travel costs as low as possible.",
+"to keep down"
+]
+],
+"可愛そう": [
+[
+"雨にぬれた子犬が可愛そうだった。",
+"I felt sorry for the puppy wet from the rain.",
+"pitiful"
+],
+[
+"そんなことを言ったら、彼が可愛そうだよ。",
+"If you say that, you'll make him feel bad.",
+"poor (thing)"
+],
+[
+"一人で留守番なんて可愛そうに。",
+"Poor thing, having to stay home alone.",
+"poor (thing)"
+]
+],
+"代る": [
+[
+"運転を代ってもらえますか。",
+"Could you take over the driving?",
+"to take over"
+],
+[
+"父に代って、私があいさつします。",
+"I'll give the greeting on behalf of my father.",
+"on behalf of"
+],
+[
+"おばあさんに席を代ってあげた。",
+"I gave my seat to an old woman.",
+"to switch"
+]
+],
+"酌む": [
+[
+"友だちと酒を酌みかわした。",
+"I shared drinks with a friend.",
+"to pour (sake)"
+],
+[
+"ひさしぶりに父と酒を酌みかわした。",
+"I shared a drink with my father for the first time in a while.",
+"to pour (sake)"
+],
+[
+"彼の気持ちを酌んで、何も言わなかった。",
+"I respected his feelings and said nothing.",
+"to consider (feelings)"
+]
+],
+"碗": [
+[
+"ご飯を茶碗によそう。",
+"I scoop rice into the bowl.",
+"bowl"
+],
+[
+"お碗にみそしるを入れてください。",
+"Please pour the miso soup into the bowls.",
+"bowl"
+],
+[
+"新しい茶碗を買った。",
+"I bought a new rice bowl.",
+"bowl"
+]
+],
+"異": [
+[
+"私はその意見に異はありません。",
+"I have no objection to that opinion.",
+"objection"
+],
+[
+"部長の考えに異をとなえる人はいなかった。",
+"No one objected to the manager's plan.",
+"objection"
+],
+[
+"彼だけが会議で異をとなえた。",
+"He was the only one to object at the meeting.",
+"objection"
+]
+],
+"具える": [
+[
+"この部屋はエアコンを具えている。",
+"This room is equipped with air conditioning.",
+"to be equipped with"
+],
+[
+"新しい車は安全機能を具えている。",
+"The new car is equipped with safety features.",
+"to be equipped with"
+],
+[
+"彼は先生としての力を具えている。",
+"He has what it takes to be a teacher.",
+"to possess"
+]
+],
+"弾": [
+[
+"ピストルに弾を入れた。",
+"He loaded the pistol.",
+"bullet"
+],
+[
+"弾は的に当たらなかった。",
+"The bullet missed the target.",
+"bullet"
+],
+[
+"弾が足りなくなった。",
+"We ran short of ammunition.",
+"bullets"
+]
+],
+"付合う": [
+[
+"買い物に付合ってくれない？",
+"Will you come shopping with me?",
+"to keep company"
+],
+[
+"彼女とは三年付合っている。",
+"I've been going out with her for three years.",
+"to go out with"
+],
+[
+"近所の人とうまく付合う。",
+"I get along well with my neighbors.",
+"to get along"
+]
+],
+"釣": [
+[
+"週末は父と釣りに行く。",
+"On weekends I go fishing with my father.",
+"fishing"
+],
+[
+"海で釣りをするのが好きだ。",
+"I like fishing in the sea.",
+"fishing"
+],
+[
+"川で釣りをしたが、一ぴきも釣れなかった。",
+"I went fishing in the river but didn't catch a single fish.",
+"fishing"
+]
+],
+"年寄": [
+[
+"お年寄りに席をゆずりましょう。",
+"Let's give our seats to elderly people.",
+"the elderly"
+],
+[
+"この町には年寄りが多い。",
+"There are many old people in this village.",
+"old people"
+],
+[
+"年寄りを大切にしなさい。",
+"Take good care of the elderly.",
+"the elderly"
+]
+],
+"中味": [
+[
+"箱の中味は何ですか。",
+"What's inside the box?",
+"contents"
+],
+[
+"中味のない話だった。",
+"It was a talk with no substance.",
+"substance, content"
+],
+[
+"かばんの中味を全部出してください。",
+"Please take everything out of your bag.",
+"contents"
+]
+],
+"馴れる": [
+[
+"この犬は人によく馴れている。",
+"This dog is very used to people.",
+"to be tame"
+],
+[
+"野良猫がやっと私に馴れてきた。",
+"The stray cat has finally gotten used to me.",
+"to become tame"
+],
+[
+"鳥がすっかり人に馴れた。",
+"The bird has become completely tame.",
+"to become tame"
+]
+],
+"載せる": [
+[
+"車ににもつを載せてください。",
+"Please load the luggage into the car.",
+"to load"
+],
+[
+"たなの上に箱を載せた。",
+"I put the box on the shelf.",
+"to place on"
+],
+[
+"ざっしに私の記事を載せてもらった。",
+"They published my article in a magazine.",
+"to publish"
+]
+],
+"引越し": [
+[
+"来月、引越しをします。",
+"I'm moving next month.",
+"moving"
+],
+[
+"友だちの引越しを手伝った。",
+"I helped my friend move.",
+"moving"
+],
+[
+"引越しのにもつがまだかたづかない。",
+"I still haven't finished unpacking from the move.",
+"moving"
+]
+],
+"殖やす": [
+[
+"父は金魚を殖やして売っている。",
+"My father breeds goldfish and sells them.",
+"to breed, increase"
+],
+[
+"かぶでお金を殖やしたい。",
+"I want to grow my money with stocks.",
+"to increase"
+],
+[
+"庭の花を殖やすのが楽しみだ。",
+"I enjoy propagating the flowers in my garden.",
+"to increase"
+]
+],
+"濠": [
+[
+"しろのまわりに濠がある。",
+"There's a moat around the castle.",
+"moat"
+],
+[
+"濠の水に白い鳥がいる。",
+"There's a white bird on the moat's water.",
+"moat"
+],
+[
+"毎朝、濠にそって走っている。",
+"I run along the moat every morning.",
+"moat"
+]
+],
+"見掛ける": [
+[
+"駅で先生を見掛けた。",
+"I saw my teacher at the station.",
+"to happen to see"
+],
+[
+"最近、彼を見掛けないね。",
+"I haven't seen him around lately.",
+"to see around"
+],
+[
+"この鳥は町でもよく見掛ける。",
+"You often see this bird in town too.",
+"to see"
+]
+],
+"優": [
+[
+"数学は優だった。",
+"I got an \"excellent\" in math.",
+"excellent (grade)"
+],
+[
+"優を取るために勉強した。",
+"I studied to get an \"excellent.\"",
+"excellent (grade)"
+],
+[
+"通知表に優が三つあった。",
+"There were three \"excellents\" on my report card.",
+"excellent (grade)"
+]
+],
+"マッサージ": [
+[
+"かたのマッサージをしてもらった。",
+"I got a shoulder massage.",
+"massage"
+],
+[
+"疲れたから、マッサージに行きたい。",
+"I'm tired, so I want to go get a massage.",
+"massage"
+],
+[
+"母の足をマッサージしてあげた。",
+"I gave my mother a foot massage.",
+"massage"
+]
+]
+}

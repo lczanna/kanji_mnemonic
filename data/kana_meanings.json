@@ -1,0 +1,4997 @@
+{
+"あ|感動詞": {
+"m": "ah, oh"
+},
+"あぁ|感動詞": {
+"m": "ah, oh"
+},
+"ああ|感動詞": {
+"m": "ah, oh; yes, sure"
+},
+"あいさつ|名詞": {
+"m": "greeting; speech, address (挨拶)"
+},
+"あいだ|名詞": {
+"m": "while, during; between (間)"
+},
+"あいつ|代名詞": {
+"m": "that guy; he, she (rough)"
+},
+"あいにく|副詞": {
+"m": "unfortunately"
+},
+"あう|動詞": {
+"m": "to match, fit (合う); to meet (会う)",
+"ctx": [
+[
+"人にあ",
+"to meet (会う)"
+]
+]
+},
+"あがる|動詞": {
+"m": "(humble) to come, visit (上がる)"
+},
+"あきなう|動詞": {
+"m": "to deal in, sell (商う)"
+},
+"あく|動詞": {
+"m": "to open; to be empty, free (開く/空く)"
+},
+"あくどい|形容詞": {
+"m": "gaudy, overdone (悪どい)"
+},
+"あくび|名詞": {
+"m": "yawn (欠伸)"
+},
+"あくまで|副詞": {
+"m": "to the end, persistently (飽くまで)"
+},
+"あける|動詞": {
+"m": "to open (開ける); to empty, leave blank (空ける)"
+},
+"あこがれる|動詞": {
+"m": "to long for, admire (憧れる)"
+},
+"あし|名詞": {
+"m": "foot, leg (足)"
+},
+"あした|名詞": {
+"m": "tomorrow (明日)"
+},
+"あずかる|動詞": {
+"m": "to look after, keep (for someone) (預かる)"
+},
+"あずける|動詞": {
+"m": "to leave in someone's care, deposit (預ける)"
+},
+"あたたかい|形容詞": {
+"m": "warm (暖かい)"
+},
+"あたためる|動詞": {
+"m": "to warm up, heat up (温める)"
+},
+"あたり|名詞": {
+"m": "area, neighborhood, around (辺り)"
+},
+"あたる|動詞": {
+"m": "to hit; to fall on (a day) (当たる)",
+"ctx": [
+[
+"火にあた",
+"to warm oneself (at a fire)"
+],
+[
+"あたらない",
+"to be right, come true"
+]
+]
+},
+"あだ|名詞": {
+"m": "(あだになる) come to nothing, be in vain (徒)"
+},
+"あちこち|代名詞": {
+"m": "here and there, all over"
+},
+"あちら|代名詞": {
+"m": "that way, over there (彼方)"
+},
+"あっ|感動詞": {
+"m": "ah!; (あっという間に) in an instant"
+},
+"あつい|形容詞": {
+"m": "hot (暑い weather; 熱い to the touch); thick (厚い)"
+},
+"あつかう|動詞": {
+"m": null
+},
+"あつし|名詞": {
+"m": "(name) Atsushi"
+},
+"あてはまる|動詞": {
+"m": "to apply, fit (当てはまる)"
+},
+"あてる|動詞": {
+"m": "to assign (a role) (当てる)"
+},
+"あと|名詞": {
+"m": "after, later; (あと + time) ... more, another (後)"
+},
+"あなた|代名詞": {
+"m": "you"
+},
+"あの〜|感動詞": {
+"m": "um, excuse me"
+},
+"あびる|動詞": {
+"m": null
+},
+"あぶら|名詞": {
+"m": "oil, fat (油; あぶらっぽい: greasy)"
+},
+"あまい|形容詞": {
+"m": "sweet (甘い)"
+},
+"あまえる|動詞": {
+"m": "(お言葉にあまえて) taking you up on your offer (甘える)"
+},
+"あまり|副詞": {
+"m": "(+neg) not very, not much; too much (余り)",
+"ctx": [
+[
+"あまりの",
+"(あまりの〜に) because of the extreme ..."
+]
+]
+},
+"あやまる|動詞": {
+"m": "to apologize (謝る)"
+},
+"あら|感動詞": {
+"m": "oh! (surprise)"
+},
+"あらゆる|連体詞": {
+"m": "all, every"
+},
+"ありがとう|感動詞": {
+"m": "thank you (有難う)"
+},
+"あるいは|接続詞": {
+"m": "or (或いは); perhaps, maybe"
+},
+"あれこれ|名詞": {
+"m": "this and that; all sorts of things (彼是)"
+},
+"あわてる|動詞": {
+"m": "to panic, be flustered; to hurry (慌てる)"
+},
+"あん|名詞": {
+"m": null
+},
+"あんな|形状詞": {
+"m": "(あんなに) so, that much; that kind of"
+},
+"あんな|連体詞": {
+"m": "that kind of, such"
+},
+"あんない|名詞": {
+"m": "guidance, showing around (案内)"
+},
+"あんまり|副詞": {
+"m": "(+neg) not very, not much; too much (余り)"
+},
+"いいえ|感動詞": {
+"m": "no"
+},
+"いいや|感動詞": {
+"m": "no, nope"
+},
+"いう|動詞": {
+"m": "to say (言う); (〜という) called; that"
+},
+"いえる|動詞": {
+"m": "(〜といえる) can be said (言える)"
+},
+"いかが|副詞": {
+"m": "how; how about (如何); (いかがなさいますか) how would you like"
+},
+"いかが|形状詞": {
+"m": "how about; how (如何)"
+},
+"いかに|副詞": {
+"m": "how (如何に)",
+"ctx": [
+[
+"いかにも",
+"(いかにも) typically, just like"
+]
+]
+},
+"いき|名詞": {
+"m": "breath (息)"
+},
+"いきあたり|名詞": {
+"m": "(いきあたりばったり) haphazard, unplanned (行き当たり)"
+},
+"いきなり|副詞": {
+"m": "suddenly, all at once"
+},
+"いく|名詞": {
+"m": "(いく人か) several (people) (幾)"
+},
+"いくつ|名詞": {
+"m": "how many (幾つ)",
+"ctx": [
+[
+"おいくつ",
+"(おいくつ) how old (polite)"
+],
+[
+"いくつか",
+"(いくつか) some, several"
+],
+[
+"いくつも",
+"(いくつも) many"
+]
+]
+},
+"いくぶん|名詞": {
+"m": "somewhat, a little (幾分)"
+},
+"いくら|副詞": {
+"m": "how much (幾ら)",
+"ctx": [
+[
+"ても",
+"(いくら〜ても) no matter how"
+]
+]
+},
+"いくら|名詞": {
+"m": "how much (幾ら)"
+},
+"いけ|名詞": {
+"m": "pond (池)"
+},
+"いざ|感動詞": {
+"m": "(いざとなったら) when it comes to it, in a pinch"
+},
+"いざというとき|名詞": {
+"m": "in an emergency, when it really counts"
+},
+"いし|名詞": {
+"m": null
+},
+"いす|名詞": {
+"m": "chair (椅子)"
+},
+"いずれ|代名詞": {
+"m": "(〜のいずれか) either, one of (何れ)"
+},
+"いずれ|副詞": {
+"m": "sooner or later, eventually (何れ)"
+},
+"いそがしい|形容詞": {
+"m": "busy (忙しい)"
+},
+"いた|名詞": {
+"m": "board, plank (板)"
+},
+"いちばん|名詞": {
+"m": "most; number one (一番)"
+},
+"いっしょ|名詞": {
+"m": "together; the same (一緒)"
+},
+"いっそう|副詞": {
+"m": "even more, all the more (一層)"
+},
+"いったい|副詞": {
+"m": "(what/where) on earth (一体)"
+},
+"いっぱい|副詞": {
+"m": "full of, a lot (一杯)"
+},
+"いっぱい|名詞": {
+"m": "full (一杯)"
+},
+"いつ|代名詞": {
+"m": "when (何時)",
+"ctx": [
+[
+"いつか",
+"(いつか) someday; once, before"
+]
+]
+},
+"いつも|名詞": {
+"m": "always, usually (何時も)"
+},
+"いでる|動詞": {
+"m": "(おいでになる) to come, go, be (honorific)",
+"ctx": [
+[
+"おいでよ",
+"(おいで) come (casual)"
+]
+]
+},
+"いとこ|名詞": {
+"m": "cousin"
+},
+"いな|名詞": {
+"m": "(〜やいなや) as soon as"
+},
+"いなか|名詞": {
+"m": "countryside; hometown (田舎)"
+},
+"いま|名詞": {
+"m": "now (今)"
+},
+"いや|形状詞": {
+"m": "unpleasant; to dislike (嫌)"
+},
+"いや|感動詞": {
+"m": "no; well"
+},
+"いらいら|名詞": {
+"m": "irritated, impatient"
+},
+"いれる|動詞": {
+"m": "to put in (入れる)",
+"ctx": [
+[
+"お茶",
+"to make (tea) (淹れる)"
+]
+]
+},
+"いろいろ|形状詞": {
+"m": "various (色々)"
+},
+"いろんな|連体詞": {
+"m": "various, all kinds of (色んな)"
+},
+"いわう|動詞": {
+"m": "to celebrate (祝う)"
+},
+"いわゆる|連体詞": {
+"m": "so-called, what is called (所謂)"
+},
+"いわれ|名詞": {
+"m": "origin, story behind something (謂れ)"
+},
+"いんちき|名詞": {
+"m": "cheating, fraud; fake"
+},
+"う|感動詞": {
+"m": null
+},
+"ううん|感動詞": {
+"m": "no (casual)"
+},
+"うえ|名詞": {
+"m": "(〜うえで) in doing, for (上); (そのうえ) besides, moreover"
+},
+"うえる|動詞": {
+"m": "to plant (植える)"
+},
+"うかがう|動詞": {
+"m": "to visit (humble) (伺う); to ask (humble)"
+},
+"うがい|名詞": {
+"m": "gargling"
+},
+"うけとめる|動詞": {
+"m": "to take, accept (受け止める)"
+},
+"うすい|形容詞": {
+"m": "thin (薄い)",
+"ctx": [
+[
+"料理",
+"weak, bland (taste) (薄い)"
+]
+]
+},
+"うそ|名詞": {
+"m": "lie (嘘)"
+},
+"うだる|動詞": {
+"m": "(うだるような暑さ) sweltering heat"
+},
+"うち|名詞": {
+"m": "home, house (家); within, among (内)",
+"ctx": [
+[
+"ているうち",
+"(〜ているうちに) while doing"
+],
+[
+"のうち",
+"within, among (内)"
+],
+[
+"うちの",
+"my, our (home, family) (家)"
+]
+]
+},
+"うっ|感動詞": {
+"m": "ugh, urgh"
+},
+"うってつけ|形状詞": {
+"m": "ideal, perfectly suited (打ってつけ)"
+},
+"うつす|動詞": {
+"m": "to photograph, copy (写す); to move (移す)"
+},
+"うで|名詞": {
+"m": "arm (腕)"
+},
+"うなる|動詞": {
+"m": "to groan; to growl (唸る)"
+},
+"うぬぼれる|動詞": {
+"m": "to be conceited (自惚れる)"
+},
+"うまい|形容詞": {
+"m": "good at, skillful (上手い); delicious (美味い)",
+"ctx": [
+[
+"うまく",
+"(うまく) well, successfully"
+]
+]
+},
+"うまる|動詞": {
+"m": "to be filled, buried (埋まる)"
+},
+"うらやむ|動詞": {
+"m": "to envy (羨む)"
+},
+"うれしい|形容詞": {
+"m": "happy, glad (嬉しい)"
+},
+"うれる|動詞": {
+"m": null
+},
+"うろたえる|動詞": {
+"m": "to panic, be flustered"
+},
+"うわさ|名詞": {
+"m": "rumor (噂)"
+},
+"うん|感動詞": {
+"m": "yeah, uh-huh"
+},
+"うんてん|名詞": {
+"m": "driving (運転)"
+},
+"うーん|感動詞": {
+"m": "hmm, well"
+},
+"え|感動詞": {
+"m": "eh?; huh? (surprise, doubt)"
+},
+"えい|感動詞": {
+"m": null
+},
+"ええ|感動詞": {
+"m": "yes; well"
+},
+"えさ|名詞": {
+"m": "feed, food (for animals) (餌)"
+},
+"えだ|名詞": {
+"m": "branch (枝)"
+},
+"えっ|感動詞": {
+"m": "huh? what?"
+},
+"えんえん|副詞": {
+"m": "endlessly, on and on (延々)"
+},
+"おい|感動詞": {
+"m": "hey!"
+},
+"おいしい|形容詞": {
+"m": "delicious"
+},
+"おおいに|副詞": {
+"m": "greatly, very much (大いに)"
+},
+"おおきな|連体詞": {
+"m": "big, large (大きな)"
+},
+"おおさか|名詞": {
+"m": "(place) Osaka (大阪)"
+},
+"おかえり|感動詞": {
+"m": "welcome home (お帰り)"
+},
+"おかげ|名詞": {
+"m": "thanks to (お陰)"
+},
+"おかげさま|名詞": {
+"m": "(おかげさまで) thanks to you (I'm well) (お陰様)"
+},
+"おかしい|形容詞": {
+"m": "strange, wrong; funny (可笑しい)",
+"ctx": [
+[
+"おかしい",
+"strange, wrong; funny (可笑しい)"
+],
+[
+"おかしく",
+"strange, wrong; funny (可笑しい)"
+],
+[
+"おかしか",
+"strange, wrong; funny (可笑しい)"
+],
+[
+"おかし",
+"sweets, snacks (お菓子)"
+]
+]
+},
+"おきる|動詞": {
+"m": "to happen, occur; to get up (起きる)"
+},
+"おく|動詞": {
+"m": "to put, place (置く); (〜ておく) do in advance",
+"ctx": [
+[
+"において",
+"(〜において) in, at; regarding"
+]
+]
+},
+"おく|名詞": {
+"m": "back, inner part (奥)"
+},
+"おごる|動詞": {
+"m": "to treat (someone to a meal) (奢る)"
+},
+"おさまる|動詞": {
+"m": "to calm down, subside (治まる)"
+},
+"おざなり|名詞": {
+"m": "perfunctory, half-hearted"
+},
+"おしかける|動詞": {
+"m": "to throng to, crowd into (押しかける)"
+},
+"おしゃべり|名詞": {
+"m": "chatting, conversation (お喋り)"
+},
+"おしゃれ|名詞": {
+"m": "stylish, fashionable; dressing up (お洒落)"
+},
+"おじ|名詞": {
+"m": "uncle (叔父/伯父)"
+},
+"おそい|形容詞": {
+"m": "late; slow (遅い)"
+},
+"おそらく|副詞": {
+"m": "probably (恐らく)"
+},
+"おたく|代名詞": {
+"m": "otaku, geek; (お宅) your home; you"
+},
+"おっしゃる|動詞": {
+"m": "to say (honorific) (仰る)"
+},
+"おつ|名詞": {
+"m": "stylish, chic (乙)"
+},
+"おつかれさま|名詞": {
+"m": "(おつかれさまです) hello / thanks for your hard work (at work)"
+},
+"おととい|名詞": {
+"m": "the day before yesterday (一昨日)"
+},
+"おどる|動詞": {
+"m": "to dance (踊る)"
+},
+"おどろき|名詞": {
+"m": "surprise (驚き)"
+},
+"おどろく|動詞": {
+"m": "to be surprised (驚く)"
+},
+"おなじ|形状詞": {
+"m": "same (同じ)"
+},
+"おにぎり|名詞": {
+"m": "rice ball (お握り)"
+},
+"おはよう|感動詞": {
+"m": "good morning"
+},
+"おはようございます|感動詞": {
+"m": "good morning"
+},
+"おば|名詞": {
+"m": "aunt (伯母, 叔母)"
+},
+"おびえる|動詞": {
+"m": "to be frightened (怯える)"
+},
+"おぼれる|動詞": {
+"m": "to drown (溺れる)",
+"ctx": [
+[
+"におぼれ",
+"(〜におぼれる) to be lost in, indulge in"
+]
+]
+},
+"おまえ|代名詞": {
+"m": "you (rough) (お前)"
+},
+"おめでとう|感動詞": {
+"m": "congratulations"
+},
+"おやすみなさい|感動詞": {
+"m": "good night (お休みなさい)"
+},
+"およそ|副詞": {
+"m": "about, roughly (凡そ)"
+},
+"おりる|動詞": {
+"m": "to settle, form (dew, frost) (降りる)"
+},
+"おろす|動詞": {
+"m": "to withdraw (money); to take down (下ろす)"
+},
+"おん|名詞": {
+"m": null
+},
+"おんせん|名詞": {
+"m": "hot spring (温泉)"
+},
+"かあかあ|副詞": {
+"m": "caw caw (crow's cry)"
+},
+"かい|名詞": {
+"m": "floor, story (階)"
+},
+"かいぎ|名詞": {
+"m": "meeting, conference (会議)"
+},
+"かいさ|名詞": {
+"m": null
+},
+"かいだん|名詞": {
+"m": "stairs (階段)"
+},
+"かう|動詞": {
+"m": "to keep (a pet) (飼う); also: to buy (買う)"
+},
+"かえって|副詞": {
+"m": "on the contrary, rather (却って)"
+},
+"かえる|動詞": {
+"m": "to change, replace (変える・替える)"
+},
+"かかわる|動詞": {
+"m": "(〜にもかかわらず) despite, in spite of"
+},
+"かき|名詞": {
+"m": "persimmon (柿)"
+},
+"かく|動詞": {
+"m": "to write (書く); to draw (描く)",
+"ctx": [
+[
+"絵",
+"to draw, paint (描く)"
+]
+]
+},
+"かくす|動詞": {
+"m": "to hide (隠す)"
+},
+"かぐ|動詞": {
+"m": "to smell, sniff (嗅ぐ)"
+},
+"かけあがる|動詞": {
+"m": "to run up (stairs, a hill) (駆け上がる)"
+},
+"かける|動詞": {
+"m": "(かけごと) betting, gambling (賭け事)"
+},
+"かげん|名詞": {
+"m": "(いいかげん) careless, sloppy (加減: degree)"
+},
+"かご|名詞": {
+"m": "cage; basket (籠)"
+},
+"かざる|動詞": {
+"m": "to decorate (飾る)"
+},
+"かし|名詞": {
+"m": "(おかし) sweets, snacks (お菓子)"
+},
+"かしこまる|動詞": {
+"m": "(かしこまりました) certainly, understood (polite)"
+},
+"かす|動詞": {
+"m": "(耳をかす) to listen to (貸す: to lend)"
+},
+"かた|名詞": {
+"m": "shoulder (肩)"
+},
+"かたづく|動詞": {
+"m": "to be put in order, be tidied up (片付く)"
+},
+"かたづける|動詞": {
+"m": "to tidy up, clear away, put away (片付ける)"
+},
+"かっ|副詞": {
+"m": null
+},
+"かっこ|名詞": {
+"m": null
+},
+"かつて|副詞": {
+"m": "once, formerly (嘗て)"
+},
+"かど|名詞": {
+"m": "(street) corner (角)"
+},
+"かなう|動詞": {
+"m": "to suit, meet (a purpose) (適う)",
+"ctx": [
+[
+"どうかなっ",
+"(どうかなる) to go wrong, go crazy"
+]
+]
+},
+"かなえる|動詞": {
+"m": "to grant (a wish), make come true (叶える)"
+},
+"かならず|副詞": {
+"m": "certainly, without fail (必ず)"
+},
+"かなり|副詞": {
+"m": "fairly, quite"
+},
+"かなり|形状詞": {
+"m": "considerable, quite a lot"
+},
+"かぶ|名詞": {
+"m": "stocks, shares (株)"
+},
+"かぶせる|動詞": {
+"m": "to cover (with) (被せる)"
+},
+"かぶる|動詞": {
+"m": "to put on (one's head); to be covered with (被る)"
+},
+"かべ|名詞": {
+"m": "wall (壁)"
+},
+"かまう|動詞": {
+"m": "(〜てもかまわない) it's all right to; to mind (構う)"
+},
+"かみ|名詞": {
+"m": "hair (髪)"
+},
+"かゆい|形容詞": {
+"m": "itchy (痒い)"
+},
+"からい|形容詞": {
+"m": "spicy, hot (辛い)"
+},
+"かりる|動詞": {
+"m": "to borrow, rent (借りる)"
+},
+"かるい|形容詞": {
+"m": "light (軽い)"
+},
+"かれ|代名詞": {
+"m": "he (彼)"
+},
+"かわ|名詞": {
+"m": "skin, peel (皮)"
+},
+"かわいい|形容詞": {
+"m": "cute (可愛い)"
+},
+"かわいそう|形状詞": {
+"m": "poor, pitiful (可哀想)"
+},
+"かわいらしい|形容詞": {
+"m": "lovely, sweet, cute (可愛らしい)"
+},
+"かわく|動詞": {
+"m": "(のどが) to be thirsty (渇く); to dry (乾く)"
+},
+"かん|代名詞": {
+"m": "can, tin (缶)"
+},
+"かんしゃく|名詞": {
+"m": "temper, fit of anger (癇癪); (かんしゃくを起こす) to lose one's temper"
+},
+"かんたん|形状詞": {
+"m": "simple, easy (簡単)"
+},
+"かんとく|名詞": {
+"m": "manager, director (監督)"
+},
+"かんな|名詞": {
+"m": "plane (woodworking tool) (鉋); (かんなをかける) to plane"
+},
+"がご|名詞": {
+"m": null
+},
+"がた|名詞": {
+"m": "(plural, polite) e.g. あなたがた: you all (方)"
+},
+"がっちり|副詞": {
+"m": "firmly, tightly; solidly"
+},
+"がまん|名詞": {
+"m": "patience; (がまんする) put up with (我慢)"
+},
+"がら|名詞": {
+"m": "shell, husk (殻; かいがら: seashell)"
+},
+"がん|名詞": {
+"m": "cancer (癌)"
+},
+"きいろ|名詞": {
+"m": "yellow (黄色)"
+},
+"きかい|名詞": {
+"m": "machine (機械)"
+},
+"きく|動詞": {
+"m": "(口をきく) to speak, talk (利く)"
+},
+"きせつ|名詞": {
+"m": "season (季節)"
+},
+"きたえる|動詞": {
+"m": "to train, strengthen (鍛える)"
+},
+"きちんと|副詞": {
+"m": "properly, neatly"
+},
+"きっと|副詞": {
+"m": "surely, certainly"
+},
+"きっぷ|名詞": {
+"m": "ticket (切符)"
+},
+"きつい|形容詞": {
+"m": "tight; hard, severe"
+},
+"きつね|名詞": {
+"m": "fox (狐)"
+},
+"きのう|名詞": {
+"m": "yesterday (昨日)"
+},
+"きびしい|形容詞": {
+"m": "strict, stern; severe (厳しい)"
+},
+"きみ|代名詞": {
+"m": "you (君)"
+},
+"きゅうきゅう|副詞": {
+"m": "emergency (救急; 救急車: ambulance)"
+},
+"きゅうり|名詞": {
+"m": "cucumber (胡瓜)"
+},
+"きょうだい|名詞": {
+"m": "siblings, brother or sister (兄弟)"
+},
+"きょうみ|名詞": {
+"m": "interest (in something) (興味)"
+},
+"きれい|形状詞": {
+"m": "pretty, beautiful; clean (綺麗)"
+},
+"きんちょう|名詞": {
+"m": "nervousness, tension (緊張)"
+},
+"ぎこちない|形容詞": {
+"m": "awkward, stiff"
+},
+"ぎゅうにゅう|名詞": {
+"m": "milk (牛乳)"
+},
+"ぎょう|名詞": {
+"m": null
+},
+"ぎょっと|副詞": {
+"m": "(ぎょっとする) to be startled, shocked"
+},
+"ぎらぎら|副詞": {
+"m": "glaring, glittering"
+},
+"ぎりぎり|副詞": {
+"m": "just barely; (ぎりぎりまで) until the last moment"
+},
+"くが|名詞": {
+"m": null
+},
+"くぎり|名詞": {
+"m": "break, dividing line (区切り)"
+},
+"くじ|名詞": {
+"m": "lottery (ticket), lot (籤)"
+},
+"くじける|動詞": {
+"m": "to lose heart, be discouraged (挫ける)"
+},
+"くずす|動詞": {
+"m": "to break (a bill into change) (崩す)"
+},
+"くたくた|形状詞": {
+"m": "exhausted, worn out"
+},
+"くだける|動詞": {
+"m": "to break into pieces, smash (砕ける)"
+},
+"くだもの|名詞": {
+"m": "fruit (果物)"
+},
+"くっきり|副詞": {
+"m": "clearly, distinctly"
+},
+"くっつく|動詞": {
+"m": "to stick together; (bones) to knit (くっ付く)"
+},
+"くつ|名詞": {
+"m": "shoes (靴)"
+},
+"くつろぐ|動詞": {
+"m": "to relax, make oneself at home (寛ぐ)"
+},
+"くばる|動詞": {
+"m": "to hand out, distribute (配る)"
+},
+"くも|名詞": {
+"m": "cloud (雲)"
+},
+"くやしい|形容詞": {
+"m": "frustrating, vexing (悔しい)"
+},
+"くらす|動詞": {
+"m": "to live, get by (暮らす)"
+},
+"くわえる|動詞": {
+"m": "to hold in one's mouth (咥える)"
+},
+"くわしい|形容詞": {
+"m": "detailed (詳しい)"
+},
+"ぐっすり|副詞": {
+"m": "soundly (asleep)"
+},
+"ぐる|名詞": {
+"m": "accomplice; (ぐるになる) to be in league with"
+},
+"ぐるぐる|副詞": {
+"m": "round and round"
+},
+"けい|名詞": {
+"m": null
+},
+"けいさん|名詞": {
+"m": "calculation (計算)"
+},
+"けいたい|名詞": {
+"m": "mobile, portable (携帯; けいたい電話: cell phone)"
+},
+"けち|名詞": {
+"m": "stingy, mean (with money)"
+},
+"けっか|名詞": {
+"m": "result (結果)"
+},
+"けっきょく|名詞": {
+"m": "in the end, after all (結局)"
+},
+"けっこう|形状詞": {
+"m": "fine, all right (結構)"
+},
+"けっこん|名詞": {
+"m": "marriage (結婚)"
+},
+"ける|動詞": {
+"m": "to kick (蹴る)"
+},
+"けん|名詞": {
+"m": null
+},
+"けんか|名詞": {
+"m": "quarrel, fight (喧嘩)"
+},
+"けんこう|名詞": {
+"m": "health (健康)"
+},
+"けんしょう|名詞": {
+"m": null
+},
+"けんじ|名詞": {
+"m": "(name) Kenji"
+},
+"けんめい|形状詞": {
+"m": "(一生けんめい) as hard as one can (懸命)"
+},
+"げんかん|名詞": {
+"m": "entrance, front door (玄関)"
+},
+"こう|副詞": {
+"m": "like this, this way (斯う)",
+"ctx": [
+[
+"こう茶",
+"(こう茶) black tea (紅茶)"
+],
+[
+"こうちゃ",
+"(こうちゃ) black tea (紅茶)"
+]
+]
+},
+"こく|名詞": {
+"m": "richness, depth of flavor",
+"ctx": [
+[
+"かっこく",
+"(各国) each country"
+]
+]
+},
+"こくばん|名詞": {
+"m": "blackboard (黒板)"
+},
+"こぐ|動詞": {
+"m": "to pedal; to row (漕ぐ)",
+"ctx": [
+[
+"こぎれい",
+"(小綺麗) neat, tidy"
+]
+]
+},
+"こしょう|名詞": {
+"m": "pepper (胡椒)",
+"ctx": [
+[
+"たぶんこしょう",
+"breakdown, malfunction (故障)"
+]
+]
+},
+"こする|動詞": {
+"m": "to rub, scrape (擦る)"
+},
+"こたえる|動詞": {
+"m": "(〜にこたえる) to take a toll on (応える); to answer"
+},
+"こだま|名詞": {
+"m": "echo (木霊); (こだまする) to echo"
+},
+"こだわる|動詞": {
+"m": "to dwell on, be particular about (拘る)"
+},
+"こちら|代名詞": {
+"m": "this way, here; this (person) (此方)"
+},
+"こっけい|名詞": {
+"m": "funny, comical (滑稽)"
+},
+"こっち|代名詞": {
+"m": "this way, here; this one (此方)"
+},
+"こつこつ|副詞": {
+"m": "steadily, diligently"
+},
+"ことば|名詞": {
+"m": "word; language (言葉)"
+},
+"ことわる|動詞": {
+"m": "to refuse, turn down (断る)"
+},
+"このむ|動詞": {
+"m": "to like, prefer (好む)"
+},
+"こぼす|動詞": {
+"m": "to spill (零す)"
+},
+"こぼれる|動詞": {
+"m": "to spill, overflow (零れる)"
+},
+"こまめ|形状詞": {
+"m": "(こまめに) frequently, diligently (小まめ)"
+},
+"こまる|動詞": {
+"m": "to be in trouble, be at a loss (困る)"
+},
+"こむ|動詞": {
+"m": "to be crowded (混む)"
+},
+"こむぎ|名詞": {
+"m": "wheat (小麦); (こむぎこ) flour"
+},
+"こらえる|動詞": {
+"m": "to hold back, bear (堪える)"
+},
+"ころ|名詞": {
+"m": "time, when; around (頃)"
+},
+"こわい|形容詞": {
+"m": "scary, frightening (怖い)"
+},
+"こわす|動詞": {
+"m": "to break, damage (壊す)"
+},
+"こわれかかる|動詞": {
+"m": "to be falling apart, about to break (壊れかかる)"
+},
+"こわれる|動詞": {
+"m": "to break, be broken (壊れる)"
+},
+"こん|代名詞": {
+"m": null
+},
+"こんな|形状詞": {
+"m": "(こんなに) so, this much; this kind of"
+},
+"こんな|連体詞": {
+"m": "this kind of, such"
+},
+"こんにちは|感動詞": {
+"m": "hello; good afternoon"
+},
+"ごく|副詞": {
+"m": "very, extremely (極)"
+},
+"ごらん|名詞": {
+"m": "(〜てごらん) try ...; (ごらんなさい) look (ご覧)"
+},
+"ごろ|名詞": {
+"m": "around, about (a time) (頃)"
+},
+"さ|副詞": {
+"m": null
+},
+"さあ|感動詞": {
+"m": "come on; well, now"
+},
+"さい|名詞": {
+"m": null
+},
+"さいご|名詞": {
+"m": "last, end (最後); (さいごに) finally, in the end"
+},
+"さいふ|名詞": {
+"m": "wallet, purse (財布)"
+},
+"さえずる|動詞": {
+"m": "to chirp, sing (of birds) (囀る)"
+},
+"さがす|動詞": {
+"m": "to look for (探す)"
+},
+"さく|動詞": {
+"m": "to bloom (咲く)"
+},
+"さく|名詞": {
+"m": "to bloom (咲く)"
+},
+"さける|動詞": {
+"m": "to avoid (避ける)"
+},
+"ささげる|動詞": {
+"m": "to devote, dedicate (捧げる)"
+},
+"ささやく|動詞": {
+"m": "to whisper (囁く)"
+},
+"さしあげる|動詞": {
+"m": "(humble) to give (差し上げる)"
+},
+"さす|動詞": {
+"m": "to stab, sting (刺す); to put up (umbrella) (差す)",
+"ctx": [
+[
+"目薬",
+"to put in (eye drops) (差す)"
+],
+[
+"さされ",
+"to sting, bite (刺す)"
+],
+[
+"かさ",
+"to put up (an umbrella) (差す)"
+]
+]
+},
+"さそう|動詞": {
+"m": "to invite (誘う)"
+},
+"さっ|副詞": {
+"m": "(さっと) quickly, suddenly"
+},
+"さっぱり|副詞": {
+"m": "(さっぱり〜ない) not at all; refreshed"
+},
+"さっぱり|形状詞": {
+"m": "(さっぱりだ) hopeless, no good at all"
+},
+"さつ|名詞": {
+"m": "counter for books (冊)"
+},
+"さて|接続詞": {
+"m": "well, now, so"
+},
+"さとう|名詞": {
+"m": "sugar (砂糖)"
+},
+"さびしい|形容詞": {
+"m": "lonely (寂しい)"
+},
+"さびる|動詞": {
+"m": "to rust (錆びる)"
+},
+"さぼる|動詞": {
+"m": "to skip (school, work), slack off"
+},
+"さます|動詞": {
+"m": "to wake (someone) up (覚ます)"
+},
+"さむらい|名詞": {
+"m": "samurai (侍)"
+},
+"さめ|名詞": {
+"m": null
+},
+"さめる|動詞": {
+"m": "to cool down, fade (冷める)"
+},
+"さら|名詞": {
+"m": "plate, dish (皿)"
+},
+"さらう|動詞": {
+"m": "to carry off, sweep (攫う)"
+},
+"さらさら|副詞": {
+"m": "(flowing) with a murmur; smoothly"
+},
+"さらす|動詞": {
+"m": "to expose (to sun, etc.) (晒す)"
+},
+"さらに|副詞": {
+"m": "further, more; furthermore (更に)"
+},
+"さらに|接続詞": {
+"m": "furthermore, in addition (更に)"
+},
+"さる|連体詞": {
+"m": "monkey (猿); (さる年) Year of the Monkey (申年)"
+},
+"さわる|動詞": {
+"m": "to touch (触る)",
+"ctx": [
+[
+"気にさわ",
+"(気にさわる) to offend, get on one's nerves (障る)"
+]
+]
+},
+"ざいりょう|名詞": {
+"m": "materials, ingredients (材料)"
+},
+"ざっ|副詞": {
+"m": "(ざっと) quickly, roughly (a quick look)"
+},
+"ざっし|名詞": {
+"m": "magazine (雑誌)"
+},
+"ざわり|名詞": {
+"m": "(〜ざわり) feel, touch (触り; 足ざわり: feel underfoot)"
+},
+"しお|名詞": {
+"m": "salt (塩)"
+},
+"しかし|接続詞": {
+"m": "however, but"
+},
+"しかも|接続詞": {
+"m": "moreover, besides"
+},
+"しかる|動詞": {
+"m": "to scold (叱る)"
+},
+"しきり|副詞": {
+"m": "(しきりに) often, constantly (頻りに)"
+},
+"しくじる|動詞": {
+"m": "to fail, blunder"
+},
+"しくみ|名詞": {
+"m": "system, mechanism (仕組み)"
+},
+"しぐさ|名詞": {
+"m": "gesture, movement (仕草)"
+},
+"しげみ|名詞": {
+"m": "(name) Shigemi"
+},
+"した|名詞": {
+"m": null
+},
+"しっかり|副詞": {
+"m": "firmly, tightly; (しっかりしている) solid, reliable"
+},
+"しっぽ|名詞": {
+"m": "tail (尻尾)"
+},
+"しつけ|名詞": {
+"m": "discipline, upbringing (躾)"
+},
+"しつこい|形容詞": {
+"m": "persistent, stubborn"
+},
+"しのげる|動詞": {
+"m": "can get by, manage (凌げる)"
+},
+"しのぶ|動詞": {
+"m": "to remember fondly, honor the memory of (偲ぶ)"
+},
+"しばしば|副詞": {
+"m": "often"
+},
+"しばらく|副詞": {
+"m": "for a while (暫く)"
+},
+"しびれる|動詞": {
+"m": "to go numb, fall asleep (limb) (痺れる)"
+},
+"しま|名詞": {
+"m": "island (島)"
+},
+"しまる|動詞": {
+"m": "to close, be shut (閉まる)"
+},
+"しみ|名詞": {
+"m": "stain, spot (染み)"
+},
+"しみとおる|動詞": {
+"m": "to soak through (染み通る)"
+},
+"しみる|動詞": {
+"m": "to sting; to soak in (染みる)"
+},
+"しめきる|動詞": {
+"m": "(しめきり) deadline (締め切り)"
+},
+"しめる|動詞": {
+"m": "to close, shut (閉める); to tighten (締める)"
+},
+"しゃべる|動詞": {
+"m": "to talk, chat (喋る)"
+},
+"しゅう|名詞": {
+"m": null
+},
+"しゅみ|名詞": {
+"m": "hobby; taste (趣味)"
+},
+"しょうらい|名詞": {
+"m": "future (将来)"
+},
+"しょんぼり|副詞": {
+"m": "dejectedly, downheartedly"
+},
+"しり|名詞": {
+"m": null
+},
+"しる|名詞": {
+"m": "soup (汁); (みそしる) miso soup"
+},
+"しるし|名詞": {
+"m": "sign, token (印)"
+},
+"しれる|動詞": {
+"m": "(〜かもしれない) might, may"
+},
+"しろ|名詞": {
+"m": "castle (城)"
+},
+"じ|名詞": {
+"m": null
+},
+"じい|名詞": {
+"m": "(おじいさん) grandfather; old man"
+},
+"じこ|名詞": {
+"m": "accident (事故)"
+},
+"じしん|名詞": {
+"m": "earthquake (地震)"
+},
+"じっくり|副詞": {
+"m": "carefully, thoroughly, taking one's time"
+},
+"じっと|副詞": {
+"m": "fixedly, intently; still"
+},
+"じゃ|接続詞": {
+"m": "well then; so"
+},
+"じゃあ|接続詞": {
+"m": "well then; so"
+},
+"じゃがいも|名詞": {
+"m": "potato"
+},
+"じゃま|名詞": {
+"m": "in the way, a nuisance (邪魔)"
+},
+"じゅう|名詞": {
+"m": "gun (銃)"
+},
+"じゅうぶん|形状詞": {
+"m": "enough, sufficient (十分)"
+},
+"じゅぎょう|名詞": {
+"m": "class, lesson (授業)"
+},
+"じゅく|名詞": {
+"m": "cram school (塾)"
+},
+"じゅんばん|名詞": {
+"m": "order, turn (順番)"
+},
+"じゅんび|名詞": {
+"m": "preparation (準備)"
+},
+"じょうだん|名詞": {
+"m": "joke (冗談)"
+},
+"じょうぶ|形状詞": {
+"m": "strong, sturdy; healthy (丈夫)"
+},
+"すがた|名詞": {
+"m": "figure, appearance (姿); (すがたを現す) appear"
+},
+"すくない|形容詞": {
+"m": "few, little (少ない)",
+"ctx": [
+[
+"すくなくとも",
+"(少なくとも) at least"
+]
+]
+},
+"すくめる|動詞": {
+"m": "(肩をすくめる) to shrug (竦める)"
+},
+"すぐ|副詞": {
+"m": "immediately, soon; (すぐ近く) right near (直ぐ)"
+},
+"すぐれる|動詞": {
+"m": "(すぐれた) excellent, superior (優れる)"
+},
+"すこし|副詞": {
+"m": "a little (少し)"
+},
+"すごい|形容詞": {
+"m": "amazing, great; tremendous (凄い)"
+},
+"すごす|動詞": {
+"m": "to spend (time) (過ごす)"
+},
+"すすめる|動詞": {
+"m": "to recommend, suggest (勧める)"
+},
+"すずしい|形容詞": {
+"m": "cool, refreshing (涼しい)"
+},
+"すたれる|動詞": {
+"m": "to die out, go out of use (廃れる)"
+},
+"すっぱい|形容詞": {
+"m": "sour (酸っぱい)"
+},
+"すっぽり|副詞": {
+"m": "completely (covered)"
+},
+"すてき|形状詞": {
+"m": "lovely, nice (素敵)"
+},
+"すてる|動詞": {
+"m": "to throw away (捨てる)"
+},
+"すなわち|接続詞": {
+"m": "that is, namely (即ち)"
+},
+"すばやい|形容詞": {
+"m": "quick, swift (素早い)"
+},
+"すばらしい|形容詞": {
+"m": "wonderful, splendid (素晴らしい)"
+},
+"すべて|名詞": {
+"m": "all, everything (全て)"
+},
+"すみ|名詞": {
+"m": "corner (隅)"
+},
+"すむ|動詞": {
+"m": "to end, be settled (済む); (〜ずにすむ) to get by without",
+"ctx": [
+[
+"すみません",
+"excuse me; sorry"
+]
+]
+},
+"すらり|副詞": {
+"m": "slender, slim (すらりとした)"
+},
+"すり|名詞": {
+"m": "pickpocket (掏摸)"
+},
+"すわる|動詞": {
+"m": "to sit (座る)"
+},
+"ずいぶん|副詞": {
+"m": "quite, a lot, very (随分)"
+},
+"ずっと|副詞": {
+"m": "the whole time, all along; (comparison) much more"
+},
+"ずぶぬれ|名詞": {
+"m": "soaking wet (ずぶ濡れ)"
+},
+"せいこう|名詞": {
+"m": "success (成功)"
+},
+"せいぜい|副詞": {
+"m": "at most, at best (精々)"
+},
+"せき|名詞": {
+"m": "cough (咳)"
+},
+"せきとめる|動詞": {
+"m": "to dam up, block (せき止める)"
+},
+"せまい|形容詞": {
+"m": "narrow, small (狭い)"
+},
+"せりふ|名詞": {
+"m": "lines (in a play) (台詞)"
+},
+"せんたく|名詞": {
+"m": "laundry, washing (洗濯)"
+},
+"せんぱい|名詞": {
+"m": "senior (at work or school) (先輩)"
+},
+"せんろ|名詞": {
+"m": "railway track (線路)"
+},
+"ぜひ|副詞": {
+"m": "by all means, definitely (是非)"
+},
+"ぜんぜん|副詞": {
+"m": "(+neg) not at all (全然)"
+},
+"そ|副詞": {
+"m": null
+},
+"そいつ|代名詞": {
+"m": "that (thing, guy) (rough)"
+},
+"そう|副詞": {
+"m": "so, like that; (そうではない) that is not so"
+},
+"そう|動詞": {
+"m": "to go along (沿う; 〜にそって: along)"
+},
+"そう|名詞": {
+"m": "(〜そうだ) I hear that, they say"
+},
+"そう|形状詞": {
+"m": "(〜そうだ) looks like, seems; about to"
+},
+"そうじ|名詞": {
+"m": "cleaning (掃除)"
+},
+"そぐ|動詞": {
+"m": "to sap, dampen (削ぐ); (気力をそがれる) to be discouraged"
+},
+"そこねる|動詞": {
+"m": "(〜そこねる) to fail to, miss (doing) (損ねる)",
+"ctx": [
+[
+"機嫌",
+"(機嫌をそこねる) to be in a bad mood; to offend"
+]
+]
+},
+"そして|接続詞": {
+"m": "and, and then"
+},
+"そだてる|動詞": {
+"m": "to raise, bring up (育てる)"
+},
+"そちら|代名詞": {
+"m": "that (one); there; you, your side (其方)"
+},
+"そっ|副詞": {
+"m": "(そっか) I see; oh, right"
+},
+"そっくり|形状詞": {
+"m": "exactly alike"
+},
+"そっち|代名詞": {
+"m": "there; that one (其方)"
+},
+"そっと|副詞": {
+"m": "gently, quietly; (そっとしておく) leave alone"
+},
+"そのまま|名詞": {
+"m": "as it is, unchanged"
+},
+"そば|名詞": {
+"m": "soba, buckwheat noodles (蕎麦)",
+"ctx": [
+[
+"のそば",
+"near, beside (側)"
+]
+]
+},
+"そらす|動詞": {
+"m": "(気をそらす) to distract; to turn away (逸らす)"
+},
+"それぞれ|名詞": {
+"m": "each; respectively"
+},
+"そろう|動詞": {
+"m": "to be all present, be complete (揃う); (〜そろって) all together"
+},
+"そろそろ|副詞": {
+"m": "soon; it's about time"
+},
+"そんな|形状詞": {
+"m": "(そんなに) so, that much; such"
+},
+"そんな|連体詞": {
+"m": "such, that kind of"
+},
+"たいそう|名詞": {
+"m": "gymnastics, exercises (体操)"
+},
+"たいてい|副詞": {
+"m": "usually; most (大抵)"
+},
+"たいへん|副詞": {
+"m": "very (大変)"
+},
+"たいへん|形状詞": {
+"m": "terrible, serious; great, huge (大変)"
+},
+"たおれる|動詞": {
+"m": "to fall over, collapse (倒れる)"
+},
+"たき|名詞": {
+"m": null
+},
+"たくさん|副詞": {
+"m": "a lot, much, many (沢山)"
+},
+"たくさん|形状詞": {
+"m": "many, a lot of (沢山)",
+"ctx": [
+[
+"もうたくさん",
+"enough (I've had enough)"
+]
+]
+},
+"たくらむ|動詞": {
+"m": "to plot, scheme (企む)"
+},
+"たこ|名詞": {
+"m": "callus; (耳にたこができる) to be sick of hearing it"
+},
+"たしか|副詞": {
+"m": "if I remember right, I think (確か)"
+},
+"たしか|形状詞": {
+"m": "certain, reliable (確か); (たしかに) certainly, indeed"
+},
+"たす|動詞": {
+"m": "to add (足す)"
+},
+"たずねる|動詞": {
+"m": "to ask (尋ねる)"
+},
+"たたむ|動詞": {
+"m": "to fold; to close (a business) (畳む)"
+},
+"ただ|副詞": {
+"m": "only, just (只)"
+},
+"ただ|名詞": {
+"m": "free (of charge) (只)",
+"ctx": [
+[
+"ただの",
+"ordinary, mere, just"
+]
+]
+},
+"ただ|接続詞": {
+"m": "but, however",
+"ctx": [
+[
+"ただ今",
+"(ただ今) at the moment, right now"
+]
+]
+},
+"ただいま|名詞": {
+"m": "I'm home!; I'm back! (只今)"
+},
+"ただし|接続詞": {
+"m": "however; provided that (但し)"
+},
+"たち|名詞": {
+"m": "(plural) ...s (達), e.g. 子どもたち: children"
+},
+"たった|副詞": {
+"m": "only, just"
+},
+"たっぷり|副詞": {
+"m": "plenty, fully, a good (amount)"
+},
+"たつ|動詞": {
+"m": "to leave, depart (発つ)"
+},
+"たてる|動詞": {
+"m": "(腹をたてる) to get angry; to stand up, raise (立てる)"
+},
+"たのしい|形容詞": {
+"m": "fun, enjoyable (楽しい); (たのしそう) looking happy"
+},
+"たのむ|動詞": {
+"m": "to ask, request (頼む); (たのむよ) please"
+},
+"たぶん|副詞": {
+"m": "probably, maybe (多分)"
+},
+"たべる|動詞": {
+"m": "to eat (食べる)"
+},
+"たま|名詞": {
+"m": "bullet (弾)"
+},
+"たまご|名詞": {
+"m": "egg (卵)"
+},
+"たまたま|副詞": {
+"m": "by chance, happen to"
+},
+"たまに|副詞": {
+"m": "occasionally, once in a while"
+},
+"たまねぎ|名詞": {
+"m": "onion (玉ねぎ)"
+},
+"たまる|動詞": {
+"m": "(〜てたまらない) dying to, unbearably; to pile up (溜まる)"
+},
+"ため|名詞": {
+"m": "for (the sake of); in order to; because of"
+},
+"ためし|名詞": {
+"m": "(〜たためしがない) there has never been a case (例)"
+},
+"ためす|動詞": {
+"m": "to try, test (試す)"
+},
+"たれこめる|動詞": {
+"m": "to hang low (clouds, smog) (垂れ込める)"
+},
+"たわわ|形状詞": {
+"m": "heavily laden (with fruit) (撓わ)"
+},
+"たんじょう|名詞": {
+"m": "birth (誕生); (たんじょう日) birthday"
+},
+"だいこん|名詞": {
+"m": "daikon, Japanese radish (大根)"
+},
+"だいじょうぶ|形状詞": {
+"m": "all right, OK (大丈夫)"
+},
+"だいぶ|副詞": {
+"m": "considerably, quite (大分)"
+},
+"だぶつく|動詞": {
+"m": "to be in surplus, glut; to be baggy"
+},
+"だます|動詞": {
+"m": "to deceive, trick (騙す)"
+},
+"だまる|動詞": {
+"m": "to be silent (黙る; だまって: silently)"
+},
+"だめ|名詞": {
+"m": "no good (駄目); (〜てはだめ) must not"
+},
+"だらける|動詞": {
+"m": "to grow lazy, slack off"
+},
+"だれ|代名詞": {
+"m": "who (誰); (だれも + neg) nobody"
+},
+"だん|副詞": {
+"m": "(だんボール) cardboard (段ボール)"
+},
+"だんぜん|副詞": {
+"m": "by far, decidedly (断然)"
+},
+"だんだん|副詞": {
+"m": "gradually"
+},
+"ち|名詞": {
+"m": null
+},
+"ちがい|名詞": {
+"m": "(〜にちがいない) must be, surely; difference (違い)"
+},
+"ちがう|動詞": {
+"m": "to be different; to be wrong (違う)"
+},
+"ちっとも|副詞": {
+"m": "(ちっとも〜ない) not at all"
+},
+"ちゃ|名詞": {
+"m": null
+},
+"ちゃんと|副詞": {
+"m": "properly, well"
+},
+"ちゅうしゃ|名詞": {
+"m": "parking (駐車); (ちゅうしゃじょう) parking lot"
+},
+"ちょうだい|名詞": {
+"m": "(〜てちょうだい) please; please give me (頂戴)"
+},
+"ちょうど|副詞": {
+"m": "exactly, just (丁度)"
+},
+"ちょっと|副詞": {
+"m": "a little; just (for a moment)"
+},
+"ついに|副詞": {
+"m": "finally, at last (遂に)"
+},
+"ついばむ|動詞": {
+"m": "to peck at (啄む)"
+},
+"つかう|動詞": {
+"m": null
+},
+"つかえる|動詞": {
+"m": "can use (使える)"
+},
+"つかまる|動詞": {
+"m": "to be caught, arrested (捕まる)"
+},
+"つかむ|動詞": {
+"m": "to grab, seize (掴む)"
+},
+"つきあう|動詞": {
+"m": "to associate with, go out with (付き合う)"
+},
+"つきまとう|動詞": {
+"m": "to follow around, dog (付きまとう)"
+},
+"つく|動詞": {
+"m": "to stick, be attached (付く); to arrive (着く)",
+"ctx": [
+[
+"について",
+"(〜について) about, concerning"
+]
+]
+},
+"つくえ|名詞": {
+"m": "desk (机)"
+},
+"つくる|動詞": {
+"m": "to make (作る)"
+},
+"つぐ|動詞": {
+"m": "to join, set (a bone); to succeed, inherit (継ぐ)"
+},
+"つっこむ|動詞": {
+"m": "to thrust, stick into (突っ込む)"
+},
+"つつむ|動詞": {
+"m": "to wrap (包む)"
+},
+"つづり|名詞": {
+"m": "spelling (綴り)"
+},
+"つとめる|動詞": {
+"m": "to serve as, act as (務める)"
+},
+"つながる|動詞": {
+"m": "to be connected; to lead to (繋がる)"
+},
+"つなぐ|動詞": {
+"m": "to connect, tie (繋ぐ)"
+},
+"つぼみ|名詞": {
+"m": "(flower) bud (蕾)"
+},
+"つまり|副詞": {
+"m": "in other words, that is (to say)"
+},
+"つまる|動詞": {
+"m": "to be clogged, blocked (詰まる)",
+"ctx": [
+[
+"つまらな",
+"(つまらない) boring; trifling"
+]
+]
+},
+"つめる|動詞": {
+"m": "to pack, stuff; (席をつめる) move over (詰める)"
+},
+"つもり|名詞": {
+"m": "intend to; plan to"
+},
+"つらい|形容詞": {
+"m": "hard, painful (辛い)"
+},
+"つり|名詞": {
+"m": "fishing (釣り)"
+},
+"つるす|動詞": {
+"m": "to hang (up) (吊るす)"
+},
+"つるつる|形状詞": {
+"m": "smooth, slippery; bald"
+},
+"てき|名詞": {
+"m": "enemy (敵)"
+},
+"てつ|名詞": {
+"m": "iron (鉄)",
+"ctx": [
+[
+"地下てつ",
+"(地下鉄) subway"
+]
+]
+},
+"てら|名詞": {
+"m": "temple (寺)"
+},
+"てん|名詞": {
+"m": null
+},
+"でかい|形容詞": {
+"m": null
+},
+"できあがる|動詞": {
+"m": "to be finished, be ready (出来上がる)"
+},
+"できるだけ|副詞": {
+"m": "as much as possible (出来るだけ)"
+},
+"でん|副詞": {
+"m": null
+},
+"とうがらし|名詞": {
+"m": "red pepper, chili (唐辛子)"
+},
+"とうとう|副詞": {
+"m": "finally, at last (到頭)"
+},
+"とおり|名詞": {
+"m": "(〜とおり) as, just as (通り)"
+},
+"とがる|動詞": {
+"m": "to be pointed, sharp (尖る)"
+},
+"とき|名詞": {
+"m": "time; when (時)"
+},
+"ときおり|副詞": {
+"m": "occasionally, from time to time (時折)"
+},
+"ときつける|動詞": {
+"m": "to persuade (説きつける)"
+},
+"ときどき|名詞": {
+"m": "sometimes (時々)"
+},
+"とぎれ|名詞": {
+"m": "break, interruption (途切れ)"
+},
+"とくい|名詞": {
+"m": "good at, one's strong point (得意)"
+},
+"とける|動詞": {
+"m": "to melt, dissolve (溶ける); to be solved, come undone (解ける)"
+},
+"とこ|名詞": {
+"m": null
+},
+"ところ|名詞": {
+"m": "place (所); (〜のところ) someone's place",
+"ctx": [
+[
+"ところだった",
+"(〜ところだった) nearly, almost did"
+]
+]
+},
+"とじこめる|動詞": {
+"m": "to lock up, shut in (閉じ込める)"
+},
+"とっても|副詞": {
+"m": "very"
+},
+"とても|副詞": {
+"m": "very; (+neg) by no means, cannot possibly"
+},
+"とどく|動詞": {
+"m": "to reach; to arrive, be delivered (届く)"
+},
+"とどける|動詞": {
+"m": "to deliver; to hand in, report (to police) (届ける)"
+},
+"となえる|動詞": {
+"m": "(異をとなえる) to object, raise an objection (唱える)"
+},
+"となり|名詞": {
+"m": "next door, neighboring (隣)"
+},
+"とにかく|副詞": {
+"m": "anyway"
+},
+"とばす|動詞": {
+"m": "to skip, leave out (飛ばす)"
+},
+"とまり|名詞": {
+"m": "(お泊まり) overnight stay (泊まり)"
+},
+"とまる|動詞": {
+"m": "to stay (at a hotel) (泊まる)"
+},
+"とめる|動詞": {
+"m": "to park, stop (止める)"
+},
+"ともども|副詞": {
+"m": "together (with) (共々)"
+},
+"ともる|動詞": {
+"m": "to be lit (灯る)"
+},
+"とらえる|動詞": {
+"m": "to grasp, see (a problem); to catch (捉える)"
+},
+"とらわれる|動詞": {
+"m": "to be seized by, caught up in (囚われる)"
+},
+"とりかかる|動詞": {
+"m": "to start on, set about (取り掛かる)"
+},
+"とりつく|動詞": {
+"m": "(〜にとりつかれる) to be possessed, gripped by (取り憑く)"
+},
+"とりわけ|副詞": {
+"m": "especially, above all (取り分け)"
+},
+"とる|動詞": {
+"m": "to take; to have (a meal) (取る)"
+},
+"とれる|動詞": {
+"m": "can take, get (取れる)",
+"ctx": [
+[
+"写真",
+"(photo) to come out (撮れる)"
+]
+]
+},
+"とんでも|副詞": {
+"m": "(とんでもない) outrageous, terrible",
+"ctx": [
+[
+"いえ、とんでも",
+"(とんでもない) not at all, don't mention it"
+]
+]
+},
+"どう|副詞": {
+"m": "how; (どうか) please; (どうしても) no matter what",
+"ctx": [
+[
+"かどうか",
+"(〜かどうか) whether or not"
+],
+[
+"どうしても",
+"(どうしても) no matter what; (+neg) just won't"
+],
+[
+"どうか",
+"(どうか) please; somehow"
+]
+]
+},
+"どういう|連体詞": {
+"m": "what kind of; (どういう意味) what does ... mean"
+},
+"どおり|名詞": {
+"m": "(〜どおり) as, in accordance with (通り)"
+},
+"どきどき|副詞": {
+"m": "(heart) pounding, thumping"
+},
+"どくどく|副詞": {
+"m": "gushing (of blood, etc.)"
+},
+"どころ|名詞": {
+"m": "(〜どころではない) far from; out of the question"
+},
+"どちら|代名詞": {
+"m": "which (of two); either; where (polite) (何方)"
+},
+"どっち|代名詞": {
+"m": "which (one, way)"
+},
+"どなた|代名詞": {
+"m": "who (polite)"
+},
+"どの|連体詞": {
+"m": "which (of)",
+"ctx": [
+[
+"どのくらい",
+"(どのくらい) how much, how long"
+]
+]
+},
+"どる|動詞": {
+"m": null
+},
+"どれ|代名詞": {
+"m": "which (of several); (どれくらい) how much, how long"
+},
+"どんどん|副詞": {
+"m": "steadily, more and more; freely"
+},
+"どんな|形状詞": {
+"m": "what kind of"
+},
+"どんな|連体詞": {
+"m": "what kind of; (どんな〜でも) any, no matter what"
+},
+"どんより|副詞": {
+"m": "(of sky) gray, overcast, gloomy"
+},
+"ないし|接続詞": {
+"m": "from ... to; or (乃至)"
+},
+"なお|副詞": {
+"m": "still; even more (なおいい: even better) (尚)"
+},
+"なお|接続詞": {
+"m": "still, yet (尚)",
+"ctx": [
+[
+"なお、",
+"furthermore; please note"
+]
+]
+},
+"なか|名詞": {
+"m": "inside (中)"
+},
+"なかなか|副詞": {
+"m": "(+neg) not easily; quite"
+},
+"なかま|名詞": {
+"m": "companion, fellow, colleague (仲間)"
+},
+"ながなが|副詞": {
+"m": "at great length, for a long time (長々)"
+},
+"なくす|動詞": {
+"m": "to lose (無くす)"
+},
+"なくなる|動詞": {
+"m": "to be gone, be lost; to run out (無くなる)"
+},
+"なし|名詞": {
+"m": "without; there is no (無し)"
+},
+"なじむ|動詞": {
+"m": "to get used to, fit in (馴染む)"
+},
+"なす|動詞": {
+"m": "to form, make (成す); to do (為す)",
+"ctx": [
+[
+"なされ",
+"to do (為す)"
+]
+]
+},
+"なす|名詞": {
+"m": "(〜のなすがまま) at the mercy of"
+},
+"なつく|動詞": {
+"m": "to become attached to, take to (懐く)"
+},
+"なでる|動詞": {
+"m": "to stroke, pat (撫でる)"
+},
+"なに|代名詞": {
+"m": "what (何); (なにか) something; (なにも + neg) nothing"
+},
+"なびく|動詞": {
+"m": "to flutter, sway (in the wind) (靡く)"
+},
+"なべ|名詞": {
+"m": "pot; hot pot (鍋)"
+},
+"なま|名詞": {
+"m": null
+},
+"なみだ|名詞": {
+"m": "tears (涙)"
+},
+"なやみ|名詞": {
+"m": "worry, trouble (悩み)"
+},
+"ならぶ|動詞": {
+"m": "to line up, stand in line (並ぶ)"
+},
+"ならべる|動詞": {
+"m": "to line up, arrange, set out (並べる)"
+},
+"なるべく|副詞": {
+"m": "as much as possible"
+},
+"なん|代名詞": {
+"m": "what (何)",
+"ctx": [
+[
+"なんて",
+"(なんて〜) how ...! (exclamation)"
+],
+[
+"なんとか",
+"(なんとか) somehow, one way or another"
+],
+[
+"なんとも",
+"(なんとも思わない) think nothing of"
+]
+]
+},
+"におい|名詞": {
+"m": null
+},
+"にごる|動詞": {
+"m": "to become cloudy, muddy (濁る)"
+},
+"にじ|名詞": {
+"m": "rainbow (虹)"
+},
+"にもつ|名詞": {
+"m": "luggage, baggage (荷物)"
+},
+"にやり|副詞": {
+"m": "(にやりと笑う) to grin"
+},
+"にわとり|名詞": {
+"m": "chicken (鶏)"
+},
+"にんじん|名詞": {
+"m": "carrot (人参)"
+},
+"ぬぐ|動詞": {
+"m": "to take off (clothes, shoes) (脱ぐ)"
+},
+"ぬりたてる|動詞": {
+"m": "(ぬりたて) freshly painted (塗り立て)"
+},
+"ぬる|動詞": {
+"m": "to paint; to spread, apply (塗る)"
+},
+"ぬるい|形容詞": {
+"m": "lukewarm (温い)"
+},
+"ねえ|感動詞": {
+"m": "hey; say (to get someone's attention)"
+},
+"ねこ|名詞": {
+"m": "cat (猫)"
+},
+"ねじる|動詞": {
+"m": "to twist, turn (捻る)"
+},
+"ねた|名詞": {
+"m": "slept, went to bed (寝た, past of 寝る)"
+},
+"ねだん|名詞": {
+"m": "price (値段)"
+},
+"ねぼう|名詞": {
+"m": "oversleeping (寝坊)"
+},
+"ねむい|形容詞": {
+"m": "sleepy (眠い)"
+},
+"ねらう|動詞": {
+"m": "to aim at, target (狙う)"
+},
+"ねる|動詞": {
+"m": "to sleep, go to bed (寝る)"
+},
+"のこす|動詞": {
+"m": "to leave (behind) (残す)"
+},
+"のす|動詞": {
+"m": null
+},
+"のせる|動詞": {
+"m": "to put on, place on (載せる)"
+},
+"のぞく|動詞": {
+"m": "to peek, look into (覗く)"
+},
+"のち|名詞": {
+"m": "later, after (後; 雨のち晴れ: rain, then sunny)"
+},
+"のど|名詞": {
+"m": "throat (喉); (のどが渇く) to be thirsty"
+},
+"のぼる|動詞": {
+"m": "to rise; to amount to (上る/昇る)"
+},
+"のぼれる|動詞": {
+"m": "can climb, can go up (登れる)"
+},
+"のらりくらり|副詞": {
+"m": "idly, lazily"
+},
+"のりば|名詞": {
+"m": "boarding place; (バスのりば) bus stop (乗り場)"
+},
+"のる|動詞": {
+"m": "to get on, ride (乗る)"
+},
+"のろい|名詞": {
+"m": "curse (呪い)"
+},
+"のろい|形容詞": {
+"m": "curse (呪い)"
+},
+"のろし|名詞": {
+"m": "signal fire, smoke signal (狼煙)"
+},
+"のんびり|副詞": {
+"m": "leisurely, relaxed"
+},
+"はい|感動詞": {
+"m": "yes; OK; here you are"
+},
+"はいる|動詞": {
+"m": "to enter; to be in (入る)",
+"ctx": [
+[
+"うはいりますか",
+"(は + いる) to be needed (要る)"
+]
+]
+},
+"はう|動詞": {
+"m": null
+},
+"はがき|名詞": {
+"m": "postcard (葉書)"
+},
+"はくぶつ|名詞": {
+"m": "(はくぶつかん) museum (博物館)"
+},
+"はぐくむ|動詞": {
+"m": "to foster, nurture, raise (育む)"
+},
+"はける|動詞": {
+"m": "to drain, flow off (捌ける)"
+},
+"はげしい|形容詞": {
+"m": "intense, heavy, violent (激しい)"
+},
+"はさむ|動詞": {
+"m": "to catch, pinch (between) (挟む)"
+},
+"はし|名詞": {
+"m": "bridge (橋)"
+},
+"はしご|名詞": {
+"m": "ladder"
+},
+"はじめて|副詞": {
+"m": "for the first time (初めて); (〜てはじめて) only after"
+},
+"はず|名詞": {
+"m": "should, expected to (筈)"
+},
+"はずかしい|形容詞": {
+"m": "embarrassed, shy (恥ずかしい)"
+},
+"はずす|動詞": {
+"m": "to remove, take off; to exclude (外す)"
+},
+"はた|名詞": {
+"m": "flag (旗)"
+},
+"はだ|名詞": {
+"m": "skin (肌)"
+},
+"はっきり|副詞": {
+"m": "clearly"
+},
+"はま|名詞": {
+"m": null
+},
+"はめる|動詞": {
+"m": "to put on (gloves, a ring) (嵌める)"
+},
+"はやい|形容詞": {
+"m": "fast, quick; early (速い・早い)"
+},
+"はやる|動詞": {
+"m": "to be popular, in fashion (流行る)"
+},
+"はらう|動詞": {
+"m": "to pay (払う)"
+},
+"はらはら|副詞": {
+"m": "(はらはらする) nervous, on edge, in suspense"
+},
+"はる|動詞": {
+"m": "to stick, put on, paste (貼る)"
+},
+"はるか|形状詞": {
+"m": "(はるかに) far, by far (遥か)"
+},
+"はんこ|名詞": {
+"m": "personal seal, stamp (判子)"
+},
+"ばあ|名詞": {
+"m": "(おばあさん) grandmother; old woman"
+},
+"ばかげる|動詞": {
+"m": "(ばかげた) silly, ridiculous (馬鹿げる)"
+},
+"ばったり|副詞": {
+"m": "(ばったり会う) run into by chance",
+"ctx": [
+[
+"倒れ",
+"(fall) with a thud, suddenly"
+]
+]
+},
+"ばらす|動詞": {
+"m": "to reveal, expose (a secret)"
+},
+"ぱく|名詞": {
+"m": "(1ぱく) counter for nights' stay (泊)"
+},
+"ぱらぱら|副詞": {
+"m": "pitter-patter (light rain falling)"
+},
+"ひいき|名詞": {
+"m": "favorite (贔屓); favoritism"
+},
+"ひがい|名詞": {
+"m": "damage, harm (被害)"
+},
+"ひきだす|動詞": {
+"m": "to pull out, draw out (引き出す); (ひきだし) drawer",
+"ctx": [
+[
+"ひきだしに",
+"drawer (引き出し)"
+]
+]
+},
+"ひくい|形容詞": {
+"m": "low (低い)"
+},
+"ひける|動詞": {
+"m": "can play (an instrument) (弾ける)"
+},
+"ひさしい|形容詞": {
+"m": "(ひさしぶり) for the first time in a long while (久しい)"
+},
+"ひじ|名詞": {
+"m": "elbow (肘)"
+},
+"ひっきり|名詞": {
+"m": "(ひっきりなし) nonstop, incessant"
+},
+"ひと|名詞": {
+"m": "one, a (一)"
+},
+"ひとり|名詞": {
+"m": "one person (一人); (〜のひとり) one of"
+},
+"ひどい|形容詞": {
+"m": "terrible, awful (酷い); (ひどく) badly, very"
+},
+"ひま|名詞": {
+"m": "free time; free (暇)"
+},
+"ひも|名詞": {
+"m": "string, cord (紐)"
+},
+"ひょっと|副詞": {
+"m": "(ひょっとすると) possibly, perhaps"
+},
+"ひりひり|副詞": {
+"m": "stinging, smarting"
+},
+"ひろう|動詞": {
+"m": "to pick up (拾う)"
+},
+"ひんする|動詞": {
+"m": "(〜にひんする) to be on the verge of (瀕する)"
+},
+"び|名詞": {
+"m": null
+},
+"びっしょり|副詞": {
+"m": "drenched, soaking wet"
+},
+"びん|名詞": {
+"m": "bottle, jar (瓶)"
+},
+"ぴたり|副詞": {
+"m": "exactly, perfectly"
+},
+"ぴったり|副詞": {
+"m": "exactly, perfectly (fit); closely"
+},
+"ぴったり|形状詞": {
+"m": "exactly; perfectly (fitting)"
+},
+"ぴりぴり|副詞": {
+"m": "stinging, tingling"
+},
+"ぴんぴん|副詞": {
+"m": "alive and kicking, lively"
+},
+"ふう|名詞": {
+"m": "way, manner (風; そんなふうに: like that)"
+},
+"ふえる|動詞": {
+"m": "to increase (増える)"
+},
+"ふくろ|名詞": {
+"m": "bag (袋)"
+},
+"ふける|動詞": {
+"m": "to grow old, age (老ける)"
+},
+"ふさわしい|形容詞": {
+"m": "suitable, appropriate (相応しい)"
+},
+"ふしぎ|名詞": {
+"m": "strange, mysterious (不思議)"
+},
+"ふじ|名詞": {
+"m": "(place) Fuji (富士), as in Mt. Fuji"
+},
+"ふた|名詞": {
+"m": "lid, cover (蓋)"
+},
+"ふだん|名詞": {
+"m": "usually, normally (普段)"
+},
+"ふつう|名詞": {
+"m": "normal, ordinary, usual (普通)"
+},
+"ふと|副詞": {
+"m": "suddenly, by chance"
+},
+"ふとん|名詞": {
+"m": "futon, bedding (布団)"
+},
+"ふる|動詞": {
+"m": "to fall (rain, snow) (降る)",
+"ctx": [
+[
+"しっぽ",
+"to wag, wave (振る)"
+]
+]
+},
+"ふるまう|動詞": {
+"m": "to behave, act (振る舞う)"
+},
+"ぶくろ|名詞": {
+"m": "bag (袋); (レジぶくろ) shopping bag"
+},
+"ぶつ|動詞": {
+"m": "to hit, strike (打つ)"
+},
+"ぶつかる|動詞": {
+"m": "to bump into, crash into"
+},
+"ぶつける|動詞": {
+"m": "to hit, bump into; to throw at"
+},
+"ぶらっ|副詞": {
+"m": "(ぶらっと) casually, without plan"
+},
+"へいたい|名詞": {
+"m": "soldier (兵隊)"
+},
+"へえ|感動詞": {
+"m": "oh?; really?; wow"
+},
+"へらす|動詞": {
+"m": "to reduce, cut down (減らす)"
+},
+"へる|動詞": {
+"m": "to decrease (減る); (腹がへる) get hungry"
+},
+"へん|名詞": {
+"m": "area, around (辺); (そこらへん) around there, in that respect"
+},
+"へー|感動詞": {
+"m": "oh?; wow, really?"
+},
+"べんとう|名詞": {
+"m": "boxed lunch, bento (弁当)"
+},
+"ほ|副詞": {
+"m": null
+},
+"ほう|名詞": {
+"m": "direction, side (方); (〜ほうが) the one that is ..., more"
+},
+"ほうき|名詞": {
+"m": "broom (箒)"
+},
+"ほうだい|名詞": {
+"m": "(〜ほうだい) as much as one likes, unlimited (放題)"
+},
+"ほうちょう|名詞": {
+"m": "kitchen knife (包丁)"
+},
+"ほえる|動詞": {
+"m": "to bark, howl (吠える)"
+},
+"ほぐれる|動詞": {
+"m": "to come loose, unravel (解れる)"
+},
+"ほけん|名詞": {
+"m": "insurance (保険)"
+},
+"ほし|名詞": {
+"m": "star (星)"
+},
+"ほす|動詞": {
+"m": null
+},
+"ほっそり|副詞": {
+"m": "slender, slim"
+},
+"ほっと|副詞": {
+"m": "(ほっとする) to feel relieved"
+},
+"ほとんど|名詞": {
+"m": "almost, nearly; most; (+neg) hardly (殆ど)"
+},
+"ほどける|動詞": {
+"m": "to come untied, come undone (解ける)"
+},
+"ほね|名詞": {
+"m": "bone (骨)"
+},
+"ほのか|形状詞": {
+"m": "faint, slight (仄か)"
+},
+"ほふく|名詞": {
+"m": "crawling (匍匐); (ほふく前進) crawling forward"
+},
+"ほめる|動詞": {
+"m": "to praise (褒める)"
+},
+"ほら|感動詞": {
+"m": "look!; see!"
+},
+"ほりかえす|動詞": {
+"m": "to dig up, turn over (soil) (掘り返す)"
+},
+"ほんと|名詞": {
+"m": "really, truly (本当)"
+},
+"ほんとう|名詞": {
+"m": "truth; (ほんとうに) really, truly (本当)"
+},
+"ほんの|連体詞": {
+"m": "just, only, mere"
+},
+"ぼうし|名詞": {
+"m": "hat, cap (帽子)"
+},
+"ぼく|代名詞": {
+"m": "I, me (僕; used by boys and men)"
+},
+"ぼけっと|副詞": {
+"m": "idly, absent-mindedly"
+},
+"ぼんやり|副詞": {
+"m": "vaguely, dimly; absent-minded"
+},
+"ぽしゃる|動詞": {
+"m": "to fall through, fail (of a plan)"
+},
+"ま|名詞": {
+"m": "(いつのまにか) before one knew it (間)"
+},
+"まあ|副詞": {
+"m": "well; I suppose; more or less"
+},
+"まあまあ|副詞": {
+"m": "so-so, not bad"
+},
+"まく|動詞": {
+"m": "to wind, wrap (巻く)"
+},
+"まさか|副詞": {
+"m": "surely not, no way; (まさかの時) in an emergency"
+},
+"まさに|副詞": {
+"m": "exactly, truly (正に)"
+},
+"まさる|動詞": {
+"m": "to surpass, be better than (勝る)"
+},
+"まし|形状詞": {
+"m": "(〜のほうがまし) better, preferable"
+},
+"まして|副詞": {
+"m": "let alone, much less (況して)"
+},
+"まじめ|形状詞": {
+"m": "serious, earnest (真面目)"
+},
+"まず|副詞": {
+"m": "first (of all) (先ず)"
+},
+"また|副詞": {
+"m": "again; also (又)"
+},
+"また|接続詞": {
+"m": "again; also (又)"
+},
+"まだ|副詞": {
+"m": "still; (not) yet (未だ)"
+},
+"まっすぐ|副詞": {
+"m": "straight (真っ直ぐ)"
+},
+"まったく|副詞": {
+"m": "completely; (+neg) not at all (全く)"
+},
+"まつり|名詞": {
+"m": "festival (祭り)"
+},
+"まとまり|名詞": {
+"m": "unity, coherence (纏まり)"
+},
+"まとまる|動詞": {
+"m": "to come together, be settled (纏まる)"
+},
+"まとめる|動詞": {
+"m": "to put together, gather; to summarize (纏める)"
+},
+"まにあう|動詞": {
+"m": "to be in time (for) (間に合う)"
+},
+"まね|名詞": {
+"m": "imitation, copying (真似); (まねをする) to imitate"
+},
+"まぶしい|形容詞": {
+"m": "dazzling, bright (眩しい)"
+},
+"まま|名詞": {
+"m": "still, unchanged (〜たまま: with ... still); (このままでは) if things stay like this"
+},
+"まゆ|名詞": {
+"m": "eyebrow (眉); (まゆ一つ動かさない) not bat an eye"
+},
+"まるい|形容詞": {
+"m": "round (丸い; まるくなる: curl up)"
+},
+"まるで|副詞": {
+"m": "just like, as if; (〜ない) not at all"
+},
+"まわり|名詞": {
+"m": "around, surroundings (周り)"
+},
+"まんざら|副詞": {
+"m": "(まんざら〜ない) not entirely; not bad at all"
+},
+"まんじゅう|名詞": {
+"m": "steamed bun with sweet filling (饅頭)"
+},
+"みかけ|名詞": {
+"m": "outward appearance, looks (見かけ)"
+},
+"みかん|名詞": {
+"m": "mandarin orange (蜜柑)"
+},
+"みがく|動詞": {
+"m": "to brush, polish (磨く)"
+},
+"みじかい|形容詞": {
+"m": "short (短い)"
+},
+"みそ|名詞": {
+"m": "miso (味噌); (みそしる) miso soup"
+},
+"みつける|動詞": {
+"m": "to find (見つける)"
+},
+"みどり|名詞": {
+"m": "Midori (in a name, e.g. みどり商事); green (緑)"
+},
+"みな|名詞": {
+"m": "everyone (皆); (みなさん) everyone (polite)"
+},
+"みなぎる|動詞": {
+"m": "to be filled with, overflow (漲る)"
+},
+"みなす|動詞": {
+"m": "to regard as, consider (見なす)"
+},
+"みるみる|副詞": {
+"m": "before one's eyes, very quickly (見る見る)"
+},
+"みんな|名詞": {
+"m": "everyone (皆)"
+},
+"むかえ|名詞": {
+"m": "meeting, picking up (迎え; むかえに行く: go to pick up)"
+},
+"むかえる|動詞": {
+"m": "to meet, welcome (迎える; むかえに行く: go to pick up)"
+},
+"むく|動詞": {
+"m": "to peel (剥く)"
+},
+"むくろじ|名詞": {
+"m": "soapberry tree (無患子)"
+},
+"むける|動詞": {
+"m": "to turn toward (向ける)"
+},
+"むし|名詞": {
+"m": "insect, bug (虫)"
+},
+"むしろ|副詞": {
+"m": "rather"
+},
+"むすめ|名詞": {
+"m": "daughter (娘)"
+},
+"むずかしい|形容詞": {
+"m": "difficult (難しい)"
+},
+"むだ|名詞": {
+"m": "waste; wasteful, useless (無駄)"
+},
+"むね|名詞": {
+"m": "chest, breast (胸)"
+},
+"むら|名詞": {
+"m": "village (村)"
+},
+"めいわく|名詞": {
+"m": "trouble, inconvenience (迷惑)"
+},
+"めくる|動詞": {
+"m": "to turn (pages); to pull back (a cover) (捲る)"
+},
+"めぐる|動詞": {
+"m": "(〜をめぐって) concerning, over (巡る)"
+},
+"めげる|動詞": {
+"m": "to be discouraged; (〜にもめげず) undaunted by"
+},
+"めしあがる|動詞": {
+"m": "to eat, drink (polite) (召し上がる)"
+},
+"めちゃくちゃ|名詞": {
+"m": "a mess; (めちゃくちゃにする) to wreck (滅茶苦茶)"
+},
+"めでたい|形容詞": {
+"m": "happy, auspicious (目出度い); (おめでたい人) naive, gullible"
+},
+"めん|名詞": {
+"m": null
+},
+"めんどう|名詞": {
+"m": "trouble, bother; troublesome (面倒)"
+},
+"もう|副詞": {
+"m": "already; (もういい) enough; more"
+},
+"もえる|動詞": {
+"m": "to burn (燃える); (もえるゴミ) burnable garbage"
+},
+"もくもく|副詞": {
+"m": "billowing (smoke, clouds)"
+},
+"もし|副詞": {
+"m": "if (若し); (もしかして/もしかすると) perhaps"
+},
+"もたらす|動詞": {
+"m": "to bring about (齎す)"
+},
+"もたれる|動詞": {
+"m": "to lean against, lean on (凭れる)"
+},
+"もち|名詞": {
+"m": "(もち時間) time allowed, allotted time (持ち)"
+},
+"もちろん|副詞": {
+"m": "of course (勿論)"
+},
+"もったい|名詞": {
+"m": "(もったいない) wasteful; too good for"
+},
+"もっと|副詞": {
+"m": "more; even more"
+},
+"もっとも|形状詞": {
+"m": "reasonable, natural, understandable (尤も)"
+},
+"もつ|動詞": {
+"m": "to have, hold (持つ)",
+"ctx": [
+[
+"もってこい",
+"(もってこい) ideal, perfect for"
+]
+]
+},
+"もつれる|動詞": {
+"m": "to get tangled (縺れる; 足がもつれる: stumble)"
+},
+"もと|名詞": {
+"m": "origin, source (元)",
+"ctx": [
+[
+"がもとで",
+"cause (元)"
+],
+[
+"をもとに",
+"(〜をもとに) based on (元)"
+],
+[
+"のもとに",
+"under, in the care of (下)"
+]
+]
+},
+"もどす|動詞": {
+"m": "to put back, return (戻す)"
+},
+"もどる|動詞": {
+"m": "to come back, return (戻る)"
+},
+"もの|名詞": {
+"m": "thing (物); (〜ものだ) used to; really",
+"ctx": [
+[
+"たいもの",
+"(〜たいものだ) I really want to"
+]
+]
+},
+"もはや|副詞": {
+"m": "(+neg) no longer; already"
+},
+"もめる|動詞": {
+"m": "to quarrel, argue (揉める)"
+},
+"もり|名詞": {
+"m": "forest, woods (森)"
+},
+"もろい|形容詞": {
+"m": "fragile; (情にもろい) easily moved, soft-hearted (脆い)"
+},
+"もん|名詞": {
+"m": "(casual もの) because; thing",
+"ctx": [
+[
+"ちゅうもん",
+"(ちゅうもん) order (注文)"
+]
+]
+},
+"もんく|名詞": {
+"m": "complaint (文句)"
+},
+"や|名詞": {
+"m": "(やちん) rent (家賃)"
+},
+"やかましい|形容詞": {
+"m": "noisy; strict, nagging (喧しい)"
+},
+"やがて|副詞": {
+"m": "before long, soon"
+},
+"やきそば|名詞": {
+"m": "fried noodles (焼きそば)"
+},
+"やく|動詞": {
+"m": "to bake, grill, roast (焼く)"
+},
+"やくする|動詞": {
+"m": null
+},
+"やけど|名詞": {
+"m": "burn (injury) (火傷)"
+},
+"やさい|名詞": {
+"m": "vegetable (野菜)"
+},
+"やせる|動詞": {
+"m": "to lose weight, get thin (痩せる)"
+},
+"やぞう|名詞": {
+"m": null
+},
+"やっと|副詞": {
+"m": "at last, finally"
+},
+"やっぱり|副詞": {
+"m": "after all; as expected"
+},
+"やつ|名詞": {
+"m": "guy, fellow (奴)"
+},
+"やはり|副詞": {
+"m": "as expected; after all (矢張り)"
+},
+"やぶれる|動詞": {
+"m": "to get torn, rip (破れる)"
+},
+"やま|名詞": {
+"m": "mountain (山)"
+},
+"やまやま|名詞": {
+"m": "(〜はやまやまだが) would really like to, but (山々)"
+},
+"やめる|動詞": {
+"m": "to stop, quit (止める・辞める)"
+},
+"やや|副詞": {
+"m": "somewhat, a little"
+},
+"やらす|動詞": {
+"m": "to make (someone) do, let do"
+},
+"やわらかい|形容詞": {
+"m": "soft, tender (柔らかい)"
+},
+"ゆか|名詞": {
+"m": "floor (床)"
+},
+"ゆかた|名詞": {
+"m": "yukata, summer kimono (浴衣)"
+},
+"ゆずる|動詞": {
+"m": "to give up (a seat) to, hand over (譲る)"
+},
+"ゆっくり|副詞": {
+"m": "slowly; (ゆっくり休む) take it easy"
+},
+"ゆとり|名詞": {
+"m": "room, leeway; (ゆとりのある) relaxed, comfortable"
+},
+"ゆみ|名詞": {
+"m": "(name) Yumi"
+},
+"ゆるい|形容詞": {
+"m": "loose; gentle, lenient (緩い)"
+},
+"ゆれる|動詞": {
+"m": "to shake, sway (揺れる)"
+},
+"よう|形状詞": {
+"m": "(〜ようだ) seems, looks like; (〜ように) so that; like"
+},
+"ようやく|副詞": {
+"m": "finally, at last (漸く)"
+},
+"よく|副詞": {
+"m": "well, carefully; often (良く)"
+},
+"よけい|副詞": {
+"m": "all the more, even more (余計)"
+},
+"よじれる|動詞": {
+"m": "to twist; (腹がよじれる) split one's sides laughing"
+},
+"よす|動詞": {
+"m": "to stop, quit (止す); (よしなさい) stop it, don't"
+},
+"よそう|動詞": {
+"m": "to serve (food), dish up (装う)"
+},
+"よっ|名詞": {
+"m": null
+},
+"よめ|名詞": {
+"m": "bride, wife (嫁); (お嫁に行く) to get married"
+},
+"よりどころ|名詞": {
+"m": "something to rely on, support (拠り所)"
+},
+"よろける|動詞": {
+"m": "to stagger, stumble"
+},
+"よろしい|形容詞": {
+"m": "good, all right (宜しい; polite)"
+},
+"らくらく|副詞": {
+"m": "easily, effortlessly (楽々)"
+},
+"りんご|名詞": {
+"m": "apple (林檎)"
+},
+"れいぞう|名詞": {
+"m": "(れいぞうこ) refrigerator (冷蔵庫)"
+},
+"れきし|名詞": {
+"m": "history (歴史)"
+},
+"れんしゅう|名詞": {
+"m": "practice (練習)"
+},
+"れんらく|名詞": {
+"m": "contact, getting in touch (連絡)"
+},
+"ろうそく|名詞": {
+"m": "candle (蝋燭)"
+},
+"わあ|感動詞": {
+"m": "wow!"
+},
+"わかる|動詞": {
+"m": "to understand; to know, find out (分かる)"
+},
+"わがまま|名詞": {
+"m": "selfish; selfishness (我儘)"
+},
+"わきでる|動詞": {
+"m": "to well up, gush out (湧き出る)"
+},
+"わけ|名詞": {
+"m": "(〜わけだ) no wonder, that means; (〜わけではない) it is not that; (こういうわけで) for this reason"
+},
+"わざと|副詞": {
+"m": "on purpose, deliberately"
+},
+"わたし|代名詞": {
+"m": "I, me (私)"
+},
+"わたす|動詞": {
+"m": "to hand over, give (渡す)"
+},
+"わる|動詞": {
+"m": "to break, crack; to divide (割る)"
+},
+"われわれ|代名詞": {
+"m": "we (我々)"
+},
+"アイデア|名詞": {
+"m": "idea"
+},
+"アイドル|名詞": {
+"m": "idol (pop star)"
+},
+"アイルランド|名詞": {
+"m": "(place) Ireland"
+},
+"アイロン|名詞": {
+"m": "iron (for clothes); (アイロンをかける) to iron"
+},
+"アウト|名詞": {
+"m": "out (sports); (〜たらアウト) that's it, you're out"
+},
+"アキラ|名詞": {
+"m": "(name) Akira"
+},
+"アクリル|名詞": {
+"m": "acrylic"
+},
+"アスピリン|名詞": {
+"m": "aspirin"
+},
+"アップ|名詞": {
+"m": "increase, raise (e.g. in pay)"
+},
+"アドバルーン|名詞": {
+"m": "advertising balloon"
+},
+"アナウンス|名詞": {
+"m": "announcement"
+},
+"アバウト|名詞": {
+"m": "rough, sloppy, easygoing"
+},
+"アパート|名詞": {
+"m": "apartment"
+},
+"アフリカ|名詞": {
+"m": "(place) Africa"
+},
+"アプローチ|名詞": {
+"m": "approach"
+},
+"アマチュア|名詞": {
+"m": "amateur"
+},
+"アメリカ|名詞": {
+"m": "(place) America, USA"
+},
+"アラビア|名詞": {
+"m": "(place) Arabia; (アラビア語) Arabic"
+},
+"アリス|名詞": {
+"m": "(name) Alice"
+},
+"アリゾナ|名詞": {
+"m": "(place) Arizona"
+},
+"アルバム|名詞": {
+"m": "(photo) album"
+},
+"アレルギー|名詞": {
+"m": "allergy"
+},
+"アン|名詞": {
+"m": "(name) Ann"
+},
+"アンケート|名詞": {
+"m": "questionnaire, survey"
+},
+"アンディ|名詞": {
+"m": "(name) Andy"
+},
+"アンドレア|名詞": {
+"m": "(name) Andrea"
+},
+"アーア|感動詞": {
+"m": "ah, oh no (sigh)"
+},
+"イエス|名詞": {
+"m": "yes"
+},
+"イギリス|名詞": {
+"m": "(place) Britain, the UK"
+},
+"イディオム|名詞": {
+"m": "idiom"
+},
+"イベント|名詞": {
+"m": "event"
+},
+"イルカ|名詞": {
+"m": "dolphin"
+},
+"インカ|名詞": {
+"m": "Inca"
+},
+"インチ|名詞": {
+"m": "inch"
+},
+"インド|名詞": {
+"m": "(place) India"
+},
+"イースト|名詞": {
+"m": "yeast"
+},
+"ウィリー|名詞": {
+"m": "(name) Willie"
+},
+"ウイスキー|名詞": {
+"m": "whisky"
+},
+"ウェールズ|名詞": {
+"m": "(place) Wales"
+},
+"ウエスト|名詞": {
+"m": "waist",
+"ctx": [
+[
+"ウエスト夫妻",
+"(name) West"
+],
+[
+"ウエスト（",
+"(name) West"
+]
+]
+},
+"ウサギ|名詞": {
+"m": "rabbit (兎)"
+},
+"ウッスラ|名詞": {
+"m": "slightly, faintly (薄っすら)"
+},
+"ウッド|名詞": {
+"m": "(name) Wood"
+},
+"エイミー|名詞": {
+"m": "(name) Amy"
+},
+"エジソン|名詞": {
+"m": "(name) Edison"
+},
+"エスカレーター|名詞": {
+"m": "escalator"
+},
+"エミー|名詞": {
+"m": "(name) Amy"
+},
+"エリート|名詞": {
+"m": "elite"
+},
+"エレン|名詞": {
+"m": "(name) Ellen"
+},
+"エンジン|名詞": {
+"m": "engine"
+},
+"エントリー|名詞": {
+"m": "entry"
+},
+"エーカー|名詞": {
+"m": "acre"
+},
+"オイデイプス|名詞": {
+"m": "(name) Oedipus"
+},
+"オフィス|名詞": {
+"m": "office"
+},
+"オペラ|名詞": {
+"m": "opera"
+},
+"オメオメ|名詞": {
+"m": "shamelessly, brazenly"
+},
+"オリーブ|名詞": {
+"m": "olive"
+},
+"オレンジ|名詞": {
+"m": "orange"
+},
+"オーケストラ|名詞": {
+"m": "orchestra"
+},
+"オートメーション|名詞": {
+"m": "automation"
+},
+"オーロラ|名詞": {
+"m": "aurora"
+},
+"カウチ|名詞": {
+"m": "couch (カウチポテト: couch potato)"
+},
+"カウボーイ|名詞": {
+"m": "cowboy"
+},
+"カウンター|名詞": {
+"m": "counter (service desk)"
+},
+"カエル|名詞": {
+"m": "frog (蛙)"
+},
+"カギ|名詞": {
+"m": "key (鍵)"
+},
+"カタカナ|名詞": {
+"m": "katakana (片仮名)"
+},
+"カタログ|名詞": {
+"m": "catalog"
+},
+"カッと|副詞": {
+"m": "(カッとなる) to flare up, lose one's temper"
+},
+"カッコウ|名詞": {
+"m": "cuckoo (郭公)"
+},
+"カップ|名詞": {
+"m": "cup"
+},
+"カナダ|名詞": {
+"m": "(place) Canada"
+},
+"カバー|名詞": {
+"m": "cover"
+},
+"カメラ|名詞": {
+"m": "camera"
+},
+"カラオケ|名詞": {
+"m": "karaoke"
+},
+"カラー|名詞": {
+"m": "collar"
+},
+"カリフォルニア|名詞": {
+"m": "(place) California"
+},
+"カレンダー|名詞": {
+"m": "calendar"
+},
+"カレー|名詞": {
+"m": "curry",
+"ctx": [
+[
+"経由",
+"(place) Calais (France)"
+]
+]
+},
+"カロリー|名詞": {
+"m": "calorie"
+},
+"カーテン|名詞": {
+"m": "curtain"
+},
+"カード|名詞": {
+"m": "card"
+},
+"カードキー|名詞": {
+"m": "key card"
+},
+"カーペット|名詞": {
+"m": "carpet"
+},
+"ガス|名詞": {
+"m": "gas"
+},
+"ガソリン|名詞": {
+"m": "gasoline, petrol"
+},
+"ガチッ|副詞": {
+"m": "with a clang, clash (of metal)"
+},
+"ガチョウ|名詞": {
+"m": "goose"
+},
+"ガム|名詞": {
+"m": "chewing gum"
+},
+"ガラス|名詞": {
+"m": "glass (硝子)"
+},
+"ガリバー|名詞": {
+"m": "(name) Gulliver"
+},
+"ガルフ|名詞": {
+"m": "(place) Gulfport (ガルフポート)"
+},
+"ガロン|名詞": {
+"m": "gallon"
+},
+"キス|名詞": {
+"m": "kiss"
+},
+"キチキチ|副詞": {
+"m": "jam-packed, tight (schedule)"
+},
+"キツネ|名詞": {
+"m": "fox (狐)"
+},
+"キャシー|名詞": {
+"m": "(name) Cathy"
+},
+"キャロル|名詞": {
+"m": "(name) Carol"
+},
+"キャンセル|名詞": {
+"m": "cancellation"
+},
+"キャンプ|名詞": {
+"m": "camp, camping"
+},
+"キャンペーン|名詞": {
+"m": "campaign"
+},
+"キーッ|副詞": {
+"m": "screech (sound)"
+},
+"キーボード|名詞": {
+"m": "keyboard"
+},
+"ギター|名詞": {
+"m": "guitar"
+},
+"ギャンブル|名詞": {
+"m": "gambling"
+},
+"ギリシャ|名詞": {
+"m": "(place) Greece"
+},
+"クオート|名詞": {
+"m": "quart"
+},
+"クラス|名詞": {
+"m": "class"
+},
+"クラブ|名詞": {
+"m": "club"
+},
+"クラーク|名詞": {
+"m": "(name) Clark"
+},
+"クリス|名詞": {
+"m": "(name) Chris"
+},
+"クリスマスプレゼント|名詞": {
+"m": "Christmas present"
+},
+"クリップ|名詞": {
+"m": "(paper) clip"
+},
+"クリニック|名詞": {
+"m": "clinic"
+},
+"クリーニング|名詞": {
+"m": "(dry) cleaning, laundry service"
+},
+"グラス|名詞": {
+"m": "glass (for drinking)"
+},
+"グラム|名詞": {
+"m": "gram"
+},
+"グランド|名詞": {
+"m": "sports ground, field",
+"ctx": [
+[
+"セントラル",
+"Grand (Central Station)"
+]
+]
+},
+"グリーンランド|名詞": {
+"m": "(place) Greenland"
+},
+"グルテンフリー|名詞": {
+"m": "gluten-free"
+},
+"ケイト|名詞": {
+"m": "(name) Kate"
+},
+"ケチ|名詞": {
+"m": "stingy; (ケチをつける) to find fault"
+},
+"ケネディ|名詞": {
+"m": "(name) Kennedy"
+},
+"ケパ|名詞": {
+"m": "(name) Kepa (Cephas)"
+},
+"ケリー|名詞": {
+"m": "(name) Kelly"
+},
+"ケン|名詞": {
+"m": "(name) Ken"
+},
+"ケース|名詞": {
+"m": "case"
+},
+"ゲイ|名詞": {
+"m": "gay"
+},
+"ココ|代名詞": {
+"m": "(name) Koko"
+},
+"ココ|名詞": {
+"m": "(ナタ・デ・ココ) nata de coco (coconut gel)"
+},
+"ココア|名詞": {
+"m": "cocoa"
+},
+"コック|名詞": {
+"m": "cook, chef"
+},
+"コップ|名詞": {
+"m": "glass, cup"
+},
+"コニー|名詞": {
+"m": "(name) Connie"
+},
+"コブ|名詞": {
+"m": "(name) Cobb"
+},
+"コレクション|名詞": {
+"m": "collection"
+},
+"コロンブス|名詞": {
+"m": "(name) Columbus"
+},
+"コンサート|名詞": {
+"m": "concert"
+},
+"コンドル|名詞": {
+"m": "condor"
+},
+"コンピューター|名詞": {
+"m": "computer"
+},
+"コース|名詞": {
+"m": "course"
+},
+"コート|名詞": {
+"m": "coat"
+},
+"コード|名詞": {
+"m": "(electric) cord"
+},
+"コーラ|名詞": {
+"m": "cola"
+},
+"ゴキブリ|名詞": {
+"m": "cockroach"
+},
+"ゴシック|名詞": {
+"m": "Gothic"
+},
+"ゴチャゴチャ|副詞": {
+"m": "(complaining) on and on; messy, jumbled"
+},
+"ゴミ|名詞": {
+"m": "garbage, trash"
+},
+"ゴー|名詞": {
+"m": "go (signal to start)"
+},
+"ゴール|名詞": {
+"m": "goal; finish line"
+},
+"サイズ|名詞": {
+"m": "size"
+},
+"サイト|名詞": {
+"m": "(web)site"
+},
+"サイン|名詞": {
+"m": "signature, autograph",
+"ctx": [
+[
+"禁煙",
+"sign (signal)"
+]
+]
+},
+"サッカー|名詞": {
+"m": "soccer"
+},
+"サハラ|名詞": {
+"m": "(place) Sahara"
+},
+"サボる|動詞": {
+"m": "to skip (class, work), slack off"
+},
+"サマー|名詞": {
+"m": "summer (サマーキャンプ: summer camp)"
+},
+"サミー|名詞": {
+"m": "(name) Sammy"
+},
+"サム|名詞": {
+"m": "(name) Sam"
+},
+"サラエボ|名詞": {
+"m": "(place) Sarajevo"
+},
+"サラダ|名詞": {
+"m": "salad"
+},
+"サンドイッチ|名詞": {
+"m": "sandwich"
+},
+"サンドラ|名詞": {
+"m": "(name) Sandra"
+},
+"サーカス|名詞": {
+"m": "circus"
+},
+"サービス|名詞": {
+"m": "service"
+},
+"サーフィン|名詞": {
+"m": "surfing"
+},
+"シアター|名詞": {
+"m": "theater"
+},
+"シェイクスピア|名詞": {
+"m": "(name) Shakespeare"
+},
+"シェークスピア|名詞": {
+"m": "(name) Shakespeare"
+},
+"システム|名詞": {
+"m": "system"
+},
+"シティー|名詞": {
+"m": "city"
+},
+"シドニー|名詞": {
+"m": "(place) Sydney"
+},
+"シャッター|名詞": {
+"m": "(camera) shutter"
+},
+"シャツ|名詞": {
+"m": "shirt"
+},
+"シャモニー|名詞": {
+"m": "(place) Chamonix (French ski resort)"
+},
+"ショット|名詞": {
+"m": "shot"
+},
+"ショー|名詞": {
+"m": "show"
+},
+"ショーン|名詞": {
+"m": "(name) Sean"
+},
+"シンクロ|名詞": {
+"m": "synchronization, sync"
+},
+"シングル|名詞": {
+"m": "single (room)"
+},
+"シンジ|名詞": {
+"m": "(name) Shinji"
+},
+"シンボル|名詞": {
+"m": "symbol"
+},
+"シーズン|名詞": {
+"m": "season"
+},
+"シート|名詞": {
+"m": "seat",
+"ctx": [
+[
+"シートを持って",
+"(picnic) sheet"
+]
+]
+},
+"シール|名詞": {
+"m": "sticker, label"
+},
+"ジェームズ|名詞": {
+"m": "(name) James"
+},
+"ジェーン|名詞": {
+"m": "(name) Jane"
+},
+"ジグソー|名詞": {
+"m": "jigsaw puzzle"
+},
+"ジム|名詞": {
+"m": "(name) Jim"
+},
+"ジャガイモ|名詞": {
+"m": "potato"
+},
+"ジャガー|名詞": {
+"m": "jaguar"
+},
+"ジャック|名詞": {
+"m": "(name) Jack"
+},
+"ジャングル|名詞": {
+"m": "jungle"
+},
+"ジャーナリスト|名詞": {
+"m": "journalist"
+},
+"ジュディ|名詞": {
+"m": "(name) Judy"
+},
+"ジュリエット|名詞": {
+"m": "(name) Juliet"
+},
+"ジュース|名詞": {
+"m": "juice"
+},
+"ジョッキ|名詞": {
+"m": "beer mug"
+},
+"ジョン|名詞": {
+"m": "(name) John"
+},
+"ジョンソン|名詞": {
+"m": "(name) Johnson"
+},
+"ジョー|名詞": {
+"m": "(name) Joe"
+},
+"ジョージ|名詞": {
+"m": "(name) George"
+},
+"ジョーダン|名詞": {
+"m": "(name) Jordan"
+},
+"ジョーンズ|名詞": {
+"m": "(name) Jones"
+},
+"ジン|名詞": {
+"m": "gin"
+},
+"ジーンズ|名詞": {
+"m": "jeans"
+},
+"スイッチ|名詞": {
+"m": "switch"
+},
+"スイング|名詞": {
+"m": "swing (of a bat, club)"
+},
+"スカイダイビング|名詞": {
+"m": "skydiving"
+},
+"スカート|名詞": {
+"m": "skirt"
+},
+"スキャンダル|名詞": {
+"m": "scandal"
+},
+"スキー|名詞": {
+"m": "skiing, ski"
+},
+"スクラム|名詞": {
+"m": "scrum (rugby)"
+},
+"スケート|名詞": {
+"m": "skating; skates"
+},
+"スコットランド|名詞": {
+"m": "(place) Scotland"
+},
+"スゴイ|形容詞": {
+"m": "amazing, great (凄い)"
+},
+"スタイン|名詞": {
+"m": "(name) Stein"
+},
+"スタジオ|名詞": {
+"m": "studio"
+},
+"ステッキ|名詞": {
+"m": "(walking) stick, cane"
+},
+"スト|名詞": {
+"m": "strike (by workers)"
+},
+"ストレス|名詞": {
+"m": "stress"
+},
+"ストレッチ|名詞": {
+"m": "stretch, stretching"
+},
+"ストーブ|名詞": {
+"m": "heater, stove"
+},
+"スナック|名詞": {
+"m": "snack"
+},
+"スパイ|名詞": {
+"m": "spy"
+},
+"スピーチ|名詞": {
+"m": "speech"
+},
+"スピード|名詞": {
+"m": "speed"
+},
+"スペイン|名詞": {
+"m": "(place) Spain"
+},
+"スポーツセンター|名詞": {
+"m": "sports center"
+},
+"スマートフォン|名詞": {
+"m": "smartphone"
+},
+"スミス|名詞": {
+"m": "(name) Smith"
+},
+"スモッグ|名詞": {
+"m": "smog"
+},
+"スローモーション|名詞": {
+"m": "slow motion"
+},
+"スワローズ|名詞": {
+"m": "(name) the Swallows (baseball team)"
+},
+"スー|名詞": {
+"m": "(name) Sue"
+},
+"スーザン|名詞": {
+"m": "(name) Susan"
+},
+"スーツ|名詞": {
+"m": "suit (clothing)"
+},
+"ズボン|名詞": {
+"m": "trousers, pants"
+},
+"セット|名詞": {
+"m": "set; combo (meal)"
+},
+"セルフサービス|名詞": {
+"m": "self-service"
+},
+"センター|名詞": {
+"m": "center"
+},
+"センチ|名詞": {
+"m": "centimeter"
+},
+"セント|名詞": {
+"m": "cent (currency)"
+},
+"セントラル|名詞": {
+"m": "central (グランド・セントラル: Grand Central)"
+},
+"セーヌ|名詞": {
+"m": "(place) Seine (river in Paris)"
+},
+"セールスマン|名詞": {
+"m": "salesman"
+},
+"ゼミ|名詞": {
+"m": "seminar (class)"
+},
+"ゼリー|名詞": {
+"m": "jelly (dessert)"
+},
+"ソアレズ|名詞": {
+"m": "(name) Soarez"
+},
+"ソファー|名詞": {
+"m": "sofa"
+},
+"ソルト・レイク|名詞": {
+"m": "(place) Salt Lake (City)"
+},
+"ソース|名詞": {
+"m": "sauce"
+},
+"タイプ|名詞": {
+"m": "type, kind; typing (タイプを打つ: to type)"
+},
+"タイプライター|名詞": {
+"m": "typewriter"
+},
+"タイム|名詞": {
+"m": "time (in a race)"
+},
+"タクシー|名詞": {
+"m": "taxi"
+},
+"タバコ|名詞": {
+"m": "cigarette, tobacco"
+},
+"タマネギ|名詞": {
+"m": "onion"
+},
+"タロー|名詞": {
+"m": "(name) Taro"
+},
+"タワー|名詞": {
+"m": "tower"
+},
+"ターナー|名詞": {
+"m": "(name) Turner (painter)"
+},
+"ダイナマイト|名詞": {
+"m": "dynamite"
+},
+"ダイヤ|名詞": {
+"m": "diamond"
+},
+"ダイヤモンド|名詞": {
+"m": "diamond"
+},
+"ダチョウ|名詞": {
+"m": "ostrich"
+},
+"ダメ|名詞": {
+"m": "no good (駄目); (〜ちゃダメ) you mustn't"
+},
+"ダン|名詞": {
+"m": "(name) Dan"
+},
+"ダーウィン|名詞": {
+"m": "(name) Darwin"
+},
+"ダービー|名詞": {
+"m": "Derby (horse race)"
+},
+"ダーリン|名詞": {
+"m": "darling"
+},
+"チアリーダー|名詞": {
+"m": "cheerleader"
+},
+"チェス|名詞": {
+"m": "chess"
+},
+"チェック|名詞": {
+"m": "check, checking"
+},
+"チェックアウト|名詞": {
+"m": "check-out (hotel)"
+},
+"チケット|名詞": {
+"m": "ticket"
+},
+"チャイム|名詞": {
+"m": "chime, bell (e.g. doorbell, school bell)"
+},
+"チャック|名詞": {
+"m": "zipper"
+},
+"チャレンジ|名詞": {
+"m": "challenge; (チャレンジする) to try, take on"
+},
+"チャンス|名詞": {
+"m": "chance, opportunity"
+},
+"チュン|副詞": {
+"m": "tweet, chirp (bird's sound)"
+},
+"チューリップ|名詞": {
+"m": "tulip"
+},
+"チョコレート|名詞": {
+"m": "chocolate"
+},
+"チラシ|名詞": {
+"m": "flyer, leaflet (散らし)"
+},
+"チーズ|名詞": {
+"m": "cheese"
+},
+"チーズケーキ|名詞": {
+"m": "cheesecake"
+},
+"チーム|名詞": {
+"m": "team"
+},
+"ツイン|名詞": {
+"m": "twin (room)"
+},
+"ツベルクリン|名詞": {
+"m": "tuberculin (TB test)"
+},
+"ティースプーン|名詞": {
+"m": "teaspoon"
+},
+"テキスト|名詞": {
+"m": "textbook; text"
+},
+"テスト|名詞": {
+"m": "test, tryout"
+},
+"テッド|名詞": {
+"m": "(name) Ted"
+},
+"テニス|名詞": {
+"m": "tennis"
+},
+"テレビ|名詞": {
+"m": "TV, television"
+},
+"テーブル|名詞": {
+"m": "table"
+},
+"テープ|名詞": {
+"m": "tape"
+},
+"デ|名詞": {
+"m": "(ナタ・デ・ココ) nata de coco (coconut gel)"
+},
+"ディック|名詞": {
+"m": "(name) Dick"
+},
+"ディッケンズ|名詞": {
+"m": "(name) Dickens"
+},
+"ディール|名詞": {
+"m": "(place) Deal (a town)"
+},
+"デザイン|名詞": {
+"m": "design"
+},
+"デザート|名詞": {
+"m": "dessert"
+},
+"デトロイト|名詞": {
+"m": "(place) Detroit"
+},
+"デパート|名詞": {
+"m": "department store"
+},
+"デモ|名詞": {
+"m": "demonstration, protest"
+},
+"データ|名詞": {
+"m": "data"
+},
+"デート|名詞": {
+"m": "date (romantic)"
+},
+"トイレ|名詞": {
+"m": "toilet, restroom"
+},
+"トニー|名詞": {
+"m": "(name) Tony"
+},
+"トム|名詞": {
+"m": "(name) Tom"
+},
+"トラ|名詞": {
+"m": "tiger (虎)"
+},
+"トラック|名詞": {
+"m": "truck"
+},
+"トランプ|名詞": {
+"m": "playing cards"
+},
+"トランペット|名詞": {
+"m": "trumpet"
+},
+"トンネル|名詞": {
+"m": "tunnel"
+},
+"トーナメント|名詞": {
+"m": "tournament"
+},
+"ドイツ|名詞": {
+"m": "(place) Germany"
+},
+"ドカン|副詞": {
+"m": "with a bang, boom"
+},
+"ドラえもん|名詞": {
+"m": "(name) Doraemon (manga robot cat)"
+},
+"ドラマ|名詞": {
+"m": "(TV) drama, TV series"
+},
+"ドラム|名詞": {
+"m": "drum(s)"
+},
+"ドリンク|名詞": {
+"m": "drink"
+},
+"ドル|名詞": {
+"m": "dollar (currency)"
+},
+"ドレス|名詞": {
+"m": "dress"
+},
+"ドロシー|名詞": {
+"m": "(name) Dorothy"
+},
+"ドローシー|名詞": {
+"m": "(name) Dorothy"
+},
+"ドン|副詞": {
+"m": "bang, thud (sound of a blow)"
+},
+"ナイフ|名詞": {
+"m": "knife"
+},
+"ナタ|名詞": {
+"m": "(ナタ・デ・ココ) nata de coco (coconut gel)"
+},
+"ナプキン|名詞": {
+"m": "napkin"
+},
+"ナベ|名詞": {
+"m": "pot, pan (鍋)"
+},
+"ナポリ|名詞": {
+"m": "(place) Naples"
+},
+"ナポレオン|名詞": {
+"m": "(name) Napoleon"
+},
+"ナンシー|名詞": {
+"m": "(name) Nancy"
+},
+"ニクソン|名詞": {
+"m": "(name) Nixon"
+},
+"ニック|名詞": {
+"m": "(name) Nick"
+},
+"ニッケル|名詞": {
+"m": "nickel (Ni); (US) five-cent coin"
+},
+"ニャー|名詞": {
+"m": "meow (cat's cry)"
+},
+"ニューヨーク|名詞": {
+"m": "(place) New York"
+},
+"ニューヨークタイムズ|名詞": {
+"m": "The New York Times (newspaper)"
+},
+"ニンニク|名詞": {
+"m": "garlic"
+},
+"ネクタイ|名詞": {
+"m": "necktie"
+},
+"ネズミ|名詞": {
+"m": "mouse, rat (鼠)"
+},
+"ノック|名詞": {
+"m": "knock; (ノックする) to knock"
+},
+"ノー|名詞": {
+"m": "no"
+},
+"ノートPC|名詞": {
+"m": "laptop (computer)"
+},
+"ノート|名詞": {
+"m": "notebook"
+},
+"ハイウェー|名詞": {
+"m": "highway"
+},
+"ハイスペック|名詞": {
+"m": "high-spec"
+},
+"ハイツ|名詞": {
+"m": "Heights (in apartment names)"
+},
+"ハウス|名詞": {
+"m": "house (in building names)"
+},
+"ハエ|名詞": {
+"m": "fly (insect) (蝿)"
+},
+"ハス|名詞": {
+"m": "lotus (蓮)"
+},
+"ハト|名詞": {
+"m": "pigeon, dove (鳩)"
+},
+"ハムレット|名詞": {
+"m": "Hamlet (Shakespeare play)"
+},
+"ハンガー|名詞": {
+"m": "(coat) hanger"
+},
+"ハンサム|形状詞": {
+"m": "handsome"
+},
+"ハンバーグ|名詞": {
+"m": "hamburger steak"
+},
+"ハードディスク|名詞": {
+"m": "hard disk (drive)"
+},
+"ハーバード|名詞": {
+"m": "(name) Harvard (university)"
+},
+"バイオリン|名詞": {
+"m": "violin"
+},
+"バイキング|名詞": {
+"m": "(バイキング形式) buffet, all-you-can-eat"
+},
+"バス|名詞": {
+"m": "bus"
+},
+"バスケットボール|名詞": {
+"m": "basketball"
+},
+"バッター|名詞": {
+"m": "batter (baseball)"
+},
+"バット|名詞": {
+"m": "bat (baseball, etc.)"
+},
+"バッハ|名詞": {
+"m": "(name) Bach (composer)"
+},
+"バラ|名詞": {
+"m": "rose (flower)"
+},
+"バンド|名詞": {
+"m": "band (music)"
+},
+"バーベキュー|名詞": {
+"m": "barbecue"
+},
+"パイント|名詞": {
+"m": "pint"
+},
+"パジャマ|名詞": {
+"m": "pajamas"
+},
+"パス|名詞": {
+"m": "pass (a ball, a test); pass (ticket)"
+},
+"パスタ|名詞": {
+"m": "pasta"
+},
+"パズル|名詞": {
+"m": "puzzle"
+},
+"パリ|名詞": {
+"m": "(place) Paris"
+},
+"パレード|名詞": {
+"m": "parade"
+},
+"パン|名詞": {
+"m": "bread"
+},
+"パンフレット|名詞": {
+"m": "pamphlet, brochure"
+},
+"パーセント|名詞": {
+"m": "percent"
+},
+"パーティー|名詞": {
+"m": "party"
+},
+"ヒーター|名詞": {
+"m": "heater"
+},
+"ビギナー|名詞": {
+"m": "beginner"
+},
+"ビクトリア|名詞": {
+"m": "(name) Victoria (Queen Victoria)"
+},
+"ビデオ|名詞": {
+"m": "video"
+},
+"ビラ|名詞": {
+"m": "flyer, leaflet, poster"
+},
+"ビル|名詞": {
+"m": "(name) Bill",
+"ctx": [
+[
+"そのビル",
+"building"
+]
+]
+},
+"ビン|名詞": {
+"m": "bottle (瓶)"
+},
+"ビール|名詞": {
+"m": "beer"
+},
+"ピクニック|名詞": {
+"m": "picnic"
+},
+"ピストル|名詞": {
+"m": "pistol"
+},
+"ピッチャー|名詞": {
+"m": "pitcher (baseball)"
+},
+"ピリッ|副詞": {
+"m": "(ピリッとした) sharp, spicy, tangy"
+},
+"ピン|副詞": {
+"m": "pin"
+},
+"ピン|名詞": {
+"m": "pin"
+},
+"ピーター|名詞": {
+"m": "(name) Peter"
+},
+"ファイル|名詞": {
+"m": "file (folder)"
+},
+"ファン|名詞": {
+"m": "fan (enthusiast)"
+},
+"フィリップ|名詞": {
+"m": "(name) Philip"
+},
+"フィル|名詞": {
+"m": "(name) Phil"
+},
+"フィンランド|名詞": {
+"m": "(place) Finland"
+},
+"フィート|名詞": {
+"m": "feet (unit of length)"
+},
+"フォーク|名詞": {
+"m": "fork"
+},
+"フツー|名詞": {
+"m": "normal, ordinary (普通)"
+},
+"フライ|名詞": {
+"m": "deep-fried food (e.g. 魚フライ: fried fish)"
+},
+"フランク|名詞": {
+"m": "(name) Frank"
+},
+"フランクリン|名詞": {
+"m": "(name) Franklin"
+},
+"フランス|名詞": {
+"m": "(place) France"
+},
+"フルタイム|名詞": {
+"m": "full-time"
+},
+"フレッド|名詞": {
+"m": "(name) Fred"
+},
+"フロリダ|名詞": {
+"m": "(place) Florida"
+},
+"フロント|名詞": {
+"m": "front desk, reception"
+},
+"ブライアン|名詞": {
+"m": "(name) Brian"
+},
+"ブラウス|名詞": {
+"m": "blouse"
+},
+"ブラウン|名詞": {
+"m": "(name) Brown"
+},
+"ブラシ|名詞": {
+"m": "brush"
+},
+"ブリーフケース|名詞": {
+"m": "briefcase"
+},
+"ブルック|名詞": {
+"m": "(name) Brooke"
+},
+"ブーツ|名詞": {
+"m": "boots"
+},
+"プラス|名詞": {
+"m": "plus; benefit, advantage"
+},
+"プラスチック|名詞": {
+"m": "plastic"
+},
+"プラン|名詞": {
+"m": "plan"
+},
+"プレイヤー|名詞": {
+"m": "player (e.g. CD player)"
+},
+"プレイン|名詞": {
+"m": "plain"
+},
+"プレゼント|名詞": {
+"m": "present, gift"
+},
+"プレーヤー|名詞": {
+"m": "player (e.g. CD player)"
+},
+"プロペラ|名詞": {
+"m": "propeller"
+},
+"プール|名詞": {
+"m": "swimming pool"
+},
+"ヘラヘラ|副詞": {
+"m": "(laughing) foolishly"
+},
+"ヘレン|名詞": {
+"m": "(name) Helen"
+},
+"ヘレン・ケラー|名詞": {
+"m": "(name) Helen Keller"
+},
+"ヘンリー|名詞": {
+"m": "(name) Henry"
+},
+"ベス|名詞": {
+"m": "(name) Beth"
+},
+"ベスト|名詞": {
+"m": "best"
+},
+"ベストセラー|名詞": {
+"m": "bestseller"
+},
+"ベッド|名詞": {
+"m": "bed"
+},
+"ベティ|名詞": {
+"m": "(name) Betty"
+},
+"ベランダ|名詞": {
+"m": "balcony, veranda"
+},
+"ベル|名詞": {
+"m": "bell"
+},
+"ベルト|名詞": {
+"m": "belt"
+},
+"ベン|名詞": {
+"m": "(name) Ben"
+},
+"ペット|名詞": {
+"m": "pet",
+"ctx": [
+[
+"ペットボトル",
+"(ペットボトル) plastic bottle"
+]
+]
+},
+"ペットボトル|名詞": {
+"m": "plastic (PET) bottle"
+},
+"ペリー|名詞": {
+"m": "(name) Perry"
+},
+"ペンキ|名詞": {
+"m": "paint"
+},
+"ページ|名詞": {
+"m": "page"
+},
+"ペーパーバック|名詞": {
+"m": "paperback"
+},
+"ホット|名詞": {
+"m": "hot (drink)"
+},
+"ホットコーヒー|名詞": {
+"m": "hot coffee"
+},
+"ホットドッグ|名詞": {
+"m": "hot dog"
+},
+"ホノルル|名詞": {
+"m": "(place) Honolulu"
+},
+"ホワイト|名詞": {
+"m": "(name) White"
+},
+"ホワイトボード|名詞": {
+"m": "whiteboard"
+},
+"ホース|名詞": {
+"m": "hose"
+},
+"ホーマー|名詞": {
+"m": "(name) Homer (Greek poet)"
+},
+"ホーム|名詞": {
+"m": "platform (station)"
+},
+"ホームページ|名詞": {
+"m": "website, home page"
+},
+"ホームラン|名詞": {
+"m": "home run"
+},
+"ホール|名詞": {
+"m": "hall"
+},
+"ボタン|名詞": {
+"m": "button"
+},
+"ボブ|名詞": {
+"m": "(name) Bob"
+},
+"ボロボロ|形状詞": {
+"m": "worn out, ruined, in tatters"
+},
+"ボーイ|名詞": {
+"m": "waiter, bellboy; boy"
+},
+"ボート|名詞": {
+"m": "boat"
+},
+"ボーリング|名詞": {
+"m": "bowling"
+},
+"ボール|名詞": {
+"m": "ball"
+},
+"ポイント|名詞": {
+"m": "point(s) (e.g. reward points)"
+},
+"ポケット|名詞": {
+"m": "pocket"
+},
+"ポスター|名詞": {
+"m": "poster"
+},
+"ポスト|名詞": {
+"m": "mailbox, postbox"
+},
+"ポテト|名詞": {
+"m": "potato (カウチポテト: couch potato)"
+},
+"ポルトガル|名詞": {
+"m": "(place) Portugal"
+},
+"ポンド|名詞": {
+"m": "pound (weight or currency)"
+},
+"ポンプ|名詞": {
+"m": "pump"
+},
+"ポーター|名詞": {
+"m": "porter"
+},
+"ポート|名詞": {
+"m": "port",
+"ctx": [
+[
+"ガルフポート",
+"(place) Gulfport"
+]
+]
+},
+"ポーラ|名詞": {
+"m": "(name) Paula"
+},
+"ポール|名詞": {
+"m": "(name) Paul"
+},
+"マイアミ|名詞": {
+"m": "(place) Miami"
+},
+"マイク|名詞": {
+"m": "(name) Mike"
+},
+"マイナス|名詞": {
+"m": "minus; disadvantage, drawback"
+},
+"マイル|名詞": {
+"m": "mile"
+},
+"マスク|名詞": {
+"m": "(face) mask"
+},
+"マスコミ|名詞": {
+"m": "the media, mass media"
+},
+"マスター|名詞": {
+"m": "mastery; (マスターする) to master (a skill)"
+},
+"マックス|名詞": {
+"m": "(name) Max"
+},
+"マッサージ|名詞": {
+"m": "massage"
+},
+"マッチ|名詞": {
+"m": "match (for lighting a fire)"
+},
+"マフラー|名詞": {
+"m": "scarf, muffler"
+},
+"マユコ|名詞": {
+"m": "(name) Mayuko"
+},
+"マラソン|名詞": {
+"m": "marathon"
+},
+"マラリア|名詞": {
+"m": "malaria"
+},
+"マリーゴールド|名詞": {
+"m": "marigold"
+},
+"マンション|名詞": {
+"m": "apartment building, condo"
+},
+"マンネリ|名詞": {
+"m": "rut, stale routine"
+},
+"マーク|名詞": {
+"m": "mark, symbol",
+"ctx": [
+[
+"マークは建設",
+"(name) Mark"
+]
+]
+},
+"ミス|名詞": {
+"m": "mistake"
+},
+"ミル|名詞": {
+"m": "mill, grinder"
+},
+"ミルク|名詞": {
+"m": "milk"
+},
+"ミルトン|名詞": {
+"m": "(name) Milton (poet)"
+},
+"ミレー|名詞": {
+"m": "(name) Millet (painter)"
+},
+"メアリー|名詞": {
+"m": "(name) Mary"
+},
+"メイド|名詞": {
+"m": "maid"
+},
+"メキシコ|名詞": {
+"m": "(place) Mexico"
+},
+"メキメキ|副詞": {
+"m": "rapidly, remarkably (improving)"
+},
+"メグ|名詞": {
+"m": "(name) Meg"
+},
+"メジャー|名詞": {
+"m": "tape measure"
+},
+"メッセージ|名詞": {
+"m": "message"
+},
+"メンバー|名詞": {
+"m": "member"
+},
+"メートル|名詞": {
+"m": "meter (unit)"
+},
+"メール|名詞": {
+"m": "email"
+},
+"モダンジャズ|名詞": {
+"m": "modern jazz"
+},
+"モネ|名詞": {
+"m": "(name) Monet (painter)"
+},
+"モー|名詞": {
+"m": "moo (cow's sound)"
+},
+"ヤシ|名詞": {
+"m": "palm tree (椰子); (ヤシの実) coconut"
+},
+"ヤング|名詞": {
+"m": "(name) Young"
+},
+"ヤード|名詞": {
+"m": "yard (unit of length)"
+},
+"ユナイテッド|名詞": {
+"m": "United (as in United Airlines)"
+},
+"ユリ|名詞": {
+"m": "lily (百合)"
+},
+"ユーモア|名詞": {
+"m": "humor"
+},
+"ヨット|名詞": {
+"m": "yacht, sailboat"
+},
+"ヨーロッパ|名詞": {
+"m": "(place) Europe"
+},
+"ライオン|名詞": {
+"m": "lion"
+},
+"ライス|名詞": {
+"m": "rice (served on a plate)"
+},
+"ライター|名詞": {
+"m": "lighter"
+},
+"ライト|名詞": {
+"m": "light, lights"
+},
+"ライフワーク|名詞": {
+"m": "life's work"
+},
+"ラグビー|名詞": {
+"m": "rugby"
+},
+"ラジオ|名詞": {
+"m": "radio"
+},
+"ラベル|名詞": {
+"m": "label"
+},
+"ランチ|名詞": {
+"m": "lunch"
+},
+"ランドリー|名詞": {
+"m": "laundry; coin laundry"
+},
+"リスト|名詞": {
+"m": "list"
+},
+"リハ|名詞": {
+"m": "rehearsal (short for リハーサル)"
+},
+"リンカーン|名詞": {
+"m": "(name) Lincoln"
+},
+"リンゴ|名詞": {
+"m": "apple (林檎)"
+},
+"リンダ|名詞": {
+"m": "(name) Linda"
+},
+"リンチ|名詞": {
+"m": "(name) Lynch"
+},
+"リンドバーグ|名詞": {
+"m": "(name) Lindbergh"
+},
+"リーズ|名詞": {
+"m": "(place) Leeds"
+},
+"ルーシー|名詞": {
+"m": "(name) Lucy"
+},
+"レイク|名詞": {
+"m": "(name) Lake (a company)"
+},
+"レインコート|名詞": {
+"m": "raincoat"
+},
+"レオ|名詞": {
+"m": "(name) Leo"
+},
+"レコード|名詞": {
+"m": "record (music)"
+},
+"レジ|名詞": {
+"m": "cash register, checkout"
+},
+"レスキュー|名詞": {
+"m": "rescue"
+},
+"レベル|名詞": {
+"m": "level"
+},
+"レベルアップ|名詞": {
+"m": "leveling up, improving (one's level)"
+},
+"レモン|名詞": {
+"m": "lemon"
+},
+"レンタカー|名詞": {
+"m": "rental car"
+},
+"レース|名詞": {
+"m": "race"
+},
+"ロイ|名詞": {
+"m": "(name) Roy"
+},
+"ロイヤル|名詞": {
+"m": "royal"
+},
+"ロケット|名詞": {
+"m": "rocket"
+},
+"ロシア|名詞": {
+"m": "(place) Russia"
+},
+"ロジャー|名詞": {
+"m": "(name) Roger"
+},
+"ロック|名詞": {
+"m": "rock (music)"
+},
+"ロバート|名詞": {
+"m": "(name) Robert"
+},
+"ロメオ|名詞": {
+"m": "(name) Romeo"
+},
+"ロング|名詞": {
+"m": "(name) Long"
+},
+"ロンドン|名詞": {
+"m": "(place) London"
+},
+"ロースト|名詞": {
+"m": "roast"
+},
+"ワイン|名詞": {
+"m": "wine"
+},
+"ワシ|名詞": {
+"m": "eagle (鷲)"
+},
+"ワシントン|名詞": {
+"m": "(place) Washington"
+},
+"ワン|副詞": {
+"m": "woof (dog's bark)"
+},
+"ワンワン|副詞": {
+"m": "woof woof (barking)"
+},
+"ワーテルロー|名詞": {
+"m": "(place) Waterloo"
+}
+}
