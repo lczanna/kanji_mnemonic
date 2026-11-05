@@ -206,17 +206,31 @@ await test('a word a text spells in kana shows in kanji once you\'ve studied it,
     appData.cards['v:階段'] = { stability: 5, difficulty: 5, reps: 2, lapses: 0, lastReview: today(), due: '2099-01-01' };
     const after = glossHtml(t, true), after2 = glossHtml(t);
     let swaps = 0, bad = [];
-    for (const [s, ws] of Object.entries(GL)) for (const [st, len, , lemma, , m] of ws) {
-      const w = s.slice(st, st + len), v = BY_WORD[(m || '').match(/\(([^()]*)\)\s*$/)?.[1] || lemma];
+    for (const [s, ws] of Object.entries(GL)) for (const [st, len, , lemma, lr, m] of ws) {
+      const w = s.slice(st, st + len), v = kanaWordOf(lemma, lr, m);
       if (!v) continue;
       appData.cards['v:' + v.w] = appData.cards['v:' + v.w] || { reps: 1 };
-      const k = kanaToKanji(w, lemma, m);
+      const k = kanaToKanji(w, lemma, m, lr);
       if (k !== w) { swaps++; if (kata2hira(v.r).slice(0, 1) !== w.slice(0, 1) || k.length > w.length) bad.push(w + '→' + k); }
     }
     return { plain: after2 === plain, before: !/>かいだん<\/button>/.test(before), after: /<ruby>階段<rt>かいだん<\/rt><\/ruby>/.test(after), swaps, bad: bad.slice(0, 10) };
   });
   eq(r.before, false, 'kana until studied'); eq(r.plain, true, 'swapped outside reading passages'); eq(r.after, true, '階段 with furigana over the kanji not studied');
   yes(r.swaps > 20, 'few words swapped: ' + r.swaps); eq(r.bad.length, 0, 'odd swaps: ' + r.bad);
+});
+
+await test('a kana word whose meaning names the studied word shows in kanji (たのみ → 頼み); kana-spelled words and unclear ones stay', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    for (const w of ['頼む', '為', '沢山', '厚い', '暑い', '熱い', '傘']) appData.cards['v:' + w] = { reps: 2 };
+    return [kanaToKanji('たのみ', 'たのむ', 'to ask, request (頼む); (たのむよ) please', 'たのむ'),
+      kanaToKanji('ため', 'ため', 'for (the sake of); in order to', 'ため'),
+      kanaToKanji('たくさん', 'たくさん', 'a lot; many', 'たくさん'),
+      kanaToKanji('あつい', 'あつい', 'hot (暑い weather; 熱い to the touch); thick (厚い)', 'あつい'),
+      kanaToKanji('かさ', 'かさ', 'umbrella', 'かさ'),
+      kanaToKanji('とれる', 'とれる', '(photo) to come out (撮れる)', 'とれる')];
+  });
+  eq(r.join(' '), '頼み ため たくさん あつい 傘 とれる', 'swaps');
 });
 
 await test('"I mix these up" on a look-alike makes a pair card and leaves both kanji cards untouched', async () => {

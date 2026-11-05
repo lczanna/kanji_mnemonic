@@ -1304,11 +1304,27 @@ function furiHtml(w, r) {
 }
 // A word a text spells in kana (かいだん) is shown in kanji (階段) once you've studied its word card or all its kanji,
 // as the exam prints it. Only when the gloss names that word, so a homophone (きく) is never swapped.
-const KANA_STAY = new Set(['幾ら', 'お喋り', '更に', '椅子', '繋ぐ']);   // the exam spells these in kana
-function kanaToKanji(w, lemma, m) {
+// The exam (and everyday Japanese) spells these in kana: たくさん, not 沢山.
+const KANA_STAY = new Set(['幾ら', 'お喋り', '更に', '椅子', '繋ぐ', '為', '事', '沢山', '綺麗', '丁度', '中々', '寧ろ', '致す', '余り',
+  '凄い', '段々', 'お陰', '偶々', '塵', '一杯', '美味しい', '幾つ', '可愛そう', '是非', '色々', '大抵', '滅多に', '遂に']);
+// The deck word a kana token stands for: the word its meaning names in brackets (たのむ "to ask (頼む)"),
+// its lemma, or the only deck word with that reading whose meaning shares a word with it (かさ → 傘 "umbrella").
+const sense = m => new Set((m || '').toLowerCase().replace(/\([^)]*\)/g, ' ').match(/[a-z]{3,}/g) || []);
+function kanaWordOf(lemma, lr, m) {
+  if (!BY_READING) wordLink('');
+  const homo = (BY_READING[kata2hira(lr || '')] || []).filter(x => /[㐀-鿿]/.test(x.w));
+  const named = homo.filter(x => (m || '').includes(x.w));
+  if (named.length) return named.length === 1 ? named[0] : null;          // あつい "hot (暑い; 熱い); thick (厚い)": can't tell
+  if (/\([^)]*[㐀-鿿]/.test(m || '')) return null;                        // とれる "(撮れる)" is not the deck's 取れる
+  if (homo.length !== 1) return null;
+  if (BY_WORD[lemma]) return BY_WORD[lemma] === homo[0] ? homo[0] : null;
+  const a = sense(m), b = sense(homo[0].m);
+  return [...a].some(x => b.has(x) && !['the', 'and', 'one', 'not', 'with'].includes(x)) ? homo[0] : null;
+}
+function kanaToKanji(w, lemma, m, lr) {
   if (/[㐀-鿿々ァ-ヶ]/.test(w)) return w;
-  const named = (m || '').match(/\(([^()]*[㐀-鿿][^()]*)\)\s*$/), v = BY_WORD[named ? named[1] : lemma];
-  if (!v || KANA_STAY.has(v.w) || !/[㐀-鿿]/.test(v.w) || v.w === lemma && !named && (BY_READING[v.r] || []).length > 1) return w;
+  const v = kanaWordOf(lemma, lr, m);
+  if (!v || KANA_STAY.has(v.w) || !/[㐀-鿿]/.test(v.w)) return w;
   if (!appData.cards['v:' + v.w] && hasUnknownKanji(v.w)) return w;
   const ok = v.w.match(/[ぁ-ゖ]*$/)[0], r = kata2hira(v.r);
   if (!r.endsWith(ok)) return w;
@@ -1327,7 +1343,7 @@ function glossHtml(text, kanji) {
     if (start < pos) continue;
     html += esc(text.slice(pos, start));
     let w = text.slice(start, start + len);
-    const k = kanji ? kanaToKanji(w, lemma, m) : w;
+    const k = kanji ? kanaToKanji(w, lemma, m, lr) : w;
     if (k !== w) { r = w; w = k; }
     html += `<button class="gl" data-gl="${esc(JSON.stringify([w, r, lemma, lr, m]))}">${furiHtml(w, r)}</button>`;
     pos = start + len;
@@ -1428,6 +1444,10 @@ const PART_TWINS = {
   '美': ['羊・关', 'sheep · horned heavens', 'beauty 美 is the sheep\'s top (horns and THREE bars, the stick cut short) standing on big 大\'s spread legs; sheep 羊 runs its stick straight to the ground; horned heavens 关 has only TWO bars before the legs (送, 関)'],
   '以': ['代', 'substitute', 'first question: does it start with the person radical 亻 on the left? by means of 以 does NOT: a hooked stick with a drop on the left, and the person stands on the RIGHT (人), as in 以上, 以外, 以内; substitute 代 starts with 亻 and has an arrow 弋 (a stake with a dot at its top right) on the right, as in 時代, 代わり'],
   '代': ['以', 'by means of (以上)', 'first question: does it start with the person radical 亻 on the left? substitute 代 does, then an arrow 弋 (a stake with a dot at its top right), as in 時代, 代わり; by means of 以 does NOT: a hooked stick with a drop on the left and the person on the RIGHT, as in 以上, 以外'],
+  '図': ['斗', 'Big Dipper (in 料, 科)', 'map 図 is boxed in, and its cross is SLANTED: crossed sticks 乂 (an X), with two drops on top; the Big Dipper 斗 has no box, and its cross is STRAIGHT: a bar through a long upright post 十, with two drops on the left (料, 科)'],
+  '斗': ['図', 'map', 'the Big Dipper 斗 has a STRAIGHT cross: a bar through a long upright post 十, with two drops on the left; map 図 has a slanted X (crossed sticks 乂) with two drops on top, inside a box'],
+  '料': ['図', 'map', 'the Big Dipper 斗 on the right has a STRAIGHT cross with a long upright post; map 図 has a slanted X (crossed sticks 乂) inside a box'],
+  '科': ['図', 'map', 'the Big Dipper 斗 on the right has a STRAIGHT cross with a long upright post; map 図 has a slanted X (crossed sticks 乂) inside a box'],
   '易': ['昜', 'piggy bank (inside 場, 陽, 湯)', 'easy 易 has the sun straight on the pennant; the piggy bank 昜 has one more line under the sun (旦, dawn)'],
 };
 // Part names that differ from the kanji's own keyword (欠 is "lack" as a kanji, "yawn" as a part): say why.
