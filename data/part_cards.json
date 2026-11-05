@@ -1054,5 +1054,15 @@
   "components": [],
   "story": "A big round face with grid-like eyes over a long tail curling underneath: a cheeky {monkey} dangling in everyone's way.",
   "picture": "A cheeky monkey with a big round face hanging by its curled tail from a branch."
+ },
+ "𦰩": {
+  "keyword": "Sino- clay",
+  "components": [
+   "flowers",
+   "mouth",
+   "husband"
+  ],
+  "story": "China's oldest potter's clay: [flowers] sprout on top, a [mouth] in the middle chatters in Chinese, and a [husband] stands underneath holding the whole lump up. That's {Sino- clay}, the stuff the first characters were pressed into. (In 難 and 勤 the flowers join into one bar; in 勤 the husband's legs tuck in.)",
+  "picture": "A big lump of reddish clay on a potter's wheel in ancient China: flowers sprouting from its top, a chattering mouth carved in its middle, and a man underneath holding the whole lump up on his shoulders."
  }
 }
