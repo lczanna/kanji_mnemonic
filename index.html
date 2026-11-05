@@ -1304,11 +1304,27 @@ function furiHtml(w, r) {
 }
 // A word a text spells in kana (かいだん) is shown in kanji (階段) once you've studied its word card or all its kanji,
 // as the exam prints it. Only when the gloss names that word, so a homophone (きく) is never swapped.
-const KANA_STAY = new Set(['幾ら', 'お喋り', '更に', '椅子', '繋ぐ']);   // the exam spells these in kana
-function kanaToKanji(w, lemma, m) {
+// The exam (and everyday Japanese) spells these in kana: たくさん, not 沢山.
+const KANA_STAY = new Set(['幾ら', 'お喋り', '更に', '椅子', '繋ぐ', '為', '事', '沢山', '綺麗', '丁度', '中々', '寧ろ', '致す', '余り',
+  '凄い', '段々', 'お陰', '偶々', '塵', '一杯', '美味しい', '幾つ', '可愛そう', '是非', '色々', '大抵', '滅多に', '遂に']);
+// The deck word a kana token stands for: the word its meaning names in brackets (たのむ "to ask (頼む)"),
+// its lemma, or the only deck word with that reading whose meaning shares a word with it (かさ → 傘 "umbrella").
+const sense = m => new Set((m || '').toLowerCase().replace(/\([^)]*\)/g, ' ').match(/[a-z]{3,}/g) || []);
+function kanaWordOf(lemma, lr, m) {
+  if (!BY_READING) wordLink('');
+  const homo = (BY_READING[kata2hira(lr || '')] || []).filter(x => /[㐀-鿿]/.test(x.w));
+  const named = homo.filter(x => (m || '').includes(x.w));
+  if (named.length) return named.length === 1 ? named[0] : null;          // あつい "hot (暑い; 熱い); thick (厚い)": can't tell
+  if (/\([^)]*[㐀-鿿]/.test(m || '')) return null;                        // とれる "(撮れる)" is not the deck's 取れる
+  if (homo.length !== 1) return null;
+  if (BY_WORD[lemma]) return BY_WORD[lemma] === homo[0] ? homo[0] : null;
+  const a = sense(m), b = sense(homo[0].m);
+  return [...a].some(x => b.has(x) && !['the', 'and', 'one', 'not', 'with'].includes(x)) ? homo[0] : null;
+}
+function kanaToKanji(w, lemma, m, lr) {
   if (/[㐀-鿿々ァ-ヶ]/.test(w)) return w;
-  const named = (m || '').match(/\(([^()]*[㐀-鿿][^()]*)\)\s*$/), v = BY_WORD[named ? named[1] : lemma];
-  if (!v || KANA_STAY.has(v.w) || !/[㐀-鿿]/.test(v.w) || v.w === lemma && !named && (BY_READING[v.r] || []).length > 1) return w;
+  const v = kanaWordOf(lemma, lr, m);
+  if (!v || KANA_STAY.has(v.w) || !/[㐀-鿿]/.test(v.w)) return w;
   if (!appData.cards['v:' + v.w] && hasUnknownKanji(v.w)) return w;
   const ok = v.w.match(/[ぁ-ゖ]*$/)[0], r = kata2hira(v.r);
   if (!r.endsWith(ok)) return w;
@@ -1327,7 +1343,7 @@ function glossHtml(text, kanji) {
     if (start < pos) continue;
     html += esc(text.slice(pos, start));
     let w = text.slice(start, start + len);
-    const k = kanji ? kanaToKanji(w, lemma, m) : w;
+    const k = kanji ? kanaToKanji(w, lemma, m, lr) : w;
     if (k !== w) { r = w; w = k; }
     html += `<button class="gl" data-gl="${esc(JSON.stringify([w, r, lemma, lr, m]))}">${furiHtml(w, r)}</button>`;
     pos = start + len;
