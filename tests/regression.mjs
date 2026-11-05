@@ -233,6 +233,25 @@ await test('a kana word whose meaning names the studied word shows in kanji (た
   eq(r.join(' '), '頼み ため たくさん あつい 傘 とれる', 'swaps');
 });
 
+await test('exam conditions: no tap meanings until answered, long texts come up early, the setting survives old data', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    const x = EXAM.read.find(r => r.kind === 'long');
+    const it = { type: 'exam', x, mode: 'exam', answers: [] };
+    session = { kind: 'study', queue: [it], i: 0, revealed: false };
+    const open = examScreen(it, []).inner.front;
+    appData.settings.examMode = true;
+    const strict = examScreen(it, []).inner.front;
+    session.revealed = true;
+    const after = examScreen(it, []).inner.front;
+    appData.settings.examMode = false; session = null;
+    return { longs: EXAM.read.filter(r => r.kind === 'long').length, open: /class="gl"/.test(open), strict: /class="gl"/.test(strict),
+      after: /class="gl"/.test(after), firstKinds: mixKinds(EXAM.read).slice(0, 4).map(r => r.kind).join(' '), def: emptyData().settings.examMode };
+  });
+  yes(r.longs >= 8, 'long texts: ' + r.longs); eq(r.open, true, 'taps normally'); eq(r.strict, false, 'no taps under exam conditions');
+  eq(r.after, true, 'taps after answering'); eq(r.firstKinds, 'short medium long info', 'kinds in turn'); eq(r.def, false, 'off by default');
+});
+
 await test('"I mix these up" on a look-alike makes a pair card and leaves both kanji cards untouched', async () => {
   const p = await page({ cloud: false });
   await p.waitForFunction(() => LOOK.length && groupsOf('以').length);
