@@ -153,6 +153,7 @@ def main():
             if not err and (score >= 0.8 or not a.drop_weak):
                 index[text] = cid
             elif not err:
+                index.pop(text, None)
                 (OUT / f'{cid}.mp3').unlink(missing_ok=True)   # misread: the app's phone voice reads the kana instead
             if n % 100 == 0:
                 idx_path.write_text(json.dumps(index, ensure_ascii=False), encoding='utf8')
