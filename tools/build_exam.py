@@ -14,7 +14,14 @@ Exam practice for the app → exam.json.
   data/ctx_notes.json holds the checked options for each sentence (decoys that also fitted swapped out) and why each
   decoy doesn't fit ("wrong"); it replaces the generated options while the answer word is the same.
 
-  python3 tools/build_exam.py JMdict_e.gz
+  python3 tools/build_exam.py JMdict_e.gz            # keeps what exam.json already has (see below)
+  python3 tools/build_exam.py JMdict_e.gz --add-words   # also writes questions for words exam.json doesn't have yet
+  python3 tools/build_exam.py JMdict_e.gz --fresh    # rebuilds everything from scratch
+
+Rebuilding keeps what the current exam.json already has, so earlier hand fixes survive: a passage, dialogue or
+quick response whose text and questions are unchanged keeps its tap meanings; a word keeps its questions; the two
+practice exams stay as they are. Only new or edited items (and new words) are built. --fresh starts over: it
+re-picks the word questions and practice exams from today's data and loses fixes made in exam.json by hand.
 """
 import json, random, re, sys
 from pathlib import Path
@@ -164,14 +171,25 @@ def gloss_all(texts, jm, fixes):
 
 def main():
     jm, fixes = load_jmdict(sys.argv[1]), load('gloss_fixes.json')
+    old = {} if '--fresh' in sys.argv or not (ROOT / 'exam.json').exists() else json.loads((ROOT / 'exam.json').read_text(encoding='utf8'))
     data = lambda n: json.loads((ROOT / 'data' / n).read_text(encoding='utf8')) if (ROOT / 'data' / n).exists() else []
     qr, dlg, read, vx = data('exam_listening_qr.json'), data('exam_listening_dlg.json'), data('exam_reading.json'), data('exam_vocab.json') or {}
+    # Items already in exam.json with the same text and questions keep their (hand-fixed) tap meanings.
+    was = {x['id']: x for k in ('qr', 'dlg', 'read') for x in old.get(k, [])}
+    bare = lambda x: {k: v for k, v in x.items() if k != 'gl'}
+    kept, built = 0, []
+    def gloss_item(x, texts):
+        nonlocal kept
+        if x['id'] in was and bare(was[x['id']]) == bare(x):
+            x['gl'] = was[x['id']]['gl']; kept += 1
+        else:
+            x['gl'] = gloss_all(texts, jm, fixes); built.append(x['id'])
     for x in qr:
-        x['gl'] = gloss_all([x['line'], *x['options']], jm, fixes)
+        gloss_item(x, [x['line'], *x['options']])
     for x in dlg:
-        x['gl'] = gloss_all([t['t'] for t in x['turns']] + [x['question'], *x['options']], jm, fixes)
+        gloss_item(x, [t['t'] for t in x['turns']] + [x['question'], *x['options']])
     for x in read:
-        x['gl'] = gloss_all([x['text'], *[t for q in x['questions'] for t in [q['q'], *q['options']]]], jm, fixes)
+        gloss_item(x, [x['text'], *[t for q in x['questions'] for t in [q['q'], *q['options']]]])
     vocab = json.loads((ROOT / 'vocab.json').read_text(encoding='utf8'))
     examples = json.loads((ROOT / 'examples.json').read_text(encoding='utf8'))
     ctx = ctx_questions(vocab, examples, random.Random(7))
@@ -179,8 +197,14 @@ def main():
     cg = data('ctx_gloss_fixes.json') or {}
     # Sentences found broken by hand (a typo, or English that doesn't match): not used.
     ctx = {w: [c for c in cs if c['s'] not in (cg.get('bad') or {})] for w, cs in ctx.items()}
-    words = {}
-    for w in set(ctx) | {w for w, q in vx.items() if q}:
+    words, skipped = {}, []
+    for w in set(ctx) | {w for w, q in vx.items() if q} | set(old.get('vocab', {})):
+        if w in old.get('vocab', {}):   # already has its questions (sentences and options checked by hand)
+            words[w] = old['vocab'][w]
+            continue
+        if old and '--add-words' not in sys.argv:   # new words' questions need checking first (a decoy can also fit)
+            skipped.append(w)
+            continue
         q = dict(vx.get(w) or {})
         if w in ctx:
             q['ctx'] = ctx[w]
@@ -197,12 +221,19 @@ def main():
         if 'usage' in words[w]:
             u = words[w]['usage']   # its options, and the corrected sentences shown after answering ("wrong" fix)
             u['gl'] = gloss_all([*u['options'], *[x['fix'] for x in (u.get('wrong') or {}).values() if x.get('fix')]], jm, fixes)
-    mocks, mock_listen = build_mocks(data('exam_mock.json') or {}, qr, dlg, read, words, vocab, jm, fixes)
+    if old.get('mocks'):   # the practice exams stay as they are (their words' questions are already out of the pool)
+        mocks, mock_listen = old['mocks'], old['mock_listen']
+    else:
+        mocks, mock_listen = build_mocks(data('exam_mock.json') or {}, qr, dlg, read, words, vocab, jm, fixes)
     used = {i for m in mocks for i in m['listen']} | {p['id'] for m in mocks for p in m['read'] if p.get('id')}
     qr, dlg, read = [x for x in qr if x['id'] not in used], [x for x in dlg if x['id'] not in used], [x for x in read if x['id'] not in used]
     out = {'qr': qr, 'dlg': dlg, 'read': read, 'vocab': words, 'mocks': mocks, 'mock_listen': mock_listen,
            'mock_items': [x for x in data('exam_listening_qr.json') + data('exam_listening_dlg.json') + data('exam_reading.json') if x['id'] in used]}
     (ROOT / 'exam.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
+    built = [i for i in built if i not in used]   # mock items are stored without tap meanings
+    print(f"kept {kept} items as they were; built {len(built)}: {' '.join(built[:20])}{' …' if len(built) > 20 else ''}")
+    if skipped:
+        print(f"{len(skipped)} new words without questions (check them, then --add-words): {' '.join(sorted(skipped)[:15])}…")
     print(f"{len(qr)} quick-response, {len(dlg)} dialogues, {len(read)} reading items; word questions for {len(words)} words "
           f"(fill-in {sum('ctx' in q for q in words.values())}, closest meaning {sum('para' in q for q in words.values())}, usage {sum('usage' in q for q in words.values())})")
 
