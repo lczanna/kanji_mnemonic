@@ -236,6 +236,25 @@ def feature_prompt(f):
             f"The idea to convey is '{f['keyword']}', and above all the one exaggerated detail: {f['feature']}. Make that detail big, central and unmistakable.")
 
 
+# When the image service's safety filter refuses a picture, the scene is drawn again with gentler words, and then,
+# if that is refused too, as a simple scene of the keyword with the story's hooks. The card's story is not changed.
+SOFTEN = {'breasts': 'chest', 'breast': 'chest', 'nurse': 'cuddle', 'nursing': 'cuddling', 'crotch': 'lap', 'naked': 'bare-armed',
+          'kill': 'beat', 'killed': 'beaten', 'stab': 'poke', 'stabs': 'pokes', 'blood': 'red paint', 'gun': 'water pistol',
+          'pistol': 'starter flag', 'guillotine': 'paper cutter', 'corpse': 'sleeping dummy', 'dead': 'knocked-out', 'deceased': 'ghostly',
+          'grave': 'garden stone', 'gravestone': 'garden stone', 'bomb': 'party popper', 'drown': 'splash', 'drowning': 'splashing',
+          'butt': 'backside', 'bites': 'nibbles', 'bite': 'nibble', 'war': 'pillow fight', 'sword': 'toy sword', 'saber': 'toy sword',
+          'arrow': 'foam arrow', 'chest mid-play': 'costume mid-play', 'whip': 'ribbon', 'hitman': 'secret agent', 'wine': 'juice',
+          'sake': 'tea', 'whiskey': 'juice', 'scalding': 'warm', 'burns': 'tickles', 'fire': 'campfire', 'guilt': 'embarrassment'}
+def soften(text):
+    for w in sorted(SOFTEN, key=len, reverse=True):
+        text = re.sub(rf'\b{re.escape(w)}\b', SOFTEN[w], text, flags=re.I)
+    return text
+def simple_prompt(card):
+    who = [depict(s['hook']) for s in card.get('sound', []) if s.get('hook')] + [depict(t) for t in re.findall(r'\^([^^]+)\^', card.get('story', ''))]
+    return (f"{STYLE}\n\nScene: a cheerful, gentle scene that shows the idea '{card['keyword']}'"
+            + (f", with {' and '.join(dict.fromkeys(who))} clearly visible taking part" if who else '') + '.')
+
+
 def generate(card, model, quality, suffix=''):
     if card.get('grammar'):   # a grammar point's memory hook
         name, out, text, key = f"{card['id']}.jpg", GROUT, f"{STYLE}\n\nScene: {depict(card['mn']['picture'])}\nThe idea to convey is '{card['meaning'].split(';')[0]}'.", card['id']
@@ -250,15 +269,20 @@ def generate(card, model, quality, suffix=''):
     else:
         name, out, text, key = f"u{ord(card['kanji']):04x}{suffix}.jpg", OUT, prompt(card), card['kanji']
     path = out / name
-    for attempt in range(3):
+    tiers = [text, soften(text)] + ([simple_prompt(card)] if 'story' in card and 'w' not in card else [])
+    for attempt in range(3 + len(tiers)):
         try:
-            res = call('/images/generations', {'model': model, 'prompt': text, 'size': '1536x1024', 'quality': quality, 'n': 1})
+            res = call('/images/generations', {'model': model, 'prompt': tiers[0], 'size': '1536x1024', 'quality': quality, 'n': 1})
             img = Image.open(io.BytesIO(base64.b64decode(res['data'][0]['b64_json']))).convert('RGB')
             img = img.resize((480, 320), Image.LANCZOS)
             img.save(path, 'JPEG', quality=80, optimize=True)
             return key, f'images/{out.name}/{name}', None
         except urllib.error.HTTPError as e:
             err = e.read().decode()[:300]
+            if e.code == 400 and 'safety' in err and len(tiers) > 1:   # refused: try gentler words, then a simple scene
+                tiers.pop(0); continue
+            if 'insufficient_quota' in err:   # out of credit: retrying won't help
+                return key, None, 'OUT OF CREDIT: add credit to the OpenAI account, then run again'
             if e.code in (429, 500, 502, 503) and attempt < 2:
                 time.sleep(10 * (attempt + 1)); continue
             return key, None, f'HTTP {e.code}: {err}'
