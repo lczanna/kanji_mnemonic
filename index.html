@@ -168,6 +168,7 @@ button.chip { background: none; font: inherit; font-size: 12px; cursor: pointer;
 .part-of { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
 .part-of .chip { color: var(--ink); }
 .story .snd { font-weight: 700; color: var(--hard); }
+.story .kun { font-weight: 700; color: var(--good); }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 12px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 .section-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
@@ -1060,7 +1061,8 @@ function storyHtml(s) {
   return esc(s)
     .replace(/\{([^}]+)\}/g, '<span class="kw">$1</span>')
     .replace(/\[([^\]]+)\]/g, '<button class="prim" data-part="$1">$1</button>')
-    .replace(/~([^~]+)~/g, '<span class="snd">$1</span>');
+    .replace(/~([^~]+)~/g, '<span class="snd">$1</span>')
+    .replace(/\^([^^]+)\^/g, '<span class="kun">$1</span>');   // the Japanese reading's sound-alike
 }
 // A word's memory hook names its kanji by their keywords ("a clockwork mechanism" in 機会): those words become
 // links to the kanji cards, first mention of each kanji. Forms count too (study → studies, person → people), and so
@@ -1624,6 +1626,7 @@ function backHtml(k, mode) {
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}${castSibling(x.r)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
       <div class="vocab-row"><span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span><span class="m">${esc(v.m)}${BY_WORD[v.w] && appData.cards['v:' + v.w] ? ` <button class="chip word-link" data-v="${esc(v.w)}">your word card ›</button>` : ''}</span></div>`).join('')}</div></div>` : '';
+  // The Japanese (kun) reading is part of the story itself (^Koala^ … (くわえる)), so it shares the story's picture.
   const body = mode === 'quiz' ? vocabH + soundH + story + img : img + story + soundH + vocabH;
   return `
   <div class="back" data-in="${esc(k.kanji)}">
