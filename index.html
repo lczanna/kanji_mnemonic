@@ -2374,16 +2374,21 @@ function examBar(it) {
 }
 // Listening items are recorded with neural voices (tools/gen_audio.py): audio/<id>.mp3, or on the Claude link
 // audio/packs/ (few big files instead of hundreds). If a recording can't load, the phone's voices read the script.
-let audioIndex = null, audioPacks = {}, audioEl = null;
+let audioIndex = null, audioPacks = {}, audioUrls = {}, audioEl = null;
+// The Claude link keeps the clips in a few packs (tools/pack_audio.py): audio/packs/c00.mp3 … are the MP3 files one
+// after another, and clips.json says where each clip is ({id: [pack, offset, length]}).
 async function audioSrc(id, dir = 'audio') {
   try { const r = await fetch(`${dir}/${id}.mp3`, { method: 'HEAD' }); if (r.ok) return `${dir}/${id}.mp3`; } catch (e) { /* try the packs */ }
   try {
-    audioIndex = audioIndex || getJson('audio/packs/index.json');
-    const n = (await audioIndex)[id];
-    if (n == null) return null;
-    audioPacks[n] = audioPacks[n] || getJson(`audio/packs/a${String(n).padStart(2, '0')}.json`);
-    return (await audioPacks[n])[id] || null;
-  } catch (e) { audioIndex = null; return null; }
+    if (audioUrls[id]) return audioUrls[id];
+    audioIndex = audioIndex || getJson('audio/packs/clips.json');
+    const at = (await audioIndex)[id];
+    if (!at) return null;
+    const [n, off, len] = at, name = `audio/packs/c${String(n).padStart(2, '0')}.mp3`;
+    audioPacks[n] = audioPacks[n] || fetch(name).then(r => { if (!r.ok) throw new Error(name); return r.arrayBuffer(); });
+    const buf = await audioPacks[n];
+    return (audioUrls[id] = URL.createObjectURL(new Blob([buf.slice(off, off + len)], { type: 'audio/mpeg' })));
+  } catch (e) { audioIndex = null; audioPacks = {}; return null; }
 }
 async function playRecorded(id, fallback, dir) {
   try { speechSynthesis.cancel(); } catch (e) { /* no speech */ }

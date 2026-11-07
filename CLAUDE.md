@@ -58,6 +58,7 @@ The app tries `images/n3/` first and falls back to the packs, so GitHub Pages ne
 ## Listening audio
 
 `tools/gen_audio.py` records the listening items with clearly male and clearly female voices and checks each line's
-pitch. For the Claude link, read the published `audio/packs/index.json` and run
+pitch. For the Claude link, read the published `audio/packs/clips.json` and run
 `python3 tools/pack_audio.py <scratch dir> --keep <that index>`: clips stay in their published packs, so only the packs
-holding re-recorded clips need publishing.
+holding re-recorded clips need publishing. Packs are plain MP3 bytes (`c00.mp3`…), not base64: the link holds at most
+256 MB a version (pictures ~134 MB, audio ~95 MB), so check the total before adding much more.
