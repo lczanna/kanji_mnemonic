@@ -1466,6 +1466,8 @@ function partNameWhy(g) {
   const why = Object.entries(PARTS).filter(([n, p]) => p.g === g && PART_NAME_WHY[n]).map(([n]) => `<b>${esc(n)}</b>: ${esc(PART_NAME_WHY[n])}.`);
   return why.length ? `<div class="g-contrast"><span class="tag">AS A PART</span> ${why.join(' ')}</div>` : '';
 }
+// A kanji with no named parts: which stroke is which piece of the picture (kanji.json / part_cards.json "shape").
+const shapeHtml = x => x && x.shape ? `<div class="g-contrast"><span class="tag">SHAPE</span> <span lang="ja">${esc(x.shape)}</span></div>` : '';
 function twinHtml(g) {
   const t = PART_TWINS[g];
   return t ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(t[0])}</span> ${esc(t[1])}: ${esc(t[2])}.</div>` : '';
@@ -1604,7 +1606,7 @@ function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
   // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
   const img = k.image ? `<img class="card-img${mode === 'quiz' ? ' small' : ''}" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="imgFallback(this)">` : '';
-  const story = `<div class="story">${storyHtml(k.story || '')}</div>${twinHtml(k.kanji)}${partNameWhy(k.kanji)}`;
+  const story = `<div class="story">${storyHtml(k.story || '')}</div>${shapeHtml(k)}${twinHtml(k.kanji)}${partNameWhy(k.kanji)}`;
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}${castSibling(x.r)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
@@ -2917,7 +2919,7 @@ function partBackHtml(p) {
     <div class="headline"><div class="k-small" lang="ja">${esc(p.kanji)}</div>
       <div><div class="keyword">${esc(p.keyword)}</div><div class="meaning">a part, not a kanji you're tested on</div>
         ${(p.components || []).length ? `<div class="chips" style="margin-top:6px">${p.components.map(c => `<button class="chip" data-part="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}</div></div>
-    ${img}<div class="story">${storyHtml(p.story || '')}</div>${twinHtml(p.kanji)}
+    ${img}<div class="story">${storyHtml(p.story || '')}</div>${shapeHtml(p)}${twinHtml(p.kanji)}
     ${lookPanelHtml(p)}
     ${used.length ? `<div><div class="section-label">You'll find it in</div><div class="chips">${used.map(k => `<button class="chip" data-kt="${esc(k.kanji)}"><span lang="ja">${esc(k.kanji)}</span> ${esc(k.keyword)}</button>`).join('')}</div></div>` : ''}
   </div>`;

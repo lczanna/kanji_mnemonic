@@ -167,6 +167,8 @@ def main():
                                                  for n in re.findall(r'\[([^\]]+)\]', c['story']))]
         img = f'images/parts/{ord(g):x}.jpg'
         card = {'kanji': g, 'keyword': x['keyword'], 'components': x.get('components') or [], 'story': x['story'], 'usedIn': used}
+        if x.get('shape'):   # which stroke is which piece of the picture, for parts with no named pieces
+            card['shape'] = x['shape']
         pg = glyphs_meant(card)
         part_cards.append(dict(card, **({'pg': pg} if pg else {}), **({'image': img} if (ROOT / img).exists() else {})))
     deck['partCards'] = sorted(part_cards, key=lambda p: min((i for i, c in enumerate(order) if c['kanji'] in p['usedIn']), default=9999))
