@@ -3777,5 +3777,977 @@
    }
   ],
   "en": "The town I was born in is a small town surrounded by mountains. Many young people have left for big cities, and the population has fallen by almost half in twenty years. As a result, the town has more and more old houses where nobody lives.\nThree years ago, a couple who moved here from Tokyo rented one of those houses and opened a café. At first the townspeople said, \"Even if you open a café in a place like this, no customers will come.\" I thought so too.\nBut the couple kept the old house's pillars and windows as they were and cooked with vegetables bought from local farmers. And they kept posting photos of the shop online. Then, after about six months, customers began coming even from distant towns. On weekends, cars sometimes line up in front of the shop.\nSince the café opened, the town has been changing too. The farmers selling vegetables earn more, and a small bakery opened near the café. The town office says it has even begun to get inquiries from young people who want to start shops in old houses.\nOld houses have been seen as a troublesome problem for the town. But if you change how they're used, they can become a force that revitalises it. The couple's café taught us that."
+ },
+ {
+  "id": "rd086",
+  "kind": "medium",
+  "title": "The bullet train and the kingfisher",
+  "text": "　新幹線の先頭は、どうしてあんなに長いのだろうか。\n　昔の新幹線は、スピードを上げるとトンネルに入るときに大きな問題が起きた。電車がトンネルに入ると、中の空気が強く押されて、反対側の出口で「ドン」という大きな音が出てしまうのだ。近くに住む人たちにとって、これは①がまんできない問題だった。\n　この問題を解決するヒントをくれたのは、カワセミという鳥だった。カワセミは魚をとるとき、空から水の中に飛びこむが、ほとんど水しぶきを上げない。くちばしの形のおかげで、②水の抵抗が小さいのだ。技術者たちは、このくちばしの形をまねて、新幹線の先頭を細長くした。すると、音は小さくなり、スピードも上がった。\n　③自然の中には、人間がまだ気づいていない答えがたくさんかくれているのかもしれない。",
+  "under": [
+   "がまんできない問題",
+   "水の抵抗が小さい",
+   "自然の中には、人間がまだ気づいていない答えがたくさんかくれている"
+  ],
+  "questions": [
+   {
+    "q": "①「がまんできない問題」とあるが、どんな問題か。",
+    "options": [
+     "電車がトンネルの中で止まってしまうこと",
+     "トンネルの中の空気が悪くなること",
+     "新幹線のスピードが上がらないこと",
+     "電車がトンネルに入ると、出口で大きな音がすること"
+    ],
+    "answer": 3,
+    "why": "The text just before: air is pushed hard and a loud ドン comes out of the far exit; that is what neighbours couldn't stand.",
+    "opts_en": [
+     "Trains stopping inside tunnels",
+     "The air in the tunnel getting bad",
+     "The bullet train not getting faster",
+     "A loud bang at the exit when a train enters a tunnel"
+    ],
+    "wrong": {
+     "0": "Trains stopping is never mentioned.",
+     "1": "Bad air isn't the problem; the pressed air makes noise.",
+     "2": "True of old trains in a way, but the problem for NEIGHBOURS is the noise."
+    }
+   },
+   {
+    "q": "②「水の抵抗が小さい」とはどういうことか。",
+    "options": [
+     "カワセミは小さい魚しかとらない",
+     "カワセミは水がきらいではない",
+     "水が少ないところで魚をとる",
+     "水に入るときに、水がカワセミをじゃましない"
+    ],
+    "answer": 3,
+    "why": "抵抗 = resistance: the beak lets the bird enter with almost no splash, i.e. the water barely pushes back.",
+    "opts_en": [
+     "Kingfishers only catch small fish",
+     "Kingfishers don't dislike water",
+     "They fish where there is little water",
+     "Water hardly holds the kingfisher back as it dives in"
+    ],
+    "wrong": {
+     "0": "The size of the fish isn't mentioned.",
+     "1": "Liking or disliking water isn't what 抵抗 means.",
+     "2": "小さい describes the resistance, not the amount of water."
+    }
+   },
+   {
+    "q": "③「自然の中には…かくれているのかもしれない」とあるが、筆者はどうしてそう考えたか。",
+    "options": [
+     "新幹線の先頭が長いのは、鳥に似ているから",
+     "カワセミはほとんど水しぶきを上げないから",
+     "鳥のくちばしの形が、新幹線の問題を解決するヒントになったから",
+     "技術者たちが自然を守ろうとしたから"
+    ],
+    "answer": 2,
+    "why": "The point of the story: nature (a bird) held the answer engineers needed, so there may be more such answers.",
+    "opts_en": [
+     "Because the long nose looks like a bird",
+     "Because kingfishers barely splash",
+     "Because a bird's beak gave the hint that solved the train's problem",
+     "Because engineers tried to protect nature"
+    ],
+    "wrong": {
+     "0": "It does look like a bird, but that's the result, not the reason for the thought.",
+     "1": "True in the text, but only a fact about the bird; the reason is that it SOLVED a human problem.",
+     "3": "Protecting nature is never mentioned."
+    }
+   }
+  ],
+  "en": "Why is the front of the bullet train so long? With older bullet trains, raising the speed caused a big problem when entering tunnels. When a train enters a tunnel, the air inside is pushed hard and a loud 'boom' comes out of the exit on the other side. For people living nearby, this was ① a problem they couldn't stand. The hint that solved it came from a bird, the kingfisher. When a kingfisher catches fish it dives from the sky into the water, yet hardly makes a splash. Thanks to the shape of its beak, ② the water's resistance is small. Engineers copied the beak's shape and made the train's nose long and thin. The noise got quieter, and the speed went up. ③ Perhaps nature hides many answers humans haven't noticed yet.",
+  "hard": true
+ },
+ {
+  "id": "rd087",
+  "kind": "medium",
+  "title": "Mottainai goes around the world",
+  "text": "　「もったいない」という日本語は、ものを大切にしないでむだにすることを残念に思う気持ちを表す言葉だ。英語には、①この言葉とまったく同じ意味の言葉がないと言われている。\n　この言葉を世界に広めたのは、日本人ではない。ケニアの環境活動家、ワンガリ・マータイさんだ。二〇〇五年に日本に来たとき、彼女はこの言葉を知って、とても感動したという。「もったいない」という一つの言葉の中に、ごみを減らすこと、もう一度使うこと、資源を大切にすることという、環境を守るための②三つの考え方が全部入っていると思ったからだ。\n　その後、マータイさんは世界のいろいろな会議でこの言葉を紹介した。今では、外国の人が「MOTTAINAI」と言うのを聞くこともある。日本人にとっては当たり前の言葉が、外から見ると、③特別な価値を持っていたのである。",
+  "under": [
+   "この言葉とまったく同じ意味の言葉がない",
+   "三つの考え方",
+   "特別な価値を持っていた"
+  ],
+  "questions": [
+   {
+    "q": "①「この言葉とまったく同じ意味の言葉がない」とあるが、どういうことか。",
+    "options": [
+     "「もったいない」は英語から来た言葉だ",
+     "「もったいない」を一つの英語の言葉で言いかえるのは難しい",
+     "英語を話す人は、ものを大切にしない",
+     "英語には「もったいない」に近い言葉がたくさんある"
+    ],
+    "answer": 1,
+    "why": "No word with exactly the same meaning = you can't simply swap it for one English word.",
+    "opts_en": [
+     "\"Mottainai\" comes from English",
+     "\"Mottainai\" is hard to put into a single English word",
+     "English speakers don't value things",
+     "English has many words close to \"mottainai\""
+    ],
+    "wrong": {
+     "0": "It's a Japanese word.",
+     "2": "It's about vocabulary, not about people's habits.",
+     "3": "The text says there is NO equivalent, not many near ones."
+    }
+   },
+   {
+    "q": "②「三つの考え方」とは何か。",
+    "options": [
+     "環境を守ること、会議に出ること、言葉を紹介すること",
+     "日本の考え方、ケニアの考え方、世界の考え方",
+     "ごみを減らすこと、もう一度使うこと、資源を大切にすること",
+     "ものを大切にすること、むだにすること、残念に思うこと"
+    ],
+    "answer": 2,
+    "why": "Listed right before: ごみを減らすこと、もう一度使うこと、資源を大切にすること.",
+    "opts_en": [
+     "Protect nature, attend meetings, introduce the word",
+     "Japanese, Kenyan and world views",
+     "Reduce waste, reuse, value resources",
+     "Value things, waste them, feel sorry"
+    ],
+    "wrong": {
+     "0": "Meetings and introducing the word came later.",
+     "1": "No such comparison is made.",
+     "3": "These words come from the definition of もったいない, not the three ideas."
+    }
+   },
+   {
+    "q": "③「特別な価値を持っていた」とあるが、筆者は何が言いたいのか。",
+    "options": [
+     "マータイさんは日本で賞をもらった",
+     "「もったいない」は日本でいちばん有名な言葉だ",
+     "外国の人は日本語を勉強したほうがいい",
+     "日本人には普通の言葉が、外国の人には大切な意味を持つことがある"
+    ],
+    "answer": 3,
+    "why": "日本人にとっては当たり前の言葉が、外から見ると special: an everyday word looked valuable from outside.",
+    "opts_en": [
+     "Maathai won a prize in Japan",
+     "\"Mottainai\" is Japan's most famous word",
+     "Foreigners should study Japanese",
+     "A word ordinary to Japanese can carry great meaning for others"
+    ],
+    "wrong": {
+     "0": "A prize in Japan isn't mentioned.",
+     "1": "Being the most famous word is never claimed.",
+     "2": "Studying Japanese isn't the writer's point."
+    }
+   }
+  ],
+  "en": "The Japanese word 'mottainai' expresses regret at wasting things instead of treating them with care. It's said that English has ① no word with exactly the same meaning. The person who spread this word around the world wasn't Japanese: it was Wangari Maathai, an environmental activist from Kenya. When she came to Japan in 2005 and learned the word, she was deeply moved, because she felt this one word contained all ② three ideas for protecting the environment: reducing waste, reusing, and valuing resources. Afterwards, she introduced the word at many international meetings. Now you sometimes hear foreigners say 'MOTTAINAI'. A word that is ordinary for Japanese people ③ had a special value when seen from outside.",
+  "hard": true
+ },
+ {
+  "id": "rd088",
+  "kind": "medium",
+  "title": "Where emoji came from",
+  "text": "　今、世界中の人がスマートフォンで使っている絵文字は、日本で生まれたものだ。一九九九年、ある携帯電話の会社で働いていた栗田穣崇さんが、最初の絵文字を作った。\n　そのころの携帯電話は、一度に送れる文字の数がとても少なかった。そのため、短い文で気持ちを伝えなければならなかった。しかし、文字だけのメッセージでは、①相手を誤解させてしまうことがある。たとえば「わかった」とだけ書くと、怒っているように読めるかもしれない。そこで栗田さんは、小さな絵を一つ付けるだけで、②気持ちが正しく伝わるようにしようと考えたのだ。\n　最初の絵文字は百七十六個で、天気やハートなどの簡単な絵だった。それが今では、何千もの種類がある。③小さな工夫が、世界中の人の話し方を変えたと言えるだろう。",
+  "under": [
+   "相手を誤解させてしまう",
+   "気持ちが正しく伝わるようにしよう",
+   "小さな工夫が、世界中の人の話し方を変えた"
+  ],
+  "questions": [
+   {
+    "q": "①「相手を誤解させてしまう」とあるが、どういうことか。",
+    "options": [
+     "相手の名前をまちがえてしまう",
+     "相手がメッセージを読まない",
+     "書いた人の本当の気持ちとちがうように受け取られる",
+     "文字が多すぎて、相手が疲れる"
+    ],
+    "answer": 2,
+    "why": "The example: 「わかった」 alone might read as angry, i.e. not what you meant.",
+    "opts_en": [
+     "You get their name wrong",
+     "The other person doesn't read it",
+     "It's taken differently from what the writer really felt",
+     "Too many characters tire the reader"
+    ],
+    "wrong": {
+     "0": "Names aren't mentioned.",
+     "1": "Not reading the message isn't the issue.",
+     "3": "Messages then were SHORT, not too long."
+    }
+   },
+   {
+    "q": "②「気持ちが正しく伝わるようにしよう」とあるが、栗田さんはそのために何をしたか。",
+    "options": [
+     "長い文で気持ちを書くようにした",
+     "一度に送れる文字の数を増やした",
+     "メッセージに付ける小さな絵を作った",
+     "怒っているメッセージを送れないようにした"
+    ],
+    "answer": 2,
+    "why": "小さな絵を一つ付けるだけで: he designed the first emoji.",
+    "opts_en": [
+     "Had people write feelings in long sentences",
+     "Increased the number of characters you could send",
+     "Created small pictures to attach to messages",
+     "Blocked angry messages"
+    ],
+    "wrong": {
+     "0": "Long sentences weren't possible then.",
+     "1": "The character limit was a fact of the time; he didn't change it.",
+     "3": "Blocking messages isn't mentioned."
+    }
+   },
+   {
+    "q": "③「小さな工夫が、世界中の人の話し方を変えた」とあるが、どういう意味か。",
+    "options": [
+     "世界中の人が日本語を話すようになった",
+     "絵文字は最初、百七十六個しかなかった",
+     "日本で生まれた小さな絵が、今では世界中のメッセージで使われている",
+     "電話で話す人が少なくなった"
+    ],
+    "answer": 2,
+    "why": "The small idea (a tiny picture) spread until people all over the world communicate with it.",
+    "opts_en": [
+     "People worldwide started speaking Japanese",
+     "There were only 176 emoji at first",
+     "Small pictures born in Japan are now used in messages worldwide",
+     "Fewer people talk on the phone"
+    ],
+    "wrong": {
+     "0": "話し方 here means how people communicate, not the language.",
+     "1": "True (176 at first), but it doesn't explain the change in how people communicate.",
+     "3": "Phone calls aren't mentioned."
+    }
+   }
+  ],
+  "en": "The emoji people around the world use on smartphones today were born in Japan. In 1999, Shigetaka Kurita, who worked at a mobile phone company, created the first emoji. Phones back then could send very few characters at once, so feelings had to be conveyed in short sentences. But text-only messages can ① make the other person misunderstand. For example, writing only 'wakatta' (got it) might read as angry. So Kurita thought that by attaching just one small picture, ② feelings could come across correctly. The first emoji were 176 simple pictures, like weather and hearts. Now there are thousands. You could say ③ a small idea changed the way people all over the world talk.",
+  "hard": true
+ },
+ {
+  "id": "rd089",
+  "kind": "medium",
+  "title": "How many colours in a rainbow?",
+  "text": "　虹は何色だろうか。日本では七色だと答える人が多いだろう。しかし、①同じ質問をほかの国ですると、答えは同じではない。アメリカでは六色だと考える人が多く、さらに少ない色で表す地域もあるという。\n　実は、虹の色の数は、空の上で決まっているのではない。虹の光は、赤から紫まで、少しずつ色が変わっていて、色と色の間にはっきりした線はない。それを何色に分けるかは、その国の言葉にどんな色の名前があるかによって変わるのだ。②見ているものは同じでも、言葉がちがえば、見え方もちがってくるのである。\n　外国の人と話していて、「えっ、そう考えるの？」と驚くことがあるかもしれない。③そんなときは、どちらが正しいかを決める前に、相手の言葉の世界を少しのぞいてみるといい。",
+  "under": [
+   "同じ質問をほかの国ですると、答えは同じではない",
+   "見ているものは同じでも、言葉がちがえば、見え方もちがってくる",
+   "そんなときは"
+  ],
+  "questions": [
+   {
+    "q": "①「同じ質問をほかの国ですると、答えは同じではない」とあるが、それはどうしてか。",
+    "options": [
+     "国によって、色の名前の数がちがうから",
+     "虹の色の数を知らない人が多いから",
+     "国によって、空に見える虹がちがうから",
+     "アメリカでは虹があまり見えないから"
+    ],
+    "answer": 0,
+    "why": "The number isn't decided in the sky; it depends on which colour names the language has.",
+    "opts_en": [
+     "Because the number of colour words differs by country",
+     "Because many people don't know how many colours there are",
+     "Because each country sees a different rainbow in the sky",
+     "Because rainbows are rare in America"
+    ],
+    "wrong": {
+     "1": "People do answer; their answers just differ.",
+     "2": "The text says the opposite: it isn't decided in the sky.",
+     "3": "How often rainbows appear isn't discussed."
+    }
+   },
+   {
+    "q": "②「見ているものは同じでも、言葉がちがえば、見え方もちがってくる」とはどういうことか。",
+    "options": [
+     "国によって、虹の色の順番が変わる",
+     "同じ虹を見ても、使う言葉によって、いくつの色に見えるかが変わる",
+     "外国語を勉強すると、目がよくなる",
+     "言葉がわからないと、虹は見えない"
+    ],
+    "answer": 1,
+    "why": "The rainbow is one continuous band; your language decides where you cut it into colours.",
+    "opts_en": [
+     "The order of colours changes by country",
+     "Looking at the same rainbow, how many colours you see depends on your language",
+     "Studying languages improves eyesight",
+     "You can't see a rainbow without words"
+    ],
+    "wrong": {
+     "0": "The order (red to purple) is the same everywhere.",
+     "2": "Eyesight isn't the point.",
+     "3": "Everyone sees the rainbow; they divide it differently."
+    }
+   },
+   {
+    "q": "③「そんなとき」とは、どんなときか。",
+    "options": [
+     "どちらが正しいかわからないとき",
+     "外国の人の考え方に驚いたとき",
+     "外国の人と色の話をしているとき",
+     "虹を見たとき"
+    ],
+    "answer": 1,
+    "why": "そんなとき points back to the sentence before: when you think 「えっ、そう考えるの？」 in surprise.",
+    "opts_en": [
+     "When you don't know who is right",
+     "When you are surprised by how a foreigner thinks",
+     "When talking about colours with foreigners",
+     "When you see a rainbow"
+    ],
+    "wrong": {
+     "0": "The writer says to look before deciding, not that you don't know.",
+     "2": "It isn't limited to colours: any surprising view.",
+     "3": "Rainbows are the example, but そんな points to the surprise."
+    }
+   }
+  ],
+  "en": "How many colours does a rainbow have? In Japan most people would say seven. But ① ask the same question in another country and the answer isn't the same. In America many people think six, and some regions use even fewer colours. In fact, the number of colours isn't decided up in the sky. A rainbow's light changes gradually from red to purple, with no clear line between colours. How many colours you divide it into depends on what colour names your language has. ② Even if what you see is the same, if the language differs, how it looks differs too. When talking with people from other countries, you may be surprised: 'What, you think that?' ③ At such times, before deciding who's right, take a little peek into the world of their language.",
+  "hard": true
+ },
+ {
+  "id": "rd090",
+  "kind": "medium",
+  "title": "Cutting trees to save the forest",
+  "text": "　「森を守る」と聞くと、木を切らないことだと考える人が多いだろう。しかし、①人が植えた森の場合は、その反対で、木を切ることが必要なのだ。\n　人が木を植えるときは、何本かが育たなくても大丈夫なように、たくさんの苗を近くに植える。木が大きくなってくると、森の中が込みすぎて、地面まで日光がとどかなくなる。すると、下に草が生えなくなり、雨が降ったときに土が流れやすくなる。また、一本一本の木も細く弱いままになってしまう。\n　そこで、②一部の木を切って、森の中に光が入るようにする。これを「間伐」という。残った木は太く元気に育ち、地面には草が生えて、土も守られる。\n　③何もしないことが、いつも自然のためになるとはかぎらない。森を守るためには、人がずっと手を入れ続けることが大切なのである。",
+  "under": [
+   "人が植えた森の場合は、その反対",
+   "一部の木を切って、森の中に光が入るようにする",
+   "何もしないことが、いつも自然のためになるとはかぎらない"
+  ],
+  "questions": [
+   {
+    "q": "①「人が植えた森の場合は、その反対」とあるが、どういうことか。",
+    "options": [
+     "人が植えた森では、木を切ることが森を守ることになる",
+     "人が植えた森は、自然の森より大きい",
+     "人が植えた森では、木を切ってはいけない",
+     "人が植えた森には、木が少ない"
+    ],
+    "answer": 0,
+    "why": "The opposite of \"don't cut trees\": in planted forests 木を切ることが必要.",
+    "opts_en": [
+     "In planted forests, cutting trees is what protects the forest",
+     "Planted forests are bigger than natural ones",
+     "In planted forests you mustn't cut trees",
+     "Planted forests have few trees"
+    ],
+    "wrong": {
+     "1": "Size isn't compared.",
+     "2": "That is the common idea the text contradicts.",
+     "3": "The opposite: they are planted too densely."
+    }
+   },
+   {
+    "q": "②「一部の木を切って、森の中に光が入るようにする」のはどうしてか。",
+    "options": [
+     "木が込みすぎて、地面に日光がとどかないから",
+     "雨が森の中に入らないから",
+     "切った木を売るため",
+     "草が多すぎて、木が育たないから"
+    ],
+    "answer": 0,
+    "why": "Too crowded → no sunlight reaches the ground → no grass, soil washes away, trees stay thin.",
+    "opts_en": [
+     "Because the trees are too crowded and sunlight can't reach the ground",
+     "Because rain can't get into the forest",
+     "To sell the timber",
+     "Because too much grass stops trees growing"
+    ],
+    "wrong": {
+     "1": "Rain does fall; the problem is soil washing away.",
+     "2": "Selling wood isn't mentioned.",
+     "3": "The opposite: without light, grass DOESN'T grow."
+    }
+   },
+   {
+    "q": "③「何もしないことが、いつも自然のためになるとはかぎらない」とあるが、筆者が言いたいことは何か。",
+    "options": [
+     "森を守るためには、人が世話を続けることが必要だ",
+     "残った木は太く元気に育つ",
+     "森の木はできるだけ切らないほうがいい",
+     "人は森に入らないほうがいい"
+    ],
+    "answer": 0,
+    "why": "The last sentence: 人がずっと手を入れ続けることが大切.",
+    "opts_en": [
+     "Protecting a forest needs people to keep caring for it",
+     "The remaining trees grow thick and healthy",
+     "Cut as few trees as possible",
+     "People should stay out of forests"
+    ],
+    "wrong": {
+     "1": "True in the text, but a result of thinning, not the writer's main point.",
+     "2": "That's the idea the writer argues against.",
+     "3": "The writer says the opposite."
+    }
+   }
+  ],
+  "en": "When people hear 'protect the forest', many think it means not cutting trees. But ① in a forest that people planted, it's the opposite: cutting trees is necessary. When people plant trees, they plant many seedlings close together so it's fine if some don't grow. As the trees get bigger, the forest becomes too crowded and sunlight no longer reaches the ground. Then grass stops growing underneath, and soil washes away easily when it rains. Each tree also stays thin and weak. So ② some trees are cut to let light into the forest. This is called thinning. The remaining trees grow thick and healthy, grass grows on the ground, and the soil is protected. ③ Doing nothing isn't always good for nature. To protect a forest, it's important that people keep tending it.",
+  "hard": true
+ },
+ {
+  "id": "rd091",
+  "kind": "medium",
+  "title": "A letter from the sky",
+  "text": "　「雪は天から送られた手紙である」。これは、雪の研究で知られる中谷宇吉郎という科学者の言葉だ。\n　雪の結晶は、六つの角を持つ美しい形をしている。しかし、よく見ると、①一つとして同じ形のものはない。中谷は、その理由を知りたいと考え、長い時間をかけて雪の結晶を調べた。そして一九三六年、世界で初めて、実験室の中で雪の結晶を作ることに成功した。\n　実験を続けるうちに、中谷は、空の上の気温と水分の量によって、結晶の形が変わることを発見した。つまり、雪の形を見れば、それが生まれた空の様子がわかるのだ。②冒頭の言葉は、そのことを表している。\n　私たちは雪を見ても、寒い、きれいだと思うだけかもしれない。しかし、③中谷にとって、雪は空から届いた情報だったのである。",
+  "under": [
+   "一つとして同じ形のものはない",
+   "冒頭の言葉は、そのことを表している",
+   "中谷にとって、雪は空から届いた情報だった"
+  ],
+  "questions": [
+   {
+    "q": "①「一つとして同じ形のものはない」とはどういうことか。",
+    "options": [
+     "雪の結晶の形は、どれもちがう",
+     "雪の結晶は、どれも同じ形だ",
+     "雪の結晶は、一つしかない",
+     "雪の結晶には、六つの角がない"
+    ],
+    "answer": 0,
+    "why": "一つとして〜ない = not even one: no two are the same.",
+    "opts_en": [
+     "Every snow crystal has a different shape",
+     "All snow crystals look the same",
+     "There is only one snow crystal",
+     "Snow crystals don't have six points"
+    ],
+    "wrong": {
+     "1": "The exact opposite.",
+     "2": "一つ here is part of the pattern, not a count.",
+     "3": "The text says they DO have six points."
+    }
+   },
+   {
+    "q": "②「冒頭の言葉は、そのことを表している」とあるが、「そのこと」とは何か。",
+    "options": [
+     "世界で初めて実験室で雪を作ったこと",
+     "雪の形から、それが生まれた空の様子がわかること",
+     "雪は空から降ってくること",
+     "雪の結晶は美しい形をしていること"
+    ],
+    "answer": 1,
+    "why": "そのこと = the sentence just before: 雪の形を見れば、それが生まれた空の様子がわかる; a letter carries information.",
+    "opts_en": [
+     "That snow was first made in a lab",
+     "That a snowflake's shape tells you about the sky where it formed",
+     "That snow falls from the sky",
+     "That snow crystals are beautiful"
+    ],
+    "wrong": {
+     "0": "True (1936), but that's not what the \"letter\" means.",
+     "2": "True, but too obvious; a letter carries a MESSAGE.",
+     "3": "Beauty isn't the message of the letter."
+    }
+   },
+   {
+    "q": "③「中谷にとって、雪は空から届いた情報だった」とあるが、どういう意味か。",
+    "options": [
+     "中谷は、雪を見てもきれいだと思わなかった",
+     "中谷は、天気予報の仕事をしていた",
+     "中谷は、雪の中に手紙を見つけた",
+     "中谷は、雪から空の上の気温や水分のことを知ることができた"
+    ],
+    "answer": 3,
+    "why": "The shape depends on temperature and moisture, so each crystal \"reports\" the conditions where it formed.",
+    "opts_en": [
+     "Nakaya didn't find snow beautiful",
+     "Nakaya worked as a weather forecaster",
+     "Nakaya found a letter in the snow",
+     "Nakaya could learn about the temperature and moisture up in the sky from snow"
+    ],
+    "wrong": {
+     "0": "Never said; the contrast is with ordinary people's view.",
+     "1": "His job as a forecaster isn't mentioned.",
+     "2": "手紙 is a metaphor, not a real letter."
+    }
+   }
+  ],
+  "en": "'Snow is a letter sent from the heavens.' These are the words of Ukichiro Nakaya, a scientist known for his research on snow. Snow crystals have a beautiful shape with six points. But if you look closely, ① not a single one has the same shape. Nakaya wanted to know why, and spent a long time studying snow crystals. In 1936 he became the first person in the world to make a snow crystal in a laboratory. Continuing his experiments, he discovered that a crystal's shape changes with the temperature and amount of moisture high in the sky. In other words, if you look at a snowflake's shape, you can tell what the sky was like where it formed. ② The words at the beginning express exactly that. When we see snow, we may only think it's cold or pretty. But ③ for Nakaya, snow was information delivered from the sky.",
+  "hard": true
+ },
+ {
+  "id": "rd092",
+  "kind": "medium",
+  "title": "The glue that didn't stick",
+  "text": "　机の上やパソコンのまわりに、小さな紙をはっている人は多いだろう。何度もはったりはがしたりできる、あのふせんは、①ある失敗から生まれたものだ。\n　一九六八年、アメリカの会社で、強い接着剤を作る研究をしていた人がいた。ところが、できあがったのは、よくつくのに、すぐにはがれてしまう、弱い接着剤だった。会社の中では、②役に立たないものだと思われていた。\n　それから数年後、同じ会社の別の社員が、教会で歌を歌うとき、楽譜にはさんだしおりがすぐに落ちてしまうことに困っていた。そのとき、彼はあの弱い接着剤のことを思い出した。これを紙に付ければ、楽譜を傷つけずに、はったりはがしたりできると考えたのだ。\n　③失敗だと思われていたものも、使い方を変えれば、大切な発明になることがある。",
+  "under": [
+   "ある失敗から生まれた",
+   "役に立たないものだと思われていた",
+   "失敗だと思われていたものも、使い方を変えれば、大切な発明になることがある"
+  ],
+  "questions": [
+   {
+    "q": "①「ある失敗」とは何か。",
+    "options": [
+     "会社が新しい商品を売れなかったこと",
+     "紙がすぐにやぶれてしまったこと",
+     "強い接着剤を作ろうとして、弱い接着剤ができたこと",
+     "楽譜にはさんだしおりが落ちたこと"
+    ],
+    "answer": 2,
+    "why": "They aimed for a strong adhesive but made one that peels off easily: that was the failure.",
+    "opts_en": [
+     "The company failing to sell a product",
+     "The paper tearing easily",
+     "Trying to make a strong glue and getting a weak one",
+     "A bookmark falling out of sheet music"
+    ],
+    "wrong": {
+     "0": "Sales aren't mentioned.",
+     "1": "Torn paper isn't mentioned.",
+     "3": "The falling bookmark was the later problem, not the failure."
+    }
+   },
+   {
+    "q": "②「役に立たないものだと思われていた」のはどうしてか。",
+    "options": [
+     "教会でしか使えなかったから",
+     "作るのにお金がかかりすぎたから",
+     "すぐにはがれてしまう接着剤だったから",
+     "だれも使い方を知らなかったから"
+    ],
+    "answer": 2,
+    "why": "A company wanting strong glue saw a glue that すぐにはがれてしまう as useless.",
+    "opts_en": [
+     "Because it could only be used in church",
+     "Because it cost too much to make",
+     "Because it was a glue that peeled off right away",
+     "Because nobody knew how to use it"
+    ],
+    "wrong": {
+     "0": "The church comes years later.",
+     "1": "Cost isn't mentioned.",
+     "3": "True in a way, but the text gives the weakness as the reason."
+    }
+   },
+   {
+    "q": "③この文章で筆者が一番言いたいことは何か。",
+    "options": [
+     "ふせんはアメリカで生まれた",
+     "接着剤は強いほうがいい",
+     "教会で歌を歌うと、いい考えが浮かぶ",
+     "失敗したものでも、ほかの使い方で役に立つことがある"
+    ],
+    "answer": 3,
+    "why": "The last sentence states it: a \"failure\" used differently can become an important invention.",
+    "opts_en": [
+     "Sticky notes were born in America",
+     "Strong glue is better",
+     "Singing in church gives good ideas",
+     "Even a failure can become useful when used another way"
+    ],
+    "wrong": {
+     "0": "True in the text, but a fact, not the main point.",
+     "1": "The story shows the opposite value of weak glue.",
+     "2": "The church is just where the idea struck."
+    }
+   }
+  ],
+  "en": "Many people stick little papers on their desk or around their computer. Those sticky notes, which you can stick and peel off again and again, ① were born from a failure. In 1968, someone at an American company was researching how to make a strong adhesive. But what he made was a weak adhesive that stuck well yet peeled off right away. Inside the company it ② was thought to be useless. Several years later, another employee at the same company had a problem: when singing at church, the bookmark in his sheet music kept falling out. Then he remembered that weak adhesive. He thought that if he put it on paper, he could stick and remove it without damaging the music. ③ Even something thought to be a failure can become an important invention if you change how it's used.",
+  "hard": true
+ },
+ {
+  "id": "rd093",
+  "kind": "medium",
+  "title": "Why benches turned sideways",
+  "text": "　ある鉄道会社が、駅のホームでの事故について調べたところ、①意外なことがわかった。酒に酔った人が線路に落ちる事故の多くは、ホームの端を歩いていてふらついたのではなく、ベンチから立ち上がって、そのまままっすぐ歩いて落ちていたのだ。\n　それまで、駅のベンチの多くは、線路のほうを向いて置かれていた。酔った人は、立ち上がると、②何も考えずに前へ進んでしまう。その先にあるのが線路だったのである。\n　そこで、この会社は、ベンチの向きを線路に対して直角に変えた。こうすれば、立ち上がって前に歩いても、線路には向かわない。お金も時間もあまりかからない方法だが、事故を減らすのに役立つと考えられている。\n　③問題を解決するには、まず、何が本当に起きているのかを正しく知ることが大切なのだ。",
+  "under": [
+   "意外なこと",
+   "何も考えずに前へ進んでしまう",
+   "問題を解決するには、まず、何が本当に起きているのかを正しく知ることが大切"
+  ],
+  "questions": [
+   {
+    "q": "①「意外なこと」とは何か。",
+    "options": [
+     "駅のベンチが少なすぎたこと",
+     "酔った人はホームの端を歩くのが好きなこと",
+     "酔った人の多くは、ベンチから立ってまっすぐ歩いて線路に落ちていたこと",
+     "事故は昼間に多かったこと"
+    ],
+    "answer": 2,
+    "why": "People assumed they staggered along the edge; in fact they stood up from benches and walked straight onto the track.",
+    "opts_en": [
+     "There were too few benches",
+     "Drunk people like walking at the platform edge",
+     "Many drunk people fell after standing up from a bench and walking straight",
+     "Accidents happened mostly in daytime"
+    ],
+    "wrong": {
+     "0": "The number of benches isn't the finding.",
+     "1": "The text says it was NOT staggering along the edge.",
+     "3": "Time of day isn't mentioned."
+    }
+   },
+   {
+    "q": "②「何も考えずに前へ進んでしまう」とあるが、それがどうして危ないのか。",
+    "options": [
+     "電車が来る時間がわからなかったから",
+     "ホームに人が多かったから",
+     "ベンチが古くてこわれていたから",
+     "ベンチの前に線路があったから"
+    ],
+    "answer": 3,
+    "why": "Benches faced the track, so walking straight ahead led onto it: その先にあるのが線路だった.",
+    "opts_en": [
+     "Because they didn't know when trains came",
+     "Because the platform was crowded",
+     "Because the benches were old and broken",
+     "Because the track was right in front of the benches"
+    ],
+    "wrong": {
+     "0": "Train times aren't mentioned.",
+     "1": "Crowds aren't mentioned.",
+     "2": "The benches' condition isn't the issue; their direction is."
+    }
+   },
+   {
+    "q": "③筆者がこの文章で一番言いたいことは何か。",
+    "options": [
+     "問題を解決するためには、まず原因を正しく知ることが大切だ",
+     "酒を飲んだら電車に乗らないほうがいい",
+     "事故を減らすには、お金がたくさん必要だ",
+     "ベンチは線路のほうに向けるべきだ"
+    ],
+    "answer": 0,
+    "why": "Last sentence: knowing what really happens comes first; that's how the cheap bench fix was found.",
+    "opts_en": [
+     "To solve a problem, first understand its real cause",
+     "Don't take the train after drinking",
+     "Reducing accidents needs a lot of money",
+     "Benches should face the track"
+    ],
+    "wrong": {
+     "1": "Reasonable advice, but not the writer's point.",
+     "2": "The fix cost little money (お金も時間もあまりかからない).",
+     "3": "They were turned AWAY from facing the track."
+    }
+   }
+  ],
+  "en": "When a railway company studied accidents on station platforms, ① something unexpected came to light. Many accidents where drunk people fell onto the tracks didn't happen because they staggered along the platform edge; they stood up from a bench and walked straight ahead and fell. Until then, most station benches faced the tracks. When drunk people stand up, ② they just walk forward without thinking. What lay ahead was the track. So the company turned the benches at a right angle to the tracks. That way, even if you stand and walk forward, you don't head toward the tracks. It's a method that costs little money or time, but it's thought to help reduce accidents. ③ To solve a problem, it's important first to know correctly what's really happening.",
+  "hard": true
+ },
+ {
+  "id": "rd094",
+  "kind": "medium",
+  "title": "Penguins that fly in water",
+  "text": "　ペンギンは鳥なのに空を飛ぶことができない。①そう聞くと、ペンギンはほかの鳥より劣っていると思う人がいるかもしれない。しかし、それは正しくない。\n　ペンギンの祖先は、空を飛ぶ鳥だったと考えられている。寒い海で生きるようになったペンギンにとって、大切だったのは、空を飛ぶことより、海の中で魚をとることだった。そのため、長い時間をかけて、つばさは小さくかたくなり、水の中で使いやすい形に変わっていった。\n　今のペンギンは、②水の中ではまるで空を飛ぶように泳ぐことができる。種類によっては、時速三十キロ近いスピードで泳ぐものもいる。\n　ペンギンは飛ぶ力をなくしたのではなく、③自分が生きる場所に合わせて、別の力を手に入れたのである。",
+  "under": [
+   "そう聞くと、ペンギンはほかの鳥より劣っていると思う人がいるかもしれない",
+   "水の中ではまるで空を飛ぶように泳ぐ",
+   "自分が生きる場所に合わせて、別の力を手に入れた"
+  ],
+  "questions": [
+   {
+    "q": "①「そう聞くと…思う人がいるかもしれない」とあるが、筆者はそれについてどう考えているか。",
+    "options": [
+     "ペンギンはほかの鳥より劣っている",
+     "ペンギンがほかの鳥より劣っているというのはまちがいだ",
+     "ペンギンは鳥ではない",
+     "ペンギンも少しは空を飛べる"
+    ],
+    "answer": 1,
+    "why": "Right after: しかし、それは正しくない.",
+    "opts_en": [
+     "Penguins are inferior to other birds",
+     "It's wrong to say penguins are inferior to other birds",
+     "Penguins aren't birds",
+     "Penguins can fly a little"
+    ],
+    "wrong": {
+     "0": "That's the view the writer rejects.",
+     "2": "The text says they ARE birds (鳥なのに).",
+     "3": "They cannot fly in the air at all."
+    }
+   },
+   {
+    "q": "②「水の中ではまるで空を飛ぶように泳ぐ」とはどういうことか。",
+    "options": [
+     "水の上を飛ぶように走る",
+     "つばさを使って、水の中を速く自由に泳ぐ",
+     "泳いだあと、空を飛ぶ",
+     "水の中で空を見ながら泳ぐ"
+    ],
+    "answer": 1,
+    "why": "Wings became suited to water; penguins swim with them as birds fly, up to nearly 30 km/h.",
+    "opts_en": [
+     "They run across the water surface",
+     "They use their wings to swim fast and freely underwater",
+     "They fly after swimming",
+     "They swim looking at the sky"
+    ],
+    "wrong": {
+     "0": "It's about swimming IN the water.",
+     "2": "They can't fly at all.",
+     "3": "まるで〜ように is a comparison, not literal sky-watching."
+    }
+   },
+   {
+    "q": "③「別の力を手に入れた」とあるが、「別の力」とは何か。",
+    "options": [
+     "長い時間眠る力",
+     "空を高く飛ぶ力",
+     "海の中で速く泳ぎ、魚をとる力",
+     "寒さに強い体"
+    ],
+    "answer": 2,
+    "why": "In place of flying, they gained what mattered for life in the sea: swimming and catching fish.",
+    "opts_en": [
+     "The ability to sleep long",
+     "The ability to fly high",
+     "The ability to swim fast and catch fish in the sea",
+     "A body that resists cold"
+    ],
+    "wrong": {
+     "0": "Sleep isn't mentioned.",
+     "1": "Flying is the ability they gave up.",
+     "3": "Living in cold seas is mentioned, but the \"other power\" is swimming."
+    }
+   }
+  ],
+  "en": "Penguins are birds, yet they can't fly. ① Hearing that, some people may think penguins are inferior to other birds. But that isn't right. Penguins' ancestors are thought to have been flying birds. For penguins, who came to live in cold seas, catching fish in the sea mattered more than flying. So over a long time their wings became small and stiff and changed into a shape easy to use in water. Today's penguins ② can swim underwater just as if they were flying through the sky. Some kinds swim at nearly 30 km per hour. Penguins didn't lose the power to fly; ③ they gained a different power to suit the place they live.",
+  "hard": true
+ },
+ {
+  "id": "rd095",
+  "kind": "medium",
+  "title": "New Year cards",
+  "text": "　日本には、新しい年のあいさつとして年賀状を送る習慣がある。しかし、年賀状を出す人は、①年々減ってきている。一番多かった年とくらべると、今では半分以下になったと言われている。\n　理由の一つは、メールやSNSで、いつでも簡単にあいさつができるようになったことだ。はがきを買って、一枚一枚あて名を書くのは、手間もお金もかかる。若い人の中には、一度も年賀状を書いたことがないという人もいる。\n　一方で、②年賀状をやめない人もいる。ある調査によると、その人たちの多くは、年に一度、年賀状でしか連絡をとらない相手がいるからだと答えている。何年も会っていない友人から届いた一枚のはがきで、相手が元気なことがわかるのだ。\n　③年賀状は、ただのあいさつではなく、人と人を細く長くつなぐ役目を持っているのかもしれない。",
+  "under": [
+   "年々減ってきている",
+   "年賀状をやめない人",
+   "年賀状は、ただのあいさつではなく、人と人を細く長くつなぐ役目を持っている"
+  ],
+  "questions": [
+   {
+    "q": "①「年々減ってきている」理由として、文章に書かれているのはどれか。",
+    "options": [
+     "郵便が遅くなったから",
+     "新しい年のあいさつをしなくなったから",
+     "はがきが売られなくなったから",
+     "メールやSNSで簡単にあいさつができるようになったから"
+    ],
+    "answer": 3,
+    "why": "One reason given: メールやSNSで、いつでも簡単にあいさつができる. Cards also cost time and money.",
+    "opts_en": [
+     "Because the post got slower",
+     "Because people stopped New Year greetings",
+     "Because postcards are no longer sold",
+     "Because greetings are now easy by email and social media"
+    ],
+    "wrong": {
+     "0": "Post speed isn't mentioned.",
+     "1": "People still greet each other, just by other means.",
+     "2": "Cards are still sold; they just cost time and money."
+    }
+   },
+   {
+    "q": "②「年賀状をやめない人」がいるのはどうしてか。",
+    "options": [
+     "会社で決められているから",
+     "はがきを書くのが好きだから",
+     "メールの使い方がわからないから",
+     "年賀状でしか連絡をとらない相手がいるから"
+    ],
+    "answer": 3,
+    "why": "The survey: many have someone they contact only once a year by card.",
+    "opts_en": [
+     "Because their company requires it",
+     "Because they like writing postcards",
+     "Because they can't use email",
+     "Because there are people they only keep in touch with by New Year card"
+    ],
+    "wrong": {
+     "0": "Companies aren't mentioned.",
+     "1": "Plausible, but the text gives the survey's reason.",
+     "2": "Never stated."
+    }
+   },
+   {
+    "q": "③筆者は、年賀状についてどのように考えているか。",
+    "options": [
+     "はがきは手間もお金もかかるので、やめたほうがいい",
+     "あいさつはメールでするほうがいい",
+     "長い間会っていない人とのつながりを続ける役目がある",
+     "若い人も年賀状を書くべきだ"
+    ],
+    "answer": 2,
+    "why": "人と人を細く長くつなぐ = keeping a thin but long connection, e.g. a friend not seen in years.",
+    "opts_en": [
+     "Cards cost effort and money, so stop",
+     "Greetings are better by email",
+     "They keep connections alive with people you haven't seen for years",
+     "Young people should write cards too"
+    ],
+    "wrong": {
+     "0": "The cost is mentioned as a reason others stop, not the writer's view.",
+     "1": "The writer doesn't prefer email.",
+     "3": "The writer doesn't say anyone SHOULD."
+    }
+   }
+  ],
+  "en": "Japan has a custom of sending New Year cards (nengajo) as a greeting for the new year. But the number of people sending them ① has been falling year by year; it's said to be less than half of the peak year. One reason is that greetings can now be sent anytime easily by email or social media. Buying postcards and writing each address one by one takes effort and money. Some young people have never written a New Year card. On the other hand, ② some people don't give them up. According to one survey, many of them say it's because there are people they contact only once a year, by New Year card. From one postcard sent by a friend you haven't met in years, you learn they're well. ③ New Year cards may be not just a greeting, but something that keeps people connected, thinly but for a long time.",
+  "hard": true
+ },
+ {
+  "id": "rd096",
+  "kind": "medium",
+  "title": "Why say itadakimasu?",
+  "text": "　日本人は食事の前に「いただきます」と言う。外国の人に、①これはだれに対して言う言葉なのかと聞かれて、答えに困った経験のある人もいるだろう。\n　「いただく」は、「もらう」のていねいな言い方だ。では、何をもらうのか。一つは、料理を作ってくれた人や、野菜や魚を育てたりとったりしてくれた人への感謝である。そして、もう一つは、②食べ物そのものへの感謝だと言われている。肉や魚、野菜も、もともとは生きていたものだ。私たちは、その命をもらって生きているのである。\n　食べ物が簡単に手に入る今、私たちは、残したり捨てたりすることに、あまり何も感じなくなっているかもしれない。③「いただきます」という短い言葉は、そんな私たちに、食べることの意味を思い出させてくれる。",
+  "under": [
+   "これはだれに対して言う言葉なのか",
+   "食べ物そのものへの感謝",
+   "「いただきます」という短い言葉は、そんな私たちに、食べることの意味を思い出させてくれる"
+  ],
+  "questions": [
+   {
+    "q": "①「これはだれに対して言う言葉なのか」と聞かれて答えに困るのはどうしてか。",
+    "options": [
+     "決まった一人の相手に言う言葉ではないから",
+     "外国語で説明するのが難しいから",
+     "食事の前に言わない人が多いから",
+     "「いただきます」の意味を知らないから"
+    ],
+    "answer": 0,
+    "why": "The thanks go to cooks, farmers, fishermen AND the food itself, so there's no single \"whom\".",
+    "opts_en": [
+     "Because it isn't said to one particular person",
+     "Because it's hard to explain in a foreign language",
+     "Because many people don't say it",
+     "Because they don't know what it means"
+    ],
+    "wrong": {
+     "1": "Plausible, but the text explains it's about the many people/things thanked.",
+     "2": "The text says Japanese people DO say it.",
+     "3": "They know the word; the \"to whom\" is unclear."
+    }
+   },
+   {
+    "q": "②「食べ物そのものへの感謝」とあるが、どうして食べ物に感謝するのか。",
+    "options": [
+     "私たちは、生きていたものの命をもらっているから",
+     "食べ物を育てるのは大変だから",
+     "食べ物は高いから",
+     "料理がおいしいから"
+    ],
+    "answer": 0,
+    "why": "もともとは生きていたもの…その命をもらって生きている.",
+    "opts_en": [
+     "Because we receive the lives of things that were living",
+     "Because growing food is hard",
+     "Because food is expensive",
+     "Because the food is tasty"
+    ],
+    "wrong": {
+     "1": "That's the thanks to farmers, the FIRST kind, not to food itself.",
+     "2": "Price isn't mentioned.",
+     "3": "Taste isn't the reason."
+    }
+   },
+   {
+    "q": "③「そんな私たち」とは、どんな私たちか。",
+    "options": [
+     "食事の前に「いただきます」と言う私たち",
+     "外国の人と話す私たち",
+     "食べ物を残したり捨てたりしても、あまり何も感じない私たち",
+     "食べ物を育てている私たち"
+    ],
+    "answer": 2,
+    "why": "そんな points back to the previous sentence: we no longer feel much when we leave or throw away food.",
+    "opts_en": [
+     "We who say itadakimasu before meals",
+     "We who talk with foreigners",
+     "We who feel little about leaving or throwing away food",
+     "We who grow food"
+    ],
+    "wrong": {
+     "0": "That's who says the word, but そんな refers to the sentence just before.",
+     "1": "Foreigners appear only at the start.",
+     "3": "Growing food isn't about \"us\"."
+    }
+   }
+  ],
+  "en": "Japanese people say 'itadakimasu' before eating. Some may have been stuck when a foreigner asked ① whom this word is said to. 'Itadaku' is a polite way of saying 'receive'. Then what do we receive? One part is thanks to the people who cooked the meal and who grew or caught the vegetables and fish. The other is said to be ② gratitude to the food itself. Meat, fish and vegetables were all originally alive. We live by receiving their lives. Now that food is easy to get, we may no longer feel much about leaving or throwing it away. ③ The short phrase 'itadakimasu' reminds people like us of what eating means.",
+  "hard": true
+ },
+ {
+  "id": "rd097",
+  "kind": "medium",
+  "title": "The Pomodoro way to focus",
+  "text": "　勉強や仕事をしていて、なかなか集中できないと悩んでいる人は多い。そんな人のために、①ある簡単な方法を紹介したい。\n　やり方はこうだ。まず、タイマーを二十五分に合わせて、その間は一つのことだけに集中する。タイマーが鳴ったら、五分休む。これを四回くり返したら、三十分ほど長めに休む。これだけである。\n　この方法のいいところは、②「あと少しで休める」と思えることだ。長い時間がんばろうとすると、始める前からいやになってしまう。しかし、二十五分なら、だれでもがんばれるだろう。また、休みの時間が決まっているので、休みすぎることもない。\n　ただし、休みの間にスマートフォンを見ると、頭が休まらないので気をつけたい。③大切なのは、時間を短く区切って、集中と休みをはっきり分けることなのである。",
+  "under": [
+   "ある簡単な方法",
+   "「あと少しで休める」と思える",
+   "大切なのは、時間を短く区切って、集中と休みをはっきり分けること"
+  ],
+  "questions": [
+   {
+    "q": "①「ある簡単な方法」とは、どんな方法か。",
+    "options": [
+     "スマートフォンで時間を計りながら勉強する方法",
+     "三十分休んでから始める方法",
+     "二十五分集中して五分休むことを、くり返す方法",
+     "一日に四回だけ勉強する方法"
+    ],
+    "answer": 2,
+    "why": "The second paragraph: 25 minutes on one task, 5 minutes rest, ×4, then a longer break.",
+    "opts_en": [
+     "Studying while timing on a smartphone",
+     "Resting 30 minutes before starting",
+     "Repeating 25 minutes of focus and 5 minutes of rest",
+     "Studying only four times a day"
+    ],
+    "wrong": {
+     "0": "The phone is something to avoid during breaks.",
+     "1": "The long break comes after four rounds.",
+     "3": "Four is the number of rounds before a long break, not sessions per day."
+    }
+   },
+   {
+    "q": "②「あと少しで休める」と思えると、どうしていいのか。",
+    "options": [
+     "スマートフォンを見る時間ができるから",
+     "休みの時間が長くなるから",
+     "がんばることが、いやにならないから",
+     "タイマーを使わなくてもよくなるから"
+    ],
+    "answer": 2,
+    "why": "Long stretches make you dread starting; 25 minutes feels doable.",
+    "opts_en": [
+     "Because you get time to look at your phone",
+     "Because breaks get longer",
+     "Because working hard doesn't feel unbearable",
+     "Because you no longer need a timer"
+    ],
+    "wrong": {
+     "0": "The writer warns against the phone in breaks.",
+     "1": "Break lengths are fixed.",
+     "3": "The timer is part of the method."
+    }
+   },
+   {
+    "q": "③筆者がこの文章で一番言いたいことは何か。",
+    "options": [
+     "二十五分以上集中できる人は少ない",
+     "勉強は長い時間するほうがいい",
+     "休みの間はスマートフォンを見てはいけない",
+     "集中する時間と休む時間を、はっきり分けることが大切だ"
+    ],
+    "answer": 3,
+    "why": "Last sentence: 大切なのは…集中と休みをはっきり分けること.",
+    "opts_en": [
+     "Few people can focus over 25 minutes",
+     "Studying for long stretches is better",
+     "Never look at your phone during breaks",
+     "It's important to clearly separate focus time and rest time"
+    ],
+    "wrong": {
+     "0": "Not claimed; 25 minutes is just easy to manage.",
+     "1": "The writer argues the opposite.",
+     "2": "True advice in the text (ただし…), but a side note, not the main point."
+    }
+   }
+  ],
+  "en": "Many people worry that they can't concentrate when studying or working. For them, I'd like to introduce ① a simple method. Here's how. First, set a timer for 25 minutes and focus on just one thing during that time. When the timer rings, rest for five minutes. After repeating this four times, take a longer break of about 30 minutes. That's all. The good thing about this method is that ② you can think 'I'll get to rest soon.' If you try to work hard for a long time, you get sick of it before you even start. But anyone can push on for 25 minutes. Also, since the rest time is fixed, you won't rest too long. However, be careful: looking at your smartphone during breaks doesn't let your brain rest. ③ What matters is cutting time into short blocks and clearly separating focus from rest.",
+  "hard": true
  }
 ]

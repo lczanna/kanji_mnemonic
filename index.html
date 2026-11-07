@@ -361,6 +361,7 @@ label.mini { display: grid; gap: 2px; font-size: 12px; color: var(--muted); } la
 .lk-story { font-size: 15px; }
 /* The underlined part of a 言い換え question stays underlined when it's tappable. */
 u .gl { border-bottom: 2px solid currentColor; }
+.ul, .gl.ul { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 7px; }
 .gl-pop { overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 .gl-story { font-size: 14px; line-height: 1.5; }
 .gl-pop { position: fixed; z-index: 40; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 18%, transparent); display: grid; gap: 4px; }
@@ -1333,22 +1334,34 @@ function kanaToKanji(w, lemma, m, lr) {
 }
 // kanji: swap kana words you've studied (reading passages only; never in a question that asks for the kanji).
 // A reading passage, line by line, with tap meanings and studied words in kanji.
-const passageHtml = text => text.split('\n').map(l => `<p>${glossHtml(l, true) || '&nbsp;'}</p>`).join('');
-function glossHtml(text, kanji) {
+// Underlined phrases (exam.json "under"): ① before the first phrase, ② before the second… as the exam prints them.
+const underRanges = (line, under) => (under || []).map((ph, i) => { const at = line.indexOf('①②③④⑤'[i] + ph); return at < 0 ? null : [at + 1, at + 1 + ph.length]; }).filter(Boolean);
+const passageHtml = (text, under) => text.split('\n').map(l => `<p>${glossHtml(l, true, underRanges(l, under)) || '&nbsp;'}</p>`).join('');
+// Plain text with its underlined parts (no tap meanings: exam conditions).
+function underHtml(t, rs, from = 0) {
+  let out = '', pos = 0;
+  for (const [a, b] of rs.map(([a, b]) => [Math.max(0, a - from), Math.min(t.length, b - from)]).filter(([a, b]) => b > a)) {
+    if (a < pos) continue;
+    out += esc(t.slice(pos, a)) + `<span class="ul">${esc(t.slice(a, b))}</span>`; pos = b;
+  }
+  return out + esc(t.slice(pos));
+}
+function glossHtml(text, kanji, under = []) {
   const words = GL[text];
-  if (!words || !words.length) return esc(text);
+  if (!words || !words.length) return underHtml(text, under);
   wordLink('');
   let html = '', pos = 0;
   for (let [start, len, r, lemma, lr, m] of words) {
     if (start < pos) continue;
-    html += esc(text.slice(pos, start));
+    html += underHtml(text.slice(pos, start), under, pos);
     let w = text.slice(start, start + len);
     const k = kanji ? kanaToKanji(w, lemma, m, lr) : w;
     if (k !== w) { r = w; w = k; }
-    html += `<button class="gl" data-gl="${esc(JSON.stringify([w, r, lemma, lr, m]))}">${furiHtml(w, r)}</button>`;
+    const ul = under.some(([a, b]) => start < b && start + len > a);
+    html += `<button class="gl${ul ? ' ul' : ''}" data-gl="${esc(JSON.stringify([w, r, lemma, lr, m]))}">${furiHtml(w, r)}</button>`;
     pos = start + len;
   }
-  return html + esc(text.slice(pos));
+  return html + underHtml(text.slice(pos), under, pos);
 }
 // Outside questions, every deck kanji in a word can be tapped: its reading in this word, picture, story and card.
 function kanjiLinks(w) {
@@ -2226,7 +2239,7 @@ function practiceItems(extra) {
   const nl = extra ? 3 : Math.max(0, q.listen - practiceDoneToday('listen')), nr = extra ? 1 : Math.max(0, q.read - practiceDoneToday('read'));
   // Listening alternates: two quick replies to each dialogue.
   const nd = Math.floor(nl / 3), nq = nl - nd;
-  const items = [...nextPractice(EXAM.qr, nq, skip), ...nextPractice(hardFirst(EXAM.dlg), nd, skip), ...nextPractice(mixKinds(EXAM.read), nr, skip)];
+  const items = [...nextPractice(EXAM.qr, nq, skip), ...nextPractice(hardFirst(EXAM.dlg), nd, skip), ...nextPractice(mixKinds(hardFirst(EXAM.read)), nr, skip)];
   return items.map(x => ({ type: 'exam', x, mode: 'exam', answers: [] }));
 }
 // Listening: the exam-length dialogues and talks ("hard": real N3 length, fillers, changed plans) come first.
@@ -2292,7 +2305,7 @@ function examScreen(it, tags) {
   const pace = READ_PACE[x.kind] || 3;
   if (done && !it.took) it.took = (Date.now() - it.t0) / 1000;
   const took = it.took ? `<div class="muted" style="font-size:13px">Took ${mmss(it.took)} · exam pace about ${pace}:00${it.took > pace * 60 * 1.2 ? ' · too slow for the exam: practise reading for the gist first, then the details the questions ask' : ''}</div>` : '';
-  const front = `<div class="passage" lang="ja">${strict ? x.text.split('\n').map(l => `<p>${esc(l) || '&nbsp;'}</p>`).join('') : passageHtml(x.text)}</div>
+  const front = `<div class="passage" lang="ja">${strict ? x.text.split('\n').map(l => `<p>${underHtml(l, underRanges(l, x.under)) || '&nbsp;'}</p>`).join('') : passageHtml(x.text, x.under)}</div>
     ${x.questions.map((q, qi) => `<div class="g-q" lang="ja" style="font-size:16px">${gl(q.q, true)}</div>${optBtns(qi, q.options, false)}
       ${it.answers[qi] != null ? `<div class="why">${esc(q.why || '')}</div>${optNotesHtml(q, it.answers[qi])}` : ''}`).join('')}
     ${done ? `${took}<details><summary>English translation</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details>` : ''}`;
