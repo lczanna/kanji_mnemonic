@@ -208,9 +208,12 @@ def plain(story):
 
 
 def prompt(card):
-    cast = '; '.join(f"the recurring character '{depict(s['hook'])}'" for s in card.get('sound', []) if s.get('hook') and s['hook'] not in NOT_CAST)
+    cast = '; '.join(f"the recurring character '{depict(s['hook'])}'" for s in card.get('sound', []) if s.get('hook') and s['hook'] not in NOT_CAST
+                     and not re.match(r'[ぁ-ゖ]', s['r']))   # Japanese-reading hooks are named below, from the story
     return (f"{STYLE}\n\nScene: {depict(plain(card['story']))}\n"
-            f"The idea to convey is '{card['keyword']}'." + (f" Make sure {cast} is clearly visible doing what the scene says." if cast else ''))
+            f"The idea to convey is '{card['keyword']}'." + (f" Make sure {cast} is clearly visible doing what the scene says." if cast else '')
+            # The sound-alike for the Japanese reading (^Koala^) must be in the picture too: it is the reading's hook.
+            + ''.join(f" The {depict(t)} must be clearly visible in the scene, doing what the story says." for t in re.findall(r'\^([^^]+)\^', card['story'])))
 
 
 def word_prompt(v):
