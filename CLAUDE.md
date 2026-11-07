@@ -57,6 +57,10 @@ The app tries `images/n3/` first and falls back to the packs, so GitHub Pages ne
 
 ## Listening audio
 
+`tools/gen_speech.py` records words and sentences; after recording sentences run `--readings JMdict_e.gz`: it checks each
+sentence against the tap readings (the voice guesses readings: 古家 came out こいえ, not ふるや) and records misread ones
+again with ambiguous words in kana. `--accent` does the same for single words that sound foreign.
+
 `tools/gen_audio.py` records the listening items with clearly male and clearly female voices and checks each line's
 pitch. For the Claude link, read the published `audio/packs/clips.json` and run
 `python3 tools/pack_audio.py <scratch dir> --keep <that index>`: clips stay in their published packs, so only the packs
