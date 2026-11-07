@@ -11,6 +11,12 @@ text to the id. Clips are checked like the listening items (transcribed back and
   python3 tools/gen_speech.py --run          # record everything not yet recorded
   python3 tools/gen_speech.py --accent [--max-len 6]   # find clips that sound foreign and record them again
 
+Sentences: the voice guesses a reading from the kanji and sometimes guesses wrong (古家 as こいえ, not ふるや). The tap
+meanings hold the checked reading of every word, so --readings JMdict_e.gz transcribes each recorded sentence, compares it
+with those readings and records the wrong ones again with the words that have more than one reading written in kana.
+
+  python3 tools/gen_speech.py --readings JMdict_e.gz   # find misread sentences and record them again
+
 A short word gives the voice little to go on, and some takes come out with an English accent (留学 as "view docker").
 Every take is now checked twice: read back in Japanese (the right word), and heard by a second recogniser that
 names the language: a take it hears as English is recorded again with another voice (up to 5 takes). A word with
@@ -59,6 +65,62 @@ def plan():
     return list(dict.fromkeys(t for t in texts if t))
 
 
+# Checked readings of every word in the sentences: the tap meanings ([start, length, reading, …]).
+_gl = None
+def sentence_gl():
+    global _gl
+    if _gl is None:
+        _gl = {}
+        for exs in json.loads((ROOT / 'examples.json').read_text(encoding='utf8')).values():
+            for ex in exs:
+                if len(ex) > 2 and isinstance(ex[2], list):
+                    _gl[ex[0]] = ex[2]
+        for g in json.loads((ROOT / 'grammar.json').read_text(encoding='utf8')):
+            _gl.update(g.get('gl') or {})
+            for f in g['fill']:   # the sentence with its blank filled: words after the blank move along
+                ans, at = f['choices'][f['answer']], f['q'].find('（　）')
+                if f['q'] in _gl and at >= 0:
+                    _gl[f['q'].replace('（　）', ans)] = [[t[0] + (len(ans) - 3 if t[0] > at else 0)] + t[1:] for t in _gl[f['q']] if not at <= t[0] < at + 3]
+    return _gl
+
+
+def expected(text):
+    """The sentence read with the checked readings (words) and Sudachi (the kana and anything between)."""
+    gl = sentence_gl().get(text)
+    if not gl:
+        return None
+    out, pos = '', 0
+    for t in sorted(gl):
+        if t[0] < pos:
+            continue
+        out += A.reading(text[pos:t[0]]) + A.norm(t[2]); pos = t[0] + t[1]
+    return out + A.reading(text[pos:])
+
+
+_alt = None
+def spoken_kana(text, jm):
+    """The sentence with every word that has more than one reading written in kana (its checked reading)."""
+    global _alt
+    if _alt is None:
+        import gzip, collections
+        _alt = collections.defaultdict(set)
+        for e in re.finditer(r'<entry>(.*?)</entry>', gzip.open(jm).read().decode(), re.S):
+            kebs = re.findall(r'<keb>([^<]+)<', e.group(1))
+            for r in re.finditer(r'<r_ele>(.*?)</r_ele>', e.group(1), re.S):
+                reb = re.search(r'<reb>([^<]+)<', r.group(1)).group(1)
+                for k in re.findall(r'<re_restr>([^<]+)<', r.group(1)) or kebs:
+                    _alt[k].add(reb)
+    gl = sentence_gl().get(text) or []
+    out, pos = '', 0
+    for t in sorted(gl):
+        if t[0] < pos:
+            continue
+        w = text[t[0]:t[0] + t[1]]
+        many = KANJI.search(w) and (len(_alt.get(w, ())) != 1 or len(_alt.get(t[3], ())) > 1)
+        out += text[pos:t[0]] + (t[2] if many else w); pos = t[0] + t[1]
+    return out + text[pos:]
+
+
 def clip_id(text):
     return hashlib.sha1(text.encode()).hexdigest()[:12]
 
@@ -74,14 +136,14 @@ def language(mp3):
     return json.loads(A.post('/audio/transcriptions', {'model': 'whisper-1', 'response_format': 'verbose_json'}, files=mp3).decode()).get('language')
 
 
-def record(text):
+def record(text, spoken=None):
     """Takes in different voices until one is read back right and heard as Japanese; the best take is kept."""
     cid = clip_id(text)
     r = random.Random(cid)
     short = len(text) <= 6
     voices = WORD_VOICES[:] if short else A.MALE + A.FEMALE
     r.shuffle(voices)
-    spoken = text.replace('明日', 'あした')
+    spoken = (spoken or text).replace('明日', 'あした')
     best = (-1, 0, '', None)
     try:
         for take in range(TAKES):
@@ -123,6 +185,7 @@ def main():
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument('--plan', action='store_true'); g.add_argument('--run', action='store_true')
     g.add_argument('--accent', action='store_true', help='find recorded clips that sound foreign and record them again')
+    g.add_argument('--readings', metavar='JMDICT', help='find sentences read with a wrong reading and record them again')
     ap.add_argument('--max-len', type=int, default=0, help='--accent: only texts up to this many characters')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--workers', type=int, default=6)
@@ -137,6 +200,23 @@ def main():
     idx_path = OUT / 'index.json'
     index = json.loads(idx_path.read_text(encoding='utf8')) if idx_path.exists() else {}
     todo = [t for t in texts if t not in index or not (OUT / f'{index[t]}.mp3').exists()]
+    spoken = {}
+    if a.readings:
+        def misread(t):
+            want = expected(t)
+            try:
+                got = A.post('/audio/transcriptions', {'model': A.STT_MODEL, 'language': 'ja', 'response_format': 'text'},
+                             files=(OUT / f'{index[t]}.mp3').read_bytes()).decode()
+            except Exception:
+                return t, False
+            import difflib
+            strip = lambda x: re.sub(r'[^一-鿿々ぁ-ゖァ-ヺー0-9]', '', x)
+            return t, difflib.SequenceMatcher(None, want, A.reading(strip(got)), autojunk=False).ratio() < 0.9
+        scan = [t for t in index if len(t) > 6 and expected(t) and (OUT / f'{index[t]}.mp3').exists()]
+        with ThreadPoolExecutor(a.workers) as pool:
+            todo = [t for t, bad in pool.map(misread, scan) if bad]
+        spoken = {t: spoken_kana(t, a.readings) for t in todo}
+        print(f'{len(todo)} of {len(scan)} sentences misread: {" / ".join(todo[:10])}')
     if a.accent:
         scan = [t for t in index if (OUT / f'{index[t]}.mp3').exists() and (not a.max_len or len(t) <= a.max_len)]
         with ThreadPoolExecutor(a.workers) as pool:
@@ -147,7 +227,7 @@ def main():
     print(f'{len(todo)} to record')
     weak = {}
     with ThreadPoolExecutor(a.workers) as pool:
-        for n, (text, cid, score, txt, err) in enumerate(pool.map(record, todo), 1):
+        for n, (text, cid, score, txt, err) in enumerate(pool.map(lambda t: record(t, spoken.get(t)), todo), 1):
             if err or score < 0.8:
                 weak[text] = {'score': round(score, 3), 'heard': txt, 'error': err}
             if not err and (score >= 0.8 or not a.drop_weak):
