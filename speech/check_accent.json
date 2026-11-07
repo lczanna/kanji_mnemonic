@@ -1,0 +1,1887 @@
+{
+ "おもう": {
+  "score": 0.79,
+  "heard": "思う (sounds foreign)",
+  "error": null
+ },
+ "いえ": {
+  "score": 0.79,
+  "heard": "いえ。 (sounds foreign)",
+  "error": null
+ },
+ "自分": {
+  "score": 0.79,
+  "heard": "自分 (sounds foreign)",
+  "error": null
+ },
+ "ほん": {
+  "score": 0.79,
+  "heard": "本 (sounds foreign)",
+  "error": null
+ },
+ "あう": {
+  "score": 0.0,
+  "heard": "알 (sounds foreign)",
+  "error": null
+ },
+ "まえ": {
+  "score": 0.79,
+  "heard": "まえ (sounds foreign)",
+  "error": null
+ },
+ "部屋": {
+  "score": 0.79,
+  "heard": "部屋 (sounds foreign)",
+  "error": null
+ },
+ "ちち": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "みな": {
+  "score": 0.79,
+  "heard": "みな (sounds foreign)",
+  "error": null
+ },
+ "はは": {
+  "score": 0.0,
+  "heard": "哈哈 (sounds foreign)",
+  "error": null
+ },
+ "ちゅう": {
+  "score": 0.4,
+  "heard": "需 (sounds foreign)",
+  "error": null
+ },
+ "結婚": {
+  "score": 0.79,
+  "heard": "結婚 (sounds foreign)",
+  "error": null
+ },
+ "のむ": {
+  "score": 0.79,
+  "heard": "飲む (sounds foreign)",
+  "error": null
+ },
+ "試験": {
+  "score": 0.0,
+  "heard": "Skenv (sounds foreign)",
+  "error": null
+ },
+ "ふたり": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "かお": {
+  "score": 0.79,
+  "heard": "顔 (sounds foreign)",
+  "error": null
+ },
+ "て": {
+  "score": 0.0,
+  "heard": "這 (sounds foreign)",
+  "error": null
+ },
+ "き": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "さい": {
+  "score": 0.79,
+  "heard": "塞 (sounds foreign)",
+  "error": null
+ },
+ "意見": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "はな": {
+  "score": 0.0,
+  "heard": "하나 (sounds foreign)",
+  "error": null
+ },
+ "え": {
+  "score": 0.667,
+  "heard": "ええ。 (sounds foreign)",
+  "error": null
+ },
+ "ねこ": {
+  "score": 0.79,
+  "heard": "猫 (sounds foreign)",
+  "error": null
+ },
+ "ほー": {
+  "score": 0.667,
+  "heard": "ほう。 (sounds foreign)",
+  "error": null
+ },
+ "注意": {
+  "score": 0.79,
+  "heard": "注意 (sounds foreign)",
+  "error": null
+ },
+ "午後": {
+  "score": 0.79,
+  "heard": "午後 (sounds foreign)",
+  "error": null
+ },
+ "危険": {
+  "score": 0.0,
+  "heard": "你可以 (sounds foreign)",
+  "error": null
+ },
+ "てん": {
+  "score": 0.0,
+  "heard": "Ten (sounds foreign)",
+  "error": null
+ },
+ "あに": {
+  "score": 0.0,
+  "heard": "ani (sounds foreign)",
+  "error": null
+ },
+ "新聞": {
+  "score": 0.79,
+  "heard": "新聞 (sounds foreign)",
+  "error": null
+ },
+ "うたう": {
+  "score": 0.79,
+  "heard": "歌う (sounds foreign)",
+  "error": null
+ },
+ "じょー": {
+  "score": 0.0,
+  "heard": "Jo (sounds foreign)",
+  "error": null
+ },
+ "あさ": {
+  "score": 0.79,
+  "heard": "朝 (sounds foreign)",
+  "error": null
+ },
+ "にる": {
+  "score": 0.5,
+  "heard": "見る (sounds foreign)",
+  "error": null
+ },
+ "今朝": {
+  "score": 0.79,
+  "heard": "今朝 (sounds foreign)",
+  "error": null
+ },
+ "ご": {
+  "score": 0.79,
+  "heard": "五 (sounds foreign)",
+  "error": null
+ },
+ "かね": {
+  "score": 0.79,
+  "heard": "かね (sounds foreign)",
+  "error": null
+ },
+ "あね": {
+  "score": 0.79,
+  "heard": "姉 (sounds foreign)",
+  "error": null
+ },
+ "あめ": {
+  "score": 0.79,
+  "heard": "雨 (sounds foreign)",
+  "error": null
+ },
+ "写真": {
+  "score": 0.667,
+  "heard": "小心 (sounds foreign)",
+  "error": null
+ },
+ "場合": {
+  "score": 0.0,
+  "heard": "Bye. (sounds foreign)",
+  "error": null
+ },
+ "た": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "値段": {
+  "score": 0.79,
+  "heard": "値段 (sounds foreign)",
+  "error": null
+ },
+ "まん": {
+  "score": 0.0,
+  "heard": "man (sounds foreign)",
+  "error": null
+ },
+ "に": {
+  "score": 0.79,
+  "heard": "二 (sounds foreign)",
+  "error": null
+ },
+ "ぶ": {
+  "score": 0.0,
+  "heard": "Bö. (sounds foreign)",
+  "error": null
+ },
+ "あかちゃん": {
+  "score": 0.79,
+  "heard": "赤ちゃん (sounds foreign)",
+  "error": null
+ },
+ "おや": {
+  "score": 0.79,
+  "heard": "おや? (sounds foreign)",
+  "error": null
+ },
+ "ひ": {
+  "score": 0.0,
+  "heard": "시 (sounds foreign)",
+  "error": null
+ },
+ "がわ": {
+  "score": 0.79,
+  "heard": "ガワ (sounds foreign)",
+  "error": null
+ },
+ "理解": {
+  "score": 0.79,
+  "heard": "理解 (sounds foreign)",
+  "error": null
+ },
+ "かみ": {
+  "score": 0.79,
+  "heard": "神? (sounds foreign)",
+  "error": null
+ },
+ "勤勉": {
+  "score": 0.5,
+  "heard": "金幣 (sounds foreign)",
+  "error": null
+ },
+ "来年": {
+  "score": 0.571,
+  "heard": "次年 (sounds foreign)",
+  "error": null
+ },
+ "ちかい": {
+  "score": 0.667,
+  "heard": "スカイ (sounds foreign)",
+  "error": null
+ },
+ "あき": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "いし": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "父親": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "他人": {
+  "score": 0.0,
+  "heard": "담임 (sounds foreign)",
+  "error": null
+ },
+ "貧乏": {
+  "score": 0.79,
+  "heard": "貧乏 (sounds foreign)",
+  "error": null
+ },
+ "えん": {
+  "score": 0.5,
+  "heard": "英 (sounds foreign)",
+  "error": null
+ },
+ "安全": {
+  "score": 0.79,
+  "heard": "安全 (sounds foreign)",
+  "error": null
+ },
+ "チーム": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "無理": {
+  "score": 0.79,
+  "heard": "無理 (sounds foreign)",
+  "error": null
+ },
+ "祖母": {
+  "score": 0.0,
+  "heard": "sovo (sounds foreign)",
+  "error": null
+ },
+ "し": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "ママ": {
+  "score": 0.0,
+  "heard": "Mama (sounds foreign)",
+  "error": null
+ },
+ "さん": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "半分": {
+  "score": 0.79,
+  "heard": "半分 (sounds foreign)",
+  "error": null
+ },
+ "馬鹿": {
+  "score": 0.79,
+  "heard": "バカ (sounds foreign)",
+  "error": null
+ },
+ "した": {
+  "score": 0.0,
+  "heard": "Sta. (sounds foreign)",
+  "error": null
+ },
+ "入院": {
+  "score": 0.79,
+  "heard": "入院 (sounds foreign)",
+  "error": null
+ },
+ "決心": {
+  "score": 0.79,
+  "heard": "決心 (sounds foreign)",
+  "error": null
+ },
+ "年間": {
+  "score": 0.79,
+  "heard": "年間 (sounds foreign)",
+  "error": null
+ },
+ "危機": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "全員": {
+  "score": 0.79,
+  "heard": "全員 (sounds foreign)",
+  "error": null
+ },
+ "な": {
+  "score": 0.0,
+  "heard": "나 (sounds foreign)",
+  "error": null
+ },
+ "花瓶": {
+  "score": 0.0,
+  "heard": "哈丁 (sounds foreign)",
+  "error": null
+ },
+ "出会う": {
+  "score": 0.0,
+  "heard": "Deau (sounds foreign)",
+  "error": null
+ },
+ "訪問": {
+  "score": 0.79,
+  "heard": "訪問 (sounds foreign)",
+  "error": null
+ },
+ "ふつか": {
+  "score": 0.4,
+  "heard": "スカ (sounds foreign)",
+  "error": null
+ },
+ "だい": {
+  "score": 0.0,
+  "heard": "daj (sounds foreign)",
+  "error": null
+ },
+ "たび": {
+  "score": 0.79,
+  "heard": "たび (sounds foreign)",
+  "error": null
+ },
+ "便利": {
+  "score": 0.79,
+  "heard": "便利 (sounds foreign)",
+  "error": null
+ },
+ "苦労": {
+  "score": 0.79,
+  "heard": "苦労 (sounds foreign)",
+  "error": null
+ },
+ "みなみ": {
+  "score": 0.79,
+  "heard": "南 (sounds foreign)",
+  "error": null
+ },
+ "義務": {
+  "score": 0.5,
+  "heard": "チーム (sounds foreign)",
+  "error": null
+ },
+ "権利": {
+  "score": 0.571,
+  "heard": "ケンディ (sounds foreign)",
+  "error": null
+ },
+ "出身": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "奇妙": {
+  "score": 0.79,
+  "heard": "奇妙 (sounds foreign)",
+  "error": null
+ },
+ "進歩": {
+  "score": 0.79,
+  "heard": "進歩 (sounds foreign)",
+  "error": null
+ },
+ "いき": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "せ": {
+  "score": 0.0,
+  "heard": "S. (sounds foreign)",
+  "error": null
+ },
+ "美人": {
+  "score": 0.333,
+  "heard": "北京 (sounds foreign)",
+  "error": null
+ },
+ "市民": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "許可": {
+  "score": 0.571,
+  "heard": "評価 (sounds foreign)",
+  "error": null
+ },
+ "ぶん": {
+  "score": 0.0,
+  "heard": "Boom! (sounds foreign)",
+  "error": null
+ },
+ "びん": {
+  "score": 0.0,
+  "heard": "being (sounds foreign)",
+  "error": null
+ },
+ "横断": {
+  "score": 0.79,
+  "heard": "横断 (sounds foreign)",
+  "error": null
+ },
+ "貯金": {
+  "score": 0.79,
+  "heard": "貯金 (sounds foreign)",
+  "error": null
+ },
+ "エンジン": {
+  "score": 0.79,
+  "heard": "エンジン (sounds foreign)",
+  "error": null
+ },
+ "不安": {
+  "score": 0.79,
+  "heard": "不安 (sounds foreign)",
+  "error": null
+ },
+ "さら": {
+  "score": 0.0,
+  "heard": "Sera (sounds foreign)",
+  "error": null
+ },
+ "がん": {
+  "score": 0.4,
+  "heard": "鋼 (sounds foreign)",
+  "error": null
+ },
+ "微笑む": {
+  "score": 0.5,
+  "heard": "美保衛 (sounds foreign)",
+  "error": null
+ },
+ "無事": {
+  "score": 0.5,
+  "heard": "不字 (sounds foreign)",
+  "error": null
+ },
+ "スピーチ": {
+  "score": 0.79,
+  "heard": "スピーチ (sounds foreign)",
+  "error": null
+ },
+ "ごはん": {
+  "score": 0.79,
+  "heard": "ごはん (sounds foreign)",
+  "error": null
+ },
+ "あん": {
+  "score": 0.79,
+  "heard": "安 (sounds foreign)",
+  "error": null
+ },
+ "婦人": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "去年": {
+  "score": 0.79,
+  "heard": "去年 (sounds foreign)",
+  "error": null
+ },
+ "非難": {
+  "score": 0.571,
+  "heard": "西南 (sounds foreign)",
+  "error": null
+ },
+ "から": {
+  "score": 0.79,
+  "heard": "から (sounds foreign)",
+  "error": null
+ },
+ "てき": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "欠点": {
+  "score": 0.79,
+  "heard": "欠点 (sounds foreign)",
+  "error": null
+ },
+ "つかむ": {
+  "score": 0.0,
+  "heard": "Skam. (sounds foreign)",
+  "error": null
+ },
+ "難民": {
+  "score": 0.79,
+  "heard": "難民 (sounds foreign)",
+  "error": null
+ },
+ "地方": {
+  "score": 0.79,
+  "heard": "地方 (sounds foreign)",
+  "error": null
+ },
+ "逮捕": {
+  "score": 0.79,
+  "heard": "逮捕 (sounds foreign)",
+  "error": null
+ },
+ "しょー": {
+  "score": 0.79,
+  "heard": "ショー (sounds foreign)",
+  "error": null
+ },
+ "処理": {
+  "score": 0.79,
+  "heard": "処理 (sounds foreign)",
+  "error": null
+ },
+ "ほぼ": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "訓練": {
+  "score": 0.79,
+  "heard": "訓練 (sounds foreign)",
+  "error": null
+ },
+ "いわば": {
+  "score": 0.79,
+  "heard": "いわば (sounds foreign)",
+  "error": null
+ },
+ "企業": {
+  "score": 0.79,
+  "heard": "企業 (sounds foreign)",
+  "error": null
+ },
+ "寄付": {
+  "score": 0.5,
+  "heard": "皮膚 (sounds foreign)",
+  "error": null
+ },
+ "サイン": {
+  "score": 0.79,
+  "heard": "サイン (sounds foreign)",
+  "error": null
+ },
+ "花火": {
+  "score": 0.79,
+  "heard": "花火 (sounds foreign)",
+  "error": null
+ },
+ "なぞ": {
+  "score": 0.79,
+  "heard": "謎 (sounds foreign)",
+  "error": null
+ },
+ "メンバー": {
+  "score": 0.79,
+  "heard": "メンバー (sounds foreign)",
+  "error": null
+ },
+ "青年": {
+  "score": 0.79,
+  "heard": "青年 (sounds foreign)",
+  "error": null
+ },
+ "満員": {
+  "score": 0.79,
+  "heard": "満員 (sounds foreign)",
+  "error": null
+ },
+ "真似": {
+  "score": 0.79,
+  "heard": "まね (sounds foreign)",
+  "error": null
+ },
+ "キャンプ": {
+  "score": 0.79,
+  "heard": "キャンプ (sounds foreign)",
+  "error": null
+ },
+ "範囲": {
+  "score": 0.667,
+  "heard": "班尼 (sounds foreign)",
+  "error": null
+ },
+ "記者": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "金銭": {
+  "score": 0.79,
+  "heard": "金銭 (sounds foreign)",
+  "error": null
+ },
+ "ます": {
+  "score": 0.79,
+  "heard": "ます。 (sounds foreign)",
+  "error": null
+ },
+ "武器": {
+  "score": 0.79,
+  "heard": "武器 (sounds foreign)",
+  "error": null
+ },
+ "ユーモア": {
+  "score": 0.79,
+  "heard": "ユーモア (sounds foreign)",
+  "error": null
+ },
+ "位置": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "前進": {
+  "score": 0.79,
+  "heard": "前進 (sounds foreign)",
+  "error": null
+ },
+ "女子": {
+  "score": 0.79,
+  "heard": "上司 (sounds foreign)",
+  "error": null
+ },
+ "左右": {
+  "score": 0.79,
+  "heard": "左右 (sounds foreign)",
+  "error": null
+ },
+ "ひょー": {
+  "score": 0.79,
+  "heard": "表 (sounds foreign)",
+  "error": null
+ },
+ "メモ": {
+  "score": 0.79,
+  "heard": "メモ (sounds foreign)",
+  "error": null
+ },
+ "知事": {
+  "score": 0.5,
+  "heard": "指示 (sounds foreign)",
+  "error": null
+ },
+ "笑顔": {
+  "score": 0.79,
+  "heard": "笑顔 (sounds foreign)",
+  "error": null
+ },
+ "演技": {
+  "score": 0.79,
+  "heard": "演技 (sounds foreign)",
+  "error": null
+ },
+ "欠陥": {
+  "score": 0.79,
+  "heard": "結果 (sounds foreign)",
+  "error": null
+ },
+ "デモ": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "プロ": {
+  "score": 0.79,
+  "heard": "プロ (sounds foreign)",
+  "error": null
+ },
+ "ね": {
+  "score": 0.0,
+  "heard": "ne? (sounds foreign)",
+  "error": null
+ },
+ "なべ": {
+  "score": 0.79,
+  "heard": "鍋 (sounds foreign)",
+  "error": null
+ },
+ "しも": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "ビデオ": {
+  "score": 0.79,
+  "heard": "ビデオ (sounds foreign)",
+  "error": null
+ },
+ "雑音": {
+  "score": 0.79,
+  "heard": "雑音 (sounds foreign)",
+  "error": null
+ },
+ "ドラマ": {
+  "score": 0.79,
+  "heard": "ドラマ (sounds foreign)",
+  "error": null
+ },
+ "基本": {
+  "score": 0.79,
+  "heard": "基本 (sounds foreign)",
+  "error": null
+ },
+ "憲法": {
+  "score": 0.79,
+  "heard": "憲法 (sounds foreign)",
+  "error": null
+ },
+ "知能": {
+  "score": 0.79,
+  "heard": "智能 (sounds foreign)",
+  "error": null
+ },
+ "よみ": {
+  "score": 0.79,
+  "heard": "よみ (sounds foreign)",
+  "error": null
+ },
+ "メッセージ": {
+  "score": 0.79,
+  "heard": "メッセージ (sounds foreign)",
+  "error": null
+ },
+ "手品": {
+  "score": 0.79,
+  "heard": "手品 (sounds foreign)",
+  "error": null
+ },
+ "ホーム": {
+  "score": 0.79,
+  "heard": "ホーム (sounds foreign)",
+  "error": null
+ },
+ "ライター": {
+  "score": 0.79,
+  "heard": "ライター (sounds foreign)",
+  "error": null
+ },
+ "とい": {
+  "score": 0.79,
+  "heard": "問い (sounds foreign)",
+  "error": null
+ },
+ "ボーイ": {
+  "score": 0.0,
+  "heard": "boj (sounds foreign)",
+  "error": null
+ },
+ "音声": {
+  "score": 0.79,
+  "heard": "音声 (sounds foreign)",
+  "error": null
+ },
+ "ばったり": {
+  "score": 0.79,
+  "heard": "ばったり (sounds foreign)",
+  "error": null
+ },
+ "候補": {
+  "score": 0.79,
+  "heard": "候補 (sounds foreign)",
+  "error": null
+ },
+ "天然": {
+  "score": 0.79,
+  "heard": "天然 (sounds foreign)",
+  "error": null
+ },
+ "やおや": {
+  "score": 0.0,
+  "heard": "有一 (sounds foreign)",
+  "error": null
+ },
+ "協議": {
+  "score": 0.79,
+  "heard": "競技 (sounds foreign)",
+  "error": null
+ },
+ "個々": {
+  "score": 0.79,
+  "heard": "ここ。 (sounds foreign)",
+  "error": null
+ },
+ "作法": {
+  "score": 0.79,
+  "heard": "作法 (sounds foreign)",
+  "error": null
+ },
+ "血管": {
+  "score": 0.79,
+  "heard": "血管 (sounds foreign)",
+  "error": null
+ },
+ "器官": {
+  "score": 0.0,
+  "heard": "he come. (sounds foreign)",
+  "error": null
+ },
+ "御飯": {
+  "score": 0.79,
+  "heard": "ごはん (sounds foreign)",
+  "error": null
+ },
+ "ふ": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "マッサージ": {
+  "score": 0.79,
+  "heard": "マッサージ (sounds foreign)",
+  "error": null
+ },
+ "原因": {
+  "score": 0.0,
+  "heard": "géin (sounds foreign)",
+  "error": null
+ },
+ "以外": {
+  "score": 0.667,
+  "heard": "議外 (sounds foreign)",
+  "error": null
+ },
+ "へん": {
+  "score": 0.0,
+  "heard": "Khen (sounds foreign)",
+  "error": null
+ },
+ "議論": {
+  "score": 0.0,
+  "heard": "gidong (sounds foreign)",
+  "error": null
+ },
+ "我慢": {
+  "score": 0.0,
+  "heard": "Gumam (sounds foreign)",
+  "error": null
+ },
+ "けん": {
+  "score": 0.79,
+  "heard": "堅 (sounds foreign)",
+  "error": null
+ },
+ "したがう": {
+  "score": 0.79,
+  "heard": "従う (sounds foreign)",
+  "error": null
+ },
+ "せん": {
+  "score": 0.79,
+  "heard": "千 (sounds foreign)",
+  "error": null
+ },
+ "にし": {
+  "score": 0.79,
+  "heard": "西 (sounds foreign)",
+  "error": null
+ },
+ "指示": {
+  "score": 0.79,
+  "heard": "詩字 (sounds foreign)",
+  "error": null
+ },
+ "うばう": {
+  "score": 0.79,
+  "heard": "奪う (sounds foreign)",
+  "error": null
+ },
+ "幸運": {
+  "score": 0.79,
+  "heard": "幸運 (sounds foreign)",
+  "error": null
+ },
+ "地位": {
+  "score": 0.0,
+  "heard": "Sí. (sounds foreign)",
+  "error": null
+ },
+ "ゲーム": {
+  "score": 0.79,
+  "heard": "ゲーム (sounds foreign)",
+  "error": null
+ },
+ "ワイン": {
+  "score": 0.0,
+  "heard": "와인 (sounds foreign)",
+  "error": null
+ },
+ "しち": {
+  "score": 0.0,
+  "heard": "시지 (sounds foreign)",
+  "error": null
+ },
+ "店員": {
+  "score": 0.25,
+  "heard": "台英 (sounds foreign)",
+  "error": null
+ },
+ "屋根": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "論文": {
+  "score": 0.79,
+  "heard": "論文 (sounds foreign)",
+  "error": null
+ },
+ "み": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "自身": {
+  "score": 0.0,
+  "heard": "G-Sync (sounds foreign)",
+  "error": null
+ },
+ "部分": {
+  "score": 0.333,
+  "heard": "不本 (sounds foreign)",
+  "error": null
+ },
+ "まあ": {
+  "score": 0.0,
+  "heard": "妈 (sounds foreign)",
+  "error": null
+ },
+ "めん": {
+  "score": 0.5,
+  "heard": "ねん (sounds foreign)",
+  "error": null
+ },
+ "画家": {
+  "score": 0.79,
+  "heard": "画家 (sounds foreign)",
+  "error": null
+ },
+ "きり": {
+  "score": 0.79,
+  "heard": "霧 (sounds foreign)",
+  "error": null
+ },
+ "おう": {
+  "score": 0.5,
+  "heard": "おお。 (sounds foreign)",
+  "error": null
+ },
+ "ぜん": {
+  "score": 0.0,
+  "heard": "正 (sounds foreign)",
+  "error": null
+ },
+ "あな": {
+  "score": 0.5,
+  "heard": "阿娜 (sounds foreign)",
+  "error": null
+ },
+ "夫妻": {
+  "score": 0.79,
+  "heard": "夫妻 (sounds foreign)",
+  "error": null
+ },
+ "記事": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "条件": {
+  "score": 0.79,
+  "heard": "条件 (sounds foreign)",
+  "error": null
+ },
+ "えさ": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "徒歩": {
+  "score": 0.79,
+  "heard": "徒歩 (sounds foreign)",
+  "error": null
+ },
+ "なし": {
+  "score": 0.0,
+  "heard": "nasi (sounds foreign)",
+  "error": null
+ },
+ "神社": {
+  "score": 0.79,
+  "heard": "神社 (sounds foreign)",
+  "error": null
+ },
+ "いや": {
+  "score": 0.79,
+  "heard": "いや、 (sounds foreign)",
+  "error": null
+ },
+ "へい": {
+  "score": 0.0,
+  "heard": "Hej (sounds foreign)",
+  "error": null
+ },
+ "なみ": {
+  "score": 0.79,
+  "heard": "波 (sounds foreign)",
+  "error": null
+ },
+ "ミス": {
+  "score": 0.79,
+  "heard": "ミス (sounds foreign)",
+  "error": null
+ },
+ "チーズ": {
+  "score": 0.79,
+  "heard": "チーズ (sounds foreign)",
+  "error": null
+ },
+ "伝言": {
+  "score": 0.79,
+  "heard": "伝言 (sounds foreign)",
+  "error": null
+ },
+ "周囲": {
+  "score": 0.75,
+  "heard": "修理 (sounds foreign)",
+  "error": null
+ },
+ "汚染": {
+  "score": 0.667,
+  "heard": "五千 (sounds foreign)",
+  "error": null
+ },
+ "がい": {
+  "score": 0.79,
+  "heard": "該 (sounds foreign)",
+  "error": null
+ },
+ "れい": {
+  "score": 0.5,
+  "heard": "でい (sounds foreign)",
+  "error": null
+ },
+ "デザイン": {
+  "score": 0.79,
+  "heard": "デザイン (sounds foreign)",
+  "error": null
+ },
+ "閉店": {
+  "score": 0.79,
+  "heard": "閉店 (sounds foreign)",
+  "error": null
+ },
+ "永遠": {
+  "score": 0.0,
+  "heard": "Ayang (sounds foreign)",
+  "error": null
+ },
+ "い": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "とら": {
+  "score": 0.79,
+  "heard": "虎 (sounds foreign)",
+  "error": null
+ },
+ "記入": {
+  "score": 0.0,
+  "heard": "피뉴 (sounds foreign)",
+  "error": null
+ },
+ "なお": {
+  "score": 0.79,
+  "heard": "なお、 (sounds foreign)",
+  "error": null
+ },
+ "維持": {
+  "score": 0.0,
+  "heard": "이지. (sounds foreign)",
+  "error": null
+ },
+ "大半": {
+  "score": 0.79,
+  "heard": "大半 (sounds foreign)",
+  "error": null
+ },
+ "退院": {
+  "score": 0.5,
+  "heard": "排英 (sounds foreign)",
+  "error": null
+ },
+ "家事": {
+  "score": 0.79,
+  "heard": "家事 (sounds foreign)",
+  "error": null
+ },
+ "せい": {
+  "score": 0.0,
+  "heard": "Sí. (sounds foreign)",
+  "error": null
+ },
+ "気温": {
+  "score": 0.0,
+  "heard": "기용 (sounds foreign)",
+  "error": null
+ },
+ "わき": {
+  "score": 0.79,
+  "heard": "和気 (sounds foreign)",
+  "error": null
+ },
+ "たびたび": {
+  "score": 0.79,
+  "heard": "たびたび (sounds foreign)",
+  "error": null
+ },
+ "たい": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "受験": {
+  "score": 0.25,
+  "heard": "主耿 (sounds foreign)",
+  "error": null
+ },
+ "不便": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "よん": {
+  "score": 0.0,
+  "heard": "Jón (sounds foreign)",
+  "error": null
+ },
+ "期間": {
+  "score": 0.0,
+  "heard": "skunk (sounds foreign)",
+  "error": null
+ },
+ "保存": {
+  "score": 0.79,
+  "heard": "保存 (sounds foreign)",
+  "error": null
+ },
+ "家賃": {
+  "score": 0.0,
+  "heard": "jačin (sounds foreign)",
+  "error": null
+ },
+ "ぞー": {
+  "score": 0.0,
+  "heard": "so (sounds foreign)",
+  "error": null
+ },
+ "トン": {
+  "score": 0.0,
+  "heard": "Thon (sounds foreign)",
+  "error": null
+ },
+ "途端": {
+  "score": 0.333,
+  "heard": "土糖 (sounds foreign)",
+  "error": null
+ },
+ "そん": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "代金": {
+  "score": 0.79,
+  "heard": "代金 (sounds foreign)",
+  "error": null
+ },
+ "知恵": {
+  "score": 0.79,
+  "heard": "知恵 (sounds foreign)",
+  "error": null
+ },
+ "たに": {
+  "score": 0.79,
+  "heard": "谷 (sounds foreign)",
+  "error": null
+ },
+ "抵抗": {
+  "score": 0.75,
+  "heard": "成功 (sounds foreign)",
+  "error": null
+ },
+ "ウイスキー": {
+  "score": 0.0,
+  "heard": "Whisky (sounds foreign)",
+  "error": null
+ },
+ "ダイヤ": {
+  "score": 0.79,
+  "heard": "ダイヤ (sounds foreign)",
+  "error": null
+ },
+ "くう": {
+  "score": 0.0,
+  "heard": "크 (sounds foreign)",
+  "error": null
+ },
+ "未満": {
+  "score": 0.0,
+  "heard": "Ni mam. (sounds foreign)",
+  "error": null
+ },
+ "さ": {
+  "score": 0.667,
+  "heard": "さあ (sounds foreign)",
+  "error": null
+ },
+ "場面": {
+  "score": 0.0,
+  "heard": "Bamem. (sounds foreign)",
+  "error": null
+ },
+ "お": {
+  "score": 0.0,
+  "heard": "어. (sounds foreign)",
+  "error": null
+ },
+ "ぼー": {
+  "score": 0.667,
+  "heard": "ぼう (sounds foreign)",
+  "error": null
+ },
+ "ぜい": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "だが": {
+  "score": 0.79,
+  "heard": "だが (sounds foreign)",
+  "error": null
+ },
+ "深夜": {
+  "score": 0.79,
+  "heard": "深夜 (sounds foreign)",
+  "error": null
+ },
+ "お手洗い": {
+  "score": 0.79,
+  "heard": "おてあらい (sounds foreign)",
+  "error": null
+ },
+ "委員": {
+  "score": 0.0,
+  "heard": "因 (sounds foreign)",
+  "error": null
+ },
+ "自己": {
+  "score": 0.79,
+  "heard": "事故 (sounds foreign)",
+  "error": null
+ },
+ "単純": {
+  "score": 0.79,
+  "heard": "単純 (sounds foreign)",
+  "error": null
+ },
+ "不正": {
+  "score": 0.79,
+  "heard": "せい (sounds foreign)",
+  "error": null
+ },
+ "多忙": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "のー": {
+  "score": 0.0,
+  "heard": "No. (sounds foreign)",
+  "error": null
+ },
+ "生地": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "起源": {
+  "score": 0.79,
+  "heard": "期限 (sounds foreign)",
+  "error": null
+ },
+ "審判": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "か": {
+  "score": 0.79,
+  "heard": "か (sounds foreign)",
+  "error": null
+ },
+ "うん": {
+  "score": 0.0,
+  "heard": "H (sounds foreign)",
+  "error": null
+ },
+ "ば": {
+  "score": 0.0,
+  "heard": "va (sounds foreign)",
+  "error": null
+ },
+ "記念": {
+  "score": 0.79,
+  "heard": "記念 (sounds foreign)",
+  "error": null
+ },
+ "敬意": {
+  "score": 0.0,
+  "heard": "케이 (sounds foreign)",
+  "error": null
+ },
+ "違反": {
+  "score": 0.79,
+  "heard": "違反 (sounds foreign)",
+  "error": null
+ },
+ "資源": {
+  "score": 0.0,
+  "heard": "Sigen. (sounds foreign)",
+  "error": null
+ },
+ "期限": {
+  "score": 0.79,
+  "heard": "期限 (sounds foreign)",
+  "error": null
+ },
+ "ち": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "ジュース": {
+  "score": 0.79,
+  "heard": "ジュース (sounds foreign)",
+  "error": null
+ },
+ "スター": {
+  "score": 0.79,
+  "heard": "スター (sounds foreign)",
+  "error": null
+ },
+ "やや": {
+  "score": 0.0,
+  "heard": "Jaja (sounds foreign)",
+  "error": null
+ },
+ "びょー": {
+  "score": 0.0,
+  "heard": "比喲 (sounds foreign)",
+  "error": null
+ },
+ "けち": {
+  "score": 0.79,
+  "heard": "ケチ (sounds foreign)",
+  "error": null
+ },
+ "応援": {
+  "score": 0.79,
+  "heard": "応援 (sounds foreign)",
+  "error": null
+ },
+ "かん": {
+  "score": 0.0,
+  "heard": "派 (sounds foreign)",
+  "error": null
+ },
+ "みやこ": {
+  "score": 0.79,
+  "heard": "ミヤコ (sounds foreign)",
+  "error": null
+ },
+ "わん": {
+  "score": 0.5,
+  "heard": "完 (sounds foreign)",
+  "error": null
+ },
+ "わ": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "の": {
+  "score": 0.79,
+  "heard": "の (sounds foreign)",
+  "error": null
+ },
+ "ピン": {
+  "score": 0.0,
+  "heard": "Pim (sounds foreign)",
+  "error": null
+ },
+ "器用": {
+  "score": 0.79,
+  "heard": "起用 (sounds foreign)",
+  "error": null
+ },
+ "駅員": {
+  "score": 0.0,
+  "heard": "Éigin. (sounds foreign)",
+  "error": null
+ },
+ "賛否": {
+  "score": 0.667,
+  "heard": "三期 (sounds foreign)",
+  "error": null
+ },
+ "資本": {
+  "score": 0.667,
+  "heard": "示範 (sounds foreign)",
+  "error": null
+ },
+ "依然": {
+  "score": 0.571,
+  "heard": "幾天 (sounds foreign)",
+  "error": null
+ },
+ "じゅん": {
+  "score": 0.4,
+  "heard": "建 (sounds foreign)",
+  "error": null
+ },
+ "まめ": {
+  "score": 0.79,
+  "heard": "豆 (sounds foreign)",
+  "error": null
+ },
+ "おき": {
+  "score": 0.667,
+  "heard": "大きい (sounds foreign)",
+  "error": null
+ },
+ "インタビュー": {
+  "score": 0.79,
+  "heard": "インタビュー (sounds foreign)",
+  "error": null
+ },
+ "む": {
+  "score": 0.79,
+  "heard": "無 (sounds foreign)",
+  "error": null
+ },
+ "ノー": {
+  "score": 0.0,
+  "heard": "No. (sounds foreign)",
+  "error": null
+ },
+ "パス": {
+  "score": 0.79,
+  "heard": "パス (sounds foreign)",
+  "error": null
+ },
+ "機嫌": {
+  "score": 0.667,
+  "heard": "期間 (sounds foreign)",
+  "error": null
+ },
+ "おん": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "しり": {
+  "score": 0.0,
+  "heard": "시리 (sounds foreign)",
+  "error": null
+ },
+ "機関": {
+  "score": 0.0,
+  "heard": "기강 (sounds foreign)",
+  "error": null
+ },
+ "典型": {
+  "score": 0.79,
+  "heard": "典型 (sounds foreign)",
+  "error": null
+ },
+ "たば": {
+  "score": 0.667,
+  "heard": "タバ、タバ (sounds foreign)",
+  "error": null
+ },
+ "あら": {
+  "score": 0.0,
+  "heard": "ara? (sounds foreign)",
+  "error": null
+ },
+ "絵本": {
+  "score": 0.0,
+  "heard": "해홍 (sounds foreign)",
+  "error": null
+ },
+ "けい": {
+  "score": 0.0,
+  "heard": "K (sounds foreign)",
+  "error": null
+ },
+ "いわい": {
+  "score": 0.79,
+  "heard": "祝い (sounds foreign)",
+  "error": null
+ },
+ "そー": {
+  "score": 0.667,
+  "heard": "そう。 (sounds foreign)",
+  "error": null
+ },
+ "なわ": {
+  "score": 0.79,
+  "heard": "ナワ (sounds foreign)",
+  "error": null
+ },
+ "ダウン": {
+  "score": 0.0,
+  "heard": "dau (sounds foreign)",
+  "error": null
+ },
+ "あわ": {
+  "score": 0.79,
+  "heard": "あわ (sounds foreign)",
+  "error": null
+ },
+ "だん": {
+  "score": 0.0,
+  "heard": "Done. (sounds foreign)",
+  "error": null
+ },
+ "見当": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "カー": {
+  "score": 0.0,
+  "heard": "卡 (sounds foreign)",
+  "error": null
+ },
+ "らい": {
+  "score": 0.0,
+  "heard": "拉 (sounds foreign)",
+  "error": null
+ },
+ "おび": {
+  "score": 0.79,
+  "heard": "帯 (sounds foreign)",
+  "error": null
+ },
+ "医院": {
+  "score": 0.0,
+  "heard": "Tim (sounds foreign)",
+  "error": null
+ },
+ "近視": {
+  "score": 0.79,
+  "heard": "禁止 (sounds foreign)",
+  "error": null
+ },
+ "経緯": {
+  "score": 0.0,
+  "heard": "케이 (sounds foreign)",
+  "error": null
+ },
+ "有無": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "女史": {
+  "score": 0.79,
+  "heard": "女子 (sounds foreign)",
+  "error": null
+ },
+ "具体": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "きん": {
+  "score": 0.79,
+  "heard": "金 (sounds foreign)",
+  "error": null
+ },
+ "なん": {
+  "score": 0.0,
+  "heard": "nang (sounds foreign)",
+  "error": null
+ },
+ "加味": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "くん": {
+  "score": 0.0,
+  "heard": "금 (sounds foreign)",
+  "error": null
+ },
+ "むす": {
+  "score": 0.0,
+  "heard": "Muss (sounds foreign)",
+  "error": null
+ },
+ "ソファー": {
+  "score": 0.79,
+  "heard": "ソファー (sounds foreign)",
+  "error": null
+ },
+ "うむ": {
+  "score": 0.0,
+  "heard": "ᱩᱨᱢᱟ (sounds foreign)",
+  "error": null
+ },
+ "磁器": {
+  "score": 0.79,
+  "heard": "次期 (sounds foreign)",
+  "error": null
+ },
+ "知合い": {
+  "score": 0.79,
+  "heard": "試合 (sounds foreign)",
+  "error": null
+ },
+ "ゆう": {
+  "score": 0.0,
+  "heard": "You (sounds foreign)",
+  "error": null
+ },
+ "以前": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "は": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "とむ": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "あい": {
+  "score": 0.79,
+  "heard": "愛 (sounds foreign)",
+  "error": null
+ },
+ "せんえん": {
+  "score": 0.79,
+  "heard": "千円 (sounds foreign)",
+  "error": null
+ },
+ "利益": {
+  "score": 0.0,
+  "heard": "Dieci. (sounds foreign)",
+  "error": null
+ },
+ "はん": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "喫茶店": {
+  "score": 0.79,
+  "heard": "喫茶店 (sounds foreign)",
+  "error": null
+ },
+ "経営": {
+  "score": 0.333,
+  "heard": "へえ (sounds foreign)",
+  "error": null
+ },
+ "所為": {
+  "score": 0.79,
+  "heard": "所為 (sounds foreign)",
+  "error": null
+ },
+ "したしい": {
+  "score": 0.0,
+  "heard": "Staciu (sounds foreign)",
+  "error": null
+ },
+ "精々": {
+  "score": 0.75,
+  "heard": "せいせい (sounds foreign)",
+  "error": null
+ },
+ "禁煙": {
+  "score": 0.5,
+  "heard": "新年 (sounds foreign)",
+  "error": null
+ },
+ "とー": {
+  "score": 0.5,
+  "heard": "透 (sounds foreign)",
+  "error": null
+ },
+ "離婚": {
+  "score": 0.667,
+  "heard": "理工 (sounds foreign)",
+  "error": null
+ },
+ "世間": {
+  "score": 0.0,
+  "heard": "Second (sounds foreign)",
+  "error": null
+ },
+ "ぐん": {
+  "score": 0.0,
+  "heard": "gün (sounds foreign)",
+  "error": null
+ },
+ "衣服": {
+  "score": 0.333,
+  "heard": "リスク (sounds foreign)",
+  "error": null
+ },
+ "体温": {
+  "score": 0.5,
+  "heard": "太陽 (sounds foreign)",
+  "error": null
+ },
+ "プラン": {
+  "score": 0.667,
+  "heard": "フラン (sounds foreign)",
+  "error": null
+ },
+ "金融": {
+  "score": 0.333,
+  "heard": "新譽 (sounds foreign)",
+  "error": null
+ },
+ "キャプテン": {
+  "score": 0.444,
+  "heard": "昨天 (sounds foreign)",
+  "error": null
+ },
+ "停電": {
+  "score": 0.79,
+  "heard": "停電 (sounds foreign)",
+  "error": null
+ },
+ "議員": {
+  "score": 0.0,
+  "heard": "dím (sounds foreign)",
+  "error": null
+ },
+ "指揮": {
+  "score": 0.79,
+  "heard": "四季 (sounds foreign)",
+  "error": null
+ },
+ "かり": {
+  "score": 0.79,
+  "heard": "カリー (sounds foreign)",
+  "error": null
+ },
+ "愛犬": {
+  "score": 0.79,
+  "heard": "愛犬 (sounds foreign)",
+  "error": null
+ },
+ "つゆ": {
+  "score": 0.79,
+  "heard": "つゆ (sounds foreign)",
+  "error": null
+ },
+ "ちゃ": {
+  "score": 0.0,
+  "heard": "자 (sounds foreign)",
+  "error": null
+ },
+ "足袋": {
+  "score": 0.667,
+  "heard": "足袋くろ (sounds foreign)",
+  "error": null
+ },
+ "付合う": {
+  "score": 0.0,
+  "heard": "すがる (sounds foreign)",
+  "error": null
+ }
+}

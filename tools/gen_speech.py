@@ -9,6 +9,12 @@ text to the id. Clips are checked like the listening items (transcribed back and
 
   python3 tools/gen_speech.py --plan         # how many clips, characters and estimated minutes
   python3 tools/gen_speech.py --run          # record everything not yet recorded
+  python3 tools/gen_speech.py --accent [--max-len 6]   # find clips that sound foreign and record them again
+
+A short word gives the voice little to go on, and some takes come out with an English accent (留学 as "view docker").
+Every take is now checked twice: read back in Japanese (the right word), and heard by a second recogniser that
+names the language: a take it hears as English is recorded again with another voice (up to 5 takes). A word with
+no good take is left to the phone's own Japanese voice.
 """
 import argparse, hashlib, json, random, re, sys
 from concurrent.futures import ThreadPoolExecutor
@@ -57,20 +63,52 @@ def clip_id(text):
     return hashlib.sha1(text.encode()).hexdigest()[:12]
 
 
+# For single words: shimmer was heard as English most often, so it reads sentences only.
+WORD_VOICES = ['ash', 'echo', 'onyx', 'coral', 'nova']
+NATIVE = '東京出身の日本語ネイティブのアナウンサーとして、外国語のなまりのない自然な標準語の発音とアクセントで読んでください。'
+TAKES = 5
+
+
+def language(mp3):
+    """The language a recogniser hears in the clip, without being told ('japanese', 'english', ...)."""
+    return json.loads(A.post('/audio/transcriptions', {'model': 'whisper-1', 'response_format': 'verbose_json'}, files=mp3).decode()).get('language')
+
+
 def record(text):
+    """Takes in different voices until one is read back right and heard as Japanese; the best take is kept."""
     cid = clip_id(text)
     r = random.Random(cid)
-    voice = r.choice(A.MALE + A.FEMALE)
-    style = A.BASE + r.choice(A.MOODS)
+    short = len(text) <= 6
+    voices = WORD_VOICES[:] if short else A.MALE + A.FEMALE
+    r.shuffle(voices)
+    spoken = text.replace('明日', 'あした')
+    best = (-1, 0, '', None)
     try:
-        spoken = text.replace('明日', 'あした')
-        wav = A.to_pace(A.tts(spoken, voice, style), spoken) if len(text) > 6 else A.tts_wav(spoken, voice, style)
-        mp3 = A.encode(wav, 32)
-        score, txt = check(spoken, mp3)
+        for take in range(TAKES):
+            voice = voices[take % len(voices)]
+            style = A.BASE + (NATIVE if short else r.choice(A.MOODS))
+            wav = A.to_pace(A.tts(spoken, voice, style), spoken) if not short else A.tts_wav(spoken, voice, style)
+            mp3 = A.encode(wav, 32)
+            score, txt = check(spoken, mp3)
+            ja = language(mp3) == 'japanese'
+            rank = (score >= 0.8) + ja + score / 10
+            if rank > best[0]:
+                best = (rank, score, txt, mp3)
+            if score >= 0.8 and ja:
+                break
+        rank, score, txt, mp3 = best
         (OUT / f'{cid}.mp3').write_bytes(mp3)
-        return text, cid, score, txt, None
+        return text, cid, score if rank >= 2 else min(score, 0.79), txt + ('' if rank >= 2 else ' (sounds foreign)'), None
     except Exception as e:
         return text, cid, 0, '', str(e)
+
+
+def heard_foreign(text):
+    """An existing clip a recogniser hears as another language than Japanese."""
+    try:
+        return text, language((OUT / f'{clip_id(text)}.mp3').read_bytes()) != 'japanese'
+    except Exception:
+        return text, False
 
 
 def check(text, mp3):
@@ -84,6 +122,8 @@ def main():
     ap = argparse.ArgumentParser()
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument('--plan', action='store_true'); g.add_argument('--run', action='store_true')
+    g.add_argument('--accent', action='store_true', help='find recorded clips that sound foreign and record them again')
+    ap.add_argument('--max-len', type=int, default=0, help='--accent: only texts up to this many characters')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--workers', type=int, default=6)
     ap.add_argument('--drop-weak', action='store_true', help="keep clips that didn't pass the check out of the index")
@@ -97,6 +137,11 @@ def main():
     idx_path = OUT / 'index.json'
     index = json.loads(idx_path.read_text(encoding='utf8')) if idx_path.exists() else {}
     todo = [t for t in texts if t not in index or not (OUT / f'{index[t]}.mp3').exists()]
+    if a.accent:
+        scan = [t for t in index if (OUT / f'{index[t]}.mp3').exists() and (not a.max_len or len(t) <= a.max_len)]
+        with ThreadPoolExecutor(a.workers) as pool:
+            todo = [t for t, bad in pool.map(heard_foreign, scan) if bad]
+        print(f'{len(todo)} of {len(scan)} clips sound foreign: {" ".join(todo[:30])}')
     if a.limit:
         todo = todo[:a.limit]
     print(f'{len(todo)} to record')
@@ -108,12 +153,13 @@ def main():
             if not err and (score >= 0.8 or not a.drop_weak):
                 index[text] = cid
             elif not err:
+                index.pop(text, None)
                 (OUT / f'{cid}.mp3').unlink(missing_ok=True)   # misread: the app's phone voice reads the kana instead
             if n % 100 == 0:
                 idx_path.write_text(json.dumps(index, ensure_ascii=False), encoding='utf8')
                 print(f'{n}/{len(todo)}', flush=True)
     idx_path.write_text(json.dumps(index, ensure_ascii=False), encoding='utf8')
-    (OUT / 'check.json').write_text(json.dumps(weak, ensure_ascii=False, indent=1), encoding='utf8')
+    (OUT / ('check_accent.json' if a.accent else 'check.json')).write_text(json.dumps(weak, ensure_ascii=False, indent=1), encoding='utf8')
     print(f'done: {len(todo) - len(weak)} ok, {len(weak)} to look at (speech/check.json)')
 
 

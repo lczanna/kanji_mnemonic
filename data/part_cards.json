@@ -438,8 +438,9 @@
  "免": {
   "keyword": "excuse",
   "components": [],
-  "story": "A hooded figure hunches over long legs and drags a tail behind him: a lazy kid mumbling an {excuse} to dodge his chores.",
-  "picture": "A slouching hooded kid shrugging and making excuses while a pile of chores waits behind him."
+  "story": "Bent ears on top, a boxy body, long legs bolting away: a rabbit. The hunter grabbed its tail, but it slipped free and left the tail in his hand (the whole rabbit 兎 still has that dot). Its {excuse}: 'Sorry, had to run!' And it's let off the stew pot.",
+  "picture": "A rabbit with bent ears bolting across a field, glancing back with an apologetic shrug, while a surprised hunter holds only its fluffy tail.",
+  "shape": "⺈ bent ears · a boxy body · 儿 legs running · no tail dot (the rabbit 兎 has one)"
  },
  "戊": {
   "keyword": "parade",
@@ -493,8 +494,9 @@
  "斉": {
   "keyword": "adjusted",
   "components": [],
-  "story": "A tuning fork balanced on two even stilts, its crossbar perfectly level: everything {adjusted} so each note rings true.",
-  "picture": "A tuning fork balanced on two straight stilts with a level crossbar, beside a row of water glasses."
+  "story": "A [sentence] of sheet music sits on top of a level bar held up by two even legs: a music stand. The whole orchestra is {adjusted} to it, and every instrument plays the same note at the same moment (一斉に: all at once).",
+  "picture": "A music stand holding a sheet of music on two perfectly even legs, with an orchestra in front all playing the same note at once.",
+  "shape": "文 sentence on top · a level bar · two even legs below"
  },
  "其": {
   "keyword": "bushel basket",
@@ -1054,5 +1056,15 @@
   "components": [],
   "story": "A big round face with grid-like eyes over a long tail curling underneath: a cheeky {monkey} dangling in everyone's way.",
   "picture": "A cheeky monkey with a big round face hanging by its curled tail from a branch."
+ },
+ "𦰩": {
+  "keyword": "Sino- clay",
+  "components": [
+   "flowers",
+   "mouth",
+   "husband"
+  ],
+  "story": "China's oldest potter's clay: [flowers] sprout on top, a [mouth] in the middle chatters in Chinese, and a [husband] stands underneath holding the whole lump up. That's {Sino- clay}, the stuff the first characters were pressed into. (In 難 and 勤 the flowers join into one bar; in 勤 the husband's legs tuck in.)",
+  "picture": "A big lump of reddish clay on a potter's wheel in ancient China: flowers sprouting from its top, a chattering mouth carved in its middle, and a man underneath holding the whole lump up on his shoulders."
  }
 }

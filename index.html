@@ -440,7 +440,7 @@ function emptyData() {
            stats: { totalReviews: 0, correctReviews: 0, streak: 0, lastReviewDate: null },
            lookSeen: {}, confusions: {}, sprintBest: 0, practice: {}, mocks: [], repaired: {}, historyOk: {}, calib: {}, calibK: null, timeLog: { review: [], learn: [] }, planDay: null, studySec: {}, hookSeen: {},
            settings: { examDate: '2026-12-06', newPerDay: 'auto', vocabPerDay: 'auto', grammarPerDay: 'auto', bufferDays: 14, retention: 0.9,
-                       minWeekday: 30, minWeekend: 60, budgetWeekday: '', budgetWeekend: '' } };
+                       minWeekday: 30, minWeekend: 60, budgetWeekday: '', budgetWeekend: '', examMode: false } };
 }
 function loadData() {
   let d = null;
@@ -1375,7 +1375,9 @@ function showGloss(btn) {
   const [w, r, lemma, lr, m] = JSON.parse(btn.dataset.gl);
   const pop = $('gl-pop');
   // Words written in kana need no reading line; their dictionary form shows only when it differs.
-  pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} ${r !== w ? `<span>${esc(r)}</span>` : ''} ${sayBtn(sayText(w, r), 'Play ' + w)}</div>
+  // A verb cut before て/た ends on a small っ (居直っ, 行っ), which no voice can say: play its dictionary form instead.
+  const say = /っ$/.test(w) && lemma && lemma !== w ? sayText(lemma, lr || lemma) : sayText(w, r);
+  pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} ${r !== w ? `<span>${esc(r)}</span>` : ''} ${sayBtn(say, 'Play ' + (say === sayText(w, r) ? w : lemma))}</div>
     ${lemma !== w ? `<div class="gl-lemma" lang="ja">dictionary form: ${esc(lemma)}${lr && lr !== lemma ? `（${esc(lr)}）` : ''}</div>` : ''}
     <div class="gl-m">${esc(m || 'name or rare word')}${wordLink(BY_WORD[lemma] ? lemma : w)}</div>
     ${(() => { const word = BY_WORD[lemma] ? lemma : w, ks = [...new Set([...word].filter(ch => BY_KANJI[ch]))];
@@ -1464,6 +1466,8 @@ function partNameWhy(g) {
   const why = Object.entries(PARTS).filter(([n, p]) => p.g === g && PART_NAME_WHY[n]).map(([n]) => `<b>${esc(n)}</b>: ${esc(PART_NAME_WHY[n])}.`);
   return why.length ? `<div class="g-contrast"><span class="tag">AS A PART</span> ${why.join(' ')}</div>` : '';
 }
+// A kanji with no named parts: which stroke is which piece of the picture (kanji.json / part_cards.json "shape").
+const shapeHtml = x => x && x.shape ? `<div class="g-contrast"><span class="tag">SHAPE</span> <span lang="ja">${esc(x.shape)}</span></div>` : '';
 function twinHtml(g) {
   const t = PART_TWINS[g];
   return t ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${esc(t[0])}</span> ${esc(t[1])}: ${esc(t[2])}.</div>` : '';
@@ -1602,7 +1606,7 @@ function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
   // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
   const img = k.image ? `<img class="card-img${mode === 'quiz' ? ' small' : ''}" src="${esc(k.image)}" data-kanji="${esc(k.kanji)}" alt="Mnemonic illustration for ${esc(k.keyword)}" loading="lazy" onerror="imgFallback(this)">` : '';
-  const story = `<div class="story">${storyHtml(k.story || '')}</div>${twinHtml(k.kanji)}${partNameWhy(k.kanji)}`;
+  const story = `<div class="story">${storyHtml(k.story || '')}</div>${shapeHtml(k)}${twinHtml(k.kanji)}${partNameWhy(k.kanji)}`;
   const soundH = sound.length ? `<div class="sound"><div class="section-label">Sound cast</div>${sound.map(x =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(x.r)}</span><span>${esc(x.emoji || '')} ${esc(x.hook)}${castSibling(x.r)}</span></div>`).join('')}</div>` : '';
   const vocabH = (k.vocab || []).length ? `<div><div class="section-label">Words for the exam</div><div class="vocab">${k.vocab.map(v => `
@@ -1984,6 +1988,8 @@ function moreHtml() {
       <div class="field"><label for="set-grammar">New grammar points per day</label>
         <div class="row-wrap"><input type="number" id="set-grammar" min="0" max="15" placeholder="auto" value="${st.grammarPerDay === 'auto' ? '' : esc(st.grammarPerDay)}" style="width:110px">
         <span class="muted" style="font-size:13px">Leave empty for automatic (now ${dailyLimit('grammar')}/day).</span></div></div>
+      <div class="field"><label class="row-wrap" style="gap:8px"><input type="checkbox" id="set-exam-mode" ${st.examMode ? 'checked' : ''}> Exam conditions for listening &amp; reading practice</label>
+        <span class="muted" style="font-size:13px">Until you answer: no tap meanings, recordings play once, reading is timed against the exam's pace. Everything shows after you answer.</span></div>
       <div class="field"><label for="set-buffer">Finish new cards this many days before the exam</label>
         <div class="row-wrap"><input type="number" id="set-buffer" min="0" max="30" value="${bufferDays()}" style="width:110px">
         <span class="muted" style="font-size:13px">Now ${esc(finishNewBy())}. The days after are for review, practice tests and busy days.</span></div></div>
@@ -2220,8 +2226,17 @@ function practiceItems(extra) {
   const nl = extra ? 3 : Math.max(0, q.listen - practiceDoneToday('listen')), nr = extra ? 1 : Math.max(0, q.read - practiceDoneToday('read'));
   // Listening alternates: two quick replies to each dialogue.
   const nd = Math.floor(nl / 3), nq = nl - nd;
-  const items = [...nextPractice(EXAM.qr, nq, skip), ...nextPractice(EXAM.dlg, nd, skip), ...nextPractice(EXAM.read, nr, skip)];
+  const items = [...nextPractice(EXAM.qr, nq, skip), ...nextPractice(hardFirst(EXAM.dlg), nd, skip), ...nextPractice(mixKinds(EXAM.read), nr, skip)];
   return items.map(x => ({ type: 'exam', x, mode: 'exam', answers: [] }));
+}
+// Listening: the exam-length dialogues and talks ("hard": real N3 length, fillers, changed plans) come first.
+const hardFirst = list => [...list.filter(x => x.hard), ...list.filter(x => !x.hard)];
+// Reading kinds taken in turn (short, medium, long, info, short, ...), so long texts come up from the start.
+function mixKinds(list) {
+  const by = {}; for (const x of list) (by[x.kind] = by[x.kind] || []).push(x);
+  const lanes = ['short', 'medium', 'long', 'info'].map(k => by[k] || []).concat(Object.keys(by).filter(k => !READ_PACE[k]).map(k => by[k]));
+  const out = []; for (let i = 0; out.length < list.length; i++) for (const l of lanes) if (l[i]) out.push(l[i]);
+  return out;
 }
 // Accuracy over the last 20 items of a section, or null with fewer than 5.
 function practiceAccuracy(kind) {
@@ -2241,8 +2256,13 @@ function optNotesHtml(q, chosen) {
     return `<div class="${mine ? 'picked' : right ? 'right-note' : ''}"><b lang="ja">${i + 1}. ${glossHtml(o)}</b>${en[i] ? ` <span class="muted">· ${esc(en[i])}</span>` : ''}${right ? ' <span class="ok">✓</span>' : wn}</div>`;
   }).join('')}</div>`;
 }
+// Exam conditions (More → Settings): until you answer, text as printed (no taps), recordings once, reading timed.
+const READ_PACE = { short: 3, medium: 5, long: 10, info: 6 };   // minutes per passage at the exam's pace
+const mmss = s => `${Math.floor(s / 60)}:${String(Math.round(s) % 60).padStart(2, '0')}`;
 function examScreen(it, tags) {
-  const x = it.x, id = x.id, done = session.revealed;
+  const x = it.x, id = x.id, done = session.revealed, strict = appData.settings.examMode && !done;
+  const gl = (t, k) => strict ? esc(t) : glossHtml(t, k);
+  it.t0 = it.t0 || Date.now();
   const kind = id.startsWith('qr') ? 'qr' : id.startsWith('dl') ? 'dlg' : 'read';
   const optBtns = (qi, opts, labels) => `<div class="opts${labels ? '' : ' long'} g">${opts.map((o, oi) => {
     const a = it.answers[qi], q = kind === 'read' ? x.questions[qi] : x;
@@ -2250,29 +2270,33 @@ function examScreen(it, tags) {
     return `<button class="opt${cls}" data-eopt="${qi}:${oi}" ${a != null ? 'disabled' : ''} lang="ja"><span class="num">${oi + 1}</span>${labels ? '' : esc(o)}</button>`; }).join('')}</div>`;
   if (kind === 'qr') {
     tags.push('<span class="tag" lang="ja">聴解 · 即時応答 QUICK RESPONSE</span>');
-    const front = `<button class="big-play" data-play="${esc(id)}" aria-label="Play">▶</button>
+    const front = `<button class="big-play" data-play="${esc(id)}" aria-label="Play" ${strict && it.played ? 'disabled' : ''}>▶</button>
       <div class="prompt">${done ? '' : 'Listen to the line and the three replies (not printed, as in the exam). Which reply fits?'}</div>
       ${optBtns(0, x.options, !done)}
       ${done ? `<div class="ex-script"><div lang="ja"><b>${x.s === 'M' ? '男' : '女'}:</b> ${glossHtml(x.line)}</div><div class="muted">${esc(x.en)}</div>
         ${x.options.map((o, i) => `<div lang="ja" class="${i === x.answer ? 'ok' : ''}">${i + 1}. ${glossHtml(o)} <span class="muted">· ${esc((x.opts_en || [])[i] || '')}</span></div>`).join('')}
         <div class="why">${esc(x.why || '')}</div></div>` : ''}`;
-    return { inner: { front }, bar: done ? examBar(it) : pickHint('Tap ▶ to hear it again') };
+    return { inner: { front }, bar: done ? examBar(it) : pickHint(strict ? 'Exam conditions: it plays once' : 'Tap ▶ to hear it again') };
   }
   if (kind === 'dlg') {
-    tags.push('<span class="tag" lang="ja">聴解 · 会話 DIALOGUE</span>');
-    const front = `<button class="big-play" data-play="${esc(id)}" aria-label="Play">▶</button>
-      <div class="prompt" lang="ja">${glossHtml(x.question)}</div>
-      ${optBtns(0, x.options, false)}
+    tags.push(x.gist ? '<span class="tag" lang="ja">聴解 · 概要理解 GIST</span>' : '<span class="tag" lang="ja">聴解 · 会話 DIALOGUE</span>');
+    // 概要理解: as in the exam, the question and the four choices are only spoken, after the talk.
+    const front = `<button class="big-play" data-play="${esc(id)}" aria-label="Play" ${strict && it.played ? 'disabled' : ''}>▶</button>
+      <div class="prompt" lang="ja">${x.gist && !done ? '<span lang="en">Listen to the talk. The question and the four choices come at the end, spoken only (not printed), as in the exam.</span>' : gl(x.question)}</div>
+      ${optBtns(0, x.options, x.gist && !done)}
       ${done ? `<div class="why">${esc(x.why || '')}</div>${optNotesHtml(x, it.answers[0])}<div class="ex-script">${x.turns.map(t => `<div lang="ja"><b>${t.s === 'M' ? '男' : '女'}:</b> ${glossHtml(t.t)}</div>`).join('')}
         <details><summary>English</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details></div>` : ''}`;
-    return { inner: { front }, bar: done ? examBar(it) : pickHint('The exam plays it once; here you can replay with ▶') };
+    return { inner: { front }, bar: done ? examBar(it) : pickHint(strict ? 'Exam conditions: it plays once' : 'The exam plays it once; here you can replay with ▶') };
   }
-  tags.push(`<span class="tag" lang="ja">読解 · ${x.kind === 'info' ? '情報検索 FIND THE INFO' : x.kind === 'medium' ? '中文 PASSAGE' : '短文 SHORT TEXT'}</span>`);
-  const front = `<div class="passage" lang="ja">${passageHtml(x.text)}</div>
-    ${x.questions.map((q, qi) => `<div class="g-q" lang="ja" style="font-size:16px">${glossHtml(q.q, true)}</div>${optBtns(qi, q.options, false)}
+  tags.push(`<span class="tag" lang="ja">読解 · ${x.kind === 'info' ? '情報検索 FIND THE INFO' : x.kind === 'long' ? '長文 LONG TEXT' : x.kind === 'medium' ? '中文 PASSAGE' : '短文 SHORT TEXT'}</span>`);
+  const pace = READ_PACE[x.kind] || 3;
+  if (done && !it.took) it.took = (Date.now() - it.t0) / 1000;
+  const took = it.took ? `<div class="muted" style="font-size:13px">Took ${mmss(it.took)} · exam pace about ${pace}:00${it.took > pace * 60 * 1.2 ? ' · too slow for the exam: practise reading for the gist first, then the details the questions ask' : ''}</div>` : '';
+  const front = `<div class="passage" lang="ja">${strict ? x.text.split('\n').map(l => `<p>${esc(l) || '&nbsp;'}</p>`).join('') : passageHtml(x.text)}</div>
+    ${x.questions.map((q, qi) => `<div class="g-q" lang="ja" style="font-size:16px">${gl(q.q, true)}</div>${optBtns(qi, q.options, false)}
       ${it.answers[qi] != null ? `<div class="why">${esc(q.why || '')}</div>${optNotesHtml(q, it.answers[qi])}` : ''}`).join('')}
-    ${done ? `<details><summary>English translation</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details>` : ''}`;
-  return { inner: { front }, bar: done ? examBar(it) : pickHint('Tap any word for its reading and meaning') };
+    ${done ? `${took}<details><summary>English translation</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details>` : ''}`;
+  return { inner: { front }, bar: done ? examBar(it) : pickHint(strict ? `Exam conditions: about ${pace} min for this ${x.kind === 'long' ? 'text' : 'one'}, no tap meanings` : 'Tap any word for its reading and meaning') };
 }
 // Exam readiness on Today: the three scored sections side by side, so a weak one shows early.
 // One card with how you're doing: the three scored sections, this week in one line, one focus, the next date.
@@ -2350,16 +2374,21 @@ function examBar(it) {
 }
 // Listening items are recorded with neural voices (tools/gen_audio.py): audio/<id>.mp3, or on the Claude link
 // audio/packs/ (few big files instead of hundreds). If a recording can't load, the phone's voices read the script.
-let audioIndex = null, audioPacks = {}, audioEl = null;
+let audioIndex = null, audioPacks = {}, audioUrls = {}, audioEl = null;
+// The Claude link keeps the clips in a few packs (tools/pack_audio.py): audio/packs/c00.mp3 … are the MP3 files one
+// after another, and clips.json says where each clip is ({id: [pack, offset, length]}).
 async function audioSrc(id, dir = 'audio') {
   try { const r = await fetch(`${dir}/${id}.mp3`, { method: 'HEAD' }); if (r.ok) return `${dir}/${id}.mp3`; } catch (e) { /* try the packs */ }
   try {
-    audioIndex = audioIndex || getJson('audio/packs/index.json');
-    const n = (await audioIndex)[id];
-    if (n == null) return null;
-    audioPacks[n] = audioPacks[n] || getJson(`audio/packs/a${String(n).padStart(2, '0')}.json`);
-    return (await audioPacks[n])[id] || null;
-  } catch (e) { audioIndex = null; return null; }
+    if (audioUrls[id]) return audioUrls[id];
+    audioIndex = audioIndex || getJson('audio/packs/clips.json');
+    const at = (await audioIndex)[id];
+    if (!at) return null;
+    const [n, off, len] = at, name = `audio/packs/c${String(n).padStart(2, '0')}.mp3`;
+    audioPacks[n] = audioPacks[n] || fetch(name).then(r => { if (!r.ok) throw new Error(name); return r.arrayBuffer(); });
+    const buf = await audioPacks[n];
+    return (audioUrls[id] = URL.createObjectURL(new Blob([buf.slice(off, off + len)], { type: 'audio/mpeg' })));
+  } catch (e) { audioIndex = null; audioPacks = {}; return null; }
 }
 async function playRecorded(id, fallback, dir) {
   try { speechSynthesis.cancel(); } catch (e) { /* no speech */ }
@@ -2372,6 +2401,11 @@ async function playRecorded(id, fallback, dir) {
 function stopAudio() { if (audioEl) audioEl.pause(); try { speechSynthesis.cancel(); } catch (e) { /* no speech */ } }
 function playExam(id) {
   const x = examById(id) || mockListenById(id); if (!x) return;
+  const it = session && session.queue[session.i];
+  if (it && it.x === x && !session.revealed) {
+    if (appData.settings.examMode && it.played) return;
+    if (!it.played) { it.played = true; if (appData.settings.examMode) setTimeout(renderSession, 0); }
+  }
   playRecorded(id, () => speakScript(x));
 }
 function speakScript(x) {
@@ -2382,7 +2416,7 @@ function speakScript(x) {
     const other = x.s === 'M' ? 'F' : 'M';
     speakSeq([[x.s, x.line], ...x.options.map((o, i) => [other, `${i + 1}、${o}`])]);
   } else if (id.startsWith('dl')) {
-    speakSeq([['N', x.intro], ...x.turns.map(t => [t.s, t.t]), ['N', x.question]]);
+    speakSeq([['N', x.intro], ...x.turns.map(t => [t.s, t.t]), ['N', x.question], ...(x.gist ? x.options.map((o, i) => ['N', `${i + 1}、${o}`]) : [])]);
   }
 }
 function answerExam(qi, oi) {
@@ -2893,7 +2927,7 @@ function partBackHtml(p) {
     <div class="headline"><div class="k-small" lang="ja">${esc(p.kanji)}</div>
       <div><div class="keyword">${esc(p.keyword)}</div><div class="meaning">a part, not a kanji you're tested on</div>
         ${(p.components || []).length ? `<div class="chips" style="margin-top:6px">${p.components.map(c => `<button class="chip" data-part="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}</div></div>
-    ${img}<div class="story">${storyHtml(p.story || '')}</div>${twinHtml(p.kanji)}
+    ${img}<div class="story">${storyHtml(p.story || '')}</div>${shapeHtml(p)}${twinHtml(p.kanji)}
     ${lookPanelHtml(p)}
     ${used.length ? `<div><div class="section-label">You'll find it in</div><div class="chips">${used.map(k => `<button class="chip" data-kt="${esc(k.kanji)}"><span lang="ja">${esc(k.kanji)}</span> ${esc(k.keyword)}</button>`).join('')}</div></div>` : ''}
   </div>`;
@@ -3499,6 +3533,7 @@ document.addEventListener('change', e => {
     if (appData.planDay && appData.planDay.date === today()) delete appData.planDay.rev;   // refit today's reviews
     saveData(); render();
   }
+  if (e.target.id === 'set-exam-mode') { st.examMode = e.target.checked; saveData(); render(); }
   if (e.target.id === 'set-buffer') { st.bufferDays = Math.min(30, Math.max(0, parseInt(e.target.value, 10) || 0)); saveData(); render(); }
   if (e.target.id === 'b-file' && e.target.files[0]) { const r = new FileReader(); r.onload = () => restore(r.result); r.readAsText(e.target.files[0]); }
 });

@@ -3001,5 +3001,781 @@
    }
   ],
   "en": "City Art Museum admission. Adults 800 yen; university and high school students 500 yen; junior high and younger free; 65 and over 400 yen. Groups of 20 or more get 100 yen off per person. The third Sunday of each month is 'Family Day': everyone who comes as a family pays half price. Open 9:30–17:00 (last entry 16:30). Closed every Monday (if Monday is a holiday, closed the next day)."
+ },
+ {
+  "id": "rd078",
+  "kind": "long",
+  "title": "Cycling to work",
+  "text": "　去年の春、わたしは電車で通勤するのをやめて、自転車で会社に行くことにした。きっかけは、健康診断で「運動が足りていない」と言われたことだ。会社までは自転車で40分ほどかかる。最初は「毎日そんなに走れるだろうか」と心配だった。\n　始めてみると、思っていたより大変だった。坂道が多いので、最初の一週間は会社に着くと、もう疲れていた。雨の日は自転車に乗れないので、結局電車を使うことになる。それに、夏は汗をかくので、会社に着替えを持っていかなければならない。何度も「やっぱり電車に戻ろう」と思った。\n　しかし、一か月ほど続けると、体が慣れてきた。坂道も前ほど苦しくなくなり、朝の空気が気持ちいいと感じるようになった。満員電車に乗らなくてもいいので、朝からいらいらすることもなくなった。夜もよく眠れるようになり、体重も少し減った。\n　もちろん、自転車通勤はだれにでもすすめられるわけではない。家から会社が遠すぎる人や、近くに安全な道がない人には難しいだろう。ただ、わたしの場合は、生活を変えてみて本当によかったと思っている。大事なのは、最初の大変な時期にすぐやめてしまわないことだ。",
+  "questions": [
+   {
+    "q": "筆者が自転車で通勤し始めたのはなぜか。",
+    "options": [
+     "会社が家から近くなったから",
+     "体重を減らしたかったから",
+     "電車がいつも満員だったから",
+     "健康診断で運動が足りないと言われたから"
+    ],
+    "answer": 3,
+    "why": "Paragraph 1: きっかけは、健康診断で「運動が足りていない」と言われたことだ.",
+    "opts_en": [
+     "Because the office moved closer",
+     "Because they wanted to lose weight",
+     "Because the trains were always packed",
+     "Because a health check said they lacked exercise"
+    ],
+    "wrong": {
+     "0": "The office is still 40 minutes away by bike.",
+     "1": "Losing weight happened later; it wasn't the reason.",
+     "2": "Avoiding packed trains is a benefit found later, not the reason for starting."
+    }
+   },
+   {
+    "q": "自転車通勤を始めたころ、大変だったことに入らないものはどれか。",
+    "options": [
+     "坂道が多くて疲れること",
+     "雨の日は電車を使わなければならないこと",
+     "夜、よく眠れなくなったこと",
+     "着替えを持っていかなければならないこと"
+    ],
+    "answer": 2,
+    "why": "Paragraph 2 lists hills, rainy days and a change of clothes. Sleep got BETTER (夜もよく眠れるようになり).",
+    "opts_en": [
+     "Getting tired from the many hills",
+     "Having to take the train on rainy days",
+     "Not being able to sleep well at night",
+     "Having to bring a change of clothes"
+    ],
+    "wrong": {
+     "0": "Hills are mentioned as a difficulty: 坂道が多いので…疲れていた.",
+     "1": "Rainy days are mentioned: 結局電車を使うことになる.",
+     "3": "Changing clothes is mentioned: 着替えを持っていかなければならない."
+    }
+   },
+   {
+    "q": "一か月ほど続けたあと、筆者はどう変わったか。",
+    "options": [
+     "朝、いらいらしなくなった",
+     "会社に早く着くようになった",
+     "雨の日も自転車に乗るようになった",
+     "坂道を通らない道を選ぶようになった"
+    ],
+    "answer": 0,
+    "why": "Paragraph 3: 満員電車に乗らなくてもいいので、朝からいらいらすることもなくなった.",
+    "opts_en": [
+     "Stopped getting irritated in the morning",
+     "Started arriving at work early",
+     "Started riding even on rainy days",
+     "Started choosing roads without hills"
+    ],
+    "wrong": {
+     "1": "Arriving earlier is never mentioned.",
+     "2": "Rain still means the train.",
+     "3": "The hills became easier (前ほど苦しくなくなり); the route didn't change."
+    }
+   },
+   {
+    "q": "筆者の考えに合うものはどれか。",
+    "options": [
+     "生活を変えるときは、最初の大変な時期にやめないことが大事だ",
+     "自転車通勤はだれにでもすすめたい",
+     "遠くに住んでいる人ほど自転車通勤をしたほうがいい",
+     "雨の日も電車を使わないほうがいい"
+    ],
+    "answer": 0,
+    "why": "Last line: 大事なのは、最初の大変な時期にすぐやめてしまわないことだ.",
+    "opts_en": [
+     "When changing your routine, it matters not to quit in the hard early period",
+     "Wants to recommend cycling to everyone",
+     "The farther you live, the more you should cycle",
+     "You shouldn't take the train even on rainy days"
+    ],
+    "wrong": {
+     "1": "The writer says the opposite: だれにでもすすめられるわけではない.",
+     "2": "People who live too far would find it hard (難しいだろう).",
+     "3": "The writer takes the train on rainy days."
+    }
+   }
+  ],
+  "en": "Last spring I stopped commuting by train and decided to cycle to work. It started when a health check told me I wasn't getting enough exercise. It takes about 40 minutes by bike. At first I worried whether I could ride that far every day.\nOnce I started, it was harder than I'd thought. There are many hills, so for the first week I was already tired when I reached the office. On rainy days I can't ride, so I end up taking the train anyway. And in summer I sweat, so I have to bring a change of clothes to work. Many times I thought, \"I'll go back to the train after all.\"\nBut after about a month my body got used to it. The hills weren't as hard as before, and I came to enjoy the morning air. Since I didn't have to ride packed trains, I stopped getting irritated first thing in the morning. I also started sleeping well at night and lost a little weight.\nOf course, cycling to work isn't something to recommend to everyone. It would be hard for people who live too far from work or have no safe road nearby. But in my case, I'm really glad I changed my routine. What matters is not giving up right away in the hard early period."
+ },
+ {
+  "id": "rd079",
+  "kind": "long",
+  "title": "Grandmother's letters",
+  "text": "　わたしの祖母は、八十歳を過ぎた今でも、よく手紙を書く。わたしが大学に入って一人暮らしを始めてからは、毎月一通、祖母から手紙が届くようになった。内容は、庭に咲いた花のことや近所の人の話など、特別なことではない。\n　正直に言うと、最初はあまりうれしくなかった。メールなら一分で返事ができるのに、手紙の返事を書くのは時間がかかる。字が下手なので、書くのもはずかしかった。そこで祖母に「メールにしない？」と聞いてみた。すると祖母は「手紙は、書いている間ずっと相手のことを考えられるから好きなのよ」と答えた。\n　その言葉を聞いて、わたしは自分のメールのことを考えた。たしかにわたしは、友だちにメールを送るとき、ほかのことをしながら急いで書いていることが多い。相手のことをゆっくり考えて書いたことは、ほとんどなかった。\n　それから、わたしも月に一度、祖母に手紙を書くようになった。何を書こうかと考えていると、一か月の間にあったことを思い出す。すると、自分の生活をもう一度見直すことができる。字は今でも上手ではないが、祖母は「元気そうな字ね」と言ってくれる。\n　今では、ポストに祖母の手紙が入っているのを見るのが、毎月の楽しみになっている。",
+  "questions": [
+   {
+    "q": "筆者が最初、祖母の手紙をあまりうれしく思わなかったのはなぜか。",
+    "options": [
+     "祖母の字が読みにくかったから",
+     "手紙の内容がつまらなかったから",
+     "返事を書くのに時間がかかり、字にも自信がなかったから",
+     "手紙が毎月届くのがめいわくだったから"
+    ],
+    "answer": 2,
+    "why": "Paragraph 2: 手紙の返事を書くのは時間がかかる。字が下手なので、書くのもはずかしかった.",
+    "opts_en": [
+     "Because Grandma's handwriting was hard to read",
+     "Because the letters were boring",
+     "Because replying took time and they weren't confident in their handwriting",
+     "Because getting letters every month was a nuisance"
+    ],
+    "wrong": {
+     "0": "It's the writer's own handwriting that is bad, not Grandma's.",
+     "1": "The letters are about nothing special, but boredom isn't the reason given.",
+     "3": "The problem is replying, not receiving."
+    }
+   },
+   {
+    "q": "祖母が手紙を好きな理由は何か。",
+    "options": [
+     "近所の人に見せられるから",
+     "メールの使い方がわからないから",
+     "字を書く練習になるから",
+     "書いている間、相手のことを考えられるから"
+    ],
+    "answer": 3,
+    "why": "Grandma: 手紙は、書いている間ずっと相手のことを考えられるから好きなのよ.",
+    "opts_en": [
+     "Because she can show the neighbours",
+     "Because she doesn't know how to use email",
+     "Because it's handwriting practice",
+     "Because she can think about the other person while writing"
+    ],
+    "wrong": {
+     "0": "The neighbours appear only as a topic of her letters.",
+     "1": "She never says she can't use email.",
+     "2": "Handwriting practice isn't mentioned."
+    }
+   },
+   {
+    "q": "祖母の言葉を聞いて、筆者は自分のメールについてどう思ったか。",
+    "options": [
+     "いつも長すぎると思った",
+     "手紙より相手のことを考えて書いていると思った",
+     "ほかのことをしながら急いで書いていると気づいた",
+     "友だちにあまり送っていないと思った"
+    ],
+    "answer": 2,
+    "why": "Paragraph 3: ほかのことをしながら急いで書いていることが多い.",
+    "opts_en": [
+     "Thought they were always too long",
+     "Thought they thought about the person more than in letters",
+     "Realised they write them in a hurry while doing other things",
+     "Thought they didn't send many to friends"
+    ],
+    "wrong": {
+     "0": "Length isn't mentioned.",
+     "1": "The opposite: 相手のことをゆっくり考えて書いたことは、ほとんどなかった.",
+     "3": "How often they email isn't the point."
+    }
+   },
+   {
+    "q": "手紙を書くようになって、筆者にどんなよいことがあったか。",
+    "options": [
+     "一か月の生活を見直すことができるようになった",
+     "字が上手になった",
+     "祖母が毎週手紙をくれるようになった",
+     "友だちにも手紙を書くようになった"
+    ],
+    "answer": 0,
+    "why": "Paragraph 4: 自分の生活をもう一度見直すことができる.",
+    "opts_en": [
+     "They could look back on the month",
+     "Their handwriting improved",
+     "Grandma started writing every week",
+     "They started writing letters to friends too"
+    ],
+    "wrong": {
+     "1": "Their handwriting still isn't good: 字は今でも上手ではない.",
+     "2": "The letters still come monthly.",
+     "3": "Letters to friends aren't mentioned."
+    }
+   }
+  ],
+  "en": "My grandmother, now over eighty, still writes letters often. After I entered university and started living alone, a letter from her began arriving once a month. They're about nothing special: flowers blooming in her garden, stories about the neighbours.\nTo be honest, I wasn't very happy at first. With email I can reply in a minute, but writing a letter takes time. My handwriting is bad, so I was embarrassed to write. So I asked her, \"Why don't we switch to email?\" She answered, \"I like letters because the whole time I'm writing, I can think about the other person.\"\nHearing that, I thought about my own emails. It's true that when I email friends, I often write in a hurry while doing something else. I'd hardly ever written while slowly thinking about the other person.\nAfter that, I started writing to my grandmother once a month too. While deciding what to write, I remember what happened during the month, and I can look back on my life again. My handwriting still isn't good, but she tells me, \"Your writing looks so full of life.\"\nNow finding her letter in the mailbox has become something I look forward to every month."
+ },
+ {
+  "id": "rd080",
+  "kind": "long",
+  "title": "Reading to children at the library",
+  "text": "　わたしは半年前から、週に一回、近くの図書館で子どもたちに絵本を読むボランティアをしている。会社を定年でやめたあと、家にいる時間が長くなり、何か人の役に立つことをしたいと思ったのが始めた理由だ。\n　初めての日のことは、今でもよく覚えている。十人ほどの子どもたちの前で絵本を開いたが、緊張して声が小さくなってしまった。後ろのほうの子どもたちは聞こえないので、だんだん話し始め、最後にはほとんどだれも聞いていなかった。家に帰ってから、もうやめようかと思った。\n　そのとき、図書館の職員の方が「上手に読もうとしなくていいんですよ。子どもたちの顔を見ながら、ゆっくり読んでみてください」とアドバイスしてくれた。次の週、わたしは絵本の文を全部覚えて、子どもたちの顔を見ながら読んでみた。すると、子どもたちが笑ったり、驚いたりするのがよくわかった。わたしも楽しくなって、自然に大きな声が出るようになった。\n　今では、図書館に行くと「おじいちゃん、今日は何の本？」と声をかけてくれる子もいる。子どもたちのために始めたボランティアだったが、実は、元気をもらっているのはわたしのほうなのかもしれない。",
+  "questions": [
+   {
+    "q": "筆者がボランティアを始めたのはなぜか。",
+    "options": [
+     "図書館の職員にたのまれたから",
+     "孫に絵本を読んであげたかったから",
+     "声を大きくする練習をしたかったから",
+     "定年後、人の役に立つことをしたいと思ったから"
+    ],
+    "answer": 3,
+    "why": "Paragraph 1: 何か人の役に立つことをしたいと思ったのが始めた理由だ.",
+    "opts_en": [
+     "Because library staff asked them",
+     "Because they wanted to read to their grandchildren",
+     "Because they wanted to practise speaking louder",
+     "Because after retiring they wanted to be useful to others"
+    ],
+    "wrong": {
+     "0": "Staff gave advice later; they didn't ask the writer to start.",
+     "1": "Grandchildren aren't mentioned; \"Grandpa\" is what the library children call him.",
+     "2": "Voice was the problem on day one, not the reason."
+    }
+   },
+   {
+    "q": "初めての日、子どもたちがだんだん話し始めたのはなぜか。",
+    "options": [
+     "筆者の声が小さくて聞こえなかったから",
+     "子どもが多すぎたから",
+     "筆者が文を覚えていなかったから",
+     "絵本がつまらなかったから"
+    ],
+    "answer": 0,
+    "why": "緊張して声が小さくなってしまった。後ろのほうの子どもたちは聞こえないので、だんだん話し始め.",
+    "opts_en": [
+     "Because the writer's voice was too quiet to hear",
+     "Because there were too many children",
+     "Because the writer hadn't memorised the text",
+     "Because the book was boring"
+    ],
+    "wrong": {
+     "1": "About ten children; the number isn't blamed.",
+     "2": "Memorising came the next week as a fix, not as the cause given.",
+     "3": "The book itself isn't criticised."
+    }
+   },
+   {
+    "q": "職員のアドバイスのあと、筆者はどのように読んだか。",
+    "options": [
+     "マイクを使って読んだ",
+     "短い絵本を選んで読んだ",
+     "子どもたちを前のほうに座らせて読んだ",
+     "文を覚えて、子どもたちの顔を見ながら読んだ"
+    ],
+    "answer": 3,
+    "why": "次の週、わたしは絵本の文を全部覚えて、子どもたちの顔を見ながら読んでみた.",
+    "opts_en": [
+     "Used a microphone",
+     "Chose a short book",
+     "Had the children sit at the front",
+     "Memorised the text and read looking at their faces"
+    ],
+    "wrong": {
+     "0": "No microphone; the voice got louder naturally.",
+     "1": "Book length isn't mentioned.",
+     "2": "Seating isn't mentioned."
+    }
+   },
+   {
+    "q": "「元気をもらっているのはわたしのほうなのかもしれない」とあるが、どういう意味か。",
+    "options": [
+     "筆者はもうボランティアをやめたい",
+     "ボランティアをして、筆者自身が楽しさや元気をもらっている",
+     "子どもたちより筆者のほうが元気だ",
+     "子どもたちが筆者にプレゼントをくれる"
+    ],
+    "answer": 1,
+    "why": "Started \"for the children\", but the writer is the one gaining energy and joy from it.",
+    "opts_en": [
+     "The writer wants to quit volunteering",
+     "Through volunteering, the writer gains joy and energy themselves",
+     "The writer is more energetic than the children",
+     "The children give the writer presents"
+    ],
+    "wrong": {
+     "0": "The ending is positive; quitting was only a thought on day one.",
+     "2": "It's not a comparison of energy levels.",
+     "3": "もらう here is about energy, not gifts."
+    }
+   }
+  ],
+  "en": "For the past six months I've volunteered once a week reading picture books to children at the local library. After retiring from my company I was at home much more, and I wanted to do something useful for others; that's why I started.\nI still remember my first day well. I opened a picture book in front of about ten children, but I was nervous and my voice got small. The children at the back couldn't hear, so they gradually started talking, and by the end almost nobody was listening. After I got home, I thought about quitting.\nThen a library staff member advised me: \"You don't have to try to read well. Try reading slowly while looking at the children's faces.\" The next week I memorised the whole text and read while looking at their faces. Then I could clearly see them laughing and being surprised. I started enjoying it too, and my voice naturally got louder.\nNow when I go to the library, some children call out, \"Grandpa, what's today's book?\" I started volunteering for the children, but maybe I'm actually the one getting energy from it."
+ },
+ {
+  "id": "rd081",
+  "kind": "long",
+  "title": "Learning to cook alone",
+  "text": "　一人暮らしを始めて三年になるが、去年までわたしはほとんど料理をしなかった。仕事から帰るのが遅いので、晩ご飯はいつもコンビニのお弁当か外食だった。料理は時間がかかるし、一人分だけ作るのはもったいないと思っていたのだ。\n　考えが変わったのは、ある月の家計簿を見たときだ。食費が思っていたよりずっと多く、給料の三分の一近くを使っていた。これでは貯金ができない。そこで、週末に料理をしてみることにした。\n　最初に困ったのは、材料が余ってしまうことだった。一人分のカレーを作るために野菜を買っても、半分以上残ってしまう。そこで、日曜日にまとめて作り、小さな入れ物に分けて冷凍することにした。こうすれば、平日は帰ってから温めるだけでいい。材料もむだにならない。\n　料理を始めてから、食費は前の半分ぐらいになった。それだけではない。自分で作ると、どんな材料が入っているかがわかるので、野菜を多く食べるようになった。前よりかぜをひきにくくなったのは、そのおかげかもしれない。\n　料理が上手になったとは、まだ言えない。でも、「時間がないから料理はできない」というのは、ただの言い訳だったと今は思う。",
+  "questions": [
+   {
+    "q": "筆者が料理をしてみようと思ったきっかけは何か。",
+    "options": [
+     "かぜをよくひいていたこと",
+     "仕事から早く帰れるようになったこと",
+     "コンビニのお弁当がおいしくなかったこと",
+     "食費が思っていたより多かったこと"
+    ],
+    "answer": 3,
+    "why": "Paragraph 2: 食費が思っていたよりずっと多く…これでは貯金ができない.",
+    "opts_en": [
+     "Catching colds often",
+     "Being able to get home earlier",
+     "Convenience store bentos not tasting good",
+     "Food costs being higher than expected"
+    ],
+    "wrong": {
+     "0": "Fewer colds is a result later, not the trigger.",
+     "1": "They still get home late, which is why they cook on weekends.",
+     "2": "The taste of bentos isn't mentioned."
+    }
+   },
+   {
+    "q": "最初に困ったことは何か。",
+    "options": [
+     "材料が余ってしまうこと",
+     "週末も仕事があったこと",
+     "冷凍する入れ物がなかったこと",
+     "料理の作り方がわからなかったこと"
+    ],
+    "answer": 0,
+    "why": "最初に困ったのは、材料が余ってしまうことだった.",
+    "opts_en": [
+     "Ingredients being left over",
+     "Having work on weekends too",
+     "Having no containers for freezing",
+     "Not knowing how to cook"
+    ],
+    "wrong": {
+     "1": "They cook on Sundays, so weekends are free.",
+     "2": "Containers are part of the solution.",
+     "3": "Not knowing how to cook isn't mentioned as the problem."
+    }
+   },
+   {
+    "q": "筆者は、その問題をどのように解決したか。",
+    "options": [
+     "材料が少ない料理だけを作るようにした",
+     "友だちといっしょに料理するようにした",
+     "日曜日にまとめて作り、分けて冷凍するようにした",
+     "毎日少しずつ買い物をするようにした"
+    ],
+    "answer": 2,
+    "why": "日曜日にまとめて作り、小さな入れ物に分けて冷凍することにした.",
+    "opts_en": [
+     "Only making dishes with few ingredients",
+     "Cooking with a friend",
+     "Cooking in bulk on Sundays and freezing portions",
+     "Shopping a little every day"
+    ],
+    "wrong": {
+     "0": "They keep making curry; the fix is freezing.",
+     "1": "Friends aren't mentioned.",
+     "3": "Daily shopping isn't mentioned."
+    }
+   },
+   {
+    "q": "「ただの言い訳だった」とあるが、何が言い訳だったのか。",
+    "options": [
+     "一人分作るのはもったいないということ",
+     "料理が上手ではないということ",
+     "野菜が好きではないということ",
+     "時間がないから料理ができないということ"
+    ],
+    "answer": 3,
+    "why": "The quoted excuse: 「時間がないから料理はできない」.",
+    "opts_en": [
+     "That cooking for one is wasteful",
+     "That they're not a good cook",
+     "That they don't like vegetables",
+     "That they can't cook because they have no time"
+    ],
+    "wrong": {
+     "0": "That was an early belief, but the excuse in the last line is about time.",
+     "1": "Not being good yet is stated honestly, not called an excuse.",
+     "2": "Disliking vegetables is never said."
+    }
+   }
+  ],
+  "en": "I've lived alone for three years, but until last year I hardly cooked. I get home from work late, so dinner was always a convenience store bento or eating out. I thought cooking took time and that making a single portion was wasteful.\nMy mind changed when I looked at one month's household accounts. My food spending was much higher than I'd thought: almost a third of my salary. At this rate I couldn't save money. So I decided to try cooking on weekends.\nThe first problem was leftover ingredients. Even if I bought vegetables to make curry for one, more than half would be left over. So I decided to cook in bulk on Sundays, divide it into small containers and freeze them. That way, on weekdays I only have to heat it up when I get home, and no ingredients go to waste.\nSince I started cooking, my food costs have dropped to about half. That's not all. When I cook myself I know what goes in, so I've started eating more vegetables. Maybe that's why I catch colds less often than before.\nI can't say I've become a good cook yet. But I now think \"I don't have time to cook\" was just an excuse."
+ },
+ {
+  "id": "rd082",
+  "kind": "long",
+  "title": "Paying with cash",
+  "text": "　最近、スマホやカードで支払いをする人が増えている。わたしも二年前から、買い物はほとんどスマホで払うようになった。財布を出さなくてもいいし、小銭も必要ないので、とても便利だ。\n　ところが、ある日、銀行の口座を見て驚いた。一か月に使ったお金が、自分で思っていた金額より五万円も多かったのだ。一つ一つの買い物は数百円のコーヒーやお菓子なのだが、毎日続けていたので、合計すると大きな金額になっていた。スマホで払うと、お金を使っているという感じがあまりしない。そのため、つい必要のないものまで買ってしまっていたのだ。\n　そこでわたしは、一か月だけ現金で生活してみることにした。毎週月曜日に一週間分のお金を銀行から下ろして、その中で生活する。財布の中のお金が減っていくのが目で見えるので、買う前に「これは本当に必要か」と考えるようになった。その月は、前の月より三万円も使ったお金が少なくなった。\n　もちろん、スマホでの支払いが悪いわけではない。便利な点も多い。大切なのは、自分がいくら使っているかをいつも知っておくことだ。今わたしは、スマホで払うたびに、使った金額をノートに書くようにしている。",
+  "questions": [
+   {
+    "q": "筆者が銀行の口座を見て驚いたのはなぜか。",
+    "options": [
+     "だれかにスマホを使われていたから",
+     "口座のお金がなくなっていたから",
+     "思っていたより五万円も多く使っていたから",
+     "給料が少なくなっていたから"
+    ],
+    "answer": 2,
+    "why": "一か月に使ったお金が、自分で思っていた金額より五万円も多かった.",
+    "opts_en": [
+     "Because someone had used their phone",
+     "Because the account was empty",
+     "Because they'd spent 50,000 yen more than they thought",
+     "Because their salary had gone down"
+    ],
+    "wrong": {
+     "0": "All the spending was their own small purchases.",
+     "1": "The account isn't said to be empty.",
+     "3": "Salary isn't mentioned."
+    }
+   },
+   {
+    "q": "筆者は、なぜ必要のないものまで買ってしまっていたと考えているか。",
+    "options": [
+     "財布をよく忘れたから",
+     "小銭をたくさん持っていたから",
+     "コーヒーやお菓子が安かったから",
+     "スマホで払うと、お金を使っている感じがしないから"
+    ],
+    "answer": 3,
+    "why": "スマホで払うと、お金を使っているという感じがあまりしない。そのため….",
+    "opts_en": [
+     "Because they often forgot their wallet",
+     "Because they had lots of small change",
+     "Because coffee and snacks were cheap",
+     "Because paying by phone doesn't feel like spending money"
+    ],
+    "wrong": {
+     "0": "Forgetting a wallet isn't mentioned.",
+     "1": "They no longer need small change.",
+     "2": "Cheapness isn't the reason given; the feeling of not spending is."
+    }
+   },
+   {
+    "q": "現金で生活した月について、正しいものはどれか。",
+    "options": [
+     "毎日銀行からお金を下ろした",
+     "前の月より三万円少なく使った",
+     "スマホは一度も使わなかった",
+     "必要なものも買えなかった"
+    ],
+    "answer": 1,
+    "why": "その月は、前の月より三万円も使ったお金が少なくなった.",
+    "opts_en": [
+     "They withdrew money every day",
+     "They spent 30,000 yen less than the previous month",
+     "They never used their phone once",
+     "They couldn't even buy what they needed"
+    ],
+    "wrong": {
+     "0": "They withdrew once a week, on Mondays.",
+     "2": "Not stated; the text only says they lived on cash.",
+     "3": "They only stopped buying unneeded things."
+    }
+   },
+   {
+    "q": "筆者が一番言いたいことは何か。",
+    "options": [
+     "自分がいくら使っているかをいつも知っておくことが大切だ",
+     "コーヒーは家で飲んだほうがいい",
+     "毎週月曜日にお金を下ろすといい",
+     "スマホでの支払いはやめたほうがいい"
+    ],
+    "answer": 0,
+    "why": "大切なのは、自分がいくら使っているかをいつも知っておくことだ.",
+    "opts_en": [
+     "It's important to always know how much you spend",
+     "Drink coffee at home",
+     "Withdraw money every Monday",
+     "You should stop paying by phone"
+    ],
+    "wrong": {
+     "1": "Coffee is only an example.",
+     "2": "That was a one-month experiment, not the main point.",
+     "3": "The writer says phone payment isn't bad: 悪いわけではない."
+    }
+   }
+  ],
+  "en": "Recently more people pay by phone or card. I too have paid for almost everything by phone for the past two years. I don't need to take out my wallet or have small change, so it's very convenient.\nBut one day I looked at my bank account and was shocked. What I'd spent in a month was 50,000 yen more than I'd thought. Each purchase was a few-hundred-yen coffee or snack, but because I kept it up every day, the total became large. Paying by phone doesn't really feel like spending money, so I'd been buying even things I didn't need without thinking.\nSo I decided to try living on cash for just one month. Every Monday I withdrew a week's money from the bank and lived within it. Since I could see the money in my wallet going down, I started asking myself before buying, \"Do I really need this?\" That month I spent 30,000 yen less than the month before.\nOf course, paying by phone isn't bad. It has many convenient points. What matters is always knowing how much you're spending. Now, every time I pay by phone, I write the amount in a notebook."
+ },
+ {
+  "id": "rd083",
+  "kind": "long",
+  "title": "No-overtime Wednesday",
+  "text": "　わたしの会社では、半年前から毎週水曜日を「残業をしない日」にしている。この日は、だれでも午後六時には仕事を終えて帰らなければならない。会社が社員の健康を心配して決めたことだ。\n　初めは反対する人が多かった。わたしもその一人だった。仕事の量は変わらないのに、帰る時間だけ早くなれば、ほかの日の残業が増えるだけだと思ったのだ。実際、最初の一か月は、木曜日に仕事がたまって大変だった。\n　ところが、二か月目になると、部の中で少しずつ変化が起きた。水曜日は早く帰らなければならないので、みんなが朝のうちに、その日にする仕事の順番を決めるようになった。会議も、前は一時間以上かかることが多かったが、三十分で終わらせるようになった。むだな時間が減ったので、ほかの日の残業もかえって少なくなった。\n　水曜日の夜の使い方も、人によっていろいろだ。家族と晩ご飯を食べる人もいれば、英会話の教室に通い始めた人もいる。わたしはジムに行くことにした。\n　この制度が始まる前、わたしは長く働くことが、よく働くことだと思っていた。しかし、今は違う。時間が限られているからこそ、どうすれば早く終わるかを考えるようになるのだと思う。",
+  "questions": [
+   {
+    "q": "筆者が初め、この制度に反対したのはなぜか。",
+    "options": [
+     "健康に問題がなかったから",
+     "水曜日に用事があったから",
+     "ジムに行く時間がなかったから",
+     "ほかの日の残業が増えるだけだと思ったから"
+    ],
+    "answer": 3,
+    "why": "帰る時間だけ早くなれば、ほかの日の残業が増えるだけだと思ったのだ.",
+    "opts_en": [
+     "Because they had no health problems",
+     "Because they had plans on Wednesdays",
+     "Because they had no time for the gym",
+     "Because they thought overtime on other days would just increase"
+    ],
+    "wrong": {
+     "0": "Their own health isn't mentioned.",
+     "1": "Wednesday plans aren't mentioned.",
+     "2": "The gym came later, as a result."
+    }
+   },
+   {
+    "q": "二か月目になって、部の中で起きた変化に入らないものはどれか。",
+    "options": [
+     "会議が短くなった",
+     "ほかの日の残業が少なくなった",
+     "木曜日に仕事がたまるようになった",
+     "朝のうちに仕事の順番を決めるようになった"
+    ],
+    "answer": 2,
+    "why": "Work piling up on Thursdays was the FIRST month's problem, not a second-month change.",
+    "opts_en": [
+     "Shorter meetings",
+     "Less overtime on other days",
+     "Work piling up on Thursdays",
+     "Deciding the order of tasks in the morning"
+    ],
+    "wrong": {
+     "0": "Mentioned: 三十分で終わらせるようになった.",
+     "1": "Mentioned: ほかの日の残業もかえって少なくなった.",
+     "3": "Mentioned: 朝のうちに…順番を決めるようになった."
+    }
+   },
+   {
+    "q": "「かえって少なくなった」とあるが、どういう意味か。",
+    "options": [
+     "残業は予想どおり増えた",
+     "増えると思っていた残業が、反対に減った",
+     "残業の時間は変わらなかった",
+     "水曜日だけ残業が減った"
+    ],
+    "answer": 1,
+    "why": "かえって = contrary to expectation: overtime was expected to rise but actually fell.",
+    "opts_en": [
+     "Overtime rose as expected",
+     "Overtime, expected to rise, fell instead",
+     "Overtime stayed the same",
+     "Overtime fell only on Wednesdays"
+    ],
+    "wrong": {
+     "0": "かえって signals the opposite of what was expected.",
+     "2": "It says 少なくなった: it changed.",
+     "3": "ほかの日 = on the other days."
+    }
+   },
+   {
+    "q": "筆者の考えに合うものはどれか。",
+    "options": [
+     "水曜日の夜は家族と過ごすべきだ",
+     "会議は一時間以上したほうがいい",
+     "長く働くことが、よく働くことだ",
+     "時間が限られているからこそ、早く終わらせる方法を考えるようになる"
+    ],
+    "answer": 3,
+    "why": "Last line: 時間が限られているからこそ、どうすれば早く終わるかを考えるようになる.",
+    "opts_en": [
+     "Wednesday evenings should be spent with family",
+     "Meetings should last over an hour",
+     "Working long means working well",
+     "Because time is limited, you start thinking how to finish quickly"
+    ],
+    "wrong": {
+     "0": "Family dinner is just one example of what others do.",
+     "1": "Shorter meetings were an improvement.",
+     "2": "That was the writer's old view: しかし、今は違う."
+    }
+   }
+  ],
+  "en": "For six months my company has made every Wednesday a \"no overtime day.\" On that day everyone must finish work and leave by 6 p.m. The company decided this out of concern for employees' health.\nAt first many people were against it. I was one of them. I thought that if only the leaving time got earlier while the amount of work stayed the same, overtime on other days would simply increase. In fact, for the first month, work piled up on Thursdays and it was hard.\nBut in the second month, things gradually changed in our department. Since we had to leave early on Wednesdays, everyone started deciding the order of the day's tasks in the morning. Meetings, which often took over an hour before, came to end in thirty minutes. Because wasted time fell, overtime on other days actually decreased too.\nHow people spend Wednesday evenings varies. Some eat dinner with their families; others have started English conversation classes. I decided to go to the gym.\nBefore this system began, I thought working long hours meant working well. But not now. I think it's precisely because time is limited that we start thinking about how to finish quickly."
+ },
+ {
+  "id": "rd084",
+  "kind": "long",
+  "title": "A part-time job and polite Japanese",
+  "text": "　ベトナムから日本に留学して二年になる。去年から、大学の近くのコンビニでアルバイトをしている。日本語の勉強になると思って始めたが、最初は本当に大変だった。\n　一番難しかったのは、敬語だった。学校の授業で敬語を習ってはいたが、実際にお客さんと話すとなると、言葉がすぐに出てこない。ある日、お客さんに「お弁当、温めますか」と聞くと、店長に「『温めますか』じゃなくて、『温めましょうか』と言ったほうがいいよ」と教えられた。わたしは、同じ意味なのにどうして違う言い方をするのか、わからなかった。\n　店長は「どちらも間違いではないけど、『温めましょうか』のほうが、お客さんのためにしてあげたいという気持ちが伝わるんだよ」と説明してくれた。そのとき、敬語は文法の規則だけではなく、相手を大切に思う気持ちを表すものなのだと気づいた。\n　それからは、店長や先輩の話し方をよく聞いて、いい表現はメモするようにした。半年ほどたつと、お客さんに「日本語が上手ですね」と言われることが増えた。\n　今では、アルバイトの新人に仕事を教えることもある。言葉を教えるときは、店長がしてくれたように、なぜその言い方をするのか、理由もいっしょに伝えるようにしている。",
+  "questions": [
+   {
+    "q": "筆者がアルバイトを始めた理由は何か。",
+    "options": [
+     "お金が必要だったから",
+     "店長と友だちだったから",
+     "敬語を教えたかったから",
+     "日本語の勉強になると思ったから"
+    ],
+    "answer": 3,
+    "why": "Paragraph 1: 日本語の勉強になると思って始めた.",
+    "opts_en": [
+     "Because they needed money",
+     "Because they were friends with the manager",
+     "Because they wanted to teach keigo",
+     "Because they thought it would help their Japanese"
+    ],
+    "wrong": {
+     "0": "Money isn't mentioned.",
+     "1": "They met the manager through the job.",
+     "2": "Teaching came much later."
+    }
+   },
+   {
+    "q": "店長に言い方を直されたとき、筆者はどう思ったか。",
+    "options": [
+     "店長の日本語のほうが間違っていると思った",
+     "自分の日本語は間違っていたのではずかしいと思った",
+     "同じ意味なのに、なぜ違う言い方をするのかわからなかった",
+     "すぐに理由がわかった"
+    ],
+    "answer": 2,
+    "why": "同じ意味なのにどうして違う言い方をするのか、わからなかった.",
+    "opts_en": [
+     "Thought the manager was wrong",
+     "Was embarrassed because their Japanese was wrong",
+     "Didn't understand why a different expression was used when the meaning was the same",
+     "Understood the reason immediately"
+    ],
+    "wrong": {
+     "0": "They never thought the manager was wrong.",
+     "1": "Embarrassment isn't mentioned, and the manager says neither is wrong.",
+     "3": "They needed the manager's explanation."
+    }
+   },
+   {
+    "q": "店長の説明を聞いて、筆者は敬語についてどう気づいたか。",
+    "options": [
+     "敬語は相手を大切に思う気持ちを表すものだ",
+     "敬語は学校で習うものとは全然違う",
+     "コンビニでは敬語を使わなくてもいい",
+     "敬語は文法の規則を覚えれば十分だ"
+    ],
+    "answer": 0,
+    "why": "敬語は文法の規則だけではなく、相手を大切に思う気持ちを表すもの.",
+    "opts_en": [
+     "Keigo expresses the feeling of valuing the other person",
+     "Keigo is completely different from what's taught at school",
+     "You don't need keigo at a convenience store",
+     "Keigo is enough if you learn its grammar rules"
+    ],
+    "wrong": {
+     "1": "School keigo isn't called wrong; using it is the hard part.",
+     "2": "The whole story is about using keigo well at the store.",
+     "3": "The point is it's NOT only rules: 文法の規則だけではなく."
+    }
+   },
+   {
+    "q": "筆者は今、新人に言葉を教えるとき、何に気をつけているか。",
+    "options": [
+     "メモをとらせないこと",
+     "規則をたくさん覚えさせること",
+     "その言い方をする理由もいっしょに伝えること",
+     "ベトナム語で説明すること"
+    ],
+    "answer": 2,
+    "why": "なぜその言い方をするのか、理由もいっしょに伝えるようにしている.",
+    "opts_en": [
+     "Not letting them take notes",
+     "Making them memorise many rules",
+     "Explaining the reason for the expression too",
+     "Explaining in Vietnamese"
+    ],
+    "wrong": {
+     "0": "The writer took notes themselves; this isn't said.",
+     "1": "The opposite of the lesson the writer learned.",
+     "3": "Language of explanation isn't mentioned."
+    }
+   }
+  ],
+  "en": "I came from Vietnam to study in Japan two years ago. Since last year I've worked part-time at a convenience store near my university. I started thinking it would help my Japanese, but at first it was really hard.\nThe hardest thing was keigo. I had learned it in class, but when it came to actually talking to customers, the words wouldn't come out. One day I asked a customer, \"Atatamemasu ka?\" (Will you heat your bento?), and the manager told me, \"Instead of 'atatamemasu ka', you'd better say 'atatamemashō ka' (Shall I heat it for you?).\" I didn't understand why you'd use a different expression when the meaning was the same.\nThe manager explained: \"Neither is wrong, but 'atatamemashō ka' shows the feeling that you want to do it for the customer.\" Then I realised keigo isn't just grammar rules; it expresses the feeling of valuing the other person.\nAfter that I listened carefully to how the manager and senior staff spoke and noted down good expressions. After about six months, customers more often told me, \"Your Japanese is good.\"\nNow I sometimes teach new part-timers the job. When I teach language, I try to explain the reason for an expression too, as the manager did for me."
+ },
+ {
+  "id": "rd085",
+  "kind": "long",
+  "title": "An empty house becomes a café",
+  "text": "　わたしが生まれた町は、山に囲まれた小さな町だ。若い人の多くが大きな町に出ていってしまい、人口はこの二十年で半分近くに減った。そのため、町には、だれも住んでいない古い家が増えている。\n　三年前、東京から引っ越してきた夫婦が、そのような家の一つを借りて、カフェを始めた。最初、町の人たちは「こんな所にカフェを作っても、お客さんは来ないだろう」と言っていた。わたしもそう思っていた。\n　しかし、夫婦は古い家の柱や窓をそのまま残し、町の農家から買った野菜で料理を作った。そして、店の様子を写真に撮って、インターネットで紹介し続けた。すると、半年ほどたったころから、遠くの町からもお客さんが来るようになった。週末には、店の前に車が並ぶこともある。\n　カフェができてから、町にも変化が起きている。野菜を売る農家の収入が増え、カフェの近くには小さなパン屋もできた。古い家を使って店を始めたいという若い人からの問い合わせも、町の役所に来るようになったそうだ。\n　古い家は、町にとって困った問題だと思われてきた。しかし、使い方を変えれば、町を元気にする力になる。夫婦のカフェは、そのことをわたしたちに教えてくれた。",
+  "questions": [
+   {
+    "q": "筆者の町に、だれも住んでいない家が増えているのはなぜか。",
+    "options": [
+     "若い人の多くが大きな町に出ていったから",
+     "東京から人が来なくなったから",
+     "古い家が多すぎるから",
+     "家を借りる人がいないから"
+    ],
+    "answer": 0,
+    "why": "若い人の多くが大きな町に出ていってしまい、人口は…減った。そのため….",
+    "opts_en": [
+     "Because many young people left for big cities",
+     "Because people stopped coming from Tokyo",
+     "Because there are too many old houses",
+     "Because nobody rents houses"
+    ],
+    "wrong": {
+     "1": "In fact a couple came from Tokyo.",
+     "2": "Old houses are the result, not the cause.",
+     "3": "Renting isn't given as the cause."
+    }
+   },
+   {
+    "q": "カフェができたとき、町の人たちはどう思っていたか。",
+    "options": [
+     "パン屋のほうがいいと思っていた",
+     "すぐに人気の店になると思っていた",
+     "古い家を壊したほうがいいと思っていた",
+     "お客さんは来ないだろうと思っていた"
+    ],
+    "answer": 3,
+    "why": "「こんな所にカフェを作っても、お客さんは来ないだろう」.",
+    "opts_en": [
+     "Thought a bakery would be better",
+     "Thought it would quickly become popular",
+     "Thought the old house should be torn down",
+     "Thought no customers would come"
+    ],
+    "wrong": {
+     "0": "The bakery came later, on its own.",
+     "1": "The opposite of what they said.",
+     "2": "Tearing down isn't mentioned."
+    }
+   },
+   {
+    "q": "遠くの町からもお客さんが来るようになったのは、どうしてだと考えられるか。",
+    "options": [
+     "町の役所が宣伝したから",
+     "店が駅のすぐ近くにあったから",
+     "古い家の様子や地元の野菜の料理を、インターネットで紹介し続けたから",
+     "料理の値段がとても安かったから"
+    ],
+    "answer": 2,
+    "why": "Paragraph 3: they kept the old look, used local vegetables, and kept posting online; then visitors came.",
+    "opts_en": [
+     "Because the town office advertised it",
+     "Because the shop was right by the station",
+     "Because they kept showing the old house and local-vegetable dishes online",
+     "Because the food was very cheap"
+    ],
+    "wrong": {
+     "0": "The town office only gets inquiries later.",
+     "1": "Location near a station isn't mentioned; people come by car.",
+     "3": "Prices aren't mentioned."
+    }
+   },
+   {
+    "q": "筆者がこの文章で一番言いたいことは何か。",
+    "options": [
+     "古い家は早く壊したほうがいい",
+     "若い人は大きな町に出ていかないほうがいい",
+     "町にはカフェがもっと必要だ",
+     "古い家も、使い方を変えれば町を元気にする力になる"
+    ],
+    "answer": 3,
+    "why": "Last paragraph: 使い方を変えれば、町を元気にする力になる.",
+    "opts_en": [
+     "Old houses should be torn down soon",
+     "Young people shouldn't leave for cities",
+     "The town needs more cafés",
+     "Old houses, used differently, can revitalise a town"
+    ],
+    "wrong": {
+     "0": "The writer argues the opposite.",
+     "1": "Not argued; it's just background.",
+     "2": "The café is one example; the point is about old houses."
+    }
+   }
+  ],
+  "en": "The town I was born in is a small town surrounded by mountains. Many young people have left for big cities, and the population has fallen by almost half in twenty years. As a result, the town has more and more old houses where nobody lives.\nThree years ago, a couple who moved here from Tokyo rented one of those houses and opened a café. At first the townspeople said, \"Even if you open a café in a place like this, no customers will come.\" I thought so too.\nBut the couple kept the old house's pillars and windows as they were and cooked with vegetables bought from local farmers. And they kept posting photos of the shop online. Then, after about six months, customers began coming even from distant towns. On weekends, cars sometimes line up in front of the shop.\nSince the café opened, the town has been changing too. The farmers selling vegetables earn more, and a small bakery opened near the café. The town office says it has even begun to get inquiries from young people who want to start shops in old houses.\nOld houses have been seen as a troublesome problem for the town. But if you change how they're used, they can become a force that revitalises it. The couple's café taught us that."
  }
 ]

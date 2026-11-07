@@ -55,8 +55,20 @@ def load(path, deck):
             if w in PLAIN: by[r][w] = (PLAIN[w], by[r][w][1])
     for v in deck:   # the deck's own meaning wins for deck words
         if v['r'] in by and v['w'] in by[v['r']]:
-            by[v['r']][v['w']] = (v['m'].split(';')[0].split(', ')[0] if len(v['m']) > 40 else v['m'], by[v['r']][v['w']][1])
+            by[v['r']][v['w']] = (first_sense(v['m']) if len(v['m']) > 40 else v['m'], by[v['r']][v['w']][1])
     return by
+
+
+def first_sense(m):
+    """The first sense of a long meaning, cut at a comma or semicolon outside brackets (never 'search (esp. in');
+    still long, it drops its bracketed notes: 'search (esp. in criminal investigations, …)' -> 'search'."""
+    depth = 0
+    for i, c in enumerate(m):
+        depth += (c == '(') - (c == ')')
+        if depth == 0 and (m.startswith(', ', i) or c == ';'):
+            m = m[:i]
+            break
+    return re.sub(r'\s*\([^()]*\)', '', m).strip() if len(m) > 40 else m
 
 
 def meaning(r, words, deck_words):
