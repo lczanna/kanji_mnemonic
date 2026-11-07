@@ -2226,9 +2226,11 @@ function practiceItems(extra) {
   const nl = extra ? 3 : Math.max(0, q.listen - practiceDoneToday('listen')), nr = extra ? 1 : Math.max(0, q.read - practiceDoneToday('read'));
   // Listening alternates: two quick replies to each dialogue.
   const nd = Math.floor(nl / 3), nq = nl - nd;
-  const items = [...nextPractice(EXAM.qr, nq, skip), ...nextPractice(EXAM.dlg, nd, skip), ...nextPractice(mixKinds(EXAM.read), nr, skip)];
+  const items = [...nextPractice(EXAM.qr, nq, skip), ...nextPractice(hardFirst(EXAM.dlg), nd, skip), ...nextPractice(mixKinds(EXAM.read), nr, skip)];
   return items.map(x => ({ type: 'exam', x, mode: 'exam', answers: [] }));
 }
+// Listening: the exam-length dialogues and talks ("hard": real N3 length, fillers, changed plans) come first.
+const hardFirst = list => [...list.filter(x => x.hard), ...list.filter(x => !x.hard)];
 // Reading kinds taken in turn (short, medium, long, info, short, ...), so long texts come up from the start.
 function mixKinds(list) {
   const by = {}; for (const x of list) (by[x.kind] = by[x.kind] || []).push(x);
@@ -2277,10 +2279,11 @@ function examScreen(it, tags) {
     return { inner: { front }, bar: done ? examBar(it) : pickHint(strict ? 'Exam conditions: it plays once' : 'Tap ▶ to hear it again') };
   }
   if (kind === 'dlg') {
-    tags.push('<span class="tag" lang="ja">聴解 · 会話 DIALOGUE</span>');
+    tags.push(x.gist ? '<span class="tag" lang="ja">聴解 · 概要理解 GIST</span>' : '<span class="tag" lang="ja">聴解 · 会話 DIALOGUE</span>');
+    // 概要理解: as in the exam, the question and the four choices are only spoken, after the talk.
     const front = `<button class="big-play" data-play="${esc(id)}" aria-label="Play" ${strict && it.played ? 'disabled' : ''}>▶</button>
-      <div class="prompt" lang="ja">${gl(x.question)}</div>
-      ${optBtns(0, x.options, false)}
+      <div class="prompt" lang="ja">${x.gist && !done ? '<span lang="en">Listen to the talk. The question and the four choices come at the end, spoken only (not printed), as in the exam.</span>' : gl(x.question)}</div>
+      ${optBtns(0, x.options, x.gist && !done)}
       ${done ? `<div class="why">${esc(x.why || '')}</div>${optNotesHtml(x, it.answers[0])}<div class="ex-script">${x.turns.map(t => `<div lang="ja"><b>${t.s === 'M' ? '男' : '女'}:</b> ${glossHtml(t.t)}</div>`).join('')}
         <details><summary>English</summary><div class="muted">${esc(x.en || '').replace(/\n/g, '<br>')}</div></details></div>` : ''}`;
     return { inner: { front }, bar: done ? examBar(it) : pickHint(strict ? 'Exam conditions: it plays once' : 'The exam plays it once; here you can replay with ▶') };
@@ -2408,7 +2411,7 @@ function speakScript(x) {
     const other = x.s === 'M' ? 'F' : 'M';
     speakSeq([[x.s, x.line], ...x.options.map((o, i) => [other, `${i + 1}、${o}`])]);
   } else if (id.startsWith('dl')) {
-    speakSeq([['N', x.intro], ...x.turns.map(t => [t.s, t.t]), ['N', x.question]]);
+    speakSeq([['N', x.intro], ...x.turns.map(t => [t.s, t.t]), ['N', x.question], ...(x.gist ? x.options.map((o, i) => ['N', `${i + 1}、${o}`]) : [])]);
   }
 }
 function answerExam(qi, oi) {

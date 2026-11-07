@@ -138,6 +138,8 @@ def segments(x):
     if x['id'].startswith('qr'):
         other = 'F' if x['s'] == 'M' else 'M'
         return [(x['s'], x['line'])] + [(other, f'{i + 1}、{o}') for i, o in enumerate(x['options'])]
+    if x.get('gist'):   # 概要理解 in daily practice: the talk, then the question and the options, all spoken
+        return [('N', x['intro'])] + [(t['s'], t['t']) for t in x['turns']] + [('N', x['question'])] + [('N', f'{i + 1}、{o}') for i, o in enumerate(x['options'])]
     return [('N', x['intro'])] + [(t['s'], t['t']) for t in x['turns']] + [('N', x['question'])]
 
 

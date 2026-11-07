@@ -3894,5 +3894,2435 @@
    "2": "Train fares aren't mentioned.",
    "3": "That's a reason (それもあります), but not the main one."
   }
+ },
+ {
+  "id": "dl081",
+  "intro": "会社で男の人と女の人が話しています。女の人はこのあとまず何をしますか。",
+  "question": "女の人はこのあとまず何をしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "あ、木村さん、ちょっといい？　あしたの会議の資料なんだけど。"
+   },
+   {
+    "s": "F",
+    "t": "はい。もうコピーして、会議室に置いておきましょうか。"
+   },
+   {
+    "s": "M",
+    "t": "うーん、それがね、さっき部長から電話があって、グラフのところ、去年の数字も入れてほしいって。"
+   },
+   {
+    "s": "F",
+    "t": "え、そうなんですか。じゃあ、作り直さないといけませんね。"
+   },
+   {
+    "s": "M",
+    "t": "うん。でも、去年の数字は経理の田中さんが持ってるはずだから、まずそれをもらわないと。"
+   },
+   {
+    "s": "F",
+    "t": "わかりました。じゃ、田中さんにメールしておきます。"
+   },
+   {
+    "s": "M",
+    "t": "あ、田中さん、今日は午後から休みだって言ってたな。メールだと間に合わないかもしれないから……。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、今すぐ行ってきます。"
+   },
+   {
+    "s": "M",
+    "t": "うん、お願い。コピーは数字が入ってからでいいからね。"
+   }
+  ],
+  "options": [
+   "経理の田中さんのところへ行く",
+   "資料をコピーする",
+   "田中さんにメールを送る",
+   "会議室に資料を置く"
+  ],
+  "answer": 0,
+  "en": "M: Kimura, got a minute? About the materials for tomorrow's meeting.\nF: Yes. Shall I copy them and leave them in the meeting room?\nM: Hmm, the thing is, the department head just called. He wants last year's figures in the graph too.\nF: Oh, really? Then we'll have to redo it.\nM: Yeah. But Tanaka in accounting should have last year's figures, so first we need to get them.\nF: Got it. I'll email Tanaka.\nM: Oh, Tanaka said she's off from this afternoon. Email might not be in time...\nF: Then I'll go right now.\nM: Yes, please. The copies can wait until the numbers are in.",
+  "why": "Email might be too late because Tanaka leaves at noon, so she goes in person right now (今すぐ行ってきます). Copying waits until the numbers are in.",
+  "opts_en": [
+   "Go to Tanaka in accounting",
+   "Copy the materials",
+   "Email Tanaka",
+   "Put the materials in the meeting room"
+  ],
+  "wrong": {
+   "1": "Copying comes after the new numbers are added.",
+   "2": "She offered to email, but he says email may be too late.",
+   "3": "Putting copies in the room was her first idea; the materials now need redoing."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl082",
+  "intro": "大学で男の学生と女の学生が話しています。男の学生はこれからどこへ行きますか。",
+  "question": "男の学生はこれからどこへ行きますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "あれ、山下くん、まだいたの？　三時からアルバイトでしょ？"
+   },
+   {
+    "s": "M",
+    "t": "うん、でもその前に図書館で本を返さなきゃいけないんだ。今日までなんだよ。"
+   },
+   {
+    "s": "F",
+    "t": "図書館って、今日は工事で二時までだよ。入口に書いてあった。"
+   },
+   {
+    "s": "M",
+    "t": "え、うそ。じゃあ、もう閉まってるじゃん。困ったなあ。"
+   },
+   {
+    "s": "F",
+    "t": "たしか、事務室に返却ボックスがあったと思うけど。"
+   },
+   {
+    "s": "M",
+    "t": "あ、そっか。事務室なら、バイトに行く途中だし。"
+   },
+   {
+    "s": "F",
+    "t": "でも、事務室も四時からじゃなかったっけ。昼休みが長いの。"
+   },
+   {
+    "s": "M",
+    "t": "え、それじゃバイトに遅れちゃう。……しかたない、本はあした返して、今日はまっすぐバイトに行くよ。"
+   },
+   {
+    "s": "F",
+    "t": "それがいいよ。一日ぐらいなら大丈夫でしょ。"
+   }
+  ],
+  "options": [
+   "図書館",
+   "大学の事務室",
+   "アルバイト先",
+   "本屋"
+  ],
+  "answer": 2,
+  "en": "F: Huh, Yamashita, you're still here? Don't you have work at three?\nM: Yeah, but before that I have to return a book to the library. It's due today.\nF: The library closes at two today because of construction. It was posted at the entrance.\nM: No way. Then it's already closed. What a pain.\nF: I think there's a return box at the office.\nM: Oh, right. The office is on my way to work.\nF: But doesn't the office open at four? They have a long lunch break.\nM: Then I'd be late for work... Oh well, I'll return the book tomorrow and go straight to work today.\nF: Good idea. One day should be fine.",
+  "why": "The library closed at 2 and the office opens at 4, too late; he decides to return the book tomorrow and go straight to work (まっすぐバイトに行く).",
+  "opts_en": [
+   "The library",
+   "The university office",
+   "His part-time job",
+   "A bookstore"
+  ],
+  "wrong": {
+   "0": "The library closed at 2 because of construction.",
+   "1": "The office only opens at 4, which would make him late.",
+   "3": "A bookstore is never mentioned."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl083",
+  "intro": "電話で女の人と男の人が話しています。二人は何時にどこで会いますか。",
+  "question": "二人は何時にどこで会いますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "もしもし、あした映画を見に行く件だけど、六時半の回でいいよね？"
+   },
+   {
+    "s": "M",
+    "t": "うん。じゃあ、六時に駅の改札で会う？"
+   },
+   {
+    "s": "F",
+    "t": "えっと、映画館の前でいいんじゃない？　駅からすぐだし。"
+   },
+   {
+    "s": "M",
+    "t": "でも、映画の前にご飯食べたくない？　映画館の隣のパスタの店、行ってみたかったんだ。"
+   },
+   {
+    "s": "F",
+    "t": "あ、いいね。でも、六時だと食べる時間ないよ。"
+   },
+   {
+    "s": "M",
+    "t": "そうだなあ……じゃ、九時の回にする？　それなら七時にお店で会えばゆっくりできるし。"
+   },
+   {
+    "s": "F",
+    "t": "九時かあ。終わるの十一時過ぎちゃうよね。……やっぱり六時半の回にして、ご飯はあとにしよう。"
+   },
+   {
+    "s": "M",
+    "t": "わかった。じゃ、映画館の前に六時二十分。"
+   },
+   {
+    "s": "F",
+    "t": "うん、それで。"
+   }
+  ],
+  "options": [
+   "七時にパスタの店",
+   "六時二十分に映画館の前",
+   "九時に映画館の前",
+   "六時に駅の改札"
+  ],
+  "answer": 1,
+  "en": "F: Hello? About the movie tomorrow, the 6:30 showing is OK, right?\nM: Yeah. So shall we meet at the station ticket gate at six?\nF: Um, isn't in front of the cinema fine? It's right by the station.\nM: But don't you want to eat before the movie? I've wanted to try the pasta place next to the cinema.\nF: Oh, nice. But if we meet at six, there's no time to eat.\nM: Hmm... then the nine o'clock showing? Then we could meet at the restaurant at seven and take our time.\nF: Nine... It'd end after eleven. ...Let's stick with the 6:30 showing and eat afterwards.\nM: OK. Then in front of the cinema at 6:20.\nF: Yes, that works.",
+  "why": "They keep the 6:30 showing and eat afterwards; the final plan is 映画館の前に六時二十分.",
+  "opts_en": [
+   "7:00 at the pasta place",
+   "6:20 in front of the cinema",
+   "9:00 in front of the cinema",
+   "6:00 at the station ticket gate"
+  ],
+  "wrong": {
+   "0": "The 7 o'clock dinner went with the 9 o'clock showing, which she rejected.",
+   "2": "The 9 o'clock showing ends too late.",
+   "3": "The station gate was his first suggestion; she preferred the cinema."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl084",
+  "intro": "店で客の女の人と店員が話しています。女の人はいくら払いますか。",
+  "question": "女の人はいくら払いますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、このセーター、いくらですか。値札がなくて。"
+   },
+   {
+    "s": "M",
+    "t": "あ、こちらは四千円です。今週はセール中なので、そこから二割引きになります。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、三千二百円ですね。"
+   },
+   {
+    "s": "M",
+    "t": "はい。それから、こちらのマフラーとごいっしょだと、さらに五百円お引きしますよ。"
+   },
+   {
+    "s": "F",
+    "t": "マフラーはいくらですか。"
+   },
+   {
+    "s": "M",
+    "t": "二千円です。こちらはセールの対象外なんですが。"
+   },
+   {
+    "s": "F",
+    "t": "うーん、マフラーはこの前買ったばかりなんですよね。……今日はセーターだけにします。"
+   },
+   {
+    "s": "M",
+    "t": "かしこまりました。あ、ポイントカードはお持ちですか。"
+   },
+   {
+    "s": "F",
+    "t": "それが、家に忘れてきちゃって。"
+   },
+   {
+    "s": "M",
+    "t": "そうですか。では、ポイントはまた次回ということで。"
+   }
+  ],
+  "options": [
+   "三千二百円",
+   "二千七百円",
+   "四千円",
+   "四千七百円"
+  ],
+  "answer": 0,
+  "en": "F: Excuse me, how much is this sweater? There's no price tag.\nM: Ah, that one is 4,000 yen. There's a sale this week, so it's 20% off that.\nF: So 3,200 yen.\nM: Yes. And with this scarf, we'll take off another 500 yen.\nF: How much is the scarf?\nM: 2,000 yen. It's not part of the sale, though.\nF: Hmm, I just bought a scarf the other day... I'll just take the sweater today.\nM: Certainly. Oh, do you have a point card?\nF: Actually, I left it at home.\nM: I see. Then the points next time.",
+  "why": "Only the sweater: 4,000 yen with 20% off = 3,200 yen. The extra 500 off needed the scarf, which she didn't buy; the point card was at home.",
+  "opts_en": [
+   "3,200 yen",
+   "2,700 yen",
+   "4,000 yen",
+   "4,700 yen"
+  ],
+  "wrong": {
+   "1": "2,700 would be 3,200 − 500, but that discount needs the scarf.",
+   "2": "4,000 is the price before the 20% sale.",
+   "3": "4,700 would be sweater + scarf − 500, but she doesn't buy the scarf."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl085",
+  "intro": "会社で女の人と男の人が話しています。男の人はなぜ引っ越しをやめましたか。",
+  "question": "男の人はなぜ引っ越しをやめましたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "佐藤さん、来月引っ越すって言ってましたよね。いいところ見つかりました？"
+   },
+   {
+    "s": "M",
+    "t": "それが、やめたんですよ、引っ越し。"
+   },
+   {
+    "s": "F",
+    "t": "え、どうしてですか。会社から遠くて大変だって言ってたじゃないですか。"
+   },
+   {
+    "s": "M",
+    "t": "ええ。会社の近くにいい部屋があって、家賃もそんなに高くなかったんです。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、何が問題だったんですか。駅から遠いとか？"
+   },
+   {
+    "s": "M",
+    "t": "いや、駅からは五分なんです。ただ、見に行ったら、となりが工事中で、これから三年ぐらいかかるって言われて。"
+   },
+   {
+    "s": "F",
+    "t": "三年ですか。それはちょっと……。"
+   },
+   {
+    "s": "M",
+    "t": "ええ、在宅勤務の日もあるので、昼間うるさいのはちょっと困るなと思って。"
+   },
+   {
+    "s": "F",
+    "t": "たしかに。今の部屋は静かなんですか。"
+   },
+   {
+    "s": "M",
+    "t": "ええ、遠いけど、静かなのは気に入ってるんです。"
+   }
+  ],
+  "options": [
+   "駅から遠かったから",
+   "となりの工事がうるさそうだから",
+   "今の部屋が会社に近いから",
+   "家賃が高かったから"
+  ],
+  "answer": 1,
+  "en": "F: Sato, you said you're moving next month. Did you find a good place?\nM: Actually, I called off the move.\nF: What? Why? You said it was hard being far from the office.\nM: Yes. There was a nice room near the office, and the rent wasn't that high.\nF: So what was the problem? Far from the station?\nM: No, it's five minutes from the station. But when I went to see it, there was construction next door, and they said it'd take about three more years.\nF: Three years? That's a bit...\nM: Yeah, I work from home some days, so noise during the day would be a problem.\nF: True. Is your current place quiet?\nM: Yes. It's far, but I like that it's quiet.",
+  "why": "The new place had building work next door for about three years, and he sometimes works from home, so daytime noise was the problem.",
+  "opts_en": [
+   "Because it was far from the station",
+   "Because the construction next door would be noisy",
+   "Because his current place is near the office",
+   "Because the rent was high"
+  ],
+  "wrong": {
+   "0": "It's five minutes from the station.",
+   "2": "His current place is FAR from the office; it's just quiet.",
+   "3": "He says the rent wasn't that high (そんなに高くなかった)."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl086",
+  "intro": "病院の受付で男の人と女の人が話しています。男の人はこのあとまず何をしますか。",
+  "question": "男の人はこのあとまず何をしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、十時に予約している林ですが。"
+   },
+   {
+    "s": "F",
+    "t": "林様ですね。保険証をお願いします。"
+   },
+   {
+    "s": "M",
+    "t": "あ、はい……あれ、ないな。すみません、家に置いてきちゃったみたいです。"
+   },
+   {
+    "s": "F",
+    "t": "そうですか。保険証がないと、今日は全額お支払いいただくことになりますが……。"
+   },
+   {
+    "s": "M",
+    "t": "え、そうなんですか。家まで取りに行くと、三十分ぐらいかかるんですが。"
+   },
+   {
+    "s": "F",
+    "t": "今月中に保険証を持ってきていただければ、差額はお返しできますので、今日はこのまま診察を受けられても大丈夫ですよ。"
+   },
+   {
+    "s": "M",
+    "t": "あ、そうですか。じゃあ、そうします。"
+   },
+   {
+    "s": "F",
+    "t": "では、先にこちらの問診票にご記入ください。書き終わったら、受付に出してくださいね。"
+   },
+   {
+    "s": "M",
+    "t": "わかりました。"
+   }
+  ],
+  "options": [
+   "全額を払う",
+   "家に保険証を取りに行く",
+   "診察を受ける",
+   "問診票に記入する"
+  ],
+  "answer": 3,
+  "en": "M: Excuse me, I'm Hayashi, I have an appointment at ten.\nF: Mr. Hayashi. Your insurance card, please.\nM: Ah, yes... huh, it's not here. Sorry, I seem to have left it at home.\nF: I see. Without the insurance card, you'll have to pay the full amount today...\nM: Oh, really? Going home to get it would take about thirty minutes.\nF: If you bring the card in this month, we can refund the difference, so it's fine to see the doctor today as you are.\nM: Oh, I see. Then I'll do that.\nF: Then please fill in this questionnaire first. When you're done, hand it in at reception.\nM: Understood.",
+  "why": "He'll see the doctor without the card, but FIRST (先に) he fills in the questionnaire and hands it to reception.",
+  "opts_en": [
+   "Pay the full amount",
+   "Go home for his insurance card",
+   "See the doctor",
+   "Fill in the questionnaire"
+  ],
+  "wrong": {
+   "0": "Paying comes after the visit.",
+   "1": "Going home takes 30 minutes; the receptionist says he doesn't need to.",
+   "2": "The examination comes after the questionnaire."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl087",
+  "intro": "家で夫と妻が話しています。二人は週末に何をすることにしましたか。",
+  "question": "二人は週末に何をすることにしましたか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "ねえ、週末どうする？　天気予報だと、土曜日は晴れるって。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、久しぶりに山に行かない？　紅葉、そろそろきれいだと思うよ。"
+   },
+   {
+    "s": "F",
+    "t": "いいね。あ、でも日曜日は雨なんだって。土曜日に行って、日曜日はゆっくりしようか。"
+   },
+   {
+    "s": "M",
+    "t": "うん。あ、待って。土曜日って、母さんが来るって言ってなかった？"
+   },
+   {
+    "s": "F",
+    "t": "あ、そうだった。お昼ごはん、いっしょに食べるんだったね。"
+   },
+   {
+    "s": "M",
+    "t": "山は一日かかるからなあ。……じゃあ、土曜日はうちで母さんとご飯で、山は来週にしよう。"
+   },
+   {
+    "s": "F",
+    "t": "日曜日は？　雨だけど。"
+   },
+   {
+    "s": "M",
+    "t": "映画でも見に行く？"
+   },
+   {
+    "s": "F",
+    "t": "うーん、この前見たばかりだし、家で片付けしようよ。たまってるでしょ。"
+   },
+   {
+    "s": "M",
+    "t": "はいはい、わかったよ。"
+   }
+  ],
+  "options": [
+   "土曜日は母と食事をして、日曜日は家を片付ける",
+   "土曜日は母と食事をして、日曜日は映画を見る",
+   "土曜日に山に行って、日曜日は映画を見る",
+   "土曜日に山に行って、日曜日は休む"
+  ],
+  "answer": 0,
+  "en": "F: Hey, what shall we do this weekend? The forecast says Saturday will be sunny.\nM: Then why don't we go to the mountains for the first time in a while? The autumn leaves should be pretty soon.\nF: Nice. Oh, but Sunday's supposed to rain. Let's go Saturday and relax on Sunday.\nM: Yeah. Oh, wait. Didn't Mom say she's coming on Saturday?\nF: Oh, right. We were having lunch together.\nM: The mountains take all day... Then Saturday we'll eat with Mom at home, and the mountains next week.\nF: What about Sunday? It'll rain.\nM: Go see a movie?\nF: Hmm, we just saw one. Let's tidy up at home. Things have piled up, right?\nM: Yes, yes, all right.",
+  "why": "His mother visits on Saturday, so the mountains move to next week; Sunday the wife rejects the movie and they tidy up (家で片付けしよう).",
+  "opts_en": [
+   "Eat with his mother on Saturday, tidy the house on Sunday",
+   "Eat with his mother Saturday, a movie Sunday",
+   "Mountains Saturday, a movie Sunday",
+   "Go to the mountains Saturday, rest Sunday"
+  ],
+  "wrong": {
+   "1": "He suggested a movie, but she wanted to tidy up, and he agreed.",
+   "2": "The mountains are postponed, and Sunday isn't a movie.",
+   "3": "The mountain trip was moved to next week because his mother comes."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl088",
+  "intro": "会社で男の人と女の人が話しています。女の人は何がいちばん大変だと言っていますか。",
+  "question": "女の人は何がいちばん大変だと言っていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "鈴木さん、新しい部署はどう？　もう慣れた？"
+   },
+   {
+    "s": "F",
+    "t": "ええ、まあ。仕事の内容は前とあまり変わらないので、そっちは大丈夫なんですけど。"
+   },
+   {
+    "s": "M",
+    "t": "そう。じゃあ、人間関係とか？"
+   },
+   {
+    "s": "F",
+    "t": "いえ、みなさん親切で、すごく助かってます。"
+   },
+   {
+    "s": "M",
+    "t": "それならよかった。通勤は？　前より遠くなったんじゃない？"
+   },
+   {
+    "s": "F",
+    "t": "ええ、三十分ぐらい長くなりました。でも、電車で本が読めるので、それはむしろいいんです。"
+   },
+   {
+    "s": "M",
+    "t": "へえ。じゃあ、何も問題ないね。"
+   },
+   {
+    "s": "F",
+    "t": "それが……海外とのやりとりが多くて、英語の電話が毎日あるんです。メールならゆっくり考えられるんですけど、電話はすぐ答えなきゃいけないので、本当に疲れます。"
+   },
+   {
+    "s": "M",
+    "t": "ああ、それはたいへんだね。"
+   }
+  ],
+  "options": [
+   "まわりの人との関係",
+   "英語で電話をすること",
+   "通勤の時間が長くなったこと",
+   "仕事の内容が変わったこと"
+  ],
+  "answer": 1,
+  "en": "M: Suzuki, how's the new department? Used to it yet?\nF: Yes, more or less. The work is about the same as before, so that's fine.\nM: I see. Then the people?\nF: No, everyone's kind; it's a big help.\nM: Good. The commute? Isn't it farther than before?\nF: Yes, about thirty minutes longer. But I can read on the train, so that's actually good.\nM: Huh. Then no problems at all.\nF: Well... there's a lot of contact with overseas, and there are phone calls in English every day. With email I can think slowly, but on the phone I have to answer right away, so it's really tiring.\nM: Ah, that's tough.",
+  "why": "The real burden is daily English phone calls: email gives time to think, but calls need instant answers (本当に疲れます).",
+  "opts_en": [
+   "Relations with coworkers",
+   "Phone calls in English",
+   "The longer commute",
+   "The work content changing"
+  ],
+  "wrong": {
+   "0": "Everyone is kind and helpful.",
+   "2": "The commute is longer, but she reads on the train: むしろいい.",
+   "3": "She says the work is much the same as before."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl089",
+  "intro": "駅で女の人と駅員が話しています。女の人はどうやって空港へ行きますか。",
+  "question": "女の人はどうやって空港へ行きますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、空港へ行きたいんですが、次の特急は何時ですか。"
+   },
+   {
+    "s": "M",
+    "t": "申し訳ありません。今、事故で特急が止まっておりまして、動くのは一時間後になりそうです。"
+   },
+   {
+    "s": "F",
+    "t": "え、困ります。三時の飛行機なんです。"
+   },
+   {
+    "s": "M",
+    "t": "それでしたら、駅前から空港行きのバスが出ていますよ。十五分おきです。"
+   },
+   {
+    "s": "F",
+    "t": "バスだとどのぐらいかかりますか。"
+   },
+   {
+    "s": "M",
+    "t": "道がすいていれば五十分ほどですが、この時間は込むことが多いので、一時間以上かかるかもしれません。"
+   },
+   {
+    "s": "F",
+    "t": "一時間……ぎりぎりですね。タクシーはどうですか。"
+   },
+   {
+    "s": "M",
+    "t": "タクシーも同じ道を通りますので、時間はあまり変わりませんね。料金もかなり高くなりますし。"
+   },
+   {
+    "s": "F",
+    "t": "そうですか。じゃあ、すぐバスに乗ります。ありがとうございました。"
+   }
+  ],
+  "options": [
+   "タクシーで行く",
+   "特急で行く",
+   "バスで行く",
+   "特急が動くまで待つ"
+  ],
+  "answer": 2,
+  "en": "F: Excuse me, I want to go to the airport. What time is the next express?\nM: I'm very sorry. The express is stopped because of an accident; it looks like it'll restart in about an hour.\nF: Oh no. My flight is at three.\nM: In that case, there's an airport bus from in front of the station. Every fifteen minutes.\nF: How long does the bus take?\nM: About fifty minutes if the roads are clear, but they're often busy at this time, so it may take over an hour.\nF: An hour... that's cutting it close. What about a taxi?\nM: Taxis use the same road, so the time won't be much different. And it costs a lot more.\nF: I see. Then I'll get on the bus right away. Thank you.",
+  "why": "The express is stopped for an hour; a taxi takes the same road and costs more, so she takes the bus right away (すぐバスに乗ります).",
+  "opts_en": [
+   "By taxi",
+   "By express train",
+   "By bus",
+   "Wait for the express to restart"
+  ],
+  "wrong": {
+   "0": "A taxi isn't faster and costs much more.",
+   "1": "The express won't run for about an hour.",
+   "3": "Waiting an hour is too late for her 3 o'clock flight."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl090",
+  "intro": "学校で先生と男の学生が話しています。男の学生はスピーチをどう直しますか。",
+  "question": "男の学生はスピーチをどう直しますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "先生、スピーチの原稿、読んでいただけましたか。"
+   },
+   {
+    "s": "F",
+    "t": "ええ、読みましたよ。内容はとてもおもしろいですね。漢字のまちがいもほとんどないし。"
+   },
+   {
+    "s": "M",
+    "t": "ありがとうございます。長さは大丈夫でしょうか。五分以内なんですよね。"
+   },
+   {
+    "s": "F",
+    "t": "ええ、時間はちょうどいいと思います。ただ、ちょっと気になったのは、最初の部分ですね。"
+   },
+   {
+    "s": "M",
+    "t": "自己紹介のところですか。"
+   },
+   {
+    "s": "F",
+    "t": "そう。自己紹介が長すぎて、何について話すのか、なかなか出てこないでしょう。聞いている人は最初の一分で興味をなくしてしまいますよ。"
+   },
+   {
+    "s": "M",
+    "t": "なるほど。じゃあ、自己紹介を全部とったほうがいいですか。"
+   },
+   {
+    "s": "F",
+    "t": "全部じゃなくて、名前と国だけにして、すぐにテーマを話したらどうですか。"
+   },
+   {
+    "s": "M",
+    "t": "わかりました。そうします。"
+   }
+  ],
+  "options": [
+   "自己紹介を全部とる",
+   "漢字のまちがいを直す",
+   "スピーチを五分以内にする",
+   "自己紹介を短くして、早くテーマを話す"
+  ],
+  "answer": 3,
+  "en": "M: Professor, did you get a chance to read my speech draft?\nF: Yes, I read it. The content is very interesting. And there are almost no kanji mistakes.\nM: Thank you. Is the length all right? It has to be under five minutes.\nF: Yes, I think the time is just right. What bothered me a little is the opening.\nM: The self-introduction part?\nF: Yes. The self-introduction is too long, and it takes ages to find out what you'll talk about. Listeners lose interest in the first minute.\nM: I see. Then should I cut the self-introduction completely?\nF: Not completely. How about just your name and country, and then go straight to the theme?\nM: Understood. I'll do that.",
+  "why": "The teacher says keep only name and country, then go straight to the theme (名前と国だけにして、すぐにテーマを話したら).",
+  "opts_en": [
+   "Cut the self-introduction completely",
+   "Fix kanji mistakes",
+   "Make it under five minutes",
+   "Shorten the self-introduction and get to the theme sooner"
+  ],
+  "wrong": {
+   "0": "He asked about cutting it all, but she said 全部じゃなくて.",
+   "1": "There are almost no kanji mistakes.",
+   "2": "The length is already fine."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl091",
+  "intro": "会社で女の人と男の人が話しています。男の人はこのあと何をしなければなりませんか。",
+  "question": "男の人はこのあと何をしなければなりませんか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "中村さん、来週の出張のことなんですけど、ホテル、もう予約しました？"
+   },
+   {
+    "s": "M",
+    "t": "いえ、まだです。新幹線のチケットは取ったんですけど。"
+   },
+   {
+    "s": "F",
+    "t": "あ、よかった。実は、出張が一日のびて、木曜日まで向こうにいることになったんです。"
+   },
+   {
+    "s": "M",
+    "t": "え、そうなんですか。じゃあ、帰りの新幹線、変えないといけませんね。"
+   },
+   {
+    "s": "F",
+    "t": "それは私のほうで変えておきます。総務に頼むと早いので。"
+   },
+   {
+    "s": "M",
+    "t": "ありがとうございます。じゃあ、ホテルは三泊ですね。"
+   },
+   {
+    "s": "F",
+    "t": "ええ。あと、木曜日の午前中に向こうの工場を見学することになったので、その資料も用意してもらえますか。"
+   },
+   {
+    "s": "M",
+    "t": "わかりました。資料は来週の月曜日まででいいですか。"
+   },
+   {
+    "s": "F",
+    "t": "それが、先方に事前に送らなきゃいけないので、あしたまでにお願いします。"
+   },
+   {
+    "s": "M",
+    "t": "あしたですか……わかりました。じゃ、先にそっちをやって、ホテルはそのあとで予約します。"
+   }
+  ],
+  "options": [
+   "工場見学の資料を作る",
+   "総務に電話する",
+   "新幹線のチケットを変える",
+   "ホテルを四泊予約する"
+  ],
+  "answer": 0,
+  "en": "F: Nakamura, about next week's business trip, have you booked the hotel yet?\nM: No, not yet. I got the bullet-train tickets, though.\nF: Oh, good. Actually, the trip got extended by a day; we'll be there until Thursday.\nM: Oh, really? Then I'll need to change the return train.\nF: I'll change that. It's quicker if I ask general affairs.\nM: Thank you. So the hotel is three nights.\nF: Yes. Also, we're going to tour their factory on Thursday morning, so could you prepare the materials for that?\nM: Sure. Is next Monday OK for the materials?\nF: Actually, we have to send them to them in advance, so by tomorrow, please.\nM: Tomorrow... OK. Then I'll do that first and book the hotel afterwards.",
+  "why": "The materials are due tomorrow, so he does them first (先にそっちをやって), then books the hotel. She changes the train ticket herself.",
+  "opts_en": [
+   "Prepare materials for the factory visit",
+   "Call general affairs",
+   "Change the bullet-train ticket",
+   "Book the hotel for four nights"
+  ],
+  "wrong": {
+   "1": "She is the one asking general affairs.",
+   "2": "She says she'll change the ticket via general affairs.",
+   "3": "It's three nights, and the hotel comes after the materials."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl092",
+  "intro": "大学で女の学生と男の学生が話しています。女の学生はなぜサークルをやめましたか。",
+  "question": "女の学生はなぜサークルをやめましたか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "あれ、田中さん、テニスサークル、やめたんだって？"
+   },
+   {
+    "s": "F",
+    "t": "うん、先月ね。"
+   },
+   {
+    "s": "M",
+    "t": "え、なんで？　あんなに楽しそうだったのに。練習がきつかったとか？"
+   },
+   {
+    "s": "F",
+    "t": "ううん、練習は週二回だけだし、ちょうどよかったよ。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、お金？　合宿とか高いでしょ。"
+   },
+   {
+    "s": "F",
+    "t": "まあ、安くはないけど、アルバイトしてるから、なんとかなってたんだ。"
+   },
+   {
+    "s": "M",
+    "t": "ふうん。じゃあ、なんで？"
+   },
+   {
+    "s": "F",
+    "t": "実はね、来年留学することに決めたの。それで、語学学校に通い始めたんだけど、それがちょうどサークルの練習と同じ曜日でさ。"
+   },
+   {
+    "s": "M",
+    "t": "ああ、そういうことか。"
+   },
+   {
+    "s": "F",
+    "t": "うん。留学から帰ってきたら、また入ろうかなって思ってる。"
+   }
+  ],
+  "options": [
+   "語学学校の日が練習の日と重なったから",
+   "練習がきびしかったから",
+   "アルバイトが忙しくなったから",
+   "お金がかかりすぎたから"
+  ],
+  "answer": 0,
+  "en": "M: Huh, Tanaka, I heard you quit the tennis club?\nF: Yeah, last month.\nM: What? Why? You looked like you were having so much fun. Was practice too hard?\nF: No, practice is only twice a week; it was just right.\nM: Money, then? Training camps are expensive, right?\nF: Well, it's not cheap, but I have a part-time job, so I was managing.\nM: Hmm. Then why?\nF: Actually, I've decided to study abroad next year. So I started going to a language school, but it's on the same days as club practice.\nM: Oh, I see.\nF: Yeah. I'm thinking of joining again after I come back.",
+  "why": "She decided to study abroad and started language school, which is on the same weekdays as practice (同じ曜日).",
+  "opts_en": [
+   "Her language school fell on the same days as practice",
+   "Practice was too hard",
+   "Her part-time job got busy",
+   "It cost too much"
+  ],
+  "wrong": {
+   "1": "Practice twice a week was ちょうどよかった.",
+   "2": "The job pays for the club; it isn't the reason.",
+   "3": "It wasn't cheap, but her job covered it (なんとかなってた)."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl093",
+  "intro": "レストランで男の人と女の人が話しています。女の人は何を注文しますか。",
+  "question": "女の人は何を注文しますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "何にする？　ここのハンバーグ、有名なんだよ。"
+   },
+   {
+    "s": "F",
+    "t": "へえ、おいしそう。でも、お昼にお肉食べちゃったんだよね。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、魚は？　今日のおすすめ、焼き魚定食だって。"
+   },
+   {
+    "s": "F",
+    "t": "あ、いいね。……あ、でもこれ、「本日は売り切れ」って書いてある。"
+   },
+   {
+    "s": "M",
+    "t": "ほんとだ。じゃあ、パスタは？　トマトとクリームがあるよ。"
+   },
+   {
+    "s": "F",
+    "t": "クリームはちょっと重いかな。トマトにしようかな。"
+   },
+   {
+    "s": "M",
+    "t": "あ、トマトのパスタ、ベーコン入ってるみたいだけど、大丈夫？"
+   },
+   {
+    "s": "F",
+    "t": "えー、ベーコンもお肉か……。じゃあ、もう一回見てみる。……あ、この野菜カレー、おいしそう。これにする。"
+   },
+   {
+    "s": "M",
+    "t": "いいね。じゃ、ぼくはハンバーグ。"
+   }
+  ],
+  "options": [
+   "ハンバーグ",
+   "焼き魚定食",
+   "トマトのパスタ",
+   "野菜カレー"
+  ],
+  "answer": 3,
+  "en": "M: What'll you have? The hamburger steak here is famous.\nF: Ooh, looks good. But I had meat at lunch.\nM: Fish, then? Today's special is a grilled fish set.\nF: Oh, nice. ...Oh, but it says 'sold out today'.\nM: You're right. Then pasta? There's tomato and cream.\nF: Cream is a bit heavy. Maybe tomato.\nM: Oh, the tomato pasta seems to have bacon in it. Is that OK?\nF: Ugh, bacon's meat too... Let me look again. ...Oh, this vegetable curry looks good. I'll have this.\nM: Nice. Then I'll have the hamburger.",
+  "why": "She avoids meat; the fish is sold out and the tomato pasta has bacon, so she picks the vegetable curry (これにする).",
+  "opts_en": [
+   "Hamburger steak",
+   "Grilled fish set",
+   "Tomato pasta",
+   "Vegetable curry"
+  ],
+  "wrong": {
+   "0": "The hamburger is his order; she had meat at lunch.",
+   "1": "The fish set is sold out (売り切れ).",
+   "2": "The tomato pasta has bacon, which is meat."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl094",
+  "intro": "会社で男の人と女の人が話しています。会議は何曜日の何時からになりましたか。",
+  "question": "会議は何曜日の何時からになりましたか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "来週の企画会議なんだけど、水曜日の十時でみんな大丈夫かな。"
+   },
+   {
+    "s": "F",
+    "t": "あ、水曜日の午前中は、山本さんがお客さんのところに行く予定です。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。じゃあ、水曜日の午後二時は？"
+   },
+   {
+    "s": "F",
+    "t": "二時なら山本さんも戻ってると思います。……あ、でも会議室、水曜日は一日中、研修で使われてますね。"
+   },
+   {
+    "s": "M",
+    "t": "えー、じゃあ木曜日にするか。木曜日の十時は？"
+   },
+   {
+    "s": "F",
+    "t": "木曜日の午前中は部長が出張で、午後三時に戻られるそうです。"
+   },
+   {
+    "s": "M",
+    "t": "部長には絶対出てもらいたいからなあ。じゃあ、木曜日の三時半からにしよう。"
+   },
+   {
+    "s": "F",
+    "t": "三時半ですね。会議室、予約しておきます。"
+   },
+   {
+    "s": "M",
+    "t": "よろしく。"
+   }
+  ],
+  "options": [
+   "木曜日の三時半",
+   "水曜日の十時",
+   "水曜日の二時",
+   "木曜日の十時"
+  ],
+  "answer": 0,
+  "en": "M: About next week's planning meeting, is Wednesday at ten OK for everyone?\nF: Oh, Yamamoto is going to a client's on Wednesday morning.\nM: I see. Then Wednesday at 2 p.m.?\nF: He should be back by two. ...Oh, but the meeting room is used for training all day Wednesday.\nM: Ugh. Then Thursday. Thursday at ten?\nF: The department head is on a business trip Thursday morning; he'll be back at 3 p.m.\nM: I really want him there... Then let's start Thursday at 3:30.\nF: 3:30. I'll book the meeting room.\nM: Thanks.",
+  "why": "Wednesday is out (Yamamoto out in the morning, room booked all day); Thursday morning the boss is away until 3, so 木曜日の三時半.",
+  "opts_en": [
+   "Thursday 3:30",
+   "Wednesday 10:00",
+   "Wednesday 2:00",
+   "Thursday 10:00"
+  ],
+  "wrong": {
+   "1": "Yamamoto visits a client Wednesday morning.",
+   "2": "The meeting room is used for training all Wednesday.",
+   "3": "The department head is on a business trip Thursday morning."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl095",
+  "intro": "電話で女の人と男の人が話しています。男の人はこのあとすぐ何をしますか。",
+  "question": "男の人はこのあとすぐ何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "もしもし、お兄ちゃん？　今どこ？"
+   },
+   {
+    "s": "M",
+    "t": "今、会社出たとこ。どうした？"
+   },
+   {
+    "s": "F",
+    "t": "お母さんがね、さっき転んで足をけがしちゃって。今、病院なの。"
+   },
+   {
+    "s": "M",
+    "t": "え、大丈夫なの？"
+   },
+   {
+    "s": "F",
+    "t": "うん、骨は折れてないって。でも、しばらく歩くのが大変みたい。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。じゃあ、今から病院に行くよ。"
+   },
+   {
+    "s": "F",
+    "t": "ううん、もう終わって、私が車で家に連れて帰るから、病院には来なくていいよ。それより、帰りにスーパーで晩ご飯の材料、買ってきてくれない？　お母さん、料理できないし。"
+   },
+   {
+    "s": "M",
+    "t": "わかった。何買えばいい？"
+   },
+   {
+    "s": "F",
+    "t": "あとでメールするね。あ、それから、お母さんの薬、駅前の薬局で受け取らなきゃいけないんだけど、それは明日でいいって。"
+   },
+   {
+    "s": "M",
+    "t": "了解。じゃ、メール待ってるよ。"
+   }
+  ],
+  "options": [
+   "病院へ行く",
+   "母を車で家に連れて帰る",
+   "スーパーへ買い物に行く",
+   "薬局で薬を受け取る"
+  ],
+  "answer": 2,
+  "en": "F: Hello, big brother? Where are you?\nM: Just left the office. What's up?\nF: Mom fell earlier and hurt her leg. We're at the hospital.\nM: What? Is she OK?\nF: Yeah, nothing's broken. But it seems walking will be hard for a while.\nM: I see. Then I'll go to the hospital now.\nF: No, it's done, and I'll drive her home, so you don't need to come. Instead, could you buy ingredients for dinner at the supermarket on your way home? Mom can't cook.\nM: OK. What should I buy?\nF: I'll email you later. Oh, and we need to pick up Mom's medicine at the pharmacy by the station, but they said tomorrow is fine.\nM: Got it. I'll wait for your email.",
+  "why": "She says don't come to the hospital; buy dinner ingredients on the way home instead. The medicine can wait until tomorrow.",
+  "opts_en": [
+   "Go to the hospital",
+   "Drive his mother home",
+   "Go shopping at the supermarket",
+   "Pick up medicine at the pharmacy"
+  ],
+  "wrong": {
+   "0": "She says 病院には来なくていい.",
+   "1": "The sister drives their mother home.",
+   "3": "The medicine pickup is for tomorrow."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl096",
+  "intro": "大学の事務室で男の学生と職員が話しています。男の学生は何を持ってこなければなりませんか。",
+  "question": "男の学生は何を持ってこなければなりませんか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、奨学金の申し込みをしたいんですが。"
+   },
+   {
+    "s": "F",
+    "t": "はい。申込書はこちらです。あと、成績証明書と、住民票が必要です。"
+   },
+   {
+    "s": "M",
+    "t": "成績証明書は、ここで出してもらえますか。"
+   },
+   {
+    "s": "F",
+    "t": "ええ、それはこの事務室で、明日にはお渡しできますので、こちらで用意しておきます。"
+   },
+   {
+    "s": "M",
+    "t": "ありがとうございます。住民票は区役所ですよね。"
+   },
+   {
+    "s": "F",
+    "t": "そうです。それから、写真も一枚お願いします。たて四センチ、よこ三センチです。"
+   },
+   {
+    "s": "M",
+    "t": "写真なら、学生証を作ったときのがあるんですけど、それでいいですか。"
+   },
+   {
+    "s": "F",
+    "t": "三か月以内に撮ったものじゃないとだめなんですよ。"
+   },
+   {
+    "s": "M",
+    "t": "あ、それなら去年のだからだめですね……。じゃあ、新しく撮ってきます。"
+   }
+  ],
+  "options": [
+   "成績証明書と住民票",
+   "成績証明書と写真",
+   "住民票と新しい写真",
+   "住民票と学生証"
+  ],
+  "answer": 2,
+  "en": "M: Excuse me, I'd like to apply for a scholarship.\nF: Yes. Here's the application form. You'll also need a transcript and a residence certificate.\nM: Can I get the transcript here?\nF: Yes, this office can issue it by tomorrow, so we'll prepare it here.\nM: Thank you. The residence certificate is from the ward office, right?\nF: That's right. And one photo, please. 4 cm tall, 3 cm wide.\nM: I have the one from when I made my student ID. Is that OK?\nF: It has to be taken within the last three months.\nM: Oh, then that's no good; it's from last year... I'll get a new one taken.",
+  "why": "The office prepares the transcript itself; he must bring the 住民票 from the ward office and a NEW photo (his old one is too old).",
+  "opts_en": [
+   "Transcript and residence certificate",
+   "Transcript and photo",
+   "A residence certificate and a new photo",
+   "Residence certificate and student ID"
+  ],
+  "wrong": {
+   "0": "The office prepares the transcript.",
+   "1": "Again, the transcript is done by the office.",
+   "3": "The student ID photo was only offered as a photo, and it's too old."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl097",
+  "intro": "会社で女の人と男の人が話しています。女の人はどうしてパソコンを買いかえませんか。",
+  "question": "女の人はどうしてパソコンを買いかえませんか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "山田さん、そのパソコン、ずいぶん古いね。そろそろ買いかえたら？"
+   },
+   {
+    "s": "F",
+    "t": "ええ、私もそう思ってたんですけど……。"
+   },
+   {
+    "s": "M",
+    "t": "今なら新しいのでも、そんなに高くないよ。"
+   },
+   {
+    "s": "F",
+    "t": "値段は問題じゃないんです。会社から補助も出ますし。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、使い慣れてるから？"
+   },
+   {
+    "s": "F",
+    "t": "それもちょっとありますけど……実は、来月から新しいシステムに変わるじゃないですか。"
+   },
+   {
+    "s": "M",
+    "t": "ああ、うん。"
+   },
+   {
+    "s": "F",
+    "t": "そのシステムに合うパソコンを、会社がまとめて用意してくれるらしいんです。だから、今買うと無駄になっちゃうかなと思って。"
+   },
+   {
+    "s": "M",
+    "t": "なるほど、それなら待ったほうがいいね。"
+   }
+  ],
+  "options": [
+   "会社の補助が出ないから",
+   "今のパソコンに慣れているから",
+   "会社が来月新しいパソコンを用意するから",
+   "値段が高いから"
+  ],
+  "answer": 2,
+  "en": "M: Yamada, that computer is pretty old. Isn't it time you replaced it?\nF: Yes, I was thinking so too, but...\nM: New ones aren't that expensive these days.\nF: The price isn't the problem. The company gives a subsidy too.\nM: Then because you're used to it?\nF: That's a little bit of it, but... actually, we're switching to a new system next month, right?\nM: Ah, yes.\nF: It seems the company will provide computers that work with that system, all at once. So I thought if I bought one now, it might be a waste.\nM: I see. Then you'd better wait.",
+  "why": "With the new system next month, the company will supply matching PCs, so buying now would be wasted (無駄になっちゃう).",
+  "opts_en": [
+   "Because the company won't subsidise it",
+   "Because she's used to her current PC",
+   "The company will provide new PCs next month",
+   "Because it's expensive"
+  ],
+  "wrong": {
+   "0": "The company DOES give a subsidy.",
+   "1": "Being used to it is only a small part (ちょっとあります); not the main reason.",
+   "3": "She says price isn't the problem."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl098",
+  "intro": "旅行会社で女の人と店員が話しています。女の人はどのツアーに申し込みますか。",
+  "question": "女の人はどのツアーに申し込みますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "すみません、来月、京都に行きたいんですが、何かいいツアーはありますか。"
+   },
+   {
+    "s": "M",
+    "t": "はい。こちらの三つが人気です。Aは二日間で、お寺を中心に回るツアーです。"
+   },
+   {
+    "s": "F",
+    "t": "お寺はいいですね。"
+   },
+   {
+    "s": "M",
+    "t": "Bは三日間で、お寺と、着物を着て町を歩く体験が付いています。Cは二日間で、料理教室が付いています。"
+   },
+   {
+    "s": "F",
+    "t": "着物、着てみたいなあ。でも、三日間はちょっと……仕事を休めるのは二日だけなんです。"
+   },
+   {
+    "s": "M",
+    "t": "それでしたら、Aのツアーに、着物の体験をオプションで付けることもできますよ。"
+   },
+   {
+    "s": "F",
+    "t": "えっ、本当ですか。値段はどのぐらい上がりますか。"
+   },
+   {
+    "s": "M",
+    "t": "五千円です。"
+   },
+   {
+    "s": "F",
+    "t": "それなら、それでお願いします。"
+   }
+  ],
+  "options": [
+   "Aのツアーだけ",
+   "Aのツアーに着物の体験を付ける",
+   "Bのツアー",
+   "Cのツアー"
+  ],
+  "answer": 1,
+  "en": "F: Excuse me, I'd like to go to Kyoto next month. Are there any good tours?\nM: Yes. These three are popular. A is two days, mainly visiting temples.\nF: Temples sound nice.\nM: B is three days, with temples and an experience walking around town in a kimono. C is two days, with a cooking class.\nF: I'd love to try a kimono. But three days is a bit... I can only take two days off work.\nM: In that case, you can add the kimono experience to Tour A as an option.\nF: Really? How much more is it?\nM: 5,000 yen.\nF: Then I'll take that, please.",
+  "why": "B has kimono but is three days; she can take only two days off, so Tour A plus the kimono option (+5,000 yen).",
+  "opts_en": [
+   "Tour A only",
+   "Tour A with the kimono experience added",
+   "Tour B",
+   "Tour C"
+  ],
+  "wrong": {
+   "0": "She adds the kimono option, so not A alone.",
+   "2": "Tour B is three days; she can only take two.",
+   "3": "Tour C has cooking, which she never asks for."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl099",
+  "intro": "家で母親と息子が話しています。息子はこのあとまず何をしますか。",
+  "question": "息子はこのあとまず何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "たける、宿題はもう終わったの？"
+   },
+   {
+    "s": "M",
+    "t": "まだ。今からやるよ。あ、その前にゲームの続き、ちょっとだけやっていい？"
+   },
+   {
+    "s": "F",
+    "t": "だめ。それより、さっき頼んだ犬の散歩、行ってくれた？"
+   },
+   {
+    "s": "M",
+    "t": "あ、忘れてた。今行ってくる。"
+   },
+   {
+    "s": "F",
+    "t": "待って、もう暗いから、散歩はお父さんが帰ってきたら頼むわ。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、宿題やる。"
+   },
+   {
+    "s": "F",
+    "t": "あ、その前に、お風呂、洗ってくれる？　お父さん、帰ってきたらすぐ入りたいって言ってたから。"
+   },
+   {
+    "s": "M",
+    "t": "えー、宿題、算数がいっぱいあるんだけど。"
+   },
+   {
+    "s": "F",
+    "t": "お風呂は五分で終わるでしょ。それから宿題ね。"
+   }
+  ],
+  "options": [
+   "ゲームをする",
+   "犬の散歩に行く",
+   "宿題をする",
+   "お風呂を洗う"
+  ],
+  "answer": 3,
+  "en": "F: Takeru, have you finished your homework?\nM: Not yet. I'll do it now. Oh, before that, can I play a bit more of my game?\nF: No. More importantly, did you walk the dog like I asked?\nM: Oh, I forgot. I'll go now.\nF: Wait, it's dark already; I'll ask Dad to do the walk when he gets home.\nM: Then I'll do homework.\nF: Oh, before that, could you wash the bath? Dad said he wants to get in right after he gets home.\nM: Aww, I have lots of math homework.\nF: The bath takes five minutes. Then homework.",
+  "why": "Mother: the dog walk goes to Dad (it's dark); first the bath (その前に、お風呂), then homework.",
+  "opts_en": [
+   "Play his game",
+   "Walk the dog",
+   "Do his homework",
+   "Wash the bath"
+  ],
+  "wrong": {
+   "0": "She refuses the game (だめ).",
+   "1": "It's dark, so Dad will walk the dog.",
+   "2": "Homework comes after the bath (それから宿題ね)."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl100",
+  "intro": "会社で男の人と女の人が話しています。男の人は新しい商品について何がいちばん問題だと言っていますか。",
+  "question": "男の人は新しい商品について何がいちばん問題だと言っていますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "新しい水筒のサンプル、見ました？　どうでした？"
+   },
+   {
+    "s": "M",
+    "t": "うん、デザインはいいと思うよ。若い人に受けそうだし。"
+   },
+   {
+    "s": "F",
+    "t": "よかった。重さはどうですか。前のより少し重くなったんですけど。"
+   },
+   {
+    "s": "M",
+    "t": "五十グラムぐらいでしょ？　それぐらいなら気にならないと思うよ。"
+   },
+   {
+    "s": "F",
+    "t": "値段は、二千八百円の予定です。"
+   },
+   {
+    "s": "M",
+    "t": "ちょっと高いけど、品質がいいから、まあ大丈夫かな。それより、ふたなんだよね。"
+   },
+   {
+    "s": "F",
+    "t": "ふたですか。"
+   },
+   {
+    "s": "M",
+    "t": "うん、開けるのに力がいるんだよ。子どもやお年寄りには開けられないんじゃないかな。これはなんとかしないと。"
+   },
+   {
+    "s": "F",
+    "t": "わかりました。工場に相談してみます。"
+   }
+  ],
+  "options": [
+   "重さ",
+   "値段",
+   "ふたが開けにくいこと",
+   "デザイン"
+  ],
+  "answer": 2,
+  "en": "F: Did you see the sample of the new water bottle? What did you think?\nM: Yeah, I think the design is good. Young people will probably like it.\nF: Great. What about the weight? It's a little heavier than the old one.\nM: About fifty grams, right? I don't think that much matters.\nF: The price is planned at 2,800 yen.\nM: A bit expensive, but the quality is good, so it's probably fine. The lid is the issue.\nF: The lid?\nM: Yeah, you need strength to open it. Children and elderly people might not be able to. We have to do something about that.\nF: Understood. I'll talk to the factory.",
+  "why": "Design is good, the extra weight is fine, the price is OK; the lid needs strength to open (これはなんとかしないと).",
+  "opts_en": [
+   "The weight",
+   "The price",
+   "The lid is hard to open",
+   "The design"
+  ],
+  "wrong": {
+   "0": "About 50 g heavier is not a concern.",
+   "1": "A bit expensive, but まあ大丈夫.",
+   "3": "He likes the design."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl101",
+  "intro": "図書館で男の人と図書館の人が話しています。男の人は何冊本を借りられますか。",
+  "question": "男の人は今日、あと何冊本を借りられますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、この本を借りたいんですが。"
+   },
+   {
+    "s": "F",
+    "t": "はい、カードをお願いします。……あ、今、五冊借りていらっしゃいますね。"
+   },
+   {
+    "s": "M",
+    "t": "ええ。一人十冊までですよね。"
+   },
+   {
+    "s": "F",
+    "t": "はい。ただ、そのうちの一冊は返す日が過ぎていますので、それを返していただかないと、新しくは借りられないんです。"
+   },
+   {
+    "s": "M",
+    "t": "え、そうなんですか。どの本ですか。"
+   },
+   {
+    "s": "F",
+    "t": "料理の本です。先週の金曜日まででした。"
+   },
+   {
+    "s": "M",
+    "t": "ああ、あれか。……実は今、持ってるんです。返そうと思って。"
+   },
+   {
+    "s": "F",
+    "t": "あ、よかったです。では、こちらで返却しますね。……はい、これで大丈夫です。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、この三冊、お願いします。"
+   },
+   {
+    "s": "F",
+    "t": "はい、かしこまりました。"
+   }
+  ],
+  "options": [
+   "五冊",
+   "三冊",
+   "六冊",
+   "十冊"
+  ],
+  "answer": 2,
+  "en": "M: Excuse me, I'd like to borrow this book.\nF: Yes, your card, please. ...Oh, you currently have five books out.\nM: Yes. It's up to ten per person, right?\nF: Yes. But one of them is past its due date, so unless you return it, you can't borrow new ones.\nM: Oh, really? Which book?\nF: The cookbook. It was due last Friday.\nM: Ah, that one. ...Actually, I have it with me. I meant to return it.\nF: Oh, good. Then I'll check it in here. ...There, that's fine now.\nM: Then these three, please.\nF: Certainly.",
+  "why": "He had 5 out, returns 1, so 4 are out; the limit is 10, so he can borrow 6 more today (he takes 3 of them).",
+  "opts_en": [
+   "Five",
+   "Three",
+   "Six",
+   "Ten"
+  ],
+  "wrong": {
+   "0": "Five is how many he had out before returning one.",
+   "1": "Three is how many he chooses, not how many he can borrow.",
+   "3": "Ten is the total limit, not what is left."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl102",
+  "intro": "会社で女の人と男の人が話しています。男の人はパーティーで何をしますか。",
+  "question": "男の人はパーティーで何をしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "来週の歓迎会、受付をお願いしてもいいですか。"
+   },
+   {
+    "s": "M",
+    "t": "あ、すみません。その日、会社に着くのが六時ぎりぎりになりそうで、受付は無理かもしれません。"
+   },
+   {
+    "s": "F",
+    "t": "そうですか。じゃあ、受付は私がやります。かわりに、乾杯のあいさつ、お願いできますか。"
+   },
+   {
+    "s": "M",
+    "t": "え、あいさつですか。ぼく、人前で話すの、苦手なんですよ。"
+   },
+   {
+    "s": "F",
+    "t": "短くていいんですよ。一分ぐらいで。"
+   },
+   {
+    "s": "M",
+    "t": "うーん……あ、それより、写真係はどうですか。ぼく、カメラが趣味なので。"
+   },
+   {
+    "s": "F",
+    "t": "写真は伊藤さんにもうお願いしちゃったんですよね。"
+   },
+   {
+    "s": "M",
+    "t": "そうですか……わかりました。じゃあ、あいさつ、やります。短くてよければ。"
+   },
+   {
+    "s": "F",
+    "t": "ありがとうございます。助かります。"
+   }
+  ],
+  "options": [
+   "受付をする",
+   "何もしない",
+   "乾杯のあいさつをする",
+   "写真をとる"
+  ],
+  "answer": 2,
+  "en": "F: Could I ask you to handle reception at next week's welcome party?\nM: Oh, sorry. That day I'll probably only get to the office right at six, so reception may be impossible.\nF: I see. Then I'll do reception. Instead, could you give the opening toast?\nM: A speech? I'm bad at speaking in front of people.\nF: It can be short. About a minute.\nM: Hmm... oh, what about being the photographer instead? Cameras are my hobby.\nF: I've already asked Ito to do photos.\nM: I see... OK. Then I'll do the toast. If it can be short.\nF: Thank you. That helps a lot.",
+  "why": "He can't do reception (arrives right at 6), photos are already Ito's job, so he agrees to the short toast (あいさつ、やります).",
+  "opts_en": [
+   "Work reception",
+   "Nothing",
+   "Give the toast",
+   "Take photos"
+  ],
+  "wrong": {
+   "0": "He arrives too late; she takes reception herself.",
+   "1": "He finally agrees to the toast.",
+   "3": "Ito already has the photo job."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl103",
+  "intro": "駅で男の人と女の人が話しています。女の人はどうして遅れましたか。",
+  "question": "女の人はどうして遅れましたか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "あ、来た来た。大丈夫？　電車、止まってたの？"
+   },
+   {
+    "s": "F",
+    "t": "ううん、電車は動いてたんだけど……ごめんね、二十分も待たせちゃって。"
+   },
+   {
+    "s": "M",
+    "t": "いいよ。寝坊でもした？"
+   },
+   {
+    "s": "F",
+    "t": "まさか。ちゃんと七時に起きたよ。出かける前に、家のかぎがどこにもなくて。"
+   },
+   {
+    "s": "M",
+    "t": "え、見つかったの？"
+   },
+   {
+    "s": "F",
+    "t": "うん、かばんの中に入ってた。でもね、それで一本遅い電車になって、そしたら乗りかえの駅で反対方向の電車に乗っちゃって。"
+   },
+   {
+    "s": "M",
+    "t": "あはは、それで遅れたのか。"
+   },
+   {
+    "s": "F",
+    "t": "そうなの。かぎで遅れたのは五分ぐらいなんだけどね。"
+   }
+  ],
+  "options": [
+   "乗りかえで、反対方向の電車に乗ったから",
+   "かぎをさがしていたから",
+   "電車が止まっていたから",
+   "寝坊したから"
+  ],
+  "answer": 0,
+  "en": "M: Ah, there you are. Are you OK? Was the train stopped?\nF: No, the trains were running, but... sorry, I kept you waiting twenty minutes.\nM: It's fine. Did you oversleep?\nF: No way. I got up at seven. Before leaving, I couldn't find my house key anywhere.\nM: Did you find it?\nF: Yeah, it was in my bag. But that put me on a later train, and then at the transfer station I got on a train going the opposite way.\nM: Haha, so that's why you're late.\nF: Yes. The key only made me about five minutes late, though.",
+  "why": "The keys only cost about five minutes; the main delay was boarding the wrong-direction train at the transfer (反対方向の電車に乗っちゃって).",
+  "opts_en": [
+   "She took a train in the wrong direction when changing",
+   "She was looking for her keys",
+   "The train was stopped",
+   "She overslept"
+  ],
+  "wrong": {
+   "1": "The keys cost just five minutes; not the main reason for 20.",
+   "2": "The trains were running (電車は動いてた).",
+   "3": "She got up at seven as planned (まさか)."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl104",
+  "intro": "会社で上司と女の人が話しています。女の人はいつまでに報告書を出しますか。",
+  "question": "女の人はいつまでに報告書を出しますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "小林さん、先週のイベントの報告書、どうなってる？"
+   },
+   {
+    "s": "F",
+    "t": "すみません、まだ半分ぐらいです。アンケートの結果をまとめるのに時間がかかっていて。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。いつ出せそう？"
+   },
+   {
+    "s": "F",
+    "t": "金曜日までには出せると思います。"
+   },
+   {
+    "s": "M",
+    "t": "うーん、実は木曜日の午後に、社長に報告することになったんだ。その前に一度見ておきたいから、水曜日の夕方までにもらえる？"
+   },
+   {
+    "s": "F",
+    "t": "水曜日ですか……アンケートの結果は、木曜日に間に合えばいいでしょうか。"
+   },
+   {
+    "s": "M",
+    "t": "いや、社長がいちばん知りたいのは、お客さんの声なんだよ。だから、アンケートは必ず入れて。"
+   },
+   {
+    "s": "F",
+    "t": "わかりました。じゃあ、ほかの仕事を少し後にして、水曜日の夕方までに全部まとめます。"
+   },
+   {
+    "s": "M",
+    "t": "悪いね。よろしく。"
+   }
+  ],
+  "options": [
+   "木曜日の朝",
+   "木曜日の午後",
+   "水曜日の夕方",
+   "金曜日"
+  ],
+  "answer": 2,
+  "en": "M: Kobayashi, how's the report on last week's event?\nF: Sorry, it's only about half done. Compiling the survey results is taking time.\nM: I see. When can you submit it?\nF: I think by Friday.\nM: Hmm, actually I'm reporting to the president on Thursday afternoon. I want to look it over first, so could I have it by Wednesday evening?\nF: Wednesday... would it be OK if the survey results came by Thursday?\nM: No, what the president most wants to know is the customers' voice. So definitely include the survey.\nF: Understood. Then I'll push my other work back a little and finish everything by Wednesday evening.\nM: Sorry about that. Thanks.",
+  "why": "The boss reports to the president on Thursday afternoon and wants to check it first: everything, survey included, by Wednesday evening.",
+  "opts_en": [
+   "Thursday morning",
+   "Thursday afternoon",
+   "Wednesday evening",
+   "Friday"
+  ],
+  "wrong": {
+   "0": "She suggested the survey later; he said include it, by Wednesday.",
+   "1": "Thursday afternoon is when the boss reports to the president.",
+   "3": "Friday was her estimate, rejected."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl105",
+  "intro": "大学で女の学生と男の学生が話しています。男の学生はレポートのテーマをどうしますか。",
+  "question": "男の学生はレポートのテーマをどうしますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "レポートのテーマ、決めた？"
+   },
+   {
+    "s": "M",
+    "t": "うん、一応。日本のコンビニの歴史について書こうと思ってるんだ。"
+   },
+   {
+    "s": "F",
+    "t": "へえ、おもしろそう。でも、それ、先輩が去年同じテーマで書いたって聞いたよ。"
+   },
+   {
+    "s": "M",
+    "t": "え、ほんと？　まあ、同じでも、だめってわけじゃないでしょ。"
+   },
+   {
+    "s": "F",
+    "t": "先生、去年と同じようなのは、点数が低くなるって言ってたよ。"
+   },
+   {
+    "s": "M",
+    "t": "えー、そうなのか。じゃあ、どうしよう……。"
+   },
+   {
+    "s": "F",
+    "t": "コンビニはいいテーマだと思うから、歴史じゃなくて、外国のコンビニとくらべてみたら？"
+   },
+   {
+    "s": "M",
+    "t": "あ、それいいね。ぼくの国のコンビニとくらべれば、資料も集めやすいし。そうするよ。"
+   }
+  ],
+  "options": [
+   "先輩のレポートを参考にする",
+   "コンビニ以外のテーマにする",
+   "コンビニの歴史について書く",
+   "日本と自分の国のコンビニをくらべる"
+  ],
+  "answer": 3,
+  "en": "F: Have you decided your report theme?\nM: Yeah, sort of. I'm thinking of writing about the history of Japanese convenience stores.\nF: Ooh, sounds interesting. But I heard a senior wrote on the same theme last year.\nM: Really? Well, being the same doesn't mean it's not allowed, right?\nF: The professor said ones similar to last year's get lower marks.\nM: Oh, really... Then what do I do...\nF: I think convenience stores are a good theme, so instead of history, why not compare them with ones abroad?\nM: Oh, that's good. If I compare them with stores in my country, collecting material is easier too. I'll do that.",
+  "why": "History was done last year (lower marks for repeats), so he compares Japan's convenience stores with his country's (ぼくの国のコンビニとくらべれば).",
+  "opts_en": [
+   "Use his senior's report as reference",
+   "Choose a non-convenience-store theme",
+   "Write about convenience-store history",
+   "Compare Japanese convenience stores with his country's"
+  ],
+  "wrong": {
+   "0": "Using the senior's report is never suggested.",
+   "1": "They keep convenience stores as the theme.",
+   "2": "The history theme was used last year and would score lower."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl106",
+  "intro": "ホテルのフロントで男の人と女の人が話しています。男の人はこのあとどうしますか。",
+  "question": "男の人はこのあとどうしますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "すみません、チェックインをお願いします。予約した山口です。"
+   },
+   {
+    "s": "F",
+    "t": "山口様、お待ちしておりました。……申し訳ございません、お部屋の準備がまだできておりませんで、あと一時間ほどかかります。"
+   },
+   {
+    "s": "M",
+    "t": "え、チェックインは三時からって書いてありましたよね。"
+   },
+   {
+    "s": "F",
+    "t": "はい、大変申し訳ございません。お荷物はこちらでお預かりできますので、その間、お出かけいただくこともできますが。"
+   },
+   {
+    "s": "M",
+    "t": "うーん、外は雨だしなあ……。ロビーで待っててもいいですか。"
+   },
+   {
+    "s": "F",
+    "t": "もちろんです。それから、おわびに、二階のカフェでお飲み物をサービスさせていただきます。"
+   },
+   {
+    "s": "M",
+    "t": "あ、そうですか。じゃあ、荷物を預けて、カフェで待ってます。"
+   },
+   {
+    "s": "F",
+    "t": "かしこまりました。お部屋の準備ができましたら、お呼びいたします。"
+   }
+  ],
+  "options": [
+   "ロビーで待つ",
+   "荷物を持って、出かける",
+   "すぐ部屋に入る",
+   "荷物を預けて、カフェで待つ"
+  ],
+  "answer": 3,
+  "en": "M: Excuse me, I'd like to check in. I have a reservation; the name is Yamaguchi.\nF: Mr. Yamaguchi, welcome. ...I'm very sorry, your room isn't ready yet; it'll take about another hour.\nM: What? It said check-in was from three.\nF: Yes, I'm terribly sorry. We can keep your luggage here, so you're welcome to go out in the meantime.\nM: Hmm, it's raining outside... Could I wait in the lobby?\nF: Of course. Also, as an apology, we'd like to offer you a drink at the café on the second floor.\nM: Oh, really? Then I'll leave my bags and wait at the café.\nF: Certainly. We'll call you when the room is ready.",
+  "why": "It's raining, so he won't go out; when offered a free drink he changes from the lobby to the café (荷物を預けて、カフェで待ってます).",
+  "opts_en": [
+   "Wait in the lobby",
+   "Go out with his bags",
+   "Go to his room straight away",
+   "Leave his bags and wait in the café"
+  ],
+  "wrong": {
+   "0": "He first asked about the lobby, then chose the café.",
+   "1": "He doesn't go out because of the rain.",
+   "2": "The room isn't ready for an hour."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl107",
+  "intro": "会社で男の人と女の人が話しています。女の人は新しい店がどうだったと言っていますか。",
+  "question": "女の人は新しい店がどうだったと言っていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "駅前にできたラーメン屋、行ってみた？"
+   },
+   {
+    "s": "F",
+    "t": "うん、きのうのお昼に行ってきたよ。"
+   },
+   {
+    "s": "M",
+    "t": "どうだった？　すごい行列だって聞いたけど。"
+   },
+   {
+    "s": "F",
+    "t": "それがね、平日だったから、すぐ入れたの。"
+   },
+   {
+    "s": "M",
+    "t": "へえ、ラッキーだったね。味は？"
+   },
+   {
+    "s": "F",
+    "t": "スープは濃くて、おいしかったよ。ただ、量がちょっと少ないかなあ。それで九百円は、ちょっと高いと思う。"
+   },
+   {
+    "s": "M",
+    "t": "そうか。また行く？"
+   },
+   {
+    "s": "F",
+    "t": "うーん、近くの中華屋さんのほうが安くてたくさん食べられるから、たぶんもう行かないかな。"
+   }
+  ],
+  "options": [
+   "味はいいが、量のわりに値段が高い",
+   "スープがうすかった",
+   "安くてたくさん食べられた",
+   "行列が長くて入れなかった"
+  ],
+  "answer": 0,
+  "en": "M: Have you tried the ramen place that opened by the station?\nF: Yeah, I went yesterday at lunch.\nM: How was it? I heard the line is huge.\nF: Actually, it was a weekday, so I got in right away.\nM: Huh, lucky. How was the taste?\nF: The soup was rich and tasty. But the portion was a bit small. For 900 yen, I think it's a bit expensive.\nM: I see. Will you go again?\nF: Hmm, the Chinese place nearby is cheaper and you get more, so I probably won't go again.",
+  "why": "Rich, tasty soup, but small portions for 900 yen (量がちょっと少ない…ちょっと高い).",
+  "opts_en": [
+   "Tasty, but expensive for the amount",
+   "The soup was thin",
+   "Cheap with big portions",
+   "The queue was too long to get in"
+  ],
+  "wrong": {
+   "1": "The soup was rich (濃くて).",
+   "2": "That describes the Chinese place nearby, not the new shop.",
+   "3": "It was a weekday, so she got in right away."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl108",
+  "intro": "会社で女の人と男の人が話しています。男の人はどの席に座りますか。",
+  "question": "男の人はどの席に座りますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "新しい席、決まりましたよ。森さんは窓のそばです。"
+   },
+   {
+    "s": "M",
+    "t": "え、窓のそばですか。午後は日が当たって、パソコンの画面が見にくいんですよね。"
+   },
+   {
+    "s": "F",
+    "t": "そうですか。じゃあ、入口の近くはどうですか。あいてますよ。"
+   },
+   {
+    "s": "M",
+    "t": "入口の近くは、人がよく通るので、電話のとき、ちょっとうるさいかなあ。"
+   },
+   {
+    "s": "F",
+    "t": "うーん、あとは、コピー機の前か、部長の席の隣ですね。"
+   },
+   {
+    "s": "M",
+    "t": "部長の隣はちょっと……。コピー機の前も音がしますよね。"
+   },
+   {
+    "s": "F",
+    "t": "森さん、全部いやなんですか。"
+   },
+   {
+    "s": "M",
+    "t": "すみません。……じゃあ、窓のそばにします。ブラインドを下ろせば、なんとかなると思うので。"
+   },
+   {
+    "s": "F",
+    "t": "わかりました。"
+   }
+  ],
+  "options": [
+   "部長の隣",
+   "コピー機の前",
+   "入口の近く",
+   "窓のそば"
+  ],
+  "answer": 3,
+  "en": "F: The new seats are decided. Mori, you're by the window.\nM: By the window? In the afternoon the sun hits it and the screen is hard to see.\nF: I see. Then how about near the entrance? It's free.\nM: Lots of people pass by the entrance, so it might be a bit noisy when I'm on the phone.\nF: Hmm, the only others are in front of the copier or next to the department head.\nM: Next to the department head is a bit... and the copier makes noise too.\nF: Mori, you don't like any of them?\nM: Sorry. ...Then I'll take the window. I think lowering the blinds will do.\nF: Understood.",
+  "why": "After rejecting every seat, he returns to the window seat; lowering the blinds will fix the glare (窓のそばにします).",
+  "opts_en": [
+   "Next to the department head",
+   "In front of the copier",
+   "Near the entrance",
+   "By the window"
+  ],
+  "wrong": {
+   "0": "He politely refuses the seat next to the boss.",
+   "1": "The copier makes noise.",
+   "2": "The entrance is too noisy for phone calls."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl109",
+  "intro": "電話で男の人と女の人が話しています。女の人は何を持っていきますか。",
+  "question": "女の人はバーベキューに何を持っていきますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "もしもし、あしたのバーベキューのことなんだけど、何か持ってきてもらえる？"
+   },
+   {
+    "s": "F",
+    "t": "うん、いいよ。お肉とか？"
+   },
+   {
+    "s": "M",
+    "t": "お肉と野菜は、ぼくがまとめて買っておくから大丈夫。"
+   },
+   {
+    "s": "F",
+    "t": "じゃあ、飲み物は？"
+   },
+   {
+    "s": "M",
+    "t": "飲み物は佐藤さんが持ってくるって。……あ、紙のお皿とコップがないんだった。"
+   },
+   {
+    "s": "F",
+    "t": "わかった。それ買っていくね。デザートも何か作っていこうか？"
+   },
+   {
+    "s": "M",
+    "t": "いいの？　じゃあ、お願い。あ、でも、外は暑いから、溶けるものはやめたほうがいいかも。"
+   },
+   {
+    "s": "F",
+    "t": "そうだね。じゃあ、ケーキじゃなくて、クッキーにする。"
+   },
+   {
+    "s": "M",
+    "t": "ありがとう。助かるよ。"
+   }
+  ],
+  "options": [
+   "紙の皿とコップとケーキ",
+   "肉と野菜",
+   "紙の皿とコップとクッキー",
+   "飲み物とケーキ"
+  ],
+  "answer": 2,
+  "en": "M: Hello, about tomorrow's barbecue, could you bring something?\nF: Sure. Meat or something?\nM: I'll buy the meat and vegetables, so that's fine.\nF: Then drinks?\nM: Sato said he'll bring drinks. ...Oh, we don't have paper plates or cups.\nF: Got it. I'll buy those. Shall I make some dessert too?\nM: Really? Then yes please. Oh, but it's hot outside, so maybe avoid anything that melts.\nF: Right. Then cookies instead of a cake.\nM: Thanks. That's a big help.",
+  "why": "He buys meat and vegetables, Sato brings drinks; she brings paper plates and cups, plus cookies instead of a cake (it's hot).",
+  "opts_en": [
+   "Paper plates, cups and cake",
+   "Meat and vegetables",
+   "Paper plates, cups and cookies",
+   "Drinks and cake"
+  ],
+  "wrong": {
+   "0": "She switches from cake to cookies because of the heat.",
+   "1": "He buys the meat and vegetables himself.",
+   "3": "Sato brings the drinks, and cake could melt."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl110",
+  "intro": "会社で男の人と女の人が話しています。女の人はなぜ英語を勉強していますか。",
+  "question": "女の人はなぜ英語を勉強していますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "あれ、渡辺さん、英語の本読んでるの？　海外旅行でも行くの？"
+   },
+   {
+    "s": "F",
+    "t": "ううん、旅行じゃないの。"
+   },
+   {
+    "s": "M",
+    "t": "じゃあ、昇進の試験？　英語の点数がいるって聞いたけど。"
+   },
+   {
+    "s": "F",
+    "t": "それは来年だから、まだいいの。実はね、来月から、新しいお客さんの担当になったんだけど、その会社、アメリカの会社でね。"
+   },
+   {
+    "s": "M",
+    "t": "へえ。じゃあ、会議も英語？"
+   },
+   {
+    "s": "F",
+    "t": "会議は通訳の人がいるから大丈夫なんだけど、毎日のメールが全部英語なの。それで、ちゃんと書けるようになりたくて。"
+   },
+   {
+    "s": "M",
+    "t": "なるほど。それは大変だね。がんばって。"
+   }
+  ],
+  "options": [
+   "担当する会社とのメールが英語だから",
+   "昇進の試験があるから",
+   "海外旅行に行くから",
+   "会議で英語を話すから"
+  ],
+  "answer": 0,
+  "en": "M: Huh, Watanabe, you're reading an English book? Going abroad?\nF: No, not a trip.\nM: Then the promotion exam? I heard you need an English score.\nF: That's next year, so not yet. Actually, from next month I'm in charge of a new client, and it's an American company.\nM: Wow. So meetings are in English too?\nF: There's an interpreter for meetings, so that's fine, but all the daily emails are in English. So I want to be able to write them properly.\nM: I see. That's tough. Good luck.",
+  "why": "Her new client is American; meetings have an interpreter, but daily emails are all in English (メールが全部英語なの).",
+  "opts_en": [
+   "Emails with the client she handles are in English",
+   "For a promotion exam",
+   "She's going abroad on holiday",
+   "She speaks English in meetings"
+  ],
+  "wrong": {
+   "1": "The promotion exam is next year, so not yet (まだいいの).",
+   "2": "She says it isn't for travel.",
+   "3": "Meetings have an interpreter."
+  },
+  "hard": true
+ },
+ {
+  "id": "dl111",
+  "intro": "ラジオで男の人が話しています。",
+  "question": "男の人が言いたいことは何ですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "最近、会社に行かないで、家で仕事をする人が増えています。"
+   },
+   {
+    "s": "M",
+    "t": "通勤の時間がなくなって、そのぶん家族と過ごせるようになったという声も多いです。"
+   },
+   {
+    "s": "M",
+    "t": "ただ、家にいると、仕事とそれ以外の時間の区別がつきにくくなります。"
+   },
+   {
+    "s": "M",
+    "t": "気がついたら夜遅くまでパソコンを開いていた、という人も少なくないでしょう。"
+   },
+   {
+    "s": "M",
+    "t": "そこで大切なのは、仕事を始める時間と終わる時間を、自分で決めておくことです。"
+   },
+   {
+    "s": "M",
+    "t": "終わる時間になったら、パソコンを閉じて、別の部屋に移る。それだけでも、ずいぶん違いますよ。"
+   }
+  ],
+  "options": [
+   "夜はパソコンを使わないほうがいい",
+   "家で働くときは、仕事の時間を自分で決めたほうがいい",
+   "会社に行ったほうが仕事がはかどる",
+   "家で働くと、家族との時間が増える"
+  ],
+  "answer": 1,
+  "en": "A man on the radio: Recently more people work from home instead of going to the office. Many say that without the commute they can spend that time with their families. However, at home it becomes hard to separate work from the rest of your time. Quite a few people find they've had the computer open until late at night. So what matters is deciding for yourself when you start and finish work. When it's time to finish, close the computer and move to another room. That alone makes a big difference.",
+  "why": "The point comes after そこで大切なのは: decide when work starts and ends.",
+  "opts_en": [
+   "Don't use a computer at night",
+   "When working from home, set your own work hours",
+   "Going to the office is more productive",
+   "Working from home gives more family time"
+  ],
+  "wrong": {
+   "0": "Closing the computer is an example of keeping work hours, not a rule about night.",
+   "2": "He never says the office is better.",
+   "3": "More family time is a benefit he mentions, not his point."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl112",
+  "intro": "テレビで女の人が話しています。",
+  "question": "女の人は何について話していますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "みなさんは、料理をするとき、野菜の皮をどうしていますか。"
+   },
+   {
+    "s": "F",
+    "t": "多くの人は捨ててしまうと思います。"
+   },
+   {
+    "s": "F",
+    "t": "でも、にんじんやだいこんの皮には、実は栄養がたくさんあるんです。"
+   },
+   {
+    "s": "F",
+    "t": "よく洗えば、皮をむかずにそのまま使えますし、むいた皮も、スープに入れたり、細かく切っていためたりすると、おいしく食べられます。"
+   },
+   {
+    "s": "F",
+    "t": "ごみも減りますし、一度ためしてみてはいかがでしょうか。"
+   }
+  ],
+  "options": [
+   "野菜の正しい洗い方",
+   "ごみの出し方",
+   "スープの作り方",
+   "野菜の皮を料理に使うこと"
+  ],
+  "answer": 3,
+  "en": "A woman on TV: When you cook, what do you do with vegetable peel? Most people probably throw it away. But carrot and daikon peel actually has lots of nutrients. If you wash them well, you can use them without peeling, and peel you've removed can be tasty in soup or chopped finely and stir-fried. It also cuts down on garbage, so why not try it once?",
+  "why": "The whole talk: peel has nutrients, use it as is, or put it in soup or stir-fry it.",
+  "opts_en": [
+   "How to wash vegetables properly",
+   "How to put out the trash",
+   "How to make soup",
+   "Using vegetable peel in cooking"
+  ],
+  "wrong": {
+   "0": "Washing is mentioned only as a step.",
+   "1": "Less trash is a side benefit.",
+   "2": "Soup is one example of using peel."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl113",
+  "intro": "大学で先生が学生に話しています。",
+  "question": "先生は何について話していますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "来週から、図書館の使い方が少し変わります。"
+   },
+   {
+    "s": "M",
+    "t": "これまでは、本を借りるとき、カウンターで学生証を見せていましたね。"
+   },
+   {
+    "s": "M",
+    "t": "来週からは、入口の機械に学生証を当てて、自分で手続きをすることになります。"
+   },
+   {
+    "s": "M",
+    "t": "カウンターは、本の質問や相談だけを受けつけるようになります。"
+   },
+   {
+    "s": "M",
+    "t": "機械の使い方がわからない人のために、月曜日と火曜日は、図書館の人が入口で説明してくれますので、安心してください。"
+   }
+  ],
+  "options": [
+   "学生証の作り方",
+   "本の借り方が変わること",
+   "本についての相談の仕方",
+   "図書館の開く時間が変わること"
+  ],
+  "answer": 1,
+  "en": "A professor to students: From next week, how you use the library will change a little. Until now, when borrowing books, you showed your student ID at the counter. From next week, you'll touch your student ID to the machine at the entrance and do the procedure yourself. The counter will only handle questions and consultations about books. For those who don't know how to use the machine, library staff will explain at the entrance on Monday and Tuesday, so don't worry.",
+  "why": "The main news: from next week you check books out yourself at the entrance machine instead of the counter.",
+  "opts_en": [
+   "How to make a student ID",
+   "A change in how to borrow books",
+   "How to ask about books",
+   "A change in library opening hours"
+  ],
+  "wrong": {
+   "0": "The student ID is only used with the machine.",
+   "2": "Questions at the counter are a detail of the change.",
+   "3": "Opening hours aren't mentioned."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl114",
+  "intro": "会社の会議で女の人が話しています。",
+  "question": "女の人は何について話していますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "先月から始めた、会議の時間を三十分までにするというルールについてです。"
+   },
+   {
+    "s": "F",
+    "t": "アンケートでは、会議が短くなって仕事に集中できるようになった、という意見が多くありました。"
+   },
+   {
+    "s": "F",
+    "t": "一方で、三十分では話し合いが終わらず、結局もう一度会議を開くことになった、という声もありました。"
+   },
+   {
+    "s": "F",
+    "t": "そこで、来月からは、会議の前に資料を必ず配っておくことにします。"
+   },
+   {
+    "s": "F",
+    "t": "みなさんが事前に読んでおけば、三十分でも十分話し合えると思います。"
+   }
+  ],
+  "options": [
+   "会議をやめる理由",
+   "短い会議を続けるための新しいやり方",
+   "会議の時間を長くすること",
+   "アンケートの取り方"
+  ],
+  "answer": 1,
+  "en": "A woman at a company meeting: This is about the rule we started last month of keeping meetings to thirty minutes. In the survey, many said meetings got shorter and they could concentrate on their work. On the other hand, some said thirty minutes wasn't enough to finish the discussion, so they ended up holding another meeting. So from next month, we'll always hand out the materials before the meeting. If everyone reads them in advance, I think thirty minutes will be enough to discuss things.",
+  "why": "Problems with the 30-minute rule are solved by handing out materials beforehand, so the short meetings continue.",
+  "opts_en": [
+   "Why meetings are being stopped",
+   "A new way to keep meetings short",
+   "Making meetings longer",
+   "How to run a survey"
+  ],
+  "wrong": {
+   "0": "Meetings continue; nothing is stopped.",
+   "2": "She keeps 30 minutes (三十分でも十分).",
+   "3": "The survey is just the source of opinions."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl115",
+  "intro": "ラジオで男の人が話しています。",
+  "question": "男の人は、今、何のために歩いていますか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "私は毎朝、近くの公園を三十分ほど歩いています。"
+   },
+   {
+    "s": "M",
+    "t": "始めたきっかけは、医者に運動不足だと言われたことでした。"
+   },
+   {
+    "s": "M",
+    "t": "最初は、正直に言うと、つまらなくてやめたいと思っていました。"
+   },
+   {
+    "s": "M",
+    "t": "でも、毎日歩いていると、季節によって花や木が変わっていくのがわかるんです。"
+   },
+   {
+    "s": "M",
+    "t": "同じ時間に歩いている人とあいさつをするようになって、友だちもできました。"
+   },
+   {
+    "s": "M",
+    "t": "今では、健康のためというより、それが楽しみで歩いています。"
+   }
+  ],
+  "options": [
+   "歩くこと自体が楽しいから",
+   "友だちと約束しているから",
+   "やせたいから",
+   "医者に言われたから"
+  ],
+  "answer": 0,
+  "en": "A man on the radio: Every morning I walk for about thirty minutes in a nearby park. It started when a doctor told me I wasn't getting enough exercise. At first, honestly, it was boring and I wanted to quit. But walking every day, you notice the flowers and trees changing with the seasons. I started greeting people who walk at the same time, and I made friends too. Now I walk less for my health than because I enjoy it.",
+  "why": "Last line: now it's less for health than because he enjoys it (それが楽しみで歩いています): seasons, greetings, friends.",
+  "opts_en": [
+   "Because walking itself has become enjoyable",
+   "Because he promised friends",
+   "To lose weight",
+   "Because his doctor told him to"
+  ],
+  "wrong": {
+   "1": "He made friends, but there's no promise.",
+   "2": "Losing weight is never mentioned.",
+   "3": "The doctor was why he STARTED (きっかけ), not why he walks now."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl116",
+  "intro": "店で店員が客に話しています。",
+  "question": "店員は何について話していますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "ご来店ありがとうございます。"
+   },
+   {
+    "s": "F",
+    "t": "当店では、本日から、レジ袋を有料にさせていただくことになりました。"
+   },
+   {
+    "s": "F",
+    "t": "一枚五円となっております。"
+   },
+   {
+    "s": "F",
+    "t": "お買い物袋をお持ちでないお客様には、入口で、紙の袋を無料でお配りしておりますので、どうぞご利用ください。"
+   },
+   {
+    "s": "F",
+    "t": "なお、こちらは今月末までとなっておりますので、ご了承ください。"
+   }
+  ],
+  "options": [
+   "月末のセール",
+   "レジ袋が有料になったこと",
+   "入口の場所",
+   "店の営業時間"
+  ],
+  "answer": 1,
+  "en": "A store clerk to customers: Thank you for visiting. From today, our checkout bags are no longer free. They are 5 yen each. For customers without a shopping bag, we are handing out paper bags free of charge at the entrance, so please use them. Note that this runs until the end of the month. Thank you for your understanding.",
+  "why": "The announcement: from today checkout bags cost 5 yen each, with free paper bags at the entrance until month end.",
+  "opts_en": [
+   "A month-end sale",
+   "Plastic bags now cost money",
+   "Where the entrance is",
+   "The store's opening hours"
+  ],
+  "wrong": {
+   "0": "Month end is when the free paper bags stop, not a sale.",
+   "2": "The entrance is just where the paper bags are.",
+   "3": "Hours aren't mentioned."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl117",
+  "intro": "テレビで男の人が話しています。",
+  "question": "男の人が一番言いたいことは何ですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "日本では、一年間に、まだ食べられるのに捨てられる食べ物が、たくさんあります。"
+   },
+   {
+    "s": "M",
+    "t": "その半分ぐらいは、実は家庭から出ているんです。"
+   },
+   {
+    "s": "M",
+    "t": "買いすぎて、使い切れなかった野菜や、賞味期限が過ぎてしまった食品などです。"
+   },
+   {
+    "s": "M",
+    "t": "ですから、買い物に行く前に、冷蔵庫の中を確認すること、そして必要な分だけ買うこと。"
+   },
+   {
+    "s": "M",
+    "t": "こうした小さなことが、大きな違いになるんです。"
+   }
+  ],
+  "options": [
+   "家庭で食べ物をむだにしないように気をつけるべきだ",
+   "野菜は毎日買ったほうがいい",
+   "冷蔵庫は大きいほうがいい",
+   "賞味期限が過ぎた食品も食べられる"
+  ],
+  "answer": 0,
+  "en": "A man on TV: In Japan, a lot of food that could still be eaten is thrown away every year. About half of it actually comes from households: vegetables bought in excess and not used up, food past its best-before date, and so on. So before going shopping, check inside the fridge, and buy only what you need. Small things like these make a big difference.",
+  "why": "Half of wasted food comes from homes, so check the fridge and buy only what you need.",
+  "opts_en": [
+   "Households should take care not to waste food",
+   "Buy vegetables every day",
+   "A big fridge is better",
+   "Food past its date can still be eaten"
+  ],
+  "wrong": {
+   "1": "Buying daily isn't the advice; buy only what's needed.",
+   "2": "Fridge size isn't mentioned; checking it is.",
+   "3": "He never says expired food is fine to eat."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl118",
+  "intro": "学校で先生が学生に話しています。",
+  "question": "先生は何について話していますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "来週の遠足について、お知らせです。"
+   },
+   {
+    "s": "F",
+    "t": "予定では、山に登ることになっていましたが、天気予報によると、当日は大雨になりそうです。"
+   },
+   {
+    "s": "F",
+    "t": "そこで、行き先を、山から市の科学博物館に変えることにしました。"
+   },
+   {
+    "s": "F",
+    "t": "集合時間と場所は変わりません。朝八時半に学校の正門です。"
+   },
+   {
+    "s": "F",
+    "t": "ただ、博物館の中で食事はできないので、お弁当ではなく、お昼は博物館のレストランで食べます。"
+   },
+   {
+    "s": "F",
+    "t": "お金を少し持ってきてください。"
+   }
+  ],
+  "options": [
+   "集合場所が変わったこと",
+   "遠足の予定が変わったこと",
+   "天気予報の見方",
+   "博物館のレストラン"
+  ],
+  "answer": 1,
+  "en": "A teacher to students: An announcement about next week's school trip. We had planned to climb a mountain, but the forecast says it'll probably pour that day. So we've decided to change the destination from the mountain to the city science museum. The meeting time and place stay the same: 8:30 a.m. at the school's main gate. However, you can't eat inside the museum, so instead of a packed lunch, we'll eat lunch at the museum restaurant. Please bring a little money.",
+  "why": "Heavy rain is expected, so the trip goes to the science museum instead of the mountain; lunch at the museum restaurant.",
+  "opts_en": [
+   "A change of meeting place",
+   "A change to the school trip plan",
+   "How to read the weather forecast",
+   "The museum restaurant"
+  ],
+  "wrong": {
+   "0": "She says the time and place DON'T change.",
+   "2": "The forecast is just the reason.",
+   "3": "The restaurant is one detail of the change."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl119",
+  "intro": "ラジオで女の人が話しています。",
+  "question": "女の人は何について話していますか。",
+  "turns": [
+   {
+    "s": "F",
+    "t": "皆さんは、寝る前にスマートフォンを見ていませんか。"
+   },
+   {
+    "s": "F",
+    "t": "スマートフォンの画面の光は、目だけでなく、頭も起こしてしまうと言われています。"
+   },
+   {
+    "s": "F",
+    "t": "そのため、寝ようと思っても、なかなか眠れなくなるのです。"
+   },
+   {
+    "s": "F",
+    "t": "でも、急にやめるのは難しいですよね。"
+   },
+   {
+    "s": "F",
+    "t": "そこでおすすめしたいのが、寝る三十分前になったら、スマートフォンを寝室の外に置くことです。"
+   },
+   {
+    "s": "F",
+    "t": "手の届かないところにあれば、自然と見なくなりますよ。"
+   }
+  ],
+  "options": [
+   "目の病気の治し方",
+   "寝室の作り方",
+   "よく眠るためのスマートフォンの使い方",
+   "スマートフォンの新しい機能"
+  ],
+  "answer": 2,
+  "en": "A woman on the radio: Do you look at your smartphone before bed? It's said the light from the screen wakes up not only your eyes but your brain too. That's why, even when you try to sleep, you can't fall asleep easily. But it's hard to stop suddenly, isn't it? So what I recommend is putting your smartphone outside the bedroom thirty minutes before bed. If it's out of reach, you'll naturally stop looking at it.",
+  "why": "Screen light keeps you awake, so put the phone outside the bedroom 30 minutes before sleeping.",
+  "opts_en": [
+   "How to cure an eye disease",
+   "How to set up a bedroom",
+   "How to use your smartphone so you sleep well",
+   "A new smartphone feature"
+  ],
+  "wrong": {
+   "0": "Eyes are mentioned only as affected by the light.",
+   "1": "The bedroom is just where not to keep the phone.",
+   "3": "No new feature is mentioned."
+  },
+  "hard": true,
+  "gist": true
+ },
+ {
+  "id": "dl120",
+  "intro": "会社で男の人が新しい社員に話しています。",
+  "question": "男の人が一番伝えたいことは何ですか。",
+  "turns": [
+   {
+    "s": "M",
+    "t": "この会社では、毎朝九時から、部のミーティングをしています。"
+   },
+   {
+    "s": "M",
+    "t": "ミーティングといっても、十分ぐらいで、その日の予定を一人ずつ簡単に話すだけです。"
+   },
+   {
+    "s": "M",
+    "t": "はじめは何を言えばいいかわからないと思いますが、心配しなくて大丈夫です。"
+   },
+   {
+    "s": "M",
+    "t": "大事なのは、困っていることがあったら、そこで言うことです。"
+   },
+   {
+    "s": "M",
+    "t": "一人で悩まないで、みんなに相談してください。そのためのミーティングですから。"
+   }
+  ],
+  "options": [
+   "ミーティングは毎朝九時に始まる",
+   "困ったことはミーティングで相談してほしい",
+   "予定は前の日に決めておいてほしい",
+   "ミーティングは十分で終わる"
+  ],
+  "answer": 1,
+  "en": "A man to new employees: At this company, we hold a department meeting every morning from nine. It's only about ten minutes, and each person briefly says their plans for the day. At first you may not know what to say, but don't worry. What matters is that if something is troubling you, you say it there. Don't struggle alone; consult everyone. That's what the meeting is for.",
+  "why": "大事なのは: raise any trouble at the meeting; that's what it's for (そのためのミーティング).",
+  "opts_en": [
+   "The meeting starts at 9 every morning",
+   "Bring any problems to the meeting for advice",
+   "Decide your plans the day before",
+   "The meeting ends in ten minutes"
+  ],
+  "wrong": {
+   "0": "The 9 o'clock start is a detail.",
+   "2": "Planning the day before isn't mentioned.",
+   "3": "Ten minutes is a detail."
+  },
+  "hard": true,
+  "gist": true
  }
 ]
