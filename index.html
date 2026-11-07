@@ -168,6 +168,7 @@ button.chip { background: none; font: inherit; font-size: 12px; cursor: pointer;
 .part-of { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
 .part-of .chip { color: var(--ink); }
 .story .snd { font-weight: 700; color: var(--hard); }
+.story .kun { font-weight: 700; color: var(--good); }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 12px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 .section-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
@@ -1060,7 +1061,8 @@ function storyHtml(s) {
   return esc(s)
     .replace(/\{([^}]+)\}/g, '<span class="kw">$1</span>')
     .replace(/\[([^\]]+)\]/g, '<button class="prim" data-part="$1">$1</button>')
-    .replace(/~([^~]+)~/g, '<span class="snd">$1</span>');
+    .replace(/~([^~]+)~/g, '<span class="snd">$1</span>')
+    .replace(/\^([^^]+)\^/g, '<span class="kun">$1</span>');   // the Japanese reading's sound-alike
 }
 // A word's memory hook names its kanji by their keywords ("a clockwork mechanism" in 機会): those words become
 // links to the kanji cards, first mention of each kanji. Forms count too (study → studies, person → people), and so
@@ -1616,7 +1618,11 @@ function lengthNote(it) {
   return `<div class="wrongs"><div class="picked"><b lang="ja">${esc(picked)}</b>${longPicked ? 'adds a long vowel' : 'drops a long vowel'}: it's <span lang="ja">${esc(right)}</span>.</div>${rows}</div>`;
 }
 // A word read with the kanji's Japanese reading: the kanji alone or followed by kana (加える, 箱, 新しい).
-const kunWord = (ch, w) => w[0] === ch && /^[ぁ-ゖ]*$/.test(w.slice(1));
+const kunWord = (ch, w, r) => {
+  if (w[0] !== ch || !/^[ぁ-ゖ]*$/.test(w.slice(1))) return false;
+  const stem = kata2hira(r || (BY_WORD[w] || {}).r || '').slice(0, r ? r.length - (w.length - 1) : undefined);
+  return !(BY_KANJI[ch]?.on || []).some(o => kata2hira(o).replace(/[.-]/g, '') === stem);   // 二 に is the on reading
+};
 function backHtml(k, mode) {
   const sound = (k.sound || []).filter(x => x.hook);
   // Learning a new card: picture and story lead. Checking an answer: readings and words lead, so you can grade fast.
@@ -1628,8 +1634,8 @@ function backHtml(k, mode) {
       <div class="vocab-row"><span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span><span class="m">${esc(v.m)}${BY_WORD[v.w] && appData.cards['v:' + v.w] ? ` <button class="chip word-link" data-v="${esc(v.w)}">your word card ›</button>` : ''}</span></div>`).join('')}</div></div>` : '';
   // The Japanese (kun) reading, with a hook for its sound ("ks", data/kun_sounds.json) or else the memory hook of its word card (加える くわえる: a ~Koala~-shaped cookie…):
   // the card's own words first, else the most useful other word written with this kanji plus kana.
-  const own = (k.vocab || []).map(v => BY_WORD[v.w]).filter(v => v && v.mn && kunWord(k.kanji, v.w));
-  const kun = own.length ? own : VOCAB.filter(v => v.mn && kunWord(k.kanji, v.w)).sort((a, b) => (a.p || 9999) - (b.p || 9999)).slice(0, 1);
+  const own = (k.vocab || []).map(v => BY_WORD[v.w]).filter(v => v && v.mn && kunWord(k.kanji, v.w, v.r));
+  const kun = own.length ? own : VOCAB.filter(v => v.mn && kunWord(k.kanji, v.w, v.r)).sort((a, b) => (a.p || 9999) - (b.p || 9999)).slice(0, 1);
   const kunH = kun.length ? `<div class="sound"><div class="section-label">Kun reading</div>${kun.map(v =>
       `<div class="sound-row"><span class="r" lang="ja">${esc(v.r)}</span><span><span lang="ja">${esc(v.w)}</span> ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)} · ${hookHtml(v.ks || v.mn, v.w).html}</span></div>`).join('')}</div>` : '';
   const body = mode === 'quiz' ? vocabH + soundH + kunH + story + img : img + story + soundH + kunH + vocabH;

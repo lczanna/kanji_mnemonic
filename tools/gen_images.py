@@ -200,8 +200,9 @@ def depict(text):
 
 
 def plain(story):
-    """Story without the app's markup ({keyword}, [part], ~hook~)."""
-    for a in '{}[]~':
+    """Story without the app's markup ({keyword}, [part], ~hook~, ^kun hook^) or kana readings in brackets."""
+    story = re.sub(r'\s*\([ぁ-ゖ]+\)', '', story)
+    for a in '{}[]~^':
         story = story.replace(a, '')
     return story
 
