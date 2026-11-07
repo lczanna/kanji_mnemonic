@@ -252,6 +252,22 @@ await test('exam conditions: no tap meanings until answered, long texts come up 
   eq(r.after, true, 'taps after answering'); eq(r.firstKinds, 'short medium long info', 'kinds in turn'); eq(r.def, false, 'off by default');
 });
 
+await test('underlined phrases ①②③ in reading texts: underlined with and without tap meanings, the number itself not', async () => {
+  const p = await page({ cloud: false });
+  const r = await p.evaluate(() => {
+    const x = EXAM.read.find(r => r.under && r.under.length === 3);
+    const d = document.createElement('div');
+    d.innerHTML = passageHtml(x.text, x.under);
+    const tapped = [...d.querySelectorAll('.ul')].map(e => e.textContent).join('');
+    d.innerHTML = x.text.split('\n').map(l => underHtml(l, underRanges(l, x.under))).join('');
+    const plain = [...d.querySelectorAll('.ul')].map(e => e.textContent).join('');
+    const want = x.under.join('');
+    return { tapped: tapped.replace(/[\u3040-\u309f]*(?=)/g, '') && tapped.includes(x.under[0].slice(-2)), plainOk: plain === want, circled: /[①②③]/.test(tapped + plain), first: EXAM.read.filter(r => r.kind === 'medium').length && mixKinds(hardFirst(EXAM.read)).find(r => r.kind === 'medium').hard };
+  });
+  yes(r.tapped, 'underlined with tap meanings'); yes(r.plainOk, 'underlined without tap meanings');
+  eq(r.circled, false, 'the circled number is not underlined'); eq(r.first, true, 'the exam-style texts come first');
+});
+
 await test('"I mix these up" on a look-alike makes a pair card and leaves both kanji cards untouched', async () => {
   const p = await page({ cloud: false });
   await p.waitForFunction(() => LOOK.length && groupsOf('以').length);
