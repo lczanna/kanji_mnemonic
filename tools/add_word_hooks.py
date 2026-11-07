@@ -25,6 +25,14 @@ def main():
             v['mn'] = hooks[v['w']]; n += 1
         else:
             v.pop('mn', None)
+    # Sound hooks for the Japanese reading, where the word's own hook has none (shown on the kanji card).
+    ks = json.loads((ROOT / 'data' / 'kun_sounds.json').read_text(encoding='utf8'))
+    assert all(w in words for w in ks if not w.startswith('_')), 'kun sound hooks for words not in the deck'
+    for v in vocab:
+        if v['w'] in ks:
+            v['ks'] = ks[v['w']]
+        else:
+            v.pop('ks', None)
     twins = json.loads((ROOT / 'data' / 'word_twins.json').read_text(encoding='utf8')) if (ROOT / 'data' / 'word_twins.json').exists() else {}
     assert all(w in words and all(o in words for o in t['other'].split('・')) for w, t in twins.items()), 'twins for words not in the deck'
     for v in vocab:
