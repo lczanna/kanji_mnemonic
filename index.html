@@ -1375,7 +1375,9 @@ function showGloss(btn) {
   const [w, r, lemma, lr, m] = JSON.parse(btn.dataset.gl);
   const pop = $('gl-pop');
   // Words written in kana need no reading line; their dictionary form shows only when it differs.
-  pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} ${r !== w ? `<span>${esc(r)}</span>` : ''} ${sayBtn(sayText(w, r), 'Play ' + w)}</div>
+  // A verb cut before て/た ends on a small っ (居直っ, 行っ), which no voice can say: play its dictionary form instead.
+  const say = /っ$/.test(w) && lemma && lemma !== w ? sayText(lemma, lr || lemma) : sayText(w, r);
+  pop.innerHTML = `<div class="gl-word" lang="ja">${esc(w)} ${r !== w ? `<span>${esc(r)}</span>` : ''} ${sayBtn(say, 'Play ' + (say === sayText(w, r) ? w : lemma))}</div>
     ${lemma !== w ? `<div class="gl-lemma" lang="ja">dictionary form: ${esc(lemma)}${lr && lr !== lemma ? `（${esc(lr)}）` : ''}</div>` : ''}
     <div class="gl-m">${esc(m || 'name or rare word')}${wordLink(BY_WORD[lemma] ? lemma : w)}</div>
     ${(() => { const word = BY_WORD[lemma] ? lemma : w, ks = [...new Set([...word].filter(ch => BY_KANJI[ch]))];
