@@ -1084,5 +1084,14 @@
   ],
   "story": "A soup {ladle} seen from the side: its long handle hooks round and [bound up] into a deep bowl, and inside sits one [drop] of soup, the last one, that it scooped up.",
   "picture": "A big shiny soup ladle seen from the side, its long handle curving down and around into a deep round bowl, with a single fat drop of golden soup sitting inside the bowl, steam rising; plain kitchen background."
+ },
+ "𡗗": {
+  "keyword": "bonsai",
+  "components": [
+   "three",
+   "person"
+  ],
+  "story": "A tiny {bonsai}: [three] flat tiers of branches stacked on top, and below them the trunk splits into two legs like a little [person], so the tree can tiptoe across the windowsill to follow the sun.",
+  "picture": "A small bonsai tree in a shallow pot on a sunny windowsill: its branches spread in three flat horizontal layers stacked one above another, and its trunk splits at the bottom into two little legs like a walking person, tiptoeing toward the sunlight."
  }
 }
