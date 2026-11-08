@@ -213,7 +213,9 @@ def prompt(card):
     return (f"{STYLE}\n\nScene: {depict(plain(card['story']))}\n"
             f"The idea to convey is '{card['keyword']}'." + (f" Make sure {cast} is clearly visible doing what the scene says." if cast else '')
             # The sound-alike for the Japanese reading (^Koala^) must be in the picture too: it is the reading's hook.
-            + ''.join(f" The {depict(t)} must be clearly visible in the scene, doing what the story says." for t in re.findall(r'\^([^^]+)\^', card['story'])))
+            + ''.join(f" The {depict(t)} must be big, in the foreground and instantly recognisable as its own thing (never tiny, hidden or"
+                      f" merged into someone else), doing what the story says: the second thing the eye lands on."
+                      for t in re.findall(r'\^([^^]+)\^', card['story'])))
 
 
 def word_prompt(v):
