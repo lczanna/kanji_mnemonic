@@ -676,10 +676,10 @@
   "components": [
    "house",
    "one",
-   "wherefore",
+   "reason",
    "eight"
   ],
-  "story": "Under the circus [house] roof, [one] ringmaster asks '[wherefore]?' as a tiger bounds through [eight] flaming hoops: the {sign of the tiger} blazes overhead.",
+  "story": "Under the circus [house] roof, [one] ringmaster demands the [reason] as a tiger bounds through [eight] flaming hoops: the {sign of the tiger} blazes overhead.",
   "picture": "A circus tent interior where a tiger leaps through a series of flaming hoops while a ringmaster watches."
  },
  "敬": {
@@ -811,10 +811,10 @@
   "keyword": "yellow",
   "components": [
    "salad",
-   "wherefore",
+   "reason",
    "eight"
   ],
-  "story": "A [salad] spills over a box stamped '[wherefore]?' that rolls on [eight] little legs: a bright {yellow} taxi delivering lunch.",
+  "story": "A [salad] spills over a box labelled with the [reason] for the delivery, rolling on [eight] little legs: a bright {yellow} taxi delivering lunch.",
   "picture": "A bright yellow taxi carrying a huge salad bowl on its roof."
  },
  "甫": {

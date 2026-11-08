@@ -1071,7 +1071,8 @@ const IRREG = { person: 'people', child: 'children', man: 'men', woman: 'women',
   leaf: 'leaves', write: 'wrote|written', take: 'took|taken', see: 'saw|seen', make: 'made', bring: 'brought', draw: 'drew|drawn',
   grow: 'grew|grown', send: 'sent', lie: 'lay|lies|lying', song: 'sing|sings|singing|sang', go: 'went|gone' };
 // Keywords written short or as a prefix, and the words a story uses for them.
-const KW_SAY = { 'inst.': 'institute|institution|hospital', 'bldg.': 'building', 'esq.': 'esq|gentleman|sama', 'road-way': 'road|way', 'year-end': 'year-end|year end' };
+const KW_SAY = { 'inst.': 'institute|institution|hospital', 'bldg.': 'building', 'esq.': 'esq|gentleman|sama', 'road-way': 'road|way', 'year-end': 'year-end|year end',
+  'mr./ms.': 'mister|madam|sama', 'be aware': 'aware', 'humbly say': 'humbly say|humbly says|humbly said|humbly saying' };
 // The forms of one English word a story may use: studies, deliberates (deliberation), diligently (diligence), wrote (write)…
 function wordForms(k) {
   const f = new Set(), add = (...xs) => xs.forEach(x => x.length >= 3 && f.add(x));

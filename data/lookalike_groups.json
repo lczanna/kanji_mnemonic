@@ -131,11 +131,11 @@
    "木": "tree: one crossbar, a trunk and two branches, nothing else",
    "本": "book: tree with a short bar across the base of the trunk, like a book's spine",
    "未": "not yet: an extra line above the crossbar, the top one SHORTER: the tree is not yet grown",
-   "末": "extremity: an extra line above the crossbar, the top one LONGER: reaching to the very tip"
+   "末": "tip: an extra line above the crossbar, the top one LONGER: reaching to the very tip"
   },
-  "scene": "A plain tree stands beside a book wedged across its trunk's base; a not yet grown sapling has a short top branch, while an extremity tree spreads its longest branch at the very top.",
+  "scene": "A plain tree stands beside a book wedged across its trunk's base; a not yet grown sapling has a short top branch, while a tall tree's longest branch reaches the very tip.",
   "img": "images/lookalikes/g003.jpg",
-  "contrast": "Tree is bare · book gets a bar at the roots · not-yet has a short top branch · extremity a long top branch",
+  "contrast": "Tree is bare · book gets a bar at the roots · not-yet has a short top branch · tip a long top branch",
   "mn": {
    "木": {
     "feature": "A bare tree: one crossbar, trunk and two roots, no extra bar anywhere.",
@@ -171,7 +171,7 @@
     "strokes": [
      0
     ],
-    "hook": "At the world's EXTREMITY the top branch stretches longest; the Matador teeters on its tip.",
+    "hook": "At the world's TIP the top branch stretches longest; the Matador teeters on its tip.",
     "picture": "A tree whose topmost branch stretches far wider than all others into a starry void, a matador balancing on its very tip.",
     "img": "images/lookalikes/g003_672b.jpg"
    }
@@ -345,12 +345,12 @@
   ],
   "tips": {
    "田": "rice field: a box split by a cross; nothing sticks out",
-   "由": "wherefore: the stem pokes out of the top only",
-   "申": "speaketh: the stem pokes out of both the top and the bottom"
+   "由": "reason: the stem pokes out of the top only",
+   "申": "humbly say: the stem pokes out of both the top and the bottom"
   },
-  "scene": "A square rice field lies flat, a wherefore sprout pokes up out of its top edge like a question, and a speaketh staff pierces straight through it top and bottom.",
+  "scene": "A square rice field lies flat, a sprout pokes up out of its top edge like a question asking the reason, and a priest's microphone staff, into which he humbly says his prayers, pierces straight through it top and bottom.",
   "img": "images/lookalikes/g008.jpg",
-  "contrast": "Rice field keeps everything inside · wherefore pokes out the top · speaketh is skewered top and bottom",
+  "contrast": "Rice field keeps everything inside · reason pokes out the top · humbly say is skewered top and bottom like a microphone stand",
   "mn": {
    "田": {
     "feature": "A box split by a cross; nothing sticks out anywhere.",
@@ -366,7 +366,7 @@
     "strokes": [
      2
     ],
-    "hook": "The Unicorn's horn bursts out of the top of the field; the farmer screams 'WHEREFORE?!'",
+    "hook": "The Unicorn's horn bursts out of the top of the field; the farmer screams 'REASON?!'",
     "picture": "A rice field seen from above, divided into four squares, with one green sprout pushing up out of the top edge like a little stalk.",
     "img": "images/lookalikes/g008_7531.jpg"
    },
@@ -376,7 +376,7 @@
     "strokes": [
      4
     ],
-    "hook": "The Shinto priest skewers the box clean through, top to bottom, and SPEAKETH into it.",
+    "hook": "The Shinto priest skewers the box clean through, top to bottom, and HUMBLY SAYS his prayer into it.",
     "picture": "A Shinto priest holding a staff skewered straight through a box from top to bottom, speaking into it like a microphone.",
     "img": "images/lookalikes/g008_7533.jpg"
    }
@@ -806,12 +806,12 @@
    "験"
   ],
   "tips": {
-   "険": "precipitous: a pinnacle (阝) on the left of the pointed awl roof",
-   "験": "verification: a horse (馬) on the left of the pointed awl roof"
+   "険": "steep: a pinnacle (阝) on the left of the pointed awl roof",
+   "験": "exam: a horse (馬) on the left of the pointed awl roof"
   },
-  "scene": "A climber clings to a precipitous cliff beside a pointed tent, while at the next pointed tent a horse waits for verification at a checkpoint.",
+  "scene": "A climber clings to a steep cliff beside a pointed tent, while at the next pointed tent a horse waits for its drug exam at a checkpoint.",
   "img": "images/lookalikes/g022.jpg",
-  "contrast": "Precipitous: a narrow pinnacle on the left · verification: a whole horse on the left",
+  "contrast": "Steep: a narrow pinnacle on the left · exam: a whole horse on the left",
   "mn": {
    "険": {
     "feature": "A pinnacle (阝: a small ear-shaped hook on a long stem) on the left.",
@@ -821,7 +821,7 @@
      1,
      2
     ],
-    "hook": "Ken doll clings to a skinny hooked pinnacle on the left: one slip on this PRECIPITOUS cliff.",
+    "hook": "Ken doll clings to a skinny hooked pinnacle on the left: one slip on this STEEP cliff.",
     "picture": "A thin hooked rock spire on a sheer cliff, an awl jammed in it, a plastic doll dangling with a cracked smile.",
     "img": "images/lookalikes/g022_967a.jpg"
    },
@@ -840,7 +840,7 @@
      8,
      9
     ],
-    "hook": "A whole horse stands on the left for drug VERIFICATION; the awl pops Ken doll's butt.",
+    "hook": "A whole horse stands on the left for its drug EXAM; the awl pops Ken doll's butt.",
     "picture": "A racehorse at a starting gate being jabbed with a giant awl by a judge, a plastic doll jockey bouncing off.",
     "img": "images/lookalikes/g022_9a13.jpg"
    }
@@ -1226,13 +1226,13 @@
    "題"
   ],
   "tips": {
-   "頂": "place on the head: a simple street hook (丁) on the left of head",
+   "頂": "humbly receive: a simple street hook (丁) on the left of head",
    "頭": "head: beans (豆) on the left of head",
    "題": "topic: just so (是) on the left, its long sweep running under head"
   },
-  "scene": "A porter learns to place on the head a T-shaped tray, a cook balances a bowl of beans on his head, and a speaker sweeps his arm low to introduce the topic.",
+  "scene": "A porter learns to humbly receive a T-shaped tray, a cook balances a bowl of beans on his head, and a speaker sweeps his arm low to introduce the topic.",
   "img": "images/lookalikes/g030.jpg",
-  "contrast": "Place on the head wears a T-shaped nail · head bonks a bean bowl · topic sweeps a long tail under the head",
+  "contrast": "Humbly receive wears a T-shaped nail · head bonks a bean bowl · topic sweeps a long tail under the head",
   "mn": {
    "頂": {
     "feature": "a simple T-shaped nail (two strokes) on the left",
@@ -1241,7 +1241,7 @@
      0,
      1
     ],
-    "hook": "PLACE ON THE HEAD: a lone T-shaped nail is the Chow Chow's crown — just a bar and a hook.",
+    "hook": "HUMBLY RECEIVE: a lone T-shaped nail is the Chow Chow's crown — just a bar and a hook.",
     "picture": "A fluffy chow chow dog on a mountain summit wearing a giant T-shaped iron nail balanced on its head like a crown.",
     "img": "images/lookalikes/g030_9802.jpg"
    },
@@ -1474,18 +1474,18 @@
    "任"
   ],
   "tips": {
-   "仕": "attend: person + soldier (士), no slash on top",
+   "仕": "serve: person + soldier (士), no slash on top",
    "任": "responsibility: person + porter (壬), a slanted stroke on top of the cross"
   },
-  "scene": "A soldier stands to attend a person, while a porter with a slanted pack on top shoulders the responsibility of a heavy pole.",
+  "scene": "A soldier stands to serve a person, while a porter with a slanted pack on top shoulders the responsibility of a heavy pole.",
   "img": "images/lookalikes/g035.jpg",
-  "contrast": "Attend serves a bare soldier · responsibility puts a slanted load on the porter's head",
+  "contrast": "Serve: a person beside a bare soldier · responsibility puts a slanted load on the porter's head",
   "mn": {
    "仕": {
     "feature": "no slanted stroke on top: a bare soldier cross",
     "label": "no hat",
     "strokes": [],
-    "hook": "ATTEND: the soldier stands bare-headed, nothing on top — Sheep licks his boots.",
+    "hook": "SERVE: the soldier stands bare-headed, nothing on top — Sheep licks his boots.",
     "picture": "A sheep licking the boots of a bare-headed soldier until they shine.",
     "img": "images/lookalikes/g035_4ed5.jpg"
    },
@@ -1857,11 +1857,11 @@
   ],
   "tips": {
    "職": "post: ear (耳) on the left of the sound fiesta",
-   "識": "discriminating: say (言) on the left of the sound fiesta"
+   "識": "knowledge: say (言) on the left of the sound fiesta"
   },
-  "scene": "At a noisy fiesta a discriminating critic speaks his verdict, while a guard at his post cups a huge ear to listen.",
+  "scene": "At a noisy fiesta a critic full of knowledge speaks his verdict, while a guard at his post cups a huge ear to listen.",
   "img": "images/lookalikes/g045.jpg",
-  "contrast": "Post presses an ear on the left · discriminating says words on the left",
+  "contrast": "Post presses an ear on the left · knowledge says words on the left",
   "mn": {
    "職": {
     "feature": "an ear (ladder frame) on the left",
@@ -1890,7 +1890,7 @@
      5,
      6
     ],
-    "hook": "DISCRIMINATING: a talking mouth on the left — the Sheikh says which drum is fake.",
+    "hook": "KNOWLEDGE: a talking mouth on the left — the Sheikh says which drum is fake.",
     "picture": "A sheikh on horseback pointing at one drum in a loud festival, a big talking mouth beside him.",
     "img": "images/lookalikes/g045_8b58.jpg"
    }
@@ -2079,12 +2079,12 @@
    "登"
   ],
   "tips": {
-   "発": "discharge: teepee over two lines and open human legs",
+   "発": "launch: teepee over two lines and open human legs",
    "登": "ascend: teepee over beans (豆), a closed box on a stand"
   },
-  "scene": "From one teepee a cannon on two legs makes a discharge of confetti, and from another a climber with a bowl of beans begins to ascend.",
+  "scene": "From one teepee a cannon on two legs makes a launch of confetti, and from another a climber with a bowl of beans begins to ascend.",
   "img": "images/lookalikes/g053.jpg",
-  "contrast": "Discharge rides on human legs · ascend lifts on a bean bowl",
+  "contrast": "Launch rides on human legs · ascend lifts on a bean bowl",
   "mn": {
    "発": {
     "feature": "human legs (two sweeping strokes) at the bottom",
@@ -2093,7 +2093,7 @@
      7,
      8
     ],
-    "hook": "DISCHARGE: the cannons stand on two sweeping legs — BOOM, Mad Hatter's hat flies.",
+    "hook": "LAUNCH: the cannons stand on two sweeping legs — BOOM, Mad Hatter's hat flies.",
     "picture": "Two cannons on long sweeping legs firing under a teepee, a top hat blasting into the sky.",
     "img": "images/lookalikes/g053_767a.jpg"
    },
@@ -2564,11 +2564,11 @@
   ],
   "tips": {
    "権": "authority: tree (木) on the left of the horned turkey",
-   "観": "outlook: horned turkey on the left, see (見) on the right"
+   "観": "view: horned turkey on the left, see (見) on the right"
   },
-  "scene": "A horned turkey stands with authority by a tree, while another horned turkey peers through binoculars to see the outlook.",
+  "scene": "A horned turkey stands with authority by a tree, while another horned turkey peers through binoculars to see the view.",
   "img": "images/lookalikes/g065.jpg",
-  "contrast": "Authority puts a tree on the left of the turkey · outlook puts see (見) on the right",
+  "contrast": "Authority puts a tree on the left of the turkey · view puts see (見) on the right",
   "mn": {
    "権": {
     "feature": "Tree (木) on the left; the turkey sits on the right.",
@@ -2595,7 +2595,7 @@
      16,
      17
     ],
-    "hook": "OUTLOOK: on the right a giant eye on legs stares out at the view.",
+    "hook": "VIEW: on the right a giant eye on legs stares out at the view.",
     "picture": "A kangaroo on a cliff top with turkeys peeking from her pouch, a giant eyeball on legs beside them staring at the vast view.",
     "img": "images/lookalikes/g065_89b3.jpg"
    }
@@ -2707,11 +2707,11 @@
   ],
   "tips": {
    "在": "exist: soil (土) under the crossed hand",
-   "存": "suppose: child (子) under the crossed hand"
+   "存": "be aware: child (子) under the crossed hand"
   },
-  "scene": "A sprout pushes up from the soil to exist under a sheltering hand, and a child under another hand stops to suppose what comes next.",
+  "scene": "A sprout pushes up from the soil to exist under a sheltering hand, and a child under another hand stops, aware of what comes next.",
   "img": "images/lookalikes/g068.jpg",
-  "contrast": "Exist stabs into soil (土) · suppose holds a child (子)",
+  "contrast": "Exist stabs into soil (土) · be aware holds a child (子)",
   "mn": {
    "在": {
     "feature": "Soil (土) at the bottom right: a cross on a long floor line.",
@@ -2733,7 +2733,7 @@
      4,
      5
     ],
-    "hook": "SUPPOSE: a child tugs your side, asking if Sonic exists — 'I suppose.'",
+    "hook": "BE AWARE: a child tugs your side, asking if Sonic exists — 'I'm aware of him.'",
     "picture": "A small child tugging a muddy warrior's arm while a blue blur streaks past on the road.",
     "img": "images/lookalikes/g068_5b58.jpg"
    }
@@ -2747,11 +2747,11 @@
   ],
   "tips": {
    "深": "deep: water (氵) beside the deep hole",
-   "探": "grope: fingers (扌) beside the deep hole"
+   "探": "search: fingers (扌) beside the deep hole"
   },
-  "scene": "Water pours into a deep hole, and at a second hole a hand reaches in to grope in the dark.",
+  "scene": "Water pours into a deep hole, and at a second hole a hand reaches in to search in the dark.",
   "img": "images/lookalikes/g069.jpg",
-  "contrast": "Deep pours water (氵) into the hole · grope reaches in with fingers (扌)",
+  "contrast": "Deep pours water (氵) into the hole · search reaches in with fingers (扌)",
   "mn": {
    "深": {
     "feature": "Water (氵) on the left: three drops.",
@@ -2773,8 +2773,8 @@
      1,
      2
     ],
-    "hook": "GROPE: the tango dancer's fingers grope blindly down the hole for her ring.",
-    "picture": "A tango dancer dipped headfirst into a dark hole, a long hand groping for a sparkling ring at the bottom.",
+    "hook": "SEARCH: the tango dancer's fingers search blindly down the hole for her ring.",
+    "picture": "A tango dancer dipped headfirst into a dark hole, a long hand searching for a sparkling ring at the bottom.",
     "img": "images/lookalikes/g069_63a2.jpg"
    }
   }
@@ -2878,11 +2878,11 @@
   ],
   "tips": {
    "心": "heart: three dots and a curved hook, no slash",
-   "必": "invariably: heart with a long slash cutting through from top right"
+   "必": "certainly: heart with a long slash cutting through from top right"
   },
-  "scene": "A heart rests on a pillow, and beside it a second heart is crossed by an arrow that invariably hits the center.",
+  "scene": "A heart rests on a pillow, and beside it a second heart is crossed by an arrow that certainly hits the center.",
   "img": "images/lookalikes/g072.jpg",
-  "contrast": "Heart: a bowl with three drops · invariably: a slash cuts right through the heart",
+  "contrast": "Heart: a bowl with three drops · certainly: a slash cuts right through the heart",
   "mn": {
    "心": {
     "feature": "No slash: just the bowl hook and three drops.",
@@ -2898,7 +2898,7 @@
     "strokes": [
      1
     ],
-    "hook": "INVARIABLY: the hitman's dagger slashes straight through the heart, every time.",
+    "hook": "CERTAINLY: the hitman's dagger slashes straight through the heart, every time.",
     "picture": "A shadowy figure's long dagger stroke slicing diagonally through a red heart, droplets flying out both sides.",
     "img": "images/lookalikes/g072_5fc5.jpg"
    }
@@ -3355,12 +3355,12 @@
    "着"
   ],
   "tips": {
-   "差": "distinction: sheep with a long slash over craft (工)",
-   "着": "don: sheep with a long slash over an eye (目)"
+   "差": "gap: sheep with a long slash over craft (工)",
+   "着": "wear: sheep with a long slash over an eye (目)"
   },
-  "scene": "A sheep stands on an I-beam to show its distinction, while another sheep wearing big eye goggles stops to don a coat.",
+  "scene": "A sheep stands on an I-beam to show the gap between it and the sculptures, while another sheep wearing big eye goggles stops to wear a coat.",
   "img": "images/lookalikes/g083.jpg",
-  "contrast": "Distinction: the sheep stands on a craft bench · don: the sheep is pulled over an eye",
+  "contrast": "Gap: the sheep stands on a craft bench · wear: the sheep is pulled over an eye",
   "mn": {
    "差": {
     "feature": "Under the sheep sits craft 工: a small cross-bar on a flat base, no box.",
@@ -3370,7 +3370,7 @@
      8,
      9
     ],
-    "hook": "DISTINCTION: the judge stands the slashed sheep on a craft bench 工 to show it's no wool sculpture.",
+    "hook": "GAP: the judge stands the slashed sheep on a craft bench 工 to show it's no wool sculpture.",
     "picture": "A sheep with a red paint slash standing proudly on a little I-beam workbench at a craft fair, judges pointing.",
     "img": "images/lookalikes/g083_5dee.jpg"
    },
@@ -3384,7 +3384,7 @@
      10,
      11
     ],
-    "hook": "The yogi DONS the sheep like a coat — his big eye 目 peers out from under its belly.",
+    "hook": "The yogi WEARS the sheep like a coat — his big eye 目 peers out from under its belly.",
     "picture": "A yogi wearing a whole sheep as a fluffy coat, one huge eye peeking out of the wool near its belly.",
     "img": "images/lookalikes/g083_7740.jpg"
    }
@@ -3518,12 +3518,12 @@
    "適"
   ],
   "tips": {
-   "商": "make a deal: vase top over a hood with human legs and a mouth inside",
+   "商": "trade: vase top over a hood with human legs and a mouth inside",
    "適": "suitable: antique (a cross over a mouth inside the hood) riding the road"
   },
-  "scene": "Two merchants make a deal in a market stall, while a suitable antique rides by on a cart down the road.",
+  "scene": "Two merchants trade in a market stall, while a suitable antique rides by on a cart down the road.",
   "img": "images/lookalikes/g087.jpg",
-  "contrast": "Make a deal: human legs dangle inside the hood · suitable rides a road and has a cross inside",
+  "contrast": "Trade: human legs dangle inside the hood · suitable rides a road and has a cross inside",
   "mn": {
    "商": {
     "feature": "Inside the hood, human legs 儿 dangle above the mouth.",
@@ -3532,7 +3532,7 @@
      6,
      7
     ],
-    "hook": "MAKE A DEAL: the showman's legs poke out inside his tent-hood while his mouth haggles below.",
+    "hook": "TRADE: the showman's legs poke out inside his tent-hood while his mouth haggles below.",
     "picture": "A showman hidden in a tent with a vase on top, only his two legs poking out inside, a mouth bargaining.",
     "img": "images/lookalikes/g087_5546.jpg"
    },
@@ -4129,12 +4129,12 @@
    "許"
   ],
   "tips": {
-   "計": "plot: say (言) + ten (十), a simple cross",
+   "計": "measure: say (言) + ten (十), a simple cross",
    "許": "permit: say + noon (午), a slanted stroke over two lines"
   },
-  "scene": "A schemer counts ten fingers to plot a plan, while a guard at noon stamps a permit.",
+  "scene": "A schemer counts ten fingers to measure the fuse for his plan, while a guard at noon stamps a permit.",
   "img": "images/lookalikes/g103.jpg",
-  "contrast": "Plot counts on a simple cross 十 · permit adds a slanted noon ray and two bars 午",
+  "contrast": "Measure counts on a simple cross 十 · permit adds a slanted noon ray and two bars 午",
   "mn": {
    "計": {
     "feature": "Right side is a plain cross 十: one bar, one stem.",
@@ -4143,7 +4143,7 @@
      7,
      8
     ],
-    "hook": "PLOT: one clean cross on the right marks the target — the cake-bomb ticks.",
+    "hook": "MEASURE: one clean cross on the right marks the target — the cake-bomb ticks.",
     "picture": "Conspirators around a table with one big cross marked on a map and a cake with fizzing fuse candles.",
     "img": "images/lookalikes/g103_8a08.jpg"
    },
@@ -4211,10 +4211,10 @@
   ],
   "tips": {
    "買": "buy: net (罒) over shells (貝)",
-   "置": "placement: net over straightaway (直)",
+   "置": "placement: net over fix (直)",
    "罪": "guilt: net over un- (非)"
   },
-  "scene": "A shopper uses a net to buy shells, a worker checks the placement of a net straightaway on a shelf, and a thief caught in a net looks un-happy with guilt.",
+  "scene": "A shopper uses a net to buy shells, a worker must fix the placement of a net on a shelf, and a thief caught in a net looks un-happy with guilt.",
   "img": "images/lookalikes/g106.jpg",
   "contrast": "Buy: shells stand on two little legs · placement: an L-shaped floor under the eye · guilt: two combs back to back",
   "mn": {
@@ -4235,7 +4235,7 @@
     "img": "images/lookalikes/g106_8cb7.jpg"
    },
    "置": {
-    "feature": "Under the net: straightaway 直 — a cross on top and an L-shaped floor beneath the eye.",
+    "feature": "Under the net: fix 直 — a cross on top and an L-shaped floor beneath the eye.",
     "label": "L floor",
     "strokes": [
      5,
@@ -4358,12 +4358,12 @@
    "間": "interval: a sun (日) inside the gate",
    "問": "question: a mouth (口) inside the gate",
    "聞": "hear: an ear (耳) inside the gate",
-   "閉": "closed: a genius bar (才) wedged inside the gate",
+   "閉": "closed: a talent bar (才) wedged inside the gate",
    "開": "open: an open frame (开: two lines on two legs) inside the gate",
    "関": "connection: horned heavens (two horns over 天) inside the gate"
   },
   "scene": "A row of six double gates: sunlight blazes through the first, a huge mouth fills the second, a giant ear squeezes into the third, a hooked iron bar locks the fourth, a two-legged wooden frame pries the fifth open, and a figure with two little horns stands in the sixth.",
-  "contrast": "interval: a sun shines through the gate · question: a mouth fills the gate · hear: an ear squeezes into the gate · closed: a genius bar locks the gate · open: a two-legged frame pries the gate · connection: horned heavens stand in the gate",
+  "contrast": "interval: a sun shines through the gate · question: a mouth fills the gate · hear: an ear squeezes into the gate · closed: a talent bar locks the gate · open: a two-legged frame pries the gate · connection: horned heavens stand in the gate",
   "mn": {
    "間": {
     "feature": "A sun (日: box with one bar) inside the gate.",
@@ -4406,15 +4406,15 @@
     "img": "images/lookalikes/g010_805e.jpg"
    },
    "閉": {
-    "feature": "A genius bar (才: a cross with a hooked stem and slash) wedged inside the gate.",
-    "label": "genius",
+    "feature": "A talent bar (才: a cross with a hooked stem and slash) wedged inside the gate.",
+    "label": "talent",
     "strokes": [
      8,
      9,
      10
     ],
-    "hook": "The genius wedges a hooked bar across the gate: CLOSED for thinking.",
-    "picture": "A genius inside a gate jamming a hooked iron bar across it, a fiery-haired god pounding outside.",
+    "hook": "The great talent wedges a hooked bar across the gate: CLOSED for thinking.",
+    "picture": "A great thinker inside a gate jamming a hooked iron bar across it, a fiery-haired god pounding outside.",
     "img": "images/lookalikes/g011_9589.jpg"
    },
    "開": {
@@ -4458,10 +4458,10 @@
    "青": "blue: growing up (three lines and a stem) over a moon (月)",
    "表": "surface: growing up over a garment's flaring hem (衣 bottom)",
    "責": "blame: growing up over shells (貝), nothing on the left",
-   "積": "volume: blame with wheat (禾) added on the left"
+   "積": "pile up: blame with wheat (禾) added on the left"
   },
   "scene": "A sprout grows out of a fallen blue moon, fur bristles up from a robe's flaring hem, a weed cracks a lone shell piggy bank on two little legs, and beside it a tall stack of drooping wheat sheaves leans over another cracked shell.",
-  "contrast": "blue: a sprout on a moon · surface: a sprout over a flaring hem · blame: a sprout on a shell, standing alone · volume: wheat stacked beside the blamed shell",
+  "contrast": "blue: a sprout on a moon · surface: a sprout over a flaring hem · blame: a sprout on a shell, standing alone · pile up: wheat stacked beside the blamed shell",
   "mn": {
    "青": {
     "feature": "A moon (月: open-bottomed frame with two bars) sits under the growing-up top.",
@@ -4516,7 +4516,7 @@
      3,
      4
     ],
-    "hook": "The Secretary stacks wheat on the left to the ceiling; the VOLUME topples onto the office.",
+    "hook": "The Secretary stacks wheat on the left to the ceiling; the PILE UP topples onto the office.",
     "picture": "A towering stack of drooping wheat sheaves leaning over and toppling into an office, papers flying.",
     "img": "images/lookalikes/g021_7a4d.jpg"
    }
@@ -4853,11 +4853,11 @@
   ],
   "tips": {
    "使": "use: person + officer (吏): line, a plain mouth box, crossed legs",
-   "便": "convenience: person + grow late (更): line, a box with a line inside, crossed legs",
-   "更": "grow late: the same as convenience but no person (亻) on the left"
+   "便": "convenience: person + further (更): line, a box with a line inside, crossed legs",
+   "更": "further: the same as convenience but no person (亻) on the left"
   },
   "scene": "An officer pokes his spear up through a beam, a person stands beside a glowing late-night shop window divided by one shelf, and a lone clock box with crossed sticks jammed through it hangs under a ceiling beam.",
-  "contrast": "use: a spear pokes up over a plain mouth · convenience: a person by a box with a shelf line · grow late: the box and crossed sticks with no person",
+  "contrast": "use: a spear pokes up over a plain mouth · convenience: a person by a box with a shelf line · further: the box and crossed sticks with no person",
   "mn": {
    "使": {
     "feature": "The long slash-stem pokes up above the top line; under it a plain empty mouth box.",
@@ -4870,7 +4870,7 @@
     "img": "images/lookalikes/g094_4f7f.jpg"
    },
    "便": {
-    "feature": "A person (亻) on the left of grow late: a box with a line inside, nothing poking above.",
+    "feature": "A person (亻) on the left of further: a box with a line inside, nothing poking above.",
     "label": "person",
     "hook": "A person stands beside the late-night shop window for your CONVENIENCE, selling a Bento box at 3 a.m.",
     "picture": "A shopkeeper standing beside a glowing late-night shop window with one shelf across it, holding out a bento box.",
@@ -4879,7 +4879,7 @@
    "更": {
     "feature": "No person on the left: just the top line over a box with a line inside and crossed sticks below.",
     "label": "no person",
-    "hook": "Coach stands alone jamming crossed sticks through the clock box, and the night GROWS LATE forever.",
+    "hook": "Coach stands alone jamming crossed sticks through the clock box, and practice goes on FURTHER and further into the night.",
     "picture": "A coach with a megaphone jamming two crossed sticks through a boxy clock under a ceiling beam, a dark night sky outside, no one else around.",
     "img": "images/lookalikes/g116_66f4.jpg",
     "strokes": []
@@ -5029,11 +5029,11 @@
   ],
   "tips": {
    "真": "true: a cross (十) on top, eye (目), then a plank and two legs (一 + 八)",
-   "直": "straightaway: a cross (十) on top, eye (目), an L-hook wrapping under it, no legs",
+   "直": "fix: a cross (十) on top, eye (目), an L-hook wrapping under it, no legs",
    "具": "tool: no cross on top: eye (目) on a plank with two legs (一 + 八)"
   },
   "scene": "A giant eye under a cross stands on a plank with two spindly legs, a second eye under crosshairs rests in a big L-shaped fishhook, and a third bare eye on a cutting board with two whisk legs scuttles away.",
-  "contrast": "true: a cross over an eye on spindly legs · straightaway: a cross over an eye in a fishhook · tool: an eye on legs, no cross",
+  "contrast": "true: a cross over an eye on spindly legs · fix: a cross over an eye in a fishhook · tool: an eye on legs, no cross",
   "mn": {
    "真": {
     "feature": "Both: a cross (十) on top AND a plank with two legs (一 + 八) below the eye.",
@@ -5045,7 +5045,7 @@
    "直": {
     "feature": "A cross (十) on top and an L-shaped hook wrapping the eye's left side and bottom; no legs.",
     "label": "fishhook",
-    "hook": "Through crosshairs the eye stares STRAIGHTAWAY at you from its fishhook cradle, and the Chocolate bar melts.",
+    "hook": "Through crosshairs the eye stares at you from its fishhook cradle until you FIX every flaw, and the Chocolate bar melts.",
     "picture": "A giant eye with crosshairs above it, cradled in a huge L-shaped fishhook, a chocolate bar melting under its stare.",
     "img": "images/lookalikes/g120_76f4.jpg"
    },
@@ -5309,10 +5309,10 @@
   ],
   "tips": {
    "皆": "all: compare (比: two figures facing the same way) over white (白)",
-   "背": "stature: north (北: two figures back to back) over flesh (月)"
+   "背": "back: north (北: two figures back to back) over flesh (月)"
   },
   "scene": "Two people side by side facing the same way flash white teeth over a crowd, while two kids stand back to back against a wall to measure their height.",
-  "contrast": "all: two smiles face the same way over white teeth · stature: two kids back to back over flesh",
+  "contrast": "all: two smiles face the same way over white teeth · back: two kids back to back over flesh",
   "mn": {
    "皆": {
     "feature": "Compare (比: two figures facing the same way) over white (白: a drop on a sun).",
@@ -5330,7 +5330,7 @@
    "背": {
     "feature": "North (北: two figures back to back) over flesh (月).",
     "label": "back to back",
-    "hook": "The Hyena shoves two kids back to back and cackles at whoever loses in STATURE.",
+    "hook": "The Hyena shoves two kids back to back and cackles at whoever is shorter, BACK to back.",
     "picture": "A cackling hyena pushing two kids back to back against a wall, measuring their heights.",
     "img": "images/lookalikes/g127_80cc.jpg",
     "strokes": [
@@ -5426,10 +5426,10 @@
   ],
   "tips": {
    "指": "finger: fingers (扌) + delicious (旨: a spoon 匕 over a sun 日)",
-   "招": "beckon: fingers (扌) + seduce (召: a sword 刀 over a mouth 口)"
+   "招": "invite: fingers (扌) + seduce (召: a sword 刀 over a mouth 口)"
   },
-  "scene": "A hand licks a spoon dripping over a glowing dish, and another hand with a glittering manicure curls a beckoning finger above a sword and an open mouth.",
-  "contrast": "finger: a spoon over a sun · beckon: a sword over a mouth",
+  "scene": "A hand licks a spoon dripping over a glowing dish, and another hand with a glittering manicure curls an inviting finger above a sword and an open mouth.",
+  "contrast": "finger: a spoon over a sun · invite: a sword over a mouth",
   "mn": {
    "指": {
     "feature": "Delicious (旨): a spoon (匕) over a sun box with a line inside (日).",
@@ -5441,8 +5441,8 @@
    "招": {
     "feature": "Seduce (召): a sword (刀) over an empty mouth box (口).",
     "label": "sword",
-    "hook": "The Showman's manicured fingers curl over a sword and a mouth, BECKONING you into his tent.",
-    "picture": "A showman with glittering nails curling a finger to beckon, a small sword over an open mouth at his tent entrance.",
+    "hook": "The Showman's manicured fingers curl over a sword and a mouth, INVITING you into his tent.",
+    "picture": "A showman with glittering nails curling a finger to invite, a small sword over an open mouth at his tent entrance.",
     "img": "images/lookalikes/g130_62db.jpg"
    }
   },
