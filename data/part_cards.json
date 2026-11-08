@@ -1093,5 +1093,14 @@
   ],
   "story": "A tiny {bonsai}: [three] flat tiers of branches stacked on top, and below them the trunk splits into two legs like a little [person], so the tree can tiptoe across the windowsill to follow the sun.",
   "picture": "A small bonsai tree in a shallow pot on a sunny windowsill: its branches spread in three flat horizontal layers stacked one above another, and its trunk splits at the bottom into two little legs like a walking person, tiptoeing toward the sunlight."
+ },
+ "龷": {
+  "keyword": "salad",
+  "components": [
+   "twenty",
+   "one"
+  ],
+  "story": "A {salad}: [twenty] lettuce leaves piled up on top, all resting on [one] long flat serving plate underneath, so wide it sticks out at both ends.",
+  "picture": "A big fresh salad seen from the side: twenty crisp lettuce leaves piled high on top, all resting on one very long flat white serving plate that sticks out wide at both ends; plain kitchen table background."
  }
 }
