@@ -381,6 +381,16 @@ await test('every kun reading in a story (green word) is in that kanji\'s word l
   eq(miss.join(''), '', 'kanji whose kun word is not listed');
 });
 
+await test('a kanji\'s kun word card shares that kanji\'s sound-alike sentence and picture', async () => {
+  const byK = Object.fromEntries(kanji.cards.map(c => [c.kanji, c]));
+  const bad = vocab.filter(v => v.ki).filter(v => !byK[v.ki] || !byK[v.ki].image || !(v.mn || '').includes('^') || !byK[v.ki].story.includes(v.mn.match(/\^[^^]+\^/)[0])).map(v => v.w);
+  eq(bad.join(' '), '', 'words whose shared hook is broken');
+  eq(vocab.filter(v => v.ki).length > 400, true, 'kun words sharing their kanji\'s hook');
+  const p = await page({ cloud: false }, null);
+  const r = await p.evaluate(() => { const h = vocabBackHtml(BY_WORD['連れる'], 'learn'); return { img: /data-kanji="連"/.test(h), green: /class="kun">Two Rails</.test(h) }; });
+  eq(r.img, true, '連れる shows 連\'s picture'); eq(r.green, true, 'Two Rails in green on the word card');
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);

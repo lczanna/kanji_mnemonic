@@ -31,6 +31,11 @@ and moves parts ahead of the kanji that use them. Progress is keyed by kanji, so
 
 ## Word data
 
+A kanji's own kun word (連れる for 連) has no hook of its own: `tools/add_word_hooks.py` gives it the kanji story's
+`^sound-alike^` sentence and picture (field `ki`), so the learner memorises one mnemonic. After changing a kanji story's
+kun sentence, rerun `python3 tools/add_word_hooks.py`. Sound-alikes are real English words or phrases you can picture
+(Two Rails, Minotaur), never the Japanese word with an animal glued on.
+
 After adding words or changing a reading in `vocab.json`, run `python3 tools/kanji_readings.py` (how each kanji is
 read inside each word) and `python3 tools/gloss_fixes.py` (checked meanings and readings in the sentences). Also `python3 tools/alt_readings.py JMdict_e.gz`:
 the other readings each spelling has (空: から and そら), which the reading quiz never offers as wrong answers.

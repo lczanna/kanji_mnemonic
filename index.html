@@ -1108,7 +1108,7 @@ function keywordRe(kw) {
 }
 function hookHtml(mn, w) {
   const all = [...new Set([...w].filter(ch => BY_KANJI[ch]))], left = all.slice();
-  const parts = String(mn).split(/(~[^~]*~|\{[^}]*\})/).map(t => ({ t, h: /^[~{]/.test(t) ? null : esc(t) }));
+  const parts = String(mn).split(/(~[^~]*~|\^[^^]*\^|\{[^}]*\})/).map(t => ({ t, h: /^[~{^]/.test(t) ? null : esc(t) }));
   const link = (h, ch, re) => {
     let done = false;
     const out = h.split(/(<button[^>]*>[^<]*<\/button>)/).map(t => done || t.startsWith('<button') || !re.test(t) ? t
@@ -1649,7 +1649,9 @@ function backHtml(k, mode) {
 }
 function vocabBackHtml(v, mode) {
   const f = vform(v), hook = v.mn ? hookHtml(v.mn, v.w) : null;
-  const img = v.img ? `<img class="card-img${mode === 'learn' ? '' : ' small'}" src="${esc(v.img)}" data-kanji="${esc(v.id)}" alt="Picture for the memory hook" loading="lazy" onerror="imgFallback(this)">` : '';
+  // A kanji's own kun word (連れる for 連) shares that kanji's sound-alike sentence and picture (v.ki).
+  const pk = v.ki && BY_KANJI[v.ki] && BY_KANJI[v.ki].image ? BY_KANJI[v.ki] : null;
+  const img = pk || v.img ? `<img class="card-img${mode === 'learn' ? '' : ' small'}" src="${esc(pk ? pk.image : v.img)}" data-kanji="${esc(pk ? pk.kanji : v.id)}" alt="Picture for the memory hook" loading="lazy" onerror="imgFallback(this)">` : '';
   const head = f === 'kanji'
     ? `<span class="w" lang="ja">${kanjiLinks(v.w)}</span><span class="rd" lang="ja">${esc(v.r)} ${sayBtn(sayText(v.w, v.r), 'Play ' + v.w)}</span>`
     : `<span class="w kana" lang="ja">${esc(v.r)}</span><span class="rd" lang="ja">${sayBtn(sayText(v.w, v.r), 'Play ' + v.r)}</span>`;
@@ -2684,7 +2686,7 @@ function pendingParts(limit = 3) {
 const duePartItems = () => dueToday('part').map(x => quizItem('part', x));
 function runQueue(items, fresh, type, tail) {
   fresh = withParts(fresh);
-  warmPacks(fresh.slice(0, 12).map(f => f.type === 'vocab' ? f.x.img && f.x.id : f.type === 'grammar' ? f.x.img && keyOf(f.type, f.x) : keyOf(f.type, f.x)).filter(Boolean));
+  warmPacks(fresh.slice(0, 12).map(f => f.type === 'vocab' ? (f.x.ki && BY_KANJI[f.x.ki] ? f.x.ki : f.x.img && f.x.id) : f.type === 'grammar' ? f.x.img && keyOf(f.type, f.x) : keyOf(f.type, f.x)).filter(Boolean));
   // Interleave: a new card after every 3 reviews keeps sessions from front-loading all the hard work.
   const queue = [];
   let ri = 0;
