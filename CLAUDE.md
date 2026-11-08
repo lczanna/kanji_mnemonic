@@ -48,6 +48,8 @@ tokenizer cut up (かいさつ → かい "floor" + さつ) become one tappable 
 ## Images
 
 `tools/gen_images.py` draws pictures from the stories. Never print or commit the OpenAI key.
+After drawing kanji pictures, run `python3 tools/check_images.py --kanji "<those>"`: it lists pictures where the
+Japanese-reading sound-alike (`^hook^`) is missing or too small; redraw those. Hooks must be drawable things (pictures never contain text).
 
 The Claude link holds at most 512 files, so it gets the pictures as packs, not one file per card:
 run `python3 tools/pack_images.py <scratch dir> --keep <published images/packs/index.json>` (read it from the link first)
