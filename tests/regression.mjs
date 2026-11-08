@@ -373,6 +373,14 @@ await test('a removed duplicate word (いくら next to 幾ら) moves its progre
   eq(r.tri, 'known', 'sort answer moved'); eq(r.bento, true, 'pulled お弁当 moved to 弁当'); eq(r.bentoOld, false, 'pulled old key left'); eq(r.gone.length, 0, 'duplicates still in the deck: ' + r.gone);
 });
 
+await test('every kun reading in a story (green word) is in that kanji\'s word list', async () => {
+  const miss = kanji.cards.filter(c => /\^/.test(c.story || '')).filter(c => {
+    const r = ((c.story.match(/\(([\u3041-\u3096]+)\)/g) || []).pop() || '').slice(1, -1);
+    return !(c.vocab || []).some(v => v.r.startsWith(r));   // the story may give the stem (なな for 七つ)
+  }).map(c => c.kanji);
+  eq(miss.join(''), '', 'kanji whose kun word is not listed');
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);
