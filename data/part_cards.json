@@ -1075,5 +1075,14 @@
   ],
   "story": "A wooden {spool} stands planted in the [soil] below; the thread wound round its top crosses itself in a big X, like the legs of a [crotch]. Every turn you wind, the X pulls tighter.",
   "picture": "A big wooden thread spool standing upright, its base sunk in a patch of brown soil, with thick thread wound round its top and crossing itself in one big X like two crossed legs; a hand winds the thread."
+ },
+ "勺": {
+  "keyword": "ladle",
+  "components": [
+   "bound up",
+   "drop"
+  ],
+  "story": "A soup {ladle} seen from the side: its long handle hooks round and [bound up] into a deep bowl, and inside sits one [drop] of soup, the last one, that it scooped up.",
+  "picture": "A big shiny soup ladle seen from the side, its long handle curving down and around into a deep round bowl, with a single fat drop of golden soup sitting inside the bowl, steam rising; plain kitchen background."
  }
 }
