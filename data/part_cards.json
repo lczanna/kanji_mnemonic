@@ -1066,5 +1066,14 @@
   ],
   "story": "China's oldest potter's clay: [flowers] sprout on top, a [mouth] in the middle chatters in Chinese, and a [husband] stands underneath holding the whole lump up. That's {Sino- clay}, the stuff the first characters were pressed into. (In 難 and 勤 the flowers join into one bar; in 勤 the husband's legs tuck in.)",
   "picture": "A big lump of reddish clay on a potter's wheel in ancient China: flowers sprouting from its top, a chattering mouth carved in its middle, and a man underneath holding the whole lump up on his shoulders."
+ },
+ "圣": {
+  "keyword": "spool",
+  "components": [
+   "crotch",
+   "soil"
+  ],
+  "story": "A wooden {spool} stands planted in the [soil] below; the thread wound round its top crosses itself in a big X, like the legs of a [crotch]. Every turn you wind, the X pulls tighter.",
+  "picture": "A big wooden thread spool standing upright, its base sunk in a patch of brown soil, with thick thread wound round its top and crossing itself in one big X like two crossed legs; a hand winds the thread."
  }
 }
