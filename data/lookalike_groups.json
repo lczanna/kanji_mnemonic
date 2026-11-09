@@ -2365,13 +2365,13 @@
    "屋"
   ],
   "tips": {
-   "局": "bureau: the flag's tail bends into a hook holding a small mouth",
+   "局": "office: the flag's tail bends into a hook holding a small mouth",
    "居": "reside: old (古: ten over a mouth) under the flag",
    "屋": "roof: climax (至) stacked like ceilings under the flag"
   },
-  "scene": "Under a flag a post bureau clerk calls through a hooked window, an old man resides in a cottage beneath it, and workers stack tiles on the roof.",
+  "scene": "Under a flag a post office clerk calls through a hooked window, an old man resides in a cottage beneath it, and workers stack tiles on the roof.",
   "img": "images/lookalikes/g061.jpg",
-  "contrast": "Bureau: the flag's tail hooks around a small mouth · reside: old (古) sits under the flag · roof: climax (至) stacked under the flag",
+  "contrast": "Office: the flag's tail hooks around a small mouth · reside: old (古) sits under the flag · roof: climax (至) stacked under the flag",
   "mn": {
    "局": {
     "feature": "The flag's tail bends into a hook that cradles a small mouth.",
@@ -2382,7 +2382,7 @@
      5,
      6
     ],
-    "hook": "BUREAU: the flag's tail curls into a hook clutching one tiny stamp-mouth — the bureau stamp.",
+    "hook": "OFFICE: the flag's tail curls into a hook clutching one tiny stamp-mouth — the post office stamp.",
     "picture": "A drooping flag whose tail curls like a hook holding a small rubber stamp over a stack of forms, a karate master chopping the pile.",
     "img": "images/lookalikes/g061_5c40.jpg"
    },
@@ -5146,16 +5146,16 @@
    "試"
   ],
   "tips": {
-   "式": "style: arrow (弋) over craft (工), nothing on the left",
-   "試": "test: style with words (言: say) on the left"
+   "式": "ceremony: arrow (弋) over craft (工), nothing on the left",
+   "試": "test: ceremony with words (言: say) on the left"
   },
   "scene": "An arrow quivers upright on a small I-beam workbench, and next to an identical bench a row of sheep bleat answers at a panel of judges.",
-  "contrast": "style: an arrow stuck in a craft bench · test: words spoken beside it",
+  "contrast": "ceremony: an arrow stuck in a craft bench · test: words spoken beside it",
   "mn": {
    "式": {
     "feature": "Nothing on the left: just the arrow (弋) frame with craft (工) under it.",
     "label": "alone",
-    "hook": "The Sheikh's arrow lands quivering on the bare craft bench: pure STYLE.",
+    "hook": "The Sheikh's arrow lands quivering on the bare craft bench to open his wedding CEREMONY.",
     "picture": "A sheikh on a camel bowing as his arrow quivers upright on a small I-beam workbench.",
     "img": "images/lookalikes/g123_5f0f.jpg",
     "strokes": []
