@@ -402,6 +402,13 @@ await test('reading passages with indented paragraphs keep tap meanings and unde
   eq(r.ul > 0, true, 'underlined phrases still underlined');
 });
 
+await test('kun sound-alikes are real English words (tools/check_hooks.py; skipped without wordfreq)', async () => {
+  const { spawnSync } = await import('child_process');
+  if (spawnSync('python3', ['-c', 'import wordfreq']).status !== 0) return;
+  const r = spawnSync('python3', [ROOT + 'tools/check_hooks.py'], { encoding: 'utf8' });
+  eq(r.status, 0, 'made-up sound-alikes: ' + r.stdout.trim());
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);

@@ -35,6 +35,7 @@ A kanji's own kun word (連れる for 連) has no hook of its own: `tools/add_wo
 `^sound-alike^` sentence and picture (field `ki`), so the learner memorises one mnemonic. After changing a kanji story's
 kun sentence, rerun `python3 tools/add_word_hooks.py`. Sound-alikes are real English words or phrases you can picture
 (Two Rails, Minotaur), never the Japanese word with an animal glued on.
+`python3 tools/check_hooks.py` (needs `pip install wordfreq`; also run by the tests) lists any hook that isn't real English.
 
 After adding words or changing a reading in `vocab.json`, run `python3 tools/kanji_readings.py` (how each kanji is
 read inside each word) and `python3 tools/gloss_fixes.py` (checked meanings and readings in the sentences). Also `python3 tools/alt_readings.py JMdict_e.gz`:
