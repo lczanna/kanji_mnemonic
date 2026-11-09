@@ -26,7 +26,7 @@ def kun_hooks(vocab):
         if at < 0 or not reads:
             continue
         # the sentence holding the sound-alike: from the sentence break before it to the one after its (かな)
-        starts = [m.end() for m in re.finditer(r"[.!?]'?\s+(?=[A-Z'^~])", story[:at])]
+        starts = [m.end() for m in re.finditer(r"[.!?]'?\s+(?=[A-Z'^~])", story[:at + 1])]
         start = starts[-1] if starts else 0
         close = story.find(')', story.find('(' + reads[-1] + ')', at))
         end = re.search(r"[.!?]'?(?=\s|$)|$", story[close:])
