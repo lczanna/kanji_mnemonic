@@ -1350,6 +1350,10 @@ function underHtml(t, rs, from = 0) {
   return out + esc(t.slice(pos));
 }
 function glossHtml(text, kanji, under = []) {
+  // A paragraph's indent (　) is not part of the glossed sentence: gloss the rest and keep the indent.
+  const lead = (text.match(/^[\s\u3000]+/) || [''])[0];
+  if (lead && !GL[text] && GL[text.slice(lead.length)])
+    return esc(lead) + glossHtml(text.slice(lead.length), kanji, under.map(([a, b]) => [a - lead.length, b - lead.length]));
   const words = GL[text];
   if (!words || !words.length) return underHtml(text, under);
   wordLink('');
