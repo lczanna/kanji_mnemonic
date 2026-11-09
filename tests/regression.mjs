@@ -391,6 +391,17 @@ await test('a kanji\'s kun word card shares that kanji\'s sound-alike sentence a
   eq(r.img, true, '連れる shows 連\'s picture'); eq(r.green, true, 'Two Rails in green on the word card');
 });
 
+await test('reading passages with indented paragraphs keep tap meanings and underlines', async () => {
+  const p = await page({ cloud: false }, null);
+  const r = await p.evaluate(() => {
+    const x = EXAM.read.find(x => x.id === 'rd086'), h = passageHtml(x.text, x.under);
+    const lines = x.text.split('\n').filter(l => l.trim()), tappable = lines.filter(l => /class="gl/.test(passageHtml(l, x.under))).length;
+    return { tappable, lines: lines.length, ul: (h.match(/\bul\b/g) || []).length };
+  });
+  eq(r.tappable, r.lines, 'every paragraph has tappable words');
+  eq(r.ul > 0, true, 'underlined phrases still underlined');
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);
