@@ -396,11 +396,11 @@
    "待": "wait: going (彳: two slashes and a stem) on the left of the temple",
    "時": "time: a sun (日) on the left of the temple",
    "特": "special: a cow (牛) on the left of the temple, its bottom line slanting up",
-   "等": "etc.: bamboo on top, the temple sitting underneath"
+   "等": "equal: bamboo on top, the temple sitting underneath"
   },
-  "scene": "At a Buddhist temple a monk's hand holds a bell, a pilgrim on the path is told to wait, a sundial tells the time, a special cow wears a garland, and bamboo, pine, etc. grow on the roof.",
+  "scene": "At a Buddhist temple a monk's hand holds a bell, a pilgrim on the path is told to wait, a sundial tells the time, a special cow wears a garland, and two equal stalks of bamboo grow on the roof.",
   "img": "images/lookalikes/g009.jpg",
-  "contrast": "Fingers hold the temple · going makes you wait · a sun tells the time · a cow is special · bamboo on top lists etc.",
+  "contrast": "Fingers hold the temple · going makes you wait · a sun tells the time · a cow is special · bamboo on top keeps every item equal",
   "mn": {
    "持": {
     "feature": "Fingers (扌: a bar, a hooked stem and a rising flick) on the left.",
@@ -463,7 +463,7 @@
      4,
      5
     ],
-    "hook": "Under a bamboo roof the Toad croaks his list: candles, bells, ETC.",
+    "hook": "Under a bamboo roof the Toad croaks his list, giving each item an EQUAL share of breath.",
     "picture": "A toad under a canopy of bamboo leaves above a temple, reading an endless scroll.",
     "img": "images/lookalikes/g009_7b49.jpg"
    }
@@ -736,11 +736,11 @@
    "情": "feelings: a heart (忄: a stem with two dots) at the left of blue",
    "晴": "clear up: a sun (日) at the left of blue",
    "精": "refined: rice (米) at the left of blue",
-   "静": "quiet: blue on the LEFT, contend (争) on the right"
+   "静": "quiet: blue on the LEFT, compete (争) on the right"
   },
   "scene": "Under a blue sky, a girl full of feelings watches the sun clear up the clouds, a cook sifts refined rice, and a monk sits quiet beside two sleeping wrestlers.",
   "img": "images/lookalikes/g019.jpg",
-  "contrast": "Feelings: a heart on the left · clear up: a sun · refined: rice · quiet: blue moves left, contend on the right",
+  "contrast": "Feelings: a heart on the left · clear up: a sun · refined: rice · quiet: blue moves left, compete on the right",
   "mn": {
    "情": {
     "feature": "A heart (忄: a stem with two dots) on the left.",
@@ -783,8 +783,8 @@
     "img": "images/lookalikes/g019_7cbe.jpg"
    },
    "静": {
-    "feature": "Contend (争) on the RIGHT; blue moves over to the left.",
-    "label": "contend",
+    "feature": "Compete (争) on the RIGHT; blue moves over to the left.",
+    "label": "compete",
     "strokes": [
      8,
      9,
@@ -793,7 +793,7 @@
      12,
      13
     ],
-    "hook": "Two pirates contend on the right until the Sailor chokes them QUIET.",
+    "hook": "Two pirates compete on the right until the Sailor chokes them QUIET.",
     "picture": "Two pirates sword-fighting in a library, a sailor wrapping an anchor chain around them, all silent.",
     "img": "images/lookalikes/g019_9759.jpg"
    }
@@ -975,12 +975,12 @@
   ],
   "tips": {
    "全": "whole: umbrella over a king (王), nothing else",
-   "余": "too much: umbrella over a line and a hooked stem with two little feet, no king",
+   "余": "extra: umbrella over a line and a hooked stem with two little feet, no king",
    "金": "gold: umbrella over a king with two small dots beside the stem"
   },
-  "scene": "A whole king sits under an umbrella, a second umbrella shelters a little tree weighed down with too much fruit, and a third shelters a king with two gold nuggets at his feet.",
+  "scene": "A whole king sits under an umbrella, a second umbrella shelters a little tree weighed down with extra fruit, and a third shelters a king with two gold nuggets at his feet.",
   "img": "images/lookalikes/g025.jpg",
-  "contrast": "Whole: a bare king under the umbrella · too much: a hooked stem with two feet · gold: a king with two drops",
+  "contrast": "Whole: a bare king under the umbrella · extra: a hooked stem with two feet · gold: a king with two drops",
   "mn": {
    "全": {
     "feature": "A plain king (王: three bars and a stem) under the umbrella, no dots.",
@@ -1003,7 +1003,7 @@
      5,
      6
     ],
-    "hook": "Yogurt pours TOO MUCH and the little tree's two feet splay out, drowning in gloop.",
+    "hook": "Yogurt pours EXTRA and the little tree's two feet splay out, drowning in gloop.",
     "picture": "A tiny tree with two splayed little feet standing in a flood of yogurt overflowing a small umbrella.",
     "img": "images/lookalikes/g025_4f59.jpg"
    },
@@ -1281,11 +1281,11 @@
   ],
   "tips": {
    "顔": "face: lad (彦: vase, cliff and three hairs) on the left of head",
-   "願": "petition: meadow (原: cliff over white and little) on the left of head"
+   "願": "wish: meadow (原: cliff over white and little) on the left of head"
   },
-  "scene": "A smiling face with three wisps of hair peeks over a cliff, while below on a meadow a person kneels to petition.",
+  "scene": "A smiling face with three wisps of hair peeks over a cliff, while below on a meadow a person kneels to wish.",
   "img": "images/lookalikes/g031.jpg",
-  "contrast": "Face streams three hair strands · petition kneels by a little waterfall in the meadow",
+  "contrast": "Face streams three hair strands · wish kneels by a little waterfall in the meadow",
   "mn": {
    "顔": {
     "feature": "three slanting hair strokes inside the cliff on the left",
@@ -1307,7 +1307,7 @@
      8,
      9
     ],
-    "hook": "PETITION: you bow so hard a tiny spring bursts from the meadow, splashing three ways.",
+    "hook": "WISH: you bow so hard a tiny spring bursts from the meadow, splashing three ways.",
     "picture": "A person kneeling and bowing in a grassy meadow, a small three-pronged spring of water bursting up from the ground in front of their forehead.",
     "img": "images/lookalikes/g031_9858.jpg"
    }
@@ -1427,12 +1427,12 @@
   ],
   "tips": {
    "主": "lord: a drop over a king, standing alone",
-   "住": "dwell: lord with a person (亻) on the left",
+   "住": "live in: lord with a person (亻) on the left",
    "注": "pour: lord with water (氵) on the left"
   },
-  "scene": "A lord wears a crown with one jewel, a person dwells in a hut beside him, and a servant pours water from a jug.",
+  "scene": "A lord wears a crown with one jewel, a person lives in a hut beside him, and a servant pours water from a jug.",
   "img": "images/lookalikes/g034.jpg",
-  "contrast": "Lord stands alone · dwell puts a person beside him · pour splashes water from the left",
+  "contrast": "Lord stands alone · live in puts a person beside him · pour splashes water from the left",
   "mn": {
    "主": {
     "feature": "nothing on the left: just the drop on the king",
@@ -1449,7 +1449,7 @@
      0,
      1
     ],
-    "hook": "DWELL: a sneaky person leans against the lord's left side — Jewel thief moved in.",
+    "hook": "LIVE IN: a sneaky person leans against the lord's left side — Jewel thief moved in.",
     "picture": "A sneaky thief leaning against a sleeping king's bedside, eyeing the crown jewels in a castle bedroom.",
     "img": "images/lookalikes/g034_4f4f.jpg"
    },
@@ -1700,11 +1700,11 @@
   ],
   "tips": {
    "同": "same: a flat line inside the hood above the mouth; nothing on top",
-   "向": "yonder: a small drop pokes out on top of the hood; no inner line"
+   "向": "toward: a small drop pokes out on top of the hood; no inner line"
   },
-  "scene": "Two identical same mailboxes stand side by side, and a third with a little chimney on top faces off yonder.",
+  "scene": "Two identical same mailboxes stand side by side, and a third with a little chimney on top faces off toward the horizon.",
   "img": "images/lookalikes/g041.jpg",
-  "contrast": "Same puts a bar over the mouth under a flat hood · yonder fires a drop off the top of the hood",
+  "contrast": "Same puts a bar over the mouth under a flat hood · toward fires a drop off the top of the hood",
   "mn": {
    "同": {
     "feature": "a bar inside the hood above the mouth, and nothing sticking up on top",
@@ -1722,7 +1722,7 @@
     "strokes": [
      0
     ],
-    "hook": "YONDER: a drop flies off the top of the hood toward a faraway cow — Coach whistles.",
+    "hook": "TOWARD: a drop flies off the top of the hood toward a faraway cow — Coach whistles.",
     "picture": "A droplet launching from the peak of a hood and arcing far into the distance toward a cow in a field.",
     "img": "images/lookalikes/g041_5411.jpg"
    }
@@ -2029,11 +2029,11 @@
   "tips": {
    "度": "degrees: cave over twenty (廿) and a crotch (又)",
    "席": "seat: cave over twenty and a hanging towel (巾)",
-   "渡": "transit: degrees with water (氵) on the left"
+   "渡": "cross: degrees with water (氵) on the left"
   },
-  "scene": "In a cave a thermometer shows degrees, outside a ferry makes the transit across water, and inside a towel hangs over a carved seat.",
+  "scene": "In a cave a thermometer shows degrees, outside a ferry crosses the water, and inside a towel hangs over a carved seat.",
   "img": "images/lookalikes/g052.jpg",
-  "contrast": "Degrees ends in a crotch · seat spreads a towel · transit wades water on the left",
+  "contrast": "Degrees ends in a crotch · seat spreads a towel · cross wades water on the left",
   "mn": {
    "度": {
     "feature": "a crotch (crossed legs) at the bottom",
@@ -2066,7 +2066,7 @@
      1,
      2
     ],
-    "hook": "TRANSIT: three splashes of water on the left — a Water balloon bursts mid-crossing.",
+    "hook": "CROSS: three splashes of water on the left — a Water balloon bursts mid-crossing.",
     "picture": "A person wading across a river at an angle as a water balloon bursts on their head.",
     "img": "images/lookalikes/g052_6e21.jpg"
    }
@@ -2080,11 +2080,11 @@
   ],
   "tips": {
    "発": "launch: teepee over two lines and open human legs",
-   "登": "ascend: teepee over beans (豆), a closed box on a stand"
+   "登": "climb: teepee over beans (豆), a closed box on a stand"
   },
-  "scene": "From one teepee a cannon on two legs makes a launch of confetti, and from another a climber with a bowl of beans begins to ascend.",
+  "scene": "From one teepee a cannon on two legs makes a launch of confetti, and from another a climber with a bowl of beans begins to climb.",
   "img": "images/lookalikes/g053.jpg",
-  "contrast": "Launch rides on human legs · ascend lifts on a bean bowl",
+  "contrast": "Launch rides on human legs · climb lifts on a bean bowl",
   "mn": {
    "発": {
     "feature": "human legs (two sweeping strokes) at the bottom",
@@ -2109,7 +2109,7 @@
      10,
      11
     ],
-    "hook": "ASCEND: a bean bowl on a stand sprouts and lifts the teepee — Toad rides the pole.",
+    "hook": "CLIMB: a bean bowl on a stand sprouts and lifts the teepee — Toad rides the pole.",
     "picture": "A footed bowl of magic beans sprouting huge stalks lifting a teepee into the sky, a toad riding the tent pole.",
     "img": "images/lookalikes/g053_767b.jpg"
    }
@@ -2325,12 +2325,12 @@
    "婦"
   ],
   "tips": {
-   "帰": "homecoming: two short strokes (saber) on the left + broom",
+   "帰": "go home: two short strokes (saber) on the left + broom",
    "婦": "lady: woman (女) on the left + broom"
   },
-  "scene": "A traveler with a short sword returns for a homecoming, and a lady sweeps the doorway with a broom to greet him.",
+  "scene": "A traveler with a short sword comes to go home, and a lady sweeps the doorway with a broom to greet him.",
   "img": "images/lookalikes/g060.jpg",
-  "contrast": "Homecoming hangs two saber strokes on the left · lady has a woman on the left",
+  "contrast": "Go home hangs two saber strokes on the left · lady has a woman on the left",
   "mn": {
    "帰": {
     "feature": "Two short upright strokes (saber) on the left.",
@@ -2339,7 +2339,7 @@
      0,
      1
     ],
-    "hook": "HOMECOMING: Kiwi hangs his two tiny sabers on the left wall and grabs the broom.",
+    "hook": "GO HOME: Kiwi hangs his two tiny sabers on the left wall and grabs the broom.",
     "picture": "A small round kiwi bird hanging two tiny curved swords on a wall, then picking up a broom in a dusty home.",
     "img": "images/lookalikes/g060_5e30.jpg"
    },
@@ -2467,11 +2467,11 @@
   "tips": {
    "究": "research: nine (九) under the hole",
    "空": "empty: craft (工) under the hole",
-   "突": "stab: a dog (大) under the hole"
+   "突": "poke: a dog (大) under the hole"
   },
-  "scene": "Through one hole you see an empty I-beam, through a second a scientist does research on a curled number nine shaped fossil, and through a third a dog's nose jabs out in a playful stab.",
+  "scene": "Through one hole you see an empty I-beam, through a second a scientist does research on a curled number nine shaped fossil, and through a third a dog's nose jabs out in a playful poke.",
   "img": "images/lookalikes/g063.jpg",
-  "contrast": "Research drops nine (九) down the hole · empty has craft (工) · stab has a big dog (大)",
+  "contrast": "Research drops nine (九) down the hole · empty has craft (工) · poke has a big dog (大)",
   "mn": {
    "究": {
     "feature": "Nine (九) under the hole: a slash plus a hook that curls right.",
@@ -2504,7 +2504,7 @@
      6,
      7
     ],
-    "hook": "STAB: a St. Bernard lunges out with legs splayed and stabs its snout into your tater tots.",
+    "hook": "POKE: a St. Bernard lunges out with legs splayed and pokes its snout into your tater tots.",
     "picture": "A St. Bernard dog bursting out of a hole above a dining table, snout plunged into a plate of tater tots.",
     "img": "images/lookalikes/g063_7a81.jpg"
    }
@@ -2611,11 +2611,11 @@
   "tips": {
    "助": "help: shelf on the LEFT, power (力) on the right",
    "祖": "ancestor: altar (礻) on the left of the shelf (且)",
-   "組": "association: thread (糸) on the left of the shelf"
+   "組": "group: thread (糸) on the left of the shelf"
   },
-  "scene": "An ancestor's photo frame rests on an altar shelf, an association of knitters ties thread to another shelf, and a strongman lends help lifting a third.",
+  "scene": "An ancestor's photo frame rests on an altar shelf, a group of knitters ties thread to another shelf, and a strongman lends help lifting a third.",
   "img": "images/lookalikes/g066.jpg",
-  "contrast": "Help: shelf left, power arm right · ancestor: altar left of the shelf · association: thread left of the shelf",
+  "contrast": "Help: shelf left, power arm right · ancestor: altar left of the shelf · group: thread left of the shelf",
   "mn": {
    "助": {
     "feature": "Power (力) on the right; the shelf moves to the left.",
@@ -2652,7 +2652,7 @@
      4,
      5
     ],
-    "hook": "ASSOCIATION: thread from the left lashes every shelf into one big knitting club.",
+    "hook": "GROUP: thread from the left lashes every shelf into one big knitting club.",
     "picture": "A library where colorful yarn is wound around every shelf, knitters in a circle, a sorceress yanking threads with her wand.",
     "img": "images/lookalikes/g066_7d44.jpg"
    }
@@ -2787,19 +2787,19 @@
    "忘"
   ],
   "tips": {
-   "亡": "deceased: a top hat over a hook bent like an L",
-   "忙": "busy: deceased with a heart (忄) on the left",
-   "忘": "forget: deceased sitting on a heart (心) at the bottom"
+   "亡": "dead: a top hat over a hook bent like an L",
+   "忙": "busy: dead with a heart (忄) on the left",
+   "忘": "forget: dead sitting on a heart (心) at the bottom"
   },
-  "scene": "A deceased ghost's top hat floats in the air, a busy clerk with a heart badge runs by it, and another man sits on a big heart and forgets why he came.",
+  "scene": "A dead ghost's top hat floats in the air, a busy clerk with a heart badge runs by it, and another man sits on a big heart and forgets why he came.",
   "img": "images/lookalikes/g070.jpg",
-  "contrast": "Deceased lies alone · busy has a heart on the left · forget lies on a heart below",
+  "contrast": "Dead lies alone · busy has a heart on the left · forget lies on a heart below",
   "mn": {
    "亡": {
     "feature": "Bare: just the top hat over the L-shaped hook, no heart anywhere.",
     "label": "no heart",
     "strokes": [],
-    "hook": "DECEASED: the bowler lies alone, curled like a hook — no heart beating at all.",
+    "hook": "DEAD: the bowler lies alone, curled like a hook — no heart beating at all.",
     "picture": "A bowler lying curled on a bowling lane with a top hat perched above him, completely still.",
     "img": "images/lookalikes/g070_4ea1.jpg"
    },
@@ -2837,12 +2837,12 @@
    "怒"
   ],
   "tips": {
-   "努": "toil: guy (奴) over power (力)",
+   "努": "effort: guy (奴) over power (力)",
    "怒": "angry: guy over a heart (心)"
   },
-  "scene": "A guy toils pushing a heavy cart with all his power, while another guy sits on a big red heart looking angry.",
+  "scene": "A guy puts all his effort into pushing a heavy cart with all his power, while another guy sits on a big red heart looking angry.",
   "img": "images/lookalikes/g071.jpg",
-  "contrast": "Toil has power (力) below the guy · angry has a heart (心) below",
+  "contrast": "Effort has power (力) below the guy · angry has a heart (心) below",
   "mn": {
    "努": {
     "feature": "Power (力) at the bottom: a flexed arm.",
@@ -2851,7 +2851,7 @@
      5,
      6
     ],
-    "hook": "TOIL: a flexed power arm at the bottom shoves the boulder while the dog bites.",
+    "hook": "EFFORT: a flexed power arm at the bottom shoves the boulder while the dog bites.",
     "picture": "A man straining to push a boulder, a huge muscular arm bracing from below, a muddy dog biting his trousers.",
     "img": "images/lookalikes/g071_52aa.jpg"
    },
@@ -2959,12 +2959,12 @@
   ],
   "tips": {
    "旅": "trip: under the banner, two sweeping figures walk off with a hook",
-   "族": "tribe: under the banner, a dart (矢)",
+   "族": "family: under the banner, a dart (矢)",
    "遊": "play: banner over a child (子), all riding the road (辶)"
   },
-  "scene": "Under a banner travelers set off on a trip, a tribe gathers holding darts beneath another banner, and children play under a third banner along a road.",
+  "scene": "Under a banner travelers set off on a trip, a family gathers holding darts beneath another banner, and children play under a third banner along a road.",
   "img": "images/lookalikes/g074.jpg",
-  "contrast": "Trip: two travelers sweep off under the banner · tribe fires a dart (矢) · play rides the road (辶)",
+  "contrast": "Trip: two travelers sweep off under the banner · family fires a dart (矢) · play rides the road (辶)",
   "mn": {
    "旅": {
     "feature": "Under the banner, two sweeping figures trudge off with a hooked stem and a kicking tail.",
@@ -2989,8 +2989,8 @@
      9,
      10
     ],
-    "hook": "TRIBE: the tribe fires a dart from under its banner and the hit outsider joins as a zombie.",
-    "picture": "A tribe under one big banner shooting a dart, a shambling zombie joining the marching ranks.",
+    "hook": "FAMILY: the family fires a dart from under its banner and the hit outsider joins as a zombie.",
+    "picture": "A family under one big banner shooting a dart, a shambling zombie joining the marching ranks.",
     "img": "images/lookalikes/g074_65cf.jpg"
    },
    "遊": {
@@ -3144,12 +3144,12 @@
    "違"
   ],
   "tips": {
-   "偉": "admirable: person (亻) beside the locket (韋)",
+   "偉": "great: person (亻) beside the locket (韋)",
    "違": "difference: locket riding on the road (辶)"
   },
-  "scene": "An admirable gentleman proudly wears a golden locket on a chain, while a second locket rolls down a winding country road.",
+  "scene": "A great gentleman proudly wears a golden locket on a chain, while a second locket rolls down a winding country road.",
   "img": "images/lookalikes/g078.jpg",
-  "contrast": "Admirable: a person (亻) stands beside the locket · difference: the locket rides the road (辶)",
+  "contrast": "Great: a person (亻) stands beside the locket · difference: the locket rides the road (辶)",
   "mn": {
    "偉": {
     "feature": "Person (亻) on the left.",
@@ -3158,7 +3158,7 @@
      0,
      1
     ],
-    "hook": "ADMIRABLE: a person stands proud on the left; the eagle salutes him with a wing.",
+    "hook": "GREAT: a person stands proud on the left; the eagle salutes him with a wing.",
     "picture": "A proud man wearing a large locket medal, an eagle saluting him with one wing.",
     "img": "images/lookalikes/g078_5049.jpg"
    },
@@ -3186,11 +3186,11 @@
   "tips": {
    "父": "father: two dots on top over crossed sticks",
    "文": "sentence: a top hat (dot and line) over crossed sticks",
-   "交": "mingle: a top hat over father: dot, line, two dots and crossed sticks"
+   "交": "mix: a top hat over father: dot, line, two dots and crossed sticks"
   },
-  "scene": "A father with two bushy eyebrows crosses his arms, a teacher in a top hat holds crossed sticks to point at a sentence, and both mingle at a party.",
+  "scene": "A father with two bushy eyebrows crosses his arms, a teacher in a top hat holds crossed sticks to point at a sentence, and both mix at a party.",
   "img": "images/lookalikes/g079.jpg",
-  "contrast": "Father: two eyebrows, no hat · sentence: a hat, no eyebrows · mingle: hat AND eyebrows",
+  "contrast": "Father: two eyebrows, no hat · sentence: a hat, no eyebrows · mix: hat AND eyebrows",
   "mn": {
    "父": {
     "feature": "Two angry dots (eyebrows) on top, no top hat.",
@@ -3223,7 +3223,7 @@
      2,
      3
     ],
-    "hook": "MINGLE: dad puts a top hat on over his eyebrows and mingles at the party.",
+    "hook": "MIX: dad puts a top hat on over his eyebrows and mixes at the party.",
     "picture": "A father in a top hat with bushy eyebrows swapping cards with guests at a party, a coach blowing a whistle.",
     "img": "images/lookalikes/g079_4ea4.jpg"
    }
@@ -3275,10 +3275,10 @@
    "常"
   ],
   "tips": {
-   "堂": "public chamber/hall: soil (土) under the esteem roof",
+   "堂": "big hall: soil (土) under the esteem roof",
    "常": "usual: a towel (巾) hangs under the esteem roof"
   },
-  "scene": "A public chamber/hall stands on solid soil, and next door, as usual, a towel hangs from a similar roof.",
+  "scene": "A big hall stands on solid soil, and next door, as usual, a towel hangs from a similar roof.",
   "img": "images/lookalikes/g081.jpg",
   "contrast": "Hall stands on soil (土) · usual hangs a towel (巾)",
   "mn": {
@@ -3721,12 +3721,12 @@
    "晩"
   ],
   "tips": {
-   "勉": "exertion: excuse (免) with power (力) on the right",
-   "晩": "nightfall: sun (日) on the left of excuse"
+   "勉": "study hard: excuse (免) with power (力) on the right",
+   "晩": "late evening: sun (日) on the left of excuse"
   },
-  "scene": "A student shows exertion lifting weights, while at nightfall the sun sinks behind a man making an excuse.",
+  "scene": "A student must study hard, lifting weights between books, while at late evening the sun sinks behind a man making an excuse.",
   "img": "images/lookalikes/g092.jpg",
-  "contrast": "Exertion flexes a power arm on the right · nightfall has a sun sinking on the left",
+  "contrast": "Study hard flexes a power arm on the right · late evening has a sun sinking on the left",
   "mn": {
    "勉": {
     "feature": "Power 力 on the right: a hooked arm with a slash.",
@@ -3735,7 +3735,7 @@
      8,
      9
     ],
-    "hook": "EXERTION: the Bento box flexes a power 力 arm on its right — push-ups before lunch!",
+    "hook": "STUDY HARD: the Bento box flexes a power 力 arm on its right — push-ups before lunch!",
     "picture": "A bento box with one huge muscular arm doing push-ups, sweat drops flying.",
     "img": "images/lookalikes/g092_52c9.jpg"
    },
@@ -3748,7 +3748,7 @@
      2,
      3
     ],
-    "hook": "NIGHTFALL: the sun on the left asks to be excused and dives below — the Banjo dirge plays on.",
+    "hook": "LATE EVENING: the sun on the left asks to be excused and dives below — the Banjo dirge plays on.",
     "picture": "A sad banjo player strumming while a small sun on his left dives behind dark hills.",
     "img": "images/lookalikes/g092_6669.jpg"
    }
@@ -3802,11 +3802,11 @@
   ],
   "tips": {
    "因": "cause: a dog (大) inside the box",
-   "困": "quandary: a tree (木) inside the box"
+   "困": "trouble: a tree (木) inside the box"
   },
-  "scene": "A dog trapped in a box is the cause of the barking, while a tree stuck in another box faces a quandary about how to grow.",
+  "scene": "A dog trapped in a box is the cause of the barking, while a tree stuck in another box is in trouble: it has no room to grow.",
   "img": "images/lookalikes/g095.jpg",
-  "contrast": "Cause: a dog spreads its legs in the box · quandary: a tree trunk runs straight down the middle",
+  "contrast": "Cause: a dog spreads its legs in the box · trouble: a tree trunk runs straight down the middle",
   "mn": {
    "因": {
     "feature": "Inside the box a big dog 大: a line with two legs spread, no vertical trunk.",
@@ -3829,7 +3829,7 @@
      4,
      5
     ],
-    "hook": "QUANDARY: the tree's trunk jams straight down the crate — the Conductor can't get it out!",
+    "hook": "TROUBLE: the tree's trunk jams straight down the crate — the Conductor can't get it out!",
     "picture": "A conductor pushing on a crate with a tall tree trunk jammed inside, branches crushing violins.",
     "img": "images/lookalikes/g095_56f0.jpg"
    }
@@ -3843,11 +3843,11 @@
   ],
   "tips": {
    "五": "five: a top line, a stem bending into a box shape, a flat base",
-   "互": "mutually: two hooks interlock between top and bottom lines, no stem"
+   "互": "each other: two hooks interlock between top and bottom lines, no stem"
   },
-  "scene": "Five fingers grip a box-shaped frame, while two hooks mutually interlock between two planks.",
+  "scene": "Five fingers grip a box-shaped frame, while two hooks interlock with each other between two planks.",
   "img": "images/lookalikes/g096.jpg",
-  "contrast": "Five: a stem slants down into the box · mutually: two hooks lock arms, no stem",
+  "contrast": "Five: a stem slants down into the box · each other: two hooks lock arms, no stem",
   "mn": {
    "五": {
     "feature": "A single stem slants down from the top bar and joins the bent box.",
@@ -3866,7 +3866,7 @@
      1,
      2
     ],
-    "hook": "MUTUALLY: twin Goblins hook arms between the bars, each holding the other up.",
+    "hook": "EACH OTHER: twin Goblins hook arms between the bars, each holding the other up.",
     "picture": "Two muddy goblin twins between two planks, their hooked arms linked, scratching each other's backs.",
     "img": "images/lookalikes/g096_4e92.jpg"
    }
@@ -3880,11 +3880,11 @@
   ],
   "tips": {
    "子": "child: a curved hooked body with one crossbar",
-   "予": "beforehand: a small loop (マ) on top replaces the child's curved head"
+   "予": "in advance: a small loop (マ) on top replaces the child's curved head"
   },
-  "scene": "A child stands with arms out, while beside him a puppet with a looped head is prepared beforehand.",
+  "scene": "A child stands with arms out, while beside him a puppet with a looped head is prepared in advance.",
   "img": "images/lookalikes/g097.jpg",
-  "contrast": "Child has one plain hooked head bar · beforehand ties a little loop マ on top",
+  "contrast": "Child has one plain hooked head bar · in advance ties a little loop マ on top",
   "mn": {
    "子": {
     "feature": "The head is one simple bent stroke, no loop or dot.",
@@ -3903,7 +3903,7 @@
      0,
      1
     ],
-    "hook": "BEFOREHAND, the knight hangs a little loop on top to hook his yogurt a year early.",
+    "hook": "IN ADVANCE, the knight hangs a little loop on top to hook his yogurt a year early.",
     "picture": "A knight hanging a moldy yogurt cup from a small looped hook on top of a long halberd.",
     "img": "images/lookalikes/g097_4e88.jpg"
    }
@@ -3916,12 +3916,12 @@
    "舞"
   ],
   "tips": {
-   "無": "nothingness: four oven-fire dots at the bottom",
+   "無": "nothing: four oven-fire dots at the bottom",
    "舞": "dance: the same top, but two dancing feet (舛) at the bottom instead of dots"
   },
-  "scene": "Over four burning embers there is nothingness, while beside them a pair of feet begins to dance.",
+  "scene": "Over four burning embers there is nothing, while beside them a pair of feet begins to dance.",
   "img": "images/lookalikes/g098.jpg",
-  "contrast": "Nothingness: four fire dots burn below · dance: two dancing feet below",
+  "contrast": "Nothing: four fire dots burn below · dance: two dancing feet below",
   "mn": {
    "無": {
     "feature": "At the bottom, four separate fire dots.",
@@ -3932,7 +3932,7 @@
      10,
      11
     ],
-    "hook": "NOTHINGNESS: four little flames under the lattice burn it down to empty air.",
+    "hook": "NOTHING: four little flames under the lattice burn it down to empty air.",
     "picture": "A moose stomping a wooden lattice over four small flames, ashes floating, a bookworm crawling out.",
     "img": "images/lookalikes/g098_7121.jpg"
    },
@@ -3962,11 +3962,11 @@
   ],
   "tips": {
    "月": "month: two inner lines, no stem through the middle",
-   "用": "utilize: month with a stem running down the middle through the lines"
+   "用": "make use of: month with a stem running down the middle through the lines"
   },
-  "scene": "A crescent moon marks the month, while a builder utilizes a pole driven straight through a moon-shaped frame.",
+  "scene": "A crescent moon marks the month, while a builder makes use of a pole driven straight through a moon-shaped frame.",
   "img": "images/lookalikes/g099.jpg",
-  "contrast": "Month: two bars, no stem through · utilize: a pole runs straight down the middle",
+  "contrast": "Month: two bars, no stem through · make use of: a pole runs straight down the middle",
   "mn": {
    "月": {
     "feature": "Two inner bars only — nothing runs through the middle.",
@@ -3982,7 +3982,7 @@
     "strokes": [
      4
     ],
-    "hook": "UTILIZE: Yoda nails a pole straight down the middle — now the frame is a walker he can use.",
+    "hook": "MAKE USE OF: Yoda nails a pole straight down the middle — now the frame is a walker he can use.",
     "picture": "A tiny wrinkled old sage in a robe hobbling with a wooden frame walker that has a pole through its middle.",
     "img": "images/lookalikes/g099_7528.jpg"
    }
@@ -4169,12 +4169,12 @@
    "部"
   ],
   "tips": {
-   "都": "metropolis: someone (者) beside the city walls (阝 on the right)",
+   "都": "big city: someone (者) beside the city walls (阝 on the right)",
    "部": "section: muzzle (立 over 口) beside the city walls"
   },
-  "scene": "Someone stands proudly by the walls of a busy metropolis, while a muzzled dog guards one section of the wall.",
+  "scene": "Someone stands proudly by the walls of a busy big city, while a muzzled dog guards one section of the wall.",
   "img": "images/lookalikes/g105.jpg",
-  "contrast": "Metropolis: someone's long slash cuts across · section: a muzzle (stand over a mouth)",
+  "contrast": "Big city: someone's long slash cuts across · section: a muzzle (stand over a mouth)",
   "mn": {
    "都": {
     "feature": "Left: someone 者, with one long slash cutting down across it.",
@@ -4182,8 +4182,8 @@
     "strokes": [
      3
     ],
-    "hook": "METROPOLIS: someone slashes a long road diagonally across the city — the tsunami follows it.",
-    "picture": "A huge diagonal road slicing through a walled metropolis, a toddler kicking a wall, a wave surging in.",
+    "hook": "BIG CITY: someone slashes a long road diagonally across the city — the tsunami follows it.",
+    "picture": "A huge diagonal road slicing through a walled big city, a toddler kicking a wall, a wave surging in.",
     "img": "images/lookalikes/g105_90fd.jpg"
    },
    "部": {
@@ -4613,12 +4613,12 @@
   ],
   "tips": {
    "大": "large: a figure with arms outstretched, no dot and no top bar",
-   "太": "plump: a dot BELOW, between the legs",
+   "太": "fat: a dot BELOW, between the legs",
    "犬": "dog: a dot at the TOP right, like a perked ear",
    "天": "heavens: an extra bar (一) across the top, no dot"
   },
-  "scene": "A large man spreads his arms wide, a plump man balances a ball between his feet, a dog with one perked ear at its upper right sits beside them, and a fourth figure bonks its head on a ceiling beam above.",
-  "contrast": "large: a bare star-jump figure · plump: a dot drips between the legs · dog: a dot perks up at the top right · heavens: a ceiling bar over the head",
+  "scene": "A large man spreads his arms wide, a fat man balances a ball between his feet, a dog with one perked ear at its upper right sits beside them, and a fourth figure bonks its head on a ceiling beam above.",
+  "contrast": "large: a bare star-jump figure · fat: a dot drips between the legs · dog: a dot perks up at the top right · heavens: a ceiling bar over the head",
   "mn": {
    "大": {
     "feature": "No dot and no extra bar: just a bare figure spreading arms and legs.",
@@ -4634,7 +4634,7 @@
     "strokes": [
      3
     ],
-    "hook": "Stuffed PLUMP with doughnuts, the dog drips one blob of grease between its legs.",
+    "hook": "Stuffed FAT with doughnuts, the dog drips one blob of grease between its legs.",
     "picture": "A hugely fat St. Bernard dog with a single big drop of grease falling between its hind legs, doughnuts everywhere.",
     "img": "images/lookalikes/g013_592a.jpg"
    },
@@ -4670,10 +4670,10 @@
    "左": "left: craft (工) under the crossed hand",
    "右": "right: mouth (口) under the crossed hand; the slash pokes above the line",
    "石": "stone: mouth under a cliff; the slash starts at the line and does not poke above",
-   "有": "possess: a moon (月) under the crossed hand"
+   "有": "have: a moon (月) under the crossed hand"
   },
   "scene": "A carpenter holds an I-beam in his left hand and a cup in his right, standing beneath a flat cliff with a round stone under it, while a giant hand reaches down to grab a fallen moon.",
-  "contrast": "left: the hand holds a craft I-beam · right: the hand feeds a mouth · stone: a flat cliff over a mouth, nothing poking · possess: the hand grabs a moon",
+  "contrast": "left: the hand holds a craft I-beam · right: the hand feeds a mouth · stone: a flat cliff over a mouth, nothing poking · have: the hand grabs a moon",
   "mn": {
    "左": {
     "feature": "Craft (工, an I-beam) under the crossed hand.",
@@ -4713,7 +4713,7 @@
    "有": {
     "feature": "A moon (月: open-bottomed frame with two bars) under the crossed hand.",
     "label": "moon",
-    "hook": "The crossed hand slams onto the moon below: 'I POSSESS you!', and the Unicorn stabs it with her horn.",
+    "hook": "The crossed hand slams onto the moon below: 'I HAVE you!', and the Unicorn stabs it with her horn.",
     "picture": "A giant hand pinning a fallen crescent moon to the ground, a unicorn jabbing the hand with its horn.",
     "img": "images/lookalikes/g113_6709.jpg",
     "strokes": [
@@ -4737,11 +4737,11 @@
   "tips": {
    "役": "duty: going (彳) on the left of the missile (殳)",
    "投": "throw: fingers (扌) on the left of the missile (殳: small table over a crotch)",
-   "抜": "slip out: fingers + 犮: a crossbar, slashes and a dot, no small table on top",
-   "段": "grade: stairs (a stem with little steps) on the left of the missile (殳)"
+   "抜": "pull out: fingers + 犮: a crossbar, slashes and a dot, no small table on top",
+   "段": "step: stairs (a stem with little steps) on the left of the missile (殳)"
   },
   "scene": "Two soldiers march a missile onto a yak, a hand hurls a hooded missile at a toad, a greased friend squirts out of another hand, and a dandy in a top hat climbs a staircase blasted into a cliff by a missile.",
-  "contrast": "duty: two marching soldiers by the missile · throw: fingers grab the missile · slip out: fingers lose a slippery friend · grade: stairs climb beside the missile",
+  "contrast": "duty: two marching soldiers by the missile · throw: fingers grab the missile · pull out: fingers lose a slippery friend · step: stairs climb beside the missile",
   "mn": {
    "役": {
     "feature": "the 'going' radical (two stacked slants and a stem) on the left",
@@ -4773,14 +4773,14 @@
      3,
      4
     ],
-    "hook": "SLIP OUT: the greased friend shoots out diagonally through the bar — the Bat cackles.",
+    "hook": "PULL OUT: the greased friend shoots out diagonally through the bar — the Bat cackles.",
     "picture": "A greasy friend squirting diagonally out of a grabbing hand, a muddy bat cackling nearby.",
     "img": "images/lookalikes/g047_629c.jpg"
    },
    "段": {
     "feature": "Stairs on the left: a slanted stem with little step bars jutting out to the right.",
     "label": "stairs",
-    "hook": "The Dandy blasts stairs into the cliff and climbs them one GRADE at a time, tipping his hat.",
+    "hook": "The Dandy blasts stairs into the cliff and climbs them one STEP at a time, tipping his hat.",
     "picture": "A mud-splattered gentleman in a top hat climbing a narrow staircase blasted into a cliff, a smoking missile on the right.",
     "img": "images/lookalikes/g114_6bb5.jpg"
    }
@@ -4797,12 +4797,12 @@
   ],
   "tips": {
    "動": "move: heavy (重, slash on top) + power (力)",
-   "勤": "diligence: Sino- clay (堇, horns on top, no slash) + power",
+   "勤": "go to work: Sino- clay (堇, horns on top, no slash) + power",
    "働": "work: move with a person (亻) on the left",
    "重": "heavy: the bare core, no power (力) and no person"
   },
   "scene": "A heavy boulder sits alone crushing a desk, a glowing fist shoves a second boulder along, a king with a two-pronged crown hauls clay, and a sweating worker pushes a third crate from the left.",
-  "contrast": "move: power shoves the heavy boulder · diligence: crowned horns on the clay · work: a person pushes from the left · heavy: the boulder alone, no one to push",
+  "contrast": "move: power shoves the heavy boulder · go to work: crowned horns on the clay · work: a person pushes from the left · heavy: the boulder alone, no one to push",
   "mn": {
    "動": {
     "feature": "Power (力) on the right of heavy, and no person on the left.",
@@ -4818,7 +4818,7 @@
      1,
      2
     ],
-    "hook": "DILIGENCE: two crown points poke up on the clay — King sweats under them all day.",
+    "hook": "GO TO WORK: two crown points poke up on the clay — King sweats under them all day.",
     "picture": "A king with a two-pronged crown hauling clay bricks, sweat dripping.",
     "img": "images/lookalikes/g049_52e4.jpg"
    },
@@ -4895,17 +4895,17 @@
    "事"
   ],
   "tips": {
-   "争": "contend: a small hook (⺈) on top, a broom, a stem hooking down through it",
+   "争": "compete: a small hook (⺈) on top, a broom, a stem hooking down through it",
    "急": "hurry: the same top over a broom, but a heart (心) at the bottom",
    "事": "matter: a line and a mouth (一 + 口) on top, the stem running down through everything"
   },
   "scene": "A soldier wriggles out of a small hook and thrusts a spear down through a broom, a broom with a pounding heart under it rushes for a train, and a jeep rams a barbed broom down through a gossip's mouth under a beam.",
-  "contrast": "contend: a hooked top and a spear through the broom · hurry: a heart beats under the broom · matter: a mouth on top, speared with the broom",
+  "contrast": "compete: a hooked top and a spear through the broom · hurry: a heart beats under the broom · matter: a mouth on top, speared with the broom",
   "mn": {
    "争": {
     "feature": "A small hooked top (⺈) over the broom, with the hooked spear running down through it.",
     "label": "hook top",
-    "hook": "The Soldier wriggles out of the little hook on top and jams a spear down through the broom, ready to CONTEND.",
+    "hook": "The Soldier wriggles out of the little hook on top and jams a spear down through the broom, ready to COMPETE.",
     "picture": "A soldier wriggling out of a small curled hook, thrusting a hooked spear down through a broom in a fighting stance.",
     "img": "images/lookalikes/g117_4e89.jpg"
    },
@@ -4947,11 +4947,11 @@
   ],
   "tips": {
    "学": "study: schoolhouse (three sparks over a lid) over a child (子)",
-   "覚": "memorize: schoolhouse over see (見)",
+   "覚": "remember: schoolhouse over see (見)",
    "字": "character: a house roof (宀: a dot on a hooked lid) over a child (子)"
   },
   "scene": "A child studies under a school roof with three sparks crackling on top, an eyeball on legs stares at a blackboard under a second sparking roof, and another child scratches glowing letters under a small house roof with a single chimney dot.",
-  "contrast": "study: a child under the sparking schoolhouse · memorize: an eye on legs under the schoolhouse · character: a child under a plain house roof with one dot",
+  "contrast": "study: a child under the sparking schoolhouse · remember: an eye on legs under the schoolhouse · character: a child under a plain house roof with one dot",
   "mn": {
    "学": {
     "feature": "The schoolhouse roof: three little sparks (⺍) over a flat lid (冖), with a child under it.",
@@ -4972,7 +4972,7 @@
      10,
      11
     ],
-    "hook": "MEMORIZE: a huge eye on legs stares at the board once — the Cactus prickles it awake.",
+    "hook": "REMEMBER: a huge eye on legs stares at the board once — the Cactus prickles it awake.",
     "picture": "An enormous eyeball on legs staring at a blackboard, a cactus poking it, an oboe tooting.",
     "img": "images/lookalikes/g104_899a.jpg"
    },
@@ -4993,23 +4993,23 @@
    "例"
   ],
   "tips": {
-   "列": "file: bones (歹) + saber (刂), nothing on the left",
-   "例": "example: file with a person (亻) added on the left"
+   "列": "row: bones (歹) + saber (刂), nothing on the left",
+   "例": "example: row with a person (亻) added on the left"
   },
   "scene": "A skeleton army marches in a single line past a standing saber, and one soldier steps out in front, a raven on his helmet, held up as the model.",
-  "contrast": "file: bones line up by a saber · example: a person joins on the left",
+  "contrast": "row: bones line up by a saber · example: a person joins on the left",
   "mn": {
    "列": {
     "feature": "Nothing on the left: just bones (歹) and a saber (刂).",
     "label": "no person",
-    "hook": "The saber herds the bones into a single FILE, nobody beside them; the Lettuce trembles at the end of the line.",
+    "hook": "The saber herds the bones into a single ROW, nobody beside them; the Lettuce trembles at the end of the line.",
     "picture": "A skeleton army queueing in a perfect single line beside a tall saber, a trembling lettuce last in the queue.",
     "img": "images/lookalikes/g119_5217.jpg"
    },
    "例": {
-    "feature": "A person (亻) standing on the left of file.",
+    "feature": "A person (亻) standing on the left of row.",
     "label": "person",
-    "hook": "One person steps up beside the file and marches so well he becomes the EXAMPLE; a Raven copies his steps.",
+    "hook": "One person steps up beside the row and marches so well he becomes the EXAMPLE; a Raven copies his steps.",
     "picture": "A soldier marching in front of a line of skeletons, a drill sergeant pointing at him, a raven perched on his helmet.",
     "img": "images/lookalikes/g119_4f8b.jpg",
     "strokes": [
@@ -5067,31 +5067,31 @@
    "台"
   ],
   "tips": {
-   "始": "commence: woman (女) on the left of the pedestal (台)",
-   "治": "reign: water (氵) on the left of the pedestal (台)",
-   "台": "pedestal: elbow (ム) over mouth (口), nothing on the left"
+   "始": "begin: woman (女) on the left of the platform (台)",
+   "治": "govern: water (氵) on the left of the platform (台)",
+   "台": "platform: elbow (ム) over mouth (口), nothing on the left"
   },
-  "scene": "A woman leaps onto a pedestal firing a starting pistol, a queen on a second pedestal rules over water splashing in from the side, and a third bare pedestal made of a giant elbow on a screaming mouth stands empty.",
-  "contrast": "commence: a woman leaps on the pedestal · reign: water floods by the pedestal · pedestal: the elbow and mouth alone",
+  "scene": "A woman leaps onto a platform firing a starting pistol, a queen on a second platform rules over water splashing in from the side, and a third bare platform made of a giant elbow on a screaming mouth stands empty.",
+  "contrast": "begin: a woman leaps on the platform · govern: water floods by the platform · platform: the elbow and mouth alone",
   "mn": {
    "始": {
-    "feature": "A woman (女) on the left of the pedestal.",
+    "feature": "A woman (女) on the left of the platform.",
     "label": "woman",
-    "hook": "A woman leaps onto the pedestal and fires the pistol to COMMENCE the race; Sheep bolt from the line.",
-    "picture": "A woman jumping onto a pedestal firing a starting pistol, a flock of sheep bolting off a starting line.",
+    "hook": "A woman leaps onto the platform and fires the pistol to BEGIN the race; Sheep bolt from the line.",
+    "picture": "A woman jumping onto a platform firing a starting pistol, a flock of sheep bolting off a starting line.",
     "img": "images/lookalikes/g121_59cb.jpg"
    },
    "治": {
-    "feature": "Water (氵: three drops) on the left of the pedestal.",
+    "feature": "Water (氵: three drops) on the left of the platform.",
     "label": "water",
-    "hook": "The queen REIGNS from her pedestal over the water flooding in; the Jeep ferries her ministers through.",
-    "picture": "A queen on a pedestal with water flooding in from the left, a muddy jeep splashing through carrying ministers.",
+    "hook": "The queen GOVERNS from her platform over the water flooding in; the Jeep ferries her ministers through.",
+    "picture": "A queen on a platform with water flooding in from the left, a muddy jeep splashing through carrying ministers.",
     "img": "images/lookalikes/g121_6cbb.jpg"
    },
    "台": {
     "feature": "Nothing on the left: just an elbow (ム) over a mouth (口).",
     "label": "alone",
-    "hook": "The bare elbow on the mouth makes a PEDESTAL; the Dinosaur climbs on it to reach the shelf.",
+    "hook": "The bare elbow on the mouth makes a PLATFORM; the Dinosaur climbs on it to reach the shelf.",
     "picture": "A giant elbow resting on a screaming mouth like a stand, a dinosaur standing on top reaching for a kitchen shelf.",
     "img": "images/lookalikes/g121_53f0.jpg",
     "strokes": []
@@ -5187,17 +5187,17 @@
    "資"
   ],
   "tips": {
-   "貧": "poverty: part (分: two flared strokes over a sword 刀) over shells (貝)",
+   "貧": "poor: part (分: two flared strokes over a sword 刀) over shells (貝)",
    "貸": "lend: substitute (代: a person and an arrow) over shells (貝)",
    "資": "assets: next (次: two drops and a yawning mouth) over shells (貝)"
   },
   "scene": "A sword slices a beggar's last shells apart, a substitute teacher holding an arrow perches on another pile of shells, and a yawning sheep banker sits on a huge heap of shells.",
-  "contrast": "poverty: a sword parts the shells · lend: a person with an arrow begs for shells · assets: two drops and a yawn pile onto the shells",
+  "contrast": "poor: a sword parts the shells · lend: a person with an arrow begs for shells · assets: two drops and a yawn pile onto the shells",
   "mn": {
    "貧": {
     "feature": "Part (分: two slashes flaring out over a sword 刀) on top of the shells.",
     "label": "part",
-    "hook": "The tax collector's sword parts the beggar from his shells: POVERTY, and a muddy Bin for a home.",
+    "hook": "The tax collector's sword parts the beggar from his shells: POOR, and a muddy Bin for a home.",
     "picture": "A sword slicing a small pile of shells away from a beggar, who sits in a muddy trash bin.",
     "img": "images/lookalikes/g124_8ca7.jpg"
    },
@@ -5486,17 +5486,17 @@
    "途"
   ],
   "tips": {
-   "余": "too much: an umbrella (人 roof) over a tree with spread feet, nothing beside it",
-   "除": "exclude: too much with a pinnacle (阝) on the left",
-   "途": "route: too much riding a road (辶) underneath"
+   "余": "extra: an umbrella (人 roof) over a tree with spread feet, nothing beside it",
+   "除": "remove: extra with a pinnacle (阝) on the left",
+   "途": "route: extra riding a road (辶) underneath"
   },
   "scene": "A tiny umbrella overflowing with yogurt sits over a tree, a jockey is thrown off a rocky pinnacle beside a second umbrella tree, and a toddler waddles along a road curving under a third.",
-  "contrast": "too much: the umbrella tree alone · exclude: a pinnacle on the left · route: a road curves underneath",
+  "contrast": "extra: the umbrella tree alone · remove: a pinnacle on the left · route: a road curves underneath",
   "mn": {
    "余": {
     "feature": "Nothing beside it: just an umbrella (人 roof) over a tree with spread feet.",
     "label": "alone",
-    "hook": "Yogurt pours onto the lone umbrella over the tree: TOO MUCH, it overflows.",
+    "hook": "Yogurt pours onto the lone umbrella over the tree: EXTRA, it overflows.",
     "picture": "A tiny umbrella over a small tree, yogurt pouring from the sky and overflowing it.",
     "img": "images/lookalikes/g132_4f59.jpg",
     "strokes": []
@@ -5504,7 +5504,7 @@
    "除": {
     "feature": "A pinnacle (阝: a hooked ear shape) on the left.",
     "label": "pinnacle",
-    "hook": "Too much luggage on the pinnacle, so you EXCLUDE the extra: the muddy Jockey gets thrown off first.",
+    "hook": "Extra luggage on the pinnacle, so you REMOVE the extra: the muddy Jockey gets thrown off first.",
     "picture": "A muddy jockey being tossed off a rocky peak piled with luggage.",
     "img": "images/lookalikes/g132_9664.jpg",
     "strokes": [
@@ -5536,10 +5536,10 @@
   ],
   "tips": {
    "示": "show: two bars over a little hooked stem with a dot each side, nothing on top",
-   "余": "too much: the same shape with an umbrella (人 roof) over it"
+   "余": "extra: the same shape with an umbrella (人 roof) over it"
   },
   "scene": "An open-air stone altar with a glowing relic shown off under jeep headlights; beside it, the same altar under a tiny umbrella overflowing with yogurt.",
-  "contrast": "show: the altar stands in the open · too much: an umbrella sits on top and yogurt overflows",
+  "contrast": "show: the altar stands in the open · extra: an umbrella sits on top and yogurt overflows",
   "mn": {
    "示": {
     "feature": "Nothing on top: the short top bar is the top of the kanji.",
@@ -5558,7 +5558,7 @@
      0,
      1
     ],
-    "hook": "Put an umbrella over the altar and Yogurt pours on it: TOO MUCH, it overflows.",
+    "hook": "Put an umbrella over the altar and Yogurt pours on it: EXTRA, it overflows.",
     "picture": "A small stone altar under a tiny umbrella, yogurt pouring from the sky and overflowing it.",
     "img": "images/lookalikes/g133_4f59.jpg"
    }
@@ -5575,10 +5575,10 @@
   "tips": {
    "以": "by means of: no person radical; a hooked stick with a drop on the left, a full person (人) standing on the right",
    "代": "substitute: person radical 亻 on the left, an arrow (a stake with a dot at the top right) on the right",
-   "似": "similar: person radical 亻 on the left, then the whole of 以 copied beside him"
+   "似": "look alike: person radical 亻 on the left, then the whole of 以 copied beside him"
   },
   "scene": "On the left a person flies off holding a hooked stick with an eagle stuck to it; in the middle an actor is hit by an arrow while a dinosaur substitute squeezes in; on the right a man copies his neighbour in a mirror until they look the same.",
-  "contrast": "by means of: the person stands on the RIGHT, a hooked stick on the left · substitute: 亻 on the left, an arrow on the right · similar: 亻 on the left of a whole 以",
+  "contrast": "by means of: the person stands on the RIGHT, a hooked stick on the left · substitute: 亻 on the left, an arrow on the right · look alike: 亻 on the left of a whole 以",
   "mn": {
    "以": {
     "feature": "No person radical on the left: a hooked stick and a drop, with the person standing on the right.",
@@ -5606,7 +5606,7 @@
    "似": {
     "feature": "Person radical 亻 on the left of a whole 以.",
     "label": "亻 + 以",
-    "hook": "A person stands beside 以 and copies it until they look similar.",
+    "hook": "A person stands beside 以 and copies it until they look alike.",
     "picture": "A man on the left copying his neighbour in a mirror with a tattoo pen until both have the same unibrow.",
     "img": "images/lookalikes/g135_4f3c.jpg",
     "strokes": [
