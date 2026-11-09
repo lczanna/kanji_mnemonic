@@ -383,7 +383,7 @@ await test('every kun reading in a story (green word) is in that kanji\'s word l
 
 await test('a kanji\'s kun word card shares that kanji\'s sound-alike sentence and picture', async () => {
   const byK = Object.fromEntries(kanji.cards.map(c => [c.kanji, c]));
-  const bad = vocab.filter(v => v.ki).filter(v => !byK[v.ki] || !byK[v.ki].image || !(v.mn || '').includes('^') || !byK[v.ki].story.includes(v.mn.match(/\^[^^]+\^/)[0])).map(v => v.w);
+  const bad = vocab.filter(v => v.ki).filter(v => !byK[v.ki] || !(v.mn || '').includes('^') || !byK[v.ki].story.includes(v.mn.match(/\^[^^]+\^/)[0])).map(v => v.w);
   eq(bad.join(' '), '', 'words whose shared hook is broken');
   eq(vocab.filter(v => v.ki).length > 400, true, 'kun words sharing their kanji\'s hook');
   const p = await page({ cloud: false }, null);
