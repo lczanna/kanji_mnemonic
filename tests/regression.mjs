@@ -409,6 +409,17 @@ await test('kun sound-alikes are real English words (tools/check_hooks.py; skipp
   eq(r.status, 0, 'made-up sound-alikes: ' + r.stdout.trim());
 });
 
+await test('a word taught in kana shows in kanji once all its kanji are learned (案内), not before', async () => {
+  const p = await page({ cloud: false }, null);
+  const r = await p.evaluate(() => {
+    const v = BY_WORD['案内'], before = vform(v);
+    for (const k of v.k) appData.cards[k] = { stability: 5, difficulty: 5, reps: 3, lapses: 0, lastReview: today(), due: today() };
+    return { before, after: vform(v), stays: vform(BY_WORD['色々']), left: hookHtml(v.mn, v.w).left.join('') };
+  });
+  eq(r.before, 'mixed', 'kana before its kanji are learned'); eq(r.after, 'kanji', 'kanji once learned');
+  eq(r.stays, 'mixed', '色々 stays kana'); eq(r.left, '', 'hook names both kanji keywords');
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);

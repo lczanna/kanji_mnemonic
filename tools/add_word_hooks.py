@@ -61,6 +61,14 @@ def main():
         else:
             v.pop('ki', None)
     print(f'{len(kun)} words share their kanji\'s sound-alike')
+    # "fa": a word stored as mixed (shown in kana) whose kanji are now all in the deck; the app shows it in kanji
+    # once the learner has those kanji.
+    deck = {c['kanji'] for c in json.loads((ROOT / 'kanji.json').read_text(encoding='utf8'))['cards']}
+    for v in vocab:
+        if v.get('f') == 'mixed' and '々' not in v['w'] and all(ch in deck for ch in v['w'] if re.match(r'[\u3400-\u9fff]', ch)):
+            v['fa'] = 1
+        else:
+            v.pop('fa', None)
     twins = json.loads((ROOT / 'data' / 'word_twins.json').read_text(encoding='utf8')) if (ROOT / 'data' / 'word_twins.json').exists() else {}
     assert all(w in words and all(o in words for o in t['other'].split('・')) for w, t in twins.items()), 'twins for words not in the deck'
     for v in vocab:
