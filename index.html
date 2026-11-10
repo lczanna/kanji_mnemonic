@@ -797,7 +797,9 @@ function kanjiReady(ch) { const c = appData.cards[ch]; return !!c && (c.triaged 
 // Words wait until you've learned their N3 kanji ("k"). That includes words with a kanji above N3 (賃貸 waits for
 // 貸 "lend"): they're studied by sound, but the kanji you can know carries the meaning, and without it they kept
 // slipping. Kana-only words and words whose kanji are all above N3 have none to wait for.
-function vform(v) { return v.f || 'kanji'; }
+// A word first taught by sound because one kanji wasn't in the deck (案内 before 案 was added, "fa") is shown in
+// kanji once you've learned all its kanji; until then it stays in kana.
+function vform(v) { return v.f === 'mixed' && v.fa && (v.k || []).every(kanjiReady) ? 'kanji' : v.f || 'kanji'; }
 function unlocked(type, x) { return type !== 'vocab' || (x.k || []).every(kanjiReady); }
 function unseenOf(type) { return deckOf(type).filter(x => !appData.cards[keyOf(type, x)]); }
 function unseen() { return unseenOf('kanji'); }
