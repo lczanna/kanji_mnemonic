@@ -429,7 +429,7 @@ await test('word-question options are printed in kanji, with hiragana over unstu
     return mcOptions({ opts: q.options, answerText: '外出' }, false, false, q);
   });
   eq(/<ruby>劇場?<rt>げき/.test(r), true, '劇 has its reading on top: ' + r.slice(0, 200));
-  eq(/<span>外出<\/span>/.test(r), true, 'studied kanji print plain'); eq(/げきじょう</.test(r), false, 'no kana-only option');
+  eq(/<span>外出<\/span>/.test(r), true, 'studied kanji print plain'); eq(/<span>げきじょう/.test(r), false, 'no kana-only option');
 });
 
 await browser.close(); server.kill();
