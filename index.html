@@ -3032,14 +3032,18 @@ function sameScript(opts, words) {
 }
 function mcOptions(it, kana, kanji, q) {
   const answered = session.revealed;
-  const shown = q ? sameScript(it.opts, q.w) : it.opts;
+  // Word questions print every option in kanji, as the exam does (劇場, not げきじょう, even if you learned it by
+  // sound), with hiragana on top of the kanji you haven't studied yet.
   return `<div class="opts${kana ? ' kana-opts' : ''}${kanji ? ' kanji-opts' : ''}">${it.opts.map((o, i) => {
-    const plain = shown[i] !== o;   // shown in kana: no reading needed
-    o = shown[i];
     const cls = !answered ? '' : it.opts[i] === it.answerText ? ' right' : i === it.chosen ? ' wrong' : ' dim';
-    // Word questions: an option with a kanji you haven't studied yet shows its reading.
-    const rd = q && !plain && unstudied(o) && optReading(o, (q.w || [])[i]);
-    return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span>${rd ? `<span class="opt-w">${esc(o)}<small>${esc(rd)}</small></span>` : esc(o)}</button>`;
+    let label = esc(o);
+    if (q) {
+      const w = (q.w || [])[i], v = BY_WORD[w];
+      const k = !HAS_KANJI.test(o) && v && v.r === o && HAS_KANJI.test(w) ? w : o;   // the kanji spelling of a kana option
+      const r = v && v.w === k ? v.r : HAS_KANJI.test(k) ? optReading(k, w) : '';
+      label = r ? furiHtml(k, r) : esc(k);
+    }
+    return `<button class="opt${cls}" data-opt="${i}" ${answered ? 'disabled' : ''} lang="ja"><span class="num">${i + 1}</span><span>${label}</span></button>`;
   }).join('')}</div>`;
 }
 function continueBar(it) {
