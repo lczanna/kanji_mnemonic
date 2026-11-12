@@ -420,6 +420,18 @@ await test('a word taught in kana shows in kanji once all its kanji are learned 
   eq(r.stays, 'mixed', '色々 stays kana'); eq(r.left, '', 'hook names both kanji keywords');
 });
 
+await test('word-question options are printed in kanji, with hiragana over unstudied kanji (劇場, not げきじょう)', async () => {
+  const p = await page({ cloud: false }, null);
+  const r = await p.evaluate(() => {
+    session = { revealed: false };
+    for (const k of '国民両親外出') appData.cards[k] = { stability: 5, difficulty: 5, reps: 3, lapses: 0, lastReview: today(), due: today() };
+    const q = { options: ['げきじょう', '国民', '両親', '外出'], w: ['劇場', '国民', '両親', '外出'], answer: 3 };
+    return mcOptions({ opts: q.options, answerText: '外出' }, false, false, q);
+  });
+  eq(/<ruby>劇場?<rt>げき/.test(r), true, '劇 has its reading on top: ' + r.slice(0, 200));
+  eq(/<span>外出<\/span>/.test(r), true, 'studied kanji print plain'); eq(/<span>げきじょう/.test(r), false, 'no kana-only option');
+});
+
 await browser.close(); server.kill();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);
