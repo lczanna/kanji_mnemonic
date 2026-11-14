@@ -81,7 +81,6 @@ Progress isn't in the repo: a copy starts from zero, with its own progress in yo
 | `lookalikes.json` | Look-alike kanji groups for the "Don't confuse with" panel, lessons, "Which one?" quiz and sprint; built by `tools/build_lookalikes.py` from `data/lookalike_groups.json` and KanjiVG stroke data (© Ulrich Apel, CC BY-SA 3.0, kanjivg.tagaini.net) |
 | `images/lookalikes/` | One picture per look-alike group (`tools/gen_images.py --groups`) |
 | `optimize_images.py` | Resizes generated images to 480×320 JPEG |
-| `index_original.html`, `kanji_srs_app.html` | Earlier versions, kept for reference |
 
 Run locally: `python3 -m http.server`, then open http://localhost:8000. Opening `index.html` straight from disk won't load the deck.
 
