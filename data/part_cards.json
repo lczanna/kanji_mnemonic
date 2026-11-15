@@ -449,13 +449,13 @@
   "picture": "A tall ceremonial halberd with a ribbon streaming down its side, held high at the head of a festive parade with floats."
  },
  "義": {
-  "keyword": "righteousness",
+  "keyword": "justice",
   "components": [
    "sheep (tailless)",
    "ego"
   ],
-  "story": "A [sheep (tailless)] stands proudly on top of my [ego], bleating about {righteousness} while I hold it up and nod along.",
-  "picture": "A sheep without a tail standing on top of a puffed-up man's head, bleating sternly with a raised hoof."
+  "story": "A [sheep (tailless)] in a judge's wig stands on top of my [ego] and bangs a gavel, bleating for {justice}, while I hold it up and nod along.",
+  "picture": "A sheep wearing a white judge's wig stands proudly on a kneeling man's back, banging a wooden gavel and holding golden scales of justice; plain courtroom background."
  },
  "旨": {
   "keyword": "delicious",
