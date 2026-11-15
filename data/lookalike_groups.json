@@ -2367,11 +2367,11 @@
   "tips": {
    "局": "office: the flag's tail bends into a hook holding a small mouth",
    "居": "reside: old (古: ten over a mouth) under the flag",
-   "屋": "roof: climax (至) stacked like ceilings under the flag"
+   "屋": "roof: finish line (至) stacked like ceilings under the flag"
   },
   "scene": "Under a flag a post office clerk calls through a hooked window, an old man resides in a cottage beneath it, and workers stack tiles on the roof.",
   "img": "images/lookalikes/g061.jpg",
-  "contrast": "Office: the flag's tail hooks around a small mouth · reside: old (古) sits under the flag · roof: climax (至) stacked under the flag",
+  "contrast": "Office: the flag's tail hooks around a small mouth · reside: old (古) sits under the flag · roof: finish line (至) stacked under the flag",
   "mn": {
    "局": {
     "feature": "The flag's tail bends into a hook that cradles a small mouth.",
@@ -2401,8 +2401,8 @@
     "img": "images/lookalikes/g061_5c45.jpg"
    },
    "屋": {
-    "feature": "Climax (至): stacked layers ending in a long floor under the flag.",
-    "label": "climax (至)",
+    "feature": "Finish line (至): stacked layers ending in a long floor under the flag.",
+    "label": "finish line (至)",
     "strokes": [
      3,
      4,
@@ -2424,8 +2424,8 @@
    "屋"
   ],
   "tips": {
-   "室": "room: climax (至) under a house roof (宀)",
-   "屋": "roof: climax under a flag (尸) instead of a house roof"
+   "室": "room: finish line (至) under a house roof (宀)",
+   "屋": "roof: finish line under a flag (尸) instead of a house roof"
   },
   "scene": "A cozy room sits beneath a pointed house top, and next door a flag waves over a flat tiled roof.",
   "img": "images/lookalikes/g062.jpg",
@@ -3904,7 +3904,7 @@
      1
     ],
     "hook": "IN ADVANCE, the knight hangs a little loop on top to hook his yogurt a year early.",
-    "picture": "A knight hanging a moldy yogurt cup from a small looped hook on top of a long halberd.",
+    "picture": "A knight hanging a moldy yogurt cup from a small looped hook on top of a long spear.",
     "img": "images/lookalikes/g097_4e88.jpg"
    }
   }
@@ -3932,8 +3932,8 @@
      10,
      11
     ],
-    "hook": "NOTHING: four little flames under the lattice burn it down to empty air.",
-    "picture": "A moose stomping a wooden lattice over four small flames, ashes floating, a bookworm crawling out.",
+    "hook": "NOTHING: four little flames under the grill burn it down to empty air.",
+    "picture": "A moose stomping a wooden grill over four small flames, ashes floating, a bookworm crawling out.",
     "img": "images/lookalikes/g098_7121.jpg"
    },
    "舞": {
@@ -3949,7 +3949,7 @@
      14
     ],
     "hook": "DANCE: where the fire was, two feet kick out — the Bookworm dances on the empty stage!",
-    "picture": "A bookworm in sunglasses dancing wildly on an empty stage, two big feet kicking under a lattice.",
+    "picture": "A bookworm in sunglasses dancing wildly on an empty stage, two big feet kicking under a grill.",
     "img": "images/lookalikes/g098_821e.jpg"
    }
   }
@@ -5269,16 +5269,16 @@
    "面"
   ],
   "tips": {
-   "画": "brush stroke: one line over a rice field (田) in an open-top bucket (凵)",
+   "画": "drawing: one line over a rice field (田) in an open-top bucket (凵)",
    "面": "mask: a bar with a slash (丆) over a closed box with a long nose ridge inside"
   },
   "scene": "A rice field painted inside an open-topped bucket under one painted line, beside a boxy mask with a brow bar, a long nose ridge and square eyeholes.",
-  "contrast": "brush stroke: a rice field sits in an open bucket · mask: a closed box with a nose ridge",
+  "contrast": "drawing: a rice field sits in an open bucket · mask: a closed box with a nose ridge",
   "mn": {
    "画": {
     "feature": "An open-topped bucket (凵) holding a rice field (田), under one line.",
     "label": "bucket",
-    "hook": "The Cactus drags one line over a rice field in an open bucket on the Garage door: each BRUSH STROKE screeches.",
+    "hook": "The Cactus drags one line over a rice field in an open bucket on the Garage door: a DRAWING that screeches.",
     "picture": "A cactus with paint-dipped spines painting a rice field inside an open bucket on a garage door, one line across the top.",
     "img": "images/lookalikes/g126_753b.jpg",
     "strokes": [

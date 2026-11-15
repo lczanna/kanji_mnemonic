@@ -115,10 +115,10 @@
  "昜": {
   "keyword": "piggy bank",
   "components": [
-   "nightbreak",
+   "sunrise",
    "pennant"
   ],
-  "story": "At [nightbreak] the sun peeks over the horizon, and a [pennant] flutters below it, stuck into a fat {piggy bank} to mark where the savings are buried.",
+  "story": "At [sunrise] the sun peeks over the horizon, and a [pennant] flutters below it, stuck into a fat {piggy bank} to mark where the savings are buried.",
   "picture": "A fat piggy bank half buried in the ground with a small pennant flag stuck in it, the sun rising behind."
  },
  "云": {
@@ -170,12 +170,12 @@
   "picture": "An old man with a long beard sitting hunched on a small grassy mound, leaning on a crooked cane, deep in thought."
  },
  "孝": {
-  "keyword": "filial piety",
+  "keyword": "devoted child",
   "components": [
    "old man",
    "child"
   ],
-  "story": "An [old man] rides piggyback on his [child], who carries him uphill without a word of complaint: {filial piety} at its most backbreaking.",
+  "story": "An [old man] rides piggyback on his [child], who carries him uphill without a word of complaint: a {devoted child} with an aching back.",
   "picture": "A young child carrying a smiling old man piggyback up a steep hill path."
  },
  "攵": {
@@ -353,13 +353,13 @@
   "picture": "Four small flames in a row flickering under a roasting tray inside an oven."
  },
  "周": {
-  "keyword": "circumference",
+  "keyword": "lap",
   "components": [
    "hood",
    "soil",
    "mouth"
   ],
-  "story": "A [hood]-shaped fence encloses a patch of [soil] with a [mouth]-shaped pond in the middle; you jog the {circumference} of that fence every morning.",
+  "story": "A [hood]-shaped fence encloses a patch of [soil] with a [mouth]-shaped pond in the middle; you jog one {lap} around that fence every morning.",
   "picture": "A runner jogging around a fenced patch of dirt with a small square pond in the middle."
  },
  "哥": {
@@ -381,14 +381,14 @@
   "picture": "A small chick spreading two stiff wings, each wing a hooked frame with two shiny ice crystals inside, its frozen feathers crackling."
  },
  "至": {
-  "keyword": "climax",
+  "keyword": "finish line",
   "components": [
    "one",
    "elbow",
    "soil"
   ],
-  "story": "[one] last shove of an [elbow] and the dancer lands on the [soil] floor: the party hits its {climax}, everyone screaming.",
-  "picture": "A crowded party where a dancer lands on a dirt floor after a big move, everyone cheering wildly."
+  "story": "[one] last shove of an [elbow] and the runner lands face down on the [soil]: he's crossed the {finish line}, everyone screaming.",
+  "picture": "A runner diving face down across a chalk finish line on a dirt track, one elbow flung forward, the crowd screaming."
  },
  "罒": {
   "keyword": "net",
@@ -397,18 +397,18 @@
   "picture": "A rectangular fishing net with square mesh held up dripping water above a beach full of seashells."
  },
  "尺": {
-  "keyword": "shakuhachi flute",
+  "keyword": "bamboo flute",
   "components": [],
-  "story": "A bent hood on top with a long body sweeping down and kicking out to the right: a {shakuhachi flute} held at an angle, blasting sound from its end.",
+  "story": "A bent hood on top with a long body sweeping down and kicking out to the right: a {bamboo flute} held at an angle, blasting sound from its end.",
   "picture": "A long bamboo flute held at an angle, with sound waves bursting from its end over a sleeping town."
  },
  "旦": {
-  "keyword": "nightbreak",
+  "keyword": "sunrise",
   "components": [
    "sun",
    "one"
   ],
-  "story": "The [sun] peeks up over [one] flat horizon line: {nightbreak}, the dark finally cracking open.",
+  "story": "The [sun] peeks up over [one] flat horizon line: {sunrise}, the dark finally cracking open.",
   "picture": "The sun just rising above a flat horizon line, the night sky breaking into light."
  },
  "飠": {
@@ -523,13 +523,13 @@
   "picture": "A pair of striding legs going door to door, dropping a card into each square mailbox."
  },
  "炎": {
-  "keyword": "inflammation",
+  "keyword": "flames",
   "components": [
    "fire",
    "fire"
   ],
-  "story": "[fire] piled on top of [fire]: the wound burns so hot it blazes twice over, a throbbing {inflammation} that sizzles at the slightest touch.",
-  "picture": "A cartoon swollen red bump on an arm with two stacked flames rising from it."
+  "story": "[fire] piled on top of [fire]: twice the blaze, roaring {flames} that leap at the slightest breeze.",
+  "picture": "Two campfires stacked one on top of the other, tall roaring flames leaping into the night."
  },
  "曽": {
   "keyword": "formerly",
@@ -721,13 +721,13 @@
   "picture": "A closed golden heart-shaped locket on a chain lying on a road."
  },
  "冓": {
-  "keyword": "lattice",
+  "keyword": "wooden frame",
   "components": [
    "well",
    "one",
    "hood"
   ],
-  "story": "Beams crossed like a [well] frame sit on [one] long crossbar over a [hood]-shaped frame crossed by more beams: a sturdy wooden {lattice}, rigid enough to strap a back straight.",
+  "story": "Beams crossed like a [well] frame sit on [one] long crossbar over a [hood]-shaped frame crossed by more beams: a sturdy {wooden frame}, rigid enough to strap a back straight.",
   "picture": "A sturdy wooden lattice frame of crossed beams, stacked in layers, leaning against a barn wall."
  },
  "釆": {
