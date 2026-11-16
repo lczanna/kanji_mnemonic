@@ -798,8 +798,8 @@ function kanjiReady(ch) { const c = appData.cards[ch]; return !!c && (c.triaged 
 // 貸 "lend"): they're studied by sound, but the kanji you can know carries the meaning, and without it they kept
 // slipping. Kana-only words and words whose kanji are all above N3 have none to wait for.
 // A word first taught by sound because one kanji wasn't in the deck (案内 before 案 was added, "fa") is shown in
-// kanji once you've learned all its kanji; until then it stays in kana.
-function vform(v) { return v.f === 'mixed' && v.fa && (v.k || []).every(kanjiReady) ? 'kanji' : v.f || 'kanji'; }
+// kanji as soon as you've studied all its kanji (each has a card); until then it stays in kana.
+function vform(v) { return v.f === 'mixed' && v.fa && (v.k || []).every(ch => appData.cards[ch]) ? 'kanji' : v.f || 'kanji'; }
 function unlocked(type, x) { return type !== 'vocab' || (x.k || []).every(kanjiReady); }
 function unseenOf(type) { return deckOf(type).filter(x => !appData.cards[keyOf(type, x)]); }
 function unseen() { return unseenOf('kanji'); }
@@ -1672,7 +1672,9 @@ function vocabBackHtml(v, mode) {
     ${f === 'mixed' ? (() => {
       // Name the kanji: which are above N3 (why the exam prints it in kana) and which are in your deck (tappable).
       const above = [...new Set([...v.w].filter(ch => isKanji(ch) && ch !== '々' && !BY_KANJI[ch]))], mine = [...new Set([...v.w].filter(ch => BY_KANJI[ch]))];
-      return `<p class="g-note">Written <span lang="ja" class="kform">${kanjiLinks(v.w)}</span>. <span lang="ja">${esc(above.join('、'))}</span> ${above.length > 1 ? 'are' : 'is'} above N3, so the exam normally prints this word in kana: know the sound and the meaning.${mine.length ? ` In your deck: ${mine.map(ch => `<span lang="ja">${esc(ch)}</span> (${esc(BY_KANJI[ch].keyword)}) ${appData.cards[ch] ? '<span class="ok">✓ studied</span>' : '<span class="muted">not studied yet</span>'}`).join(' · ')}. Tap ${mine.length > 1 ? 'them' : 'it'} for the story.` : ''}</p>`;
+      const todo = mine.filter(ch => !appData.cards[ch]);
+      return `<p class="g-note">Written <span lang="ja" class="kform">${kanjiLinks(v.w)}</span>. ${above.length ? `<span lang="ja">${esc(above.join('、'))}</span> ${above.length > 1 ? 'are' : 'is'} above N3, so the exam normally prints this word in kana: know the sound and the meaning.`
+        : `You'll see this word in kanji once you've studied <span lang="ja">${esc(todo.join('、'))}</span>.`}${mine.length ? ` In your deck: ${mine.map(ch => `<span lang="ja">${esc(ch)}</span> (${esc(BY_KANJI[ch].keyword)}) ${appData.cards[ch] ? '<span class="ok">✓ studied</span>' : '<span class="muted">not studied yet</span>'}`).join(' · ')}. Tap ${mine.length > 1 ? 'them' : 'it'} for the story.` : ''}</p>`;
     })() : ''}
     ${v.mn ? `<div><div class="section-label">Memory hook</div>${img}<div class="story">${hook.html}</div>${v.nc ? `<div class="g-contrast"><span class="tag">DON'T CONFUSE</span> <span lang="ja">${kanjiLinks(v.nc.other)}</span> · <span lang="ja">${esc(v.nc.note)}</span></div>` : ''}</div>` : ''}
     ${(EXAMPLES[v.w] || []).length ? `<div><div class="section-label">In context</div><div class="examples">${EXAMPLES[v.w].map(([ja, en, , here]) => `
