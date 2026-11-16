@@ -1428,14 +1428,14 @@
   "options": [
    "うん、母からもらったよ。",
    "花にしようと思ってる。",
-   "母の日は五月だったね。"
+   "うん、来週の日曜日に行くつもり。"
   ],
   "answer": 1,
   "en": "Have you decided what to give for Mother's Day?",
   "opts_en": [
    "Yeah, I got it from my mom.",
    "I'm thinking of flowers.",
-   "Mother's Day was in May."
+   "Yeah, I plan to go next Sunday."
   ],
   "why": "～にしよう answers what to give; もらった reverses the direction of the gift."
  },
@@ -2094,16 +2094,16 @@
   "options": [
    "はい、ここですね。",
    "ええ、書いていただきます。",
-   "はい、名前を書いてください。"
+   "はい、少々お待ちください。すぐお呼びします。"
   ],
   "answer": 0,
   "en": "Excuse me, could you write your name here?",
   "opts_en": [
    "Sure, here?",
    "Yes, I'll humbly have you write it.",
-   "Yes, please write your name."
+   "Yes, one moment please. I'll call you right away."
   ],
-  "why": "The listener complies and checks the spot; the traps reverse who writes."
+  "why": "The listener complies and checks the spot; one trap reverses who writes."
  },
  {
   "id": "qr118",
