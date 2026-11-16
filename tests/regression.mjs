@@ -413,7 +413,7 @@ await test('a word taught in kana shows in kanji once all its kanji are learned 
   const p = await page({ cloud: false }, null);
   const r = await p.evaluate(() => {
     const v = BY_WORD['案内'], before = vform(v);
-    for (const k of v.k) appData.cards[k] = { stability: 5, difficulty: 5, reps: 3, lapses: 0, lastReview: today(), due: today() };
+    for (const k of v.k) appData.cards[k] = { stability: 5, difficulty: 5, reps: 1, lapses: 0, lastReview: today(), due: today() };
     return { before, after: vform(v), stays: vform(BY_WORD['色々']), left: hookHtml(v.mn, v.w).left.join('') };
   });
   eq(r.before, 'mixed', 'kana before its kanji are learned'); eq(r.after, 'kanji', 'kanji once learned');
