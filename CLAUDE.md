@@ -51,6 +51,9 @@ sentence audit (`data/gloss_audit.json`: wrong senses and readings, keyed by wor
 one-sentence fixes). Finally `python3 tools/kana_split.py JMdict_e.gz`: words the texts spell in kana that the
 tokenizer cut up (かいさつ → かい "floor" + さつ) become one tappable word (改札); its SKIP list holds grammar endings that look like nouns.
 
+After rebuilding `examples.json` or `exam.json`, run `python3 tools/en_fixes.py`: it applies `data/en_fixes.json`, closer English for
+example sentences whose Tatoeba translation added, dropped or changed meaning.
+
 ## Images
 
 `tools/gen_images.py` draws pictures from the stories. Never print or commit the OpenAI key.
