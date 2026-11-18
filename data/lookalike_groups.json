@@ -5616,5 +5616,45 @@
    }
   },
   "img": "images/lookalikes/g135.jpg"
+ },
+ {
+  "id": "g136",
+  "kanji": [
+   "張",
+   "着"
+  ],
+  "tips": {
+   "張": "stretch tight (チョウ, はる as in 頑張る): a bow 弓 on the left, long 長 on the right, side by side",
+   "着": "wear (チャク, きる) and arrive (つく): a sheep on top, its long tail slashing down past an eye 目, stacked top to bottom"
+  },
+  "scene": "On the left a Chow Chow in a tight harness pulls a bow's string across a very long table; on the right a yogi wearing a whole sheep as a coat, one big eye peeking out under it, arrives at a party holding a cookie tin.",
+  "contrast": "Stretch tight: a bow beside long, left and right · wear / arrive: a sheep stacked on an eye",
+  "mn": {
+   "張": {
+    "feature": "A bow 弓 stands on the left: three zigzag strokes, and long 長 sits beside it on the right.",
+    "label": "bow",
+    "strokes": [
+     1,
+     2,
+     3
+    ],
+    "hook": "STRETCH TIGHT (はる): the bow 弓 on the left pulls its string tight across to long 長, like a harness strap.",
+    "picture": "A tall archery bow on the left of the frame, its string pulled very tight toward a long ruler on the right, a Chow Chow in a strained harness tugging it.",
+    "img": "images/lookalikes/g136_5f35.jpg"
+   },
+   "着": {
+    "feature": "No bow: a sheep sits on top and its long tail slash sweeps down past the eye 目 below, all stacked.",
+    "label": "sheep tail",
+    "strokes": [
+     1,
+     2,
+     7
+    ],
+    "hook": "WEAR (きる) / ARRIVE (つく): the yogi wears the sheep on top and arrives with its tail sweeping past his eye 目.",
+    "picture": "A yogi wearing a whole sheep as a fluffy coat, one huge eye peeking out of the wool near its belly.",
+    "img": "images/lookalikes/g083_7740.jpg"
+   }
+  },
+  "img": "images/lookalikes/g136.jpg"
  }
 ]

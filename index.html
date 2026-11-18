@@ -747,13 +747,13 @@ function easyFirstChecks(d) {
     if (!c.due || c.due > by) c.due = by;
   }
 }
-// Cards whose word was removed as a duplicate of another deck word (いくら added next to 幾ら): the progress moves to
+// Cards whose word was removed as a duplicate of another deck word (いくら added next to 幾ら), or respelled (貼る → 張る): the progress moves to
 // the word that stays, unless that one already has its own card, which then wins. Runs on load and after each pull,
 // so a copy from another device or the account is moved the same way.
 // (The list is inside the function: loadData runs before the rest of the script has been read.)
 function moveKeys(d) {
   const KEY_MOVES = { 'v:いただく': 'v:頂く', 'v:いくら': 'v:幾ら', 'v:お金持ち': 'v:金持ち', 'v:堅': 'v:堅い', 'v:お皿': 'v:皿', 'v:お祭り': 'v:祭', 'v:お祝い': 'v:祝い',
-    'v:お菓子': 'v:菓子', 'v:お弁当': 'v:弁当' };
+    'v:お菓子': 'v:菓子', 'v:お弁当': 'v:弁当', 'v:貼る': 'v:張る' };
   for (const [from, to] of Object.entries(KEY_MOVES)) {
     if (d.cards[from] && !d.cards[to]) d.cards[to] = d.cards[from];
     delete d.cards[from];

@@ -373,6 +373,18 @@ await test('a removed duplicate word (いくら next to 幾ら) moves its progre
   eq(r.tri, 'known', 'sort answer moved'); eq(r.bento, true, 'pulled お弁当 moved to 弁当'); eq(r.bentoOld, false, 'pulled old key left'); eq(r.gone.length, 0, 'duplicates still in the deck: ' + r.gone);
 });
 
+await test('a respelled word (貼る → 張る) keeps its progress, and a story with two kun hooks shares each with its word', async () => {
+  const local = { version: 3, cards: { 'v:貼る': { stability: 8, difficulty: 4, reps: 3, lapses: 1, lastReview: daysAgo(2), due: daysAgo(-6) } },
+    stats: {}, settings: {}, history: {}, newByDay: {}, triaged: {} };
+  const p = await page({ cloud: false }, local);
+  const r = await p.evaluate(() => ({ reps: (appData.cards['v:張る'] || {}).reps, old: !!appData.cards['v:貼る'], word: !!BY_WORD['張る'] && !BY_WORD['貼る'] }));
+  eq(r.reps, 3, '貼る progress on 張る'); eq(r.old, false, 'old key left'); eq(r.word, true, 'the deck spells it 張る');
+  const by = Object.fromEntries(vocab.map(v => [v.w, v]));
+  eq([by['着る'].ki, by['着く'].ki, by['張る'].ki].join(''), '着着張', '着る, 着く and 張る share their kanji\'s story');
+  eq(/Kilt/.test(by['着る'].mn) && /Two-cookie/.test(by['着く'].mn) && /Harness/.test(by['張る'].mn), true, 'each word gets its own reading\'s hook');
+  eq(!by['赤ちゃん'].ki && !by['基づく'].ki, true, 'words that only start with a kun reading keep their own hook');
+});
+
 await test('every kun reading in a story (green word) is in that kanji\'s word list', async () => {
   const miss = kanji.cards.filter(c => /\^/.test(c.story || '')).filter(c => {
     const r = ((c.story.match(/\(([\u3041-\u3096]+)\)/g) || []).pop() || '').slice(1, -1);
