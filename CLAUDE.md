@@ -32,7 +32,8 @@ and moves parts ahead of the kanji that use them. Progress is keyed by kanji, so
 ## Word data
 
 A kanji's own kun word (連れる for 連) has no hook of its own: `tools/add_word_hooks.py` gives it the kanji story's
-`^sound-alike^` sentence and picture (field `ki`), so the learner memorises one mnemonic. After changing a kanji story's
+`^sound-alike^` sentence and picture (field `ki`), so the learner memorises one mnemonic. A story can teach two kun readings (着: ^Kilt^ きる, ^Two-cookie^ つく);
+each kun word (着る, 着く) gets its own reading's sentence. After changing a kanji story's
 kun sentence, rerun `python3 tools/add_word_hooks.py`. Sound-alikes are real English words or phrases you can picture
 (Two Rails, Minotaur), never the Japanese word with an animal glued on.
 `python3 tools/check_hooks.py` (needs `pip install wordfreq`; also run by the tests) lists any hook that isn't real English.

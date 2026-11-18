@@ -21,23 +21,36 @@ def kun_hooks(vocab):
     out = {}
     for c in cards:
         story = c.get('story', '')
-        reads = re.findall(r'\(([\u3041-\u3096]+)\)', story)
-        at = story.find('^')
-        if at < 0 or not reads:
-            continue
-        # the sentence holding the sound-alike: from the sentence break before it to the one after its (かな)
-        starts = [m.end() for m in re.finditer(r"[.!?]'?\s+(?=[A-Z'^~])", story[:at + 1])]
-        start = starts[-1] if starts else 0
-        close = story.find(')', story.find('(' + reads[-1] + ')', at))
-        end = re.search(r"[.!?]'?(?=\s|$)|$", story[close:])
-        sent = story[start:close + end.end()].strip()
-        sent = re.sub(r'\[([^\]]+)\]', r'\1', sent)   # [part] links belong to the kanji card
+        # each sound-alike with the (かな) after it; a story can teach two kun readings (着: きる and つく)
+        hooks = []
+        for m in re.finditer(r'\^[^^]+\^', story):
+            at = m.start()
+            rm = re.compile(r'\(([\u3041-\u3096]+)\)').search(story, m.end())
+            if not rm:
+                continue
+            # the sentence holding the sound-alike: from the sentence break before it to the one after its (かな)
+            starts = [x.end() for x in re.finditer(r"[.!?]'?\s+(?=[A-Z'^~])", story[:at + 1])]
+            start = starts[-1] if starts else 0
+            close = rm.end() - 1
+            end = re.search(r"[.!?]'?(?=\s|$)|$", story[close:])
+            sent = story[start:close + end.end()].strip()
+            sent = re.sub(r'\[([^\]]+)\]', r'\1', sent)   # [part] links belong to the kanji card
+            hooks.append((rm.group(1), sent))
+        # the kanji's own kun words, exactly as the dictionary gives them (着: 着る, 着く)
+        kun = {c['kanji'] + k.strip('-').split('.', 1)[1] if '.' in k else c['kanji']: k.strip('-').replace('.', '')
+               for k in c.get('kun', []) if not k.endswith('-')}
+        first = True
         for e in c.get('vocab', []):
             v = by_w.get(e['w'])
             # the kanji plus kana only (連れる, 七つ, 表), read as the story says
-            if v and e['r'] == v['r'] and v['r'].startswith(reads[-1]) and re.fullmatch(re.escape(c['kanji']) + r'[\u3041-\u3096々]*', v['w']):
-                out[v['w']] = (sent, c['kanji'])
-                break
+            if not (v and e['r'] == v['r'] and re.fullmatch(re.escape(c['kanji']) + r'[\u3041-\u3096々]*', v['w'])):
+                continue
+            fit = [h for h in hooks if v['r'].startswith(h[0])]
+            # the first such word may extend the reading (七つ); the others must be a kun word itself, so
+            # 赤ちゃん or 基づく keep their own hook (baby, based on)
+            if fit and v['w'] not in out and (first or kun.get(v['w']) == v['r']):
+                out[v['w']] = (max(fit, key=lambda h: len(h[0]))[1], c['kanji'])
+                first = False
     return out
 
 
