@@ -14,7 +14,7 @@ from wordfreq import zipf_frequency
 ROOT = Path(__file__).resolve().parent.parent
 OK = set('''itsy bitsy mutts cackle gashed knocker shimmers koto mochi yos hayabusa columbo okie achoo eesh sarong kaeru
 tanuki acapella kazoo coots meerkat gerbils macaw squeegee ouchie nozomi neigh marimba fugu wassup hedgehog nag
-qatari yeoman onsen minotaur gnocchi hookah cumin sashimi tattered'''.split())
+qatari yeoman onsen minotaur gnocchi hookah cumin sashimi tattered yorkie'''.split())
 
 bad = []
 for c in json.loads((ROOT / 'kanji.json').read_text(encoding='utf8'))['cards']:
