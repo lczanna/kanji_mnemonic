@@ -50,7 +50,8 @@ TEST_SET = '況只閉的無可身畑以'
 
 STYLE = ('Vivid, slightly surreal storybook illustration with warm cinematic lighting and bold, readable shapes. '
          'One clear scene, landscape framing, main action in the centre, plain uncluttered background. '
-         'Absolutely no text, letters, numbers, signs with writing, kanji or any written characters anywhere in the image.')
+         'A sign or label may spell an English sound-alike in the story (a MOTEL sign) when that makes it clearer; no other text, '
+         'and never kanji, kana or any Japanese writing.')
 
 
 def load_dotenv():
@@ -90,8 +91,6 @@ def pick_model():
 # Trademarked characters, brands and real people get refused or drawn with logos, so the
 # picture prompt describes a look-alike instead. The story text the app shows is unchanged.
 DEPICT = {
-    # drawn with its name on the sign unless told otherwise
-    'Motel': 'roadside motel (a long, low row of rooms with doors opening onto a car park and a tall blank neon arrow sign with no letters)',
     'Kyoto maiko': 'a small, young apprentice geisha in a bright flowered kimono with dangling hair ornaments',
     'Mickey Mouse': 'a cheerful little mouse',
     'Gandhi': 'a gentle bald old man in round glasses and a white shawl, walking with a staff',

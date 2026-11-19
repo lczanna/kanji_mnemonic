@@ -59,7 +59,8 @@ example sentences whose Tatoeba translation added, dropped or changed meaning.
 
 `tools/gen_images.py` draws pictures from the stories. Never print or commit the OpenAI key.
 After drawing kanji pictures, run `python3 tools/check_images.py --kanji "<those>"`: it lists pictures where the
-Japanese-reading sound-alike (`^hook^`) is missing or too small; redraw those. Hooks must be drawable things (pictures never contain text).
+Japanese-reading sound-alike (`^hook^`) is missing or too small; redraw those. Hooks must be drawable things. A picture may spell an English hook on a sign (MOTEL),
+but never shows kanji, kana or other Japanese writing (it could give the answer away).
 
 The Claude link holds at most 512 files, so it gets the pictures as packs, not one file per card:
 run `python3 tools/pack_images.py <scratch dir> --keep <published images/packs/index.json>` (read it from the link first)
