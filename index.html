@@ -947,6 +947,8 @@ function planToday() {
   const pace = {};
   for (const ty of TYPES) {
     pace[ty] = Math.ceil((ps.left[ty] || 0) * w / Math.max(0.001, wAll)) + (ty === 'vocab' ? Math.ceil(addedLeft() * w / Math.max(0.001, W)) : 0);
+    // Behind the day-one plan (or new cards now stop later or sooner): what's left, spread over the days left.
+    pace[ty] = Math.max(pace[ty], Math.ceil((left[ty] || 0) * w / Math.max(0.001, W)));
     target[ty] = left[ty] ? Math.min(left[ty], pace[ty]) : 0;
   }
   // Reviews and speed are taken once, the first time the plan is made each day: reviews done and cards learned
@@ -1202,7 +1204,8 @@ function daysToExam() { return daysBetween(today(), appData.settings.examDate); 
 // New cards stop `bufferDays` before the exam (default 2 weeks): the rest is review, practice tests and slack for busy days.
 function bufferDays() { const b = parseInt(appData.settings.bufferDays, 10); return isNaN(b) ? 14 : Math.max(0, b); }
 function finishNewBy() { return addDays(appData.settings.examDate, -bufferDays()); }
-function finalWeek() { return daysToExam() <= Math.max(7, bufferDays()); }
+// The review-only stretch: from the day new cards stop (bufferDays before the exam) to the exam.
+function finalWeek() { return daysToExam() <= bufferDays(); }
 // Aim higher in the last two weeks, when every remembered card is worth points.
 function retention() { const base = appData.settings.retention || 0.9; return daysToExam() <= 14 ? Math.max(base, 0.95) : base; }
 // Kana prompts are sized to the word so they stay on one line on a phone.

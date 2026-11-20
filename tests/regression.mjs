@@ -373,6 +373,18 @@ await test('a removed duplicate word (いくら next to 幾ら) moves its progre
   eq(r.tri, 'known', 'sort answer moved'); eq(r.bento, true, 'pulled お弁当 moved to 弁当'); eq(r.bentoOld, false, 'pulled old key left'); eq(r.gone.length, 0, 'duplicates still in the deck: ' + r.gone);
 });
 
+await test('new cards can run until the day before the exam (no fixed review-only week)', async () => {
+  const p = await page({ cloud: false }, null);
+  const r = await p.evaluate(() => {
+    appData.settings.examDate = addDays(today(), 5); appData.settings.bufferDays = 1; planCache = null;
+    const a = { final: finalWeek(), finish: finishNewBy() };
+    appData.settings.examDate = addDays(today(), 1); planCache = null;
+    return Object.assign(a, { lastDay: finalWeek() });
+  });
+  eq(r.final, false, '5 days out with new cards until the day before: still learning');
+  eq(r.lastDay, true, 'the day before the exam is review-only');
+});
+
 await test('a respelled word (貼る → 張る) keeps its progress, and a story with two kun hooks shares each with its word', async () => {
   const local = { version: 3, cards: { 'v:貼る': { stability: 8, difficulty: 4, reps: 3, lapses: 1, lastReview: daysAgo(2), due: daysAgo(-6) } },
     stats: {}, settings: {}, history: {}, newByDay: {}, triaged: {} };
