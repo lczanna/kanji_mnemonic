@@ -50,7 +50,8 @@ TEST_SET = '況只閉的無可身畑以'
 
 STYLE = ('Vivid, slightly surreal storybook illustration with warm cinematic lighting and bold, readable shapes. '
          'One clear scene, landscape framing, main action in the centre, plain uncluttered background. '
-         'A sign or label may spell an English sound-alike in the story (a MOTEL sign) when that makes it clearer; no other text, '
+         'A sign or label may spell an English sound-alike named in the story when that makes it clearer; never write the '
+         'meaning or any other words, '
          'and never kanji, kana or any Japanese writing.')
 
 
