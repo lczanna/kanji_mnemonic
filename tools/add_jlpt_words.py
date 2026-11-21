@@ -5,6 +5,8 @@ kanji cards, so N4 words like 将来, 地震, 比べる weren't in it). New entr
 app offers them first in a quick "know it / not yet" sort, so only the ones you don't know become cards.
 
   python3 tools/add_jlpt_words.py n4.csv examples.utf.gz JMdict_e.gz N4
+  python3 tools/add_jlpt_words.py false_friends.csv examples.utf.gz JMdict_e.gz N4 --katakana
+  python3 tools/add_jlpt_words.py checked.csv examples.utf.gz JMdict_e.gz N4 --checked   # words checked by hand
 
 The list is a CSV with expression,reading,meaning columns (e.g. open-anki-jlpt-decks src/n4.csv). Skipped:
 affixes (～区), katakana loanwords, entries JMdict doesn't know (typos), and other spellings of a word the deck has
@@ -18,6 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 HEAD = re.compile(r'^([^(\[{~]+)')
 KANJI = re.compile(r'[一-鿿々]')
 KATA = re.compile(r'^[ァ-ヺー・]+$')
+KATA_OK = False
 
 
 STOP = {'the', 'and', 'for', 'with', 'from', 'that', 'thing', 'things'}
@@ -31,7 +34,9 @@ def stems(m):
 
 
 def main():
+    global KATA_OK
     src, examples, jmdict, level = sys.argv[1:5]
+    KATA_OK = '--katakana' in sys.argv   # loanwords, for a hand-picked list (false friends: マフラー scarf)
     count = collections.Counter()
     for line in gzip.open(examples).read().decode('utf8').splitlines():
         if line.startswith('B: '):
@@ -40,6 +45,7 @@ def main():
                 if m:
                     count[m.group(1)] += 1
     common, kanji_of, entry_of, rebs_of = set(), collections.defaultdict(set), collections.defaultdict(set), collections.defaultdict(set)
+    known = set()
     for n, e in enumerate(re.finditer(r'<entry>(.*?)</entry>', gzip.open(jmdict).read().decode(), re.S)):
         e = e.group(1)
         kebs, rebs = re.findall(r'<keb>([^<]+)<', e), re.findall(r'<reb>([^<]+)<', e)
@@ -51,6 +57,8 @@ def main():
             rebs_of[k].update(rebs)
         for x in kebs + (rebs if not kebs else []):
             entry_of[x].add(n)
+        for r in rebs:   # a word the lists write in kana though JMdict files it under kanji (もちろん: 勿論, しかし: 然し)
+            known.add(r)
 
     def value(v):   # as in tools/rank_vocab.py
         n = count[v['w']]
@@ -73,9 +81,11 @@ def main():
             r = r[:-2]
         if KANJI.search(r) and not KANJI.search(w):   # columns swapped (いただく listed with reading 頂く)
             w, r = w, w
-        if '～' in w or '〜' in w or KATA.match(w) or w in have or not (entry_of.get(w) or entry_of.get(r)):
+        if '～' in w or '〜' in w or (KATA.match(w) and not KATA_OK) or w in have or not (entry_of.get(w) or entry_of.get(r) or w in known):
             continue
-        if entry_of.get(w, set()) & have_entries:   # another spelling of a deck word
+        # another spelling of a deck word; JMdict's rare spellings can mislead it (案 is also つくえ, so 机 looked
+        # covered), so a list checked by hand passes --checked
+        if entry_of.get(w, set()) & have_entries and '--checked' not in sys.argv:
             continue
         meaning = ', '.join(s.strip() for s in row['meaning'].split(',')[:3])
         # Also the same word in another form: polite お (お皿 / 皿), kana for a kanji word (いくら / 幾ら), a cut-off

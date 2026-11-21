@@ -386,11 +386,13 @@ await test('new cards can run until the day before the exam (no fixed review-onl
 });
 
 await test('a respelled word (貼る → 張る) keeps its progress, and a story with two kun hooks shares each with its word', async () => {
-  const local = { version: 3, cards: { 'v:貼る': { stability: 8, difficulty: 4, reps: 3, lapses: 1, lastReview: daysAgo(2), due: daysAgo(-6) } },
+  const local = { version: 3, cards: { 'v:貼る': { stability: 8, difficulty: 4, reps: 3, lapses: 1, lastReview: daysAgo(2), due: daysAgo(-6) },
+      'v:押える': { stability: 5, difficulty: 5, reps: 2, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3) } },
     stats: {}, settings: {}, history: {}, newByDay: {}, triaged: {} };
   const p = await page({ cloud: false }, local);
-  const r = await p.evaluate(() => ({ reps: (appData.cards['v:張る'] || {}).reps, old: !!appData.cards['v:貼る'], word: !!BY_WORD['張る'] && !BY_WORD['貼る'] }));
-  eq(r.reps, 3, '貼る progress on 張る'); eq(r.old, false, 'old key left'); eq(r.word, true, 'the deck spells it 張る');
+  const r = await p.evaluate(() => ({ reps: (appData.cards['v:張る'] || {}).reps, old: !!appData.cards['v:貼る'], word: !!BY_WORD['張る'] && !BY_WORD['貼る'],
+    osa: (appData.cards['v:抑える'] || {}).reps, osaOld: !!appData.cards['v:押える'] || !!BY_WORD['押える'] }));
+  eq(r.reps, 3, '貼る progress on 張る'); eq(r.old, false, 'old key left'); eq(r.word, true, 'the deck spells it 張る'); eq(r.osa, 2, '押える progress on 抑える'); eq(r.osaOld, false, '押える gone');
   const by = Object.fromEntries(vocab.map(v => [v.w, v]));
   eq([by['着る'].ki, by['着く'].ki, by['張る'].ki].join(''), '着着張', '着る, 着く and 張る share their kanji\'s story');
   eq(/Kilt/.test(by['着る'].mn) && /Two-cookie/.test(by['着く'].mn) && /Harness/.test(by['張る'].mn), true, 'each word gets its own reading\'s hook');

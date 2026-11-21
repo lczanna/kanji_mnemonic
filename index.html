@@ -747,13 +747,13 @@ function easyFirstChecks(d) {
     if (!c.due || c.due > by) c.due = by;
   }
 }
-// Cards whose word was removed as a duplicate of another deck word (いくら added next to 幾ら), or respelled (貼る → 張る): the progress moves to
+// Cards whose word was removed as a duplicate of another deck word (いくら added next to 幾ら), or respelled (貼る → 張る, 押える → 抑える): the progress moves to
 // the word that stays, unless that one already has its own card, which then wins. Runs on load and after each pull,
 // so a copy from another device or the account is moved the same way.
 // (The list is inside the function: loadData runs before the rest of the script has been read.)
 function moveKeys(d) {
   const KEY_MOVES = { 'v:いただく': 'v:頂く', 'v:いくら': 'v:幾ら', 'v:お金持ち': 'v:金持ち', 'v:堅': 'v:堅い', 'v:お皿': 'v:皿', 'v:お祭り': 'v:祭', 'v:お祝い': 'v:祝い',
-    'v:お菓子': 'v:菓子', 'v:お弁当': 'v:弁当', 'v:貼る': 'v:張る' };
+    'v:お菓子': 'v:菓子', 'v:お弁当': 'v:弁当', 'v:貼る': 'v:張る', 'v:押える': 'v:抑える' };
   for (const [from, to] of Object.entries(KEY_MOVES)) {
     if (d.cards[from] && !d.cards[to]) d.cards[to] = d.cards[from];
     delete d.cards[from];
@@ -1792,7 +1792,7 @@ function todayHtml() {
   <div class="stack">
     ${parked ? `<button class="btn primary" id="go-resume"><span class="label"><b>Resume where you left off</b><small class="muted">Back to the same card</small></span><span class="count num">${parked.queue.length - parked.i}</span></button>` : ''}
     ${triageFirst ? triageBtn('btn primary', 'Start here: mark kanji you already know', 'One quick pass through the kanji. Each one you know is skipped, and its words unlock.') : ''}
-    ${!triageFirst && wordsToSort().length ? `<button class="btn primary" id="go-wtriage"><span class="label"><b>New: sort ${wordsToSort().length} N4 and N5 words</b><small class="muted">The deck was missing them (将来, 地震, 傘, 暑い…). Tap Know it or Not yet, about a second each: only the ones you don't know become cards.</small></span><span class="count num">${wordsToSort().length}</span></button>` : ''}
+    ${!triageFirst && wordsToSort().length ? `<button class="btn primary" id="go-wtriage"><span class="label"><b>New: sort ${wordsToSort().length} words the deck was missing</b><small class="muted">Basics (もちろん, 卵), words from a real N3 test (出張, 姿勢) and loanwords that mean something else (マフラー: scarf). Tap Know it or Not yet, about a second each: only the ones you don't know become cards.</small></span><span class="count num">${wordsToSort().length}</span></button>` : ''}
     ${needBackup ? `<div class="notice stack" style="gap:8px"><b>Back up your progress</b><span>${appData.lastBackup ? `Last backup ${esc(appData.lastBackup)}.` : 'No backup yet.'} Progress lives only in this browser.</span>
       <div class="row-wrap"><button class="small-btn" id="quick-backup">Copy backup</button></div></div>` : '<div id="backup-note" class="muted" style="font-size:13px" aria-live="polite"></div>'}
     ${homeTip ? `<div class="notice stack" style="gap:8px"><b>Add this to your Home Screen</b><span>In Safari tap Share → Add to Home Screen, and open it from there. Safari can erase a site's data after 7 days without a visit; Home Screen apps are much safer.</span>
