@@ -5014,23 +5014,6 @@
 "to be clear"
 ]
 ],
-"押える": [
-[
-"ドアを押えていてください。",
-"Please hold the door open.",
-"to hold down"
-],
-[
-"痛いところを手で押えた。",
-"I pressed my hand on the spot that hurt.",
-"to press"
-],
-[
-"旅行の費用をできるだけ押えたい。",
-"I want to keep travel costs as low as possible.",
-"to keep down"
-]
-],
 "可愛そう": [
 [
 "雨にぬれた子犬が可愛そうだった。",
@@ -5352,6 +5335,90 @@
 "母の足をマッサージしてあげた。",
 "I gave my mother a foot massage.",
 "massage"
+]
+],
+"おととし": [
+[
+"おととし日本に来ました。",
+"I came to Japan the year before last.",
+"the year before last"
+],
+[
+"おととしの夏はとても暑かった。",
+"The summer before last was very hot.",
+"the year before last"
+]
+],
+"そば": [
+[
+"駅のそばに本屋があります。",
+"There is a bookshop near the station.",
+"near, beside"
+],
+[
+"昼ごはんにそばを食べた。",
+"I ate soba for lunch.",
+"soba (buckwheat noodles)"
+]
+],
+"みんな": [
+[
+"みんなで写真をとりましょう。",
+"Let's all take a photo together.",
+"everyone, all"
+],
+[
+"クラスのみんなが来ました。",
+"Everyone in the class came.",
+"everyone"
+]
+],
+"おる": [
+[
+"父は今、家におります。",
+"My father is at home now.",
+"to be (humble)"
+],
+[
+"明日は一日中会社におります。",
+"I will be at the office all day tomorrow.",
+"to be (humble)"
+]
+],
+"ごらんになる": [
+[
+"この写真をごらんになりましたか。",
+"Have you seen this photo?",
+"to see (respectful)"
+],
+[
+"先生は窓から海をごらんになった。",
+"The teacher looked at the sea from the window.",
+"to look (respectful)"
+]
+],
+"あげる": [
+[
+"妹に本をあげました。",
+"I gave my younger sister a book.",
+"to give"
+],
+[
+"犬にえさをあげてください。",
+"Please feed the dog.",
+"to give"
+]
+],
+"アイディア": [
+[
+"それはいいアイディアですね。",
+"That's a good idea.",
+"idea"
+],
+[
+"何かアイディアはありますか。",
+"Do you have any ideas?",
+"idea"
 ]
 ]
 }

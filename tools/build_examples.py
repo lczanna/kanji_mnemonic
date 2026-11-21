@@ -37,6 +37,10 @@ def main():
 
     # Kana words are often filed under a kanji spelling (まるで as 丸で), so they also match by reading.
     kana_word = {v['r']: v['r'] for v in vocab if v.get('f') == 'kana'}
+    rebs_of = {}   # JMdict: kanji spelling -> its kana readings
+    for e in re.finditer(r'<entry>(.*?)</entry>', gzip.open(sys.argv[2]).read().decode(), re.S):
+        for k in re.findall(r'<keb>([^<]+)<', e.group(1)):
+            rebs_of.setdefault(k, set()).update(r for r in re.findall(r'<reb>([^<]+)<', e.group(1)) if r in kana_word)
     found, loose = {}, {}   # word -> list of (unchecked, length, ja, en, index line)
     lines = gzip.open(sys.argv[1]).read().decode('utf8').splitlines()
     for a, b in zip(lines, lines[1:]):
@@ -53,6 +57,13 @@ def main():
             head, reading, checked = m.group(1), m.group(2), bool(m.group(4))
             if head not in wanted and reading in kana_word and reading in ja:
                 head = kana_word[reading]
+            # The index often gives a kana word only by its kanji headword (勿論{もちろん} for もちろん, 為る for する):
+            # take it when the sentence writes it in kana.
+            if head not in wanted:
+                for r in rebs_of.get(head, ()):
+                    if r in kana_word and (r in ja or (len(r) >= 3 and r[:-1] in ja)):
+                        head, reading = kana_word[r], r
+                        break
             if head not in wanted:
                 continue
             readings = wanted[head]
