@@ -32,7 +32,8 @@ def main():
             v['jl'] = jl
         else:
             v.pop('jl', None)
-    group = lambda v: 0 if v.get('jl') == 'n3' else 1 if v.get('jl') in ('n5', 'n4') else 2
+    # Very common words the lists miss (不可能, 可能性: src "common") rank with the N3 words, by how common they are.
+    group = lambda v: 0 if v.get('jl') == 'n3' or v.get('src') == 'common' else 1 if v.get('jl') in ('n5', 'n4') else 2
     for i, v in enumerate(sorted(vocab, key=lambda v: (group(v), v.get('p', 9999)))):
         v['p'] = i + 1
     path.write_text(json.dumps(vocab, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
