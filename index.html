@@ -578,6 +578,7 @@ async function pullRemote() {
   mergeRemote(remote);
   SYNC.pulled = true;
   moveKeys(appData);
+  linkOwnWords(appData);
   earlyKnownChecks(appData);
   easyFirstChecks(appData);
   planCache = null;
@@ -759,6 +760,22 @@ function moveKeys(d) {
     delete d.cards[from];
     if (d.triaged[from] && !d.triaged[to]) d.triaged[to] = d.triaged[from];
   }
+}
+// A kanji's own word (赤 for 赤, 続く for 続: the word its card teaches, field ki) is the same thing you learned on the
+// kanji card. Once that kanji is learned (2 reviews, or marked known), the word gets a card from it: a check within the
+// week instead of a lesson from zero, also when you sorted the word as "Not yet". Missing the check puts it into normal
+// learning. A word that already has a card is never touched. Runs after your account copy has loaded.
+function linkOwnWords(d) {
+  if (!VOCAB.length) return 0;
+  let n = 0;
+  for (const v of VOCAB) {
+    const ch = v.ki || ((v.k || []).length === 1 && v.w === v.k[0] ? v.k[0] : null), kc = ch && d.cards[ch], key = 'v:' + v.w;
+    if (!kc || d.cards[key] || !(kc.triaged || (kc.reps || 0) >= 2)) continue;
+    const t = today();
+    d.cards[key] = { stability: 10, difficulty: 3, reps: 1, lapses: 0, lastReview: t, due: addDays(t, knownGap(key)), triaged: true };
+    n++;
+  }
+  return n;
 }
 function earlyKnownChecks(d) {
   for (const [key, c] of Object.entries(d.cards)) {
@@ -2842,6 +2859,8 @@ function closeSheet() {
   if (session && session.kind === 'mock') { session.pausedAt = Date.now(); stopAudio(); }   // the clock stops while you're away
   parked = session && session.i < session.queue.length && session.kind !== 'sprint' ? session : null;
   session = null; saveSession(); $('sheet').hidden = true; $('answer-bar').hidden = true; document.body.style.overflow = '';
+  // Kanji that reached their 2nd review in this session hand their own word its card (after the account copy loaded).
+  if ((SYNC.pulled || !window.claude) && linkOwnWords(appData)) { planCache = null; saveData(); }
   render();
 }
 function insertLater(item, gap) {
@@ -3677,6 +3696,7 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   VOCAB = vd; BY_WORD = Object.fromEntries(VOCAB.map(v => [v.w, v]));
   GRAMMAR = gd; BY_GID = Object.fromEntries(GRAMMAR.map(g => [g.id, g]));
   for (const g of GRAMMAR) Object.assign(GL, g.gl || {});
+  if (!window.claude) { linkOwnWords(appData); saveLocal(); }   // no account (GitHub Pages): this device's copy is all there is
   render();
   initSync();        // first, so a session restored below waits for your progress
   restoreSession();
