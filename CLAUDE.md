@@ -31,6 +31,9 @@ and moves parts ahead of the kanji that use them. Progress is keyed by kanji, so
 
 ## Word data
 
+Study order: `tools/rank_vocab.py` ranks words by how common they are; then `python3 tools/rank_by_level.py <dir with n5–n2.csv>`
+(open-anki-jlpt-decks) puts N3-list words first and sends unmet N5/N4 words to the quick sort (field `jl`).
+
 A kanji's own kun word (連れる for 連) has no hook of its own: `tools/add_word_hooks.py` gives it the kanji story's
 `^sound-alike^` sentence and picture (field `ki`), so the learner memorises one mnemonic. A story can teach two kun readings (着: ^Kilt^ きる, ^Two-cookie^ つく);
 each kun word (着る, 着く) gets its own reading's sentence. After changing a kanji story's

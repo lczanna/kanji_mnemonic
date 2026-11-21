@@ -1792,7 +1792,7 @@ function todayHtml() {
   <div class="stack">
     ${parked ? `<button class="btn primary" id="go-resume"><span class="label"><b>Resume where you left off</b><small class="muted">Back to the same card</small></span><span class="count num">${parked.queue.length - parked.i}</span></button>` : ''}
     ${triageFirst ? triageBtn('btn primary', 'Start here: mark kanji you already know', 'One quick pass through the kanji. Each one you know is skipped, and its words unlock.') : ''}
-    ${!triageFirst && wordsToSort().length ? `<button class="btn primary" id="go-wtriage"><span class="label"><b>New: sort ${wordsToSort().length} words the deck was missing</b><small class="muted">Basics (もちろん, 卵), words from a real N3 test (出張, 姿勢) and loanwords that mean something else (マフラー: scarf). Tap Know it or Not yet, about a second each: only the ones you don't know become cards.</small></span><span class="count num">${wordsToSort().length}</span></button>` : ''}
+    ${!triageFirst && wordsToSort().length ? `<button class="btn primary" id="go-wtriage"><span class="label"><b>Sort ${wordsToSort().length} words you may already know</b><small class="muted">N5 and N4 words (もちろん, 卵), words from a real N3 test (出張, 姿勢) and loanwords that mean something else (マフラー: scarf). Tap Know it or Not yet, about a second each: only the ones you don't know become cards, so your new words each day are N3 words.</small></span><span class="count num">${wordsToSort().length}</span></button>` : ''}
     ${needBackup ? `<div class="notice stack" style="gap:8px"><b>Back up your progress</b><span>${appData.lastBackup ? `Last backup ${esc(appData.lastBackup)}.` : 'No backup yet.'} Progress lives only in this browser.</span>
       <div class="row-wrap"><button class="small-btn" id="quick-backup">Copy backup</button></div></div>` : '<div id="backup-note" class="muted" style="font-size:13px" aria-live="polite"></div>'}
     ${homeTip ? `<div class="notice stack" style="gap:8px"><b>Add this to your Home Screen</b><span>In Safari tap Share → Add to Home Screen, and open it from there. Safari can erase a site's data after 7 days without a visit; Home Screen apps are much safer.</span>
@@ -2759,7 +2759,8 @@ function listenScreen(it, tags) {
   return { inner: { front }, bar };
 }
 // Words added after you started (src "n4": N4 words the deck was missing) that you haven't met or sorted yet.
-const wordsToSort = () => VOCAB.filter(v => v.src && v.src !== 'card' && !appData.cards['v:' + v.w] && !appData.triaged['v:' + v.w]).sort((a, b) => a.p - b.p);
+// Also every N5/N4 word you haven't met (jl, tools/rank_by_level.py): you likely know most, so a tap beats a lesson.
+const wordsToSort = () => VOCAB.filter(v => ((v.src && v.src !== 'card') || v.jl === 'n5' || v.jl === 'n4') && !appData.cards['v:' + v.w] && !appData.triaged['v:' + v.w]).sort((a, b) => a.p - b.p);
 function startWordTriage() {
   const queue = wordsToSort().map(x => ({ type: 'vocab', x, mode: 'triage' }));
   if (!queue.length) return;
