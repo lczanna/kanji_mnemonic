@@ -67,7 +67,10 @@ const pulled = p => p.waitForFunction(() => SYNC.pulled && !SYNC.waiting, null, 
 await test('empty device loads every card from the account', async () => {
   const p = await page();
   await pulled(p);
-  eq(await p.evaluate(() => Object.keys(appData.cards).length), REMOTE_N, 'cards after loading');
+  // Every account card is there; the only extras are own-word checks from learned kanji (linkOwnWords).
+  const ld = await p.evaluate(keys => ({ missing: keys.filter(k => !appData.cards[k]).length,
+    odd: Object.keys(appData.cards).filter(k => !keys.includes(k) && !(appData.cards[k].triaged && k.startsWith('v:') && (BY_WORD[k.slice(2)].ki || BY_WORD[k.slice(2)].w.length === 1))).length }), Object.keys(cards));
+  eq(ld.missing, 0, 'account cards missing after loading'); eq(ld.odd, 0, 'cards added that are not own-word checks');
   eq(await p.evaluate(() => appData.cards['v:健康'].reps), 5, '健康 reviews');
   yes(!(await p.evaluate(() => newQueueOf('vocab').some(v => v.w === '健康'))), '健康 offered as new');
   yes(!(await p.evaluate(() => newQueueOf('kanji').some(k => k.kanji === '一'))), '一 offered as new');
@@ -86,7 +89,7 @@ await test('nothing is pushed until the account copy has been merged, and the pu
 await test('studying waits while progress loads; lessons for cards you have are dropped', async () => {
   const p = await page({ delay: 2500 });
   await p.evaluate(() => runQueue([], [{ type: 'vocab', x: BY_WORD['健康'], mode: 'learn' }, { type: 'kanji', x: BY_KANJI['一'], mode: 'learn' },
-    { type: 'vocab', x: VOCAB.find(v => v.p > 1500), mode: 'learn' }], 'all'));
+    { type: 'vocab', x: VOCAB.find(v => v.p > 1500 && (v.k || []).length > 1), mode: 'learn' }], 'all'));
   yes(await p.evaluate(() => !session && !$('modal').hidden && /Loading your progress/.test($('modal-body').textContent)), 'session started before progress loaded');
   await pulled(p);
   eq(await p.evaluate(() => $('modal').hidden), true, 'loading notice closes');
@@ -142,8 +145,8 @@ await test('old saved data (no newer fields) loads with every card and keeps the
     'v:健康': { stability: 13, difficulty: 7, reps: 5, lapses: 1, lastReview: daysAgo(2), due: daysAgo(-9) } },
     stats: { totalReviews: 10 }, settings: {}, history: {}, newByDay: {}, triaged: {} };
   const p = await page({ cloud: false }, local);
-  const r = await p.evaluate(() => [Object.keys(appData.cards).length, typeof appData.hookSeen, !!localStorage.getItem('kanji_srs_data'), appData.cards['v:健康'].reps]);
-  eq(r[0], 2, 'cards'); eq(r[1], 'object', 'missing fields filled'); eq(r[2], true, 'storage key kanji_srs_data'); eq(r[3], 5, 'reviews kept');
+  const r = await p.evaluate(() => [Object.keys(appData.cards).filter(k => !appData.cards[k].triaged).length, typeof appData.hookSeen, !!localStorage.getItem('kanji_srs_data'), appData.cards['v:健康'].reps, appData.cards['一'].reps]);
+  eq(r[0], 2, 'cards (besides own-word checks)'); eq(r[4], 4, 'kanji reviews kept'); eq(r[1], 'object', 'missing fields filled'); eq(r[2], true, 'storage key kanji_srs_data'); eq(r[3], 5, 'reviews kept');
   eq(p.errors.length, 0, 'page errors: ' + p.errors.join('; '));
 });
 
@@ -383,6 +386,19 @@ await test('new cards can run until the day before the exam (no fixed review-onl
   });
   eq(r.final, false, '5 days out with new cards until the day before: still learning');
   eq(r.lastDay, true, 'the day before the exam is review-only');
+});
+
+await test('a learned kanji gives its own word a card (a check, not a lesson from zero), even after "Not yet"; nothing else changes', async () => {
+  const c = (reps, extra) => Object.assign({ stability: 9, difficulty: 5, reps, lapses: 0, lastReview: daysAgo(3), due: daysAgo(-4) }, extra);
+  const local = { version: 3, cards: { '赤': c(3), '続': c(2), '青': c(1), 'v:選ぶ': c(4), '選': c(5) },
+    stats: {}, settings: {}, history: {}, newByDay: {}, triaged: { 'v:赤': 'unknown' } };
+  const p = await page({ cloud: false }, local);
+  const r = await p.evaluate(() => ({ red: appData.cards['v:赤'], cont: appData.cards['v:続く'], blue: !!appData.cards['v:青'],
+    choose: appData.cards['v:選ぶ'].reps, kanji: appData.cards['赤'].reps, sort: wordsToSort().some(v => v.w === '赤') }));
+  eq(!!(r.red && r.red.triaged && r.red.reps === 1), true, '赤 (sorted Not yet) gets a check card from its kanji');
+  eq(!!(r.cont && r.cont.triaged), true, '続く gets one from 続');
+  eq(r.blue, false, '青 waits: its kanji has only 1 review');
+  eq(r.choose, 4, 'a word card that exists is untouched'); eq(r.kanji, 3, 'the kanji card is untouched'); eq(r.sort, false, '赤 leaves the sort');
 });
 
 await test('a respelled word (貼る → 張る) keeps its progress, and a story with two kun hooks shares each with its word', async () => {
