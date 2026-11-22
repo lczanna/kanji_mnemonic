@@ -92,6 +92,7 @@ def pick_model():
 # Trademarked characters, brands and real people get refused or drawn with logos, so the
 # picture prompt describes a look-alike instead. The story text the app shows is unchanged.
 DEPICT = {
+    'Superhero': 'a caped masked hero in a plain suit',
     'Kyoto maiko': 'a small, young apprentice geisha in a bright flowered kimono with dangling hair ornaments',
     'Mickey Mouse': 'a cheerful little mouse',
     'Gandhi': 'a gentle bald old man in round glasses and a white shawl, walking with a staff',
@@ -203,10 +204,11 @@ def depict(text):
 
 def plain(story):
     """Story without the app's markup ({keyword}, [part], ~hook~, ^kun hook^) or kana readings in brackets."""
-    story = re.sub(r'\s*\([ぁ-ゖ]+\)', '', story)
+    story = re.sub(r'\s*\([^)]*[ぁ-ゖァ-ヺ一-鿿][^)]*\)', '', story)   # readings and kanji in brackets (した, 大人)
     for a in '{}[]~^':
         story = story.replace(a, '')
-    return story
+    # Words in capitals (a word hook's kanji meanings: EXITS, STRETCHED TIGHT) get drawn as signs: write them plainly.
+    return re.sub(r"\b[A-Z][A-Z'.]+\b", lambda m: m.group().lower() if len(m.group()) > 1 and m.group() != 'I' else m.group(), story)
 
 
 def prompt(card):
@@ -227,7 +229,10 @@ def word_prompt(v):
     hook = re.sub(r'\s*\([^)]*[\u3040-\u30ff\u4e00-\u9fff][^)]*\)', '', v['mn'])   # drop (かな) reading notes
     return (f"{STYLE}\n\nScene: {depict(plain(hook))}\n"
             f"The idea to convey is '{v['m'].split(';')[0].split(',')[0]}'. Show the scene literally, as one memorable moment; "
-            "if someone speaks, show it through expression and gesture, never a speech bubble.")
+            "if someone speaks, show it through expression and gesture, never a speech bubble. "
+            # The picture is shown before you answer: a sign naming the meaning (MONDAY, BAKERY) gives it away.
+            f"Never write the words '{v['m'].split(';')[0].split(',')[0]}' or any label, sign, calendar or caption that names it; "
+            "no letters, numbers or Japanese or Chinese characters.")
 
 
 def group_prompt(g):
