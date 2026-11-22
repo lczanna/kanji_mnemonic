@@ -93,6 +93,7 @@ def pick_model():
 # picture prompt describes a look-alike instead. The story text the app shows is unchanged.
 DEPICT = {
     'Superhero': 'a caped masked hero in a plain suit',
+    'Nemo': 'a small orange-and-white striped clownfish',
     'Kyoto maiko': 'a small, young apprentice geisha in a bright flowered kimono with dangling hair ornaments',
     'Mickey Mouse': 'a cheerful little mouse',
     'Gandhi': 'a gentle bald old man in round glasses and a white shawl, walking with a staff',
@@ -132,6 +133,7 @@ DEPICT = {
 }
 # Words whose hook the image filter refuses as written: a plainer scene for the picture only (the app shows the hook).
 PICTURE = {
+    '殺到': 'A happy crowd of shoppers hurrying through a shop door toward a big cartoon toad who is handing out free cake.',
     '嵐': 'A boy band of five young cartoon men in matching suits performing on an outdoor stage in a violent thunderstorm, rain and wind lashing, lightning across the sky, still singing.',
     '断つ': 'A cheerful tattoo artist in a studio snips a long red thread in two with big scissors.',
     '冷やす': 'A smiling man hands a woman named Sue a frosty glass of lemonade full of ice cubes on a hot day.',
