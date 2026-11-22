@@ -5420,5 +5420,29 @@
 "Do you have any ideas?",
 "idea"
 ]
+],
+"今日中": [
+[
+"この仕事は今日中に終わらせてください。",
+"Please finish this work by the end of today.",
+"by the end of today"
+],
+[
+"今日中に返事をします。",
+"I will reply by the end of today.",
+"by the end of today"
+]
+],
+"旅行先": [
+[
+"旅行先から絵はがきを送った。",
+"I sent a postcard from my travel destination.",
+"travel destination"
+],
+[
+"旅行先はまだ決めていない。",
+"I haven't decided where to travel yet.",
+"destination"
+]
 ]
 }
