@@ -578,6 +578,7 @@ async function pullRemote() {
   mergeRemote(remote);
   SYNC.pulled = true;
   moveKeys(appData);
+  if (rollExamDate(appData)) planCache = null;
   linkOwnWords(appData);
   spreadExamPile(appData);
   earlyKnownChecks(appData);
@@ -1257,6 +1258,21 @@ function otherReadings(r, w) {
 }
 
 function daysToExam() { return daysBetween(today(), appData.settings.examDate); }
+// The JLPT is held on the first Sunday of July and of December. Once your exam day is behind you, the plan moves on
+// to the next session, so new cards and normal review gaps carry on (it used to stay in 'review only' for good).
+function nextJlpt(after) {
+  for (let y = +after.slice(0, 4); ; y++) for (const m of [7, 12]) {
+    const d = new Date(Date.UTC(y, m - 1, 1)); d.setUTCDate(1 + (7 - d.getUTCDay()) % 7);
+    const s = d.toISOString().slice(0, 10);
+    if (s > after) return s;
+  }
+}
+function rollExamDate(d) {
+  const E = d.settings && d.settings.examDate, t = today();
+  if (!E || E >= t) return false;
+  d.settings.examDate = nextJlpt(t); d.settingsAt = Date.now();
+  return true;
+}
 // New cards stop `bufferDays` before the exam (default 2 weeks): the rest is review, practice tests and slack for busy days.
 function bufferDays() { const b = parseInt(appData.settings.bufferDays, 10); return isNaN(b) ? 14 : Math.max(0, b); }
 function finishNewBy() { return addDays(appData.settings.examDate, -bufferDays()); }
@@ -3735,7 +3751,7 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   VOCAB = vd; BY_WORD = Object.fromEntries(VOCAB.map(v => [v.w, v]));
   GRAMMAR = gd; BY_GID = Object.fromEntries(GRAMMAR.map(g => [g.id, g]));
   for (const g of GRAMMAR) Object.assign(GL, g.gl || {});
-  if (!window.claude) { linkOwnWords(appData); spreadExamPile(appData); saveLocal(); }   // no account (GitHub Pages): this device's copy is all there is
+  if (!window.claude) { rollExamDate(appData); linkOwnWords(appData); spreadExamPile(appData); saveLocal(); }   // no account (GitHub Pages): this device's copy is all there is
   render();
   initSync();        // first, so a session restored below waits for your progress
   restoreSession();
