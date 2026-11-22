@@ -11,8 +11,12 @@ each clip is: {id: [pack, offset, length]}. Plain bytes, not base64 text, so the
   python3 tools/pack_audio.py OUT_DIR --keep PUBLISHED_CLIPS_JSON
       # every clip stays in the pack the published index puts it in (new clips go into new packs), so re-recorded
       # clips only change their own packs and the rest need not be published again
+  python3 tools/pack_audio.py OUT_DIR --keep ... --speech-kbps 20
+      # word and sentence clips re-encoded at 20 kbps for the link (listening items stay as recorded): the link holds
+      # 256 MB a version. Re-encoded clips are cached in OUT_DIR/../speech_kbps<N>/.
 """
-import argparse, json
+import argparse, json, subprocess
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -21,7 +25,7 @@ PACK_BYTES = 1_100_000   # small packs: playing a word downloads only its pack
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('out'); ap.add_argument('--keep')
+    ap.add_argument('out'); ap.add_argument('--keep'); ap.add_argument('--speech-kbps', type=int)
     a = ap.parse_args()
     out = Path(a.out) / 'audio' / 'packs'
     keep = {k: v[0] for k, v in json.loads(Path(a.keep).read_text(encoding='utf8')).items()} if a.keep else {}
@@ -32,6 +36,18 @@ def main():
     idx = ROOT / 'speech' / 'index.json'
     order = {cid: n for n, cid in enumerate(json.loads(idx.read_text(encoding='utf8')).values())} if idx.exists() else {}
     files = sorted((ROOT / 'audio').glob('*.mp3')) + sorted((ROOT / 'speech').glob('*.mp3'), key=lambda f: order.get(f.stem, 10**9))
+    if a.speech_kbps:   # smaller word and sentence clips (speech/), same ids
+        cache = Path(a.out).parent / f'speech_kbps{a.speech_kbps}'
+        cache.mkdir(parents=True, exist_ok=True)
+        def enc(f):
+            g = cache / f.name
+            if not g.exists() or g.stat().st_mtime < f.stat().st_mtime:
+                subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(f), '-ac', '1', '-ar', '24000', '-b:a', f'{a.speech_kbps}k', str(g)], check=True)
+            return g
+        speech = [f for f in files if f.parent.name == 'speech']
+        with ThreadPoolExecutor(8) as ex:
+            small = dict(zip(speech, ex.map(enc, speech)))
+        files = [small.get(f, f) for f in files]
     packs, cur, size = [[] for _ in range(max(keep.values(), default=-1) + 1)], [], 0
     for f in files:
         if f.stem in keep:

@@ -26,7 +26,7 @@ PER_PACK = 32
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('out'); ap.add_argument('--keep')
+    ap.add_argument('out'); ap.add_argument('--keep'); ap.add_argument('--quality', type=int, default=75)   # 60 keeps the link under 256 MB
     a = ap.parse_args()
     out = Path(a.out) / 'images' / 'packs'
     keep = json.loads(Path(a.keep).read_text(encoding='utf8')) if a.keep else {}
@@ -51,7 +51,7 @@ def main():
     packs = {}
     for key, rel in cards:
         buf = io.BytesIO()
-        Image.open(ROOT / rel).convert('RGB').save(buf, 'WEBP', quality=75, method=6)
+        Image.open(ROOT / rel).convert('RGB').save(buf, 'WEBP', quality=a.quality, method=6)
         packs.setdefault(where[key], {})[key] = 'data:image/webp;base64,' + base64.b64encode(buf.getvalue()).decode()
     for n, pack in packs.items():
         (out / f'p{n:02d}.json').write_text(json.dumps(pack), encoding='utf8')
