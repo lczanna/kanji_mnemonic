@@ -401,6 +401,28 @@ await test('a learned kanji gives its own word a card (a check, not a lesson fro
   eq(r.choose, 4, 'a word card that exists is untouched'); eq(r.kanji, 3, 'the kanji card is untouched'); eq(r.sort, false, '赤 leaves the sort');
 });
 
+await test('reviews before the exam are spread over its last week, not piled on one day', async () => {
+  const E = ymd(new Date(Date.now() + 14 * 86400000)), pile = ymd(new Date(Date.now() + 7 * 86400000));
+  const cards = {};
+  const ks = kanji.cards.slice(0, 120).map(k => k.kanji);
+  ks.forEach(k => { cards[k] = { stability: 40, difficulty: 5, reps: 4, lapses: 0, lastReview: daysAgo(1), due: pile }; });
+  cards['v:健康'] = { stability: 3, difficulty: 5, reps: 3, lapses: 0, lastReview: daysAgo(2), due: pile };   // naturally due before the pile day
+  const local = { version: 3, cards, stats: {}, settings: { examDate: E, bufferDays: 1 }, settingsAt: 1, history: {}, newByDay: {}, triaged: {} };
+  const p = await page({ cloud: false }, local);
+  const r = await p.evaluate(([ks, E]) => {
+    const days = {}; for (const k of ks) days[appData.cards[k].due] = (days[appData.cards[k].due] || 0) + 1;
+    const last = addDays(E, -1), inWeek = ks.every(k => appData.cards[k].due >= addDays(E, -7) && appData.cards[k].due <= last);
+    schedule(ks[0], 3); const fresh = appData.cards[ks[0]].due;
+    return { spread: Object.keys(days).length, maxDay: Math.max(...Object.values(days)), inWeek, health: appData.cards['v:健康'].due, fresh, last, reps: appData.cards[ks[1]].reps };
+  }, [ks, E]);
+  yes(r.spread >= 5, 'piled cards spread over several days: ' + r.spread);
+  yes(r.maxDay < 60, 'no day keeps most of the pile: ' + r.maxDay);
+  eq(r.inWeek, true, 'all still reviewed in the last week before the exam');
+  yes(r.health <= pile && r.health > daysAgo(0), 'a card naturally due sooner moves earlier, never later: ' + r.health);
+  yes(r.fresh <= r.last, 'a strong card reviewed now comes back before the exam');
+  eq(r.reps, 4, 'reviews untouched');
+});
+
 await test('a respelled word (貼る → 張る) keeps its progress, and a story with two kun hooks shares each with its word', async () => {
   const local = { version: 3, cards: { 'v:貼る': { stability: 8, difficulty: 4, reps: 3, lapses: 1, lastReview: daysAgo(2), due: daysAgo(-6) },
       'v:押える': { stability: 5, difficulty: 5, reps: 2, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3) } },
