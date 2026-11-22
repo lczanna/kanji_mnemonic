@@ -1,28 +1,28 @@
 {
  "き": {
-  "score": 0,
-  "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+  "score": 0.0,
+  "heard": "시 (sounds foreign)",
+  "error": null
  },
  "意見": {
-  "score": 0,
-  "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+  "score": 0.0,
+  "heard": "Yıkım. (sounds foreign)",
+  "error": null
  },
  "た": {
   "score": 0.0,
-  "heard": "차 (sounds foreign)",
+  "heard": "他 (sounds foreign)",
   "error": null
  },
  "あき": {
   "score": 0.79,
-  "heard": "秋 (sounds foreign)",
+  "heard": "阿基 (sounds foreign)",
   "error": null
  },
  "父親": {
-  "score": 0.79,
-  "heard": "父親 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "チーム": {
   "score": 0.79,
@@ -30,28 +30,28 @@
   "error": null
  },
  "し": {
-  "score": 0.0,
-  "heard": "Sí. (sounds foreign)",
+  "score": 0.79,
+  "heard": "し (sounds foreign)",
   "error": null
  },
  "危機": {
-  "score": 0.79,
-  "heard": "キキ (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "出身": {
-  "score": 0.79,
-  "heard": "出身 (sounds foreign)",
+  "score": 0.667,
+  "heard": "去新 (sounds foreign)",
   "error": null
  },
  "市民": {
-  "score": 0.0,
-  "heard": "시민 (sounds foreign)",
+  "score": 0.79,
+  "heard": "市民 (sounds foreign)",
   "error": null
  },
  "記者": {
-  "score": 0.0,
-  "heard": "Ksa (sounds foreign)",
+  "score": 0.4,
+  "heard": "下 (sounds foreign)",
   "error": null
  },
  "デモ": {
@@ -59,39 +59,29 @@
   "heard": "でも (sounds foreign)",
   "error": null
  },
- "屋根": {
-  "score": 0.0,
-  "heard": "Jane (sounds foreign)",
-  "error": null
- },
  "み": {
   "score": 0.0,
-  "heard": "Ni (sounds foreign)",
-  "error": null
- },
- "えさ": {
-  "score": 0.4,
-  "heard": "下さ (sounds foreign)",
+  "heard": "Mi (sounds foreign)",
   "error": null
  },
  "い": {
-  "score": 0.0,
-  "heard": "이 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "そん": {
   "score": 0.0,
-  "heard": "성 (sounds foreign)",
+  "heard": "son (sounds foreign)",
   "error": null
  },
  "ぜい": {
   "score": 0.0,
-  "heard": "Zej (sounds foreign)",
+  "heard": "dai (sounds foreign)",
   "error": null
  },
  "多忙": {
-  "score": 0.79,
-  "heard": "多忙 (sounds foreign)",
+  "score": 0.0,
+  "heard": "바보 (sounds foreign)",
   "error": null
  },
  "審判": {
@@ -110,8 +100,8 @@
   "error": null
  },
  "おん": {
-  "score": 0.79,
-  "heard": "オン (sounds foreign)",
+  "score": 0.0,
+  "heard": "On (sounds foreign)",
   "error": null
  },
  "加味": {
@@ -120,11 +110,6 @@
   "error": null
  },
  "以前": {
-  "score": 0.79,
-  "heard": "以前 (sounds foreign)",
-  "error": null
- },
- "は": {
   "score": 0,
   "heard": "",
   "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
@@ -149,29 +134,24 @@
   "heard": "雨 (sounds foreign)",
   "error": null
  },
- "結婚": {
-  "score": 0.79,
-  "heard": "結婚 (sounds foreign)",
-  "error": null
- },
  "のむ": {
   "score": 0.0,
-  "heard": "Номът. (sounds foreign)",
+  "heard": "Nome (sounds foreign)",
   "error": null
  },
  "いい": {
-  "score": 0.0,
-  "heard": "이 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "て": {
   "score": 0.0,
-  "heard": "태 (sounds foreign)",
+  "heard": "で (sounds foreign)",
   "error": null
  },
  "ねこ": {
   "score": 0.79,
-  "heard": "猫 (sounds foreign)",
+  "heard": "ねこ (sounds foreign)",
   "error": null
  },
  "午後": {
@@ -179,14 +159,9 @@
   "heard": "午後 (sounds foreign)",
   "error": null
  },
- "危険": {
-  "score": 0.667,
-  "heard": "期間 (sounds foreign)",
-  "error": null
- },
  "てん": {
-  "score": 0.79,
-  "heard": "テン (sounds foreign)",
+  "score": 0.0,
+  "heard": "Ten (sounds foreign)",
   "error": null
  },
  "だれ": {
@@ -194,19 +169,9 @@
   "heard": "誰? (sounds foreign)",
   "error": null
  },
- "あに": {
-  "score": 0.0,
-  "heard": "아니. (sounds foreign)",
-  "error": null
- },
  "じょー": {
   "score": 0.0,
-  "heard": "Jo! (sounds foreign)",
-  "error": null
- },
- "あね": {
-  "score": 0.79,
-  "heard": "姉 (sounds foreign)",
+  "heard": "žo (sounds foreign)",
   "error": null
  },
  "写真": {
@@ -216,37 +181,37 @@
  },
  "場合": {
   "score": 0.79,
-  "heard": "場合 (sounds foreign)",
+  "heard": "ばい (sounds foreign)",
   "error": null
  },
  "まん": {
-  "score": 0.79,
-  "heard": "慢 (sounds foreign)",
+  "score": 0.0,
+  "heard": "MNAV (sounds foreign)",
   "error": null
  },
  "ぶ": {
   "score": 0.0,
-  "heard": "Bö. (sounds foreign)",
+  "heard": "Boo (sounds foreign)",
   "error": null
  },
  "おや": {
   "score": 0.0,
-  "heard": "oja (sounds foreign)",
+  "heard": "보야 (sounds foreign)",
   "error": null
  },
  "ひ": {
-  "score": 0.0,
-  "heard": "키 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "原因": {
   "score": 0.79,
-  "heard": "原因 (sounds foreign)",
+  "heard": "ゲーイン (sounds foreign)",
   "error": null
  },
  "だす": {
-  "score": 0.79,
-  "heard": "だす (sounds foreign)",
+  "score": 0.0,
+  "heard": "das (sounds foreign)",
   "error": null
  },
  "かみ": {
@@ -269,50 +234,35 @@
   "heard": "勤勉 (sounds foreign)",
   "error": null
  },
- "来年": {
-  "score": 0.79,
-  "heard": "来年 (sounds foreign)",
-  "error": null
- },
  "非難": {
-  "score": 0.25,
-  "heard": "基南 (sounds foreign)",
-  "error": null
- },
- "提案": {
   "score": 0.0,
-  "heard": "제안 (sounds foreign)",
+  "heard": "cina (sounds foreign)",
   "error": null
  },
  "他人": {
-  "score": 0.79,
-  "heard": "他人 (sounds foreign)",
+  "score": 0.286,
+  "heard": "談硬 (sounds foreign)",
   "error": null
  },
  "えん": {
-  "score": 0.5,
-  "heard": "英 (sounds foreign)",
+  "score": 0.0,
+  "heard": "n (sounds foreign)",
   "error": null
  },
  "へん": {
+  "score": 0.0,
+  "heard": "ten (sounds foreign)",
+  "error": null
+ },
+ "祖母": {
   "score": 0,
   "heard": "",
   "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
- },
- "祖母": {
-  "score": 0.79,
-  "heard": "祖母 (sounds foreign)",
-  "error": null
  },
  "ママ": {
   "score": 0.0,
   "heard": "Mama (sounds foreign)",
   "error": null
- },
- "半分": {
-  "score": 0,
-  "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "馬鹿": {
   "score": 0.0,
@@ -321,47 +271,47 @@
  },
  "議論": {
   "score": 0.0,
-  "heard": "žirom (sounds foreign)",
+  "heard": "디론 (sounds foreign)",
   "error": null
  },
  "我慢": {
-  "score": 0.0,
-  "heard": "gaman (sounds foreign)",
+  "score": 0.286,
+  "heard": "感恩 (sounds foreign)",
   "error": null
  },
  "入院": {
-  "score": 0.79,
-  "heard": "ニューイング (sounds foreign)",
+  "score": 0.444,
+  "heard": "新運 (sounds foreign)",
   "error": null
  },
  "な": {
-  "score": 0.0,
-  "heard": "na (sounds foreign)",
+  "score": 0.79,
+  "heard": "な (sounds foreign)",
   "error": null
  },
  "けん": {
   "score": 0.0,
-  "heard": "King (sounds foreign)",
+  "heard": "keng (sounds foreign)",
   "error": null
  },
  "花瓶": {
-  "score": 0.79,
-  "heard": "カービン (sounds foreign)",
+  "score": 0.0,
+  "heard": "카빙 (sounds foreign)",
   "error": null
  },
  "したがう": {
-  "score": 0.5,
-  "heard": "スタダウ (sounds foreign)",
+  "score": 0.286,
+  "heard": "スタダ (sounds foreign)",
   "error": null
  },
  "気分": {
-  "score": 0.286,
-  "heard": "七本 (sounds foreign)",
+  "score": 0.0,
+  "heard": "기분 (sounds foreign)",
   "error": null
  },
  "せん": {
   "score": 0.0,
-  "heard": "Sinn (sounds foreign)",
+  "heard": "Send (sounds foreign)",
   "error": null
  },
  "欠点": {
@@ -369,34 +319,24 @@
   "heard": "欠点 (sounds foreign)",
   "error": null
  },
- "拒否": {
-  "score": 0.79,
-  "heard": "拒否 (sounds foreign)",
-  "error": null
- },
  "多分": {
   "score": 0.0,
-  "heard": "Tub (sounds foreign)",
+  "heard": "taba (sounds foreign)",
   "error": null
  },
  "いや": {
-  "score": 0,
-  "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+  "score": 0.79,
+  "heard": "いや。 (sounds foreign)",
+  "error": null
  },
  "かばん": {
-  "score": 0.0,
-  "heard": "가방 (sounds foreign)",
+  "score": 0.79,
+  "heard": "カバン (sounds foreign)",
   "error": null
  },
  "だい": {
   "score": 0.79,
-  "heard": "大义 (sounds foreign)",
-  "error": null
- },
- "つかむ": {
-  "score": 0.667,
-  "heard": "スカム (sounds foreign)",
+  "heard": "代 (sounds foreign)",
   "error": null
  },
  "あい": {
@@ -405,8 +345,8 @@
   "error": null
  },
  "権利": {
-  "score": 0.667,
-  "heard": "堅比 (sounds foreign)",
+  "score": 0.0,
+  "heard": "Kendi. (sounds foreign)",
   "error": null
  },
  "地位": {
@@ -416,17 +356,12 @@
  },
  "ワイン": {
   "score": 0.0,
-  "heard": "wi (sounds foreign)",
+  "heard": "와인 (sounds foreign)",
   "error": null
  },
  "利益": {
   "score": 0.79,
   "heard": "利益 (sounds foreign)",
-  "error": null
- },
- "進歩": {
-  "score": 0.667,
-  "heard": "心部 (sounds foreign)",
   "error": null
  },
  "せ": {
@@ -436,27 +371,17 @@
  },
  "美人": {
   "score": 0.333,
-  "heard": "比心 (sounds foreign)",
-  "error": null
- },
- "いいえ": {
-  "score": 0.0,
-  "heard": "İyiye. (sounds foreign)",
-  "error": null
- },
- "難民": {
-  "score": 0.79,
-  "heard": "難民 (sounds foreign)",
+  "heard": "北京 (sounds foreign)",
   "error": null
  },
  "ぶん": {
-  "score": 0.79,
-  "heard": "ブン (sounds foreign)",
+  "score": 0.0,
+  "heard": "분 (sounds foreign)",
   "error": null
  },
  "びん": {
   "score": 0.0,
-  "heard": "Beam (sounds foreign)",
+  "heard": "冰 (sounds foreign)",
   "error": null
  },
  "汽車": {
@@ -464,15 +389,10 @@
   "heard": "記者 (sounds foreign)",
   "error": null
  },
- "ああ": {
-  "score": 0.0,
-  "heard": "아... (sounds foreign)",
-  "error": null
- },
  "エンジン": {
-  "score": 0.79,
-  "heard": "エンジン (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "がん": {
   "score": 0.0,
@@ -480,23 +400,23 @@
   "error": null
  },
  "所為": {
-  "score": 0.0,
-  "heard": "諸江 (sounds foreign)",
+  "score": 0.333,
+  "heard": "少尉 (sounds foreign)",
   "error": null
  },
  "スピーチ": {
-  "score": 0.79,
-  "heard": "スピーチ (sounds foreign)",
+  "score": 0.0,
+  "heard": "Spíte. (sounds foreign)",
   "error": null
  },
  "ばん": {
   "score": 0.0,
-  "heard": "বাং (sounds foreign)",
+  "heard": "만 (sounds foreign)",
   "error": null
  },
  "あん": {
-  "score": 0.79,
-  "heard": "安 (sounds foreign)",
+  "score": 0.0,
+  "heard": "An (sounds foreign)",
   "error": null
  },
  "論文": {
@@ -505,33 +425,33 @@
   "error": null
  },
  "しょー": {
-  "score": 0,
-  "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+  "score": 0.79,
+  "heard": "ショー (sounds foreign)",
+  "error": null
  },
  "自身": {
   "score": 0.79,
-  "heard": "G信 (sounds foreign)",
+  "heard": "地震 (sounds foreign)",
   "error": null
  },
  "部分": {
-  "score": 0.79,
-  "heard": "部分 (sounds foreign)",
+  "score": 0.0,
+  "heard": "Buben (sounds foreign)",
   "error": null
  },
  "めん": {
   "score": 0.0,
-  "heard": "Then (sounds foreign)",
+  "heard": "名 (sounds foreign)",
   "error": null
  },
  "画家": {
   "score": 0.79,
-  "heard": "画家 (sounds foreign)",
+  "heard": "がか (sounds foreign)",
   "error": null
  },
  "おう": {
-  "score": 0.5,
-  "heard": "おお (sounds foreign)",
+  "score": 0.0,
+  "heard": "o (sounds foreign)",
   "error": null
  },
  "ええ": {
@@ -546,12 +466,12 @@
  },
  "禁煙": {
   "score": 0.5,
-  "heard": "新年 (sounds foreign)",
+  "heard": "心言 (sounds foreign)",
   "error": null
  },
  "じゃ": {
-  "score": 0.79,
-  "heard": "じゃ (sounds foreign)",
+  "score": 0.0,
+  "heard": "ja (sounds foreign)",
   "error": null
  },
  "ほお": {
@@ -560,23 +480,18 @@
   "error": null
  },
  "徒歩": {
-  "score": 0.79,
-  "heard": "徒歩 (sounds foreign)",
-  "error": null
- },
- "企業": {
   "score": 0,
   "heard": "",
   "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
- "へい": {
-  "score": 0.5,
-  "heard": "はい。 (sounds foreign)",
+ "企業": {
+  "score": 0.79,
+  "heard": "企業 (sounds foreign)",
   "error": null
  },
  "なみ": {
   "score": 0.79,
-  "heard": "ナミ (sounds foreign)",
+  "heard": "波 (sounds foreign)",
   "error": null
  },
  "サイン": {
@@ -596,7 +511,7 @@
  },
  "ばい": {
   "score": 0.0,
-  "heard": "Bay (sounds foreign)",
+  "heard": "Baj (sounds foreign)",
   "error": null
  },
  "汚染": {
@@ -605,13 +520,13 @@
   "error": null
  },
  "がい": {
-  "score": 0.5,
-  "heard": "戴 (sounds foreign)",
+  "score": 0.4,
+  "heard": "大意 (sounds foreign)",
   "error": null
  },
  "永遠": {
-  "score": 0.79,
-  "heard": "永遠 (sounds foreign)",
+  "score": 0.0,
+  "heard": "Eyen (sounds foreign)",
   "error": null
  },
  "メンバー": {
@@ -620,8 +535,8 @@
   "error": null
  },
  "ぐん": {
-  "score": 0.0,
-  "heard": "个 (sounds foreign)",
+  "score": 0.79,
+  "heard": "軍 (sounds foreign)",
   "error": null
  },
  "なお": {
@@ -631,92 +546,82 @@
  },
  "維持": {
   "score": 0.0,
-  "heard": "Izi. (sounds foreign)",
+  "heard": "Izy. (sounds foreign)",
   "error": null
  },
  "退院": {
   "score": 0.79,
-  "heard": "退院 (sounds foreign)",
+  "heard": "タイイン (sounds foreign)",
   "error": null
  },
  "せい": {
   "score": 0.0,
-  "heard": "Sey. (sounds foreign)",
+  "heard": "Sí (sounds foreign)",
   "error": null
  },
  "気温": {
-  "score": 0.0,
-  "heard": "기형 (sounds foreign)",
-  "error": null
- },
- "受験": {
-  "score": 0.79,
-  "heard": "受験 (sounds foreign)",
+  "score": 0.333,
+  "heard": "休 (sounds foreign)",
   "error": null
  },
  "よん": {
-  "score": 0.5,
-  "heard": "用 (sounds foreign)",
+  "score": 0.0,
+  "heard": "연 (sounds foreign)",
   "error": null
  },
  "武器": {
   "score": 0.79,
-  "heard": "ブキー (sounds foreign)",
+  "heard": "武器 (sounds foreign)",
   "error": null
  },
  "家賃": {
   "score": 0.0,
-  "heard": "야팅 (sounds foreign)",
+  "heard": "Jačim (sounds foreign)",
   "error": null
  },
  "ふむ": {
-  "score": 0.79,
-  "heard": "ふむ。 (sounds foreign)",
+  "score": 0.0,
+  "heard": "Heme (sounds foreign)",
   "error": null
  },
  "うん": {
-  "score": 0.79,
-  "heard": "うん。 (sounds foreign)",
+  "score": 0.0,
+  "heard": "噢 (sounds foreign)",
   "error": null
  },
  "途端": {
-  "score": 0.79,
-  "heard": "途端 (sounds foreign)",
+  "score": 0.571,
+  "heard": "フォタン (sounds foreign)",
   "error": null
  },
  "知恵": {
-  "score": 0,
-  "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
- },
- "ウイスキー": {
   "score": 0.79,
-  "heard": "ウイスキー (sounds foreign)",
+  "heard": "知恵 (sounds foreign)",
   "error": null
  },
- "あお": {
+ "ウイスキー": {
   "score": 0.0,
-  "heard": "舊 (sounds foreign)",
+  "heard": "we ski. (sounds foreign)",
   "error": null
  },
  "未満": {
-  "score": 0.667,
-  "heard": "二万 (sounds foreign)",
+  "score": 0.0,
+  "heard": "มีมัง (sounds foreign)",
   "error": null
  },
  "場面": {
   "score": 0.0,
-  "heard": "Bumming (sounds foreign)",
+  "heard": "Banim (sounds foreign)",
   "error": null
  },
  "お": {
   "score": 0.0,
-  "heard": "어 (sounds foreign)",
+  "heard": "어? (sounds foreign)",
   "error": null
  },
  "ぼー": {
-  "score": 0.79,
-  "heard": "ボー (sounds foreign)",
+  "score": 0.667,
+  "heard": "ぼう (sounds foreign)",
   "error": null
  },
  "欠陥": {
@@ -725,23 +630,18 @@
   "error": null
  },
  "だが": {
-  "score": 0.79,
-  "heard": "だが (sounds foreign)",
+  "score": 0.0,
+  "heard": "Vaga (sounds foreign)",
   "error": null
  },
  "お手洗い": {
   "score": 0.79,
-  "heard": "お手洗い (sounds foreign)",
+  "heard": "おてあらい (sounds foreign)",
   "error": null
  },
  "委員": {
   "score": 0.0,
   "heard": "인 (sounds foreign)",
-  "error": null
- },
- "支店": {
-  "score": 0.5,
-  "heard": "視聽 (sounds foreign)",
   "error": null
  },
  "ビデオ": {
@@ -750,33 +650,23 @@
   "error": null
  },
  "起源": {
-  "score": 0.79,
-  "heard": "起源 (sounds foreign)",
-  "error": null
- },
- "基本": {
-  "score": 0.79,
-  "heard": "基本 (sounds foreign)",
-  "error": null
- },
- "石鹸": {
-  "score": 0.79,
-  "heard": "石鹸 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "ば": {
   "score": 0.0,
-  "heard": "va (sounds foreign)",
+  "heard": "Ba (sounds foreign)",
   "error": null
  },
  "け": {
-  "score": 0.0,
-  "heard": "che (sounds foreign)",
+  "score": 0.79,
+  "heard": "け (sounds foreign)",
   "error": null
  },
  "キャプテン": {
   "score": 0.0,
-  "heard": "cap thing (sounds foreign)",
+  "heard": "Capte (sounds foreign)",
   "error": null
  },
  "ぎん": {
@@ -785,8 +675,8 @@
   "error": null
  },
  "敬意": {
-  "score": 0.0,
-  "heard": "Cei (sounds foreign)",
+  "score": 0.79,
+  "heard": "経緯 (sounds foreign)",
   "error": null
  },
  "ホーム": {
@@ -794,34 +684,29 @@
   "heard": "ホーム (sounds foreign)",
   "error": null
  },
- "違反": {
-  "score": 0.79,
-  "heard": "違反 (sounds foreign)",
-  "error": null
- },
  "議員": {
   "score": 0.0,
-  "heard": "dim (sounds foreign)",
+  "heard": "дијинг (sounds foreign)",
   "error": null
  },
  "資源": {
-  "score": 0.571,
-  "heard": "信念 (sounds foreign)",
+  "score": 0.0,
+  "heard": "Sinen (sounds foreign)",
   "error": null
  },
  "期限": {
-  "score": 0.0,
-  "heard": "지겐 (sounds foreign)",
+  "score": 0.667,
+  "heard": "次元 (sounds foreign)",
   "error": null
  },
  "スター": {
-  "score": 0.0,
-  "heard": "Star (sounds foreign)",
+  "score": 0.79,
+  "heard": "スター (sounds foreign)",
   "error": null
  },
  "やや": {
-  "score": 0.0,
-  "heard": "Ja, ja. (sounds foreign)",
+  "score": 0.79,
+  "heard": "やや (sounds foreign)",
   "error": null
  },
  "けち": {
@@ -830,293 +715,358 @@
   "error": null
  },
  "茶碗": {
-  "score": 0.0,
-  "heard": "자왕 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "応援": {
-  "score": 0.79,
-  "heard": "応援 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "かん": {
   "score": 0.0,
-  "heard": "kanv (sounds foreign)",
+  "heard": "항 (sounds foreign)",
   "error": null
  },
  "ボーイ": {
-  "score": 0.79,
-  "heard": "ボーイ (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "ゆ": {
   "score": 0,
   "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "音声": {
-  "score": 0.79,
-  "heard": "音声 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "わん": {
-  "score": 0.5,
-  "heard": "完 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "天然": {
-  "score": 0.79,
-  "heard": "天年 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "ピン": {
-  "score": 0.0,
-  "heard": "Pim (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "器用": {
-  "score": 0.79,
-  "heard": "起用 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "愛犬": {
-  "score": 0.79,
-  "heard": "アイケン (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "依然": {
-  "score": 0.571,
-  "heard": "犀山 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "じゅん": {
-  "score": 0.4,
-  "heard": "ジム (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "まめ": {
-  "score": 0.79,
-  "heard": "豆 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "ノー": {
-  "score": 0.0,
-  "heard": "No. (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "パス": {
-  "score": 0.0,
-  "heard": "Pass (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "機嫌": {
-  "score": 0.79,
-  "heard": "起源 (sounds foreign)",
-  "error": null
- },
- "しり": {
-  "score": 0.0,
-  "heard": "시리 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "冷房": {
-  "score": 0.79,
-  "heard": "冷房 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "下着": {
-  "score": 0.0,
-  "heard": "stagi (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "ちゃ": {
-  "score": 0.0,
-  "heard": "차 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "布団": {
-  "score": 0.0,
-  "heard": "Stone (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "木綿": {
-  "score": 0.333,
-  "heard": "二名 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "けい": {
-  "score": 0.0,
-  "heard": "嘿 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "作法": {
-  "score": 0.79,
-  "heard": "作法 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "ダウン": {
-  "score": 0.79,
-  "heard": "ダウン (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "あわ": {
-  "score": 0.79,
-  "heard": "あわ (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "だん": {
-  "score": 0.5,
-  "heard": "大 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "カー": {
-  "score": 0.0,
-  "heard": "카 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "おび": {
-  "score": 0.79,
-  "heard": "帯 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "血管": {
-  "score": 0.79,
-  "heard": "血管 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "なん": {
-  "score": 0.0,
-  "heard": "nam (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "くん": {
-  "score": 0.4,
-  "heard": "客 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "ソファー": {
-  "score": 0.79,
-  "heard": "ソファー (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "うむ": {
-  "score": 0.0,
-  "heard": "Hüme. (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "ゆう": {
-  "score": 0.0,
-  "heard": "You (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "マッサージ": {
-  "score": 0.79,
-  "heard": "マッサージ (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "助言": {
-  "score": 0.79,
-  "heard": "上限 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "たび": {
-  "score": 0.0,
-  "heard": "tabi (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "理論": {
-  "score": 0.286,
-  "heard": "地龍 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "さい": {
   "score": 0,
   "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "貯金": {
   "score": 0,
   "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "地面": {
-  "score": 0.79,
-  "heard": "ジメン (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "まあ": {
-  "score": 0.5,
-  "heard": "馬 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "資金": {
-  "score": 0.667,
-  "heard": "スキン (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "とら": {
-  "score": 0.79,
-  "heard": "トラ (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "わき": {
-  "score": 0.0,
-  "heard": "Waki (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "トン": {
-  "score": 0.0,
-  "heard": "톤 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "さ": {
-  "score": 0.79,
-  "heard": "さ (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "かり": {
-  "score": 0.79,
-  "heard": "カリー (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "の": {
-  "score": 0.79,
-  "heard": "の (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "え": {
-  "score": 0.79,
-  "heard": "え? (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "医院": {
-  "score": 0.0,
-  "heard": "in (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "いえ": {
-  "score": 0.79,
-  "heard": "いえ。 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "値段": {
-  "score": 0.79,
-  "heard": "値段 (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "もん": {
-  "score": 0.0,
-  "heard": "Mong (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
  "あ": {
-  "score": 0.79,
-  "heard": "あ (sounds foreign)",
-  "error": null
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  },
- "地理": {
-  "score": 0.5,
-  "heard": "シリ (sounds foreign)",
-  "error": null
+ "知り合う": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "無知": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "初心者": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "社員": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "本屋": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "くばる": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "木々": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "断念": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "のー": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "近年": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "年々": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "手入れ": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "パンや": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "画面": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
+ },
+ "受信": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient"
  }
 }
