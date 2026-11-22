@@ -431,6 +431,16 @@ await test('the day streak counts every day in your history, not a counter that 
   eq(await p.evaluate(() => { delete appData.history[today()]; return streakDays(); }), 42, 'today not started yet: the streak still stands');
 });
 
+await test('after the exam, study carries on toward the next JLPT session (first Sunday of July or December)', async () => {
+  const local = { version: 3, cards: {}, stats: {}, settings: { examDate: daysAgo(1), bufferDays: 0 }, settingsAt: 1, history: {}, newByDay: {}, triaged: {} };
+  const p = await page({ cloud: false }, local);
+  const r = await p.evaluate(() => ({ E: appData.settings.examDate, sunday: new Date(appData.settings.examDate + 'T12:00:00Z').getUTCDay(),
+    month: +appData.settings.examDate.slice(5, 7), final: finalWeek(), ret: retention(), newOk: newLeftToday('kanji') > 0 }));
+  yes(r.E > daysAgo(0), 'exam date moved to the future: ' + r.E);
+  eq(r.sunday, 0, 'a Sunday'); yes(r.month === 7 || r.month === 12, 'July or December');
+  eq(r.final, false, 'not stuck in review-only'); eq(r.newOk, true, 'new cards again');
+});
+
 await test('a respelled word (貼る → 張る) keeps its progress, and a story with two kun hooks shares each with its word', async () => {
   const local = { version: 3, cards: { 'v:貼る': { stability: 8, difficulty: 4, reps: 3, lapses: 1, lastReview: daysAgo(2), due: daysAgo(-6) },
       'v:押える': { stability: 5, difficulty: 5, reps: 2, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3) } },
