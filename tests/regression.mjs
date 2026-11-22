@@ -423,6 +423,14 @@ await test('reviews before the exam are spread over its last week, not piled on 
   eq(r.reps, 4, 'reviews untouched');
 });
 
+await test('the day streak counts every day in your history, not a counter that a stale device reset', async () => {
+  const history = {}; for (let i = 0; i < 43; i++) history[daysAgo(i)] = 5 + i;
+  const local = { version: 3, cards: {}, stats: { totalReviews: 500, correctReviews: 400, streak: 30, lastReviewDate: daysAgo(0) }, settings: {}, history, newByDay: {}, triaged: {} };
+  const p = await page({ cloud: false }, local);
+  eq(await p.evaluate(() => streakDays()), 43, 'streak');
+  eq(await p.evaluate(() => { delete appData.history[today()]; return streakDays(); }), 42, 'today not started yet: the streak still stands');
+});
+
 await test('a respelled word (貼る → 張る) keeps its progress, and a story with two kun hooks shares each with its word', async () => {
   const local = { version: 3, cards: { 'v:貼る': { stability: 8, difficulty: 4, reps: 3, lapses: 1, lastReview: daysAgo(2), due: daysAgo(-6) },
       'v:押える': { stability: 5, difficulty: 5, reps: 2, lapses: 0, lastReview: daysAgo(1), due: daysAgo(-3) } },

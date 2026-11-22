@@ -822,10 +822,17 @@ function logReview(passed) {
   if (passed) appData.stats.correctReviews++;
   appData.history[t] = (appData.history[t] || 0) + 1;
   if (passed) appData.historyOk[t] = (appData.historyOk[t] || 0) + 1;   // right answers per day, for the week panel
-  if (appData.stats.lastReviewDate !== t) {
-    appData.stats.streak = appData.stats.lastReviewDate === addDays(t, -1) ? (appData.stats.streak || 0) + 1 : 1;
-    appData.stats.lastReviewDate = t;
-  }
+  appData.stats.lastReviewDate = t;
+  appData.stats.streak = streakDays();
+}
+// Days in a row with study (reviews or time), counted from your history, which every device merges: a counter that
+// each device bumped on its own fell back to 1 when a device with an older copy studied (30 shown after 43 days).
+function streakDays() {
+  const studied = d => (appData.history[d] || 0) > 0 || ((appData.studySec || {})[d] || 0) > 0;
+  let d = today(), n = 0;
+  if (!studied(d)) d = addDays(d, -1);   // today not started yet: the streak still stands
+  while (studied(d)) { n++; d = addDays(d, -1); }
+  return n;
 }
 function statusKey(key) {
   const c = appData.cards[key];
@@ -2018,7 +2025,7 @@ function statsHtml() {
   <div class="stack">
     <h2>Stats</h2>
     <div class="kpis">
-      <div class="kpi"><div class="v num">${s.streak || 0}</div><div class="l">day streak</div></div>
+      <div class="kpi"><div class="v num">${streakDays()}</div><div class="l">day streak</div></div>
       <div class="kpi"><div class="v num">${acc}%</div><div class="l">answered correctly</div></div>
       <div class="kpi"><div class="v num">${started('kanji')}<small class="muted"> / ${DECK.length}</small></div><div class="l">kanji started</div></div>
       <div class="kpi"><div class="v num">${started('vocab')}<small class="muted"> / ${VOCAB.length}</small></div><div class="l">words started</div></div>
