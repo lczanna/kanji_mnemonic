@@ -579,6 +579,7 @@ async function pullRemote() {
   SYNC.pulled = true;
   moveKeys(appData);
   linkOwnWords(appData);
+  spreadExamPile(appData);
   earlyKnownChecks(appData);
   easyFirstChecks(appData);
   planCache = null;
@@ -673,10 +674,41 @@ function takeSnapshot() {
 takeSnapshot();
 
 // ============ SCHEDULING ============
-function maxInterval() {
-  // Keep every card coming back at least once before exam week.
-  const left = daysBetween(today(), appData.settings.examDate) - 7;
-  return Math.max(7, Math.min(45, left));
+function maxInterval() { return 45; }
+// Before the exam every card comes back once more. A card whose next review would fall after your last study day
+// (the day before the exam) gets a day in the last week before it instead, spread by card so they don't all land on
+// one day (they used to: every such card went to exactly a week before the exam, 680 on one day). After the exam,
+// intervals are back to normal.
+function examSpread(key, t) {
+  const E = appData.settings.examDate, last = addDays(E, -1);
+  if (!E || t >= last) return null;
+  const from = addDays(E, -7) > t ? addDays(E, -7) : addDays(t, 1);
+  return addDays(from, cardHash(key) % (daysBetween(from, last) + 1));
+}
+function cardHash(key) { let h = 7; for (const ch of key) h = (h * 31 + ch.codePointAt(0)) | 0; return Math.abs(h); }
+function dueAfter(key, t, days) {
+  const d = addDays(t, days), E = appData.settings.examDate;
+  if (E && t < addDays(E, -1) && d > addDays(E, -1)) return examSpread(key, t) || d;
+  return d;
+}
+// Cards already piled on the week-before-exam day by the old rule are spread out, never later than that day if they're
+// naturally due by then (now: between tomorrow and that day), else in the last week but not after their natural day.
+// Same day on every device; reviews and stability are untouched.
+function spreadExamPile(d) {
+  const E = d.settings && d.settings.examDate, t = today();
+  if (!E) return 0;
+  const pile = addDays(E, -7);
+  if (t >= pile) return 0;
+  let n = 0;
+  for (const [k, c] of Object.entries(d.cards)) {
+    if (c.due !== pile || !c.lastReview || !c.reps) continue;
+    const natural = addDays(c.lastReview, Math.max(1, Math.round(FSRS.interval(c.stability || 0.5, retention()))));
+    let to;
+    if (natural <= pile) { const from = addDays(t, 1); to = addDays(from, cardHash(k) % (daysBetween(from, pile) + 1)); }
+    else { to = examSpread(k, t); if (to && to > natural) to = natural; }
+    if (to && to !== pile) { c.due = to; n++; }
+  }
+  return n;
 }
 function schedule(key, grade) {
   const t = today();
@@ -701,7 +733,7 @@ function schedule(key, grade) {
   let days = Math.min(maxInterval(), Math.max(1, Math.round(FSRS.interval(c.stability, ret) * calibFactor())));
   // New cards always come back tomorrow (unless "Easy"): the first overnight check is where most forgetting happens.
   if (c.reps === 1 && grade < 4) days = Math.min(days, 1);
-  c.due = addDays(t, days);
+  c.due = dueAfter(key, t, days);
   appData.cards[key] = c;
 }
 // ============ CALIBRATION ============
@@ -3696,7 +3728,7 @@ Promise.all([getJson('kanji.json'), getJson('vocab.json', true), getJson('gramma
   VOCAB = vd; BY_WORD = Object.fromEntries(VOCAB.map(v => [v.w, v]));
   GRAMMAR = gd; BY_GID = Object.fromEntries(GRAMMAR.map(g => [g.id, g]));
   for (const g of GRAMMAR) Object.assign(GL, g.gl || {});
-  if (!window.claude) { linkOwnWords(appData); saveLocal(); }   // no account (GitHub Pages): this device's copy is all there is
+  if (!window.claude) { linkOwnWords(appData); spreadExamPile(appData); saveLocal(); }   // no account (GitHub Pages): this device's copy is all there is
   render();
   initSync();        // first, so a session restored below waits for your progress
   restoreSession();
