@@ -1,107 +1,197 @@
 {
- "知り合う": {
+ "ころ": {
   "score": 0.79,
-  "heard": "知り合う (sounds foreign)",
+  "heard": "コロ (sounds foreign)",
   "error": null
  },
- "寄付": {
-  "score": 0.5,
-  "heard": "皮膚 (sounds foreign)",
-  "error": null
- },
- "無知": {
+ "まま": {
   "score": 0.79,
-  "heard": "無知 (sounds foreign)",
+  "heard": "媽媽 (sounds foreign)",
   "error": null
  },
- "中国語": {
+ "委員会": {
   "score": 0,
   "heard": "",
   "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
- "初心者": {
+ "こういう": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "法案": {
   "score": 0.79,
-  "heard": "所信者 (sounds foreign)",
+  "heard": "法案 (sounds foreign)",
   "error": null
  },
- "貧困": {
-  "score": 0.5,
-  "heard": "変更 (sounds foreign)",
+ "内気": {
+  "score": 0.333,
+  "heard": "ナイキ (sounds foreign)",
   "error": null
  },
- "社員": {
+ "ごめん": {
   "score": 0.79,
-  "heard": "社員 (sounds foreign)",
+  "heard": "ごめん。 (sounds foreign)",
   "error": null
  },
- "本屋": {
+ "精通": {
+  "score": 0.444,
+  "heard": "整通 (sounds foreign)",
+  "error": null
+ },
+ "部下": {
   "score": 0.79,
-  "heard": "本屋 (sounds foreign)",
+  "heard": "ブカ (sounds foreign)",
   "error": null
  },
- "くばる": {
+ "ばんじ": {
   "score": 0.79,
-  "heard": "配る (sounds foreign)",
+  "heard": "万事 (sounds foreign)",
   "error": null
  },
- "木々": {
+ "支配人": {
+  "score": 0.79,
+  "heard": "支配人 (sounds foreign)",
+  "error": null
+ },
+ "敏感": {
+  "score": 0.571,
+  "heard": "不堪 (sounds foreign)",
+  "error": null
+ },
+ "勤務": {
+  "score": 0.79,
+  "heard": "勤務 (sounds foreign)",
+  "error": null
+ },
+ "収集": {
   "score": 0.0,
-  "heard": "Higi (sounds foreign)",
+  "heard": "終終 (sounds foreign)",
   "error": null
- },
- "断念": {
-  "score": 0.79,
-  "heard": "断念 (sounds foreign)",
-  "error": null
- },
- "着実": {
-  "score": 0,
-  "heard": "",
-  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
  "多大": {
   "score": 0,
   "heard": "",
   "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  },
- "のー": {
+ "じゃあ": {
   "score": 0.0,
-  "heard": "No. (sounds foreign)",
+  "heard": "加 (sounds foreign)",
   "error": null
  },
- "近年": {
-  "score": 0.5,
-  "heard": "金明 (sounds foreign)",
+ "頻繁": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "しみ": {
+  "score": 0.0,
+  "heard": "Simi (sounds foreign)",
   "error": null
  },
- "年々": {
+ "読者": {
   "score": 0.79,
-  "heard": "年々 (sounds foreign)",
+  "heard": "読者 (sounds foreign)",
   "error": null
  },
- "手入れ": {
+ "言い分": {
   "score": 0.79,
-  "heard": "手入れ (sounds foreign)",
+  "heard": "いいぶん (sounds foreign)",
   "error": null
  },
- "パンや": {
-  "score": 0.333,
-  "heard": "潘亞 (sounds foreign)",
+ "論議": {
+  "score": 0.79,
+  "heard": "論議 (sounds foreign)",
   "error": null
  },
- "画面": {
+ "理性": {
+  "score": 0.0,
+  "heard": "Disse (sounds foreign)",
+  "error": null
+ },
+ "当選": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "見本": {
+  "score": 0.286,
+  "heard": "日本 (sounds foreign)",
+  "error": null
+ },
+ "新人": {
+  "score": 0.79,
+  "heard": "新人 (sounds foreign)",
+  "error": null
+ },
+ "死体": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "背負う": {
+  "score": 0.79,
+  "heard": "背負う (sounds foreign)",
+  "error": null
+ },
+ "手本": {
+  "score": 0.0,
+  "heard": "接轟 (sounds foreign)",
+  "error": null
+ },
+ "ひさしい": {
   "score": 0.667,
-  "heard": "だめん (sounds foreign)",
+  "heard": "さし (sounds foreign)",
   "error": null
  },
- "受信": {
+ "筆者": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "発散": {
   "score": 0.79,
-  "heard": "重心 (sounds foreign)",
+  "heard": "発散 (sounds foreign)",
   "error": null
  },
- "指示": {
-  "score": 0.0,
-  "heard": "시지 (sounds foreign)",
+ "技能": {
+  "score": 0.79,
+  "heard": "技能 (sounds foreign)",
   "error": null
+ },
+ "点検": {
+  "score": 0.79,
+  "heard": "点検 (sounds foreign)",
+  "error": null
+ },
+ "分離": {
+  "score": 0.79,
+  "heard": "分離 (sounds foreign)",
+  "error": null
+ },
+ "警報": {
+  "score": 0.79,
+  "heard": "警報 (sounds foreign)",
+  "error": null
+ },
+ "着々": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
+ },
+ "水分": {
+  "score": 0.79,
+  "heard": "水分 (sounds foreign)",
+  "error": null
+ },
+ "出入り": {
+  "score": 0.79,
+  "heard": "出入り (sounds foreign)",
+  "error": null
+ },
+ "敬語": {
+  "score": 0,
+  "heard": "",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Audio file might be corrupted or unsupported\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"file\",\n    \"code\": \"invalid_value\"\n  }\n}"
  }
 }
