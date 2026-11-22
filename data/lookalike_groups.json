@@ -5656,5 +5656,42 @@
    }
   },
   "img": "images/lookalikes/g136.jpg"
+ },
+ {
+  "id": "g137",
+  "kanji": [
+   "売",
+   "完"
+  ],
+  "tips": {
+   "売": "sell (バイ, うる): a soldier 士 sticks up on top of a flat crown 冖 with no dot, over two legs",
+   "完": "complete (カン): a house roof 宀 with a chimney dot on top, over 元 beginning (two flat lines on legs)"
+  },
+  "scene": "On the left a muddy biker runs off on two legs carrying a crown with a little soldier standing up on it, to sell at a pawnshop; on the right a kangaroo sits under a house roof with a chimney, putting the last piece into a jigsaw that started from two flat lines.",
+  "contrast": "Sell: a soldier sticks up out of a flat crown · complete: a roof with a chimney dot covers the beginning",
+  "mn": {
+   "売": {
+    "feature": "On top a soldier 士 sticks up like a cross, standing on a flat crown 冖 with no dot.",
+    "label": "soldier on top",
+    "strokes": [
+     1,
+     2,
+     3
+    ],
+    "hook": "SELL: the biker grabs the crown with the little soldier 士 still standing on it and runs to the pawnshop.",
+    "picture": "A tiny toy soldier standing upright on top of a flat golden crown, carried by a running muddy biker toward a pawnshop."
+   },
+   "完": {
+    "feature": "On top a house roof 宀 with a chimney dot; under it 元, two flat lines on legs.",
+    "label": "roof with a dot",
+    "strokes": [
+     1,
+     4,
+     5
+    ],
+    "hook": "COMPLETE: under the roof with its chimney dot, the kangaroo finishes the jigsaw she began 元 forty times.",
+    "picture": "A house roof with one small chimney on top, and under it a kangaroo placing the final piece in a finished jigsaw puzzle."
+   }
+  }
  }
 ]
