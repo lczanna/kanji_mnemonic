@@ -5696,5 +5696,44 @@
    }
   },
   "img": "images/lookalikes/g137.jpg"
+ },
+ {
+  "id": "g138",
+  "kanji": [
+   "春",
+   "着"
+  ],
+  "tips": {
+   "春": "spring (シュン, はる): three plain bars, then TWO strokes spreading left and right like a skirt, over a short sun 日 (one line inside)",
+   "着": "wear / arrive (チャク, きる, つく): two horns on top, ONE long slash to the left, over a tall eye 目 (two lines inside)"
+  },
+  "scene": "On the left a little bonsai tree with branches spreading out to both sides like a skirt sits on top of a small round sun, blossoming with spring flowers; on the right a yogi wearing a whole sheep as a coat, its two horns on top and one long tail sweeping to the left, arrives at a door with a big eye peeking out.",
+  "contrast": "Spring: a bonsai skirt spreading both ways over a short sun · arrive / wear: sheep horns and one slash over a tall eye",
+  "mn": {
+   "春": {
+    "feature": "No horns: two strokes spread out to BOTH sides like the bonsai's skirt, over a short sun 日 with one line.",
+    "label": "skirt both ways",
+    "strokes": [
+     4,
+     5
+    ],
+    "hook": "SPRING: the bonsai spreads its branches both ways like a skirt and blossoms on the sun 日.",
+    "picture": "A small bonsai tree with two big branches spreading out evenly to left and right like a flared skirt, pink blossoms, sitting on a small glowing sun.",
+    "img": "images/lookalikes/g138_6625.jpg"
+   },
+   "着": {
+    "feature": "Two little horns on top and ONE long slash to the left only, over a tall eye 目 with two lines.",
+    "label": "horns + one slash",
+    "strokes": [
+     1,
+     2,
+     7
+    ],
+    "hook": "ARRIVE / WEAR: the yogi arrives wearing the sheep, its two horns on top and one long tail sweeping left past his eye 目.",
+    "picture": "A man wearing a whole sheep as a coat, two small horns on top of his head, one long woolly tail sweeping down to the left, a big eye peeking out.",
+    "img": "images/lookalikes/g138_7740.jpg"
+   }
+  },
+  "img": "images/lookalikes/g138.jpg"
  }
 ]
