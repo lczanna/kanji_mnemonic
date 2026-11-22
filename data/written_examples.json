@@ -5444,5 +5444,101 @@
 "I haven't decided where to travel yet.",
 "destination"
 ]
+],
+"改札": [
+[
+"改札の前で待っています。",
+"I'm waiting in front of the ticket gate.",
+"ticket gate"
+],
+[
+"切符を改札に入れてください。",
+"Please put your ticket into the ticket gate.",
+"ticket gate"
+]
+],
+"公民館": [
+[
+"公民館で日本語の教室があります。",
+"There is a Japanese class at the community centre.",
+"community centre"
+],
+[
+"祭りの会議は公民館で行います。",
+"The festival meeting will be held at the community centre.",
+"community centre"
+]
+],
+"住民票": [
+[
+"市役所で住民票をもらいました。",
+"I got a certificate of residence at the city office.",
+"certificate of residence"
+],
+[
+"住民票が必要です。",
+"A certificate of residence is needed.",
+"certificate of residence"
+]
+],
+"絵文字": [
+[
+"彼女のメールには絵文字が多い。",
+"Her emails have lots of emoji.",
+"emoji"
+],
+[
+"絵文字を使わないでください。",
+"Please do not use emoji.",
+"emoji"
+]
+],
+"東口": [
+[
+"駅の東口で会いましょう。",
+"Let's meet at the station's east exit.",
+"east exit"
+],
+[
+"東口を出て右に行ってください。",
+"Go out the east exit and turn right.",
+"east exit"
+]
+],
+"西口": [
+[
+"西口にバス乗り場があります。",
+"There is a bus stop at the west exit.",
+"west exit"
+],
+[
+"西口から出ると近いです。",
+"It's close if you leave by the west exit.",
+"west exit"
+]
+],
+"入れ物": [
+[
+"この入れ物に水を入れてください。",
+"Please put water in this container.",
+"container"
+],
+[
+"入れ物がもう一つ必要だ。",
+"I need one more container.",
+"container"
+]
+],
+"刺身": [
+[
+"夕食に刺身を食べた。",
+"I ate sashimi for dinner.",
+"sashimi"
+],
+[
+"刺身は苦手です。",
+"I don't like sashimi.",
+"sashimi"
+]
 ]
 }
