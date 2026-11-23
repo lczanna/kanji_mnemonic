@@ -5735,5 +5735,47 @@
    }
   },
   "img": "images/lookalikes/g138.jpg"
+ },
+ {
+  "id": "g139",
+  "kanji": [
+   "険",
+   "除"
+  ],
+  "tips": {
+   "険": "steep (ケン, けわしい): pinnacle 阝 on the left; on the right a roof, a MOUTH box 口 in the middle and two little legs at the bottom",
+   "除": "remove / exclude (ジョ, のぞく): pinnacle 阝 on the left; on the right a roof over two bars and ONE hooked stick with its feet spread, no mouth box"
+  },
+  "scene": "On the left Ken doll clings to a steep cliff under a little pointed roof, his mouth wide open in a scream and two tiny legs dangling below; on the right, on a rocky ledge under the same pointed roof, a cook blasts a pile of luggage off with a fire-hose nozzle, leaving only a bare coat-stand with its feet spread wide.",
+  "contrast": "Steep: a screaming mouth 口 with two legs dangling · remove: no mouth, one bare stick with spread feet",
+  "mn": {
+   "険": {
+    "feature": "A mouth box (口) in the middle of the right side, with two little legs (人) under it.",
+    "label": "mouth + legs",
+    "strokes": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "hook": "STEEP: Ken doll's mouth 口 opens in a scream and his two little legs dangle over the steep drop.",
+    "picture": "A blond male plastic fashion doll in a blue suit clinging to a sheer cliff with both hands, mouth wide open screaming, two small legs dangling over a deep drop. No letters or symbols anywhere.",
+    "img": "images/lookalikes/g139_967a.jpg"
+   },
+   "除": {
+    "feature": "No mouth: two bars, then one hooked stick with its feet spread out (like 余 extra).",
+    "label": "bare stick",
+    "strokes": [
+     7,
+     8,
+     9
+    ],
+    "hook": "REMOVE: the Nozzle blasts all the extra luggage off; only one bare stick with spread feet is left standing.",
+    "picture": "A cook with a fire-hose nozzle blasting suitcases off a rocky ledge, leaving one bare wooden coat-stand with three spread feet.",
+    "img": "images/lookalikes/g139_9664.jpg"
+   }
+  },
+  "img": "images/lookalikes/g139.jpg"
  }
 ]
