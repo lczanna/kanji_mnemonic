@@ -1856,12 +1856,12 @@
    "識"
   ],
   "tips": {
-   "職": "post: ear (耳) on the left of the sound fiesta",
+   "職": "job: ear (耳) on the left of the sound fiesta",
    "識": "knowledge: say (言) on the left of the sound fiesta"
   },
-  "scene": "At a noisy fiesta a critic full of knowledge speaks his verdict, while a guard at his post cups a huge ear to listen.",
+  "scene": "At a noisy fiesta a critic full of knowledge speaks his verdict, while a night guard on the job cups a huge ear to listen.",
   "img": "images/lookalikes/g045.jpg",
-  "contrast": "Post presses an ear on the left · knowledge says words on the left",
+  "contrast": "Job presses an ear on the left · knowledge says words on the left",
   "mn": {
    "職": {
     "feature": "an ear (ladder frame) on the left",
@@ -1874,7 +1874,7 @@
      4,
      5
     ],
-    "hook": "POST: the guard's ear on the left is pressed to the wall — the bass zaps him.",
+    "hook": "JOB: the night guard's ear on the left is pressed to the wall — the bass zaps him.",
     "picture": "A night guard with a giant ear pressed to a throbbing wall, his hair frizzled by the bass.",
     "img": "images/lookalikes/g045_8077.jpg"
    },
